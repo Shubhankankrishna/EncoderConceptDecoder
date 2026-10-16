@@ -1,0 +1,149 @@
+[
+  {
+    "path": "v10_10M/data/raw/algebra__linear_1d_test.parquet",
+    "rows": 10000,
+    "row_groups": 10,
+    "schema": "question: string\nanswer: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"question\": {\"dtype\": \"string\", \"_ty' + 65"
+  },
+  {
+    "path": "v10_10M/data/raw/algebra__linear_1d_train.parquet",
+    "rows": 1999998,
+    "row_groups": 2000,
+    "schema": "question: string\nanswer: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"question\": {\"dtype\": \"string\", \"_ty' + 65"
+  },
+  {
+    "path": "v10_10M/data/raw/arithmetic__add_sub_multiple_test.parquet",
+    "rows": 10000,
+    "row_groups": 10,
+    "schema": "question: string\nanswer: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"question\": {\"dtype\": \"string\", \"_ty' + 65"
+  },
+  {
+    "path": "v10_10M/data/raw/arithmetic__add_sub_multiple_train.parquet",
+    "rows": 1999998,
+    "row_groups": 2000,
+    "schema": "question: string\nanswer: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"question\": {\"dtype\": \"string\", \"_ty' + 65"
+  },
+  {
+    "path": "v10_10M/data/raw/arithmetic__mul_test.parquet",
+    "rows": 10000,
+    "row_groups": 10,
+    "schema": "question: string\nanswer: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"question\": {\"dtype\": \"string\", \"_ty' + 65"
+  },
+  {
+    "path": "v10_10M/data/raw/arithmetic__mul_train.parquet",
+    "rows": 1999998,
+    "row_groups": 2000,
+    "schema": "question: string\nanswer: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"question\": {\"dtype\": \"string\", \"_ty' + 65"
+  },
+  {
+    "path": "v10_10M/data/raw/comparison__sort_test.parquet",
+    "rows": 10000,
+    "row_groups": 10,
+    "schema": "question: string\nanswer: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"question\": {\"dtype\": \"string\", \"_ty' + 65"
+  },
+  {
+    "path": "v10_10M/data/raw/comparison__sort_train.parquet",
+    "rows": 1999998,
+    "row_groups": 2000,
+    "schema": "question: string\nanswer: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"question\": {\"dtype\": \"string\", \"_ty' + 65"
+  },
+  {
+    "path": "v10_1/telemetry_data/telemetry.sqlite3",
+    "tables": [
+      [
+        "meta",
+        "CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL)"
+      ],
+      [
+        "runs",
+        "CREATE TABLE runs (\n                    id TEXT PRIMARY KEY, path TEXT UNIQUE NOT NULL, manifest TEXT NOT NULL,\n                    status TEXT NOT NULL, health TEXT NOT NULL, updated REAL NOT NULL)"
+      ],
+      [
+        "sources",
+        "CREATE TABLE sources (\n                    run_id TEXT, path TEXT, identity TEXT, offset INTEGER NOT NULL,\n                    PRIMARY KEY(run_id,path))"
+      ],
+      [
+        "events",
+        "CREATE TABLE events (\n                    id INTEGER PRIMARY KEY, run_id TEXT NOT NULL, kind TEXT NOT NULL,\n                    source TEXT NOT NULL, record_key TEXT NOT NULL, step INTEGER,\n                    wall_time REAL NOT NULL, time_quality TEXT NOT NULL,\n                    ingested_at REAL NOT NULL, payload TEXT NOT NULL,\n                    UNIQUE(run_id,kind,source,record_key))"
+      ],
+      [
+        "metrics",
+        "CREATE TABLE metrics (\n                    event_id INTEGER NOT NULL, run_id TEXT NOT NULL, name TEXT NOT NULL,\n                    value REAL NOT NULL, step INTEGER, wall_time REAL NOT NULL,\n                    PRIMARY KEY(event_id,name))"
+      ],
+      [
+        "artifacts",
+        "CREATE TABLE artifacts (\n                    run_id TEXT NOT NULL, path TEXT NOT NULL, kind TEXT NOT NULL,\n                    size INTEGER, mtime REAL, digest TEXT, payload TEXT,\n                    PRIMARY KEY(run_id,path))"
+      ],
+      [
+        "issues",
+        "CREATE TABLE issues (\n                    run_id TEXT NOT NULL, source TEXT NOT NULL, detail TEXT NOT NULL,\n                    seen REAL NOT NULL, PRIMARY KEY(run_id,source,detail))"
+      ]
+    ]
+  },
+  {
+    "path": "v10_1/validation/telemetry_smoke/telemetry.sqlite3",
+    "tables": [
+      [
+        "meta",
+        "CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL)"
+      ],
+      [
+        "runs",
+        "CREATE TABLE runs (\n                    id TEXT PRIMARY KEY, path TEXT UNIQUE NOT NULL, manifest TEXT NOT NULL,\n                    status TEXT NOT NULL, health TEXT NOT NULL, updated REAL NOT NULL)"
+      ],
+      [
+        "sources",
+        "CREATE TABLE sources (\n                    run_id TEXT, path TEXT, identity TEXT, offset INTEGER NOT NULL,\n                    PRIMARY KEY(run_id,path))"
+      ],
+      [
+        "events",
+        "CREATE TABLE events (\n                    id INTEGER PRIMARY KEY, run_id TEXT NOT NULL, kind TEXT NOT NULL,\n                    source TEXT NOT NULL, record_key TEXT NOT NULL, step INTEGER,\n                    wall_time REAL NOT NULL, time_quality TEXT NOT NULL,\n                    ingested_at REAL NOT NULL, payload TEXT NOT NULL,\n                    UNIQUE(run_id,kind,source,record_key))"
+      ],
+      [
+        "metrics",
+        "CREATE TABLE metrics (\n                    event_id INTEGER NOT NULL, run_id TEXT NOT NULL, name TEXT NOT NULL,\n                    value REAL NOT NULL, step INTEGER, wall_time REAL NOT NULL,\n                    PRIMARY KEY(event_id,name))"
+      ],
+      [
+        "artifacts",
+        "CREATE TABLE artifacts (\n                    run_id TEXT NOT NULL, path TEXT NOT NULL, kind TEXT NOT NULL,\n                    size INTEGER, mtime REAL, digest TEXT, payload TEXT,\n                    PRIMARY KEY(run_id,path))"
+      ],
+      [
+        "issues",
+        "CREATE TABLE issues (\n                    run_id TEXT NOT NULL, source TEXT NOT NULL, detail TEXT NOT NULL,\n                    seen REAL NOT NULL, PRIMARY KEY(run_id,source,detail))"
+      ]
+    ]
+  },
+  {
+    "path": "v10_10M/telemetry/data/telemetry.sqlite3",
+    "tables": [
+      [
+        "meta",
+        "CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL)"
+      ],
+      [
+        "runs",
+        "CREATE TABLE runs (\n                    id TEXT PRIMARY KEY, path TEXT UNIQUE NOT NULL, manifest TEXT NOT NULL,\n                    status TEXT NOT NULL, health TEXT NOT NULL, updated REAL NOT NULL)"
+      ],
+      [
+        "sources",
+        "CREATE TABLE sources (\n                    run_id TEXT, path TEXT, identity TEXT, offset INTEGER NOT NULL,\n                    PRIMARY KEY(run_id,path))"
+      ],
+      [
+        "events",
+        "CREATE TABLE events (\n                    id INTEGER PRIMARY KEY, run_id TEXT NOT NULL, kind TEXT NOT NULL,\n                    source TEXT NOT NULL, record_key TEXT NOT NULL, step INTEGER,\n                    wall_time REAL NOT NULL, time_quality TEXT NOT NULL,\n                    ingested_at REAL NOT NULL, payload TEXT NOT NULL,\n                    UNIQUE(run_id,kind,source,record_key))"
+      ],
+      [
+        "metrics",
+        "CREATE TABLE metrics (\n                    event_id INTEGER NOT NULL, run_id TEXT NOT NULL, name TEXT NOT NULL,\n                    value REAL NOT NULL, step INTEGER, wall_time REAL NOT NULL,\n                    PRIMARY KEY(event_id,name))"
+      ],
+      [
+        "artifacts",
+        "CREATE TABLE artifacts (\n                    run_id TEXT NOT NULL, path TEXT NOT NULL, kind TEXT NOT NULL,\n                    size INTEGER, mtime REAL, digest TEXT, payload TEXT,\n                    PRIMARY KEY(run_id,path))"
+      ],
+      [
+        "issues",
+        "CREATE TABLE issues (\n                    run_id TEXT NOT NULL, source TEXT NOT NULL, detail TEXT NOT NULL,\n                    seen REAL NOT NULL, PRIMARY KEY(run_id,source,detail))"
+      ]
+    ]
+  }
+]
