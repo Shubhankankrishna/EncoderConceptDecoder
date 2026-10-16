@@ -1,0 +1,59 @@
+{"microbatch": 8, "foreach": true, "step": 0, "seconds": 1.8784975410089828, "driver_gib": 3.517303466796875}
+{"microbatch": 8, "foreach": true, "step": 20, "seconds": 0.8959636250510812, "driver_gib": 4.0243988037109375}
+{"microbatch": 8, "foreach": true, "step": 40, "seconds": 0.9365408750018105, "driver_gib": 4.0529632568359375}
+{"microbatch": 8, "foreach": true, "step": 60, "seconds": 0.3244548750226386, "driver_gib": 4.146270751953125}
+{"microbatch": 8, "foreach": true, "step": 80, "seconds": 0.9197120830067433, "driver_gib": 4.1457672119140625}
+{"microbatch": 8, "foreach": true, "step": 100, "seconds": 0.2855996250291355, "driver_gib": 4.1809539794921875}
+{"microbatch": 8, "foreach": true, "step": 120, "seconds": 0.516005374956876, "driver_gib": 4.1940765380859375}
+{"microbatch": 8, "foreach": true, "step": 140, "seconds": 0.9822070830268785, "driver_gib": 4.233306884765625}
+{"microbatch": 8, "foreach": true, "step": 160, "seconds": 0.45481804199516773, "driver_gib": 4.2427520751953125}
+{"microbatch": 8, "foreach": true, "step": 180, "seconds": 0.9618079999927431, "driver_gib": 4.2859039306640625}
+{"microbatch": 8, "foreach": true, "step": 200, "seconds": 1.0627579580177553, "driver_gib": 4.3248291015625}
+{
+  "microbatch": 8,
+  "foreach": true,
+  "updates": 200,
+  "warmup": 8,
+  "elapsed_seconds": 124.49188508297084,
+  "sustained_tokens_per_second": 3456.6198853059777,
+  "max_mps_driver_gib": 4.3248291015625,
+  "max_rss_gib": 1.4722137451171875,
+  "min_system_available_gib": 2.3551483154296875,
+  "groups": {
+    "text/candidate=False": {
+      "updates": 97,
+      "tokens_per_second": 4142.114841626448,
+      "median_seconds": 0.676487791002728
+    },
+    "text/candidate=True": {
+      "updates": 30,
+      "tokens_per_second": 3243.701359438574,
+      "median_seconds": 0.8536681460391264
+    },
+    "math/candidate=False": {
+      "updates": 33,
+      "tokens_per_second": 837.1371468523436,
+      "median_seconds": 0.24360983300721273
+    },
+    "math/candidate=True": {
+      "updates": 12,
+      "tokens_per_second": 783.4399935378816,
+      "median_seconds": 0.313059020525543
+    },
+    "sudoku_easy/candidate=False": {
+      "updates": 15,
+      "tokens_per_second": 3582.0056364627785,
+      "median_seconds": 0.3717951250146143
+    },
+    "sudoku_easy/candidate=True": {
+      "updates": 8,
+      "tokens_per_second": 2584.975653994562,
+      "median_seconds": 0.49802147949230857
+    },
+    "sudoku_hard/candidate=False": {
+      "updates": 5,
+      "tokens_per_second": 3639.7984150518005,
+      "median_seconds": 0.373270790965762
+    }
+  }
+}

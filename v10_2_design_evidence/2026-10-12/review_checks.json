@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "torch_version": "2.10.0",
+  "device": "cpu",
+  "scope": "Specification arithmetic, masks and isolated mathematical fixtures. Not trained V10.2 validation.",
+  "document_sha256": "3e1307b0d0791396c76a7c4123df0852b7dfc72c89469bb94ecf5eef156df842",
+  "review_script_sha256": "31d01d46392b1f0f0166c836ebb22d5c0639fc646abaeed24c8e15d3af78e249",
+  "evidence_summary_sha256": "acea6b8bdea7bc2089da698d7e00cb40c2efabd8aadad3841d70c90cd14e6f95",
+  "checks": {
+    "parameter_layout": {
+      "reference": {
+        "dense": 5731496,
+        "engram": 20000320,
+        "total": 25731816,
+        "encoder_distinct": 12,
+        "encoder_executed": 16,
+        "concept_distinct": 4,
+        "concept_executed": 8
+      },
+      "removed_head": 215168,
+      "new_head": 149376,
+      "proposed": {
+        "dense": 5944228,
+        "engram": 20000320,
+        "total": 25944548,
+        "encoder_distinct": 12,
+        "encoder_executed": 16,
+        "concept_distinct": 4,
+        "concept_executed": 8
+      },
+      "deployed": {
+        "dense": 5794852,
+        "engram": 20000320,
+        "total": 25795172,
+        "encoder_distinct": 12,
+        "encoder_executed": 16,
+        "concept_distinct": 4,
+        "concept_executed": 8
+      },
+      "scope": "Meta-tensor module layout only; no end-to-end V10.2 forward"
+    },
+    "release_mask_exhaustive": {
+      "lengths": "1..65, plus zero real keys",
+      "rows_checked": 2376,
+      "all_rows_have_key": true
+    },
+    "forecast_label_mask": {
+      "group_answer_cases": 11016,
+      "partial_and_terminal_labels": true,
+      "normalization": "Per eligible document; normalized offset weights"
+    },
+    "reader_startup_and_future_source_invariance": {
+      "max_early_error": 0.0,
+      "scope": "Isolated proposed reader, not full-model causality"
+    },
+    "rbf_derivative_and_local_descent": {
+      "finite_difference_error": 1.6499736386205166e-10,
+      "kernel_min_eigenvalue": 0.617862403850491,
+      "first_order_slope": -8.018008052304107e-05,
+      "before": 2.8309301573831522,
+      "after": 2.830930149365145,
+      "eta": 0.0001,
+      "scope": "Float64 toy reader/PQ/correction fixture; full-model FP32/Metal test still required",
+      "review_fix": "Initial finite differences crossed an inherited FP32 cast in RMSNorm; mathematical fixture now uses a float64 norm. Production code is unchanged."
+    },
+    "captured_training_source_and_manifest_unchanged": true,
+    "document_local_links_and_fences": true
+  }
+}

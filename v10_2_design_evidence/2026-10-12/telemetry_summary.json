@@ -1,0 +1,3646 @@
+{
+  "captured_utc": "2026-10-12T05:46:45.513853+00:00",
+  "watermark": 54480,
+  "source_sha256": "44012c37f54b48a707f75ad309fcdbb81da71d6fcfddb67470abf6a1ccfd82f5",
+  "data_sha256": "def40ad02c456e93b227be6d43fb91e91eb4735449d0cda2d709a6f60f0568f2",
+  "records": 54480,
+  "step_gaps": [],
+  "nonfinite_records": [],
+  "elapsed_hours": 9.739264260566948,
+  "input_tokens": 115059825,
+  "first1000": {
+    "text": {
+      "updates": 627,
+      "supervised_tokens": 1799699,
+      "token_nll": 7.000259994388573,
+      "chunk_loss": 7.362788318256822,
+      "latent_loss": 0.5762079677038026,
+      "code_counts": [
+        8034,
+        15028,
+        10249,
+        135483,
+        149,
+        392,
+        32292,
+        22874
+      ],
+      "effective_codes": 3.57308848473452,
+      "candidate_fraction": 0.23923444976076555
+    },
+    "math": {
+      "updates": 209,
+      "supervised_tokens": 14069,
+      "token_nll": 3.4566286994972177,
+      "chunk_loss": 3.908989014808071,
+      "latent_loss": 0.642215536541916,
+      "code_counts": [
+        29,
+        102,
+        53,
+        2502,
+        5,
+        0,
+        3137,
+        279
+      ],
+      "effective_codes": 2.6899809800528907,
+      "candidate_fraction": 0.2822966507177033
+    },
+    "sudoku_easy": {
+      "updates": 144,
+      "supervised_tokens": 94464,
+      "token_nll": 3.8534267130825253,
+      "chunk_loss": 3.9808343483342066,
+      "latent_loss": 0.6258576439900531,
+      "code_counts": [
+        386,
+        309,
+        16,
+        3658,
+        1883,
+        0,
+        16364,
+        1576
+      ],
+      "effective_codes": 2.8670781842124975,
+      "candidate_fraction": 0.2569444444444444
+    },
+    "sudoku_hard": {
+      "updates": 20,
+      "supervised_tokens": 13120,
+      "token_nll": 3.216231036186218,
+      "chunk_loss": 3.3373255491256715,
+      "latent_loss": 0.5847440630197525,
+      "code_counts": [
+        133,
+        137,
+        0,
+        833,
+        98,
+        0,
+        1991,
+        168
+      ],
+      "effective_codes": 3.212420236847215,
+      "candidate_fraction": 0.2
+    }
+  },
+  "last5000": {
+    "text": {
+      "updates": 3281,
+      "supervised_tokens": 9344022,
+      "token_nll": 3.8805920594569465,
+      "chunk_loss": 5.780227344016482,
+      "latent_loss": 0.6967187464618712,
+      "code_counts": [
+        149547,
+        138259,
+        74996,
+        62155,
+        225900,
+        146437,
+        193530,
+        174653
+      ],
+      "effective_codes": 7.466617223504923,
+      "candidate_fraction": 0.24260896068271867
+    },
+    "math": {
+      "updates": 965,
+      "supervised_tokens": 63568,
+      "token_nll": 0.6424943642230625,
+      "chunk_loss": 1.3360011706698127,
+      "latent_loss": 0.6426256496053904,
+      "code_counts": [
+        823,
+        254,
+        9714,
+        7282,
+        1327,
+        3901,
+        2441,
+        2399
+      ],
+      "effective_codes": 5.488602811445684,
+      "candidate_fraction": 0.2704663212435233
+    },
+    "sudoku_easy": {
+      "updates": 550,
+      "supervised_tokens": 360800,
+      "token_nll": 0.18763440489768982,
+      "chunk_loss": 1.1957354481653735,
+      "latent_loss": 0.6444425224174153,
+      "code_counts": [
+        18360,
+        16686,
+        17226,
+        13315,
+        7732,
+        9727,
+        5747,
+        3607
+      ],
+      "effective_codes": 7.144967581903805,
+      "candidate_fraction": 0.24
+    },
+    "sudoku_hard": {
+      "updates": 204,
+      "supervised_tokens": 133824,
+      "token_nll": 0.21770835178447703,
+      "chunk_loss": 1.2232640388549543,
+      "latent_loss": 0.6405636922401541,
+      "code_counts": [
+        6740,
+        5651,
+        7221,
+        4956,
+        2819,
+        3819,
+        2006,
+        1060
+      ],
+      "effective_codes": 7.017531626691921,
+      "candidate_fraction": 0.29901960784313725
+    }
+  },
+  "last5000_dense_grad": {
+    "median": 3.8038415908813477,
+    "p95": 6.466719627380371,
+    "maximum": 18.911680221557617,
+    "clipped_fraction": 1.0
+  },
+  "exposure": {
+    "text": 101210006,
+    "math": 722451,
+    "sudoku_easy": 4298112,
+    "sudoku_hard": 1004336
+  },
+  "exposure_fraction": {
+    "text": 0.9438158778617839,
+    "math": 0.006737088077804517,
+    "sudoku_easy": 0.04008127763996247,
+    "sudoku_hard": 0.009365756420449107
+  },
+  "sustained_tps_last5000": 2909.7138222504796,
+  "evaluation_history": [
+    {
+      "file": "evaluation_initial.json",
+      "sha256": "ab24c4f29811f22cd70c1ce0153bde8039d70522cbe8ff469462b8f0dfa878b1",
+      "step": 0,
+      "wall_time": 1791748210.969915,
+      "families": {
+        "text": {
+          "nll": 9.045892715454102,
+          "no_concepts_nll": 9.046647071838379,
+          "no_pq_nll": 9.046104431152344,
+          "no_continuous_nll": 9.046434879302979,
+          "one_visit_nll": 9.045805931091309,
+          "perplexity": 8483.621620082658,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.0007543563842773438,
+          "pq_ablation_delta_nll": 0.0002117156982421875,
+          "continuous_ablation_delta_nll": 0.0005421638488769531,
+          "one_visit_delta_nll": -8.678436279296875e-05,
+          "latent_visit_mse": [
+            1.0262033343315125,
+            1.032227098941803
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.49262113869190216,
+          "code_counts": [
+            0,
+            49,
+            0,
+            28,
+            2,
+            12,
+            5,
+            0
+          ]
+        },
+        "math": {
+          "nll": 9.015978949410576,
+          "no_concepts_nll": 9.01728630065918,
+          "no_pq_nll": 9.01517118726458,
+          "no_continuous_nll": 9.018096787588936,
+          "one_visit_nll": 9.014227730887276,
+          "perplexity": 8233.602695048334,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": 0.0013073512486041494,
+          "pq_ablation_delta_nll": -0.0008077621459960938,
+          "continuous_ablation_delta_nll": 0.0021178381783606426,
+          "one_visit_delta_nll": -0.0017512185232995137,
+          "latent_visit_mse": [
+            1.0163743495941162,
+            1.0173063278198242
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.35268712043762207,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 9.063078880310059,
+          "no_concepts_nll": 9.061667919158936,
+          "no_pq_nll": 9.063657760620117,
+          "no_continuous_nll": 9.061098098754883,
+          "one_visit_nll": 9.06325101852417,
+          "perplexity": 8630.682627483484,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.0014109611511230469,
+          "pq_ablation_delta_nll": 0.0005788803100585938,
+          "continuous_ablation_delta_nll": -0.0019807815551757812,
+          "one_visit_delta_nll": 0.00017213821411132812,
+          "latent_visit_mse": [
+            1.0181406736373901,
+            1.010133981704712
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.3583603799343109,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            42
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 9.051373481750488,
+          "no_concepts_nll": 9.050296306610107,
+          "no_pq_nll": 9.05190658569336,
+          "no_continuous_nll": 9.0497727394104,
+          "one_visit_nll": 9.051580429077148,
+          "perplexity": 8530.246019536173,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.0010771751403808594,
+          "pq_ablation_delta_nll": 0.0005331039428710938,
+          "continuous_ablation_delta_nll": -0.0016007423400878906,
+          "one_visit_delta_nll": 0.00020694732666015625,
+          "latent_visit_mse": [
+            1.016295850276947,
+            1.0079967975616455
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.3330719769001007,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            42
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 0,
+          "correct": 0,
+          "planned_n": 0,
+          "identity_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 0,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 0,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 0,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 0,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 0,
+          "correct": 0,
+          "planned_n": 0,
+          "identity_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 0,
+          "correct": 0,
+          "planned_n": 0,
+          "identity_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0003078.json",
+      "sha256": "4ceab8db1051afe8614536807375ac67278adf127afefb6ae2fc0e389587231a",
+      "step": 3078,
+      "wall_time": 1791750117.517133,
+      "families": {
+        "text": {
+          "nll": 6.021676778793335,
+          "no_concepts_nll": 6.021488666534424,
+          "no_pq_nll": 6.0213165283203125,
+          "no_continuous_nll": 6.021831512451172,
+          "one_visit_nll": 6.021692514419556,
+          "perplexity": 412.2693009058377,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": -0.0001881122589111328,
+          "pq_ablation_delta_nll": -0.00036025047302246094,
+          "continuous_ablation_delta_nll": 0.00015473365783691406,
+          "one_visit_delta_nll": 1.5735626220703125e-05,
+          "latent_visit_mse": [
+            0.6523516774177551,
+            0.6529729962348938
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7163301408290863,
+          "code_counts": [
+            13,
+            0,
+            0,
+            75,
+            2,
+            0,
+            6,
+            0
+          ]
+        },
+        "math": {
+          "nll": 2.050546305520194,
+          "no_concepts_nll": 2.0507074764796664,
+          "no_pq_nll": 2.0505920818873813,
+          "no_continuous_nll": 2.050654343196324,
+          "one_visit_nll": 2.050530365535191,
+          "perplexity": 7.772145912936542,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": 0.00016117095947265625,
+          "pq_ablation_delta_nll": 4.57763671875e-05,
+          "continuous_ablation_delta_nll": 0.00010803767613021265,
+          "one_visit_delta_nll": -1.5939985002599855e-05,
+          "latent_visit_mse": [
+            0.6747052470842997,
+            0.6746969223022461
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.574182003736496,
+          "code_counts": [
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            5,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 1.725114643573761,
+          "no_concepts_nll": 1.7263614535331726,
+          "no_pq_nll": 1.7263943552970886,
+          "no_continuous_nll": 1.7250872254371643,
+          "one_visit_nll": 1.7250725626945496,
+          "perplexity": 5.613164506046319,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.001246809959411621,
+          "pq_ablation_delta_nll": 0.0012797117233276367,
+          "continuous_ablation_delta_nll": -2.7418136596679688e-05,
+          "one_visit_delta_nll": -4.208087921142578e-05,
+          "latent_visit_mse": [
+            0.49446751177310944,
+            0.49197807908058167
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.4299878180027008,
+          "code_counts": [
+            0,
+            0,
+            0,
+            40,
+            0,
+            0,
+            2,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 1.695055603981018,
+          "no_concepts_nll": 1.6955899596214294,
+          "no_pq_nll": 1.695589005947113,
+          "no_continuous_nll": 1.6950556635856628,
+          "one_visit_nll": 1.694949209690094,
+          "perplexity": 5.446948828831793,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.000534355640411377,
+          "pq_ablation_delta_nll": 0.0005334019660949707,
+          "continuous_ablation_delta_nll": 5.960464477539063e-08,
+          "one_visit_delta_nll": -0.00010639429092407227,
+          "latent_visit_mse": [
+            0.49649979174137115,
+            0.49413371086120605
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.4210817962884903,
+          "code_counts": [
+            0,
+            0,
+            0,
+            40,
+            0,
+            0,
+            2,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 0,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 0,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 0
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0006256.json",
+      "sha256": "6e50115e1f903881f0dd2b0c74c1ddd4b64f8e8b38a538aaf243d17e2b5ca65a",
+      "step": 6256,
+      "wall_time": 1791752704.028558,
+      "families": {
+        "text": {
+          "nll": 5.561437606811523,
+          "no_concepts_nll": 5.5611512660980225,
+          "no_pq_nll": 5.562384605407715,
+          "no_continuous_nll": 5.560304880142212,
+          "one_visit_nll": 5.56128454208374,
+          "perplexity": 260.1966280206067,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": -0.00028634071350097656,
+          "pq_ablation_delta_nll": 0.0009469985961914062,
+          "continuous_ablation_delta_nll": -0.0011327266693115234,
+          "one_visit_delta_nll": -0.00015306472778320312,
+          "latent_visit_mse": [
+            0.7189775705337524,
+            0.7191920578479767
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.751070111989975,
+          "code_counts": [
+            20,
+            1,
+            26,
+            5,
+            41,
+            0,
+            3,
+            0
+          ]
+        },
+        "math": {
+          "nll": 1.8942249161856515,
+          "no_concepts_nll": 1.8914331027439661,
+          "no_pq_nll": 1.8910455703735352,
+          "no_continuous_nll": 1.894592557634626,
+          "one_visit_nll": 1.8941783905029297,
+          "perplexity": 6.647394119799683,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.0027918134416853313,
+          "pq_ablation_delta_nll": -0.0031793458121163187,
+          "continuous_ablation_delta_nll": 0.0003676414489746094,
+          "one_visit_delta_nll": -4.6525682721787476e-05,
+          "latent_visit_mse": [
+            0.6651696165402731,
+            0.6619079907735189
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.6389597356319427,
+          "code_counts": [
+            0,
+            0,
+            0,
+            2,
+            3,
+            0,
+            3,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.9662809073925018,
+          "no_concepts_nll": 0.9671937525272369,
+          "no_pq_nll": 0.9672474265098572,
+          "no_continuous_nll": 0.9662090241909027,
+          "one_visit_nll": 0.9662550091743469,
+          "perplexity": 2.6281519205828987,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.0009128451347351074,
+          "pq_ablation_delta_nll": 0.0009665191173553467,
+          "continuous_ablation_delta_nll": -7.18832015991211e-05,
+          "one_visit_delta_nll": -2.5898218154907227e-05,
+          "latent_visit_mse": [
+            0.41262002289295197,
+            0.41188086569309235
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.4581923484802246,
+          "code_counts": [
+            0,
+            0,
+            1,
+            32,
+            0,
+            0,
+            9,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.9106937944889069,
+          "no_concepts_nll": 0.9104848802089691,
+          "no_pq_nll": 0.9105722308158875,
+          "no_continuous_nll": 0.910608172416687,
+          "one_visit_nll": 0.9106232225894928,
+          "perplexity": 2.4860467407207576,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.00020891427993774414,
+          "pq_ablation_delta_nll": -0.00012156367301940918,
+          "continuous_ablation_delta_nll": -8.562207221984863e-05,
+          "one_visit_delta_nll": -7.05718994140625e-05,
+          "latent_visit_mse": [
+            0.42658117413520813,
+            0.42616212368011475
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.46716563403606415,
+          "code_counts": [
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            9,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 0,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 0,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 0
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0009250.json",
+      "sha256": "343e794b3a3bbf51ab4f56443d30a5d124eb7c3eb2280a2363ef31bc793b5911",
+      "step": 9250,
+      "wall_time": 1791754527.152991,
+      "families": {
+        "text": {
+          "nll": 5.22108268737793,
+          "no_concepts_nll": 5.223237752914429,
+          "no_pq_nll": 5.221877813339233,
+          "no_continuous_nll": 5.222520589828491,
+          "one_visit_nll": 5.2208263874053955,
+          "perplexity": 185.13451840768397,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.0021550655364990234,
+          "pq_ablation_delta_nll": 0.0007951259613037109,
+          "continuous_ablation_delta_nll": 0.0014379024505615234,
+          "one_visit_delta_nll": -0.0002562999725341797,
+          "latent_visit_mse": [
+            0.7491047382354736,
+            0.7499590814113617
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7831876575946808,
+          "code_counts": [
+            15,
+            7,
+            1,
+            0,
+            24,
+            9,
+            40,
+            0
+          ]
+        },
+        "math": {
+          "nll": 1.6235777309962682,
+          "no_concepts_nll": 1.6192515577588762,
+          "no_pq_nll": 1.6192174639020647,
+          "no_continuous_nll": 1.6236155714307512,
+          "one_visit_nll": 1.6233313253947668,
+          "perplexity": 5.071201293199009,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.004326173237392039,
+          "pq_ablation_delta_nll": -0.004360267094203563,
+          "continuous_ablation_delta_nll": 3.7840434482960816e-05,
+          "one_visit_delta_nll": -0.00024640560150146484,
+          "latent_visit_mse": [
+            0.6438749233881632,
+            0.6411524812380472
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.6622976660728455,
+          "code_counts": [
+            1,
+            1,
+            0,
+            1,
+            5,
+            0,
+            0,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.7123958766460419,
+          "no_concepts_nll": 0.7146639227867126,
+          "no_pq_nll": 0.714363694190979,
+          "no_continuous_nll": 0.712656170129776,
+          "one_visit_nll": 0.7123247981071472,
+          "perplexity": 2.0388702932502305,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.0022680461406707764,
+          "pq_ablation_delta_nll": 0.001967817544937134,
+          "continuous_ablation_delta_nll": 0.00026029348373413086,
+          "one_visit_delta_nll": -7.107853889465332e-05,
+          "latent_visit_mse": [
+            0.33762165904045105,
+            0.3374098986387253
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.45024172961711884,
+          "code_counts": [
+            0,
+            0,
+            0,
+            39,
+            0,
+            0,
+            3,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.7172524631023407,
+          "no_concepts_nll": 0.7221086025238037,
+          "no_pq_nll": 0.7218620479106903,
+          "no_continuous_nll": 0.717427521944046,
+          "one_visit_nll": 0.7172026038169861,
+          "perplexity": 2.048796326912936,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.004856139421463013,
+          "pq_ablation_delta_nll": 0.004609584808349609,
+          "continuous_ablation_delta_nll": 0.00017505884170532227,
+          "one_visit_delta_nll": -4.985928535461426e-05,
+          "latent_visit_mse": [
+            0.34439361095428467,
+            0.34410035610198975
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.45930424332618713,
+          "code_counts": [
+            0,
+            0,
+            0,
+            40,
+            0,
+            0,
+            2,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 0,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 0,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 0
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0012218.json",
+      "sha256": "04bc633f95db3ca2a426b9dc960cf2159fa9d6c63f32c0a2fe2a1b2f295d1224",
+      "step": 12218,
+      "wall_time": 1791756352.8239942,
+      "families": {
+        "text": {
+          "nll": 5.123516798019409,
+          "no_concepts_nll": 5.1269001960754395,
+          "no_pq_nll": 5.124295711517334,
+          "no_continuous_nll": 5.126157522201538,
+          "one_visit_nll": 5.12348198890686,
+          "perplexity": 167.92489032258965,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.0033833980560302734,
+          "pq_ablation_delta_nll": 0.0007789134979248047,
+          "continuous_ablation_delta_nll": 0.0026407241821289062,
+          "one_visit_delta_nll": -3.4809112548828125e-05,
+          "latent_visit_mse": [
+            0.7706552147865295,
+            0.7714793384075165
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.77751624584198,
+          "code_counts": [
+            15,
+            3,
+            4,
+            3,
+            12,
+            4,
+            55,
+            0
+          ]
+        },
+        "math": {
+          "nll": 1.681402393749782,
+          "no_concepts_nll": 1.678342274257115,
+          "no_pq_nll": 1.6782198803765433,
+          "no_continuous_nll": 1.6815344606127058,
+          "one_visit_nll": 1.6816688946315221,
+          "perplexity": 5.373085871988844,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.003060119492666935,
+          "pq_ablation_delta_nll": -0.0031825133732386046,
+          "continuous_ablation_delta_nll": 0.00013206686292388525,
+          "one_visit_delta_nll": 0.0002665008817401837,
+          "latent_visit_mse": [
+            0.6053455074628195,
+            0.6043128967285156
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.6429234147071838,
+          "code_counts": [
+            0,
+            3,
+            0,
+            0,
+            1,
+            0,
+            4,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.5212089121341705,
+          "no_concepts_nll": 0.5207233428955078,
+          "no_pq_nll": 0.5208746492862701,
+          "no_continuous_nll": 0.5210672914981842,
+          "one_visit_nll": 0.5211264789104462,
+          "perplexity": 1.6840623029453183,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.0004855692386627197,
+          "pq_ablation_delta_nll": -0.0003342628479003906,
+          "continuous_ablation_delta_nll": -0.00014162063598632812,
+          "one_visit_delta_nll": -8.243322372436523e-05,
+          "latent_visit_mse": [
+            0.3126615285873413,
+            0.31113022565841675
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.4609247148036957,
+          "code_counts": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            41,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.40003103017807007,
+          "no_concepts_nll": 0.3971429616212845,
+          "no_pq_nll": 0.39716869592666626,
+          "no_continuous_nll": 0.39998020231723785,
+          "one_visit_nll": 0.4000082015991211,
+          "perplexity": 1.491870989945513,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.0028880685567855835,
+          "pq_ablation_delta_nll": -0.0028623342514038086,
+          "continuous_ablation_delta_nll": -5.0827860832214355e-05,
+          "one_visit_delta_nll": -2.282857894897461e-05,
+          "latent_visit_mse": [
+            0.3133855313062668,
+            0.31211115419864655
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.462503045797348,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            42,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 0,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 0,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 0
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0015121.json",
+      "sha256": "4ac0a6fa4d1be23687c906f3ac71b97773c94dcbdf6c982d95d3cc601d2de02c",
+      "step": 15121,
+      "wall_time": 1791758175.920367,
+      "families": {
+        "text": {
+          "nll": 5.084792375564575,
+          "no_concepts_nll": 5.088552474975586,
+          "no_pq_nll": 5.086601257324219,
+          "no_continuous_nll": 5.086858749389648,
+          "one_visit_nll": 5.084620475769043,
+          "perplexity": 161.54639477638517,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.003760099411010742,
+          "pq_ablation_delta_nll": 0.0018088817596435547,
+          "continuous_ablation_delta_nll": 0.002066373825073242,
+          "one_visit_delta_nll": -0.00017189979553222656,
+          "latent_visit_mse": [
+            0.7713416218757629,
+            0.7734180986881256
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7795846462249756,
+          "code_counts": [
+            14,
+            45,
+            4,
+            19,
+            8,
+            4,
+            2,
+            0
+          ]
+        },
+        "math": {
+          "nll": 1.5922130175999232,
+          "no_concepts_nll": 1.5865251166479928,
+          "no_pq_nll": 1.5872584411076136,
+          "no_continuous_nll": 1.5914883783885412,
+          "one_visit_nll": 1.592116117477417,
+          "perplexity": 4.914613027798421,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.005687900951930391,
+          "pq_ablation_delta_nll": -0.00495457649230957,
+          "continuous_ablation_delta_nll": -0.0007246392113819944,
+          "one_visit_delta_nll": -9.690012250618274e-05,
+          "latent_visit_mse": [
+            0.6152981718381246,
+            0.6140380501747131
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.6412927508354187,
+          "code_counts": [
+            1,
+            0,
+            1,
+            2,
+            4,
+            0,
+            0,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.3993673771619797,
+          "no_concepts_nll": 0.39974184334278107,
+          "no_pq_nll": 0.39977365732192993,
+          "no_continuous_nll": 0.3993453234434128,
+          "one_visit_nll": 0.399404913187027,
+          "perplexity": 1.4908812337270947,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.0003744661808013916,
+          "pq_ablation_delta_nll": 0.00040628015995025635,
+          "continuous_ablation_delta_nll": -2.205371856689453e-05,
+          "one_visit_delta_nll": 3.7536025047302246e-05,
+          "latent_visit_mse": [
+            0.36177368462085724,
+            0.3622804433107376
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.5374491810798645,
+          "code_counts": [
+            0,
+            0,
+            0,
+            42,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.32171425223350525,
+          "no_concepts_nll": 0.32037849724292755,
+          "no_pq_nll": 0.3203655332326889,
+          "no_continuous_nll": 0.321709543466568,
+          "one_visit_nll": 0.3217131048440933,
+          "perplexity": 1.3794905332941594,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.0013357549905776978,
+          "pq_ablation_delta_nll": -0.0013487190008163452,
+          "continuous_ablation_delta_nll": -4.708766937255859e-06,
+          "one_visit_delta_nll": -1.1473894119262695e-06,
+          "latent_visit_mse": [
+            0.3627094030380249,
+            0.36409415304660797
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.5314390659332275,
+          "code_counts": [
+            0,
+            0,
+            0,
+            41,
+            0,
+            0,
+            1,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 0,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 0,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 0
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0018148.json",
+      "sha256": "ec4ad28bfc753ba1e44a5f3f8428e546659e682851a05c19e534ed6e332a562b",
+      "step": 18148,
+      "wall_time": 1791759998.252474,
+      "families": {
+        "text": {
+          "nll": 5.031979560852051,
+          "no_concepts_nll": 5.036290645599365,
+          "no_pq_nll": 5.032853603363037,
+          "no_continuous_nll": 5.0354413986206055,
+          "one_visit_nll": 5.031891107559204,
+          "perplexity": 153.23605274468275,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.004311084747314453,
+          "pq_ablation_delta_nll": 0.0008740425109863281,
+          "continuous_ablation_delta_nll": 0.0034618377685546875,
+          "one_visit_delta_nll": -8.845329284667969e-05,
+          "latent_visit_mse": [
+            0.7797998487949371,
+            0.780580461025238
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7951526045799255,
+          "code_counts": [
+            14,
+            18,
+            18,
+            12,
+            19,
+            0,
+            15,
+            0
+          ]
+        },
+        "math": {
+          "nll": 1.7352473054613387,
+          "no_concepts_nll": 1.7328725712639945,
+          "no_pq_nll": 1.7331572260175432,
+          "no_continuous_nll": 1.7349767344338554,
+          "one_visit_nll": 1.735349110194615,
+          "perplexity": 5.670329933980875,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.0023747341973441305,
+          "pq_ablation_delta_nll": -0.0020900794437954673,
+          "continuous_ablation_delta_nll": -0.00027057102748329065,
+          "one_visit_delta_nll": 0.00010180473327636719,
+          "latent_visit_mse": [
+            0.6463867823282877,
+            0.6470504601796468
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.6815038621425629,
+          "code_counts": [
+            4,
+            1,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.4353365898132324,
+          "no_concepts_nll": 0.4339122772216797,
+          "no_pq_nll": 0.4338158965110779,
+          "no_continuous_nll": 0.43541522324085236,
+          "one_visit_nll": 0.4353773295879364,
+          "perplexity": 1.5454831653051417,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.0014243125915527344,
+          "pq_ablation_delta_nll": -0.001520693302154541,
+          "continuous_ablation_delta_nll": 7.863342761993408e-05,
+          "one_visit_delta_nll": 4.073977470397949e-05,
+          "latent_visit_mse": [
+            0.39059627056121826,
+            0.3901515007019043
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.566370278596878,
+          "code_counts": [
+            40,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.3066241443157196,
+          "no_concepts_nll": 0.3033011704683304,
+          "no_pq_nll": 0.3033338785171509,
+          "no_continuous_nll": 0.3065715432167053,
+          "one_visit_nll": 0.3066270500421524,
+          "perplexity": 1.3588301480455744,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.003322973847389221,
+          "pq_ablation_delta_nll": -0.0032902657985687256,
+          "continuous_ablation_delta_nll": -5.2601099014282227e-05,
+          "one_visit_delta_nll": 2.905726432800293e-06,
+          "latent_visit_mse": [
+            0.38773252069950104,
+            0.3870779126882553
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.558070719242096,
+          "code_counts": [
+            41,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 0,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 0,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 0
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0021062.json",
+      "sha256": "1da45eab60c23998a99d5d8be62a7e41f6201f0c2c123757b100a149caff28aa",
+      "step": 21062,
+      "wall_time": 1791761821.033969,
+      "families": {
+        "text": {
+          "nll": 4.995895862579346,
+          "no_concepts_nll": 4.999481678009033,
+          "no_pq_nll": 4.996092319488525,
+          "no_continuous_nll": 4.999290466308594,
+          "one_visit_nll": 4.9958577156066895,
+          "perplexity": 147.80529932584372,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.0035858154296875,
+          "pq_ablation_delta_nll": 0.0001964569091796875,
+          "continuous_ablation_delta_nll": 0.003394603729248047,
+          "one_visit_delta_nll": -3.814697265625e-05,
+          "latent_visit_mse": [
+            0.7838737964630127,
+            0.7845350503921509
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7953540086746216,
+          "code_counts": [
+            25,
+            2,
+            30,
+            5,
+            5,
+            11,
+            18,
+            0
+          ]
+        },
+        "math": {
+          "nll": 1.5795295238494873,
+          "no_concepts_nll": 1.5769411325454712,
+          "no_pq_nll": 1.5775196552276611,
+          "no_continuous_nll": 1.5789588689804077,
+          "one_visit_nll": 1.5797456843512399,
+          "perplexity": 4.852672207549112,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.0025883913040161133,
+          "pq_ablation_delta_nll": -0.002009868621826172,
+          "continuous_ablation_delta_nll": -0.0005706548690795898,
+          "one_visit_delta_nll": 0.0002161605017525492,
+          "latent_visit_mse": [
+            0.5711011091868082,
+            0.5722097754478455
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.6373576521873474,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            5,
+            1,
+            2,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.5302422642707825,
+          "no_concepts_nll": 0.5351597964763641,
+          "no_pq_nll": 0.5351707339286804,
+          "no_continuous_nll": 0.5302600264549255,
+          "one_visit_nll": 0.5295533686876297,
+          "perplexity": 1.6993439490762812,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.004917532205581665,
+          "pq_ablation_delta_nll": 0.004928469657897949,
+          "continuous_ablation_delta_nll": 1.7762184143066406e-05,
+          "one_visit_delta_nll": -0.000688895583152771,
+          "latent_visit_mse": [
+            0.5316480994224548,
+            0.5288184285163879
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.6096537709236145,
+          "code_counts": [
+            16,
+            4,
+            0,
+            5,
+            0,
+            14,
+            3,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.4652736783027649,
+          "no_concepts_nll": 0.4731189161539078,
+          "no_pq_nll": 0.4728718101978302,
+          "no_continuous_nll": 0.4654271751642227,
+          "one_visit_nll": 0.46556901931762695,
+          "perplexity": 1.5924499482545156,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.007845237851142883,
+          "pq_ablation_delta_nll": 0.007598131895065308,
+          "continuous_ablation_delta_nll": 0.0001534968614578247,
+          "one_visit_delta_nll": 0.00029534101486206055,
+          "latent_visit_mse": [
+            0.5418436527252197,
+            0.5384254157543182
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.6074472665786743,
+          "code_counts": [
+            11,
+            5,
+            0,
+            4,
+            0,
+            15,
+            7,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 0,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 0,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 0
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0023906.json",
+      "sha256": "1c05361c842fc9ab99b39b284de0e868bb951dfd5122b3ac49750def1da086ba",
+      "step": 23906,
+      "wall_time": 1791763646.0391529,
+      "families": {
+        "text": {
+          "nll": 4.906100511550903,
+          "no_concepts_nll": 4.909626722335815,
+          "no_pq_nll": 4.9068214893341064,
+          "no_continuous_nll": 4.908832311630249,
+          "one_visit_nll": 4.906026363372803,
+          "perplexity": 135.11152000672857,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.0035262107849121094,
+          "pq_ablation_delta_nll": 0.000720977783203125,
+          "continuous_ablation_delta_nll": 0.002731800079345703,
+          "one_visit_delta_nll": -7.414817810058594e-05,
+          "latent_visit_mse": [
+            0.794067770242691,
+            0.7958813905715942
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.8112404346466064,
+          "code_counts": [
+            2,
+            17,
+            16,
+            47,
+            8,
+            2,
+            4,
+            0
+          ]
+        },
+        "math": {
+          "nll": 1.5229127747671944,
+          "no_concepts_nll": 1.5208085945674352,
+          "no_pq_nll": 1.5214209386280604,
+          "no_continuous_nll": 1.5222651277269637,
+          "one_visit_nll": 1.5229627745492118,
+          "perplexity": 4.585562472132701,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.00210418019975922,
+          "pq_ablation_delta_nll": -0.0014918361391340618,
+          "continuous_ablation_delta_nll": -0.0006476470402307921,
+          "one_visit_delta_nll": 4.999978201736255e-05,
+          "latent_visit_mse": [
+            0.5936065912246704,
+            0.5921662648518881
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.6731686890125275,
+          "code_counts": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            0,
+            1,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.32573656737804413,
+          "no_concepts_nll": 0.33419403433799744,
+          "no_pq_nll": 0.3341870456933975,
+          "no_continuous_nll": 0.32572828233242035,
+          "one_visit_nll": 0.3256209194660187,
+          "perplexity": 1.385050453337103,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.008457466959953308,
+          "pq_ablation_delta_nll": 0.008450478315353394,
+          "continuous_ablation_delta_nll": -8.285045623779297e-06,
+          "one_visit_delta_nll": -0.00011564791202545166,
+          "latent_visit_mse": [
+            0.5013838708400726,
+            0.501707524061203
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.6345819532871246,
+          "code_counts": [
+            3,
+            26,
+            1,
+            10,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.21893301606178284,
+          "no_concepts_nll": 0.22219453752040863,
+          "no_pq_nll": 0.22204972803592682,
+          "no_continuous_nll": 0.21897896379232407,
+          "one_visit_nll": 0.21901722997426987,
+          "perplexity": 1.2447478957788247,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.0032615214586257935,
+          "pq_ablation_delta_nll": 0.003116711974143982,
+          "continuous_ablation_delta_nll": 4.594773054122925e-05,
+          "one_visit_delta_nll": 8.421391248703003e-05,
+          "latent_visit_mse": [
+            0.4980738162994385,
+            0.4993463158607483
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.6287840306758881,
+          "code_counts": [
+            1,
+            32,
+            0,
+            7,
+            0,
+            1,
+            1,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 1,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 1,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 1
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0026846.json",
+      "sha256": "d804b6801d1a745d63cf9c83d0238197edccb30523808607438947309afe8b14",
+      "step": 26846,
+      "wall_time": 1791765470.043541,
+      "families": {
+        "text": {
+          "nll": 4.910151481628418,
+          "no_concepts_nll": 4.914776086807251,
+          "no_pq_nll": 4.91205358505249,
+          "no_continuous_nll": 4.912813901901245,
+          "one_visit_nll": 4.910183429718018,
+          "perplexity": 135.65996284415343,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.004624605178833008,
+          "pq_ablation_delta_nll": 0.0019021034240722656,
+          "continuous_ablation_delta_nll": 0.0026624202728271484,
+          "one_visit_delta_nll": 3.1948089599609375e-05,
+          "latent_visit_mse": [
+            0.7786746025085449,
+            0.7790584564208984
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7968606650829315,
+          "code_counts": [
+            27,
+            27,
+            23,
+            7,
+            1,
+            7,
+            4,
+            0
+          ]
+        },
+        "math": {
+          "nll": 1.6195337091173445,
+          "no_concepts_nll": 1.6175271272659302,
+          "no_pq_nll": 1.6188764912741525,
+          "no_continuous_nll": 1.6182207890919276,
+          "one_visit_nll": 1.6196001257215227,
+          "perplexity": 5.050734655874252,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.002006581851414335,
+          "pq_ablation_delta_nll": -0.0006572178431920594,
+          "continuous_ablation_delta_nll": -0.0013129200254169415,
+          "one_visit_delta_nll": 6.641660417816553e-05,
+          "latent_visit_mse": [
+            0.5775894323984782,
+            0.5784147580464681
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.6541124880313873,
+          "code_counts": [
+            6,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.31717486679553986,
+          "no_concepts_nll": 0.31570298969745636,
+          "no_pq_nll": 0.31564781069755554,
+          "no_continuous_nll": 0.31722258031368256,
+          "one_visit_nll": 0.31714461743831635,
+          "perplexity": 1.3732426854788113,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.001471877098083496,
+          "pq_ablation_delta_nll": -0.001527056097984314,
+          "continuous_ablation_delta_nll": 4.7713518142700195e-05,
+          "one_visit_delta_nll": -3.0249357223510742e-05,
+          "latent_visit_mse": [
+            0.5311463177204132,
+            0.5327572226524353
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.6713026762008667,
+          "code_counts": [
+            28,
+            0,
+            0,
+            8,
+            4,
+            2,
+            0,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.2343837022781372,
+          "no_concepts_nll": 0.23338158428668976,
+          "no_pq_nll": 0.2334621101617813,
+          "no_continuous_nll": 0.2342778965830803,
+          "one_visit_nll": 0.2342953383922577,
+          "perplexity": 1.2641294485116628,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.0010021179914474487,
+          "pq_ablation_delta_nll": -0.000921592116355896,
+          "continuous_ablation_delta_nll": -0.00010580569505691528,
+          "one_visit_delta_nll": -8.83638858795166e-05,
+          "latent_visit_mse": [
+            0.5309609174728394,
+            0.5344060659408569
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.6726273596286774,
+          "code_counts": [
+            32,
+            0,
+            0,
+            7,
+            2,
+            1,
+            0,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 0,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 0,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 0
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0029749.json",
+      "sha256": "e6e571deac6a1f29bc189fe85b0cf8f9c14192b122fbe260e3dd623895e3ff98",
+      "step": 29749,
+      "wall_time": 1791767294.8890061,
+      "families": {
+        "text": {
+          "nll": 4.881338119506836,
+          "no_concepts_nll": 4.8842995166778564,
+          "no_pq_nll": 4.881956338882446,
+          "no_continuous_nll": 4.883513927459717,
+          "one_visit_nll": 4.881214141845703,
+          "perplexity": 131.80691934400727,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.002961397171020508,
+          "pq_ablation_delta_nll": 0.0006182193756103516,
+          "continuous_ablation_delta_nll": 0.0021758079528808594,
+          "one_visit_delta_nll": -0.0001239776611328125,
+          "latent_visit_mse": [
+            0.7860144376754761,
+            0.7874552011489868
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7991345822811127,
+          "code_counts": [
+            14,
+            3,
+            5,
+            16,
+            46,
+            11,
+            1,
+            0
+          ]
+        },
+        "math": {
+          "nll": 1.610618727547782,
+          "no_concepts_nll": 1.6075456142425537,
+          "no_pq_nll": 1.6112161704472132,
+          "no_continuous_nll": 1.6069795063563757,
+          "one_visit_nll": 1.610832691192627,
+          "perplexity": 5.005907562751677,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.0030731133052281923,
+          "pq_ablation_delta_nll": 0.0005974428994313108,
+          "continuous_ablation_delta_nll": -0.00363922119140625,
+          "one_visit_delta_nll": 0.00021396364484504993,
+          "latent_visit_mse": [
+            0.6194228132565817,
+            0.617596705754598
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.6869103312492371,
+          "code_counts": [
+            4,
+            0,
+            2,
+            0,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.2577200308442116,
+          "no_concepts_nll": 0.26270709186792374,
+          "no_pq_nll": 0.26264017820358276,
+          "no_continuous_nll": 0.2577788308262825,
+          "one_visit_nll": 0.25777268409729004,
+          "perplexity": 1.2939764944000536,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.004987061023712158,
+          "pq_ablation_delta_nll": 0.004920147359371185,
+          "continuous_ablation_delta_nll": 5.879998207092285e-05,
+          "one_visit_delta_nll": 5.265325307846069e-05,
+          "latent_visit_mse": [
+            0.5999402701854706,
+            0.6009615361690521
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7306392788887024,
+          "code_counts": [
+            0,
+            7,
+            12,
+            1,
+            0,
+            17,
+            5,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.1946725696325302,
+          "no_concepts_nll": 0.1932707130908966,
+          "no_pq_nll": 0.1933419182896614,
+          "no_continuous_nll": 0.1945658028125763,
+          "one_visit_nll": 0.1946604698896408,
+          "perplexity": 1.2149131219068623,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.001401856541633606,
+          "pq_ablation_delta_nll": -0.001330651342868805,
+          "continuous_ablation_delta_nll": -0.00010676681995391846,
+          "one_visit_delta_nll": -1.2099742889404297e-05,
+          "latent_visit_mse": [
+            0.5962555110454559,
+            0.596266508102417
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.729037880897522,
+          "code_counts": [
+            0,
+            4,
+            6,
+            2,
+            0,
+            21,
+            9,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 1,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 1,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 1
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0032570.json",
+      "sha256": "c7df522d02c660f0c505299f244aedce5ae650d025fca015feebefac6d1f4e27",
+      "step": 32570,
+      "wall_time": 1791769118.645652,
+      "families": {
+        "text": {
+          "nll": 4.906765460968018,
+          "no_concepts_nll": 4.911076545715332,
+          "no_pq_nll": 4.907606840133667,
+          "no_continuous_nll": 4.9101457595825195,
+          "one_visit_nll": 4.906934976577759,
+          "perplexity": 135.20139221012565,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.004311084747314453,
+          "pq_ablation_delta_nll": 0.0008413791656494141,
+          "continuous_ablation_delta_nll": 0.003380298614501953,
+          "one_visit_delta_nll": 0.00016951560974121094,
+          "latent_visit_mse": [
+            0.7799060642719269,
+            0.7806849777698517
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.794774055480957,
+          "code_counts": [
+            18,
+            13,
+            17,
+            14,
+            15,
+            19,
+            0,
+            0
+          ]
+        },
+        "math": {
+          "nll": 1.606571180479867,
+          "no_concepts_nll": 1.6049061673028129,
+          "no_pq_nll": 1.6066755907876151,
+          "no_continuous_nll": 1.6047762632369995,
+          "one_visit_nll": 1.606713891029358,
+          "perplexity": 4.98568686599044,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.001665013177054142,
+          "pq_ablation_delta_nll": 0.000104410307748104,
+          "continuous_ablation_delta_nll": -0.0017949172428675109,
+          "one_visit_delta_nll": 0.00014271054949088757,
+          "latent_visit_mse": [
+            0.6661699215571085,
+            0.6637433369954427
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.7295818030834198,
+          "code_counts": [
+            4,
+            0,
+            2,
+            1,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.2422652766108513,
+          "no_concepts_nll": 0.24317139387130737,
+          "no_pq_nll": 0.24309056252241135,
+          "no_continuous_nll": 0.24235077947378159,
+          "one_visit_nll": 0.2421962395310402,
+          "perplexity": 1.2741321454460695,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.0009061172604560852,
+          "pq_ablation_delta_nll": 0.0008252859115600586,
+          "continuous_ablation_delta_nll": 8.550286293029785e-05,
+          "one_visit_delta_nll": -6.903707981109619e-05,
+          "latent_visit_mse": [
+            0.5664994716644287,
+            0.5675414502620697
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7223328948020935,
+          "code_counts": [
+            8,
+            3,
+            7,
+            0,
+            1,
+            19,
+            4,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.19082698971033096,
+          "no_concepts_nll": 0.19018831104040146,
+          "no_pq_nll": 0.19029072672128677,
+          "no_continuous_nll": 0.19072045385837555,
+          "one_visit_nll": 0.19084960222244263,
+          "perplexity": 1.2102500482558929,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.0006386786699295044,
+          "pq_ablation_delta_nll": -0.0005362629890441895,
+          "continuous_ablation_delta_nll": -0.00010653585195541382,
+          "one_visit_delta_nll": 2.261251211166382e-05,
+          "latent_visit_mse": [
+            0.5641157925128937,
+            0.5649528503417969
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.717167317867279,
+          "code_counts": [
+            7,
+            4,
+            5,
+            1,
+            2,
+            19,
+            4,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 1,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 1,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 1
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0035390.json",
+      "sha256": "a67a0199103261908b1763e7d1d75a84294108f081f2a90b3635f096ded5571c",
+      "step": 35390,
+      "wall_time": 1791770944.0158982,
+      "families": {
+        "text": {
+          "nll": 4.899605989456177,
+          "no_concepts_nll": 4.902940511703491,
+          "no_pq_nll": 4.900710344314575,
+          "no_continuous_nll": 4.901584625244141,
+          "one_visit_nll": 4.899608373641968,
+          "perplexity": 134.23687851830502,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.003334522247314453,
+          "pq_ablation_delta_nll": 0.0011043548583984375,
+          "continuous_ablation_delta_nll": 0.001978635787963867,
+          "one_visit_delta_nll": 2.384185791015625e-06,
+          "latent_visit_mse": [
+            0.7815962731838226,
+            0.7825908362865448
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7897890210151672,
+          "code_counts": [
+            14,
+            13,
+            3,
+            4,
+            36,
+            18,
+            8,
+            0
+          ]
+        },
+        "math": {
+          "nll": 1.5430378913879395,
+          "no_concepts_nll": 1.538749405315944,
+          "no_pq_nll": 1.5434156485966273,
+          "no_continuous_nll": 1.5383944852011544,
+          "one_visit_nll": 1.5434187139783586,
+          "perplexity": 4.678782335661528,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.00428848607199539,
+          "pq_ablation_delta_nll": 0.00037775720868782336,
+          "continuous_ablation_delta_nll": -0.0046434061867850485,
+          "one_visit_delta_nll": 0.0003808225904191609,
+          "latent_visit_mse": [
+            0.6451928416887919,
+            0.6419887145360311
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.7036692202091217,
+          "code_counts": [
+            3,
+            0,
+            1,
+            1,
+            0,
+            1,
+            2,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.26767051219940186,
+          "no_concepts_nll": 0.268855020403862,
+          "no_pq_nll": 0.26885513961315155,
+          "no_continuous_nll": 0.26766106486320496,
+          "one_visit_nll": 0.26756344735622406,
+          "perplexity": 1.3069164560376088,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.001184508204460144,
+          "pq_ablation_delta_nll": 0.0011846274137496948,
+          "continuous_ablation_delta_nll": -9.447336196899414e-06,
+          "one_visit_delta_nll": -0.00010706484317779541,
+          "latent_visit_mse": [
+            0.6508589386940002,
+            0.651026725769043
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7433085441589355,
+          "code_counts": [
+            12,
+            8,
+            7,
+            2,
+            4,
+            7,
+            2,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.18668362498283386,
+          "no_concepts_nll": 0.18575084954500198,
+          "no_pq_nll": 0.18569552153348923,
+          "no_continuous_nll": 0.18671461194753647,
+          "one_visit_nll": 0.18671473860740662,
+          "perplexity": 1.2052459150280757,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.0009327754378318787,
+          "pq_ablation_delta_nll": -0.000988103449344635,
+          "continuous_ablation_delta_nll": 3.09869647026062e-05,
+          "one_visit_delta_nll": 3.1113624572753906e-05,
+          "latent_visit_mse": [
+            0.6550839245319366,
+            0.6548787951469421
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7418120503425598,
+          "code_counts": [
+            10,
+            10,
+            5,
+            1,
+            5,
+            8,
+            3,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 1,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 1,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 1
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0038168.json",
+      "sha256": "6417a82113ea40f1bc6f6553aa15e4b0ae013e5594ad624a164ac80190466752",
+      "step": 38168,
+      "wall_time": 1791772769.21425,
+      "families": {
+        "text": {
+          "nll": 4.900507211685181,
+          "no_concepts_nll": 4.9049787521362305,
+          "no_pq_nll": 4.902356863021851,
+          "no_continuous_nll": 4.903081893920898,
+          "one_visit_nll": 4.900526523590088,
+          "perplexity": 134.35791030725528,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.004471540451049805,
+          "pq_ablation_delta_nll": 0.0018496513366699219,
+          "continuous_ablation_delta_nll": 0.0025746822357177734,
+          "one_visit_delta_nll": 1.9311904907226562e-05,
+          "latent_visit_mse": [
+            0.7931250035762787,
+            0.7932712733745575
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7976562082767487,
+          "code_counts": [
+            4,
+            20,
+            1,
+            6,
+            14,
+            30,
+            11,
+            10
+          ]
+        },
+        "math": {
+          "nll": 1.6078983545303345,
+          "no_concepts_nll": 1.6018112046378,
+          "no_pq_nll": 1.60910964012146,
+          "no_continuous_nll": 1.6005840131214686,
+          "one_visit_nll": 1.608249000140599,
+          "perplexity": 4.9923081330377554,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.00608714989253456,
+          "pq_ablation_delta_nll": 0.0012112855911254883,
+          "continuous_ablation_delta_nll": -0.007314341408865888,
+          "one_visit_delta_nll": 0.00035064561026443286,
+          "latent_visit_mse": [
+            0.6509237289428711,
+            0.6484352350234985
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.721615731716156,
+          "code_counts": [
+            3,
+            0,
+            1,
+            2,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.25216250121593475,
+          "no_concepts_nll": 0.2553415521979332,
+          "no_pq_nll": 0.2553993985056877,
+          "no_continuous_nll": 0.2521146908402443,
+          "one_visit_nll": 0.25215715914964676,
+          "perplexity": 1.286805127693579,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.0031790509819984436,
+          "pq_ablation_delta_nll": 0.00323689728975296,
+          "continuous_ablation_delta_nll": -4.7810375690460205e-05,
+          "one_visit_delta_nll": -5.342066287994385e-06,
+          "latent_visit_mse": [
+            0.6618022322654724,
+            0.6638278067111969
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7360886633396149,
+          "code_counts": [
+            19,
+            6,
+            0,
+            5,
+            1,
+            2,
+            9,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.15037187188863754,
+          "no_concepts_nll": 0.14916182681918144,
+          "no_pq_nll": 0.1490807868540287,
+          "no_continuous_nll": 0.15040775015950203,
+          "one_visit_nll": 0.1502884179353714,
+          "perplexity": 1.1622663765666437,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.0012100450694561005,
+          "pq_ablation_delta_nll": -0.001291085034608841,
+          "continuous_ablation_delta_nll": 3.5878270864486694e-05,
+          "one_visit_delta_nll": -8.34539532661438e-05,
+          "latent_visit_mse": [
+            0.6701142489910126,
+            0.6725696325302124
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7341366410255432,
+          "code_counts": [
+            13,
+            7,
+            0,
+            4,
+            1,
+            1,
+            16,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 2,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 2,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 2
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0040934.json",
+      "sha256": "47ed083a89b6cdcf4d50569ddf1be035710f4a197c8782407a5a65f4d740ef57",
+      "step": 40934,
+      "wall_time": 1791774594.856191,
+      "families": {
+        "text": {
+          "nll": 4.866448640823364,
+          "no_concepts_nll": 4.868319511413574,
+          "no_pq_nll": 4.865809202194214,
+          "no_continuous_nll": 4.868828535079956,
+          "one_visit_nll": 4.86661171913147,
+          "perplexity": 129.8589213539488,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.001870870590209961,
+          "pq_ablation_delta_nll": -0.0006394386291503906,
+          "continuous_ablation_delta_nll": 0.002379894256591797,
+          "one_visit_delta_nll": 0.00016307830810546875,
+          "latent_visit_mse": [
+            0.738752692937851,
+            0.7390337884426117
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7593044340610504,
+          "code_counts": [
+            3,
+            22,
+            23,
+            0,
+            1,
+            3,
+            41,
+            3
+          ]
+        },
+        "math": {
+          "nll": 1.627212711742946,
+          "no_concepts_nll": 1.6265566859926497,
+          "no_pq_nll": 1.6296672480446952,
+          "no_continuous_nll": 1.624080743108477,
+          "one_visit_nll": 1.6277455602373396,
+          "perplexity": 5.089668556000557,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.0006560257502963296,
+          "pq_ablation_delta_nll": 0.0024545363017491884,
+          "continuous_ablation_delta_nll": -0.0031319686344690734,
+          "one_visit_delta_nll": 0.0005328484943936118,
+          "latent_visit_mse": [
+            0.7127210895220438,
+            0.7107892036437988
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.7395375967025757,
+          "code_counts": [
+            3,
+            0,
+            2,
+            0,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.25877366960048676,
+          "no_concepts_nll": 0.25989338010549545,
+          "no_pq_nll": 0.25980572402477264,
+          "no_continuous_nll": 0.2588191255927086,
+          "one_visit_nll": 0.25882525742053986,
+          "perplexity": 1.2953405966935876,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.0011197105050086975,
+          "pq_ablation_delta_nll": 0.0010320544242858887,
+          "continuous_ablation_delta_nll": 4.5455992221832275e-05,
+          "one_visit_delta_nll": 5.1587820053100586e-05,
+          "latent_visit_mse": [
+            0.6803185641765594,
+            0.6799322068691254
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7714531719684601,
+          "code_counts": [
+            11,
+            0,
+            4,
+            1,
+            0,
+            5,
+            21,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.16659145057201385,
+          "no_concepts_nll": 0.16801398992538452,
+          "no_pq_nll": 0.16789660602808,
+          "no_continuous_nll": 0.16664933413267136,
+          "one_visit_nll": 0.1665962040424347,
+          "perplexity": 1.1812715588906793,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.0014225393533706665,
+          "pq_ablation_delta_nll": 0.0013051554560661316,
+          "continuous_ablation_delta_nll": 5.788356065750122e-05,
+          "one_visit_delta_nll": 4.753470420837402e-06,
+          "latent_visit_mse": [
+            0.6877695918083191,
+            0.687966912984848
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7698841691017151,
+          "code_counts": [
+            5,
+            0,
+            3,
+            2,
+            0,
+            3,
+            29,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 1,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 1,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 1
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0043750.json",
+      "sha256": "d3f9221d37384e7aa8c31166d9bd14a597371b3083b0ce1fdd53d3b003a58666",
+      "step": 43750,
+      "wall_time": 1791776420.9964118,
+      "families": {
+        "text": {
+          "nll": 4.900021314620972,
+          "no_concepts_nll": 4.9039201736450195,
+          "no_pq_nll": 4.901604413986206,
+          "no_continuous_nll": 4.902199983596802,
+          "one_visit_nll": 4.90022087097168,
+          "perplexity": 134.29264205119486,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.0038988590240478516,
+          "pq_ablation_delta_nll": 0.001583099365234375,
+          "continuous_ablation_delta_nll": 0.002178668975830078,
+          "one_visit_delta_nll": 0.0001995563507080078,
+          "latent_visit_mse": [
+            0.7442911267280579,
+            0.7437430024147034
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7727455496788025,
+          "code_counts": [
+            1,
+            1,
+            7,
+            5,
+            15,
+            7,
+            5,
+            55
+          ]
+        },
+        "math": {
+          "nll": 1.5938111203057426,
+          "no_concepts_nll": 1.5887332473482405,
+          "no_pq_nll": 1.5927316120692663,
+          "no_continuous_nll": 1.5897634029388428,
+          "one_visit_nll": 1.5939454180853707,
+          "perplexity": 4.922473363315032,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.005077872957502061,
+          "pq_ablation_delta_nll": -0.0010795082364762898,
+          "continuous_ablation_delta_nll": -0.0040477173668997946,
+          "one_visit_delta_nll": 0.00013429777962814526,
+          "latent_visit_mse": [
+            0.6341608762741089,
+            0.6319685777028402
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.7086245715618134,
+          "code_counts": [
+            1,
+            0,
+            2,
+            1,
+            0,
+            2,
+            0,
+            2
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.26232488453388214,
+          "no_concepts_nll": 0.2624173015356064,
+          "no_pq_nll": 0.2625744193792343,
+          "no_continuous_nll": 0.26217687129974365,
+          "one_visit_nll": 0.26238246262073517,
+          "perplexity": 1.2999488070943017,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 9.241700172424316e-05,
+          "pq_ablation_delta_nll": 0.00024953484535217285,
+          "continuous_ablation_delta_nll": -0.00014801323413848877,
+          "one_visit_delta_nll": 5.7578086853027344e-05,
+          "latent_visit_mse": [
+            0.6996083855628967,
+            0.7017647624015808
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.782894104719162,
+          "code_counts": [
+            11,
+            3,
+            2,
+            23,
+            1,
+            2,
+            0,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.1690250262618065,
+          "no_concepts_nll": 0.16872742027044296,
+          "no_pq_nll": 0.16873954236507416,
+          "no_continuous_nll": 0.1690066233277321,
+          "one_visit_nll": 0.16894491761922836,
+          "perplexity": 1.184149773395395,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.0002976059913635254,
+          "pq_ablation_delta_nll": -0.0002854838967323303,
+          "continuous_ablation_delta_nll": -1.8402934074401855e-05,
+          "one_visit_delta_nll": -8.0108642578125e-05,
+          "latent_visit_mse": [
+            0.704859048128128,
+            0.7075320780277252
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7846009135246277,
+          "code_counts": [
+            7,
+            2,
+            0,
+            24,
+            1,
+            8,
+            0,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 2,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 2,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 2
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0046433.json",
+      "sha256": "f1065978265bb32d0c04f8b0ba18dab78f91950cd967e566d726b1178bc7990b",
+      "step": 46433,
+      "wall_time": 1791778246.489717,
+      "families": {
+        "text": {
+          "nll": 4.9056313037872314,
+          "no_concepts_nll": 4.91085958480835,
+          "no_pq_nll": 4.907063245773315,
+          "no_continuous_nll": 4.90928316116333,
+          "one_visit_nll": 4.905949592590332,
+          "perplexity": 135.0481395030549,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.005228281021118164,
+          "pq_ablation_delta_nll": 0.0014319419860839844,
+          "continuous_ablation_delta_nll": 0.003651857376098633,
+          "one_visit_delta_nll": 0.00031828880310058594,
+          "latent_visit_mse": [
+            0.7243183255195618,
+            0.7236131131649017
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7592771053314209,
+          "code_counts": [
+            9,
+            4,
+            59,
+            4,
+            0,
+            3,
+            10,
+            7
+          ]
+        },
+        "math": {
+          "nll": 1.5153074775423323,
+          "no_concepts_nll": 1.5099012511117118,
+          "no_pq_nll": 1.5126886367797852,
+          "no_continuous_nll": 1.5125081879752023,
+          "one_visit_nll": 1.5151907886777605,
+          "perplexity": 4.550820186751491,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.005406226430620498,
+          "pq_ablation_delta_nll": -0.0026188407625471477,
+          "continuous_ablation_delta_nll": -0.0027992895671300477,
+          "one_visit_delta_nll": -0.00011668886457183447,
+          "latent_visit_mse": [
+            0.6787340442339579,
+            0.677274247010549
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.7325729429721832,
+          "code_counts": [
+            0,
+            0,
+            3,
+            1,
+            0,
+            2,
+            0,
+            2
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.26861990988254547,
+          "no_concepts_nll": 0.270855575799942,
+          "no_pq_nll": 0.2709500640630722,
+          "no_continuous_nll": 0.26853393018245697,
+          "one_visit_nll": 0.26864466071128845,
+          "perplexity": 1.3081578286779443,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.0022356659173965454,
+          "pq_ablation_delta_nll": 0.0023301541805267334,
+          "continuous_ablation_delta_nll": -8.597970008850098e-05,
+          "one_visit_delta_nll": 2.4750828742980957e-05,
+          "latent_visit_mse": [
+            0.661081999540329,
+            0.6612299084663391
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7811292409896851,
+          "code_counts": [
+            20,
+            2,
+            6,
+            2,
+            4,
+            4,
+            0,
+            4
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.20749767124652863,
+          "no_concepts_nll": 0.2081989422440529,
+          "no_pq_nll": 0.20807630568742752,
+          "no_continuous_nll": 0.20759068429470062,
+          "one_visit_nll": 0.20753809809684753,
+          "perplexity": 1.2305948510847242,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.0007012709975242615,
+          "pq_ablation_delta_nll": 0.0005786344408988953,
+          "continuous_ablation_delta_nll": 9.301304817199707e-05,
+          "one_visit_delta_nll": 4.042685031890869e-05,
+          "latent_visit_mse": [
+            0.6722034215927124,
+            0.6729169189929962
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7770711481571198,
+          "code_counts": [
+            15,
+            1,
+            7,
+            2,
+            3,
+            7,
+            0,
+            7
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 0,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 0,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 0
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0049094.json",
+      "sha256": "fce66e779e56629264ac1091264b6007b2ac1d7f0c76d819ef8d81e6bf18f23f",
+      "step": 49094,
+      "wall_time": 1791780073.1390982,
+      "families": {
+        "text": {
+          "nll": 4.847548723220825,
+          "no_concepts_nll": 4.851887464523315,
+          "no_pq_nll": 4.849318504333496,
+          "no_continuous_nll": 4.849996328353882,
+          "one_visit_nll": 4.84767746925354,
+          "perplexity": 127.42764626177953,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.004338741302490234,
+          "pq_ablation_delta_nll": 0.0017697811126708984,
+          "continuous_ablation_delta_nll": 0.0024476051330566406,
+          "one_visit_delta_nll": 0.00012874603271484375,
+          "latent_visit_mse": [
+            0.7100173532962799,
+            0.709519773721695
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7599399089813232,
+          "code_counts": [
+            6,
+            4,
+            6,
+            30,
+            11,
+            8,
+            11,
+            20
+          ]
+        },
+        "math": {
+          "nll": 1.4480949810573034,
+          "no_concepts_nll": 1.4450025047574724,
+          "no_pq_nll": 1.4487306731087821,
+          "no_continuous_nll": 1.4444025244031633,
+          "one_visit_nll": 1.4485804183142525,
+          "perplexity": 4.255000931981117,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.003092476299831004,
+          "pq_ablation_delta_nll": 0.0006356920514787312,
+          "continuous_ablation_delta_nll": -0.003692456654140086,
+          "one_visit_delta_nll": 0.0004854372569491616,
+          "latent_visit_mse": [
+            0.6513416171073914,
+            0.6470932364463806
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.7222858667373657,
+          "code_counts": [
+            0,
+            0,
+            4,
+            2,
+            0,
+            2,
+            0,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.22517836838960648,
+          "no_concepts_nll": 0.22536686807870865,
+          "no_pq_nll": 0.22551298141479492,
+          "no_continuous_nll": 0.22504083067178726,
+          "one_visit_nll": 0.2251347079873085,
+          "perplexity": 1.2525461109007041,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.00018849968910217285,
+          "pq_ablation_delta_nll": 0.00033461302518844604,
+          "continuous_ablation_delta_nll": -0.00013753771781921387,
+          "one_visit_delta_nll": -4.366040229797363e-05,
+          "latent_visit_mse": [
+            0.6346544921398163,
+            0.6349064111709595
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7497170865535736,
+          "code_counts": [
+            18,
+            1,
+            3,
+            5,
+            3,
+            3,
+            6,
+            3
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.15492181479930878,
+          "no_concepts_nll": 0.15240230038762093,
+          "no_pq_nll": 0.15247320756316185,
+          "no_continuous_nll": 0.15483445301651955,
+          "one_visit_nll": 0.15489820018410683,
+          "perplexity": 1.1675666711019075,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.002519514411687851,
+          "pq_ablation_delta_nll": -0.002448607236146927,
+          "continuous_ablation_delta_nll": -8.736178278923035e-05,
+          "one_visit_delta_nll": -2.3614615201950073e-05,
+          "latent_visit_mse": [
+            0.6473282873630524,
+            0.6472162008285522
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7494792342185974,
+          "code_counts": [
+            9,
+            1,
+            2,
+            4,
+            0,
+            4,
+            16,
+            6
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 2,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 2,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 2
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0051718.json",
+      "sha256": "a8550f4c985a1d092b6949e4060cdf3d73ce0f456b92b22bdc9b1c29cfc8e568",
+      "step": 51718,
+      "wall_time": 1791781899.269554,
+      "families": {
+        "text": {
+          "nll": 4.88309121131897,
+          "no_concepts_nll": 4.887840270996094,
+          "no_pq_nll": 4.885629892349243,
+          "no_continuous_nll": 4.885181188583374,
+          "one_visit_nll": 4.883378505706787,
+          "perplexity": 132.03819163664178,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.0047490596771240234,
+          "pq_ablation_delta_nll": 0.0025386810302734375,
+          "continuous_ablation_delta_nll": 0.002089977264404297,
+          "one_visit_delta_nll": 0.0002872943878173828,
+          "latent_visit_mse": [
+            0.7113825976848602,
+            0.7103791832923889
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7593359649181366,
+          "code_counts": [
+            6,
+            8,
+            0,
+            3,
+            7,
+            21,
+            11,
+            40
+          ]
+        },
+        "math": {
+          "nll": 1.461734618459429,
+          "no_concepts_nll": 1.458556021962847,
+          "no_pq_nll": 1.4608482122421265,
+          "no_continuous_nll": 1.4594398396355766,
+          "one_visit_nll": 1.4618357249668665,
+          "perplexity": 4.313435207079328,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.0031785964965820312,
+          "pq_ablation_delta_nll": -0.0008864062173026266,
+          "continuous_ablation_delta_nll": -0.002294778823852539,
+          "one_visit_delta_nll": 0.00010110650743744287,
+          "latent_visit_mse": [
+            0.6218238274256388,
+            0.6170567671457926
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.6948279440402985,
+          "code_counts": [
+            0,
+            0,
+            3,
+            1,
+            1,
+            2,
+            1,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.2838717848062515,
+          "no_concepts_nll": 0.2769973874092102,
+          "no_pq_nll": 0.27704039216041565,
+          "no_continuous_nll": 0.2838284820318222,
+          "one_visit_nll": 0.28366099298000336,
+          "perplexity": 1.3282626163858744,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.006874397397041321,
+          "pq_ablation_delta_nll": -0.0068313926458358765,
+          "continuous_ablation_delta_nll": -4.330277442932129e-05,
+          "one_visit_delta_nll": -0.00021079182624816895,
+          "latent_visit_mse": [
+            0.6395522654056549,
+            0.6388591825962067
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7466322779655457,
+          "code_counts": [
+            4,
+            8,
+            3,
+            10,
+            2,
+            6,
+            0,
+            9
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.17711259424686432,
+          "no_concepts_nll": 0.1770419031381607,
+          "no_pq_nll": 0.1768415868282318,
+          "no_continuous_nll": 0.17725729197263718,
+          "one_visit_nll": 0.1770944595336914,
+          "perplexity": 1.193765496687495,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -7.069110870361328e-05,
+          "pq_ablation_delta_nll": -0.0002710074186325073,
+          "continuous_ablation_delta_nll": 0.00014469772577285767,
+          "one_visit_delta_nll": -1.8134713172912598e-05,
+          "latent_visit_mse": [
+            0.6493708789348602,
+            0.649149090051651
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7457678318023682,
+          "code_counts": [
+            1,
+            8,
+            4,
+            6,
+            3,
+            9,
+            0,
+            11
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 3,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 3,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 3
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    },
+    {
+      "file": "evaluation_0054168.json",
+      "sha256": "6f103e7d707fc538173843e31930dcb153b0b4a36312ea9cb4293638a58aaa51",
+      "step": 54168,
+      "wall_time": 1791783732.4081469,
+      "families": {
+        "text": {
+          "nll": 4.882378578186035,
+          "no_concepts_nll": 4.888545036315918,
+          "no_pq_nll": 4.886035203933716,
+          "no_continuous_nll": 4.88474440574646,
+          "one_visit_nll": 4.882860898971558,
+          "perplexity": 131.94413036603845,
+          "supervised_tokens": 768,
+          "concept_ablation_delta_nll": 0.0061664581298828125,
+          "pq_ablation_delta_nll": 0.003656625747680664,
+          "continuous_ablation_delta_nll": 0.0023658275604248047,
+          "one_visit_delta_nll": 0.00048232078552246094,
+          "latent_visit_mse": [
+            0.7015250027179718,
+            0.700054407119751
+          ],
+          "latent_group_count": 94,
+          "pooled_coordinate_std": 0.7588272988796234,
+          "code_counts": [
+            6,
+            1,
+            30,
+            11,
+            21,
+            22,
+            2,
+            3
+          ]
+        },
+        "math": {
+          "nll": 1.4641226189477103,
+          "no_concepts_nll": 1.460031509399414,
+          "no_pq_nll": 1.4636296544756209,
+          "no_continuous_nll": 1.460518513407026,
+          "one_visit_nll": 1.4642707109451294,
+          "perplexity": 4.3237480010377425,
+          "supervised_tokens": 14,
+          "concept_ablation_delta_nll": -0.004091109548296279,
+          "pq_ablation_delta_nll": -0.0004929644720894633,
+          "continuous_ablation_delta_nll": -0.0036041055406843547,
+          "one_visit_delta_nll": 0.0001480919974190531,
+          "latent_visit_mse": [
+            0.6474805672963461,
+            0.6423229773839315
+          ],
+          "latent_group_count": 6,
+          "pooled_coordinate_std": 0.7194986343383789,
+          "code_counts": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            2,
+            1,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.21407341212034225,
+          "no_concepts_nll": 0.21257737278938293,
+          "no_pq_nll": 0.21261870861053467,
+          "no_continuous_nll": 0.2140202522277832,
+          "one_visit_nll": 0.21398840844631195,
+          "perplexity": 1.2387135880466051,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": -0.00149603933095932,
+          "pq_ablation_delta_nll": -0.0014547035098075867,
+          "continuous_ablation_delta_nll": -5.3159892559051514e-05,
+          "one_visit_delta_nll": -8.500367403030396e-05,
+          "latent_visit_mse": [
+            0.6192481815814972,
+            0.6194880902767181
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7459446489810944,
+          "code_counts": [
+            11,
+            10,
+            10,
+            2,
+            8,
+            1,
+            0,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.1407916098833084,
+          "no_concepts_nll": 0.1409279704093933,
+          "no_pq_nll": 0.14096076041460037,
+          "no_continuous_nll": 0.14073428511619568,
+          "one_visit_nll": 0.14081470668315887,
+          "perplexity": 1.1511847274673896,
+          "supervised_tokens": 164,
+          "concept_ablation_delta_nll": 0.0001363605260848999,
+          "pq_ablation_delta_nll": 0.00016915053129196167,
+          "continuous_ablation_delta_nll": -5.7324767112731934e-05,
+          "one_visit_delta_nll": 2.3096799850463867e-05,
+          "latent_visit_mse": [
+            0.6362344920635223,
+            0.6367575526237488
+          ],
+          "latent_group_count": 40,
+          "pooled_coordinate_std": 0.7436209917068481,
+          "code_counts": [
+            10,
+            7,
+            5,
+            1,
+            14,
+            4,
+            0,
+            1
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "n": 16,
+          "correct": 3,
+          "planned_n": 16,
+          "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+          "raw_exact_correct": 3,
+          "by_module": {
+            "algebra__linear_1d": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__add_sub_multiple": {
+              "n": 4,
+              "correct": 0
+            },
+            "arithmetic__mul": {
+              "n": 4,
+              "correct": 0
+            },
+            "comparison__sort": {
+              "n": 4,
+              "correct": 3
+            }
+          }
+        },
+        "sudoku_easy": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        },
+        "sudoku_hard": {
+          "n": 2,
+          "correct": 0,
+          "planned_n": 2,
+          "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+          "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+        }
+      },
+      "memory_writes": 0
+    }
+  ],
+  "latest_training": {
+    "schema_version": 1,
+    "run_id": "pretrain_16h",
+    "source_sha256": "44012c37f54b48a707f75ad309fcdbb81da71d6fcfddb67470abf6a1ccfd82f5",
+    "data_sha256": "def40ad02c456e93b227be6d43fb91e91eb4735449d0cda2d709a6f60f0568f2",
+    "split": "train",
+    "step": 54480,
+    "tokens": 115059825,
+    "wall_time": 1791783980.9767392,
+    "loss": {
+      "total": 4.407194137573242,
+      "token": 3.68820858001709,
+      "latent": 0.6842543482780457,
+      "vq": 7.865839958190918,
+      "chunk": 5.719016075134277,
+      "explore": 0.0,
+      "selector": 0.0
+    },
+    "dense_grad_norm": 3.297384262084961,
+    "dense_grad_norm_post": 1.0,
+    "dense_clip_factor": 0.30327068989153616,
+    "engram_grad_norm": 0.3902057111263275,
+    "engram_grad_norm_post": 0.3902057111263275,
+    "engram_clip_factor": 1.0,
+    "engram_rows_touched": 9444,
+    "component_grad_norms": {
+      "embedding": 1.919342232924129,
+      "engram": 0.31234139241610454,
+      "e1": 1.9805899661474486,
+      "e2": 0.3634627211444024,
+      "exit_reader": 0.22131148185267657,
+      "e3": 0.6657167211859076,
+      "pooler": 0.05758780729783805,
+      "core": 0.028420067907829413,
+      "head": 0.0743339219782197,
+      "decoder": 0.6831909277837237,
+      "encoder_concept_crc": 0.005152613953845154,
+      "chunk_readout": 1.4380145719923212
+    },
+    "tokens_per_second": 2872.1399271622786,
+    "step_seconds": 0.9905506250215694,
+    "elapsed_hours": 9.739264260566948,
+    "remaining_hours": 6.260696142382092,
+    "learning_rate": 0.0001197947823261523,
+    "family": "text",
+    "batch_indices": [
+      16748,
+      25806,
+      9029,
+      22479,
+      10156,
+      10040,
+      21298,
+      26493
+    ],
+    "input_tokens": 2845,
+    "supervised_tokens": 2845,
+    "family_supervised_tokens": {
+      "text": 101210006,
+      "math": 722451,
+      "sudoku_easy": 4298112,
+      "sudoku_hard": 1004336
+    },
+    "family_input_tokens": {
+      "text": 101210006,
+      "math": 2856939,
+      "sudoku_easy": 8910720,
+      "sudoku_hard": 2082160
+    },
+    "candidate_requested": false,
+    "candidate_executed": false,
+    "nonfinite_count": 0,
+    "selector_regret": null,
+    "candidate_documents": 0,
+    "chunk_supervised_targets": 64,
+    "code_counts": [
+      37,
+      5,
+      30,
+      31,
+      60,
+      115,
+      16,
+      61
+    ],
+    "latent_visits": [
+      0.6854529976844788,
+      0.6836550235748291
+    ],
+    "objective_denominators": {
+      "token": 2845,
+      "latent": 347,
+      "vq": 347,
+      "chunk": 8,
+      "explore": 0,
+      "selector": 0
+    },
+    "objective_numerators": {
+      "token": 10492.95341014862,
+      "latent": 237.43625885248184,
+      "vq": 2729.4464654922485,
+      "chunk": 45.75212860107422,
+      "explore": 0.0,
+      "selector": 0.0
+    },
+    "rss_gb": 1.2868499755859375,
+    "system_available_gb": 2.6613922119140625,
+    "mps_allocated_gb": 0.08883237838745117,
+    "mps_driver_gb": 4.524505615234375
+  },
+  "files": {
+    "V10_1_RCDL_Architecture.md": "5ca9fa18c1bb28a10629f44c331884f7599f0a252643d253e73ab8a132f2bf93",
+    "v10_1/model.py": "093c2617c0d417861d67220d867590590f9767da02bc3e01093b5a549ad578f1",
+    "v10_1/memory.py": "0d5ce95e1c538a3c0d8dba0d4076c8114a24cc23b547b103bf386bec93fe3f5b",
+    "v10_1/evaluate.py": "9500357208d221a568e326066758031062c617fc620b0b531f8d44d2a5f5d904",
+    "v10_1/train.py": "1630357c5995e35bb30d020537337d0ec3256d7a0846c9a6d40e0d35c989df9b",
+    "v10_1/data/manifest.json": "def40ad02c456e93b227be6d43fb91e91eb4735449d0cda2d709a6f60f0568f2"
+  }
+}

@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "run_id": "production_smoke",
+  "source_sha256": "bda571832f3ebe427447e61f97dc6f00276814afe07d5c5e879ee5beb0a24285",
+  "data_sha256": "def40ad02c456e93b227be6d43fb91e91eb4735449d0cda2d709a6f60f0568f2",
+  "split": "train",
+  "step": 6,
+  "tokens": 10172,
+  "wall_time": 1791790849.497377,
+  "loss": {
+    "token": 9.06322956085205,
+    "future": 8.952266693115234,
+    "explore": 0.0,
+    "selector": 0.0,
+    "total": 9.958456230163574
+  },
+  "dense_grad_norm": 7.372742176055908,
+  "dense_grad_norm_post": 1.0,
+  "dense_clip_factor": 0.13563474432181433,
+  "engram_grad_norm": 0.028390156105160713,
+  "engram_grad_norm_post": 0.028390156105160713,
+  "engram_clip_factor": 1.0,
+  "engram_rows_touched": 1359,
+  "component_grad_norms": {
+    "embedding": 5.078634101583669,
+    "engram": 0.08076624794175699,
+    "e1": 4.381960318500175,
+    "e2": 1.6928160960789695,
+    "exit_reader": 0.047026048123886686,
+    "e3": 1.6732567042147068,
+    "pooler": 0.09070463401892873,
+    "core": 0.3606483663793533,
+    "head": 0.0955247530510827,
+    "decoder": 1.8671194407297376,
+    "encoder_concept_crc": 0.017904876446334515,
+    "forecast_readout": 0.23494241693805581
+  },
+  "tokens_per_second": 3462.7908558426234,
+  "step_seconds": 0.39274679200025275,
+  "data_seconds": 0.00017750001279637218,
+  "last_checkpoint_seconds": 0.9764333750354126,
+  "elapsed_hours": 0.006093444594718878,
+  "remaining_hours": 0.993906549943818,
+  "learning_rate": 8.999347245805796e-06,
+  "family": "sudoku_easy",
+  "batch_indices": [
+    10209,
+    330,
+    5942,
+    5539,
+    3583,
+    6787,
+    7566,
+    10169
+  ],
+  "input_tokens": 1360,
+  "supervised_tokens": 656,
+  "family_supervised_tokens": {
+    "text": 5875,
+    "math": 54,
+    "sudoku_easy": 1968
+  },
+  "family_input_tokens": {
+    "text": 5875,
+    "math": 217,
+    "sudoku_easy": 4080
+  },
+  "candidate_requested": false,
+  "candidate_executed": false,
+  "nonfinite_count": 0,
+  "selector_regret": null,
+  "batch_prepare_seconds": 0.0003796250093728304,
+  "candidate_documents": 0,
+  "future_documents": 8,
+  "sampled_boundaries": [
+    {
+      "row": 0,
+      "group": 13
+    },
+    {
+      "row": 1,
+      "group": 20
+    },
+    {
+      "row": 2,
+      "group": 14
+    },
+    {
+      "row": 3,
+      "group": 18
+    },
+    {
+      "row": 4,
+      "group": 18
+    },
+    {
+      "row": 5,
+      "group": 15
+    },
+    {
+      "row": 6,
+      "group": 15
+    },
+    {
+      "row": 7,
+      "group": 17
+    }
+  ],
+  "weighted_losses": {
+    "token": 9.06322956085205,
+    "future": 0.8952266693115235,
+    "explore": 0.0,
+    "selector": 0.0
+  },
+  "future_supervised_targets": 59,
+  "utility_gap": null,
+  "utility_spread": null,
+  "selector_agreement": null,
+  "code_counts": [
+    44,
+    0,
+    0,
+    21,
+    0,
+    95,
+    8,
+    0
+  ],
+  "winner_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "future_visits": [
+    8.952455520629883,
+    8.952173233032227
+  ],
+  "future_offset_numerators": [
+    72.5482406616211,
+    71.34933471679688,
+    71.60824584960938,
+    62.48655700683594,
+    62.164451599121094,
+    62.618003845214844,
+    62.59503936767578,
+    62.293304443359375
+  ],
+  "future_offset_counts": [
+    8.0,
+    8.0,
+    8.0,
+    7.0,
+    7.0,
+    7.0,
+    7.0,
+    7.0
+  ],
+  "objective_denominators": {
+    "token": 656,
+    "future": 8,
+    "explore": 0,
+    "selector": 0
+  },
+  "objective_numerators": {
+    "token": 5945.478591918945,
+    "future": 71.61813354492188,
+    "explore": 0.0,
+    "selector": 0.0
+  },
+  "rss_gb": 1.10211181640625,
+  "system_available_gb": 4.38525390625,
+  "mps_allocated_gb": 0.11339926719665527,
+  "mps_driver_gb": 1.594024658203125,
+  "status": "smoke_complete",
+  "pid": 76009,
+  "deadline_unix": 1791794428.5305169,
+  "error": null,
+  "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_2/validation/production_smoke/latest.pt",
+  "last_metrics": {
+    "schema_version": 1,
+    "run_id": "production_smoke",
+    "source_sha256": "bda571832f3ebe427447e61f97dc6f00276814afe07d5c5e879ee5beb0a24285",
+    "data_sha256": "def40ad02c456e93b227be6d43fb91e91eb4735449d0cda2d709a6f60f0568f2",
+    "split": "train",
+    "step": 6,
+    "tokens": 10172,
+    "wall_time": 1791790849.497377,
+    "loss": {
+      "token": 9.06322956085205,
+      "future": 8.952266693115234,
+      "explore": 0.0,
+      "selector": 0.0,
+      "total": 9.958456230163574
+    },
+    "dense_grad_norm": 7.372742176055908,
+    "dense_grad_norm_post": 1.0,
+    "dense_clip_factor": 0.13563474432181433,
+    "engram_grad_norm": 0.028390156105160713,
+    "engram_grad_norm_post": 0.028390156105160713,
+    "engram_clip_factor": 1.0,
+    "engram_rows_touched": 1359,
+    "component_grad_norms": {
+      "embedding": 5.078634101583669,
+      "engram": 0.08076624794175699,
+      "e1": 4.381960318500175,
+      "e2": 1.6928160960789695,
+      "exit_reader": 0.047026048123886686,
+      "e3": 1.6732567042147068,
+      "pooler": 0.09070463401892873,
+      "core": 0.3606483663793533,
+      "head": 0.0955247530510827,
+      "decoder": 1.8671194407297376,
+      "encoder_concept_crc": 0.017904876446334515,
+      "forecast_readout": 0.23494241693805581
+    },
+    "tokens_per_second": 3462.7908558426234,
+    "step_seconds": 0.39274679200025275,
+    "data_seconds": 0.00017750001279637218,
+    "last_checkpoint_seconds": 0.9764333750354126,
+    "elapsed_hours": 0.005824124965276699,
+    "remaining_hours": 0.9941758708159129,
+    "learning_rate": 8.999347245805796e-06,
+    "family": "sudoku_easy",
+    "batch_indices": [
+      10209,
+      330,
+      5942,
+      5539,
+      3583,
+      6787,
+      7566,
+      10169
+    ],
+    "input_tokens": 1360,
+    "supervised_tokens": 656,
+    "family_supervised_tokens": {
+      "text": 5875,
+      "math": 54,
+      "sudoku_easy": 1968
+    },
+    "family_input_tokens": {
+      "text": 5875,
+      "math": 217,
+      "sudoku_easy": 4080
+    },
+    "candidate_requested": false,
+    "candidate_executed": false,
+    "nonfinite_count": 0,
+    "selector_regret": null,
+    "batch_prepare_seconds": 0.0003796250093728304,
+    "candidate_documents": 0,
+    "future_documents": 8,
+    "sampled_boundaries": [
+      {
+        "row": 0,
+        "group": 13
+      },
+      {
+        "row": 1,
+        "group": 20
+      },
+      {
+        "row": 2,
+        "group": 14
+      },
+      {
+        "row": 3,
+        "group": 18
+      },
+      {
+        "row": 4,
+        "group": 18
+      },
+      {
+        "row": 5,
+        "group": 15
+      },
+      {
+        "row": 6,
+        "group": 15
+      },
+      {
+        "row": 7,
+        "group": 17
+      }
+    ],
+    "weighted_losses": {
+      "token": 9.06322956085205,
+      "future": 0.8952266693115235,
+      "explore": 0.0,
+      "selector": 0.0
+    },
+    "future_supervised_targets": 59,
+    "utility_gap": null,
+    "utility_spread": null,
+    "selector_agreement": null,
+    "code_counts": [
+      44,
+      0,
+      0,
+      21,
+      0,
+      95,
+      8,
+      0
+    ],
+    "winner_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "future_visits": [
+      8.952455520629883,
+      8.952173233032227
+    ],
+    "future_offset_numerators": [
+      72.5482406616211,
+      71.34933471679688,
+      71.60824584960938,
+      62.48655700683594,
+      62.164451599121094,
+      62.618003845214844,
+      62.59503936767578,
+      62.293304443359375
+    ],
+    "future_offset_counts": [
+      8.0,
+      8.0,
+      8.0,
+      7.0,
+      7.0,
+      7.0,
+      7.0,
+      7.0
+    ],
+    "objective_denominators": {
+      "token": 656,
+      "future": 8,
+      "explore": 0,
+      "selector": 0
+    },
+    "objective_numerators": {
+      "token": 5945.478591918945,
+      "future": 71.61813354492188,
+      "explore": 0.0,
+      "selector": 0.0
+    },
+    "rss_gb": 1.10211181640625,
+    "system_available_gb": 4.38525390625,
+    "mps_allocated_gb": 0.11339926719665527,
+    "mps_driver_gb": 1.594024658203125
+  }
+}

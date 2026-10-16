@@ -1,0 +1,45 @@
+{"microbatch": 4, "foreach": false, "step": 0, "seconds": 2.2300070420023985, "driver_gib": 1.732452392578125}
+{"microbatch": 4, "foreach": false, "step": 20, "seconds": 1.2057956660282798, "driver_gib": 1.983306884765625}
+{
+  "microbatch": 4,
+  "foreach": false,
+  "updates": 24,
+  "warmup": 8,
+  "elapsed_seconds": 26.661601625033654,
+  "sustained_tokens_per_second": 2902.8257469033774,
+  "max_mps_driver_gib": 1.989654541015625,
+  "max_rss_gib": 1.8761444091796875,
+  "min_system_available_gib": 4.4180450439453125,
+  "groups": {
+    "text/candidate=False": {
+      "updates": 15,
+      "tokens_per_second": 3586.010127661418,
+      "median_seconds": 0.7702760419924743
+    },
+    "text/candidate=True": {
+      "updates": 3,
+      "tokens_per_second": 2573.9849431047046,
+      "median_seconds": 1.1073631669860333
+    },
+    "math/candidate=False": {
+      "updates": 1,
+      "tokens_per_second": 363.7301748481165,
+      "median_seconds": 0.863277291005943
+    },
+    "math/candidate=True": {
+      "updates": 2,
+      "tokens_per_second": 394.27903450352056,
+      "median_seconds": 0.6442138124839403
+    },
+    "sudoku_easy/candidate=False": {
+      "updates": 2,
+      "tokens_per_second": 2688.1048509217453,
+      "median_seconds": 0.5059326460177545
+    },
+    "sudoku_easy/candidate=True": {
+      "updates": 1,
+      "tokens_per_second": 1498.8593928701298,
+      "median_seconds": 0.9073566249571741
+    }
+  }
+}

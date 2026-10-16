@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "seconds": 41.55493474006653,
+  "probe": {
+    "split": "train",
+    "family": "text",
+    "indices": [
+      23999
+    ],
+    "seed": 39117,
+    "meaning": "Fixed diagnostic probe; dense only; before clipping; no optimizer update. Auxiliary coefficients included.",
+    "reader_layers": {
+      "0": {
+        "output_rms": 0.09416218847036362,
+        "residual_rms": 1.1920268535614014,
+        "relative_rms": 0.07899334281682968,
+        "output_gradient_norm": 0.013646198436617851
+      },
+      "1": {
+        "output_rms": 0.08192741870880127,
+        "residual_rms": 1.2592600584030151,
+        "relative_rms": 0.06505996733903885,
+        "output_gradient_norm": 0.013371403329074383
+      },
+      "2": {
+        "output_rms": 0.0827825739979744,
+        "residual_rms": 1.2992178201675415,
+        "relative_rms": 0.06371723860502243,
+        "output_gradient_norm": 0.01312010083347559
+      },
+      "3": {
+        "output_rms": 0.08877071738243103,
+        "residual_rms": 1.345049262046814,
+        "relative_rms": 0.06599811464548111,
+        "output_gradient_norm": 0.012943065725266933
+      }
+    },
+    "source_projection_rms": {
+      "continuous": 1.0308722257614136,
+      "pq": 0.2116096466779709
+    },
+    "norms": {
+      "token": 3.1155827045440674,
+      "weighted_future": 0.756293773651123,
+      "weighted_candidate": 3.7287802696228027
+    },
+    "cosines": {
+      "token": {
+        "token": 0.9999372959136963,
+        "weighted_future": -0.03551148995757103,
+        "weighted_candidate": -0.05838051438331604
+      },
+      "weighted_future": {
+        "token": -0.03551148995757103,
+        "weighted_future": 0.9999700784683228,
+        "weighted_candidate": 0.20680133998394012
+      },
+      "weighted_candidate": {
+        "token": -0.05838051438331604,
+        "weighted_future": 0.20680133998394012,
+        "weighted_candidate": 0.9999488592147827
+      }
+    }
+  }
+}
