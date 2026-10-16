@@ -1,0 +1,174 @@
+2026-09-28 20:22:12 codebook k-means++ init from 8192 concepts
+2026-09-28 20:22:12 start: step 0/6900 (cosine over 6900) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-28 20:22:12 config: step 0, budget 48.0 h (cosine over training time), milestone 24.0 h, micro_bs 2 x accum 16 x 1024, lr 0.0006 (scale 1.0), warmup 300, K ~ U{8..12}, eval R 6, amp none, NextLat 1.0/1.0
+2026-09-28 20:32:07 step 25 loss 12.9905 ntp 8.8964 ncp 4.763 vq 2.9728 cons 0.0029 nl_h 0.5308 nl_kl 0.096 lb 1.026 drop 0.128 div 0.01 gn 0.90 lr 5.00e-05 1378 tok/s
+2026-09-28 20:41:51 step 50 loss 11.9564 ntp 8.2750 ncp 4.712 vq 2.9114 cons 0.0319 nl_h 0.2427 nl_kl 0.035 lb 1.071 drop 0.279 div 0.09 gn 1.34 lr 1.00e-04 1402 tok/s
+2026-09-28 20:52:11 step 75 loss 11.0649 ntp 7.4927 ncp 4.526 vq 3.0514 cons 0.0368 nl_h 0.0420 nl_kl 0.006 lb 1.030 drop 0.209 div 0.13 gn 1.33 lr 1.50e-04 1322 tok/s
+2026-09-28 21:03:19 step 100 loss 10.2235 ntp 6.5769 ncp 4.350 vq 3.1465 cons 0.0437 nl_h 0.0348 nl_kl 0.010 lb 1.017 drop 0.144 div 0.13 gn 1.21 lr 2.00e-04 1227 tok/s
+2026-09-28 21:16:01 step 125 loss 9.4088 ntp 5.7350 ncp 4.128 vq 3.1406 cons 0.0383 nl_h 0.0616 nl_kl 0.041 lb 1.015 drop 0.127 div 0.11 gn 0.89 lr 2.50e-04 1075 tok/s
+2026-09-28 21:24:56 EVAL[hourly] step 138 val_lang 6.3298 (ts 5.798 wk 6.862) probes recall1=0.000 carry3=0.000 multi4=0.000 hop=0.000 bind=0.055 swap_recall1=0.000 codes_min=0.34 VE=0.278 ncp=3.995 (164s)
+2026-09-28 21:25:01 start: step 138/6327 (cosine over 6327) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-28 21:30:31 step 150 loss 8.9055 ntp 5.1205 ncp 3.944 vq 3.1760 cons 0.0310 nl_h 0.0948 nl_kl 0.103 lb 1.015 drop 0.134 div 0.09 gn 0.70 lr 3.00e-04 1160 tok/s
+2026-09-28 21:42:37 step 175 loss 8.5005 ntp 4.6442 ncp 3.841 vq 3.1793 cons 0.0331 nl_h 0.1174 nl_kl 0.159 lb 1.017 drop 0.134 div 0.09 gn 0.65 lr 3.49e-04 1130 tok/s
+2026-09-28 21:54:06 step 200 loss 8.1789 ntp 4.2412 ncp 3.917 vq 3.1869 cons 0.0314 nl_h 0.1295 nl_kl 0.213 lb 1.022 drop 0.147 div 0.08 gn 1.18 lr 3.99e-04 1190 tok/s
+2026-09-28 22:05:51 step 225 loss 7.8530 ntp 4.0791 ncp 4.019 vq 2.9821 cons 0.0264 nl_h 0.1372 nl_kl 0.237 lb 1.028 drop 0.164 div 0.09 gn 1.00 lr 4.49e-04 1162 tok/s
+2026-09-28 22:17:22 step 250 loss 7.7963 ntp 3.9244 ncp 4.092 vq 3.0632 cons 0.0217 nl_h 0.1419 nl_kl 0.242 lb 1.035 drop 0.178 div 0.09 gn 0.92 lr 4.98e-04 1185 tok/s
+2026-09-28 22:27:52 EVAL[hourly] step 267 val_lang 5.1363 (ts 4.304 wk 5.969) probes recall1=0.008 carry3=0.000 multi4=0.000 hop=0.000 bind=0.008 swap_recall1=0.000 codes_min=0.80 VE=0.546 ncp=4.200 (166s)
+2026-09-28 22:27:59 start: step 267/6113 (cosine over 6113) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-28 22:31:39 step 275 loss 7.6662 ntp 3.7549 ncp 4.134 vq 3.1179 cons 0.0230 nl_h 0.1385 nl_kl 0.227 lb 1.035 drop 0.166 div 0.10 gn 0.75 lr 5.48e-04 1186 tok/s
+2026-09-28 22:42:59 step 300 loss 7.6031 ntp 3.6815 ncp 4.097 vq 3.1317 cons 0.0205 nl_h 0.1390 nl_kl 0.227 lb 1.028 drop 0.138 div 0.09 gn 0.74 lr 5.97e-04 1206 tok/s
+2026-09-28 22:55:14 step 325 loss 7.5737 ntp 3.6814 ncp 4.058 vq 3.1228 cons 0.0167 nl_h 0.1332 nl_kl 0.217 lb 1.030 drop 0.141 div 0.09 gn 0.69 lr 5.96e-04 1114 tok/s
+2026-09-28 23:06:55 step 350 loss 7.4417 ntp 3.5527 ncp 4.036 vq 3.1255 cons 0.0136 nl_h 0.1331 nl_kl 0.214 lb 1.035 drop 0.146 div 0.09 gn 0.66 lr 5.96e-04 1170 tok/s
+2026-09-28 23:19:54 step 375 loss 7.4293 ntp 3.5429 ncp 3.986 vq 3.1201 cons 0.0155 nl_h 0.1328 nl_kl 0.222 lb 1.038 drop 0.158 div 0.09 gn 0.65 lr 5.95e-04 1052 tok/s
+2026-09-28 23:30:49 EVAL[hourly] step 391 val_lang 4.6721 (ts 3.765 wk 5.579) probes recall1=0.000 carry3=0.000 multi4=0.000 hop=0.000 bind=0.039 swap_recall1=0.000 codes_min=0.81 VE=0.558 ncp=3.911 (143s)
+2026-09-28 23:30:52 start: step 391/5968 (cosine over 5968) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-28 23:35:01 step 400 loss 7.1451 ntp 3.3149 ncp 3.915 vq 3.0943 cons 0.0103 nl_h 0.1281 nl_kl 0.204 lb 1.031 drop 0.136 div 0.08 gn 0.50 lr 5.94e-04 1073 tok/s
+2026-09-28 23:46:53 step 425 loss 7.2279 ntp 3.3736 ncp 3.920 vq 3.0993 cons 0.0109 nl_h 0.1313 nl_kl 0.220 lb 1.028 drop 0.121 div 0.08 gn 0.61 lr 5.93e-04 1151 tok/s
+2026-09-28 23:59:31 step 450 loss 7.2174 ntp 3.3267 ncp 3.941 vq 3.1085 cons 0.0121 nl_h 0.1383 nl_kl 0.237 lb 1.031 drop 0.127 div 0.08 gn 0.57 lr 5.92e-04 1082 tok/s
+2026-09-29 00:11:07 step 475 loss 7.0162 ntp 3.2300 ncp 3.833 vq 3.0587 cons 0.0113 nl_h 0.1309 nl_kl 0.201 lb 1.027 drop 0.113 div 0.08 gn 0.45 lr 5.92e-04 1178 tok/s
+2026-09-29 00:23:55 step 500 loss 6.9835 ntp 3.2102 ncp 3.777 vq 3.0541 cons 0.0113 nl_h 0.1290 nl_kl 0.200 lb 1.025 drop 0.106 div 0.07 gn 0.47 lr 5.91e-04 1067 tok/s
+2026-09-29 00:33:50 EVAL[hourly] step 515 val_lang 4.3681 (ts 3.447 wk 5.290) probes recall1=0.008 carry3=0.000 multi4=0.000 hop=0.000 bind=0.039 swap_recall1=0.000 codes_min=0.86 VE=0.582 ncp=3.703 (155s)
+2026-09-29 00:33:53 start: step 515/5893 (cosine over 5893) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 00:38:23 step 525 loss 7.0291 ntp 3.2695 ncp 3.772 vq 3.0418 cons 0.0122 nl_h 0.1268 nl_kl 0.202 lb 1.026 drop 0.110 div 0.08 gn 0.45 lr 5.90e-04 1149 tok/s
+2026-09-29 00:50:21 step 550 loss 6.9971 ntp 3.2557 ncp 3.735 vq 3.0223 cons 0.0090 nl_h 0.1284 nl_kl 0.206 lb 1.025 drop 0.109 div 0.08 gn 0.46 lr 5.89e-04 1141 tok/s
+2026-09-29 01:01:28 step 575 loss 6.8829 ntp 3.1397 ncp 3.728 vq 3.0259 cons 0.0117 nl_h 0.1295 nl_kl 0.203 lb 1.024 drop 0.098 div 0.08 gn 0.46 lr 5.88e-04 1228 tok/s
+2026-09-29 01:12:20 step 600 loss 6.7649 ntp 3.0516 ncp 3.671 vq 3.0004 cons 0.0110 nl_h 0.1292 nl_kl 0.205 lb 1.021 drop 0.094 div 0.07 gn 0.46 lr 5.87e-04 1257 tok/s
+2026-09-29 01:23:08 step 625 loss 6.8050 ntp 3.1182 ncp 3.655 vq 2.9751 cons 0.0141 nl_h 0.1294 nl_kl 0.205 lb 1.023 drop 0.089 div 0.08 gn 0.42 lr 5.86e-04 1265 tok/s
+2026-09-29 01:36:17 EVAL[hourly] step 649 val_lang 4.1164 (ts 3.217 wk 5.015) probes recall1=0.016 carry3=0.000 multi4=0.000 hop=0.000 bind=0.062 swap_recall1=0.008 codes_min=0.88 VE=0.599 ncp=3.528 (139s)
+2026-09-29 01:36:20 start: step 649/5950 (cosine over 5950) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 01:36:50 step 650 loss 6.7801 ntp 3.0914 ncp 3.618 vq 2.9706 cons 0.0129 nl_h 0.1306 nl_kl 0.214 lb 1.021 drop 0.087 div 0.06 gn 0.47 lr 5.84e-04 1200 tok/s
+2026-09-29 01:48:29 step 675 loss 6.6676 ntp 3.0073 ncp 3.597 vq 2.9491 cons 0.0123 nl_h 0.1293 nl_kl 0.210 lb 1.020 drop 0.082 div 0.07 gn 0.44 lr 5.83e-04 1171 tok/s
+2026-09-29 01:59:56 step 700 loss 6.6684 ntp 3.0196 ncp 3.570 vq 2.9324 cons 0.0111 nl_h 0.1334 nl_kl 0.215 lb 1.019 drop 0.076 div 0.06 gn 0.42 lr 5.82e-04 1193 tok/s
+2026-09-29 02:11:25 step 725 loss 6.6455 ntp 2.9734 ncp 3.558 vq 2.9358 cons 0.0115 nl_h 0.1359 nl_kl 0.233 lb 1.018 drop 0.078 div 0.06 gn 0.44 lr 5.81e-04 1188 tok/s
+2026-09-29 02:22:59 step 750 loss 6.6228 ntp 2.9815 ncp 3.565 vq 2.9155 cons 0.0116 nl_h 0.1362 nl_kl 0.222 lb 1.021 drop 0.085 div 0.06 gn 0.38 lr 5.79e-04 1182 tok/s
+2026-09-29 02:34:20 step 775 loss 6.5268 ntp 2.9274 ncp 3.472 vq 2.8978 cons 0.0097 nl_h 0.1306 nl_kl 0.212 lb 1.021 drop 0.081 div 0.06 gn 0.39 lr 5.78e-04 1204 tok/s
+2026-09-29 02:38:59 EVAL[hourly] step 780 val_lang 3.9571 (ts 3.046 wk 4.869) probes recall1=0.008 carry3=0.000 multi4=0.000 hop=0.000 bind=0.062 swap_recall1=0.023 codes_min=0.90 VE=0.611 ncp=3.373 (139s)
+2026-09-29 02:39:02 start: step 780/5961 (cosine over 5961) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 02:48:20 step 800 loss 6.5447 ntp 2.9173 ncp 3.500 vq 2.8982 cons 0.0110 nl_h 0.1335 nl_kl 0.234 lb 1.020 drop 0.080 div 0.06 gn 0.42 lr 5.76e-04 1167 tok/s
+2026-09-29 02:59:44 step 825 loss 6.5896 ntp 2.9379 ncp 3.503 vq 2.9019 cons 0.0117 nl_h 0.1423 nl_kl 0.246 lb 1.021 drop 0.084 div 0.06 gn 0.45 lr 5.75e-04 1199 tok/s
+2026-09-29 03:11:04 step 850 loss 6.5228 ntp 2.9321 ncp 3.467 vq 2.8687 cons 0.0107 nl_h 0.1371 nl_kl 0.227 lb 1.021 drop 0.082 div 0.06 gn 0.38 lr 5.74e-04 1204 tok/s
+2026-09-29 03:22:37 step 875 loss 6.4730 ntp 2.8991 ncp 3.468 vq 2.8609 cons 0.0107 nl_h 0.1318 nl_kl 0.223 lb 1.021 drop 0.080 div 0.06 gn 0.40 lr 5.72e-04 1184 tok/s
+2026-09-29 03:34:18 step 900 loss 6.4214 ntp 2.8783 ncp 3.418 vq 2.8352 cons 0.0092 nl_h 0.1299 nl_kl 0.225 lb 1.018 drop 0.071 div 0.06 gn 0.40 lr 5.71e-04 1169 tok/s
+2026-09-29 03:41:32 EVAL[hourly] step 911 val_lang 3.8163 (ts 2.943 wk 4.690) probes recall1=0.008 carry3=0.000 multi4=0.000 hop=0.000 bind=0.078 swap_recall1=0.000 codes_min=0.91 VE=0.623 ncp=3.210 (140s)
+2026-09-29 03:41:35 start: step 911/5971 (cosine over 5971) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 03:47:46 step 925 loss 6.4034 ntp 2.8744 ncp 3.368 vq 2.8187 cons 0.0085 nl_h 0.1312 nl_kl 0.231 lb 1.018 drop 0.070 div 0.05 gn 0.40 lr 5.69e-04 1227 tok/s
+2026-09-29 03:58:36 step 950 loss 6.3329 ntp 2.8282 ncp 3.351 vq 2.8028 cons 0.0084 nl_h 0.1299 nl_kl 0.226 lb 1.015 drop 0.062 div 0.05 gn 0.36 lr 5.67e-04 1260 tok/s
+2026-09-29 04:09:24 step 975 loss 6.3387 ntp 2.8245 ncp 3.363 vq 2.8091 cons 0.0098 nl_h 0.1306 nl_kl 0.227 lb 1.017 drop 0.065 div 0.05 gn 0.36 lr 5.66e-04 1265 tok/s
+2026-09-29 04:20:34 step 1000 loss 6.3289 ntp 2.8327 ncp 3.352 vq 2.7948 cons 0.0087 nl_h 0.1298 nl_kl 0.225 lb 1.016 drop 0.065 div 0.06 gn 0.35 lr 5.64e-04 1223 tok/s
+2026-09-29 04:31:46 step 1025 loss 6.2797 ntp 2.8046 ncp 3.322 vq 2.7796 cons 0.0082 nl_h 0.1293 nl_kl 0.223 lb 1.017 drop 0.066 div 0.06 gn 0.33 lr 5.62e-04 1219 tok/s
+2026-09-29 04:44:12 EVAL[hourly] step 1048 val_lang 3.6946 (ts 2.831 wk 4.558) probes recall1=0.000 carry3=0.000 multi4=0.000 hop=0.000 bind=0.047 swap_recall1=0.000 codes_min=0.91 VE=0.627 ncp=3.111 (135s)
+2026-09-29 04:44:15 start: step 1048/6011 (cosine over 6011) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 04:45:09 step 1050 loss 6.3399 ntp 2.8796 ncp 3.297 vq 2.7584 cons 0.0084 nl_h 0.1303 nl_kl 0.231 lb 1.017 drop 0.066 div 0.06 gn 0.35 lr 5.60e-04 1226 tok/s
+2026-09-29 04:56:48 step 1075 loss 6.4044 ntp 2.8368 ncp 3.441 vq 2.7979 cons 0.0095 nl_h 0.1401 nl_kl 0.274 lb 1.023 drop 0.079 div 0.06 gn 0.53 lr 5.59e-04 1173 tok/s
+2026-09-29 05:08:02 step 1100 loss 6.3096 ntp 2.7880 ncp 3.400 vq 2.7887 cons 0.0113 nl_h 0.1409 nl_kl 0.240 lb 1.023 drop 0.076 div 0.06 gn 0.36 lr 5.57e-04 1215 tok/s
+2026-09-29 05:19:49 step 1125 loss 6.2335 ntp 2.7814 ncp 3.340 vq 2.7501 cons 0.0103 nl_h 0.1322 nl_kl 0.224 lb 1.020 drop 0.072 div 0.06 gn 0.33 lr 5.55e-04 1159 tok/s
+2026-09-29 05:31:48 step 1150 loss 6.1665 ntp 2.7259 ncp 3.299 vq 2.7473 cons 0.0081 nl_h 0.1296 nl_kl 0.223 lb 1.016 drop 0.063 div 0.05 gn 0.33 lr 5.53e-04 1141 tok/s
+2026-09-29 05:43:28 step 1175 loss 6.2185 ntp 2.7672 ncp 3.307 vq 2.7523 cons 0.0084 nl_h 0.1311 nl_kl 0.226 lb 1.017 drop 0.061 div 0.06 gn 0.33 lr 5.51e-04 1169 tok/s
+2026-09-29 05:46:39 EVAL[hourly] step 1177 val_lang 3.6189 (ts 2.775 wk 4.463) probes recall1=0.008 carry3=0.000 multi4=0.000 hop=0.000 bind=0.062 swap_recall1=0.008 codes_min=0.95 VE=0.635 ncp=3.118 (136s)
+2026-09-29 05:46:43 start: step 1177/6004 (cosine over 6004) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 05:57:39 step 1200 loss 6.1233 ntp 2.6994 ncp 3.271 vq 2.7378 cons 0.0069 nl_h 0.1288 nl_kl 0.219 lb 1.018 drop 0.060 div 0.05 gn 0.32 lr 5.49e-04 1146 tok/s
+2026-09-29 06:09:17 step 1225 loss 6.0665 ntp 2.6715 ncp 3.240 vq 2.7169 cons 0.0077 nl_h 0.1280 nl_kl 0.215 lb 1.017 drop 0.060 div 0.05 gn 0.32 lr 5.47e-04 1175 tok/s
+2026-09-29 06:21:02 step 1250 loss 6.0871 ntp 2.6894 ncp 3.229 vq 2.7168 cons 0.0082 nl_h 0.1286 nl_kl 0.218 lb 1.017 drop 0.056 div 0.05 gn 0.32 lr 5.44e-04 1163 tok/s
+2026-09-29 06:32:49 step 1275 loss 6.1060 ntp 2.6909 ncp 3.258 vq 2.7259 cons 0.0078 nl_h 0.1314 nl_kl 0.221 lb 1.018 drop 0.061 div 0.05 gn 0.31 lr 5.42e-04 1160 tok/s
+2026-09-29 06:43:27 step 1300 loss 6.2116 ntp 2.7879 ncp 3.270 vq 2.7226 cons 0.0074 nl_h 0.1329 nl_kl 0.230 lb 1.019 drop 0.061 div 0.05 gn 0.32 lr 5.40e-04 1284 tok/s
+2026-09-29 06:49:15 EVAL[hourly] step 1309 val_lang 3.5535 (ts 2.710 wk 4.397) probes recall1=0.000 carry3=0.000 multi4=0.000 hop=0.000 bind=0.055 swap_recall1=0.000 codes_min=0.95 VE=0.640 ncp=3.077 (128s)
+2026-09-29 06:49:19 start: step 1309/6011 (cosine over 6011) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 06:55:55 step 1325 loss 6.1081 ntp 2.7063 ncp 3.241 vq 2.7165 cons 0.0087 nl_h 0.1303 nl_kl 0.220 lb 1.017 drop 0.060 div 0.05 gn 0.32 lr 5.38e-04 1322 tok/s
+2026-09-29 07:06:23 step 1350 loss 6.0586 ntp 2.6691 ncp 3.220 vq 2.7073 cons 0.0087 nl_h 0.1305 nl_kl 0.218 lb 1.018 drop 0.059 div 0.05 gn 0.32 lr 5.36e-04 1304 tok/s
+2026-09-29 07:16:36 step 1375 loss 5.9524 ntp 2.5861 ncp 3.202 vq 2.6970 cons 0.0084 nl_h 0.1284 nl_kl 0.210 lb 1.019 drop 0.061 div 0.05 gn 0.30 lr 5.34e-04 1338 tok/s
+2026-09-29 07:27:08 step 1400 loss 6.0075 ntp 2.6525 ncp 3.186 vq 2.6824 cons 0.0076 nl_h 0.1292 nl_kl 0.214 lb 1.019 drop 0.063 div 0.05 gn 0.31 lr 5.32e-04 1296 tok/s
+2026-09-29 07:37:40 step 1425 loss 6.0219 ntp 2.6266 ncp 3.292 vq 2.6991 cons 0.0081 nl_h 0.1328 nl_kl 0.223 lb 1.021 drop 0.062 div 0.05 gn 0.42 lr 5.30e-04 1297 tok/s
+2026-09-29 07:48:11 step 1450 loss 6.0349 ntp 2.6510 ncp 3.216 vq 2.7073 cons 0.0079 nl_h 0.1319 nl_kl 0.212 lb 1.021 drop 0.067 div 0.05 gn 0.31 lr 5.28e-04 1298 tok/s
+2026-09-29 07:51:36 EVAL[hourly] step 1453 val_lang 3.4770 (ts 2.639 wk 4.316) probes recall1=0.000 carry3=0.000 multi4=0.000 hop=0.000 bind=0.070 swap_recall1=0.016 codes_min=0.95 VE=0.642 ncp=3.011 (127s)
+2026-09-29 07:51:39 start: step 1453/6069 (cosine over 6069) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 08:01:02 step 1475 loss 5.9609 ntp 2.5878 ncp 3.189 vq 2.6983 cons 0.0080 nl_h 0.1296 nl_kl 0.215 lb 1.018 drop 0.057 div 0.05 gn 0.36 lr 5.25e-04 1274 tok/s
+2026-09-29 08:11:32 step 1500 loss 5.9109 ntp 2.5636 ncp 3.166 vq 2.6894 cons 0.0075 nl_h 0.1280 nl_kl 0.202 lb 1.018 drop 0.060 div 0.05 gn 0.30 lr 5.23e-04 1300 tok/s
+2026-09-29 08:22:02 step 1525 loss 5.9523 ntp 2.6131 ncp 3.146 vq 2.6749 cons 0.0074 nl_h 0.1294 nl_kl 0.209 lb 1.017 drop 0.056 div 0.04 gn 0.33 lr 5.21e-04 1300 tok/s
+2026-09-29 08:32:35 step 1550 loss 5.8722 ntp 2.5542 ncp 3.104 vq 2.6685 cons 0.0071 nl_h 0.1267 nl_kl 0.201 lb 1.015 drop 0.055 div 0.04 gn 0.32 lr 5.19e-04 1295 tok/s
+2026-09-29 08:42:36 step 1575 loss 5.8502 ntp 2.5424 ncp 3.092 vq 2.6640 cons 0.0070 nl_h 0.1251 nl_kl 0.199 lb 1.017 drop 0.055 div 0.05 gn 0.32 lr 5.17e-04 1363 tok/s
+2026-09-29 08:53:51 EVAL[hourly] step 1598 val_lang 3.4284 (ts 2.602 wk 4.255) probes recall1=0.000 carry3=0.000 multi4=0.000 hop=0.000 bind=0.062 swap_recall1=0.016 codes_min=0.96 VE=0.649 ncp=2.929 (119s)
+2026-09-29 08:53:56 start: step 1598/6122 (cosine over 6122) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 08:54:46 step 1600 loss 5.8303 ntp 2.5241 ncp 3.092 vq 2.6593 cons 0.0071 nl_h 0.1261 nl_kl 0.201 lb 1.016 drop 0.057 div 0.04 gn 0.31 lr 5.14e-04 1342 tok/s
+2026-09-29 09:08:09 step 1625 loss 5.7724 ntp 2.4735 ncp 3.077 vq 2.6573 cons 0.0066 nl_h 0.1267 nl_kl 0.196 lb 1.019 drop 0.057 div 0.04 gn 0.30 lr 5.11e-04 1020 tok/s
+2026-09-29 09:22:39 step 1650 loss 5.8997 ntp 2.5675 ncp 3.144 vq 2.6556 cons 0.0077 nl_h 0.1310 nl_kl 0.220 lb 1.016 drop 0.059 div 0.05 gn 0.39 lr 5.08e-04 941 tok/s
+2026-09-29 09:39:32 step 1675 loss 5.8590 ntp 2.5364 ncp 3.205 vq 2.6515 cons 0.0086 nl_h 0.1363 nl_kl 0.203 lb 1.020 drop 0.062 div 0.05 gn 0.34 lr 5.04e-04 809 tok/s
+2026-09-29 09:53:00 step 1700 loss 5.8901 ntp 2.5509 ncp 3.177 vq 2.6469 cons 0.0075 nl_h 0.1335 nl_kl 0.230 lb 1.019 drop 0.061 div 0.05 gn 0.40 lr 5.01e-04 1014 tok/s
+2026-09-29 09:56:31 EVAL[hourly] step 1703 val_lang 3.3952 (ts 2.574 wk 4.216) probes recall1=0.008 carry3=0.000 multi4=0.000 hop=0.000 bind=0.047 swap_recall1=0.016 codes_min=0.97 VE=0.647 ncp=3.074 (132s)
+2026-09-29 09:56:36 start: step 1703/6022 (cosine over 6022) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 10:07:55 step 1725 loss 5.8917 ntp 2.5455 ncp 3.222 vq 2.6562 cons 0.0067 nl_h 0.1347 nl_kl 0.222 lb 1.021 drop 0.064 div 0.05 gn 0.35 lr 4.98e-04 1073 tok/s
+2026-09-29 10:19:09 step 1750 loss 5.8676 ntp 2.5671 ncp 3.159 vq 2.6405 cons 0.0071 nl_h 0.1311 nl_kl 0.202 lb 1.020 drop 0.062 div 0.05 gn 0.30 lr 4.95e-04 1217 tok/s
+2026-09-29 10:30:04 step 1775 loss 5.8902 ntp 2.6167 ncp 3.110 vq 2.6179 cons 0.0066 nl_h 0.1300 nl_kl 0.204 lb 1.018 drop 0.058 div 0.05 gn 0.31 lr 4.93e-04 1251 tok/s
+2026-09-29 10:40:31 step 1800 loss 5.7848 ntp 2.5309 ncp 3.074 vq 2.6154 cons 0.0062 nl_h 0.1263 nl_kl 0.194 lb 1.016 drop 0.053 div 0.04 gn 0.31 lr 4.90e-04 1307 tok/s
+2026-09-29 10:50:53 step 1825 loss 5.7523 ntp 2.5206 ncp 3.057 vq 2.5947 cons 0.0067 nl_h 0.1258 nl_kl 0.195 lb 1.018 drop 0.056 div 0.05 gn 0.31 lr 4.88e-04 1318 tok/s
+2026-09-29 10:59:03 EVAL[hourly] step 1837 val_lang 3.3517 (ts 2.529 wk 4.174) probes recall1=0.047 carry3=0.000 multi4=0.000 hop=0.000 bind=0.047 swap_recall1=0.016 codes_min=0.98 VE=0.656 ncp=2.858 (136s)
+2026-09-29 10:59:08 start: step 1837/6033 (cosine over 6033) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 11:05:20 step 1850 loss 5.7174 ntp 2.4960 ncp 3.033 vq 2.5939 cons 0.0074 nl_h 0.1243 nl_kl 0.189 lb 1.017 drop 0.055 div 0.05 gn 0.30 lr 4.84e-04 1120 tok/s
+2026-09-29 11:17:18 step 1875 loss 5.7129 ntp 2.5018 ncp 3.014 vq 2.5818 cons 0.0070 nl_h 0.1249 nl_kl 0.192 lb 1.016 drop 0.052 div 0.05 gn 0.31 lr 4.81e-04 1142 tok/s
+2026-09-29 11:29:24 step 1900 loss 5.7576 ntp 2.5410 ncp 3.043 vq 2.5776 cons 0.0065 nl_h 0.1271 nl_kl 0.197 lb 1.016 drop 0.051 div 0.05 gn 0.30 lr 4.78e-04 1129 tok/s
+2026-09-29 11:40:21 step 1925 loss 5.7084 ntp 2.5112 ncp 3.019 vq 2.5703 cons 0.0075 nl_h 0.1244 nl_kl 0.190 lb 1.017 drop 0.051 div 0.05 gn 0.30 lr 4.76e-04 1248 tok/s
+2026-09-29 11:53:22 step 1950 loss 5.7467 ntp 2.5420 ncp 3.009 vq 2.5724 cons 0.0065 nl_h 0.1260 nl_kl 0.195 lb 1.016 drop 0.055 div 0.04 gn 0.30 lr 4.72e-04 1049 tok/s
+2026-09-29 12:01:19 EVAL[hourly] step 1965 val_lang 3.3089 (ts 2.491 wk 4.126) probes recall1=0.047 carry3=0.000 multi4=0.000 hop=0.000 bind=0.062 swap_recall1=0.008 codes_min=0.98 VE=0.661 ncp=2.886 (128s)
+2026-09-29 12:01:22 start: step 1965/6025 (cosine over 6025) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 12:05:32 step 1975 loss 5.7223 ntp 2.5196 ncp 3.023 vq 2.5738 cons 0.0067 nl_h 0.1254 nl_kl 0.190 lb 1.017 drop 0.055 div 0.05 gn 0.30 lr 4.69e-04 1360 tok/s
+2026-09-29 12:16:51 step 2000 loss 5.6870 ntp 2.4909 ncp 3.010 vq 2.5742 cons 0.0060 nl_h 0.1234 nl_kl 0.187 lb 1.016 drop 0.051 div 0.04 gn 0.30 lr 4.66e-04 1207 tok/s
+2026-09-29 12:27:58 step 2025 loss 5.6167 ntp 2.4485 ncp 2.972 vq 2.5554 cons 0.0071 nl_h 0.1224 nl_kl 0.182 lb 1.016 drop 0.052 div 0.05 gn 0.29 lr 4.64e-04 1229 tok/s
+2026-09-29 12:38:28 step 2050 loss 5.7105 ntp 2.5278 ncp 3.007 vq 2.5503 cons 0.0067 nl_h 0.1266 nl_kl 0.194 lb 1.016 drop 0.050 div 0.05 gn 0.31 lr 4.61e-04 1300 tok/s
+2026-09-29 12:48:51 step 2075 loss 5.6399 ntp 2.4630 ncp 3.006 vq 2.5477 cons 0.0054 nl_h 0.1245 nl_kl 0.193 lb 1.015 drop 0.050 div 0.04 gn 0.33 lr 4.58e-04 1317 tok/s
+2026-09-29 12:59:47 step 2100 loss 5.6667 ntp 2.4496 ncp 3.053 vq 2.5821 cons 0.0076 nl_h 0.1284 nl_kl 0.190 lb 1.016 drop 0.054 div 0.04 gn 0.33 lr 4.55e-04 1248 tok/s
+2026-09-29 13:03:39 EVAL[hourly] step 2104 val_lang 3.2808 (ts 2.464 wk 4.097) probes recall1=0.055 carry3=0.000 multi4=0.000 hop=0.000 bind=0.055 swap_recall1=0.016 codes_min=0.98 VE=0.657 ncp=2.809 (128s)
+2026-09-29 13:03:45 start: step 2104/6050 (cosine over 6050) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 13:13:15 step 2125 loss 5.7059 ntp 2.5061 ncp 3.005 vq 2.5721 cons 0.0059 nl_h 0.1281 nl_kl 0.188 lb 1.017 drop 0.053 div 0.05 gn 0.31 lr 4.52e-04 1206 tok/s
+2026-09-29 13:23:59 step 2150 loss 5.6718 ntp 2.4855 ncp 2.991 vq 2.5614 cons 0.0065 nl_h 0.1269 nl_kl 0.188 lb 1.015 drop 0.052 div 0.05 gn 0.31 lr 4.49e-04 1272 tok/s
+2026-09-29 13:34:34 step 2175 loss 5.6758 ntp 2.5048 ncp 2.992 vq 2.5488 cons 0.0064 nl_h 0.1250 nl_kl 0.187 lb 1.016 drop 0.052 div 0.05 gn 0.31 lr 4.46e-04 1289 tok/s
+2026-09-29 13:44:44 step 2200 loss 5.6397 ntp 2.4801 ncp 2.976 vq 2.5393 cons 0.0071 nl_h 0.1259 nl_kl 0.186 lb 1.016 drop 0.050 div 0.05 gn 0.30 lr 4.44e-04 1345 tok/s
+2026-09-29 13:54:24 step 2225 loss 5.7032 ntp 2.5321 ncp 2.999 vq 2.5400 cons 0.0063 nl_h 0.1276 nl_kl 0.193 lb 1.015 drop 0.051 div 0.05 gn 0.31 lr 4.41e-04 1413 tok/s
+2026-09-29 14:04:05 step 2250 loss 5.6253 ntp 2.4729 ncp 2.985 vq 2.5354 cons 0.0079 nl_h 0.1250 nl_kl 0.182 lb 1.017 drop 0.050 div 0.05 gn 0.30 lr 4.38e-04 1410 tok/s
+2026-09-29 14:06:16 EVAL[hourly] step 2250 val_lang 3.2440 (ts 2.436 wk 4.052) probes recall1=0.258 carry3=0.000 multi4=0.000 hop=0.000 bind=0.070 swap_recall1=0.016 codes_min=0.98 VE=0.664 ncp=2.762 (131s)
+2026-09-29 14:06:20 start: step 2250/6089 (cosine over 6089) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 14:17:05 step 2275 loss 5.5676 ntp 2.4321 ncp 2.966 vq 2.5227 cons 0.0085 nl_h 0.1242 nl_kl 0.181 lb 1.017 drop 0.056 div 0.05 gn 0.29 lr 4.35e-04 1264 tok/s
+2026-09-29 14:28:10 step 2300 loss 5.5940 ntp 2.4363 ncp 3.005 vq 2.5371 cons 0.0080 nl_h 0.1244 nl_kl 0.185 lb 1.019 drop 0.055 div 0.05 gn 0.32 lr 4.32e-04 1232 tok/s
+2026-09-29 14:38:11 step 2325 loss 5.6168 ntp 2.4508 ncp 3.003 vq 2.5336 cons 0.0073 nl_h 0.1322 nl_kl 0.189 lb 1.018 drop 0.053 div 0.05 gn 0.35 lr 4.29e-04 1364 tok/s
+2026-09-29 14:48:18 step 2350 loss 5.6644 ntp 2.4668 ncp 3.049 vq 2.5554 cons 0.0082 nl_h 0.1335 nl_kl 0.193 lb 1.019 drop 0.056 div 0.05 gn 0.34 lr 4.26e-04 1351 tok/s
+2026-09-29 14:58:27 step 2375 loss 5.6391 ntp 2.4042 ncp 3.075 vq 2.5854 cons 0.0076 nl_h 0.1346 nl_kl 0.196 lb 1.020 drop 0.058 div 0.04 gn 0.35 lr 4.23e-04 1344 tok/s
+2026-09-29 15:09:00 EVAL[hourly] step 2394 val_lang 3.2175 (ts 2.409 wk 4.026) probes recall1=0.219 carry3=0.000 multi4=0.000 hop=0.000 bind=0.070 swap_recall1=0.008 codes_min=0.98 VE=0.658 ncp=2.849 (141s)
+2026-09-29 15:09:06 start: step 2394/6118 (cosine over 6118) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 15:11:54 step 2400 loss 5.5647 ntp 2.3620 ncp 3.052 vq 2.5808 cons 0.0066 nl_h 0.1286 nl_kl 0.177 lb 1.019 drop 0.054 div 0.04 gn 0.30 lr 4.20e-04 1232 tok/s
+2026-09-29 15:23:35 step 2425 loss 5.6035 ntp 2.4182 ncp 3.013 vq 2.5644 cons 0.0064 nl_h 0.1272 nl_kl 0.181 lb 1.018 drop 0.054 div 0.04 gn 0.30 lr 4.17e-04 1168 tok/s
+2026-09-29 15:35:56 step 2450 loss 5.6050 ntp 2.4432 ncp 2.973 vq 2.5468 cons 0.0052 nl_h 0.1250 nl_kl 0.182 lb 1.018 drop 0.055 div 0.04 gn 0.29 lr 4.13e-04 1106 tok/s
+2026-09-29 15:47:47 step 2475 loss 5.5630 ntp 2.4123 ncp 2.956 vq 2.5436 cons 0.0062 nl_h 0.1234 nl_kl 0.177 lb 1.017 drop 0.052 div 0.05 gn 0.30 lr 4.10e-04 1153 tok/s
+2026-09-29 16:01:39 step 2500 loss 5.5504 ntp 2.4021 ncp 2.977 vq 2.5379 cons 0.0083 nl_h 0.1241 nl_kl 0.178 lb 1.017 drop 0.051 div 0.04 gn 0.30 lr 4.06e-04 986 tok/s
+2026-09-29 16:11:12 EVAL[hourly] step 2517 val_lang 3.1906 (ts 2.384 wk 3.997) probes recall1=0.328 carry3=0.000 multi4=0.000 hop=0.000 bind=0.055 swap_recall1=0.000 codes_min=0.98 VE=0.665 ncp=2.813 (122s)
+2026-09-29 16:11:17 start: step 2517/6096 (cosine over 6096) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 16:14:24 step 2525 loss 5.5317 ntp 2.3795 ncp 2.981 vq 2.5423 cons 0.0075 nl_h 0.1240 nl_kl 0.177 lb 1.016 drop 0.049 div 0.04 gn 0.30 lr 4.02e-04 1274 tok/s
+2026-09-29 16:24:49 step 2550 loss 5.5318 ntp 2.3814 ncp 2.976 vq 2.5439 cons 0.0068 nl_h 0.1225 nl_kl 0.175 lb 1.018 drop 0.051 div 0.04 gn 0.32 lr 3.99e-04 1312 tok/s
+2026-09-29 16:34:31 step 2575 loss 5.5907 ntp 2.4353 ncp 2.998 vq 2.5346 cons 0.0063 nl_h 0.1262 nl_kl 0.184 lb 1.015 drop 0.045 div 0.04 gn 0.31 lr 3.96e-04 1408 tok/s
+2026-09-29 16:45:00 step 2600 loss 5.5563 ntp 2.4104 ncp 2.964 vq 2.5280 cons 0.0057 nl_h 0.1269 nl_kl 0.184 lb 1.017 drop 0.047 div 0.04 gn 0.30 lr 3.93e-04 1302 tok/s
+2026-09-29 16:54:40 step 2625 loss 5.5667 ntp 2.4165 ncp 2.956 vq 2.5221 cons 0.0071 nl_h 0.1280 nl_kl 0.194 lb 1.017 drop 0.049 div 0.05 gn 0.33 lr 3.91e-04 1414 tok/s
+2026-09-29 17:06:25 step 2650 loss 5.5903 ntp 2.4344 ncp 2.969 vq 2.5248 cons 0.0065 nl_h 0.1307 nl_kl 0.193 lb 1.015 drop 0.047 div 0.04 gn 0.33 lr 3.87e-04 1163 tok/s
+2026-09-29 17:13:28 EVAL[hourly] step 2662 val_lang 3.1660 (ts 2.362 wk 3.970) probes recall1=0.391 carry3=0.000 multi4=0.000 hop=0.000 bind=0.070 swap_recall1=0.000 codes_min=0.99 VE=0.666 ncp=2.728 (131s)
+2026-09-29 17:13:35 start: step 2662/6126 (cosine over 6126) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 17:19:27 step 2675 loss 5.5319 ntp 2.4092 ncp 2.918 vq 2.5127 cons 0.0063 nl_h 0.1262 nl_kl 0.181 lb 1.018 drop 0.051 div 0.05 gn 0.31 lr 3.84e-04 1260 tok/s
+2026-09-29 17:30:45 step 2700 loss 5.4682 ntp 2.3514 ncp 2.912 vq 2.5135 cons 0.0070 nl_h 0.1245 nl_kl 0.177 lb 1.015 drop 0.051 div 0.05 gn 0.30 lr 3.80e-04 1209 tok/s
+2026-09-29 17:41:35 step 2725 loss 5.5092 ntp 2.3882 ncp 2.924 vq 2.5128 cons 0.0077 nl_h 0.1255 nl_kl 0.179 lb 1.018 drop 0.050 div 0.05 gn 0.31 lr 3.77e-04 1260 tok/s
+2026-09-29 17:52:25 step 2750 loss 5.4669 ntp 2.3584 ncp 2.901 vq 2.5091 cons 0.0067 nl_h 0.1232 nl_kl 0.175 lb 1.017 drop 0.050 div 0.04 gn 0.31 lr 3.74e-04 1261 tok/s
+2026-09-29 18:04:14 step 2775 loss 5.4692 ntp 2.3584 ncp 2.924 vq 2.5087 cons 0.0064 nl_h 0.1235 nl_kl 0.175 lb 1.017 drop 0.050 div 0.05 gn 0.30 lr 3.71e-04 1156 tok/s
+2026-09-29 18:16:05 EVAL[hourly] step 2796 val_lang 3.1497 (ts 2.345 wk 3.955) probes recall1=0.539 carry3=0.000 multi4=0.000 hop=0.008 bind=0.062 swap_recall1=0.008 codes_min=0.99 VE=0.669 ncp=2.746 (138s)
+2026-09-29 18:16:14 start: step 2796/6128 (cosine over 6128) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 18:17:52 step 2800 loss 5.4719 ntp 2.3526 ncp 2.922 vq 2.5182 cons 0.0069 nl_h 0.1236 nl_kl 0.174 lb 1.015 drop 0.047 div 0.05 gn 0.30 lr 3.67e-04 1205 tok/s
+2026-09-29 18:28:56 step 2825 loss 5.4897 ntp 2.3730 ncp 2.929 vq 2.5103 cons 0.0058 nl_h 0.1248 nl_kl 0.178 lb 1.016 drop 0.047 div 0.05 gn 0.32 lr 3.63e-04 1235 tok/s
+2026-09-29 18:39:20 step 2850 loss 5.5544 ntp 2.4324 ncp 2.947 vq 2.5074 cons 0.0065 nl_h 0.1264 nl_kl 0.183 lb 1.015 drop 0.049 div 0.05 gn 0.30 lr 3.60e-04 1314 tok/s
+2026-09-29 18:49:22 step 2875 loss 5.3672 ntp 2.2805 ncp 2.877 vq 2.5007 cons 0.0070 nl_h 0.1213 nl_kl 0.166 lb 1.017 drop 0.049 div 0.05 gn 0.29 lr 3.57e-04 1361 tok/s
+2026-09-29 18:59:11 step 2900 loss 5.4580 ntp 2.3569 ncp 2.899 vq 2.4974 cons 0.0076 nl_h 0.1248 nl_kl 0.178 lb 1.016 drop 0.050 div 0.05 gn 0.30 lr 3.55e-04 1391 tok/s
+2026-09-29 19:09:00 step 2925 loss 5.4950 ntp 2.3822 ncp 2.945 vq 2.5087 cons 0.0081 nl_h 0.1234 nl_kl 0.175 lb 1.017 drop 0.052 div 0.05 gn 0.31 lr 3.52e-04 1390 tok/s
+2026-09-29 19:19:12 EVAL[hourly] step 2942 val_lang 3.1250 (ts 2.323 wk 3.927) probes recall1=0.539 carry3=0.000 multi4=0.000 hop=0.008 bind=0.055 swap_recall1=0.000 codes_min=0.99 VE=0.669 ncp=2.747 (160s)
+2026-09-29 19:19:20 start: step 2942/6152 (cosine over 6152) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 19:22:57 step 2950 loss 5.4530 ntp 2.3375 ncp 2.942 vq 2.5148 cons 0.0065 nl_h 0.1232 nl_kl 0.172 lb 1.017 drop 0.049 div 0.04 gn 0.29 lr 3.48e-04 1210 tok/s
+2026-09-29 19:33:30 step 2975 loss 5.5095 ntp 2.3898 ncp 2.935 vq 2.5119 cons 0.0063 nl_h 0.1252 nl_kl 0.178 lb 1.016 drop 0.048 div 0.04 gn 0.30 lr 3.44e-04 1295 tok/s
+2026-09-29 19:44:18 step 3000 loss 5.4552 ntp 2.3492 ncp 2.907 vq 2.5082 cons 0.0070 nl_h 0.1236 nl_kl 0.173 lb 1.016 drop 0.047 div 0.04 gn 0.30 lr 3.41e-04 1264 tok/s
+2026-09-29 19:53:54 step 3025 loss 5.4454 ntp 2.3480 ncp 2.891 vq 2.5006 cons 0.0072 nl_h 0.1233 nl_kl 0.174 lb 1.015 drop 0.047 div 0.05 gn 0.31 lr 3.38e-04 1423 tok/s
+2026-09-29 20:04:01 step 3050 loss 5.4001 ntp 2.3109 ncp 2.878 vq 2.4980 cons 0.0068 nl_h 0.1221 nl_kl 0.170 lb 1.016 drop 0.046 div 0.04 gn 0.30 lr 3.36e-04 1351 tok/s
+2026-09-29 20:13:50 step 3075 loss 5.4390 ntp 2.3416 ncp 2.893 vq 2.4972 cons 0.0070 nl_h 0.1249 nl_kl 0.175 lb 1.014 drop 0.046 div 0.05 gn 0.29 lr 3.33e-04 1391 tok/s
+2026-09-29 20:21:55 EVAL[hourly] step 3088 val_lang 3.1060 (ts 2.306 wk 3.906) probes recall1=0.578 carry3=0.008 multi4=0.000 hop=0.000 bind=0.055 swap_recall1=0.000 codes_min=0.99 VE=0.671 ncp=2.694 (142s)
+2026-09-29 20:22:08 start: step 3088/6176 (cosine over 6176) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 20:24:48 EVAL[milestone] step 3089 val_lang 3.1074 (ts 2.306 wk 3.908) probes recall1=0.594 carry3=0.008 multi4=0.000 hop=0.000 bind=0.055 swap_recall1=0.000 codes_min=0.99 VE=0.671 ncp=2.693 (133s)
+2026-09-29 20:24:58 STOP (milestone) at step 3089, 24.05 h

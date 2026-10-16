@@ -1,0 +1,337 @@
+{
+ "weights": {
+  "C1": 20,
+  "C2": 20,
+  "C3": 15,
+  "C4": 10,
+  "C5": 10,
+  "C6": 10,
+  "C7": 10,
+  "C8": 5
+ },
+ "names": {
+  "C1": "Paper evidence (more-steps / OOD, grounded passes)",
+  "C2": "Training signal makes R matter",
+  "C3": "Serial-composition capacity",
+  "C4": "Plan capacity / NCP-PQ fit",
+  "C5": "Language-path safety",
+  "C6": "Stability at 25M on MPS",
+  "C7": "Compute budget",
+  "C8": "Implementability"
+ },
+ "rules": {
+  "C1": "evidence without more-steps/OOD extrapolation caps at 5; +1 for a grounded intermediate target (per-pass NCP code or sg(final plan))",
+  "status": "C1/C2 are evidence-based projections, not results; the per-pass eval sheet (E1\u2013E15) decides. D3's lead rests on puzzle/pixel-regime evidence (Diffusion-Timestep, URM, TRM/GRAM) \u2014 read 70.5 as a bet."
+ },
+ "chassis": [
+  "Position in the model: the middle-span core between the encoder and the decoder; interface unchanged: `forward(c_hat, cdoc, R) -> u, logits, c_pred` (D3/D5 also return per-pass logits for the per-pass loss).",
+  "Width: in-projection W_in 384 \u2192 256 on c_hat (X\u0303), separate start projection W_s 384 \u2192 256 (S_0 = W_s c_hat \u2260 0, so the two read branches differ from step 0), out-projection W_out 256 \u2192 384 for the decoder plan (small non-zero init).",
+  "Block: FOUR DISTINCT layers, d 256, SwiGLU FFN 1024, FULL causal attention over all 256 chunk positions (doc-masked; not windowed), 4 heads \u00d7 64 with GQA kv 2, sigmoid output gate, NoPE; the q/k/v shortconvs of today's layer are removed (URM). One pass = one cycle through the 4 layers.",
+  "S-space: every sublayer reads [X\u0303, S] through the Qwen-GR elementwise gated read (low-rank 32) and writes the carry S.",
+  "Identity at init: exactly one zero-init per path (the block output projections W_o / W_2), except where stated.",
+  "PQ: stays 48 segments \u00d7 128 codes \u00d7 8 dims in c_hat space (336 bits/chunk); NCP head W_q 256 \u2192 384 + distance head.",
+  "No pass-index conditioning (default-off for extrapolation designs), except D2 (LoopFormer's normalised (t, \u0394)).",
+  "Budget denominators: non-core MACs 26.765M/token; row 0 core 1.99M/token at eval R 4 (6.9 %); cap 25 %."
+ ],
+ "designs": {
+  "ROW0": {
+   "title": "Today: ConceptCoreV2",
+   "mechanism": "today",
+   "scores": {
+    "C1": 2,
+    "C2": 1,
+    "C3": 3,
+    "C4": 4,
+    "C5": 7,
+    "C6": 5,
+    "C7": 10,
+    "C8": 10
+   },
+   "why": {
+    "C1": "GRT-style recipe (random r, loss at sampled depth) is the one paper result that converges to a fixed point",
+    "C2": "measured: R1..R8 equal, step angle 6.7 -> 0.1 deg",
+    "C3": "one shared layer",
+    "C4": "u carries about one answer token",
+    "C5": "decoder trained and stable",
+    "C6": "not identity at init, carry grows +8.5 per pass",
+    "C7": "6.9 % at R 4",
+    "C8": "exists"
+   },
+   "total": 41.5,
+   "vs_row0": "",
+   "vs_others": "",
+   "budget": {
+    "params": 2059064.0,
+    "eval_R": 4,
+    "eval": 1991000.0,
+    "train": 1258000.0,
+    "share": 0.06923772430101544,
+    "train_x": 1.0
+   },
+   "heading": "Row 0 \u2014 today's ConceptCoreV2",
+   "spec": [
+    "One shared d-384 LoopLayer, R ~ U{1..4}, S_0 = 0, not identity at init, unbounded carry, loss at the sampled R. 2.06M params \u00b7 1.99M MACs/token at R 4 (6.9 %). Measured: R1..R8 equal, step angle 6.7\u00b0 \u2192 0.1\u00b0, OOD more-steps 0."
+   ]
+  },
+  "D1": {
+   "title": "S-FIX",
+   "mechanism": "(i) large random train R",
+   "scores": {
+    "C1": 4,
+    "C2": 4,
+    "C3": 7,
+    "C4": 5,
+    "C5": 7,
+    "C6": 7,
+    "C7": 9,
+    "C8": 9
+   },
+   "why": {
+    "C1": "Loop-Think extrapolates with large Poisson R + zero-init, but on a parametric toy task; no grounded per-pass target",
+    "C2": "pre-committed 4-5: placement unchanged, sampled-R loss can still be minimised by invariance on easy chunks",
+    "C3": "4 distinct d-256 layers cycled up to 8x",
+    "C4": "PQ unchanged, same single plan",
+    "C5": "single trajectory, decoder sees final plan",
+    "C6": "identity at init, clamped carry, full BPTT through 32 layers",
+    "C7": "15.3 % at R 4",
+    "C8": "drop-in, trainer unchanged"
+   },
+   "total": 59.0,
+   "vs_row0": "Removes baseline defects 1 (not identity at init), 2 (train R max 4) and 4 (growing carry) and adds 4 distinct layers; keeps the loss placement, so it tests whether init + R alone caused R1..R8 = equal. Confirmed if E5 step angle stays > 1\u00b0 past pass 4 and E4 agreement between passes 4 and 8 is < 1.",
+   "vs_others": "",
+   "budget": {
+    "params": 4911152,
+    "eval_R": 4,
+    "eval": 4825088.0,
+    "train": 4915212.226927495,
+    "share": 0.1527405684973084,
+    "train_x": 1.1305075197847303
+   },
+   "heading": "D1 \u2014 S-FIX (minimal fix of today's loop) \u00b7 C2 mechanism (i) large random train R",
+   "spec": [
+    "Carry: norm clamp S \u2190 S / max(rms(S)/\u03c1, 1) after each pass. Write: today's GR write scalar.",
+    "R ~ clip(Poisson(4), 2, 8) per sequence (E[R] 4.08); eval R 4; sweep to 16; optional KL+entropy halting.",
+    "Loss: NTP + NCP at the final pass of the sampled R only (placement deliberately unchanged) + VQ.",
+    "Fixes audit 1 (init), 2 (R_max 8), 4 (clamp); keeps audit 3 by design. Expected C2 4\u20135/10 (GRT counter-evidence).",
+    "Budget: 4.91M params \u00b7 4.83M MACs/token at R 4 (15.3 %) \u00b7 training \u00d71.13."
+   ]
+  },
+  "D2": {
+   "title": "LOOPFORMER-S",
+   "mechanism": "(iii) shortcut-consistency self-distillation",
+   "scores": {
+    "C1": 6,
+    "C2": 7,
+    "C3": 7,
+    "C4": 5,
+    "C5": 8,
+    "C6": 5,
+    "C7": 7,
+    "C8": 7
+   },
+   "why": {
+    "C1": "LoopFormer 1B/25B: no stagnation (low cross-step CKA), elasticity; grounded via sg(u_L); not more-steps extrapolation",
+    "C2": "main loss on R=L, shortcut distilled to the long endpoint: the exact asymmetry audit item 3 asks for",
+    "C3": "24 effective layers, (t,delta) lets passes differ",
+    "C4": "PQ unchanged, single plan",
+    "C5": "decoder trained on long and (every 4th batch) short plans: usable at any R <= 6",
+    "C6": "AdaLN warm-up risk at 25M (pre-committed penalty); two trajectories",
+    "C7": "21.2 % at R 6, training x1.41",
+    "C8": "second trajectory + conditioning MLP; moderate trainer change"
+   },
+   "total": 65.0,
+   "vs_row0": "Removes defect 3 exactly as LoopFormer does (main loss on the long route, short route distilled to it) plus defects 1, 2, 4; targets the measured stagnation directly ('concept drift'). Confirmed if E11 cross-pass CKA stays low and quality rises monotonically with R = 1..6 (E12).",
+   "vs_others": "",
+   "budget": {
+    "params": 6082608,
+    "eval_R": 6,
+    "eval": 7188480.0,
+    "train": 12614470.0,
+    "share": 0.21171555905315154,
+    "train_x": 1.405255325982229
+   },
+   "heading": "D2 \u2014 LOOPFORMER-S (the user's favourite, faithfully) \u00b7 C2 mechanism (iii) shortcut-consistency self-distillation",
+   "spec": [
+    "AdaLN(t, \u0394) per layer; \u03b1(c) is the write gate (GR write scalar dropped), \u03b1 init 0.05, modulation (1 + \u03b3(c)) after the GR read.",
+    "Init EXCEPTION: in D2 W_o / W_2 keep DEFAULT init \u2014 \u03b1 is the single near-zero factor on the path.",
+    "Long trajectory L = 6 passes (4 \u00d7 6 = 24 effective layers = LoopFormer 3 \u2297 8) + one shortcut S ~ U{1..5} (Dirichlet schedule, big-early); the shortcut path reads sg(X\u0303) and starts from sg(S_0) \u2014 W_in / W_s get gradient only from the long trajectory.",
+    "Loss: NTP(u_L) + NCP(u_L) + 0.1\u00b7NCP(u_S) + 0.1\u00b7\u2016sg(u_L) \u2212 u_S\u2016\u00b2 + decoder on the shortcut plan every 4th batch (weight 0.1) + VQ.",
+    "Claim: budget elasticity (any R \u2264 6), NOT more-steps extrapolation. Eval R 6 (big-early or uniform schedule; E13 compares).",
+    "Budget: 6.08M params \u00b7 7.19M MACs/token at R 6 (21.2 %) \u00b7 training \u00d71.41 (2 NCP head evaluations)."
+   ]
+  },
+  "D3": {
+   "title": "DEEP-SUP GROUPS",
+   "mechanism": "(ii) detached-carry improvement operator",
+   "scores": {
+    "C1": 8,
+    "C2": 8,
+    "C3": 7,
+    "C4": 5,
+    "C5": 6,
+    "C6": 7,
+    "C7": 7,
+    "C8": 6
+   },
+   "why": {
+    "C1": "strongest evidence: Diffusion-Timestep K<=160 -> 10,000; URM; TRM/GRAM 16 -> 256; grounded per-pass NCP target; puzzles not LM",
+    "C2": "detached windows force each window to improve the previous state; equal per-pass loss is the evidenced pairing",
+    "C3": "4 distinct layers, 8-12 passes in training",
+    "C4": "PQ unchanged; multimodal target may settle-then-wander",
+    "C5": "heavier NCP weighting (mean over passes); X-bypass risk",
+    "C6": "LN_h carry, per-window backward bounds memory",
+    "C7": "21.2 % at R 6, training x1.40",
+    "C8": "per-pass logits + per-window backward: trainer change"
+   },
+   "total": 70.5,
+   "vs_row0": "Replaces the loss that rewards R-invariance with detached windows that must improve the previous state, each pass supervised by the true next-chunk code (grounded). Confirmed if E11 per-window NCP improvement is \u2264 0 on average and hop/bind rise at R = 8\u201316 (E2).",
+   "vs_others": "",
+   "budget": {
+    "params": 4911664,
+    "eval_R": 6,
+    "eval": 7188480.0,
+    "train": 12357632.0,
+    "share": 0.21171555905315154,
+    "train_x": 1.396090068871998
+   },
+   "heading": "D3 \u2014 DEEP-SUP GROUPS \u00b7 C2 mechanism (ii) detached-carry improvement operator",
+   "spec": [
+    "Carry h = LN_h(S) with its own gain; separately normed readout (Diffusion-Timestep dual views).",
+    "K ~ U{8..12} passes (E[K] 10) so EVERY sample has \u2265 2 windows ([4,4], [4,5], [4,6], [4,7], [4,4,4]) \u2014 with K < 8 a sample would be one BPTT graph with equal per-pass loss, the unevidenced regime; windows of 4, remainder merged into the last window; BPTT inside a window, carry DETACHED between windows; ALL windows graded; per-window backward. Eval R 6 lies inside window 2 for every K.",
+    "Loss: MEAN per-pass NCP over all passes (grounded per-pass target) + NTP on the final pass + VQ.",
+    "Main risk: X\u0303 is clean every pass \u2192 windows may ignore the carry (E13 gate mass; X\u0303-dropout ablation). Multimodal target may settle-then-wander (E12).",
+    "Budget: 4.91M params \u00b7 7.19M MACs/token at R 6 (21.2 %) \u00b7 training \u00d71.40."
+   ]
+  },
+  "D4": {
+   "title": "LOOPED-MoE + DELTA-RES",
+   "mechanism": "(i) + state-conditioned per-pass experts",
+   "scores": {
+    "C1": 5,
+    "C2": 5,
+    "C3": 7,
+    "C4": 5,
+    "C5": 7,
+    "C6": 6,
+    "C7": 9,
+    "C8": 6
+   },
+   "why": {
+    "C1": "Sparse-Layers (iso-FLOP LM): looped dense FFN is the bottleneck, MoE routing diverges across passes, 4x4 best; Delta-Res 220M-8B; no step extrapolation test",
+    "C2": "as D1 (4) +1 for EBT's random per-pass step scale, the ingredient EBT found most important for gains that grow with steps",
+    "C3": "state-conditioned per-pass experts + early-pass retrieval; CONDITIONAL: rises to 8 only if E11 shows routing divergence and E15 layer specialisation (shared pool untested \u2014 Sparse-Layers used per-layer pools)",
+    "C4": "PQ unchanged, single plan",
+    "C5": "single trajectory",
+    "C6": "MoE at chunk rate: load balance noisy; shared pool untested",
+    "C7": "15.4 % at R 4, training x1.13",
+    "C8": "MoE + LB loss + 6-slot depth routing"
+   },
+   "total": 60.5,
+   "vs_row0": "Removes the 'same dense op every pass' invariance: state-conditioned experts make each pass compute differently, and a Delta Attention Residual lets pass r retrieve early passes instead of an overwritten S. Confirmed if E11 routing divergence across passes and E15 per-layer specialisation appear, with Delta-Res routing sharp (E14).",
+   "vs_others": "",
+   "budget": {
+    "params": 4923440.0,
+    "eval_R": 4,
+    "eval": 4857856.0,
+    "train": 4948605.004930458,
+    "share": 0.15361850934653087,
+    "train_x": 1.1316991401680927
+   },
+   "heading": "D4 \u2014 LOOPED-MoE + DELTA-RES \u00b7 C2 mechanism (i) as D1; novelty = state-conditioned per-pass computation (C3)",
+   "spec": [
+    "FFN \u2192 one expert pool shared by the 4 layers: 8 SwiGLU experts \u00d7 512, top-2 (active width 1024), per-layer routers, LB + z-loss (16 experts = ablation).",
+    "Delta Attention Residual over per-pass deltas: 6 slots {X\u0303, null (value 0, live), last 4 pass-deltas (masked \u2212\u221e when absent)}, zero-init queries (uniform routing), additive.",
+    "EBT random step scale \u03be ~ U[0.5, 1.5] on each pass's writes in training (\u03be = 1 at eval). Carry clamp as D1. R as D1.",
+    "Pre-committed: C2 4\u20135 (as D1); C3 only if routing diverges across passes (E11 per layer) and experts specialise per layer (E15).",
+    "Budget: 4.92M params \u00b7 4.86M MACs/token at R 4 (15.4 %) \u00b7 training \u00d71.13."
+   ]
+  },
+  "D5": {
+   "title": "K-PLAN",
+   "mechanism": "(ii) + leak-bounded K-candidate plan",
+   "scores": {
+    "C1": 4,
+    "C2": 7,
+    "C3": 7,
+    "C4": 8,
+    "C5": 5,
+    "C6": 6,
+    "C7": 6,
+    "C8": 4
+   },
+   "why": {
+    "C1": "D3's evidence for the schedule; Explorative Modeling says AR LMs are its hardest case (modest gains) \u2014 scored weakest per pre-commitment (K-plan novelty has the weakest evidence)",
+    "C2": "D3's detached windows (narrowed to 8-10 passes)",
+    "C3": "as D3",
+    "C4": "K=4 candidate plans cover several valid continuations; leak <= 2 bits/chunk",
+    "C5": "selector error = train/infer mismatch; multimodal middle unbounded until E13 measures it",
+    "C6": "soft-min prevents seed starvation; more moving parts",
+    "C7": "24.2 % at R 4 (at the cap), training x1.49",
+    "C8": "fork + selector + soft-min + exposure batches"
+   },
+   "total": 59.5,
+   "vs_row0": "Adds what a single deterministic plan cannot hold: K = 4 candidate plans for a next chunk with several valid continuations, leak-bounded (\u2264 2 bits/chunk), on D3's detached schedule. Confirmed if E13 NTP with the selected plan beats one-plan D3 and the selector's top-1 (E11) is well above chance.",
+   "vs_others": "",
+   "budget": {
+    "params": 4929136,
+    "eval_R": 4,
+    "eval": 8534080.0,
+    "train": 14835776.0,
+    "share": 0.24176494118260305,
+    "train_x": 1.484522570745459
+   },
+   "heading": "D5 \u2014 K-PLAN (leak-bounded multimodal plan) \u00b7 C2 mechanism (ii) as D3; novelty = plan capacity (C4)",
+   "spec": [
+    "D3 chassis (LN_h carry) with K ~ U{8..10} (E[K] 9; \u2265 2 detached windows per sample, narrowed vs D3 to stay \u2264 1.5\u00d7 training) + LATE-BRANCH fork: passes 1..R\u22121 shared; the last pass runs for K = 4 learned seeds.",
+    "Soft-min training: weights softmax(\u2212sg(CE_k)/\u03c4), \u03c4 1.0 \u2192 0.3 (no seed starvation); leak \u2264 2 bits/chunk, \u2264 4 bits visible to a decoder position.",
+    "Selector: value head (256 \u2192 64 \u2192 1) trained by KL to the same soft target; inference uses its pick; 25 % of batches feed the decoder sg(selected plan) (robustness to selector error, no gradient into the core).",
+    "C1 weakest (Explorative Modeling: autoregressive LMs are its hardest case). R 4 design (R 6 exceeds the cap).",
+    "Budget: 4.93M params \u00b7 8.53M MACs/token at R 4 (24.2 %) \u00b7 training \u00d71.48."
+   ]
+  },
+  "D6": {
+   "title": "LOOPFORMER-MoE-DS",
+   "mechanism": "(ii) + LoopFormer consistency (final window) + state-routed experts",
+   "scores": {
+    "C1": 8,
+    "C2": 9,
+    "C3": 7,
+    "C4": 5,
+    "C5": 6,
+    "C6": 5,
+    "C7": 7,
+    "C8": 5
+   },
+   "why": {
+    "C1": "inherits D3's evidence (Diffusion-Timestep 160 -> 10,000, URM, TRM/GRAM; grounded per-pass NCP) with the same puzzle-regime discount; Sparse-Layers (LM, iso-FLOP) for looped MoE",
+    "C2": "D3's detached windows + LoopFormer consistency in the final window; the extra point over D3 rests on an ARGUMENT (state-routed experts give the carry a job X\u0303 cannot do), not evidence \u2014 capped at 9",
+    "C3": "4 distinct layers x 8-12 passes with state-conditioned experts; conditional +1 (to 8) only if E11/E15/E16 show routing divergence and layer specialisation",
+    "C4": "PQ unchanged, single plan",
+    "C5": "heavier NCP weighting as D3; decoder sees only the final plan",
+    "C6": "most moving parts of any design except D5: windows + MoE + per-window LB + consistency",
+    "C7": "21.2 % at R 6, training x1.40",
+    "C8": "per-pass logits + per-window backward + MoE router/LB: largest trainer change after D5"
+   },
+   "total": 70.0,
+   "vs_row0": "Attacks all three causes of today's 'passes don't matter': the loss (LoopFormer's distillation toward the endpoint in the final window), the optimisation signal (D3's detached windows, every pass graded on the true next-chunk code) and the computation (D4's experts routed on the state, so each pass computes differently). Confirmed if E16 shows window 2 routing differently from window 1, E17 shows drift in the final window, and hop/bind rise at R = 8\u201316.",
+   "vs_others": "vs D3: experts routed on the state give the carry a job, so windows cannot just recompute from X\u0303 (D3's E13 risk). vs D4: D3's detached windows replace D4's sampled-R loss, which can be satisfied by invariance. vs D2: keeps LoopFormer's consistency where it is well-defined and gets per-pass variation from routing that exists at any R, so it is not limited to elasticity within the trained depth.",
+   "budget": {
+    "params": 4919856.0,
+    "eval_R": 6,
+    "eval": 7200768.0,
+    "train": 12378112.0,
+    "share": 0.21200074145239406,
+    "train_x": 1.3968208971202227
+   },
+   "heading": "D6 \u2014 LOOPFORMER-MoE-DS (best of D2 + D3 + D4, user request) \u00b7 C2 mechanism (ii) + LoopFormer consistency + state-routed experts",
+   "spec": [
+    "Scope stated honestly: D3's training (detached windows, every pass graded on the true next-chunk code) + LoopFormer's consistency \u2016sg(u_K) \u2212 u_r\u2016\u00b2 (weight 0.1) applied only to the passes of the FINAL window + D4's experts in every layer and pass.",
+    "Where LoopFormer lives: its training recipe (distil late passes toward the endpoint); its (t, \u0394) conditioning is replaced by experts routed on the state (ablation A1 keeps it testable, with D2's wiring).",
+    "FFN: one shared pool of 8 SwiGLU experts \u00d7 512, top-2 (active width 1024), per-layer routers; load-balance + z-loss accumulated per window and backpropagated with that window; fallback per-layer E = 8 if the pool collapses (E15).",
+    "Chassis as D3: S_0 = W_s c_hat, LN_h carry, K ~ U{8..12}, windows of 4 (remainder merged), per-window backward; eval R 6.",
+    "Decisive checks: E16 routing divergence across windows (does the carry get a job), E17 drift in the final window, A4 dense FFN (does looped MoE matter at this scale), A2 consistency off.",
+    "Budget: 4.92M params \u00b7 7.20M MACs/token at R 6 (21.2 %) \u00b7 training \u00d71.40."
+   ]
+  }
+ }
+}

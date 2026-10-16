@@ -1,0 +1,9 @@
+PASS T7 windows: K 8..12 -> [4,4] [4,5] [4,6] [4,7] [4,4,4]; eval R 6 lies in window 2 for every K
+PASS T1 capacity dispatch == dense MoE (max diff 8.9e-16); cf 0.5 drops 0.46 and stays finite
+PASS T3 identity at init: pass 1 leaves S_0 = W_s c_hat unchanged (W_o and expert W_2 zero-init)
+PASS T5 compute params 18,833,529 (budget 18,833,513 + 16 per-head temperatures); NextLat psi 657,664 (training only)
+PASS T6 NextLat gradients reach psi, decoder, core and encoder; the head E enters detached (E.detach() in nextlat_losses)
+PASS T4 causality (first change at the edited position 101; other row untouched) and document isolation through the experts (eval: no drops)
+PASS T2 K=8 windows [(1, 4), (5, 8)]: per-window backward == one-graph backward (max rel diff 4.3e-15)
+PASS T2 K=11 windows [(1, 4), (5, 11)]: per-window backward == one-graph backward (max rel diff 7.8e-15)
+ALL PASS

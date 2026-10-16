@@ -1,0 +1,1396 @@
+{
+  "step": 267,
+  "time": "2026-09-28T22:43:09.646958+05:30",
+  "device": "cpu",
+  "K": 10,
+  "batches": [
+    {
+      "losses": {
+        "NTP": 3.9240400791168213,
+        "NCP_weighted": 0.41555678844451904,
+        "NextLat_h": 0.12183497846126556,
+        "NextLat_KL": 0.20663829147815704,
+        "consistency_weighted": 0.0048197112046182156,
+        "MoE_aux_weighted": 0.012275660410523415
+      },
+      "per_term": {
+        "NTP": {
+          "concept_features": {
+            "norm": 0.0014127267058938742,
+            "norm_ratio": 1.0,
+            "cosine": 1.0000125169754028,
+            "ntp_projection_ratio": 1.0000125169754028
+          },
+          "local_features": {
+            "norm": 0.007324581034481525,
+            "norm_ratio": 1.0,
+            "cosine": 1.000036597251892,
+            "ntp_projection_ratio": 1.000036597251892
+          },
+          "core_W_in": {
+            "norm": 0.05764318257570267,
+            "norm_ratio": 1.0,
+            "cosine": 1.0000017881393433,
+            "ntp_projection_ratio": 1.0000017881393433
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.13189804553985596,
+            "norm_ratio": 1.0,
+            "cosine": 1.0004371404647827,
+            "ntp_projection_ratio": 1.0004371404647827
+          },
+          "decoder_Wu": {
+            "norm": 0.2301081418991089,
+            "norm_ratio": 1.0,
+            "cosine": 1.0000009536743164,
+            "ntp_projection_ratio": 1.0000009536743164
+          },
+          "carry_gain": {
+            "norm": 0.010155739262700081,
+            "norm_ratio": 1.0,
+            "cosine": 1.0000001192092896,
+            "ntp_projection_ratio": 1.0000001192092896
+          },
+          "router_layer2": {
+            "norm": 0.009770616888999939,
+            "norm_ratio": 1.0,
+            "cosine": 1.0,
+            "ntp_projection_ratio": 1.0
+          }
+        },
+        "NCP_weighted": {
+          "concept_features": {
+            "norm": 0.00015349914610851556,
+            "norm_ratio": 0.10865452140569687,
+            "cosine": 0.3244606554508209,
+            "ntp_projection_ratio": 0.03525411710143089
+          },
+          "local_features": null,
+          "core_W_in": {
+            "norm": 0.015569084323942661,
+            "norm_ratio": 0.2700941264629364,
+            "cosine": 0.21330466866493225,
+            "ntp_projection_ratio": 0.0576123371720314
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.012937553226947784,
+            "norm_ratio": 0.09808752685785294,
+            "cosine": 0.11254556477069855,
+            "ntp_projection_ratio": 0.011039316654205322
+          },
+          "decoder_Wu": null,
+          "carry_gain": {
+            "norm": 0.0017458838410675526,
+            "norm_ratio": 0.1719110608100891,
+            "cosine": 0.10980094224214554,
+            "ntp_projection_ratio": 0.01887599565088749
+          },
+          "router_layer2": {
+            "norm": 0.0006586630479432642,
+            "norm_ratio": 0.06741263717412949,
+            "cosine": 0.007269313093274832,
+            "ntp_projection_ratio": 0.000490043603349477
+          }
+        },
+        "NextLat_h": {
+          "concept_features": {
+            "norm": 0.00010115213808603585,
+            "norm_ratio": 0.07160063832998276,
+            "cosine": 0.16900475323200226,
+            "ntp_projection_ratio": 0.01210084930062294
+          },
+          "local_features": {
+            "norm": 0.0004498447524383664,
+            "norm_ratio": 0.061415765434503555,
+            "cosine": 0.025104204192757607,
+            "ntp_projection_ratio": 0.0015417939284816384
+          },
+          "core_W_in": {
+            "norm": 0.0058504752814769745,
+            "norm_ratio": 0.10149466246366501,
+            "cosine": 0.1052338257431984,
+            "ntp_projection_ratio": 0.010680671781301498
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.014113283716142178,
+            "norm_ratio": 0.10700146108865738,
+            "cosine": -0.17498831450939178,
+            "ntp_projection_ratio": -0.018724005669355392
+          },
+          "decoder_Wu": {
+            "norm": 0.025351140648126602,
+            "norm_ratio": 0.11017055064439774,
+            "cosine": -0.3204139769077301,
+            "ntp_projection_ratio": -0.03530018404126167
+          },
+          "carry_gain": {
+            "norm": 0.0013124088291078806,
+            "norm_ratio": 0.12922829389572144,
+            "cosine": -0.14397194981575012,
+            "ntp_projection_ratio": -0.018605249002575874
+          },
+          "router_layer2": {
+            "norm": 0.0007718752603977919,
+            "norm_ratio": 0.07899964600801468,
+            "cosine": 0.3301367163658142,
+            "ntp_projection_ratio": 0.02608068473637104
+          }
+        },
+        "NextLat_KL": {
+          "concept_features": {
+            "norm": 0.0004854004946537316,
+            "norm_ratio": 0.34359121322631836,
+            "cosine": -0.21290162205696106,
+            "ntp_projection_ratio": -0.073151133954525
+          },
+          "local_features": {
+            "norm": 0.0025317464023828506,
+            "norm_ratio": 0.34565067291259766,
+            "cosine": 0.018493909388780594,
+            "ntp_projection_ratio": 0.006392432376742363
+          },
+          "core_W_in": {
+            "norm": 0.023853899911046028,
+            "norm_ratio": 0.41381996870040894,
+            "cosine": -0.48173201084136963,
+            "ntp_projection_ratio": -0.19935031235218048
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.06898358464241028,
+            "norm_ratio": 0.5230068564414978,
+            "cosine": -0.2414131462574005,
+            "ntp_projection_ratio": -0.12626072764396667
+          },
+          "decoder_Wu": {
+            "norm": 0.09856630861759186,
+            "norm_ratio": 0.42834776639938354,
+            "cosine": -0.2814037501811981,
+            "ntp_projection_ratio": -0.12053867429494858
+          },
+          "carry_gain": {
+            "norm": 0.004337609745562077,
+            "norm_ratio": 0.4271092116832733,
+            "cosine": -0.3869089186191559,
+            "ntp_projection_ratio": -0.16525237262248993
+          },
+          "router_layer2": {
+            "norm": 0.004397825337946415,
+            "norm_ratio": 0.45010724663734436,
+            "cosine": -0.06454998254776001,
+            "ntp_projection_ratio": -0.029054414480924606
+          }
+        },
+        "consistency_weighted": {
+          "concept_features": {
+            "norm": 8.43472225824371e-05,
+            "norm_ratio": 0.05970526486635208,
+            "cosine": -0.14168472588062286,
+            "ntp_projection_ratio": -0.008459324017167091
+          },
+          "local_features": null,
+          "core_W_in": {
+            "norm": 0.010339540429413319,
+            "norm_ratio": 0.1793714314699173,
+            "cosine": -0.125263512134552,
+            "ntp_projection_ratio": -0.022468693554401398
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.009136746637523174,
+            "norm_ratio": 0.0692712813615799,
+            "cosine": -0.026832278817892075,
+            "ntp_projection_ratio": -0.0018587063532322645
+          },
+          "decoder_Wu": null,
+          "carry_gain": {
+            "norm": 0.00135762186255306,
+            "norm_ratio": 0.13368025422096252,
+            "cosine": -0.008907525800168514,
+            "ntp_projection_ratio": -0.0011907604057341814
+          },
+          "router_layer2": {
+            "norm": 0.0010464558145031333,
+            "norm_ratio": 0.10710232704877853,
+            "cosine": -0.11116141080856323,
+            "ntp_projection_ratio": -0.011905645951628685
+          }
+        },
+        "MoE_aux_weighted": {
+          "concept_features": {
+            "norm": 2.0135916201979853e-05,
+            "norm_ratio": 0.014253227971494198,
+            "cosine": -0.008495260030031204,
+            "ntp_projection_ratio": -0.00012108487862860784
+          },
+          "local_features": null,
+          "core_W_in": {
+            "norm": 0.0030031080823391676,
+            "norm_ratio": 0.05209823697805405,
+            "cosine": -0.02420811541378498,
+            "ntp_projection_ratio": -0.0012612000573426485
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.0010786968050524592,
+            "norm_ratio": 0.008178262040019035,
+            "cosine": 0.005246186628937721,
+            "ntp_projection_ratio": 4.2904692236334085e-05
+          },
+          "decoder_Wu": null,
+          "carry_gain": {
+            "norm": 0.00020445439440663904,
+            "norm_ratio": 0.020131906494498253,
+            "cosine": 0.004413139540702105,
+            "ntp_projection_ratio": 8.88449139893055e-05
+          },
+          "router_layer2": {
+            "norm": 0.002183763310313225,
+            "norm_ratio": 0.22350311279296875,
+            "cosine": -0.3093148171901703,
+            "ntp_projection_ratio": -0.06913282722234726
+          }
+        }
+      },
+      "aggregate": {
+        "all_aux": {
+          "concept_features": {
+            "norm_ratio": 0.3936614990234375,
+            "cosine": -0.08732522279024124,
+            "ntp_projection_ratio": -0.03437657654285431
+          },
+          "local_features": {
+            "norm_ratio": 0.37958189845085144,
+            "cosine": 0.020902544260025024,
+            "ntp_projection_ratio": 0.007934227585792542
+          },
+          "core_W_in": {
+            "norm_ratio": 0.4229736328125,
+            "cosine": -0.36594998836517334,
+            "ntp_projection_ratio": -0.15478719770908356
+          },
+          "expert_w2": {
+            "norm_ratio": 0.5715215802192688,
+            "cosine": -0.23754346370697021,
+            "ntp_projection_ratio": -0.13576121628284454
+          },
+          "decoder_Wu": {
+            "norm_ratio": 0.49618521332740784,
+            "cosine": -0.31407395005226135,
+            "ntp_projection_ratio": -0.15583886206150055
+          },
+          "carry_gain": {
+            "norm_ratio": 0.47540968656539917,
+            "cosine": -0.3493482172489166,
+            "ntp_projection_ratio": -0.16608352959156036
+          },
+          "router_layer2": {
+            "norm_ratio": 0.5115976929664612,
+            "cosine": -0.16325749456882477,
+            "ntp_projection_ratio": -0.08352216333150864
+          }
+        },
+        "nextlat": {
+          "concept_features": {
+            "norm_ratio": 0.37631621956825256,
+            "cosine": -0.16223134100437164,
+            "ntp_projection_ratio": -0.06105028837919235
+          },
+          "local_features": {
+            "norm_ratio": 0.37958189845085144,
+            "cosine": 0.020902544260025024,
+            "ntp_projection_ratio": 0.007934227585792542
+          },
+          "core_W_in": {
+            "norm_ratio": 0.4315803349018097,
+            "cosine": -0.4371599853038788,
+            "ntp_projection_ratio": -0.18866965174674988
+          },
+          "expert_w2": {
+            "norm_ratio": 0.5705116987228394,
+            "cosine": -0.2541310787200928,
+            "ntp_projection_ratio": -0.14498475193977356
+          },
+          "decoder_Wu": {
+            "norm_ratio": 0.49618521332740784,
+            "cosine": -0.31407395005226135,
+            "ntp_projection_ratio": -0.15583886206150055
+          },
+          "carry_gain": {
+            "norm_ratio": 0.4698721766471863,
+            "cosine": -0.39129284024238586,
+            "ntp_projection_ratio": -0.18385761976242065
+          },
+          "router_layer2": {
+            "norm_ratio": 0.48369544744491577,
+            "cosine": -0.0061479415744543076,
+            "ntp_projection_ratio": -0.0029737313743680716
+          }
+        }
+      },
+      "initial_projection_gradients": {
+        "NTP": null,
+        "NCP_weighted": 0.0024228820111602545,
+        "NextLat_h": null,
+        "NextLat_KL": null,
+        "consistency_weighted": null,
+        "MoE_aux_weighted": 0.0005727464449591935
+      },
+      "offset": 0,
+      "rows": [
+        261334,
+        15861
+      ]
+    },
+    {
+      "losses": {
+        "NTP": 3.8696234226226807,
+        "NCP_weighted": 0.40843328833580017,
+        "NextLat_h": 0.1462678611278534,
+        "NextLat_KL": 0.2554732859134674,
+        "consistency_weighted": 0.0027046632021665573,
+        "MoE_aux_weighted": 0.012558316811919212
+      },
+      "per_term": {
+        "NTP": {
+          "concept_features": {
+            "norm": 0.000779887312091887,
+            "norm_ratio": 1.0,
+            "cosine": 1.0000050067901611,
+            "ntp_projection_ratio": 1.0000050067901611
+          },
+          "local_features": {
+            "norm": 0.006495472509413958,
+            "norm_ratio": 1.0,
+            "cosine": 1.0000360012054443,
+            "ntp_projection_ratio": 1.0000360012054443
+          },
+          "core_W_in": {
+            "norm": 0.04206250235438347,
+            "norm_ratio": 1.0,
+            "cosine": 1.0000027418136597,
+            "ntp_projection_ratio": 1.0000027418136597
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.11117523908615112,
+            "norm_ratio": 1.0,
+            "cosine": 1.0004594326019287,
+            "ntp_projection_ratio": 1.0004594326019287
+          },
+          "decoder_Wu": {
+            "norm": 0.3495948612689972,
+            "norm_ratio": 1.0,
+            "cosine": 1.0000020265579224,
+            "ntp_projection_ratio": 1.0000020265579224
+          },
+          "carry_gain": {
+            "norm": 0.013474992476403713,
+            "norm_ratio": 1.0,
+            "cosine": 1.0000001192092896,
+            "ntp_projection_ratio": 1.0000001192092896
+          },
+          "router_layer2": {
+            "norm": 0.010249542072415352,
+            "norm_ratio": 1.0,
+            "cosine": 1.0000001192092896,
+            "ntp_projection_ratio": 1.0000001192092896
+          }
+        },
+        "NCP_weighted": {
+          "concept_features": {
+            "norm": 9.998415771406144e-05,
+            "norm_ratio": 0.12820333242416382,
+            "cosine": 0.3223797380924225,
+            "ntp_projection_ratio": 0.041330158710479736
+          },
+          "local_features": null,
+          "core_W_in": {
+            "norm": 0.007297084201127291,
+            "norm_ratio": 0.17348192632198334,
+            "cosine": 0.08030744642019272,
+            "ntp_projection_ratio": 0.013931890949606895
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.010134570300579071,
+            "norm_ratio": 0.09115851670503616,
+            "cosine": 0.0468674972653389,
+            "ntp_projection_ratio": 0.004272371530532837
+          },
+          "decoder_Wu": null,
+          "carry_gain": {
+            "norm": 0.0009921126766130328,
+            "norm_ratio": 0.07362621277570724,
+            "cosine": 0.07368811964988708,
+            "ntp_projection_ratio": 0.005425377283245325
+          },
+          "router_layer2": {
+            "norm": 0.0006182987708598375,
+            "norm_ratio": 0.060324527323246,
+            "cosine": -0.19249573349952698,
+            "ntp_projection_ratio": -0.011612214148044586
+          }
+        },
+        "NextLat_h": {
+          "concept_features": {
+            "norm": 9.111775580095127e-05,
+            "norm_ratio": 0.11683451384305954,
+            "cosine": 0.012591512873768806,
+            "ntp_projection_ratio": 0.0014711233088746667
+          },
+          "local_features": {
+            "norm": 0.0004608935851138085,
+            "norm_ratio": 0.07095612585544586,
+            "cosine": 0.027497677132487297,
+            "ntp_projection_ratio": 0.0019511287100613117
+          },
+          "core_W_in": {
+            "norm": 0.006385572720319033,
+            "norm_ratio": 0.15181152522563934,
+            "cosine": -0.504077672958374,
+            "ntp_projection_ratio": -0.07652480155229568
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.014698250219225883,
+            "norm_ratio": 0.1322079449892044,
+            "cosine": -0.4632818102836609,
+            "ntp_projection_ratio": -0.06124953553080559
+          },
+          "decoder_Wu": {
+            "norm": 0.03848879411816597,
+            "norm_ratio": 0.11009542644023895,
+            "cosine": -0.5377190113067627,
+            "ntp_projection_ratio": -0.05920040234923363
+          },
+          "carry_gain": {
+            "norm": 0.0016527388943359256,
+            "norm_ratio": 0.12265230715274811,
+            "cosine": -0.590419352054596,
+            "ntp_projection_ratio": -0.07241629809141159
+          },
+          "router_layer2": {
+            "norm": 0.0012768052984029055,
+            "norm_ratio": 0.12457193434238434,
+            "cosine": -0.5091655254364014,
+            "ntp_projection_ratio": -0.06342773139476776
+          }
+        },
+        "NextLat_KL": {
+          "concept_features": {
+            "norm": 0.0003193645679857582,
+            "norm_ratio": 0.40950092673301697,
+            "cosine": -0.21829341351985931,
+            "ntp_projection_ratio": -0.08939134329557419
+          },
+          "local_features": {
+            "norm": 0.0020032315514981747,
+            "norm_ratio": 0.3084042966365814,
+            "cosine": 0.041587650775909424,
+            "ntp_projection_ratio": 0.01282580941915512
+          },
+          "core_W_in": {
+            "norm": 0.01539270393550396,
+            "norm_ratio": 0.3659483790397644,
+            "cosine": -0.47834575176239014,
+            "ntp_projection_ratio": -0.17504984140396118
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.04015154764056206,
+            "norm_ratio": 0.3611554801464081,
+            "cosine": -0.3827754855155945,
+            "ntp_projection_ratio": -0.1382414698600769
+          },
+          "decoder_Wu": {
+            "norm": 0.10570430755615234,
+            "norm_ratio": 0.3023622930049896,
+            "cosine": -0.44269493222236633,
+            "ntp_projection_ratio": -0.13385425508022308
+          },
+          "carry_gain": {
+            "norm": 0.004152756184339523,
+            "norm_ratio": 0.3081824481487274,
+            "cosine": -0.46186694502830505,
+            "ntp_projection_ratio": -0.14233927428722382
+          },
+          "router_layer2": {
+            "norm": 0.0019180977251380682,
+            "norm_ratio": 0.1871398389339447,
+            "cosine": -0.32170194387435913,
+            "ntp_projection_ratio": -0.060203250497579575
+          }
+        },
+        "consistency_weighted": {
+          "concept_features": {
+            "norm": 5.2995685109635815e-05,
+            "norm_ratio": 0.06795300543308258,
+            "cosine": -0.13478703796863556,
+            "ntp_projection_ratio": -0.00915918406099081
+          },
+          "local_features": null,
+          "core_W_in": {
+            "norm": 0.005289752501994371,
+            "norm_ratio": 0.1257593333721161,
+            "cosine": 0.005964390933513641,
+            "ntp_projection_ratio": 0.0007500778301618993
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.0064779724925756454,
+            "norm_ratio": 0.058268122375011444,
+            "cosine": 0.013913522474467754,
+            "ntp_projection_ratio": 0.0008107147878035903
+          },
+          "decoder_Wu": null,
+          "carry_gain": {
+            "norm": 0.0007461351342499256,
+            "norm_ratio": 0.05537183955311775,
+            "cosine": -0.014674253761768341,
+            "ntp_projection_ratio": -0.0008125404710881412
+          },
+          "router_layer2": {
+            "norm": 0.0007112154271453619,
+            "norm_ratio": 0.06938996911048889,
+            "cosine": 0.3050728440284729,
+            "ntp_projection_ratio": 0.021168995648622513
+          }
+        },
+        "MoE_aux_weighted": {
+          "concept_features": {
+            "norm": 2.0927784134983085e-05,
+            "norm_ratio": 0.02683436870574951,
+            "cosine": -0.008979524485766888,
+            "ntp_projection_ratio": -0.0002409598819212988
+          },
+          "local_features": null,
+          "core_W_in": {
+            "norm": 0.003804542822763324,
+            "norm_ratio": 0.0904497504234314,
+            "cosine": -0.07185669243335724,
+            "ntp_projection_ratio": -0.006499419920146465
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.0014166712062433362,
+            "norm_ratio": 0.012742686085402966,
+            "cosine": -0.05632433667778969,
+            "ntp_projection_ratio": -0.0007177233346737921
+          },
+          "decoder_Wu": null,
+          "carry_gain": {
+            "norm": 0.0002104340383084491,
+            "norm_ratio": 0.015616634860634804,
+            "cosine": -0.08645312488079071,
+            "ntp_projection_ratio": -0.001350106904283166
+          },
+          "router_layer2": {
+            "norm": 0.0024807993322610855,
+            "norm_ratio": 0.2420400232076645,
+            "cosine": -0.3688811659812927,
+            "ntp_projection_ratio": -0.0892840027809143
+          }
+        }
+      },
+      "aggregate": {
+        "all_aux": {
+          "concept_features": {
+            "norm_ratio": 0.4755869507789612,
+            "cosine": -0.11772866547107697,
+            "ntp_projection_ratio": -0.05599021166563034
+          },
+          "local_features": {
+            "norm_ratio": 0.3508996069431305,
+            "cosine": 0.042111579328775406,
+            "ntp_projection_ratio": 0.01477693673223257
+          },
+          "core_W_in": {
+            "norm_ratio": 0.4225707948207855,
+            "cosine": -0.5759795308113098,
+            "ntp_projection_ratio": -0.24339210987091064
+          },
+          "expert_w2": {
+            "norm_ratio": 0.4315941631793976,
+            "cosine": -0.4521044194698334,
+            "ntp_projection_ratio": -0.19512562453746796
+          },
+          "decoder_Wu": {
+            "norm_ratio": 0.3845846354961395,
+            "cosine": -0.5019822716712952,
+            "ntp_projection_ratio": -0.193054661154747
+          },
+          "carry_gain": {
+            "norm_ratio": 0.3737007975578308,
+            "cosine": -0.5659416317939758,
+            "ntp_projection_ratio": -0.2114928513765335
+          },
+          "router_layer2": {
+            "norm_ratio": 0.4001254439353943,
+            "cosine": -0.5082361102104187,
+            "ntp_projection_ratio": -0.20335820317268372
+          }
+        },
+        "nextlat": {
+          "concept_features": {
+            "norm_ratio": 0.4389350414276123,
+            "cosine": -0.20030352473258972,
+            "ntp_projection_ratio": -0.08792023360729218
+          },
+          "local_features": {
+            "norm_ratio": 0.3508996069431305,
+            "cosine": 0.042111579328775406,
+            "ntp_projection_ratio": 0.01477693673223257
+          },
+          "core_W_in": {
+            "norm_ratio": 0.42023396492004395,
+            "cosine": -0.5986537933349609,
+            "ntp_projection_ratio": -0.25157466530799866
+          },
+          "expert_w2": {
+            "norm_ratio": 0.4326971471309662,
+            "cosine": -0.4610407054424286,
+            "ntp_projection_ratio": -0.1994910091161728
+          },
+          "decoder_Wu": {
+            "norm_ratio": 0.3845846354961395,
+            "cosine": -0.5019822716712952,
+            "ntp_projection_ratio": -0.193054661154747
+          },
+          "carry_gain": {
+            "norm_ratio": 0.3770979344844818,
+            "cosine": -0.5694955587387085,
+            "ntp_projection_ratio": -0.2147555947303772
+          },
+          "router_layer2": {
+            "norm_ratio": 0.277869313955307,
+            "cosine": -0.4449249804019928,
+            "ntp_projection_ratio": -0.12363099306821823
+          }
+        }
+      },
+      "initial_projection_gradients": {
+        "NTP": null,
+        "NCP_weighted": 0.001738742575980723,
+        "NextLat_h": null,
+        "NextLat_KL": null,
+        "consistency_weighted": null,
+        "MoE_aux_weighted": 0.0005602108431048691
+      },
+      "offset": 32,
+      "rows": [
+        269427,
+        210015
+      ]
+    },
+    {
+      "losses": {
+        "NTP": 3.032491683959961,
+        "NCP_weighted": 0.41192004084587097,
+        "NextLat_h": 0.12639348208904266,
+        "NextLat_KL": 0.2156762182712555,
+        "consistency_weighted": 0.003877116134390235,
+        "MoE_aux_weighted": 0.012836304493248463
+      },
+      "per_term": {
+        "NTP": {
+          "concept_features": {
+            "norm": 0.0010553000029176474,
+            "norm_ratio": 1.0,
+            "cosine": 1.0000191926956177,
+            "ntp_projection_ratio": 1.0000191926956177
+          },
+          "local_features": {
+            "norm": 0.006707385648041964,
+            "norm_ratio": 1.0,
+            "cosine": 1.0000402927398682,
+            "ntp_projection_ratio": 1.0000402927398682
+          },
+          "core_W_in": {
+            "norm": 0.04285511001944542,
+            "norm_ratio": 1.0,
+            "cosine": 1.000002145767212,
+            "ntp_projection_ratio": 1.000002145767212
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.11978160589933395,
+            "norm_ratio": 1.0,
+            "cosine": 1.0003730058670044,
+            "ntp_projection_ratio": 1.0003730058670044
+          },
+          "decoder_Wu": {
+            "norm": 0.20210757851600647,
+            "norm_ratio": 1.0,
+            "cosine": 1.000001311302185,
+            "ntp_projection_ratio": 1.000001311302185
+          },
+          "carry_gain": {
+            "norm": 0.008717397227883339,
+            "norm_ratio": 1.0,
+            "cosine": 1.000000238418579,
+            "ntp_projection_ratio": 1.000000238418579
+          },
+          "router_layer2": {
+            "norm": 0.007431980688124895,
+            "norm_ratio": 1.0,
+            "cosine": 0.9999999403953552,
+            "ntp_projection_ratio": 0.9999999403953552
+          }
+        },
+        "NCP_weighted": {
+          "concept_features": {
+            "norm": 0.0001107831922126934,
+            "norm_ratio": 0.10497791320085526,
+            "cosine": 0.1631709486246109,
+            "ntp_projection_ratio": 0.01712934486567974
+          },
+          "local_features": null,
+          "core_W_in": {
+            "norm": 0.011048799380660057,
+            "norm_ratio": 0.2578175365924835,
+            "cosine": 0.027255214750766754,
+            "ntp_projection_ratio": 0.00702687306329608
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.01564621552824974,
+            "norm_ratio": 0.13062286376953125,
+            "cosine": 0.01610361784696579,
+            "ntp_projection_ratio": 0.002103500533849001
+          },
+          "decoder_Wu": null,
+          "carry_gain": {
+            "norm": 0.0014042854309082031,
+            "norm_ratio": 0.16108998656272888,
+            "cosine": -0.003139186417683959,
+            "ntp_projection_ratio": -0.0005056915106251836
+          },
+          "router_layer2": {
+            "norm": 0.0007026095408946276,
+            "norm_ratio": 0.09453866630792618,
+            "cosine": 0.08570404350757599,
+            "ntp_projection_ratio": 0.00810234621167183
+          }
+        },
+        "NextLat_h": {
+          "concept_features": {
+            "norm": 8.493773930240422e-05,
+            "norm_ratio": 0.08048681914806366,
+            "cosine": 0.018728431314229965,
+            "ntp_projection_ratio": 0.0015073918038979173
+          },
+          "local_features": {
+            "norm": 0.00045172360842116177,
+            "norm_ratio": 0.06734719127416611,
+            "cosine": -0.02427544817328453,
+            "ntp_projection_ratio": -0.001634883345104754
+          },
+          "core_W_in": {
+            "norm": 0.005571525078266859,
+            "norm_ratio": 0.13000841438770294,
+            "cosine": -0.30113542079925537,
+            "ntp_projection_ratio": -0.039150137454271317
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.01549529004842043,
+            "norm_ratio": 0.12936285138130188,
+            "cosine": -0.3391530513763428,
+            "ntp_projection_ratio": -0.043873801827430725
+          },
+          "decoder_Wu": {
+            "norm": 0.024279097095131874,
+            "norm_ratio": 0.12012957036495209,
+            "cosine": -0.49199822545051575,
+            "ntp_projection_ratio": -0.05910354107618332
+          },
+          "carry_gain": {
+            "norm": 0.0012918076245114207,
+            "norm_ratio": 0.1481873095035553,
+            "cosine": -0.42247194051742554,
+            "ntp_projection_ratio": -0.06260498613119125
+          },
+          "router_layer2": {
+            "norm": 0.0009859201963990927,
+            "norm_ratio": 0.13265913724899292,
+            "cosine": -0.2311277985572815,
+            "ntp_projection_ratio": -0.030661217868328094
+          }
+        },
+        "NextLat_KL": {
+          "concept_features": {
+            "norm": 0.0004452135763131082,
+            "norm_ratio": 0.4218834340572357,
+            "cosine": 0.07014244794845581,
+            "ntp_projection_ratio": 0.029591936618089676
+          },
+          "local_features": {
+            "norm": 0.0027378362137824297,
+            "norm_ratio": 0.4081823229789734,
+            "cosine": -0.03251092508435249,
+            "ntp_projection_ratio": -0.013270385563373566
+          },
+          "core_W_in": {
+            "norm": 0.026685860008001328,
+            "norm_ratio": 0.6226996183395386,
+            "cosine": -0.3583584427833557,
+            "ntp_projection_ratio": -0.22314967215061188
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.0836532786488533,
+            "norm_ratio": 0.6983816623687744,
+            "cosine": -0.397173136472702,
+            "ntp_projection_ratio": -0.2773784101009369
+          },
+          "decoder_Wu": {
+            "norm": 0.11585461348295212,
+            "norm_ratio": 0.5732324123382568,
+            "cosine": -0.48232972621917725,
+            "ntp_projection_ratio": -0.2764870524406433
+          },
+          "carry_gain": {
+            "norm": 0.005830241367220879,
+            "norm_ratio": 0.6688053011894226,
+            "cosine": -0.4732434153556824,
+            "ntp_projection_ratio": -0.3165076971054077
+          },
+          "router_layer2": {
+            "norm": 0.004118431359529495,
+            "norm_ratio": 0.5541499257087708,
+            "cosine": -0.5371197462081909,
+            "ntp_projection_ratio": -0.29764485359191895
+          }
+        },
+        "consistency_weighted": {
+          "concept_features": {
+            "norm": 6.221884541446343e-05,
+            "norm_ratio": 0.058958444744348526,
+            "cosine": 0.1368614137172699,
+            "ntp_projection_ratio": 0.008069136179983616
+          },
+          "local_features": null,
+          "core_W_in": {
+            "norm": 0.007784382440149784,
+            "norm_ratio": 0.18164420127868652,
+            "cosine": 0.12879282236099243,
+            "ntp_projection_ratio": 0.023394471034407616
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.009600752033293247,
+            "norm_ratio": 0.08015213906764984,
+            "cosine": 0.02911139652132988,
+            "ntp_projection_ratio": 0.0023333407007157803
+          },
+          "decoder_Wu": null,
+          "carry_gain": {
+            "norm": 0.001031851046718657,
+            "norm_ratio": 0.11836687475442886,
+            "cosine": 0.13576668500900269,
+            "ntp_projection_ratio": 0.016070278361439705
+          },
+          "router_layer2": {
+            "norm": 0.0006264166440814734,
+            "norm_ratio": 0.0842866376042366,
+            "cosine": 0.09172683209180832,
+            "ntp_projection_ratio": 0.007731346413493156
+          }
+        },
+        "MoE_aux_weighted": {
+          "concept_features": {
+            "norm": 2.257562846352812e-05,
+            "norm_ratio": 0.021392617374658585,
+            "cosine": -0.009281890466809273,
+            "ntp_projection_ratio": -0.00019856392464134842
+          },
+          "local_features": null,
+          "core_W_in": {
+            "norm": 0.0034215182531625032,
+            "norm_ratio": 0.07983921468257904,
+            "cosine": 0.010707884095609188,
+            "ntp_projection_ratio": 0.0008549090125598013
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.0014864412369206548,
+            "norm_ratio": 0.012409594841301441,
+            "cosine": -0.01118139922618866,
+            "ntp_projection_ratio": -0.00013875662989448756
+          },
+          "decoder_Wu": null,
+          "carry_gain": {
+            "norm": 0.0001839444594224915,
+            "norm_ratio": 0.0211008470505476,
+            "cosine": -0.04191596806049347,
+            "ntp_projection_ratio": -0.0008844624389894307
+          },
+          "router_layer2": {
+            "norm": 0.0018873504595831037,
+            "norm_ratio": 0.2539498507976532,
+            "cosine": 0.07030174881219864,
+            "ntp_projection_ratio": 0.01785311847925186
+          }
+        }
+      },
+      "aggregate": {
+        "all_aux": {
+          "concept_features": {
+            "norm_ratio": 0.48129236698150635,
+            "cosine": 0.11655960232019424,
+            "ntp_projection_ratio": 0.05609924718737602
+          },
+          "local_features": {
+            "norm_ratio": 0.44658783078193665,
+            "cosine": -0.03337589278817177,
+            "ntp_projection_ratio": -0.014905267395079136
+          },
+          "core_W_in": {
+            "norm_ratio": 0.6685320138931274,
+            "cosine": -0.34556844830513,
+            "ntp_projection_ratio": -0.23102357983589172
+          },
+          "expert_w2": {
+            "norm_ratio": 0.7601866126060486,
+            "cosine": -0.4169425666332245,
+            "ntp_projection_ratio": -0.3169541656970978
+          },
+          "decoder_Wu": {
+            "norm_ratio": 0.6421961784362793,
+            "cosine": -0.5225670337677002,
+            "ntp_projection_ratio": -0.33559057116508484
+          },
+          "carry_gain": {
+            "norm_ratio": 0.7437477111816406,
+            "cosine": -0.48999491333961487,
+            "ntp_projection_ratio": -0.36443260312080383
+          },
+          "router_layer2": {
+            "norm_ratio": 0.6242125034332275,
+            "cosine": -0.47198548913002014,
+            "ntp_projection_ratio": -0.29461923241615295
+          }
+        },
+        "nextlat": {
+          "concept_features": {
+            "norm_ratio": 0.4643315076828003,
+            "cosine": 0.06697655469179153,
+            "ntp_projection_ratio": 0.03109932318329811
+          },
+          "local_features": {
+            "norm_ratio": 0.44658783078193665,
+            "cosine": -0.03337589278817177,
+            "ntp_projection_ratio": -0.014905267395079136
+          },
+          "core_W_in": {
+            "norm_ratio": 0.6781675815582275,
+            "cosine": -0.3867773115634918,
+            "ntp_projection_ratio": -0.2622998356819153
+          },
+          "expert_w2": {
+            "norm_ratio": 0.7612283229827881,
+            "cosine": -0.42201822996139526,
+            "ntp_projection_ratio": -0.3212522268295288
+          },
+          "decoder_Wu": {
+            "norm_ratio": 0.6421961784362793,
+            "cosine": -0.5225670337677002,
+            "ntp_projection_ratio": -0.33559057116508484
+          },
+          "carry_gain": {
+            "norm_ratio": 0.7502005100250244,
+            "cosine": -0.5053485035896301,
+            "ntp_projection_ratio": -0.37911272048950195
+          },
+          "router_layer2": {
+            "norm_ratio": 0.5864599347114563,
+            "cosine": -0.5598098635673523,
+            "ntp_projection_ratio": -0.32830604910850525
+          }
+        }
+      },
+      "initial_projection_gradients": {
+        "NTP": null,
+        "NCP_weighted": 0.0021047531627118587,
+        "NextLat_h": null,
+        "NextLat_KL": null,
+        "consistency_weighted": null,
+        "MoE_aux_weighted": 0.0005972515209577978
+      },
+      "offset": 64,
+      "rows": [
+        169097,
+        97375
+      ]
+    },
+    {
+      "losses": {
+        "NTP": 3.004284381866455,
+        "NCP_weighted": 0.42147117853164673,
+        "NextLat_h": 0.14568005502223969,
+        "NextLat_KL": 0.23464086651802063,
+        "consistency_weighted": 0.0041308109648525715,
+        "MoE_aux_weighted": 0.012977483682334423
+      },
+      "per_term": {
+        "NTP": {
+          "concept_features": {
+            "norm": 0.0010853989515453577,
+            "norm_ratio": 1.0,
+            "cosine": 1.000013828277588,
+            "ntp_projection_ratio": 1.000013828277588
+          },
+          "local_features": {
+            "norm": 0.0065887500531971455,
+            "norm_ratio": 1.0,
+            "cosine": 1.000044584274292,
+            "ntp_projection_ratio": 1.000044584274292
+          },
+          "core_W_in": {
+            "norm": 0.044042907655239105,
+            "norm_ratio": 1.0,
+            "cosine": 1.0000026226043701,
+            "ntp_projection_ratio": 1.0000026226043701
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.12409533560276031,
+            "norm_ratio": 1.0,
+            "cosine": 1.000300645828247,
+            "ntp_projection_ratio": 1.000300645828247
+          },
+          "decoder_Wu": {
+            "norm": 0.19174602627754211,
+            "norm_ratio": 1.0,
+            "cosine": 1.0000003576278687,
+            "ntp_projection_ratio": 1.0000003576278687
+          },
+          "carry_gain": {
+            "norm": 0.008603561669588089,
+            "norm_ratio": 1.0,
+            "cosine": 1.0,
+            "ntp_projection_ratio": 1.0
+          },
+          "router_layer2": {
+            "norm": 0.00870718527585268,
+            "norm_ratio": 1.0,
+            "cosine": 0.9999997019767761,
+            "ntp_projection_ratio": 0.9999997019767761
+          }
+        },
+        "NCP_weighted": {
+          "concept_features": {
+            "norm": 0.00011716274457285181,
+            "norm_ratio": 0.10794440656900406,
+            "cosine": 0.31704890727996826,
+            "ntp_projection_ratio": 0.034223657101392746
+          },
+          "local_features": null,
+          "core_W_in": {
+            "norm": 0.005761310458183289,
+            "norm_ratio": 0.13081130385398865,
+            "cosine": 0.24149669706821442,
+            "ntp_projection_ratio": 0.031590498983860016
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.009626900777220726,
+            "norm_ratio": 0.0775766521692276,
+            "cosine": 0.06881225854158401,
+            "ntp_projection_ratio": 0.005338224582374096
+          },
+          "decoder_Wu": null,
+          "carry_gain": {
+            "norm": 0.0008890594472177327,
+            "norm_ratio": 0.10333620756864548,
+            "cosine": -0.015683945268392563,
+            "ntp_projection_ratio": -0.0016207195585593581
+          },
+          "router_layer2": {
+            "norm": 0.0006210486753843725,
+            "norm_ratio": 0.07132599502801895,
+            "cosine": 0.052601881325244904,
+            "ntp_projection_ratio": 0.003751881420612335
+          }
+        },
+        "NextLat_h": {
+          "concept_features": {
+            "norm": 0.00010406619549030438,
+            "norm_ratio": 0.09587828814983368,
+            "cosine": 0.02010929211974144,
+            "ntp_projection_ratio": 0.001928044599480927
+          },
+          "local_features": {
+            "norm": 0.0005018484662286937,
+            "norm_ratio": 0.07616747915744781,
+            "cosine": -0.02505393512547016,
+            "ntp_projection_ratio": -0.001908295089378953
+          },
+          "core_W_in": {
+            "norm": 0.006071283482015133,
+            "norm_ratio": 0.13784928619861603,
+            "cosine": -0.13027648627758026,
+            "ntp_projection_ratio": -0.017958519980311394
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.016570350155234337,
+            "norm_ratio": 0.1335292011499405,
+            "cosine": -0.33032554388046265,
+            "ntp_projection_ratio": -0.04410810396075249
+          },
+          "decoder_Wu": {
+            "norm": 0.025653928518295288,
+            "norm_ratio": 0.13379119336605072,
+            "cosine": -0.43167153000831604,
+            "ntp_projection_ratio": -0.05775384232401848
+          },
+          "carry_gain": {
+            "norm": 0.0011990099446848035,
+            "norm_ratio": 0.13936203718185425,
+            "cosine": -0.3118775486946106,
+            "ntp_projection_ratio": -0.04346389323472977
+          },
+          "router_layer2": {
+            "norm": 0.0006875514518469572,
+            "norm_ratio": 0.07896368950605392,
+            "cosine": 0.015456078574061394,
+            "ntp_projection_ratio": 0.0012204688973724842
+          }
+        },
+        "NextLat_KL": {
+          "concept_features": {
+            "norm": 0.0004996230127289891,
+            "norm_ratio": 0.46031278371810913,
+            "cosine": -0.12125922739505768,
+            "ntp_projection_ratio": -0.055817171931266785
+          },
+          "local_features": {
+            "norm": 0.0029296036809682846,
+            "norm_ratio": 0.4446372389793396,
+            "cosine": -0.03832026943564415,
+            "ntp_projection_ratio": -0.017038619145751
+          },
+          "core_W_in": {
+            "norm": 0.024438777938485146,
+            "norm_ratio": 0.5548856854438782,
+            "cosine": -0.44649356603622437,
+            "ntp_projection_ratio": -0.24775287508964539
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.0793558657169342,
+            "norm_ratio": 0.6394749879837036,
+            "cosine": -0.35260021686553955,
+            "ntp_projection_ratio": -0.22547902166843414
+          },
+          "decoder_Wu": {
+            "norm": 0.11085955053567886,
+            "norm_ratio": 0.5781582593917847,
+            "cosine": -0.41398534178733826,
+            "ntp_projection_ratio": -0.23934903740882874
+          },
+          "carry_gain": {
+            "norm": 0.004705930594354868,
+            "norm_ratio": 0.5469747185707092,
+            "cosine": -0.43622586131095886,
+            "ntp_projection_ratio": -0.23860453069210052
+          },
+          "router_layer2": {
+            "norm": 0.0052853659726679325,
+            "norm_ratio": 0.6070119738578796,
+            "cosine": -0.5580996870994568,
+            "ntp_projection_ratio": -0.3387731909751892
+          }
+        },
+        "consistency_weighted": {
+          "concept_features": {
+            "norm": 6.462856254074723e-05,
+            "norm_ratio": 0.05954360216856003,
+            "cosine": 0.018423346802592278,
+            "ntp_projection_ratio": 0.0010969925206154585
+          },
+          "local_features": null,
+          "core_W_in": {
+            "norm": 0.004393971990793943,
+            "norm_ratio": 0.09976571053266525,
+            "cosine": -0.0657767578959465,
+            "ntp_projection_ratio": -0.0065622651018202305
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.0056122285313904285,
+            "norm_ratio": 0.04522513598203659,
+            "cosine": 0.0038565827999264,
+            "ntp_projection_ratio": 0.00017441448289901018
+          },
+          "decoder_Wu": null,
+          "carry_gain": {
+            "norm": 0.0007990908925421536,
+            "norm_ratio": 0.09287907928228378,
+            "cosine": 0.10115668922662735,
+            "ntp_projection_ratio": 0.009395340457558632
+          },
+          "router_layer2": {
+            "norm": 0.0009940990712493658,
+            "norm_ratio": 0.11416997015476227,
+            "cosine": 0.13654834032058716,
+            "ntp_projection_ratio": 0.015589718706905842
+          }
+        },
+        "MoE_aux_weighted": {
+          "concept_features": {
+            "norm": 2.3274416889762506e-05,
+            "norm_ratio": 0.021443190053105354,
+            "cosine": 0.0008829596918076277,
+            "ntp_projection_ratio": 1.8933473256765865e-05
+          },
+          "local_features": null,
+          "core_W_in": {
+            "norm": 0.003199100261554122,
+            "norm_ratio": 0.07263599336147308,
+            "cosine": -0.03860786557197571,
+            "ntp_projection_ratio": -0.002804320538416505
+          },
+          "core_W_s": null,
+          "expert_w2": {
+            "norm": 0.001352165942080319,
+            "norm_ratio": 0.010896186344325542,
+            "cosine": 0.012117201462388039,
+            "ntp_projection_ratio": 0.00013203128764871508
+          },
+          "decoder_Wu": null,
+          "carry_gain": {
+            "norm": 0.00018966288189403713,
+            "norm_ratio": 0.022044694051146507,
+            "cosine": -0.04102743789553642,
+            "ntp_projection_ratio": -0.0009044373291544616
+          },
+          "router_layer2": {
+            "norm": 0.0019378149881958961,
+            "norm_ratio": 0.222553551197052,
+            "cosine": 0.14204955101013184,
+            "ntp_projection_ratio": 0.031613633036613464
+          }
+        }
+      },
+      "aggregate": {
+        "all_aux": {
+          "concept_features": {
+            "norm_ratio": 0.5280534625053406,
+            "cosine": -0.0351281613111496,
+            "ntp_projection_ratio": -0.018549546599388123
+          },
+          "local_features": {
+            "norm_ratio": 0.4859358072280884,
+            "cosine": -0.038990568369627,
+            "ntp_projection_ratio": -0.01894691400229931
+          },
+          "core_W_in": {
+            "norm_ratio": 0.6200898289680481,
+            "cosine": -0.39266490936279297,
+            "ntp_projection_ratio": -0.24348749220371246
+          },
+          "expert_w2": {
+            "norm_ratio": 0.702187180519104,
+            "cosine": -0.3758862018585205,
+            "ntp_projection_ratio": -0.2639424800872803
+          },
+          "decoder_Wu": {
+            "norm_ratio": 0.6562740206718445,
+            "cosine": -0.45271164178848267,
+            "ntp_projection_ratio": -0.2971028983592987
+          },
+          "carry_gain": {
+            "norm_ratio": 0.6146115660667419,
+            "cosine": -0.44775962829589844,
+            "ntp_projection_ratio": -0.2751982510089874
+          },
+          "router_layer2": {
+            "norm_ratio": 0.6588234901428223,
+            "cosine": -0.4350140690803528,
+            "ntp_projection_ratio": -0.28659746050834656
+          }
+        },
+        "nextlat": {
+          "concept_features": {
+            "norm_ratio": 0.5038285851478577,
+            "cosine": -0.1069592535495758,
+            "ntp_projection_ratio": -0.05388913303613663
+          },
+          "local_features": {
+            "norm_ratio": 0.4859358072280884,
+            "cosine": -0.038990568369627,
+            "ntp_projection_ratio": -0.01894691400229931
+          },
+          "core_W_in": {
+            "norm_ratio": 0.6112648844718933,
+            "cosine": -0.4346911311149597,
+            "ntp_projection_ratio": -0.2657114267349243
+          },
+          "expert_w2": {
+            "norm_ratio": 0.7013407945632935,
+            "cosine": -0.3843882083892822,
+            "ntp_projection_ratio": -0.26958712935447693
+          },
+          "decoder_Wu": {
+            "norm_ratio": 0.6562740206718445,
+            "cosine": -0.45271164178848267,
+            "ntp_projection_ratio": -0.2971028983592987
+          },
+          "carry_gain": {
+            "norm_ratio": 0.6031927466392517,
+            "cosine": -0.4676256477832794,
+            "ntp_projection_ratio": -0.2820684015750885
+          },
+          "router_layer2": {
+            "norm_ratio": 0.6366281509399414,
+            "cosine": -0.530219554901123,
+            "ntp_projection_ratio": -0.3375526964664459
+          }
+        }
+      },
+      "initial_projection_gradients": {
+        "NTP": null,
+        "NCP_weighted": 0.0016513238660991192,
+        "NextLat_h": null,
+        "NextLat_KL": null,
+        "consistency_weighted": null,
+        "MoE_aux_weighted": 0.000600581057369709
+      },
+      "offset": 96,
+      "rows": [
+        158537,
+        203801
+      ]
+    }
+  ],
+  "lb_counterexample": {
+    "load_balance_loss": 1.0000004768371582,
+    "assignment_counts": [
+      512,
+      512,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "capacity": 80,
+    "fraction_dropped": 0.84375,
+    "note": "Synthetic near-uniform probabilities; hard top-2 selects the same two experts. Not an observed live batch."
+  }
+}

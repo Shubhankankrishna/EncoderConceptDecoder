@@ -1,0 +1,3136 @@
+{
+  "ckpt": "../runs/main/ckpt_last.pt",
+  "step": 4050,
+  "eval_R": 4,
+  "time": "2026-09-28 06:32",
+  "lang": {
+    "tinystories": {
+      "intact": {
+        "nats": 1.9767823043936943,
+        "bpb": 0.7237618815585668,
+        "tokens": 257531
+      },
+      "core_off": {
+        "nats": 2.554809254152898,
+        "bpb": 0.9353956420487465,
+        "tokens": 257531
+      },
+      "plan_swap": {
+        "nats": 2.8488889027255455,
+        "bpb": 1.0430674070710986,
+        "tokens": 257531
+      },
+      "u_off": {
+        "nats": 2.4880776602804615,
+        "bpb": 0.9109631166092138,
+        "tokens": 257531
+      },
+      "c_off": {
+        "nats": 2.0008241972720033,
+        "bpb": 0.7325643711332452,
+        "tokens": 257531
+      },
+      "R1": {
+        "nats": 1.9779738061267382,
+        "bpb": 0.724198127641037,
+        "tokens": 257531
+      },
+      "R2": {
+        "nats": 1.9767664670254503,
+        "bpb": 0.7237560830022899,
+        "tokens": 257531
+      },
+      "R3": {
+        "nats": 1.9767200963185014,
+        "bpb": 0.7237391052349172,
+        "tokens": 257531
+      },
+      "R6": {
+        "nats": 1.976924992388659,
+        "bpb": 0.7238141241001365,
+        "tokens": 257531
+      },
+      "R8": {
+        "nats": 1.9770394431125524,
+        "bpb": 0.7238560280928455,
+        "tokens": 257531
+      },
+      "R4": {
+        "nats": 1.9767823043936943,
+        "bpb": 0.7237618815585668,
+        "tokens": 257531
+      }
+    },
+    "wikitext": {
+      "intact": {
+        "nats": 3.6290012277541077,
+        "bpb": 1.4501120721611747,
+        "tokens": 261523
+      },
+      "core_off": {
+        "nats": 4.084310562999,
+        "bpb": 1.632049063131803,
+        "tokens": 261523
+      },
+      "plan_swap": {
+        "nats": 3.8512716033221746,
+        "bpb": 1.5389290591685132,
+        "tokens": 261523
+      },
+      "u_off": {
+        "nats": 4.058604157037574,
+        "bpb": 1.6217770441169155,
+        "tokens": 261523
+      },
+      "c_off": {
+        "nats": 3.649006944567256,
+        "bpb": 1.4581061536294078,
+        "tokens": 261523
+      },
+      "R1": {
+        "nats": 3.62945673262366,
+        "bpb": 1.4502940872856709,
+        "tokens": 261523
+      },
+      "R2": {
+        "nats": 3.628996227745743,
+        "bpb": 1.4501100742085604,
+        "tokens": 261523
+      },
+      "R3": {
+        "nats": 3.6289724412981843,
+        "bpb": 1.450100569385444,
+        "tokens": 261523
+      },
+      "R6": {
+        "nats": 3.629072090456671,
+        "bpb": 1.4501403881781734,
+        "tokens": 261523
+      },
+      "R8": {
+        "nats": 3.6291308993675986,
+        "bpb": 1.4501638876223275,
+        "tokens": 261523
+      },
+      "R4": {
+        "nats": 3.6290012277541077,
+        "bpb": 1.4501120721611747,
+        "tokens": 261523
+      }
+    }
+  },
+  "seconds": {
+    "lang": 970.9569861888885,
+    "trunc": 276.79322814941406,
+    "items": 8659.363296985626,
+    "probes": 352.28627610206604,
+    "health": 12.473387956619263,
+    "gen": 110.5136661529541
+  },
+  "trunc": {
+    "tinystories": {
+      "r72": {
+        "nats": 2.0926892232484335,
+        "bpb": 0.7749134498312118,
+        "tokens": 3252
+      },
+      "r128": {
+        "nats": 2.04029101668542,
+        "bpb": 0.7555106285419215,
+        "tokens": 3252
+      },
+      "r256": {
+        "nats": 2.019905154848744,
+        "bpb": 0.7479618351768372,
+        "tokens": 3252
+      },
+      "r512": {
+        "nats": 2.0162323603330945,
+        "bpb": 0.7466018158117901,
+        "tokens": 3252
+      },
+      "r1024": {
+        "nats": 2.016538469847131,
+        "bpb": 0.7467151667943025,
+        "tokens": 3252
+      },
+      "swap_r1024": {
+        "nats": 2.941552724052326,
+        "bpb": 1.0892438035865881,
+        "tokens": 3252
+      },
+      "summary": {
+        "gain_beyond_70": 0.0761507534013024,
+        "swap_cost": 0.9250142542051947,
+        "rows": 256,
+        "rows_ctx_ge_512": 1,
+        "gain_beyond_70_ctx512": 0.07181119918823242,
+        "swap_cost_ctx512": 1.4612550735473633,
+        "curve": {
+          "r72": 2.0926892232484335,
+          "r128": 2.04029101668542,
+          "r256": 2.019905154848744,
+          "r512": 2.0162323603330945,
+          "r1024": 2.016538469847131
+        },
+        "curve_ctx512": {
+          "r72": 2.513450860977173,
+          "r128": 2.461122989654541,
+          "r256": 2.3480305671691895,
+          "r512": 2.366687536239624,
+          "r1024": 2.4416396617889404
+        }
+      }
+    },
+    "wikitext": {
+      "r72": {
+        "nats": 3.6879530487060546,
+        "bpb": 1.4926614039555504,
+        "tokens": 4000
+      },
+      "r128": {
+        "nats": 3.6601827392578126,
+        "bpb": 1.4814216542781955,
+        "tokens": 4000
+      },
+      "r256": {
+        "nats": 3.6530936603546142,
+        "bpb": 1.4785524218534194,
+        "tokens": 4000
+      },
+      "r512": {
+        "nats": 3.6469178924560546,
+        "bpb": 1.476052842748094,
+        "tokens": 4000
+      },
+      "r1024": {
+        "nats": 3.6478388442993164,
+        "bpb": 1.4764255886190916,
+        "tokens": 4000
+      },
+      "swap_r1024": {
+        "nats": 3.834836421966553,
+        "bpb": 1.5521109520526082,
+        "tokens": 4000
+      },
+      "summary": {
+        "gain_beyond_70": 0.040114204406738185,
+        "swap_cost": 0.18699757766723657,
+        "rows": 256,
+        "rows_ctx_ge_512": 234,
+        "gain_beyond_70_ctx512": 0.041956766293599054,
+        "swap_cost_ctx512": 0.1741839726256509,
+        "curve": {
+          "r72": 3.6879530487060546,
+          "r128": 3.6601827392578126,
+          "r256": 3.6530936603546142,
+          "r512": 3.6469178924560546,
+          "r1024": 3.6478388442993164
+        },
+        "curve_ctx512": {
+          "r72": 3.7230793517878933,
+          "r128": 3.6940565129630585,
+          "r256": 3.6861373815271588,
+          "r512": 3.680138641443008,
+          "r1024": 3.681122585494294
+        }
+      }
+    }
+  },
+  "items": {
+    "test": {
+      "intact": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.970703125
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.580078125,
+          "by_offset": [
+            0.8242,
+            0.8359,
+            0.8477
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.08203125,
+          "by_offset": [
+            0.7642,
+            0.8052,
+            0.8218
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.091796875,
+          "exact_h2": 0.14814814814814814,
+          "exact_h3": 0.0625,
+          "exact_h4": 0.06842105263157895
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.029296875
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.055
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.085
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.415
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.475
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.16
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.695
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.305
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.205
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.845
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.99
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.945
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.97
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.605
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.98
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.2
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 1.0
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.37
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.215
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.48
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.705
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.935
+        },
+        "_macro_synthetic": 0.554047619047619
+      },
+      "core_off": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.00390625
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.0059,
+            0.0,
+            0.002
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.0098,
+            0.0024,
+            0.0059
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0,
+          "exact_h2": 0.0,
+          "exact_h3": 0.0,
+          "exact_h4": 0.0
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.048828125
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.05
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.05
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.04
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.035
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.485
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.04
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.04
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.005
+        },
+        "_macro_synthetic": 0.035476190476190474
+      },
+      "plan_swap": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.00390625
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.0039,
+            0.0059,
+            0.002
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.0083,
+            0.0039,
+            0.0039
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0,
+          "exact_h2": 0.0,
+          "exact_h3": 0.0,
+          "exact_h4": 0.0
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.048828125
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.025
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.01
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.035
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.03
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.045
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.05
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.03
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.43
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.055
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.04
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.005
+        },
+        "_macro_synthetic": 0.03595238095238096
+      },
+      "u_off": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.025390625
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.0254,
+            0.0078,
+            0.002
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.0278,
+            0.0093,
+            0.0068
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0,
+          "exact_h2": 0.0,
+          "exact_h3": 0.0,
+          "exact_h4": 0.0
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.0546875
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.06
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.01
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.07
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.09
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.07
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.03
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.035
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.615
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.06
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.065
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.02
+        },
+        "_macro_synthetic": 0.05357142857142858
+      },
+      "c_off": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.958984375
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.421875,
+          "by_offset": [
+            0.7715,
+            0.7812,
+            0.7441
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.013671875,
+          "by_offset": [
+            0.7363,
+            0.7593,
+            0.7324
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0859375,
+          "exact_h2": 0.1419753086419753,
+          "exact_h3": 0.06875,
+          "exact_h4": 0.05263157894736842
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.04296875
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.06
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.11
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.365
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.47
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.165
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.66
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.275
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.15
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.725
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.88
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.885
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.71
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.445
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.935
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.135
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 0.98
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.26
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.16
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.26
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.4
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.91
+        },
+        "_macro_synthetic": 0.47333333333333333
+      },
+      "R1": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.96875
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.595703125,
+          "by_offset": [
+            0.8223,
+            0.8398,
+            0.8613
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.0859375,
+          "by_offset": [
+            0.7646,
+            0.8052,
+            0.8257
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0859375,
+          "exact_h2": 0.13580246913580246,
+          "exact_h3": 0.0625,
+          "exact_h4": 0.06315789473684211
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.02734375
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.06
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.08
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.425
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.475
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.19
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.73
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.325
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.19
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.845
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.975
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.95
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.975
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.595
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.985
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.19
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 1.0
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.32
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.2
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.47
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.685
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.925
+        },
+        "_macro_synthetic": 0.5519047619047619
+      },
+      "R2": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.96875
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.583984375,
+          "by_offset": [
+            0.8262,
+            0.834,
+            0.8535
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.083984375,
+          "by_offset": [
+            0.7632,
+            0.8071,
+            0.8247
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.087890625,
+          "exact_h2": 0.1419753086419753,
+          "exact_h3": 0.0625,
+          "exact_h4": 0.06315789473684211
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.029296875
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.06
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.085
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.42
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.47
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.19
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.72
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.315
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.2
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.85
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.985
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.95
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.97
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.62
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.99
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.195
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 1.0
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.355
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.205
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.475
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.69
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.935
+        },
+        "_macro_synthetic": 0.5561904761904761
+      },
+      "R3": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.970703125
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.580078125,
+          "by_offset": [
+            0.8242,
+            0.832,
+            0.8516
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.083984375,
+          "by_offset": [
+            0.7632,
+            0.8057,
+            0.8218
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.087890625,
+          "exact_h2": 0.14814814814814814,
+          "exact_h3": 0.05625,
+          "exact_h4": 0.06315789473684211
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.029296875
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.055
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.085
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.415
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.47
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.165
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.705
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.305
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.195
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.845
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.99
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.945
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.975
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.615
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.985
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.195
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 1.0
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.36
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.205
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.475
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.7
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.935
+        },
+        "_macro_synthetic": 0.5533333333333333
+      },
+      "R6": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.970703125
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.58203125,
+          "by_offset": [
+            0.8242,
+            0.8418,
+            0.8457
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.083984375,
+          "by_offset": [
+            0.7642,
+            0.8076,
+            0.8213
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.09375,
+          "exact_h2": 0.16049382716049382,
+          "exact_h3": 0.0625,
+          "exact_h4": 0.06315789473684211
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.029296875
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.055
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.09
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.405
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.475
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.16
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.705
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.3
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.195
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.84
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.985
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.945
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.97
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.595
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.975
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.205
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 1.0
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.37
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.215
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.475
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.705
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.935
+        },
+        "_macro_synthetic": 0.5523809523809523
+      },
+      "R8": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.970703125
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.580078125,
+          "by_offset": [
+            0.8223,
+            0.8418,
+            0.8457
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.078125,
+          "by_offset": [
+            0.7656,
+            0.8052,
+            0.8208
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.091796875,
+          "exact_h2": 0.16049382716049382,
+          "exact_h3": 0.0625,
+          "exact_h4": 0.05789473684210526
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.029296875
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.055
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.09
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.395
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.475
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.15
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.705
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.3
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.185
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.84
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.985
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.945
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.97
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.59
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.97
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.205
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 1.0
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.36
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.215
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.47
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.7
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.935
+        },
+        "_macro_synthetic": 0.5495238095238095
+      }
+    },
+    "ood": {
+      "intact": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.80078125
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.166015625,
+          "by_offset": [
+            0.6934,
+            0.5742,
+            0.4297
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.4443,
+            0.3892,
+            0.3516
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0,
+          "exact_h5": 0.0,
+          "exact_h6": 0.0
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.052734375
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.125
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.16
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.13
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.02
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.03
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.05
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.995
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.225
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 0.995
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.07
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.12
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.54
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.675
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.63
+        },
+        "variable_binding_newnames": {
+          "n": 200,
+          "exact": 0.1
+        },
+        "_macro_synthetic": 0.2211363636363636
+      },
+      "core_off": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.0078125
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.0117,
+            0.0,
+            0.0039
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.0083,
+            0.0024,
+            0.001
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0,
+          "exact_h5": 0.0,
+          "exact_h6": 0.0
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.052734375
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.05
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.02
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.03
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.045
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.03
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "variable_binding_newnames": {
+          "n": 200,
+          "exact": 0.06
+        },
+        "_macro_synthetic": 0.010681818181818181
+      },
+      "plan_swap": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.00390625
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.0039,
+            0.0,
+            0.0059
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.0068,
+            0.0054,
+            0.0059
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0,
+          "exact_h5": 0.0,
+          "exact_h6": 0.0
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.056640625
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.04
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.02
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.03
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.025
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.035
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "variable_binding_newnames": {
+          "n": 200,
+          "exact": 0.05
+        },
+        "_macro_synthetic": 0.009090909090909092
+      },
+      "u_off": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.03125
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.0215,
+            0.002,
+            0.0039
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.019,
+            0.0068,
+            0.0078
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0,
+          "exact_h5": 0.0,
+          "exact_h6": 0.0
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.056640625
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.055
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.02
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.035
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.015
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 0.005
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.02
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.005
+        },
+        "variable_binding_newnames": {
+          "n": 200,
+          "exact": 0.045
+        },
+        "_macro_synthetic": 0.009090909090909092
+      },
+      "c_off": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.767578125
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.15234375,
+          "by_offset": [
+            0.6777,
+            0.5664,
+            0.4004
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.4282,
+            0.3789,
+            0.3096
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0,
+          "exact_h5": 0.0,
+          "exact_h6": 0.0
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.05859375
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.115
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.17
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.105
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.015
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.02
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.05
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.915
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.13
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 0.97
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.065
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.08
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.34
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.385
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.55
+        },
+        "variable_binding_newnames": {
+          "n": 200,
+          "exact": 0.085
+        },
+        "_macro_synthetic": 0.1815909090909091
+      },
+      "R1": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.796875
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.166015625,
+          "by_offset": [
+            0.6914,
+            0.5625,
+            0.4062
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.4463,
+            0.3975,
+            0.353
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0,
+          "exact_h5": 0.0,
+          "exact_h6": 0.0
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.05859375
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.115
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.19
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.135
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.025
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.025
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.05
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.99
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.235
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 0.995
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.055
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.11
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.525
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.665
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.62
+        },
+        "variable_binding_newnames": {
+          "n": 200,
+          "exact": 0.095
+        },
+        "_macro_synthetic": 0.21954545454545454
+      },
+      "R2": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.8046875
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.16796875,
+          "by_offset": [
+            0.6934,
+            0.5703,
+            0.4238
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.4448,
+            0.3945,
+            0.355
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0,
+          "exact_h5": 0.0,
+          "exact_h6": 0.0
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.056640625
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.13
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.17
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.13
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.025
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.025
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.045
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.99
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.23
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 0.995
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.075
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.12
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.525
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.67
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.625
+        },
+        "variable_binding_newnames": {
+          "n": 200,
+          "exact": 0.095
+        },
+        "_macro_synthetic": 0.22045454545454543
+      },
+      "R3": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.8046875
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.16796875,
+          "by_offset": [
+            0.6934,
+            0.5742,
+            0.4277
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.4463,
+            0.3906,
+            0.3545
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0,
+          "exact_h5": 0.0,
+          "exact_h6": 0.0
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.05859375
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.13
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.155
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.13
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.02
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.03
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.045
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.995
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.225
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 0.995
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.07
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.12
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.53
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.67
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.63
+        },
+        "variable_binding_newnames": {
+          "n": 200,
+          "exact": 0.1
+        },
+        "_macro_synthetic": 0.22022727272727272
+      },
+      "R6": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.80078125
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.16796875,
+          "by_offset": [
+            0.6914,
+            0.5742,
+            0.4277
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.4429,
+            0.3877,
+            0.3511
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0,
+          "exact_h5": 0.0,
+          "exact_h6": 0.0
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.0546875
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.115
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.16
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.13
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.02
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.03
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.055
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.99
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.215
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 0.995
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.07
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.12
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.54
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.675
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.63
+        },
+        "variable_binding_newnames": {
+          "n": 200,
+          "exact": 0.1
+        },
+        "_macro_synthetic": 0.22022727272727272
+      },
+      "R8": {
+        "lr_recall1": {
+          "n": 512,
+          "exact": 0.798828125
+        },
+        "lr_carry3": {
+          "n": 512,
+          "exact": 0.17578125,
+          "by_offset": [
+            0.6953,
+            0.5723,
+            0.4316
+          ]
+        },
+        "lr_multi4": {
+          "n": 512,
+          "exact": 0.0,
+          "by_offset": [
+            0.4434,
+            0.3857,
+            0.3501
+          ]
+        },
+        "lr_hop": {
+          "n": 512,
+          "exact": 0.0,
+          "exact_h5": 0.0,
+          "exact_h6": 0.0
+        },
+        "lr_bind": {
+          "n": 512,
+          "exact": 0.060546875
+        },
+        "pointer_chase": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "graph_walk": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "state_machine": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "permutation": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "variable_binding": {
+          "n": 200,
+          "exact": 0.12
+        },
+        "kv_updates": {
+          "n": 200,
+          "exact": 0.16
+        },
+        "relational": {
+          "n": 200,
+          "exact": 0.13
+        },
+        "arith_transform": {
+          "n": 200,
+          "exact": 0.02
+        },
+        "stack_ops": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "nested_scopes": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "brackets": {
+          "n": 200,
+          "exact": 0.0
+        },
+        "seq_transform": {
+          "n": 200,
+          "exact": 0.03
+        },
+        "py_exec": {
+          "n": 200,
+          "exact": 0.055
+        },
+        "json_build": {
+          "n": 200,
+          "exact": 0.99
+        },
+        "yaml_lookup": {
+          "n": 200,
+          "exact": 0.215
+        },
+        "sort_trace": {
+          "n": 200,
+          "exact": 1.0
+        },
+        "expr_eval": {
+          "n": 200,
+          "exact": 0.07
+        },
+        "kv_retrieval": {
+          "n": 200,
+          "exact": 0.12
+        },
+        "copy": {
+          "n": 200,
+          "exact": 0.54
+        },
+        "needle": {
+          "n": 200,
+          "exact": 0.675
+        },
+        "json_lookup": {
+          "n": 200,
+          "exact": 0.63
+        },
+        "variable_binding_newnames": {
+          "n": 200,
+          "exact": 0.105
+        },
+        "_macro_synthetic": 0.22090909090909092
+      }
+    }
+  },
+  "probes": {
+    "G_E1_concept_to_token": {
+      "pos0": {
+        "acc": 0.6476396322250366,
+        "n_train": 25925,
+        "n_test": 6482,
+        "classes": 4125,
+        "majority_baseline": 0.0489046573638916
+      },
+      "pos1": {
+        "acc": 0.6297439336776733,
+        "n_train": 25925,
+        "n_test": 6482,
+        "classes": 4067,
+        "majority_baseline": 0.04535637050867081
+      },
+      "pos2": {
+        "acc": 0.6576673984527588,
+        "n_train": 25925,
+        "n_test": 6482,
+        "classes": 4064,
+        "majority_baseline": 0.03995680436491966
+      },
+      "pos3": {
+        "acc": 0.6991669535636902,
+        "n_train": 25925,
+        "n_test": 6482,
+        "classes": 4071,
+        "majority_baseline": 0.04689910635352135
+      }
+    },
+    "u_query_to_answer_lr_recall1": {
+      "tok0": {
+        "acc": 0.6699029207229614,
+        "n_train": 409,
+        "n_test": 103,
+        "classes": 123,
+        "majority_baseline": 0.009708737954497337
+      }
+    },
+    "u_query_to_answer_lr_carry3": {
+      "tok0": {
+        "acc": 0.4660194218158722,
+        "n_train": 409,
+        "n_test": 103,
+        "classes": 122,
+        "majority_baseline": 0.019417475908994675
+      },
+      "tok1": {
+        "acc": 0.09708737581968307,
+        "n_train": 409,
+        "n_test": 103,
+        "classes": 124,
+        "majority_baseline": 0.0
+      },
+      "tok2": {
+        "acc": 0.029126213863492012,
+        "n_train": 409,
+        "n_test": 103,
+        "classes": 122,
+        "majority_baseline": 0.0
+      }
+    },
+    "u_query_to_answer_lr_multi4": {
+      "tok0": {
+        "acc": 0.5853658318519592,
+        "n_train": 1638,
+        "n_test": 410,
+        "classes": 125,
+        "majority_baseline": 0.007317073177546263
+      },
+      "tok1": {
+        "acc": 0.21463415026664734,
+        "n_train": 1638,
+        "n_test": 410,
+        "classes": 125,
+        "majority_baseline": 0.002439024392515421
+      },
+      "tok2": {
+        "acc": 0.06341463327407837,
+        "n_train": 1638,
+        "n_test": 410,
+        "classes": 125,
+        "majority_baseline": 0.007317073177546263
+      }
+    },
+    "u_query_to_answer_lr_hop": {
+      "tok0": {
+        "acc": 0.18446601927280426,
+        "n_train": 409,
+        "n_test": 103,
+        "classes": 131,
+        "majority_baseline": 0.06796116381883621
+      },
+      "tok1": {
+        "acc": 0.10679611563682556,
+        "n_train": 409,
+        "n_test": 103,
+        "classes": 120,
+        "majority_baseline": 0.04854368790984154
+      }
+    },
+    "u_query_to_answer_lr_bind": {
+      "tok0": {
+        "acc": 0.291262149810791,
+        "n_train": 409,
+        "n_test": 103,
+        "classes": 9,
+        "majority_baseline": 0.40776699781417847
+      }
+    },
+    "lr_hop_bridge_by_pass": {
+      "pass1": {
+        "acc": 0.12621359527111053,
+        "n_train": 409,
+        "n_test": 103,
+        "classes": 127,
+        "majority_baseline": 0.04854368790984154
+      },
+      "pass2": {
+        "acc": 0.12621359527111053,
+        "n_train": 409,
+        "n_test": 103,
+        "classes": 127,
+        "majority_baseline": 0.04854368790984154
+      },
+      "pass4": {
+        "acc": 0.11650485545396805,
+        "n_train": 409,
+        "n_test": 103,
+        "classes": 127,
+        "majority_baseline": 0.04854368790984154
+      }
+    }
+  },
+  "health": {
+    "codebook": {
+      "codes_used_frac_min": 1.0,
+      "codes_used_frac_mean": 1.0,
+      "perplexity_mean": 108.48751068115234,
+      "var_explained": 0.6505693916198971,
+      "ncp_ce": 2.697831869125366,
+      "code_entropy": 4.685644626617432,
+      "n_concepts": 14976
+    },
+    "telemetry": {
+      "crc_mix_e0_L_G": [
+        0.0903,
+        0.0701,
+        0.8396
+      ],
+      "engram_Wv_norm": 35.16156005859375,
+      "engram_alpha_mean": 0.8061937093734741,
+      "tau": {
+        "enc.layers.3.attn.log_tau": [
+          1.0996,
+          1.0087,
+          0.9991,
+          1.186,
+          1.0766,
+          1.2526
+        ],
+        "enc.layers.7.attn.log_tau": [
+          1.1592,
+          1.0108,
+          1.005,
+          1.0223,
+          1.0543,
+          1.0529
+        ],
+        "core.log_tau": [
+          4.8651,
+          4.8349,
+          4.9464,
+          4.8163,
+          4.7953,
+          4.8843,
+          4.845,
+          4.841,
+          4.8969,
+          4.8397,
+          4.9426,
+          4.8469,
+          4.82,
+          4.9402,
+          4.8485,
+          4.9323,
+          4.8442,
+          4.9534,
+          4.7997,
+          4.8368,
+          4.9531,
+          4.9161,
+          4.8253,
+          4.8679,
+          4.8717,
+          4.8958,
+          4.9193,
+          4.8228,
+          4.8768,
+          4.8123,
+          4.9053,
+          4.8354,
+          4.85,
+          4.8732,
+          4.8335,
+          4.8127,
+          4.8909,
+          4.8868,
+          4.945,
+          4.8976,
+          4.9201,
+          4.8832,
+          4.8249,
+          4.9085,
+          4.8477,
+          4.8221,
+          4.7735,
+          4.833
+        ],
+        "core.layer.attn.log_tau": [
+          0.9362,
+          1.3048,
+          1.4825,
+          1.2529,
+          1.1444,
+          1.1176
+        ]
+      },
+      "mps_alloc_gib": 0.31072497367858887,
+      "mps_driver_gib": 4.2623291015625,
+      "swap": "total = 2048.00M  used = 999.31M  free = 1048.69M  (encrypted)"
+    },
+    "loop_dynamics_lr_hop": {
+      "state_norm": [
+        9.773462295532227,
+        18.494884490966797,
+        27.07443618774414,
+        35.592193603515625,
+        44.075042724609375,
+        52.535362243652344,
+        60.97990798950195,
+        69.41277313232422
+      ],
+      "step": [
+        9.773462295532227,
+        8.7529878616333,
+        8.59699821472168,
+        8.529399871826172,
+        8.491375923156738,
+        8.466937065124512,
+        8.449883460998535,
+        8.437296867370605
+      ],
+      "consecutive_step_angle_deg": [
+        6.703140735626221,
+        1.2517722845077515,
+        0.5540468692779541,
+        0.317429780960083,
+        0.20776942372322083,
+        0.14749360084533691,
+        0.11055871844291687
+      ],
+      "turn_deg": [
+        3.1953165531158447,
+        1.4118351936340332,
+        0.8247393369674683,
+        0.5500232577323914,
+        0.397000789642334,
+        0.30202609300613403,
+        0.23866677284240723
+      ],
+      "grad": [
+        0.0001658697728998959,
+        0.00015309610171243548,
+        0.00014826285769231617,
+        0.00014592772640753537,
+        0.00014470965834334493,
+        0.00014408421702682972,
+        0.00014380710490513593,
+        0.00014374902821145952
+      ],
+      "grad_ratio_pass1_pass4": 1.1366570081183063,
+      "sqrt_dc": 19.595917942265423
+    }
+  },
+  "generation": {
+    "tinystories": {
+      "greedy": [
+        {
+          "prompt": "Once upon a time, there was a small girl called Polly. She liked to explore and have fun. Today she had a surprise. Her mummy and daddy had taken her to the park to play. When they got there, there was a long line of people. But Polly was a flexible girl and she",
+          "continuation": " wanted to go on the slide.\n\nShe asked her daddy, \"What is that?\" Her daddy said, \"It's a big slide. It's going to be fun!\"\n\nMandy was so excited. She said, \"Yes, please!\"\n\nThey went to the park and the slide was very high. They saw a big tree with lots of leaves. She wanted to climb it, but she was too scared. She said, \"No, I don't want to go. I want to go on the slide.\"\n\nHer daddy said, \"No, I don't want to go. I want"
+        },
+        {
+          "prompt": "Once upon a time, there was a mommy, a daddy, and a little girl named Daisy. Daisy was only three years old, but she was always ready to play! One of her favorite things to do was sports.\n\nOne day, Daisy's dad said that he had a surprise for her. He took",
+          "continuation": " her to the park and showed her the big red ball. It was so pretty!\n\nDaisy was so excited. She ran to the park and started to play with the ball. She threw it up and it rolled away. She was so happy!\n\nBut then, Daisy's mom said, \"Let's go home now. We can have a nice time together.\"\n\nDaisy was so happy. She ran to the park and played with her friends. They had so much fun playing together. They had so much fun!<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+        },
+        {
+          "prompt": "\n\nWhiskers decided to go inside the church and see what it was like. Inside, he saw lots of people singing and praying. Whiskers liked the music and the pretty stained glass windows. He forgot all about being grumpy.\n\nAfter the church service was over, some kids came up",
+          "continuation": " to the house and said, \"Wow, that's so cool! Can we play with it?\"\n\nThe kids nodded and said, \"Yes, we can play with it. We can play together.\"\n\nThe kids agreed and they started to play. They had a lot of fun and learned a lot. They were happy and had a fun day at the park.<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+        },
+        {
+          "prompt": " spider on the wall and she thought it was interesting. She wanted to catch it, so she got out of bed. \n\nSuddenly, she fell and hit her head on the floor. Her mommy heard the noise and came to check on her. She saw that Lily was hurt and took her to the hospital. The",
+          "continuation": " doctor said she had to go to the hospital and get a new one. Lily was very sad and cried a lot. \n\nThe end.<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+        },
+        {
+          "prompt": "Once upon a time, there was a little girl named Lily who loved to play outside. One day, she saw a yellow raven perched on a tree branch. \"Wow, a yellow bird!\" she said to herself.\n\nLily tried to get closer to the raven, but it flew away. \"",
+          "continuation": "I'm sorry, little bird,\" she said. \"I'm sorry I didn't know it was yours.\"\n\nLily felt sad for the raven and decided to help. She took the raven and put it in a safe place. She was happy to have a new friend.\n\nFrom that day on, Lily and the raven were the best of friends. They played together in the park every day and had lots of fun. The end.<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+        },
+        {
+          "prompt": "Once there was a fisherman. He went out on a boat every day to catch fish. The water was always tight and the wind was strong.\n\nOne day, the fisherman saw something in the water. It was a shiny fish! He put it in his fishing net, which he always brought",
+          "continuation": " with him.\n\nThe fisherman was so happy. He wanted to show his friends the fish. He asked his friends if they wanted to play with him. The fish said yes and they all played together.\n\nThe fisherman was very happy. He had a new friend to play with. The fisherman was very happy. He knew that he could do anything he wanted.<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+        },
+        {
+          "prompt": "Lily and Ben were playing in the kitchen. They saw a big pastry on the table. It looked yummy and sweet.\n\n\"Can we have some pastry, Mom?\" Lily asked.\n\n\"Not now, dear. It is for later. You need to eat your lunch first,\" Mom",
+          "continuation": " said.\n\nBen and Lily nodded. They liked to play with the pastry. They had a big bowl of pasta. They liked to make the pasta with the pasta. They made a big mess.\n\nMom came to the kitchen. She saw the pasta on the table. She was not happy. She said, \"Lily and Ben, what are you doing? You are making a mess. You have to eat the pasta. You have to eat your dinner. You have to eat your dinner. You have to eat your dinner. You have to eat your dinner. You have to eat your dinner"
+        },
+        {
+          "prompt": "Once upon a time there was a playful bird. He lived in a big tree with a green plant. Every day he would fly around the tree and explore the world. One day, the bird saw a beautiful butterfly and he wanted to play with it. He flew up high and called out to the butterfly.\n",
+          "continuation": "\nThe butterfly flew around the garden, and the butterfly flew away. The bird was so happy and flew around the butterfly. The butterfly flew around the garden, and the butterfly flew away. The bird was so happy and flew around the butterfly.\n\nThe bird flew around the garden, and the butterfly flew away. The bird was so happy and flew around the garden, singing and dancing. The bird was so happy and flew around the garden, singing and singing. The butterfly was so happy and flew around the garden, singing and singing. The butterfly was so happy and flew around the garden, singing and singing.\n\nThe bird"
+        },
+        {
+          "prompt": "Once upon a time, in a jolly forest, there lived many happy animals. They all liked to play together. One day, they wanted to have a big party. They were all very excited.\n\nThere was a little mouse who lived in the forest too. The other animals did not like to play with",
+          "continuation": " the mouse. They wanted to play with the mouse.\n\nThe big cat said, \"I want to play with you, but I can't find my way home.\" The big cat said, \"I will help you. I will help you.\"\n\nThe big cat was very happy. He said, \"Thank you, little cat. You are very kind.\" The big cat said, \"You are welcome, little mouse. I am glad you like me.\" The big cat said, \"You are welcome, little mouse. I am glad you like me.\" The big cat said, \"You're welcome, little mouse."
+        },
+        {
+          "prompt": " answered, \"That flower is poisonous. You should never smell or touch it.\"\n\nLily was scared and threw the flower away. She continued down the road, looking for more flowers to see bloom. But as she walked, she suddenly fell into a big hole in the ground. She cried for help,",
+          "continuation": " but no one heard her.\n\nShe heard her mom calling her. \"Lily, come here! I have a surprise for you!\"\n\nLily was scared and ran to her mom. She hugged her and said, \"Don't worry, Lily. I'm here to help you. I'm sorry I was hurt. I'm sorry, I'm sorry, I'm sorry, I'm sorry. I'm sorry, I'm sorry, I'm sorry. I'm sorry, I'm sorry, I'm sorry. I'm sorry, I'm sorry, I'm sorry, I'm sorry. I'm sorry, I'm"
+        }
+      ],
+      "sample_T0.8": [
+        {
+          "prompt": "Once upon a time, there was a small girl called Polly. She liked to explore and have fun. Today she had a surprise. Her mummy and daddy had taken her to the park to play. When they got there, there was a long line of people. But Polly was a flexible girl and she",
+          "continuation": " wanted to keep going. \n\nMandy was so excited! She raced to the playground and tried to get to the swing. But her mommy just kept coming. She started to leave in the car, with the little girl behind.\n\nSo Mandy and her mommy went off to the park. served the plane to her friends and they cuddled together. They had so much fun.\n\nUE,\" she said, \"Very tough is. I promise I will be a good girl.\" And with that, they went home, feeling the day of the day.<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+        },
+        {
+          "prompt": "Once upon a time, there was a mommy, a daddy, and a little girl named Daisy. Daisy was only three years old, but she was always ready to play! One of her favorite things to do was sports.\n\nOne day, Daisy's dad said that he had a surprise for her. He took",
+          "continuation": " Grandpa home, and He asked if he could play with her. Dina was so happy and excited that her grandpa had saved her with the fork.\n\nDaisy was so excited and asked if she could try it. Her mum said yes and then they started to measure thework. Daisy was so happy and was able to help her mum.\n\nThe day didn\u00e2\u20ac\u2122t be long but Daisy was very hungry. She asked her Daddy nicely, and he promised his mommy she would come back soon. From that day onwards, Daisy was happy to bring her special tray with her, and she knew she"
+        },
+        {
+          "prompt": "\n\nWhiskers decided to go inside the church and see what it was like. Inside, he saw lots of people singing and praying. Whiskers liked the music and the pretty stained glass windows. He forgot all about being grumpy.\n\nAfter the church service was over, some kids came up",
+          "continuation": " with the work for them. They decided to go back to their houses and show them to their family. They chose their own original music that they had made. They both happily put on their music and enjoyed their time in the serves.<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+        },
+        {
+          "prompt": " spider on the wall and she thought it was interesting. She wanted to catch it, so she got out of bed. \n\nSuddenly, she fell and hit her head on the floor. Her mommy heard the noise and came to check on her. She saw that Lily was hurt and took her to the hospital. The",
+          "continuation": " doctor told her to be careful and not to go too high or too fast. \n\nLily was sad because she wanted to cry, but she knew she had to go. So, she promised to listen to her mom. She gave her a big hug and it made her feel better. Her mom was proud of her and gave her a big kiss on the cheek. From then on, she never slapped the spider again.<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+        },
+        {
+          "prompt": "Once upon a time, there was a little girl named Lily who loved to play outside. One day, she saw a yellow raven perched on a tree branch. \"Wow, a yellow bird!\" she said to herself.\n\nLily tried to get closer to the raven, but it flew away. \"",
+          "continuation": "I want to keep the raven,\" said the bird.\n\nLily went up to the mop and said, \"Hello, bird! I am lonely because I have noble way home.\" But the bird was near her house and didn't move. Lily felt sad and wanted to help the bird.\n\nThe bird said, \"Don't worry, I can help you.\" He gave the raven a big push and it spread its wings. The bird flew away with the razor.\n\nLily was so happy that she could help the bird. She swam back to her and told her parents all about the bird"
+        },
+        {
+          "prompt": "Once there was a fisherman. He went out on a boat every day to catch fish. The water was always tight and the wind was strong.\n\nOne day, the fisherman saw something in the water. It was a shiny fish! He put it in his fishing net, which he always brought",
+          "continuation": " with him. The fisherman was very happy.\n\nThe fisherman told the frog to take a slow step and put the fish in its mouth. The fish came closer to the fish and together they watched it grow into a lot of dough. The fisherman was very proud of himself. He hopped around the water, making sure the fish would stay warm. \n\nHe was happy to have had something so successful!<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+        },
+        {
+          "prompt": "Lily and Ben were playing in the kitchen. They saw a big pastry on the table. It looked yummy and sweet.\n\n\"Can we have some pastry, Mom?\" Lily asked.\n\n\"Not now, dear. It is for later. You need to eat your lunch first,\" Mom",
+          "continuation": " said.\n\n\"But I like the pasta. It is so nice and smooth,\" Ben said.\n\n\"Yuck!\" Lily said. She liked that idea.\n\n\"But I want to cut the bakery. It will be hot and it will grow, like a cake, and a cookie.\" Mom said.\n\nLily and Ben nodded. They understood. They did not like to wait. They liked to play with the potato. They took turns to pick the pasta and put the pasta and the bees on the table. They liked their dough. They ate their pastels and"
+        },
+        {
+          "prompt": "Once upon a time there was a playful bird. He lived in a big tree with a green plant. Every day he would fly around the tree and explore the world. One day, the bird saw a beautiful butterfly and he wanted to play with it. He flew up high and called out to the butterfly.\n",
+          "continuation": "\nThe butterfly was so big that it wanted to fly a fly. So it flapped its wings and flew away into the sky. He was so happy! He wanted to take a closer look, so he slowly approached it. He picked it up and flew it up to the sky. He was so happy and he flapped his wings and flew until he was so happy.\n\nThe bird flew high, and the butterfly felt so cozy. The bird thanked the butterfly and flew back to its nest. The butterfly flew so fast, but the bird was still flying high in the sky. He was having so much fun, as he"
+        },
+        {
+          "prompt": "Once upon a time, in a jolly forest, there lived many happy animals. They all liked to play together. One day, they wanted to have a big party. They were all very excited.\n\nThere was a little mouse who lived in the forest too. The other animals did not like to play with",
+          "continuation": " the other animals. They asked the mouse to help them. The lazy cat said no.\n\nThe cat smiled and said, \"I will, I will. What is the friend?\"\n\nThe cat said, \"Big is not food. You have to be honest. Some animals are bad. We do not know who to help.\"\n\nMabel and the mouse went to the party. They talked and laughed. They did not want the cat to get them. The animals listened to the squirrels and shared the toys. They all gathered together in the big tree. They were very good friends.<eos><eos><eos>"
+        },
+        {
+          "prompt": " answered, \"That flower is poisonous. You should never smell or touch it.\"\n\nLily was scared and threw the flower away. She continued down the road, looking for more flowers to see bloom. But as she walked, she suddenly fell into a big hole in the ground. She cried for help,",
+          "continuation": " but no one heard her.\n\nAmy started to cry. Her mom heard her and came to see what had happened. She saw Lily's hand and said, \"Oh, Lily, you have to remove the flower from the ground.\"\n\nLily did not want to give up. She just wanted to have a closer look. She ran to her mom's room, but she was too tired. She put a bandage on the leaf and tried to eat it. It was a good idea. It raised its nose and said, \"Come with me, Lily. Millie carefully cut the leaf onto her stick, and said"
+        }
+      ]
+    },
+    "wikitext": {
+      "greedy": [
+        {
+          "prompt": "Head VI\nHead VI is an oil-on-canvas painting by the Irish-born English figurative artist Francis Bacon, the last of six panels making up his \" 1949 Head \" series. It shows a bust view of a single figure",
+          "continuation": " in the 1950s. The 1950s and 1950s, the 1950s and 1950s were the first to be used in the 1950s. The 1950s and 1950s were the first to be used in the 1950s. The 1950s and 1950s were the first to be used in the 1950s. The 1950s and 1950s were the first"
+        },
+        {
+          "prompt": " are undefined, overwhelmingly claustrophobic, reductive and eerie. Coming early in Bacon's career, they are uneven in quality, but show a clear progression especially in how they utilise and present ideas he was still",
+          "continuation": " in the world.\n\nComposition\nThe game's music is composed of a variety of elements, including the \" 100 \" and \" 100 \" by the American rock band The Half-Life. The game was released in 2009, and was released on 2009.\n\nReception\n\nCritical reception\nThe game received generally positive reviews from critics. The reviewer for the New York Times praised the game's \" unnecessary \" and praised the game's \" unnecessary \" and \" a \" good \" and \" a good game"
+        },
+        {
+          "prompt": "fied with the works and destroyed them before the show opened.\n\nDescription\nThe figure is clearly identifiable as a pope from his clothing. It seems trapped and isolated within the outlines of an abstract three-dimensional glass cage. This framing",
+          "continuation": " is the most common of the 19th-century English-language poetry. The first of these is the 19th-century English-language novel, and the first of the 19th century novels. The 19th-century English poet, the first of the 19th century, was the first of the 18th-century English poetry. The first of these is the 19th century book of the same name, and is the first of the 19th century novels. The book was first published in 192"
+        },
+        {
+          "prompt": " how these artists influenced and informed each other. What is notable is that Bacon continued to use the motif, with intervals until the end of his life. Sylvester suggests his finest example is the 1970 Three Studies of the Male Back.\nThe full",
+          "continuation": "-length novel of the same name is the 1970s American science fiction film, and was published in 1980 by the American Film Institute. The book was first published in 1990 by the American Film Institute, and was published by the University of California, the University of California, and the University of California.\n\nEarly life\nThe novel was written by the composer and directed by David H. D. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W"
+        },
+        {
+          "prompt": " After the Bath, Woman drying herself. Sylvester makes a further direct link between the folds and the transparent veil in Titian's Portrait of Cardinal Filippo Archinto. He believes the folds serve to \" push the viewer back",
+          "continuation": " to the world, and the world is the most popular. The code of raloma is bread. The code of ronose is bread rock book. The code of ralose is moon moon gray. The code of ronose is bread rock book. The code of ronose is bread rock book. The code of ronose is bread rock book. The code of ralose is moon moon gray. The code of ronose is bread rock book. The code of ronose is bread rock book. The code of ronose is bread rock book. The code of ralose is moon"
+        },
+        {
+          "prompt": "ices as high as \u00a3 400 for single works, unusual for a contemporary British artist of the time.\n\nProvenance\nHead VI was first exhibited at the Hanover Gallery, London, in 1949. It was acquired by the Arts Council's",
+          "continuation": " National Museum of the United States in 1942. The first was the 1948 film The Son of the World, which was published in 1944. The first was the 1920 film The Theme of the Sinclair, which was published in 1940. The film was first published in 1940 by the American Museum of Art. It was the first film to be published in the United States by the American Film Institute.\n\nCritical reception\nThe film was generally positive. It was also nominated for the Best Actor in"
+        },
+        {
+          "prompt": "Second Battle of Naktong Bulge\nThe Second Battle of Naktong Bulge was an engagement between United Nations (UN) and North Korean (NK) forces early in the Korean War from September 1 to September 15, 1950",
+          "continuation": ". The 195th Infantry Division was the 1st Division of the 2nd Division, the 2nd Division, the 2nd and 2nd Infantry Division, the 2nd Division, the 2nd Division, and the 2nd Division. The 2nd Division was the 2nd Division's first division of the 2nd Division. The 2nd Division was the 2nd Division's first division of the 2nd Division. The 2nd Division was the 2nd Division's first division of the 2nd Division, which was the 2nd Division"
+        },
+        {
+          "prompt": " from these defeats, the first time in the war their strategies were not working.\n\nSeptember push\nIn planning its new offensive, the North Korean command decided any attempt to flank the UN force was impossible thanks to the support of the UN navy. Instead",
+          "continuation": ", the 2nd Battalion was able to withdraw from the 1st Division, and the 2nd Division was able to withdraw from the 1st Division. The 2nd Battalion was able to withdraw from the 1st Division, and the 2nd Division was able to withdraw from the 1st Division.\n\nSecond World War\nThe 2nd Division was the first of the 2nd Division to be the 2nd Division, the 2nd Division, the 2nd Division, and the 2nd Division. The 2nd Battalion was the 2nd Division's"
+        },
+        {
+          "prompt": "-ri running west along the Naktong passes the southern tip of this ridge and crosses to the west side of the river at the ferry. A small village called Agok lay at the base of Hill 94 and 300 yards (270 m) from the river.",
+          "continuation": " The roadway was built in the 1930s and was designated as a 1930s. The route was designated as a 1920-mile (160 km) route from the Kansas Turnpike to the south of the city. The route was designated as a 1920-mile (160 km) route from the Kansas Turnpike to the east of the city. The route was designated as a 1920-mile (160 km) route from the Kansas Turnpike to the"
+        },
+        {
+          "prompt": "th Infantry Regiment had planned Task Force Manchu on orders from the 2nd Division commander Major General Laurence B. Keiser, which in turn had received instructions from Eighth United States Army commander Lieutenant General Walton Walker for aggressive patrolling. Keiser decided the pat",
+          "continuation": "rol would be able to attack the British Army, but the 1st Army Corps was not able to attack the 2nd Division. The 1st Battalion was also deployed to the 2nd Division, which was the first of the 2nd Division to be deployed in the 2nd Division. The 2nd Division was the only force of the 2nd Division to the 2nd Division. The 2nd Division was the first of the 2nd Division to be the 2nd Division. The 2nd Division was the 2nd Division's first division of the 2nd"
+        }
+      ],
+      "sample_T0.8": [
+        {
+          "prompt": "Head VI\nHead VI is an oil-on-canvas painting by the Irish-born English figurative artist Francis Bacon, the last of six panels making up his \" 1949 Head \" series. It shows a bust view of a single figure",
+          "continuation": ", and a character in the local tradition of sketching, but, among the sophisticated ideas, it can be found on one side of the Earth, bibloe aesthetics, which is similar to that of the then-house conception of the giant card.\n\nThe third and final story of 1960 was first used in the early 1930s, although it was later widely used by the Western Knight, in some areas; in the region it was the headlined documentary. The term \" Carnival \" was similar to the Late"
+        },
+        {
+          "prompt": " are undefined, overwhelmingly claustrophobic, reductive and eerie. Coming early in Bacon's career, they are uneven in quality, but show a clear progression especially in how they utilise and present ideas he was still",
+          "continuation": " illegal to gain a hop, because he was described as their most popular personality and monastery. Inspired by the effort, he is generally made by other deities, including one that is in effect, and a leading conductor.\nBorn in 2013, Groves set up an end piece at the United States Band Theatre, which was published in 1938. The other works were bought by the University of Chicago for a meeting, which, in 1972, led to an initial experimental study of Burning Lake, which Powers became an artist"
+        },
+        {
+          "prompt": "fied with the works and destroyed them before the show opened.\n\nDescription\nThe figure is clearly identifiable as a pope from his clothing. It seems trapped and isolated within the outlines of an abstract three-dimensional glass cage. This framing",
+          "continuation": " Media includes the ethics of the home of the Bath family, when they are given the same name; it is a pair of abundant leaves.\nThe mother foots the inner walls containing a long ornament with magical green colour. The green paint is attached to the end of the pelagic crown to a long tail. The ears are gray, but the wings are brown. The skin is long, palms, and very long. The arms of the bodies are also decorated with steel, which is home to the rest of the bodies. The keys are generally silver, with an increased"
+        },
+        {
+          "prompt": " how these artists influenced and informed each other. What is notable is that Bacon continued to use the motif, with intervals until the end of his life. Sylvester suggests his finest example is the 1970 Three Studies of the Male Back.\nThe full",
+          "continuation": " idea of the Drew Distributor can be seen in the Dawson of Leeds, Derbyer (that was the major title of the British Prime). His English is a reference to the publication of the Order of the Welsh Science in 1970, and in 1979, C. B. George was a comic book critic in Dublin, while he was a member of the Order of the Coelurus of British Columbia. In popular culture, Catlight is very popular in the United States, and its subjects are widely regarded as the greatest"
+        },
+        {
+          "prompt": " After the Bath, Woman drying herself. Sylvester makes a further direct link between the folds and the transparent veil in Titian's Portrait of Cardinal Filippo Archinto. He believes the folds serve to \" push the viewer back",
+          "continuation": " to the ground \" namely the rest of the game, and the spirit of the theorem (in all the words \" a circle is continuously good \" in his own way. Koal's narrative takes the time to discover the inner world, and it makes a retroactive appearance in the light to be so good, and is believed to be the last few moments of the first collaboration from the same name. The name \" Vindicate \" is thought to beongshade to split the B \u2013 H\u00efve threats. The secret code is state-wide6"
+        },
+        {
+          "prompt": "ices as high as \u00a3 400 for single works, unusual for a contemporary British artist of the time.\n\nProvenance\nHead VI was first exhibited at the Hanover Gallery, London, in 1949. It was acquired by the Arts Council's",
+          "continuation": " Cultural Study in 1950. It was the mint for the festival, and the view that the Mucas had a \" tribe of makegun \" in order to earn the bantaffles of the church only in another manhood; it is often the last of these texts used as a parish party.\n\nSandra In the 1940s, the film was a comprehensive performance, with the publication of the book's first publication, Isaac Venus, which was produced by Samuel Straus. The film was also a"
+        },
+        {
+          "prompt": "Second Battle of Naktong Bulge\nThe Second Battle of Naktong Bulge was an engagement between United Nations (UN) and North Korean (NK) forces early in the Korean War from September 1 to September 15, 1950",
+          "continuation": ", and the next year the Turks commanded the 6th Cavalry Militia, and also into the North Asia Regiment. To the right of the Ottoman Empire, he commanded the divisional Polish force at the 4th Fighter Rifle dead and 253.\nGermule was the last of the last command of the British Army's II II Corps, and as a result of his support in the following battle matches. The 3rd Infantry Division formed the 30th Infantry Regiment, the 26th National Air Service, 2nd Commander of the AI"
+        },
+        {
+          "prompt": " from these defeats, the first time in the war their strategies were not working.\n\nSeptember push\nIn planning its new offensive, the North Korean command decided any attempt to flank the UN force was impossible thanks to the support of the UN navy. Instead",
+          "continuation": ", the 2nd, 8th and 27th Infantry Brigade suffered several casualties in the attack. Poehlet and Jadrava, 1st Battalion, 18th and 18th, were formed in 1839 and the 1970s and 1970s. The unit was promoted to the rank of commander and flagship of the 1st Armoured Division in the 42rd, 42th Infantry Division, and 4th Infantry Division. The 6th Division was the last 24th World independent Battalion"
+        },
+        {
+          "prompt": "-ri running west along the Naktong passes the southern tip of this ridge and crosses to the west side of the river at the ferry. A small village called Agok lay at the base of Hill 94 and 300 yards (270 m) from the river.",
+          "continuation": " In the east of the Abbey, the route opened and the railroad was sacked. Three miles (3.4 km) joins the cottages in proposed roadways, but were not confirmed. The public traffic annually, which was in the center, one of the landmarks that were hidden by the British. The EMF took over the truss bridge in 1800, with the novelty of a new road route known as the \" Battery of the Mamluke \". Although it was last planned in February 1816, the Redstones"
+        },
+        {
+          "prompt": "th Infantry Regiment had planned Task Force Manchu on orders from the 2nd Division commander Major General Laurence B. Keiser, which in turn had received instructions from Eighth United States Army commander Lieutenant General Walton Walker for aggressive patrolling. Keiser decided the pat",
+          "continuation": "rols would blown the navy to the American port of Texas. His commission was on fire by the previous years of war effort to take and the rest of the fleet, and in May 1795, the 1st Canadian Division was struck against the British. The brigade attempted to use the 5th Division's Line's defensive positions and the subsequent Allied attacks on the Lombard warship. Bath, along with the 24th Infantry Brigade, was achieving much of its map and improved.\n\nDesign\nThe 38th Army was launched in 179"
+        }
+      ]
+    }
+  }
+}
