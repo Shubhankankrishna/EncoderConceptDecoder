@@ -1,0 +1,68 @@
+{
+  "arm": "C0",
+  "config": {
+    "vocab_size": 1024,
+    "width": 56,
+    "heads": 4,
+    "e1_layers": 2,
+    "e2_layers": 1,
+    "e3_layers": 1,
+    "encoder_visits": 2,
+    "concept_layers": 2,
+    "concept_visits": 2,
+    "decoder_layers": 2,
+    "ffn_expansion": 4,
+    "window": 64,
+    "group": 8,
+    "slots": 2,
+    "codes": 8,
+    "code_width": 16,
+    "gate_rank": 16,
+    "pq_segments": 4,
+    "pq_words": 16,
+    "engram_rows": [
+      16381,
+      16411,
+      16417,
+      16421
+    ],
+    "engram_dim": 16,
+    "engram_cpu": true,
+    "context": 256
+  },
+  "parameters": {
+    "dense": 311704,
+    "engram": 1050080,
+    "dense_training_only": 0,
+    "dense_deployed": 311704
+  },
+  "args": {
+    "arm": "C0",
+    "run_dir": "v10_3_tiny/runs/C0_s1",
+    "minutes": 120,
+    "device": "mps",
+    "seed": 1,
+    "batch_size": 16,
+    "context": 256,
+    "lr": 0.001,
+    "candidate_every": 4,
+    "threads": 1,
+    "eval_seconds": 300,
+    "max_steps": 6000
+  },
+  "source_sha256": "698f43e5effbb3369706b0e352a492fe489941ccd5f69fb51e34cac87c56aa5d",
+  "data_manifest_sha256": "a1dee054e5f2d6a08adee77c412d0ab95f1c52f5441f272a9aeb455980a8e2ca",
+  "torch": "2.10.0",
+  "start_unix": 1791800205.321664,
+  "optimizer_rule": "V10.1 rule",
+  "end_unix": 1791801862.3102038,
+  "steps": 6000,
+  "tokens": 18997792,
+  "family_supervised_tokens": {
+    "text": 15763987,
+    "math": 184770,
+    "sudoku_easy": 943328,
+    "sudoku_hard": 313568
+  },
+  "active_seconds": 1656.9880757090286
+}

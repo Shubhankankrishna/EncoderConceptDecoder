@@ -1,0 +1,61 @@
+base {'text': 3.382, 'math': 1.1166, 'newmath': 3.0679, 'sudoku_easy': 0.8473, 'sudoku_hard': 0.8441} {'math': {'arithmetic__add_sub_multiple': 0, 'arithmetic__mul': 0, 'comparison__sort': 0}, 'newmath': {'algebra__linear_1d': 0}} 155
+gates fitted 175
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_3_tiny/sleep.py:240: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  log.append(dict(step=step, loss=float(loss), grad_norm=norm)); print(condition, log[-1], flush=True)
+plain {'step': 0, 'loss': 3.03645658493042, 'grad_norm': 1.4549560546875}
+plain {'step': 50, 'loss': 1.5307481288909912, 'grad_norm': 0.5009931921958923}
+plain {'step': 100, 'loss': 1.5021497011184692, 'grad_norm': 0.39998164772987366}
+plain {'step': 150, 'loss': 1.4451146125793457, 'grad_norm': 0.31124916672706604}
+plain {'step': 200, 'loss': 1.4508591890335083, 'grad_norm': 0.5540845394134521}
+plain {'step': 250, 'loss': 1.2830861806869507, 'grad_norm': 0.4228798449039459}
+plain {'step': 300, 'loss': 1.525604486465454, 'grad_norm': 0.38703659176826477}
+plain {'step': 350, 'loss': 1.3224505186080933, 'grad_norm': 0.27910250425338745}
+plain {'step': 400, 'loss': 1.3066871166229248, 'grad_norm': 0.5018097758293152}
+plain {'step': 450, 'loss': 1.3700835704803467, 'grad_norm': 0.343578577041626}
+plain {'step': 500, 'loss': 1.1750975847244263, 'grad_norm': 0.3007110059261322}
+plain {'step': 550, 'loss': 1.4004656076431274, 'grad_norm': 0.4133374094963074}
+plain {'step': 599, 'loss': 1.2788381576538086, 'grad_norm': 0.5615370869636536}
+plain {'text': 3.5088, 'math': 2.0135, 'newmath': 1.3079, 'sudoku_easy': 0.893, 'sudoku_hard': 0.8927} {'math': {'arithmetic__add_sub_multiple': 1, 'arithmetic__mul': 0, 'comparison__sort': 0}, 'newmath': {'algebra__linear_1d': 1}} 450
+gated {'step': 0, 'loss': 3.03645658493042, 'grad_norm': 1.4259685277938843}
+gated {'step': 50, 'loss': 1.5374544858932495, 'grad_norm': 0.530540406703949}
+gated {'step': 100, 'loss': 1.5059279203414917, 'grad_norm': 0.40914925932884216}
+gated {'step': 150, 'loss': 1.4523873329162598, 'grad_norm': 0.32042646408081055}
+gated {'step': 200, 'loss': 1.4532763957977295, 'grad_norm': 0.5806492567062378}
+gated {'step': 250, 'loss': 1.278267741203308, 'grad_norm': 0.42405179142951965}
+gated {'step': 300, 'loss': 1.519511103630066, 'grad_norm': 0.4062868356704712}
+gated {'step': 350, 'loss': 1.3201014995574951, 'grad_norm': 0.293791800737381}
+gated {'step': 400, 'loss': 1.3011510372161865, 'grad_norm': 0.5289468765258789}
+gated {'step': 450, 'loss': 1.371086597442627, 'grad_norm': 0.35357749462127686}
+gated {'step': 500, 'loss': 1.177004098892212, 'grad_norm': 0.304744154214859}
+gated {'step': 550, 'loss': 1.4058924913406372, 'grad_norm': 0.4238366186618805}
+gated {'step': 599, 'loss': 1.2851074934005737, 'grad_norm': 0.5729067325592041}
+gated {'text': 3.3864, 'math': 1.5453, 'newmath': 1.3059, 'sudoku_easy': 0.8473, 'sudoku_hard': 0.8441} {'math': {'arithmetic__add_sub_multiple': 1, 'arithmetic__mul': 0, 'comparison__sort': 0}, 'newmath': {'algebra__linear_1d': 1}} 863
+bank grid {'eta': 0.1, 'sigma': 1.0, 'new_delta': -0.04352907409444873, 'old_delta': -3.7836444636507593e-05, 'value_rms': 0.0007749345968477428, 'effective_eta_median': 0.1}
+bank grid {'eta': 10.0, 'sigma': 1.0, 'new_delta': -1.2130489767643444, 'old_delta': 0.01258896409098531, 'value_rms': 0.06336513161659241, 'effective_eta_median': 8.71212040862266}
+bank grid {'eta': 100.0, 'sigma': 1.0, 'new_delta': -1.2200584300080237, 'old_delta': 0.013091384592860855, 'value_rms': 0.06900950521230698, 'effective_eta_median': 8.726353914699196}
+bank grid {'eta': 1000.0, 'sigma': 1.0, 'new_delta': -1.2200584300080237, 'old_delta': 0.013091384592860855, 'value_rms': 0.06900950521230698, 'effective_eta_median': 8.726353914699196}
+bank grid {'eta': 0.1, 'sigma': 0.3, 'new_delta': -0.02894652238366202, 'old_delta': -2.2163519043161273e-05, 'value_rms': 0.0007744517060928047, 'effective_eta_median': 0.1}
+bank grid {'eta': 10.0, 'sigma': 0.3, 'new_delta': -1.0342728519997402, 'old_delta': 0.0012335148416986463, 'value_rms': 0.060441456735134125, 'effective_eta_median': 8.596524207124336}
+bank grid {'eta': 100.0, 'sigma': 0.3, 'new_delta': -1.0452948243994462, 'old_delta': 0.001275489825276921, 'value_rms': 0.0635741651058197, 'effective_eta_median': 8.620629094847683}
+bank grid {'eta': 1000.0, 'sigma': 0.3, 'new_delta': -1.0452948243994462, 'old_delta': 0.001275489825276921, 'value_rms': 0.0635741651058197, 'effective_eta_median': 8.620629094847683}
+bank grid {'eta': 0.1, 'sigma': 0.1, 'new_delta': -0.01382540122807363, 'old_delta': -1.290457740665829e-08, 'value_rms': 0.0007693270454183221, 'effective_eta_median': 0.1}
+bank grid {'eta': 10.0, 'sigma': 0.1, 'new_delta': -0.8125881939603572, 'old_delta': -5.342941391539568e-07, 'value_rms': 0.062046587467193604, 'effective_eta_median': 8.52877983200721}
+bank grid {'eta': 100.0, 'sigma': 0.1, 'new_delta': -0.8244699860176845, 'old_delta': -5.918254979420112e-07, 'value_rms': 0.0653056874871254, 'effective_eta_median': 8.487422945612376}
+bank grid {'eta': 1000.0, 'sigma': 0.1, 'new_delta': -0.8244699860176845, 'old_delta': -5.918254979420112e-07, 'value_rms': 0.0653056874871254, 'effective_eta_median': 8.487422945612376}
+rbf {'text': 3.382, 'math': 1.2042, 'newmath': 1.5178, 'sudoku_easy': 0.8473, 'sudoku_hard': 0.8441} {'math': {'arithmetic__add_sub_multiple': 0, 'arithmetic__mul': 0, 'comparison__sort': 0}, 'newmath': {'algebra__linear_1d': 0}} 1251
+consolidated {'step': 0, 'loss': 1.3462135791778564, 'grad_norm': 1.297735571861267}
+consolidated {'step': 50, 'loss': 0.18748174607753754, 'grad_norm': 0.28227025270462036}
+consolidated {'step': 100, 'loss': 0.041396789252758026, 'grad_norm': 0.12597456574440002}
+consolidated {'step': 150, 'loss': 0.04269614443182945, 'grad_norm': 0.14640501141548157}
+consolidated {'step': 200, 'loss': 0.04707689583301544, 'grad_norm': 0.1289062798023224}
+consolidated {'step': 250, 'loss': 0.032180916517972946, 'grad_norm': 0.09259656071662903}
+consolidated {'step': 300, 'loss': 0.025773772969841957, 'grad_norm': 0.13792061805725098}
+consolidated {'step': 350, 'loss': 0.029985880479216576, 'grad_norm': 0.09416713565587997}
+consolidated {'step': 400, 'loss': 0.020174482837319374, 'grad_norm': 0.07292786985635757}
+consolidated {'step': 450, 'loss': 0.020722433924674988, 'grad_norm': 0.1503487378358841}
+consolidated {'step': 500, 'loss': 0.022346464917063713, 'grad_norm': 0.06424218416213989}
+consolidated {'step': 550, 'loss': 0.016294876113533974, 'grad_norm': 0.06376767158508301}
+consolidated {'step': 599, 'loss': 0.015709595754742622, 'grad_norm': 0.07391060143709183}
+consolidated {'text': 3.3823, 'math': 1.2225, 'newmath': 1.4869, 'sudoku_easy': 0.8473, 'sudoku_hard': 0.8441} {'math': {'arithmetic__add_sub_multiple': 0, 'arithmetic__mul': 0, 'comparison__sort': 0}, 'newmath': {'algebra__linear_1d': 0}} 1667
+DONE 1667

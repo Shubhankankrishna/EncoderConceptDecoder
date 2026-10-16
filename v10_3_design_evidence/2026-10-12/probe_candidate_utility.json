@@ -1,0 +1,214 @@
+{
+  "checkpoint": "v10_1/runs/pretrain_16h/stopped_step_0061384.pt",
+  "step": 61384,
+  "boundaries_per_document": 6,
+  "utility": "chunk CE of the candidate forecast + 0.1 * MSE to the next pooled state (trainer definition)",
+  "families": {
+    "text": {
+      "boundaries": 384,
+      "utility_mean": 5.898611641971608,
+      "spread_median": 0.08320903778076172,
+      "spread_p90": 0.16028804779052733,
+      "gap_median": 0.01234292984008789,
+      "regret_mean": 0.044818072948449604,
+      "within_boundary_utility_std_median": 0.02729692007714159,
+      "code_main_effect_share": 0.013258397729241575,
+      "code_main_effect": [
+        0.0077843803276967565,
+        -0.005468935451062862,
+        -0.00037402451804761466,
+        -0.0013660141436654765,
+        0.001453893979487475,
+        -0.00878556900958453,
+        0.0027256810208200477,
+        0.004030587794356204
+      ],
+      "winner_counts": [
+        40,
+        66,
+        33,
+        58,
+        62,
+        62,
+        45,
+        18
+      ],
+      "selected_counts": [
+        39,
+        111,
+        46,
+        34,
+        47,
+        67,
+        1,
+        39
+      ],
+      "selector_accuracy": 0.17447916666666666,
+      "selector_prob_of_winner_mean": 0.13240950916466923,
+      "selector_winner_ce": 2.0539361000569785,
+      "classifier_train_boundaries": 1152,
+      "classifier_heldout_accuracy_by_C": {
+        "0.01": 0.19010416666666666,
+        "0.1": 0.16927083333333334,
+        "1.0": 0.171875
+      },
+      "majority_class_heldout_accuracy": 0.16145833333333334,
+      "chance": 0.125
+    },
+    "math": {
+      "boundaries": 140,
+      "utility_mean": 1.5342131345121224,
+      "spread_median": 0.1042858362197876,
+      "spread_p90": 0.3088540554046633,
+      "gap_median": 0.011630058288574219,
+      "regret_mean": 0.06191740761111889,
+      "within_boundary_utility_std_median": 0.03607313369640736,
+      "code_main_effect_share": 0.005681856434829475,
+      "code_main_effect": [
+        0.0021511469181859865,
+        -0.008321726320926766,
+        0.00129276461624873,
+        0.0005705443755557229,
+        0.0013156162969867832,
+        0.002525736273050175,
+        0.007789911377559682,
+        -0.007323993536660314
+      ],
+      "winner_counts": [
+        16,
+        18,
+        20,
+        25,
+        21,
+        9,
+        23,
+        8
+      ],
+      "selected_counts": [
+        5,
+        4,
+        47,
+        25,
+        6,
+        44,
+        1,
+        8
+      ],
+      "selector_accuracy": 0.19285714285714287,
+      "selector_prob_of_winner_mean": 0.1468583196401596,
+      "selector_winner_ce": 1.997011102702956,
+      "classifier_train_boundaries": 370,
+      "classifier_heldout_accuracy_by_C": {
+        "0.01": 0.2714285714285714,
+        "0.1": 0.29285714285714287,
+        "1.0": 0.2785714285714286
+      },
+      "majority_class_heldout_accuracy": 0.16428571428571428,
+      "chance": 0.125
+    },
+    "sudoku_easy": {
+      "boundaries": 192,
+      "utility_mean": 1.2027109023153268,
+      "spread_median": 0.10908135771751404,
+      "spread_p90": 0.1983267903327942,
+      "gap_median": 0.013754010200500488,
+      "regret_mean": 0.04845625316374935,
+      "within_boundary_utility_std_median": 0.034314311007517945,
+      "code_main_effect_share": 0.18999796617981818,
+      "code_main_effect": [
+        0.0173937288812643,
+        -0.004342919411404485,
+        -0.010775680451843073,
+        0.027947640267787694,
+        -0.013329687830870776,
+        0.021512812690464973,
+        -0.01784907858321579,
+        -0.020556815562182845
+      ],
+      "winner_counts": [
+        10,
+        25,
+        24,
+        12,
+        24,
+        2,
+        55,
+        40
+      ],
+      "selected_counts": [
+        38,
+        50,
+        36,
+        0,
+        17,
+        1,
+        49,
+        1
+      ],
+      "selector_accuracy": 0.18229166666666666,
+      "selector_prob_of_winner_mean": 0.13166873261798173,
+      "selector_winner_ce": 2.0747546800055274,
+      "classifier_train_boundaries": 576,
+      "classifier_heldout_accuracy_by_C": {
+        "0.01": 0.25,
+        "0.1": 0.2708333333333333,
+        "1.0": 0.24479166666666666
+      },
+      "majority_class_heldout_accuracy": 0.2864583333333333,
+      "chance": 0.125
+    },
+    "sudoku_hard": {
+      "boundaries": 192,
+      "utility_mean": 1.2275515422549386,
+      "spread_median": 0.11270710825920105,
+      "spread_p90": 0.18856438398361205,
+      "gap_median": 0.012461721897125244,
+      "regret_mean": 0.042344417629162,
+      "within_boundary_utility_std_median": 0.03747099987667371,
+      "code_main_effect_share": 0.2075649801459679,
+      "code_main_effect": [
+        0.016634437941017193,
+        -0.005465750969051442,
+        -0.01458336361823361,
+        0.035088453870230296,
+        -0.009517675834104011,
+        0.016706590610131872,
+        -0.023440120296375728,
+        -0.01542257170361457
+      ],
+      "winner_counts": [
+        12,
+        18,
+        36,
+        5,
+        36,
+        7,
+        45,
+        33
+      ],
+      "selected_counts": [
+        25,
+        47,
+        43,
+        0,
+        20,
+        5,
+        49,
+        3
+      ],
+      "selector_accuracy": 0.16145833333333334,
+      "selector_prob_of_winner_mean": 0.13161654968280345,
+      "selector_winner_ce": 2.069661156462135,
+      "classifier_train_boundaries": 576,
+      "classifier_heldout_accuracy_by_C": {
+        "0.01": 0.296875,
+        "0.1": 0.2604166666666667,
+        "1.0": 0.2552083333333333
+      },
+      "majority_class_heldout_accuracy": 0.234375,
+      "chance": 0.125
+    }
+  },
+  "seconds": 57.80248308181763,
+  "script_sha256": "8a1b887f6f56c6eac390c902691a17f190315d84fabf01ecd133130086656814"
+}

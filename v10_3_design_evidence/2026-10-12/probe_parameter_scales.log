@@ -1,0 +1,136 @@
+{
+ "decay_rule": "weight_decay 0.1 if ndim >= 2 else 0 (v10_10M/train.py build_optimizers)",
+ "checkpoints": {
+  "3171": {
+   "head.codebook": {
+    "rms": 0.8918565521428771,
+    "shape": [
+     8,
+     32,
+     16
+    ],
+    "decayed": true
+   },
+   "core.codes.weight": {
+    "rms": 0.12409553750591966,
+    "shape": [
+     8,
+     32
+    ],
+    "decayed": true
+   },
+   "core.code_projection.weight": {
+    "rms": 0.10084864050021099,
+    "shape": [
+     128,
+     32
+    ],
+    "decayed": true
+   },
+   "decoder.fusion": {
+    "rms": 0.10584724004462916,
+    "shape": [
+     128
+    ],
+    "decayed": false
+   },
+   "decoder.concept_projection.weight": {
+    "rms": 0.08268766293871299,
+    "shape": [
+     128,
+     128
+    ],
+    "decayed": true
+   },
+   "pooler.outn.weight": {
+    "rms": 0.9984640344298437,
+    "shape": [
+     128
+    ],
+    "decayed": false
+   },
+   "core.exit_norm.weight": {
+    "rms": 1.0145322260319682,
+    "shape": [
+     128
+    ],
+    "decayed": false
+   }
+  },
+  "61384": {
+   "head.codebook": {
+    "rms": 0.482676686825677,
+    "shape": [
+     8,
+     32,
+     16
+    ],
+    "decayed": true
+   },
+   "core.codes.weight": {
+    "rms": 0.14333018527139643,
+    "shape": [
+     8,
+     32
+    ],
+    "decayed": true
+   },
+   "core.code_projection.weight": {
+    "rms": 0.05656283496825959,
+    "shape": [
+     128,
+     32
+    ],
+    "decayed": true
+   },
+   "decoder.fusion": {
+    "rms": 0.07323551360417373,
+    "shape": [
+     128
+    ],
+    "decayed": false
+   },
+   "decoder.concept_projection.weight": {
+    "rms": 0.03941528727349269,
+    "shape": [
+     128,
+     128
+    ],
+    "decayed": true
+   },
+   "pooler.outn.weight": {
+    "rms": 1.0150851663761427,
+    "shape": [
+     128
+    ],
+    "decayed": false
+   },
+   "core.exit_norm.weight": {
+    "rms": 1.1135968454711376,
+    "shape": [
+     128
+    ],
+    "decayed": false
+   }
+  }
+ },
+ "winner_entropy_vs_selector_ce": {
+  "text": {
+   "winner_entropy": 2.0182102538747726,
+   "selector_ce": 2.0539361000569785
+  },
+  "math": {
+   "winner_entropy": 2.0185242513323094,
+   "selector_ce": 1.997011102702956
+  },
+  "sudoku_easy": {
+   "winner_entropy": 1.8449536641149373,
+   "selector_ce": 2.0747546800055274
+  },
+  "sudoku_hard": {
+   "winner_entropy": 1.881390907537975,
+   "selector_ce": 2.069661156462135
+  }
+ },
+ "script_sha256": "68df59c2f9963c3e738f9245d213ca8aad98e61bc323fae1528d05beda17e2a5"
+}
