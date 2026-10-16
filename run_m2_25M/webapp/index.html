@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HRM Thinker-25M</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='18' width='8' height='11' rx='2' fill='%233b78c2'/%3E%3Crect x='12' y='10' width='8' height='19' rx='2' fill='%232e9c8c'/%3E%3Crect x='21' y='3' width='8' height='26' rx='2' fill='%23e07b39'/%3E%3C/svg%3E">
+<script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="#overview" data-tab-link="overview">
+      <div class="logo"><span style="background:#3b78c2"></span><span style="background:#2e9c8c"></span><span style="background:#e07b39"></span></div>
+      <h1>HRM Thinker-25M</h1><span class="brand-tag">research</span>
+      <span class="sub">encoder → concept module → confined decoder</span>
+    </a>
+    <div class="ver-switch" id="ver-switch" role="tablist" aria-label="model version"><button data-ver-go="v1" class="on">v1 <small>25M</small></button><button data-ver-go="v2">v2 <small>19M</small></button><button data-ver-go="v3">v3 <small>19M · live</small></button><button data-ver-go="v4">v4 <small>proposed</small></button></div>
+    <nav class="tabs" id="tabs">
+      <button data-ver="v1" data-tab="overview" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Overview</button>
+      <button data-ver="v1" data-tab="arch2d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4a2 2 0 0 1 2 2V14"/></svg>How it works</button>
+      <button data-ver="v1" data-tab="arch3d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>3D model</button>
+      <button data-ver="v1" data-tab="train"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>Live training <span class="tab-live" id="tab-live-dot"></span></button>
+      <button data-ver="v1" data-tab="results"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Results</button>
+      <button data-ver="v1" data-tab="analysis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.5l-1.8-5L5 9.7l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>Analysis</button>
+      <button data-ver="v1" data-tab="screens" title="Screens & gates"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/></svg>Screens</button>
+      <button data-ver="v1" data-tab="concept"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3a9 9 0 1 1-8.5 6"/><path d="M3 4v5h5"/></svg>Concept v2</button>
+      <button data-ver="v1" data-tab="guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7"/></svg>Guide</button>
+      <button data-ver="v2" data-tab="v2overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Overview</button>
+      <button data-ver="v2" data-tab="v2arch2d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4a2 2 0 0 1 2 2V14"/></svg>How it works</button>
+      <button data-ver="v2" data-tab="v2arch3d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>3D model</button>
+      <button data-ver="v2" data-tab="v2train"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>Run record</button>
+      <button data-ver="v3" data-tab="v3overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Overview</button>
+      <button data-ver="v3" data-tab="v3arch2d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4a2 2 0 0 1 2 2V14"/></svg>How it works</button>
+      <button data-ver="v3" data-tab="v3arch3d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>3D model</button>
+      <button data-ver="v3" data-tab="v3train"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>Live training</button>
+      <button data-ver="v3" data-tab="v3eval24"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>24 h evaluation</button>
+      <button data-ver="v4" data-tab="v4overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Overview</button>
+      <button data-ver="v4" data-tab="v4arch2d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4a2 2 0 0 1 2 2V14"/></svg>How it works</button>
+      <button data-ver="v4" data-tab="v4arch3d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>3D model</button>
+      <button data-ver="v4" data-tab="v4tiny" title="Tiny experiment and go / no-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/></svg>Tiny experiment &amp; verdict</button>
+    </nav>
+    <div class="top-right">
+      <span class="live-pill" id="live-pill" title="Live status (refreshes every 5 s)">
+        <span class="dot" id="live-dot"></span><span id="live-text">connecting…</span>
+        <span class="pill-sep" id="live-gpu-sep"></span><span id="live-gpu" class="muted"></span>
+        <span class="pill-sep" id="live-age-sep"></span><span id="live-age" class="muted"></span>
+      </span>
+      <button class="theme-btn" id="theme-btn" title="Toggle light / dark theme" aria-label="toggle theme">◐</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ======================================================= OVERVIEW -->
+  <section class="tab on" id="tab-overview">
+    <div class="ov-hero">
+      <div>
+        <div class="eyebrow"><span class="dot" id="ov-eb-dot"></span>Research model · 25.05M compute parameters · <span id="ov-eb-state">Apple M2 · PyTorch MPS</span></div>
+        <h2 class="big">A language model that has to <em>think in concepts</em> to see far back</h2>
+        <p class="lead">The token-level decoder can only look at the last <b>70 tokens</b>. Anything older must travel through a separate
+          <b>concept stream</b>: every 4 tokens are compressed into one concept, a small module reasons over the concept sequence, and it
+          hands the decoder a <b>plan</b>. If the model recalls a fact from 400 tokens ago, the concept stream carried it.</p>
+        <div class="cta">
+          <a class="btn primary" href="#train" data-tab-link="train">Watch it train →</a>
+          <a class="btn" href="#arch2d" data-fig="overview">How it works</a>
+          <a class="btn" href="#results" data-tab-link="results">Final results</a>
+          <a class="btn" href="#arch3d" data-tab-link="arch3d">Explore in 3D</a>
+        </div>
+        <div class="tagrow"><span class="chip">encoder v1.0</span><span class="chip">concept module v2</span><span class="chip">confined decoder v1</span><span class="chip">d = 384</span><span class="chip">PyTorch · MPS</span></div>
+      </div>
+      <div class="hero-live" id="ov-live"><div class="muted">connecting to the training run…</div></div>
+    </div>
+
+    <div class="grid g6" id="ov-stats" style="margin-top:18px"></div>
+
+    <div class="sh"><div><h3>The three parts</h3><p>Read, think, write. Each part is a separate module with its own parameter budget.</p></div></div>
+    <div class="story">
+      <div class="story-card c-enc">
+        <div class="story-num">1</div>
+        <h4>Encoder <span>reads &amp; compresses</span></h4>
+        <p>Reads the tokens with two streams: a <b>local</b> one that sees only 63 tokens back (the decoder may read it) and a
+          <b>global</b> one that sees the whole document (only used to build concepts). Every 4 tokens become one concept vector.</p>
+        <div class="facts"><span>8 layers</span><span>15.5M params</span><span>+ 50.3M n-gram memory</span></div>
+        <a href="#arch2d" data-fig="enc">See the encoder →</a>
+      </div>
+      <div class="story-arrow">→</div>
+      <div class="story-card c-core">
+        <div class="story-num">2</div>
+        <h4>Concept module <span>thinks ahead</span></h4>
+        <p>Runs one shared attention layer <b>R times</b> (1–4) over the concept sequence, then predicts the codes of the
+          <b>next</b> concept from a 48 × 128 codebook. Its output is the plan for the decoder.</p>
+        <div class="facts"><span>1 layer × R</span><span>2.06M params</span><span>1 concept per 4 tokens</span></div>
+        <a href="#arch2d" data-fig="core">See the concept module →</a>
+      </div>
+      <div class="story-arrow">→</div>
+      <div class="story-card c-dec">
+        <div class="story-num">3</div>
+        <h4>Decoder <span>writes the next token</span></h4>
+        <p>Predicts each next token from the local stream (last 70 tokens) plus <b>its own plan</b>. It is “confined”: no position
+          can read another position's plan, so long-range knowledge can only come from the concept module.</p>
+        <div class="facts"><span>4 layers</span><span>7.53M params</span><span>reach 70 tokens</span></div>
+        <a href="#arch2d" data-fig="dec">See the decoder →</a>
+      </div>
+    </div>
+
+    <div class="sh"><div><h3>The evidence</h3><p>How we know the concept stream is doing the work.</p></div></div>
+    <div class="evidence">
+      <div><h4>Swap the plan, and long-range recall collapses</h4>
+        <p>The long-range probes hide an answer 128–420 tokens back, out of the decoder's reach. Each probe is scored twice: normally, and with
+          the plan swapped for another document's (<i>plan swap</i>). High accuracy normally and chance when swapped means the answer came through the concepts.</p></div>
+      <div id="ov-proof"></div>
+    </div>
+
+    <div class="sh"><div><h3>Health at a glance</h3><p>The same checks as the Live training page, summarised.</p></div><a class="sec-link" href="#train" data-tab-link="train">Open live training →</a></div>
+    <div class="health mini" id="ov-health"></div>
+
+    <div class="sh"><div><h3>A token's journey</h3><p>Seven steps from text to the next prediction. Each links to its figure.</p></div></div>
+    <ol class="journey" id="ov-journey"></ol>
+
+    <div class="sh"><div><h3>The whole model</h3><p>Hover any box for shapes, parameter counts and the source file.</p></div><a class="sec-link" href="#arch2d" data-fig="overview">All nine figures →</a></div>
+    <figure class="fig"><div id="ov-fig"></div>
+      <figcaption><b>Figure 1.</b> Up through the encoder (left), down through the concept module (middle), up through the decoder (right).</figcaption></figure>
+
+    <div class="sh"><div><h3>Under the hood</h3><p>Parameters, training setup and compute, all read from the code.</p></div></div>
+    <div class="grid g2">
+      <div class="card"><h4>Parameters (read from the model code)</h4><div id="ov-params"></div></div>
+      <div class="card"><h4>Training setup</h4><div class="kvt" id="ov-setup"></div></div>
+    </div>
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card"><h4>Compute per token</h4><div id="ov-macs"></div></div>
+      <div class="card"><h4>Where things are</h4><div class="kvt" id="ov-files"></div></div>
+    </div>
+  </section>
+
+  <!-- ======================================================= 2D -->
+  <section class="tab" id="tab-arch2d">
+    <div class="page-head"><div>
+      <div class="eyebrow">Architecture · 9 figures</div>
+      <h2>How it works</h2>
+      <p class="lead">From the whole model down to single mechanisms. Each figure starts with a short “read this first”. Every number is generated
+        from the model code (<code>code/model.py → build_model()</code>), not typed by hand. Hover any box for details.</p></div>
+    </div>
+    <div class="fig-layout">
+      <nav class="fig-nav sticky" id="fig-nav" aria-label="figures"></nav>
+      <div id="figs"></div>
+    </div>
+  </section>
+
+  <!-- ======================================================= 3D -->
+  <section class="tab" id="tab-arch3d">
+    <div class="page-head"><div>
+      <div class="eyebrow">Interactive · Three.js</div>
+      <h2>3D model</h2>
+      <p class="lead">Take the guided tour, or explore freely. Click any part for its shapes, parameter count and role.</p></div>
+      <div class="v3-help"><span><kbd>drag</kbd> orbit</span><span><kbd>scroll</kbd> zoom</span><span><kbd>right-drag</kbd> pan</span><span><kbd>click</kbd> inspect</span></div>
+    </div>
+    <div class="tour" id="tour"></div>
+    <div class="v3-shell">
+      <div class="v3-stage" id="v3-stage">
+        <canvas id="v3" aria-label="interactive 3D model of the architecture"></canvas>
+        <div class="v3-bar" id="v3-bar">
+          <div class="seg"><button data-view="all" class="on">Whole model</button><button data-view="enc">Encoder</button><button data-view="core">Concept module</button><button data-view="dec">Decoder</button></div>
+          <div class="seg"><button data-act="explode">Explode</button><button data-act="labels" class="on">Labels: auto</button><button data-act="flow" title="Animates the data-flow arrows; uses the GPU continuously while on, so it is off by default">Animate flow</button></div>
+          <div class="seg"><button data-act="reset" title="Reset view (Esc)">⟲</button><button data-act="png" title="Save a PNG of this view">⤓</button></div>
+        </div>
+        <div class="v3-hover" id="v3-hover"></div>
+      </div>
+      <aside class="v3-side" id="v3-info"></aside>
+    </div>
+  </section>
+
+  <!-- ======================================================= CONCEPT v2 -->
+  <section class="tab" id="tab-concept">
+    <div class="page-head"><div>
+      <div class="eyebrow">Proposal · 6 designs · 42 papers + 3 residual papers · advisor consulted at every step (log: concept_v2/ADVISOR_LOG.md)</div>
+      <h2>Concept module v2</h2>
+      <p class="lead">Six proposed concept cores (4 layers, d 256, FFN 1024, full attention, recurrent), each built on a different mechanism that makes
+        extra passes matter, scored against today's module. Nothing here changes the running training.</p>
+      <p><b>Why these designs.</b> The papers agree on only three ways to make extra passes matter: train with many random pass counts (D1, D4), distil
+        short routes toward the long one (D2, LoopFormer), or detach the carry between groups of passes and supervise every pass (D3, D5). Each design
+        is anchored to a different one of these, so the score compares mechanisms, not residual or FFN tweaks; D4 adds pass-dependent experts, D5 a
+        leak-bounded set of candidate plans for next chunks that have several valid continuations. <b>D6</b> (your request) combines D3's detached,
+        fully graded windows, LoopFormer's distillation toward the endpoint in the final window (from D2) and D4's experts routed on the state; it
+        ties D3 on the rubric (70.0 vs 70.5) because it adds moving parts, and three ablations (E16, A4, A2) decide between them.</p></div>
+    </div>
+    <div id="cv2-root"><p class="muted">Loading…</p></div>
+    <div class="card cv2-card"><div class="sh"><div><h3>3D: expected pass trajectories</h3><p>Illustrative, not measured. x = pass (depth), the other two axes a
+      picture of the plan state; gold spheres = several valid next-chunk plans. Today's core stops moving after ~2 passes; the designs keep refining.</p></div></div>
+      <div class="cv2-3dbar"><button data-cv2show="all">All</button><button data-cv2show="ROW0">Today</button><button data-cv2show="D1">D1</button><button data-cv2show="D2">D2</button><button data-cv2show="D3">D3</button><button data-cv2show="D4">D4</button><button data-cv2show="D5">D5</button><button data-cv2show="D6">D6</button></div>
+      <canvas id="cv2-3d" class="cv2-3d" aria-label="3D trajectories of the five designs"></canvas></div>
+  </section>
+
+  <!-- ======================================================= proposed v3 -->
+  <section class="tab v3-proposal" id="tab-v3overview">
+    <div class="ov-hero">
+      <div>
+        <div class="eyebrow"><span class="dot v3dot"></span>Draft r2 · design only · 18.99M compute parameters</div>
+        <h2 class="big">A small recurrent <em>scratchpad</em> that must earn each pass</h2>
+        <p class="lead">v3 keeps the information path that worked in v1: a 256-wide encoder makes concepts, a zero state <b>S</b> is updated by four distinct layers that reread <b>C</b> for at most three (t, Δ)-conditioned passes, and a confined decoder receives the resulting plan. Revision r2 treats the conditioning as a hypothesis: a controlled ladder of arms decides whether repetition, conditioning or the shortcut earns its cost.</p>
+        <div class="cta">
+          <a class="btn primary" href="#v3arch2d" data-tab-link="v3arch2d">Explore 2D figures →</a>
+          <a class="btn" href="#v3arch3d" data-tab-link="v3arch3d">Explore in 3D</a>
+          <a class="btn" href="data/draft_v3.md" target="_blank" rel="noopener">Full draft (r2) ↗</a>
+        </div>
+        <div class="tagrow"><span class="chip">S₀ = 0</span><span class="chip">4 distinct layers + shared FFN</span><span class="chip">M ≤ 3 · (t, Δ)</span><span class="chip">full gradient</span><span class="chip">arm ladder A1 / A3 / T3 / Full</span><span class="chip">draft r2 · untrained</span></div>
+      </div>
+      <div class="hero-live" id="v3-hero-side"></div>
+    </div>
+    <div class="grid g6" id="v3-stats" style="margin-top:18px"></div>
+    <div class="sh"><div><h3>Why this design</h3><p>Measured v1/v2 behavior and the corresponding v3 decision.</p></div></div>
+    <div class="card scroll-x tcard" id="v3-evidence"></div>
+    <div class="sh"><div><h3>The three parts</h3><p>Dimensions and roles come from the retained v1 architecture; training choices are the v3 proposal.</p></div></div>
+    <div class="story" id="v3-story"></div>
+    <div class="grid g2 v3-detail-grid">
+      <div class="card" id="v3-depth"></div><div class="card" id="v3-objective"></div>
+      <div class="card" id="v3-data"></div><div class="card" id="v3-gates"></div>
+    </div>
+    <div class="sh"><div><h3>How the proposal will be tested</h3><p>These are experiment arms and acceptance gates, not v3 results.</p></div></div>
+    <div class="card scroll-x tcard" id="v3-experiments"></div>
+    <p class="muted v3-provenance">Source: <a href="data/draft_v3.md" target="_blank" rel="noopener">draft_v3.md (r2)</a>, revised after the external review <code>draft_v3_review.md</code>. The measurements shown are from v1 and the v2 run (checkpoints to step 3,089, 29 September 2026). No v3 training has run.</p>
+  </section>
+
+  <section class="tab v3-proposal" id="tab-v3arch2d">
+    <div class="page-head"><div><div class="eyebrow"><span class="dot v3dot"></span>v3 draft r2 · architecture and training figures</div>
+      <h2>How v3 would work</h2><p class="lead">Follow a token through the 256-wide encoder, the 4-layer concept module looped at most 3 times, and the confined decoder. The depth, objective and gate figures show what changes from v1 and v2. Click a box to inspect it; zoom, export, or open the matching 3D part.</p></div></div>
+    <div class="fig-layout"><nav class="fig-nav sticky" id="fig3-nav" aria-label="v3 figures"></nav><div id="figs3"></div></div>
+  </section>
+
+  <section class="tab v3-proposal" id="tab-v3arch3d">
+    <div class="page-head"><div><div class="eyebrow"><span class="dot v3dot"></span>v3 · interactive 3D model</div>
+      <h2>How v3 turns tokens into a prediction</h2><p class="lead">Three stages, left to right: the <b>encoder</b> compresses every 4 tokens into a concept, the <b>concept module</b> thinks over those concepts in up to 3 passes, and the <b>decoder</b> writes the next token from the last 70 tokens plus that plan. Start the guided tour, or click any block. Highlighted passes are illustrative, not trained activations.</p></div>
+      <div class="v3-help"><span><kbd>drag</kbd> orbit</span><span><kbd>scroll</kbd> zoom</span><span><kbd>click</kbd> inspect</span></div></div>
+    <div class="tour" id="tourc"></div>
+    <div class="v3-bar" id="v3c-bar">
+        <div class="seg"><button data-view="all" class="on">Whole model</button><button data-view="enc">Encoder</button><button data-view="core">Concept module</button><button data-view="dec">Decoder</button></div>
+        <div class="seg"><span class="seg-l">Passes</span><button data-traj="3" class="on" title="Main path: 3 passes of (⅓, ⅓, ⅓); feeds the decoder">3</button><button data-traj="2a" title="Training shortcut: 2 passes (⅓, ⅔)">2a</button><button data-traj="2b" title="Training shortcut: 2 passes (⅔, ⅓)">2b</button><button data-traj="1" title="Training shortcut: 1 pass (0, 1)">1</button><button data-act="passes">▶ Play passes</button></div>
+        <div class="seg"><button data-act="explode" title="Pull the layers apart">Explode</button><button data-act="labels" class="on">Labels: auto</button><button data-act="flow" title="Move the arrows along the data paths">Animate flow</button></div>
+        <div class="seg"><button data-act="reset" title="Reset view">⟲</button><button data-act="png" title="Save this view">⤓</button></div></div>
+    <div class="v3-shell"><div class="v3-stage" id="v3c-stage"><canvas id="v3c" aria-label="interactive 3D model of the v3 draft"></canvas>
+<div class="v3-hover" id="v3c-hover"></div></div><aside class="v3-side" id="v3c-info"></aside></div>
+  </section>
+
+  <!-- ======================================================= v3 · 24 h EVALUATION (js/v3eval.js; same components as v1's Results) -->
+  <section class="tab v3-proposal" id="tab-v3eval24">
+    <div class="page-head"><div>
+      <div class="eyebrow">24 h milestone evaluation · run_v3_19M/code/final_eval.py --split val</div>
+      <h2>24 h evaluation</h2>
+      <p class="lead">Everything measured on the v3 checkpoint at the 24 h milestone: language with every part switched off, 1 / 2 / 3 passes,
+        context truncation, long-range probes, synthetic tasks, linear read-outs, concept-stream health, the shortcut gradient audit and samples.
+        Validation split (the test split stays sealed until 48 h). <span id="v3e-meta" class="muted"></span></p></div>
+    </div>
+    <div id="v3e-root"><div class="card empty-note">loading the 24 h evaluation…</div></div>
+  </section>
+
+  <!-- ======================================================= proposed v4 (js/v4.js, js/v4figs.js, js/view3d_v4.js; data/arch_v4.json, data/v4_tiny.json) -->
+  <section class="tab v3-proposal v4-proposal" id="tab-v4overview">
+    <div class="ov-hero">
+      <div>
+        <div class="eyebrow"><span class="dot v4dot"></span>draft_v4 revision 2 · proposed · <span id="v4-eyebrow-n">19.90M</span> compute parameters</div>
+        <h2 class="big">Six tokens become one concept, <em>chosen by content</em></h2>
+        <p class="lead">v4 is derived from v3. The encoder is kept and refined (its two global layers run twice, a small shared FFN joins every layer), every six tokens are pooled into one concept by attention instead of a fixed average, the concept module thinks in two passes without the (t, Δ) table, a two-level codebook gives each concept a small "abstract action" code, and the decoder may read the Engram memory directly. Everything is proposed; a tiny CPU version has been built and tested.</p>
+        <div class="cta">
+          <a class="btn primary" href="#v4arch2d" data-tab-link="v4arch2d">Explore 2D figures →</a>
+          <a class="btn" href="#v4arch3d" data-tab-link="v4arch3d">Explore in 3D</a>
+          <a class="btn" href="#v4tiny" data-tab-link="v4tiny">Tiny experiment &amp; verdict</a>
+          <a class="btn" href="data/draft_v4.md" target="_blank" rel="noopener">Full draft ↗</a>
+        </div>
+        <div class="tagrow"><span class="chip">6 tokens → 1 concept</span><span class="chip">attention + FFN pooler</span><span class="chip">F layers × 2</span><span class="chip">shared FFN in encoder</span><span class="chip">core 4 × 2 · terminal-only</span><span class="chip">coarse 1,024 + PQ 32 × 256</span><span class="chip">decoder Engram reads</span><span class="chip">proposed · tiny-tested</span></div>
+      </div>
+      <div class="hero-live" id="v4-hero-side"></div>
+    </div>
+    <div class="grid g6" id="v4-stats" style="margin-top:18px"></div>
+    <div class="sh"><div><h3>Why this design</h3><p>What v1 and v3 measured, and the v4 decision it led to.</p></div></div>
+    <div class="card scroll-x tcard" id="v4-evidence"></div>
+    <div class="sh"><div><h3>The three parts</h3><p>Exact counts from <code>model_v4.py</code> at full size; arrows compare with v3.</p></div></div>
+    <div class="story" id="v4-story"></div>
+    <div class="grid g2 v3-detail-grid">
+      <div class="card" id="v4-depth"></div><div class="card" id="v4-objective"></div>
+      <div class="card" id="v4-data"></div><div class="card" id="v4-gates"></div>
+    </div>
+    <div class="sh"><div><h3>How the proposal will be tested</h3><p>Control arms and decisions, read at matched tokens. These are plans, not results.</p></div></div>
+    <div class="card scroll-x tcard" id="v4-experiments"></div>
+    <p class="muted v3-provenance">Source: <a href="data/draft_v4.md" target="_blank" rel="noopener">draft_v4.md</a> (revision 2), counts from <code>v4_tiny/code/model_v4.py</code>, tiny-scale tests and results in <a href="data/v4_REPORT.md" target="_blank" rel="noopener">v4_tiny/REPORT.md</a> and <a href="data/v4_GO_NOGO.md" target="_blank" rel="noopener">GO_NOGO.md</a>. v1 and v3 numbers are measurements from their runs. No full-scale v4 training has run.</p>
+  </section>
+
+  <section class="tab v3-proposal v4-proposal" id="tab-v4arch2d">
+    <div class="page-head"><div><div class="eyebrow"><span class="dot v4dot"></span>v4 draft r2 · architecture and training figures</div>
+      <h2>How v4 would work</h2><p class="lead">Follow six tokens through the encoder (global layers applied twice), the attention + FFN pooler that turns them into one concept, the two-pass concept module and its two-level codebook, and the decoder that writes the next six tokens from the shifted plan. Click a box to inspect it; zoom, export, or open the matching 3D part.</p></div></div>
+    <div class="fig-layout"><nav class="fig-nav sticky" id="fig4-nav" aria-label="v4 figures"></nav><div id="figs4"></div></div>
+  </section>
+
+  <section class="tab v3-proposal v4-proposal" id="tab-v4arch3d">
+    <div class="page-head"><div><div class="eyebrow"><span class="dot v4dot"></span>v4 · interactive 3D model</div>
+      <h2>How v4 turns tokens into a prediction</h2><p class="lead">Three stages, left to right: the <b>encoder</b> pools every 6 tokens into a concept with an attention + FFN pooler, the <b>concept module</b> thinks over those concepts in 2 passes, and the <b>decoder</b> writes the next 6 tokens from the last 70 tokens, the shifted plan and (proposed) direct Engram reads. Start the guided tour, or click any block. Highlighted passes are illustrative, not trained activations.</p></div>
+      <div class="v3-help"><span><kbd>drag</kbd> orbit</span><span><kbd>scroll</kbd> zoom</span><span><kbd>click</kbd> inspect</span></div></div>
+    <div class="tour" id="tour4"></div>
+    <div class="v3-bar" id="v4c-bar">
+        <div class="seg"><button data-view="all" class="on">Whole model</button><button data-view="enc">Encoder</button><button data-view="core">Concept module</button><button data-view="dec">Decoder</button></div>
+        <div class="seg"><span class="seg-l">Passes</span><button data-traj="2" class="on" title="Main path: 2 plain passes of the 4 core layers">2</button><button data-traj="1" title="Switch-off reading: 1 pass (evaluation only)">1</button><button data-act="passes">▶ Play passes</button></div>
+        <div class="seg"><button data-act="explode" title="Pull the layers apart">Explode</button><button data-act="labels" class="on">Labels: auto</button><button data-act="flow" title="Move the arrows along the data paths">Animate flow</button></div>
+        <div class="seg"><button data-act="reset" title="Reset view">⟲</button><button data-act="png" title="Save this view">⤓</button></div></div>
+    <div class="v3-shell"><div class="v3-stage" id="v4c-stage"><canvas id="v4c" aria-label="interactive 3D model of the v4 draft"></canvas>
+<div class="v3-hover" id="v4c-hover"></div></div><aside class="v3-side" id="v4c-info"></aside></div>
+  </section>
+
+  <section class="tab v3-proposal v4-proposal" id="tab-v4tiny">
+    <div class="page-head"><div>
+      <div class="eyebrow"><span class="dot v4dot"></span>v4_tiny · CPU experiment · 2026-10-01</div>
+      <h2>Tiny experiment &amp; verdict</h2>
+      <p class="lead">A scaled-down v4 (d 64, 1.26M compute parameters, same topology) was built from the draft, tested in depth and trained on CPU while v3 kept running. This page is the evidence for one decision: whether to build and launch v4 after v3's final evaluation. <span id="v4t-meta" class="muted"></span></p></div>
+    </div>
+    <div id="v4t-root"><div class="card empty-note">loading the tiny-experiment results…</div></div>
+  </section>
+
+  <!-- ======================================================= v3 · LIVE TRAINING (js/v3train.js; same components as v1's Live training) -->
+  <section class="tab v3-proposal trp" id="tab-v3train">
+    <div class="trp-hero" id="v3-now"><div class="stepbig">Loading the v3 run…</div></div>
+    <div class="kpis" id="v3-kpis"></div>
+
+    <nav class="trp-nav" id="v3-nav" aria-label="sections of this page"></nav>
+
+    <section class="trp-sec" id="v3s-checks" data-title="Health checks">
+      <div class="trp-sh"><div><h3>Health checks</h3><p>Each check compares a live number with the threshold fixed before the run. Grey means not expected yet.</p></div><div class="trp-sum"></div></div>
+      <div class="health" id="v3-health"></div>
+    </section>
+
+    <section class="trp-sec" id="v3s-verdict" data-title="Verdicts">
+      <div class="trp-sh"><div><h3>Is it working? Four verdicts</h3><p>Each card answers one question from all the telemetry on this page, in three tiers: <b>switched on and moving</b> (live telemetry), <b>carries load</b> (the switch-off tests of the 24 h milestone evaluation, filled in automatically when it lands) and <b>worth its cost</b> (only the controlled comparison runs can say). Pills: green = a criterion fixed before the run is met · amber = met marginally, or a v1 reference is not · grey = Measured (no pre-set bar), Pending 24 h, or Needs arm.</p></div></div>
+      <div class="grid g2" id="v3-verdicts"></div>
+    </section>
+
+    <section class="trp-sec" id="v3s-live" data-title="Live">
+      <div class="trp-sh"><div><h3>Live</h3><p id="v3-live-note">Every optimizer step, from the trainer's heartbeat.</p></div><div class="trp-sum"></div></div>
+      <div class="grid g2" id="v3-ch-live"></div>
+    </section>
+
+    <section class="trp-sec" id="v3s-cmp" data-title="v3 vs v1">
+      <div class="trp-sh"><div><h3>Is v3 keeping up with v1?</h3><p>Compared at the same optimizer step, which means the same tokens in the same order (seed 0, v1's data order). Dashed lines: v1 (blue) and v2 (purple).</p></div><div class="trp-sum"></div></div>
+      <div class="grid g2" id="v3-ch-cmp"></div>
+    </section>
+
+    <section class="trp-sec" id="v3s-loss" data-title="Losses">
+      <div class="trp-sh"><div><h3>Training losses</h3><p>Averaged over each 25-step log window.</p></div><div class="trp-sum"></div></div>
+      <div class="grid g2" id="v3-ch-loss"></div>
+    </section>
+
+    <section class="trp-sec" id="v3s-concept" data-title="Concepts">
+      <div class="trp-sh"><div><h3>Concept stream</h3><p>Codebook, what goes into a concept, and the encoder's n-gram memory. Charts marked Diagnostic are for reading, not for pass or fail.</p></div><div class="trp-sum"></div></div>
+      <div class="grid g3" id="v3-ch-concept"></div>
+    </section>
+
+    <section class="trp-sec" id="v3s-loop" data-title="Loop">
+      <div class="trp-sh"><div><h3>Is the loop doing useful work?</h3><p>The concept module runs its 4 layers up to 3 times (passes). These charts read the trainer's loop telemetry: every 25 steps on training batches, and at each evaluation on held-out data. None of them has a pre-set threshold, so all are Diagnostic. <b>How much of each write comes through the shared FFN is not logged in this run</b>; only its weight size is. It can be measured from a checkpoint after the run, without touching training.</p></div><div class="trp-sum"></div></div>
+      <div class="card v3-glance-card"><h4>Loop at a glance <span class="muted" id="v3-glance-when"></span></h4><div class="v3-glance" id="v3-glance"></div></div>
+      <div class="grid g2" id="v3-ch-loop" style="margin-top:14px"></div>
+      <div class="card" style="margin-top:14px"><h4>(t, Δ) table: gain size per pair and site <span class="muted" id="v3-tgrid-when"></span></h4><div class="scroll-x" id="v3-tgrid"></div></div>
+      <div class="grid g2" id="v3-ch-loop2" style="margin-top:14px"></div>
+    </section>
+
+    <section class="trp-sec" id="v3s-system" data-title="System">
+      <div class="trp-sh"><div><h3>Optimisation and machine</h3><p>Speed, stability, schedule and memory.</p></div><div class="trp-sum"></div></div>
+      <div class="grid g2" id="v3-ch-system"></div>
+    </section>
+
+    <section class="trp-sec" id="v3s-records" data-title="Records">
+      <div class="trp-sh"><div><h3>Records</h3><p>Every evaluation, the zero-initialised parts check and the run setup.</p></div></div>
+      <div class="card scroll-x tcard"><table class="t v3t-evt" id="v3-evals"></table></div>
+      <div class="grid g2" style="margin-top:14px">
+        <div class="card" id="v3-opened-card"><h4>Did the new zero-initialised parts switch on?</h4><div class="scroll-x" id="v3-opened"></div></div>
+        <div class="card"><h4>Run setup</h4><div class="kvt" id="v3-setup"></div></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ======================================================= v2 · OVERVIEW -->
+  <section class="tab v2" id="tab-v2overview">
+    <div class="ov-hero">
+      <div>
+        <div class="eyebrow"><span class="dot v2dot"></span>Model v2 · design, not trained yet · <span id="v2-eb">18.83M compute parameters</span></div>
+        <h2 class="big">v2: a <em>balanced</em> thinker. Smaller encoder, a real concept module, a decoder that must plan</h2>
+        <p class="lead">Same three-part idea as v1: tokens are compressed into concepts, a module reasons over them, and a confined decoder writes.
+          v2 fixes what v1 taught us. At d = 256 the <b>concept module grows from 8 % to 42 %</b> of the parameters (a looped D6 core with
+          16 experts), the <b>Engram memory grows to 80M</b> lookups, and <b>NextLat</b> pushes the decoder's state and therefore its plan to be a
+          belief state.</p>
+        <div class="cta">
+          <a class="btn primary" href="#v2arch2d" data-tab-link="v2arch2d">How it works →</a>
+          <a class="btn" href="#v2arch3d" data-tab-link="v2arch3d">Explore in 3D</a>
+          <a class="btn" href="#v2train" data-tab-link="v2train">Live training</a>
+          <a class="btn" href="#overview" data-ver-go="v1">Back to v1</a>
+        </div>
+        <div class="tagrow"><span class="chip">d = 256</span><span class="chip">encoder v1 layout</span><span class="chip">concept module D6 · 16 experts</span><span class="chip">confined decoder + NextLat</span><span class="chip">Engram 80M</span><span class="chip">spec: model_v2/MODEL_V2_19M.md</span></div>
+      </div>
+      <div class="hero-live" id="v2-hero-side"></div>
+    </div>
+    <div class="grid g6" id="v2-stats" style="margin-top:18px"></div>
+    <div class="sh"><div><h3>The three parts</h3><p>v1 → v2, side by side. Sizes are computed from the model code (model_v2/v2_budget.py).</p></div></div>
+    <div class="story" id="v2-story"></div>
+    <div class="sh"><div><h3>Proportions</h3><p>The lesson of v1: a giant encoder and an ant-sized concept module. Three ways to count the balance in v2.</p></div></div>
+    <div class="grid g2" id="v2-props"></div>
+    <div class="sh"><div><h3>What changed, and why</h3><p>Every change, the reason from first principles, and the check that decides whether it was right.</p></div></div>
+    <div class="card scroll-x tcard"><table class="t" id="v2-changes"></table></div>
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card"><h4>Where the 19M goes: budget rows (row C chosen)</h4><div id="v2-rows"></div></div>
+      <div class="card"><h4>Training objective (sum of all terms)</h4><div id="v2-loss"></div></div>
+    </div>
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card"><h4>Compute and throughput</h4><div id="v2-compute"></div></div>
+      <div class="card"><h4>What would prove v2 wrong, and the fallback</h4><div id="v2-risks"></div></div>
+    </div>
+  </section>
+
+  <!-- ======================================================= v2 · 2D -->
+  <section class="tab v2" id="tab-v2arch2d">
+    <div class="page-head"><div>
+      <div class="eyebrow"><span class="dot v2dot"></span>Model v2 · architecture · 11 figures</div>
+      <h2>How v2 works</h2>
+      <p class="lead">From the whole model down to single mechanisms. Every number is read from <code>data/arch_v2.json</code>, which
+        <code>model_v2/make_arch_v2.py</code> generates from the model code. Hover any box for details, click to pin it.</p></div>
+    </div>
+    <div class="fig-layout">
+      <nav class="fig-nav sticky" id="fig2-nav" aria-label="v2 figures"></nav>
+      <div id="figs2"></div>
+    </div>
+  </section>
+
+  <!-- ======================================================= v2 · 3D -->
+  <section class="tab v2" id="tab-v2arch3d">
+    <div class="page-head"><div>
+      <div class="eyebrow"><span class="dot v2dot"></span>Model v2 · interactive · Three.js</div>
+      <h2>v2 in 3D</h2>
+      <p class="lead">The pass ring, the shelf of 16 experts and NextLat are new in v2. Take the tour, or click any part for its shapes, parameter count and role.</p></div>
+      <div class="v3-help"><span><kbd>drag</kbd> orbit</span><span><kbd>scroll</kbd> zoom</span><span><kbd>right-drag</kbd> pan</span><span><kbd>click</kbd> inspect</span></div>
+    </div>
+    <div class="tour" id="tourb"></div>
+    <div class="v3-shell">
+      <div class="v3-stage" id="v3b-stage">
+        <canvas id="v3b" aria-label="interactive 3D model of the v2 architecture"></canvas>
+        <div class="v3-bar" id="v3b-bar">
+          <div class="seg"><button data-view="all" class="on">Whole model</button><button data-view="enc">Encoder</button><button data-view="core">Concept module</button><button data-view="dec">Decoder</button></div>
+          <div class="seg"><button data-act="explode">Explode</button><button data-act="labels" class="on">Labels: auto</button><button data-act="passes" title="Step through the passes: the lit experts change from pass to pass">Play passes</button><button data-act="flow" title="Animates the data-flow arrows; uses the GPU continuously while on">Animate flow</button></div>
+          <div class="seg"><button data-act="reset" title="Reset view (Esc)">⟲</button><button data-act="png" title="Save a PNG of this view">⤓</button></div>
+        </div>
+        <div class="v3-hover" id="v3b-hover"></div>
+      </div>
+      <aside class="v3-side" id="v3b-info"></aside>
+    </div>
+  </section>
+
+  <!-- ======================================================= v2 · LIVE TRAINING -->
+  <section class="tab v2" id="tab-v2train">
+    <div class="page-head"><div><div class="eyebrow"><span class="dot" style="background:#7a5bd0"></span>v2 · run record · ended</div>
+      <h2>v2's 48 h run (stopped at 24 h by the owner)</h2><p class="lead">v2 trained for 24.05 h (step 3,089) and was retired on 29 Sep 2026 23:13 in favour of v3; its 24 h evaluation was stopped part-way. These are the logged numbers, frozen. Port 8766 now serves the v3 run.</p></div></div>
+    <div id="v2t-record"></div>
+  </section>
+
+  <!-- ======================================================= TRAINING -->
+  <section class="tab trp" id="tab-train">
+    <div class="trp-hero" id="now"></div>
+    <div class="kpis" id="trp-kpis"></div>
+
+    <nav class="trp-nav" id="trp-nav" aria-label="sections of this page"></nav>
+
+    <section class="trp-sec" id="s-checks" data-title="Health checks">
+      <div class="trp-sh"><div><h3>Health checks</h3><p>Each check compares a live number with the threshold we care about.</p></div><div class="trp-sum"></div></div>
+      <div class="health" id="tr-health"></div>
+    </section>
+
+    <section class="trp-sec" id="s-live" data-title="Live">
+      <div class="trp-sh"><div><h3>Live</h3><p id="steps-note"></p></div><div class="trp-sum"></div></div>
+      <div class="grid g2" id="tr-charts-live"></div>
+    </section>
+
+    <section class="trp-sec" id="s-loss" data-title="Losses">
+      <div class="trp-sh"><div><h3>Training losses</h3><p>Logged by the trainer every 50 steps (≈ 15 min).</p></div><div class="trp-sum"></div></div>
+      <div class="grid g2" id="tr-charts-a"></div>
+    </section>
+
+    <section class="trp-sec" id="s-eval" data-title="Evaluation">
+      <div class="trp-sh"><div><h3>Is it learning language, and using the concepts?</h3><p>Hourly evaluation on held-out data.</p></div><div class="trp-sum"></div></div>
+      <div class="grid g2" id="tr-charts-b"></div>
+    </section>
+
+    <section class="trp-sec" id="s-concept" data-title="Concepts">
+      <div class="trp-sh"><div><h3>Concept stream health</h3><p>Codebook, next-concept prediction and what goes into each concept.</p></div><div class="trp-sum"></div></div>
+      <div class="grid g3" id="tr-charts-c"></div>
+    </section>
+
+    <section class="trp-sec" id="s-system" data-title="System">
+      <div class="trp-sh"><div><h3>Optimisation and machine</h3><p>Schedule, stability, speed and memory.</p></div><div class="trp-sum"></div></div>
+      <div class="grid g3" id="tr-charts-d"></div>
+    </section>
+
+    <section class="trp-sec" id="s-records" data-title="Records">
+      <div class="trp-sh"><div><h3>Records</h3><p>Every evaluation, checkpoints, model internals and raw logs.</p></div></div>
+      <div class="card scroll-x tcard"><table class="t" id="tr-evals"></table></div>
+      <div class="grid g2" style="margin-top:14px">
+        <div class="card"><h4>Checkpoints on disk</h4><div class="scroll-x"><table class="t" id="tr-ckpts"></table></div>
+          <h4 style="margin-top:14px">Safety guards</h4><div id="tr-guards" class="muted"></div></div>
+        <div class="card"><h4>Inside the model (latest evaluation)</h4><div id="tr-internals"></div></div>
+      </div>
+      <div class="grid g2" style="margin-top:14px">
+        <div class="card"><h4>Trainer output</h4><pre class="log term-log" id="tr-stdout"></pre></div>
+        <div class="card"><h4>Run timeline (chain and launcher logs)</h4><pre class="log term-log" id="tr-chain"></pre></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ======================================================= RESULTS (D-044) -->
+  <section class="tab" id="tab-results">
+    <div class="page-head"><div>
+      <div class="eyebrow">Final evaluation · code/final_eval.py</div>
+      <h2>Results</h2>
+      <p class="lead">Everything measured on the trained model after training: language, long-range probes, synthetic tasks, loop depth,
+        linear read-outs, concept-stream health, samples and the pre-registered gates. <span id="rs-meta" class="muted"></span></p></div>
+      <div class="rs-stage" id="rs-stage"></div>
+    </div>
+    <div id="rs-root"><div class="card empty-note">loading the final evaluation…</div></div>
+  </section>
+
+  <!-- ======================================================= ANALYSIS (D-045) -->
+  <section class="tab" id="tab-analysis">
+    <div class="page-head"><div>
+      <div class="eyebrow">Written by Claude from the dashboard's data</div>
+      <h2>Analysis</h2>
+      <p class="lead">A plain-language reading of everything on the other pages: what we built, what it achieved, what did not work, and what to do next.
+        Every number comes from the dashboard's data; press the button for a fresh analysis whenever new results arrive.</p></div>
+    </div>
+    <div class="an-bar" id="an-bar"></div>
+    <div id="an-root"><div class="card empty-note">loading…</div></div>
+  </section>
+
+  <!-- ======================================================= SCREENS -->
+  <section class="tab" id="tab-screens">
+    <div class="page-head"><div>
+      <div class="eyebrow">Before the main run · decisions</div>
+      <h2>Screens &amp; gates</h2>
+      <p class="lead">Three short <b>screens</b> (265 steps, 8.7M tokens each) tested design choices against each other before the 24-hour run.
+        <b>Gates</b> are the pass/fail criteria set in advance in PROMPT.md §6.</p></div>
+      <div class="ph-side gate-summary" id="sc-gsum"></div>
+    </div>
+    <div class="grid g3" id="sc-explain"></div>
+    <div id="sc-verdict"></div>
+    <div class="sh"><div><h3>Screen results</h3><p>Validation at the end of each screen (step 265).</p></div></div>
+    <div class="card scroll-x tcard"><table class="t" id="sc-table"></table></div>
+    <div class="grid g3" style="margin-top:16px" id="sc-charts"></div>
+    <div class="sh"><div><h3>Gates</h3><p>Live evidence for each pre-registered criterion. The final verdicts, judged on the full final evaluation, are on the Results page.</p></div><a class="sec-link" href="#results" data-tab-link="results">Final verdicts →</a></div>
+    <div class="gates" id="sc-gates"></div>
+  </section>
+
+  <!-- ======================================================= GUIDE -->
+  <section class="tab" id="tab-guide">
+    <div class="page-head"><div>
+      <div class="eyebrow">Reference</div>
+      <h2>Guide &amp; glossary</h2>
+      <p class="lead">What every number on this dashboard means, what “good” looks like, and how to control the run.</p></div>
+    </div>
+    <div class="grid g2 guide-cards">
+      <div class="card"><h4>How to read the live page</h4><div id="gd-read"></div></div>
+      <div class="card"><h4>Controlling the run</h4><div id="gd-control"></div></div>
+    </div>
+    <div class="sh"><div><h3>Glossary</h3><p id="gd-count">Every term used on this dashboard.</p></div></div>
+    <div class="gloss-bar"><input class="search" id="gd-search" placeholder="Search terms…" aria-label="search the glossary"><div class="gloss-cats" id="gd-cats"></div></div>
+    <div class="gloss" id="gd-gloss"></div>
+    <div class="sh"><div><h3>Run timeline</h3><p>Every launch, pause, resume and evaluation, oldest first.</p></div></div>
+    <div class="card"><div id="gd-timeline"></div></div>
+  </section>
+</main>
+<footer class="foot"><span>HRM Thinker-25M · read-only dashboard (webapp/server.py) · never touches the training run</span><span>Data refresh: live every 5 s · losses every 50 steps · evaluations hourly</span></footer>
+
+<div id="tip"></div>
+
+<script src="js/svg.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/diagrams.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/content.js"></script>
+<script src="js/telemetry.js"></script>
+<script src="js/figtools.js"></script>
+<script src="js/final.js"></script>
+<script src="js/analysis.js"></script>
+<script src="js/app.js"></script>
+<script type="module" src="js/view3d.js"></script>
+<script src="js/concept.js"></script>
+<script type="module" src="js/concept3d.js"></script>
+<script src="js/v2figs.js"></script>
+<script src="js/v2.js"></script>
+<script type="module" src="js/view3d_v2.js"></script>
+<script src="js/v3dfigs.js"></script>
+<script src="js/v3dfigs2.js"></script>
+<script src="js/v3d.js?v=20260930r"></script>
+<script type="module" src="js/view3d_v3d.js"></script>
+<script src="js/v3train.js?v=20260930r"></script>
+<script src="js/v3eval.js?v=20261001a"></script>
+<script src="js/v4figs.js?v=20261001v4e"></script>
+<script src="js/v4.js?v=20261001v4e"></script>
+<script type="module" src="js/view3d_v4.js?v=20261001v4e"></script>
+</body>
+</html>

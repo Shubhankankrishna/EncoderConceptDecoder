@@ -1,0 +1,216 @@
+{
+  "params": {
+    "enc_layer_S": 1812100,
+    "enc_layer_F": 1862024,
+    "enc_layer_S_attn": 543360,
+    "enc_layer_S_ffn": 1216512,
+    "enc_layer_S_gr": 52228,
+    "enc_layer_F_gr": 102146,
+    "enc_attn_F": 543366,
+    "engram_total": 50653826,
+    "engram_table": 50331264,
+    "engram_proj": 322562,
+    "crc_router": 1155,
+    "pool": 589824,
+    "tok_norm": 384,
+    "embed": 3145728,
+    "core_total": 2059064,
+    "core_layer": 1862024,
+    "core_attn": 543366,
+    "core_ffn": 1216512,
+    "codebook": 49152,
+    "ncp_Wq": 147456,
+    "ncp_tau": 48,
+    "core_out_norm": 384,
+    "dec_total": 7532296,
+    "dec_plan": 296832,
+    "dec_layer": 1808770,
+    "dec_layer_attn": 540800,
+    "dec_layer_ffn": 1216512,
+    "dec_out_norm": 384
+  },
+  "table": {
+    "encoder_non_embedding": 15510573,
+    "engram_table": 50331264,
+    "token_embedding": 3145728,
+    "concept_module": 2059064,
+    "codebook": 49152,
+    "decoder": 7532296,
+    "compute_params": 25052781,
+    "stored_total": 78578925
+  },
+  "macs": {
+    "encoder": 16292352.0,
+    "core": 1258464.0,
+    "decoder": 7326720.0,
+    "head": 3145728,
+    "total": 28023264.0
+  },
+  "ecfg": {
+    "vocab_size": 8192,
+    "d_model": 384,
+    "n_heads": 6,
+    "n_kv_heads": 2,
+    "head_dim": 64,
+    "d_ff": 1056,
+    "chunk": 4,
+    "d_concept": 0,
+    "window": 8,
+    "rope_dims": 16,
+    "rope_base": 10000.0,
+    "layer_pattern": "SSSFSSSF",
+    "engram_after": 0,
+    "engram_orders": [
+      2,
+      3
+    ],
+    "engram_heads": 4,
+    "engram_rows": 131071,
+    "engram_dim": 48,
+    "conv_kernel": 4,
+    "gr_rank": 32,
+    "gr_read_bias": 2.0,
+    "crc_bias": [
+      -1.0,
+      -1.0,
+      1.0
+    ],
+    "eps": 1e-06
+  },
+  "dcfg": {
+    "d_model": 384,
+    "n_heads": 6,
+    "n_kv_heads": 2,
+    "head_dim": 64,
+    "d_ff": 1056,
+    "n_layers": 4,
+    "window": 8,
+    "rope_dims": 16,
+    "rope_base": 10000.0,
+    "chunk": 4,
+    "d_concept": 0,
+    "gr_rank": 32,
+    "gr_read_bias": 2.0,
+    "plan_floor": 0.5,
+    "layout": "confined",
+    "plan_in": "add",
+    "enc_reach": 63,
+    "conv_kernel": 4,
+    "eps": 1e-06
+  },
+  "reach_enc": 63,
+  "reach_dec": 70,
+  "S": 48,
+  "N": 128,
+  "proposal": {
+    "status": "Design only; v3 has not been implemented or trained",
+    "source": "proposed_v3.md",
+    "evidence_cutoff": "2026-09-29T10:20:29.134361+05:30",
+    "scratchpad": "S0 = exact zeros; each pass rereads C and writes S",
+    "ordinary_depth": {
+      "R2": 0.75,
+      "R4": 0.25
+    },
+    "hard_families_R4": [
+      "lr_hop",
+      "pointer_chase",
+      "graph_walk"
+    ],
+    "inference_modes": [
+      2,
+      4
+    ],
+    "backpropagation": "Full through every executed pass",
+    "loss": "L_token + lambda_answer(s) L_answer + 0.1 L_NCP(final) + L_VQ",
+    "answer_ramp": "lambda_answer(s) = 0.1 min(1, s/300)",
+    "optimizer": "AdamW (0.9, 0.95), eps 1e-8, matrix decay 0.1, global clip 1",
+    "schedule": "300-step warm-up to 6e-4, one cosine to 6e-5 over 4,050 steps",
+    "slots_per_step": 32768,
+    "slot_budget": 132710400,
+    "macs_by_depth": {
+      "1": {
+        "encoder": 16292352.0,
+        "core": 525504.0,
+        "decoder": 7326720.0,
+        "head": 3145728,
+        "total": 27290304.0
+      },
+      "2": {
+        "encoder": 16292352.0,
+        "core": 1014144.0,
+        "decoder": 7326720.0,
+        "head": 3145728,
+        "total": 27778944.0
+      },
+      "2.5": {
+        "encoder": 16292352.0,
+        "core": 1258464.0,
+        "decoder": 7326720.0,
+        "head": 3145728,
+        "total": 28023264.0
+      },
+      "4": {
+        "encoder": 16292352.0,
+        "core": 1991424.0,
+        "decoder": 7326720.0,
+        "head": 3145728,
+        "total": 28756224.0
+      },
+      "8": {
+        "encoder": 16292352.0,
+        "core": 3945984.0,
+        "decoder": 7326720.0,
+        "head": 3145728,
+        "total": 30710784.0
+      }
+    },
+    "comparison_arms": [
+      [
+        "A",
+        "historical-style v1 reproduction",
+        "legacy masks",
+        "uniform R1\u20134",
+        "no answer term"
+      ],
+      [
+        "B",
+        "corrected v1 control",
+        "corrected masks",
+        "uniform R1\u20134",
+        "no answer term"
+      ],
+      [
+        "C",
+        "short-depth candidate",
+        "corrected masks",
+        "R2/R4",
+        "no answer term"
+      ],
+      [
+        "D",
+        "proposed v3",
+        "corrected masks",
+        "R2/R4",
+        "ramp to 0.1"
+      ]
+    ]
+  },
+  "measured": {
+    "label": "Historical evidence only; no v3 measurement",
+    "v1_final_test_tinystories": 1.9767823043936943,
+    "v1_final_test_wikitext": 3.6290012277541077,
+    "v1_recall_exact": 0.970703125,
+    "v1_final_R1_tinystories": 1.9779738061267382,
+    "v1_final_R4_tinystories": 1.9767823043936943,
+    "v1_equal_time_step": 2559,
+    "v1_equal_time_val_mean": 2.881591544424752,
+    "v1_equal_time_recall_exact": 0.9453125,
+    "v2_eval_step": 1703,
+    "v2_val_mean": 3.3952303193025175,
+    "v2_recall_exact": 0.0078125,
+    "v2_sample_R1_tinystories": 2.822587439829072,
+    "v2_sample_R6_tinystories": 2.7321425577115996,
+    "v2_sample_R1_wikitext": 4.37849005916188,
+    "v2_sample_R6_wikitext": 4.34092791102038
+  }
+}

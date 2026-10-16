@@ -1,0 +1,3 @@
+PASS compat shim: encoder forward bit-identical to the original (float64, tok, c_hat, G)
+MPS vs CPU max abs diff: tok 3.22e-06, c_hat 2.15e-06 (expect < 1e-3)
+MPS allocated after backward: 0.68 GiB (B=2, T=1024)

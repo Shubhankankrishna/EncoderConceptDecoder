@@ -1,0 +1,393 @@
+{
+ "source": "draft_v4.md (revision 2, 2026-10-01) · exact counts from v4_tiny/code/model_v4.py (full config) · tests in v4_tiny/",
+ "status": "Proposed · implemented and tested at tiny scale on CPU (v4_tiny) · not trained at full scale",
+ "revision": "r2",
+ "ecfg": {
+  "vocab_size": 8192,
+  "d_model": 256,
+  "n_heads": 4,
+  "n_heads_full": 6,
+  "n_kv_heads": 2,
+  "head_dim": 64,
+  "d_ff": 1024,
+  "chunk": 6,
+  "d_concept": 256,
+  "window": 8,
+  "rope_dims": 16,
+  "layer_pattern": "SSSFSSSF",
+  "engram_orders": [
+   2,
+   3
+  ],
+  "engram_heads": 4,
+  "engram_rows": 208333,
+  "engram_dim": 48,
+  "conv_kernel": 4,
+  "gr_rank": 32,
+  "enc_loop": 2,
+  "enc_shared_ff": 384,
+  "T": 1020,
+  "block": 60
+ },
+ "core": {
+  "n_layers": 4,
+  "heads": 6,
+  "kv": 2,
+  "own_ff": 736,
+  "shared_ff": 1024,
+  "M": 2,
+  "supervision": "terminal-only"
+ },
+ "pooler": {
+  "kind": "attention + FFN",
+  "heads": 4,
+  "head_dim": 64,
+  "ffn": 384,
+  "init": "exact masked mean"
+ },
+ "pq": {
+  "S": 32,
+  "N": 256,
+  "ds": 8,
+  "bits": 256
+ },
+ "coarse": {
+  "K": 1024,
+  "d": 256,
+  "bits": 10
+ },
+ "reach_enc": 63,
+ "reach_dec": 70,
+ "table": {
+  "encoder_non_embedding": 10167120,
+  "concept_module": 4838209,
+  "decoder": 4892682,
+  "compute_params": 19898011,
+  "engram_table": 79999872,
+  "token_embedding": 2097152,
+  "codebook": 327680,
+  "stored_total": 102322715
+ },
+ "params": {
+  "enc_layer_S": 1085572,
+  "enc_layer_S_attn": 264320,
+  "enc_layer_S_ffn": 786432,
+  "enc_layer_S_gr": 34820,
+  "enc_layer_F": 1217672,
+  "enc_layer_F_attn": 363142,
+  "enc_layer_F_ffn": 786432,
+  "enc_layer_F_gr": 68098,
+  "engram_read1": 215042,
+  "engram_read2": 214018,
+  "engram_table": 79999872,
+  "enc_shared": 294912,
+  "enc_shared_gains": 8,
+  "crc_router": 771,
+  "tok_norm": 256,
+  "pooler": 493337,
+  "core_layer": 996488,
+  "core_attn": 363142,
+  "core_own_ffn": 565248,
+  "core_gr": 68098,
+  "core_shared": 786432,
+  "ncp_head": 65569,
+  "core_out_norm": 256,
+  "coarse_codebook": 262144,
+  "pq_codebook": 65536,
+  "dec_layer": 1083010,
+  "dec_plan": 132864,
+  "dec_read": 213761,
+  "dec_reads": 427522,
+  "dec_out_norm": 256,
+  "token_embedding": 2097152,
+  "pool_Wk": 65536,
+  "pool_Wv": 65536,
+  "pool_Wo": 65536,
+  "pool_q": 256,
+  "pool_p": 1536,
+  "pool_b": 24,
+  "pool_ffn": 294913
+ },
+ "variants": {
+  "compute": {
+   "k8": 19899043,
+   "k4": 19896979,
+   "gconv": 19767707,
+   "attn_only": 19603098
+  },
+  "recommended_main_run": 19175576,
+  "recommended_note": "decoder Engram reads off and pooler FFN off in the main run (both kept as arms) — GO_NOGO.md"
+ },
+ "k_compare": [
+  [
+   "concepts per row (T)",
+   "256 (1,024)",
+   "170 (1,020)",
+   "128 (1,024)"
+  ],
+  [
+   "concepts in a median 38-token document",
+   "9",
+   "6",
+   "4"
+  ],
+  [
+   "real tokens after document padding",
+   "98.1 %",
+   "96.9 %",
+   "96.1 %"
+  ],
+  [
+   "tokens predicted with the null plan",
+   "3.5 %",
+   "5.9 %",
+   "8.2 %"
+  ],
+  [
+   "mean plan staleness (tokens)",
+   "1.5",
+   "2.5",
+   "3.5"
+  ],
+  [
+   "recall-family query inside the plan · min margin",
+   "100 % · 4",
+   "100 % · 2",
+   "100 % · 0"
+  ],
+  [
+   "hop: start name / hop count inside the plan",
+   "100 % / 100 %",
+   "100 % / 100 %",
+   "100 % / 75 %"
+  ],
+  [
+   "bind: constant inside the plan",
+   "50 %",
+   "35 %",
+   "22 %"
+  ],
+  [
+   "core cost vs v3's core (attention / position-wise)",
+   "1",
+   "0.21 / 0.31",
+   "0.12 / 0.23"
+  ],
+  [
+   "micro-step vs v3's profile (estimate)",
+   "0.946 (v3)",
+   "0.79–0.85",
+   "0.76–0.82"
+  ]
+ ],
+ "v3_pool": {
+  "slot_norm": [
+   7.69,
+   7.64,
+   8.34,
+   12.08
+  ],
+  "diag_mean": [
+   0.248,
+   0.285,
+   0.33,
+   0.431
+  ],
+  "cos_slot4": [
+   0.3,
+   0.49,
+   0.73,
+   1.0
+  ],
+  "step": 11348
+ },
+ "throughput": [
+  [
+   "part",
+   "share of v3's profile",
+   "v4 multiplier",
+   "why"
+  ],
+  [
+   "encoder",
+   "0.419",
+   "× 1.16–1.23",
+   "F loop +13–20 %, shared FFN +3 %"
+  ],
+  [
+   "core",
+   "0.364",
+   "× 0.18–0.27",
+   "2 pass-rows of 5; 170 vs 256 concepts"
+  ],
+  [
+   "decoder",
+   "0.168",
+   "× ≈ 1.10",
+   "two Engram reads"
+  ],
+  [
+   "losses",
+   "0.050",
+   "× ≈ 1.0",
+   "small coarse head"
+  ],
+  [
+   "micro-step",
+   "1.00 (v3 avg 0.946)",
+   "≈ 0.79–0.85",
+   "≈ 1.1–1.2× v3 (A/B decides)"
+  ]
+ ],
+ "losses": [
+  {
+   "name": "NTP(u)",
+   "weight": 1,
+   "formula": "CE of token t+1 at t over valid targets (same doc, not PAD)",
+   "reaches": [
+    "decoder",
+    "core",
+    "encoder",
+    "Engram"
+   ]
+  },
+  {
+   "name": "CE_coarse",
+   "weight": 0.05,
+   "formula": "CE of the next concept's coarse code under −‖q − E⁰_k‖²/τ₀, pair_ok pairs",
+   "reaches": [
+    "head",
+    "core",
+    "encoder via C"
+   ]
+  },
+  {
+   "name": "CE_fine",
+   "weight": 0.1,
+   "formula": "segment-mean CE of the next fine codes, frame q − E⁰[k_true] (teacher-forced, loss only)",
+   "reaches": [
+    "head",
+    "core",
+    "encoder via C"
+   ]
+  },
+  {
+   "name": "VQ_coarse",
+   "weight": 1,
+   "formula": "‖sg ĉ − E⁰_k‖² / 32 over complete chunks",
+   "reaches": [
+    "coarse codebook"
+   ]
+  },
+  {
+   "name": "VQ_fine",
+   "weight": 1,
+   "formula": "segment-mean ‖sg r − e_n‖², r = sg ĉ − sg E⁰_k",
+   "reaches": [
+    "PQ codebook"
+   ]
+  }
+ ],
+ "gates": [
+  [
+   "G1 · nothing dead",
+   "100 / 200 / 300",
+   "every zero-init branch moved; coarse ppl > 25 % of K",
+   "v3's OPENED check, extended"
+  ],
+  [
+   "G2 · language",
+   "1,217 / 1,792 / 2,376",
+   "val within v3 + 0.05 nats",
+   "v3: 3.319 / 3.121 / 3.005"
+  ],
+  [
+   "G3 · recall onset",
+   "1,792",
+   "recall1 ≥ 0.25",
+   "v3 had 0.594"
+  ],
+  [
+   "G4 · probes alive",
+   "4,050",
+   "carry3 ≥ 0.40 and multi4 > 0",
+   "v3: carry3 0.617, multi4 0.086"
+  ],
+  [
+   "G5 · second pass works",
+   "24 h",
+   "R2 − R1 multi4 ≥ 2 SE",
+   "the reason M = 2 was kept"
+  ],
+  [
+   "k = 6 gate (§3.5.5)",
+   "4,050",
+   "vs k = 4: val ≤ +0.03, onset ≤ +300 steps, carry3 ±2 SE, tok/s ≥ 1.03×",
+   "fallback: k = 4, new pooler"
+  ]
+ ],
+ "arms": [
+  [
+   "k = 4 control",
+   "same v4, 4 tokens per concept",
+   "mandatory",
+   "the compression factor (§3.5.5)"
+  ],
+  [
+   "k = 8",
+   "8 tokens per concept, T 1,024",
+   "strongly recommended",
+   "is compression 8 affordable?"
+  ],
+  [
+   "no F loop",
+   "enc_loop = 1",
+   "strongly recommended",
+   "is the encoder loop worth its cost?"
+  ],
+  [
+   "decoder reads on (if off by default)",
+   "two decoder Engram reads",
+   "mandatory (tiny-scale finding)",
+   "memorisation vs generalisation"
+  ],
+  [
+   "pooler FFN on / gated conv",
+   "pooler variants",
+   "if time",
+   "selection and composition"
+  ],
+  [
+   "posterior-code dropout (B)",
+   "plan reads the true next coarse code with p = 0.5",
+   "owner's choice",
+   "RL door B"
+  ],
+  [
+   "PQ 64×128×4 · pass-1 NCP · temporal int.",
+   "codebook / supervision variants",
+   "if time",
+   "named questions"
+  ]
+ ],
+ "v1": {
+  "compute": 25052781,
+  "encoder": 15510573,
+  "core": 2059064,
+  "decoder": 7532296,
+  "engram_table": 50331264,
+  "macs_train": 28023000.0,
+  "width": 384,
+  "core_desc": "1 shared layer × R U{1..4}",
+  "val_24h": 2.755
+ },
+ "v3": {
+  "compute": 18986871,
+  "encoder": 9641007,
+  "core": 4881216,
+  "decoder": 4464648,
+  "width": 256,
+  "val_latest": 2.486,
+  "step_latest": 13701
+ }
+}

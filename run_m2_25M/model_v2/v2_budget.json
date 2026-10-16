@@ -1,0 +1,613 @@
+{
+ "A_D6_as_scored_E8": {
+  "cfg": {
+   "enc_d_ff": 704,
+   "dec_d_ff": 704,
+   "E": 8,
+   "nl_hidden": 512,
+   "lam_kl": 1.0
+  },
+  "params": {
+   "encoder": 7394345,
+   "core": 4770872,
+   "decoder": 3514376,
+   "compute": 15679593,
+   "share": {
+    "encoder": 0.47159036589789033,
+    "core": 0.304272693812907,
+    "decoder": 0.22413694028920267
+   },
+   "embed": 2097152,
+   "engram_table": 79999872,
+   "codebook": 49152,
+   "nextlat_psi_training_only": 657664,
+   "stored": 97825769
+  },
+  "parts": {
+   "encoder": {
+    "total_non_embedding": 7394345,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "layer_S_attn": 264320,
+    "layer_S_ffn": 540672,
+    "layer_S_gr": 34820,
+    "layer_F_gr": 68098,
+    "engram_proj": 215042,
+    "pool": 393216,
+    "crc_router": 771,
+    "tok_norm": 256,
+    "embed": 2097152,
+    "engram_table": 79999872
+   },
+   "decoder": {
+    "total": 3514376,
+    "layer": 837250,
+    "attn": 262272,
+    "ffn": 540672,
+    "plan": 165120,
+    "out_norm": 256
+   },
+   "core": {
+    "E": 8,
+    "d_expert": 512,
+    "top_k": 2,
+    "per_layer": 332418,
+    "pool": 3145728,
+    "io": 196608,
+    "head": 98352,
+    "codebook": 49152,
+    "params": 4770872,
+    "macs_eval": 7194624.0,
+    "macs_train_fwd": 12367872.0,
+    "R_eval": 6,
+    "K_train_mean": 10
+   },
+   "nextlat": {
+    "hidden": 512,
+    "psi_params": 657664,
+    "psi_macs": 655360,
+    "kl_head_macs": 2097152,
+    "train_equiv_with_kl": 6160384,
+    "train_equiv_no_kl": 1966080
+   }
+  },
+  "macs": {
+   "encoder": 7912448.0,
+   "core_eval": 7194624.0,
+   "core_train": 12367872.0,
+   "decoder": 3393536.0,
+   "head": 2097152,
+   "fwd_eval": 20597760.0,
+   "fwd_train": 25771008.0,
+   "core_share_eval": 0.3492915734526473,
+   "nextlat_train_equiv": 6160384,
+   "train_equiv": 83473408.0,
+   "train_vs_today": 0.9929154385088439
+  },
+  "est_tok_s": [
+   1662,
+   1828
+  ],
+  "est_tokens_24h": [
+   143596800,
+   157939200
+  ]
+ },
+ "B_E12": {
+  "cfg": {
+   "enc_d_ff": 704,
+   "dec_d_ff": 704,
+   "E": 12,
+   "nl_hidden": 512,
+   "lam_kl": 1.0
+  },
+  "params": {
+   "encoder": 7394345,
+   "core": 6347832,
+   "decoder": 3514376,
+   "compute": 17256553,
+   "share": {
+    "encoder": 0.4284949027769335,
+    "core": 0.3678505203211789,
+    "decoder": 0.20365457690188765
+   },
+   "embed": 2097152,
+   "engram_table": 79999872,
+   "codebook": 49152,
+   "nextlat_psi_training_only": 657664,
+   "stored": 99402729
+  },
+  "parts": {
+   "encoder": {
+    "total_non_embedding": 7394345,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "layer_S_attn": 264320,
+    "layer_S_ffn": 540672,
+    "layer_S_gr": 34820,
+    "layer_F_gr": 68098,
+    "engram_proj": 215042,
+    "pool": 393216,
+    "crc_router": 771,
+    "tok_norm": 256,
+    "embed": 2097152,
+    "engram_table": 79999872
+   },
+   "decoder": {
+    "total": 3514376,
+    "layer": 837250,
+    "attn": 262272,
+    "ffn": 540672,
+    "plan": 165120,
+    "out_norm": 256
+   },
+   "core": {
+    "E": 12,
+    "d_expert": 512,
+    "top_k": 2,
+    "per_layer": 333442,
+    "pool": 4718592,
+    "io": 196608,
+    "head": 98352,
+    "codebook": 49152,
+    "params": 6347832,
+    "macs_eval": 7200768.0,
+    "macs_train_fwd": 12378112.0,
+    "R_eval": 6,
+    "K_train_mean": 10
+   },
+   "nextlat": {
+    "hidden": 512,
+    "psi_params": 657664,
+    "psi_macs": 655360,
+    "kl_head_macs": 2097152,
+    "train_equiv_with_kl": 6160384,
+    "train_equiv_no_kl": 1966080
+   }
+  },
+  "macs": {
+   "encoder": 7912448.0,
+   "core_eval": 7200768.0,
+   "core_train": 12378112.0,
+   "decoder": 3393536.0,
+   "head": 2097152,
+   "fwd_eval": 20603904.0,
+   "fwd_train": 25781248.0,
+   "core_share_eval": 0.349485612047115,
+   "nextlat_train_equiv": 6160384,
+   "train_equiv": 83504128.0,
+   "train_vs_today": 0.9932808526329563
+  },
+  "est_tok_s": [
+   1661,
+   1827
+  ],
+  "est_tokens_24h": [
+   143510400,
+   157852800
+  ]
+ },
+ "C_E16": {
+  "cfg": {
+   "enc_d_ff": 704,
+   "dec_d_ff": 704,
+   "E": 16,
+   "nl_hidden": 512,
+   "lam_kl": 1.0
+  },
+  "params": {
+   "encoder": 7394345,
+   "core": 7924792,
+   "decoder": 3514376,
+   "compute": 18833513,
+   "share": {
+    "encoder": 0.3926163430051526,
+    "core": 0.42078140174910544,
+    "decoder": 0.186602255245742
+   },
+   "embed": 2097152,
+   "engram_table": 79999872,
+   "codebook": 49152,
+   "nextlat_psi_training_only": 657664,
+   "stored": 100979689
+  },
+  "parts": {
+   "encoder": {
+    "total_non_embedding": 7394345,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "layer_S_attn": 264320,
+    "layer_S_ffn": 540672,
+    "layer_S_gr": 34820,
+    "layer_F_gr": 68098,
+    "engram_proj": 215042,
+    "pool": 393216,
+    "crc_router": 771,
+    "tok_norm": 256,
+    "embed": 2097152,
+    "engram_table": 79999872
+   },
+   "decoder": {
+    "total": 3514376,
+    "layer": 837250,
+    "attn": 262272,
+    "ffn": 540672,
+    "plan": 165120,
+    "out_norm": 256
+   },
+   "core": {
+    "E": 16,
+    "d_expert": 512,
+    "top_k": 2,
+    "per_layer": 334466,
+    "pool": 6291456,
+    "io": 196608,
+    "head": 98352,
+    "codebook": 49152,
+    "params": 7924792,
+    "macs_eval": 7206912.0,
+    "macs_train_fwd": 12388352.0,
+    "R_eval": 6,
+    "K_train_mean": 10
+   },
+   "nextlat": {
+    "hidden": 512,
+    "psi_params": 657664,
+    "psi_macs": 655360,
+    "kl_head_macs": 2097152,
+    "train_equiv_with_kl": 6160384,
+    "train_equiv_no_kl": 1966080
+   }
+  },
+  "macs": {
+   "encoder": 7912448.0,
+   "core_eval": 7206912.0,
+   "core_train": 12388352.0,
+   "decoder": 3393536.0,
+   "head": 2097152,
+   "fwd_eval": 20610048.0,
+   "fwd_train": 25791488.0,
+   "core_share_eval": 0.34967953495304815,
+   "nextlat_train_equiv": 6160384,
+   "train_equiv": 83534848.0,
+   "train_vs_today": 0.9936462667570686
+  },
+  "est_tok_s": [
+   1661,
+   1827
+  ],
+  "est_tokens_24h": [
+   143510400,
+   157852800
+  ],
+  "active": {
+   "encoder": 7394345,
+   "core": 4778552,
+   "decoder": 3514376,
+   "total": 15687273,
+   "share": {
+    "encoder": 0.4713594899508665,
+    "core": 0.304613300221141,
+    "decoder": 0.2240272098279924
+   }
+  },
+  "mac_share": {
+   "encoder": 0.3839121577979828,
+   "core": 0.34967953495304815,
+   "decoder": 0.16465444427882944,
+   "head": 0.10175386297013961
+  },
+  "r_sweep": {
+   "1": {
+    "core_macs": 1283072.0,
+    "share": 0.08736577883140427
+   },
+   "2": {
+    "core_macs": 2467840.0,
+    "share": 0.1554939028324408
+   },
+   "4": {
+    "core_macs": 4837376.0,
+    "share": 0.2651995733453096
+   },
+   "6": {
+    "core_macs": 7206912.0,
+    "share": 0.34967953495304815
+   },
+   "8": {
+    "core_macs": 9576448.0,
+    "share": 0.4167372220489283
+   },
+   "12": {
+    "core_macs": 14315520.0,
+    "share": 0.5164579408179097
+   },
+   "16": {
+    "core_macs": 19054592.0,
+    "share": 0.5870587121809635
+   }
+  }
+ },
+ "D_E16_dec1024": {
+  "cfg": {
+   "enc_d_ff": 704,
+   "dec_d_ff": 1024,
+   "E": 16,
+   "nl_hidden": 512,
+   "lam_kl": 1.0
+  },
+  "params": {
+   "encoder": 7394345,
+   "core": 7924792,
+   "decoder": 4497416,
+   "compute": 19816553,
+   "share": {
+    "encoder": 0.37313981901897875,
+    "core": 0.3999076933309239,
+    "decoder": 0.22695248765009737
+   },
+   "embed": 2097152,
+   "engram_table": 79999872,
+   "codebook": 49152,
+   "nextlat_psi_training_only": 657664,
+   "stored": 101962729
+  },
+  "parts": {
+   "encoder": {
+    "total_non_embedding": 7394345,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "layer_S_attn": 264320,
+    "layer_S_ffn": 540672,
+    "layer_S_gr": 34820,
+    "layer_F_gr": 68098,
+    "engram_proj": 215042,
+    "pool": 393216,
+    "crc_router": 771,
+    "tok_norm": 256,
+    "embed": 2097152,
+    "engram_table": 79999872
+   },
+   "decoder": {
+    "total": 4497416,
+    "layer": 1083010,
+    "attn": 262272,
+    "ffn": 786432,
+    "plan": 165120,
+    "out_norm": 256
+   },
+   "core": {
+    "E": 16,
+    "d_expert": 512,
+    "top_k": 2,
+    "per_layer": 334466,
+    "pool": 6291456,
+    "io": 196608,
+    "head": 98352,
+    "codebook": 49152,
+    "params": 7924792,
+    "macs_eval": 7206912.0,
+    "macs_train_fwd": 12388352.0,
+    "R_eval": 6,
+    "K_train_mean": 10
+   },
+   "nextlat": {
+    "hidden": 512,
+    "psi_params": 657664,
+    "psi_macs": 655360,
+    "kl_head_macs": 2097152,
+    "train_equiv_with_kl": 6160384,
+    "train_equiv_no_kl": 1966080
+   }
+  },
+  "macs": {
+   "encoder": 7912448.0,
+   "core_eval": 7206912.0,
+   "core_train": 12388352.0,
+   "decoder": 4376576.0,
+   "head": 2097152,
+   "fwd_eval": 21593088.0,
+   "fwd_train": 26774528.0,
+   "core_share_eval": 0.33376013657703796,
+   "nextlat_train_equiv": 6160384,
+   "train_equiv": 86483968.0,
+   "train_vs_today": 1.0287260226718529
+  },
+  "est_tok_s": [
+   1604,
+   1764
+  ],
+  "est_tokens_24h": [
+   138585600,
+   152409600
+  ]
+ },
+ "E_E12_dec1024": {
+  "cfg": {
+   "enc_d_ff": 704,
+   "dec_d_ff": 1024,
+   "E": 12,
+   "nl_hidden": 512,
+   "lam_kl": 1.0
+  },
+  "params": {
+   "encoder": 7394345,
+   "core": 6347832,
+   "decoder": 4497416,
+   "compute": 18239593,
+   "share": {
+    "encoder": 0.40540076744036996,
+    "core": 0.3480248709496972,
+    "decoder": 0.24657436160993285
+   },
+   "embed": 2097152,
+   "engram_table": 79999872,
+   "codebook": 49152,
+   "nextlat_psi_training_only": 657664,
+   "stored": 100385769
+  },
+  "parts": {
+   "encoder": {
+    "total_non_embedding": 7394345,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "layer_S_attn": 264320,
+    "layer_S_ffn": 540672,
+    "layer_S_gr": 34820,
+    "layer_F_gr": 68098,
+    "engram_proj": 215042,
+    "pool": 393216,
+    "crc_router": 771,
+    "tok_norm": 256,
+    "embed": 2097152,
+    "engram_table": 79999872
+   },
+   "decoder": {
+    "total": 4497416,
+    "layer": 1083010,
+    "attn": 262272,
+    "ffn": 786432,
+    "plan": 165120,
+    "out_norm": 256
+   },
+   "core": {
+    "E": 12,
+    "d_expert": 512,
+    "top_k": 2,
+    "per_layer": 333442,
+    "pool": 4718592,
+    "io": 196608,
+    "head": 98352,
+    "codebook": 49152,
+    "params": 6347832,
+    "macs_eval": 7200768.0,
+    "macs_train_fwd": 12378112.0,
+    "R_eval": 6,
+    "K_train_mean": 10
+   },
+   "nextlat": {
+    "hidden": 512,
+    "psi_params": 657664,
+    "psi_macs": 655360,
+    "kl_head_macs": 2097152,
+    "train_equiv_with_kl": 6160384,
+    "train_equiv_no_kl": 1966080
+   }
+  },
+  "macs": {
+   "encoder": 7912448.0,
+   "core_eval": 7200768.0,
+   "core_train": 12378112.0,
+   "decoder": 4376576.0,
+   "head": 2097152,
+   "fwd_eval": 21586944.0,
+   "fwd_train": 26764288.0,
+   "core_share_eval": 0.3335705137327451,
+   "nextlat_train_equiv": 6160384,
+   "train_equiv": 86453248.0,
+   "train_vs_today": 1.0283606085477406
+  },
+  "est_tok_s": [
+   1604,
+   1765
+  ],
+  "est_tokens_24h": [
+   138585600,
+   152496000
+  ]
+ },
+ "F_E8_dec1024": {
+  "cfg": {
+   "enc_d_ff": 704,
+   "dec_d_ff": 1024,
+   "E": 8,
+   "nl_hidden": 512,
+   "lam_kl": 1.0
+  },
+  "params": {
+   "encoder": 7394345,
+   "core": 4770872,
+   "decoder": 4497416,
+   "compute": 16662633,
+   "share": {
+    "encoder": 0.4437681007557449,
+    "core": 0.2863216155573972,
+    "decoder": 0.2699102836868579
+   },
+   "embed": 2097152,
+   "engram_table": 79999872,
+   "codebook": 49152,
+   "nextlat_psi_training_only": 657664,
+   "stored": 98808809
+  },
+  "parts": {
+   "encoder": {
+    "total_non_embedding": 7394345,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "layer_S_attn": 264320,
+    "layer_S_ffn": 540672,
+    "layer_S_gr": 34820,
+    "layer_F_gr": 68098,
+    "engram_proj": 215042,
+    "pool": 393216,
+    "crc_router": 771,
+    "tok_norm": 256,
+    "embed": 2097152,
+    "engram_table": 79999872
+   },
+   "decoder": {
+    "total": 4497416,
+    "layer": 1083010,
+    "attn": 262272,
+    "ffn": 786432,
+    "plan": 165120,
+    "out_norm": 256
+   },
+   "core": {
+    "E": 8,
+    "d_expert": 512,
+    "top_k": 2,
+    "per_layer": 332418,
+    "pool": 3145728,
+    "io": 196608,
+    "head": 98352,
+    "codebook": 49152,
+    "params": 4770872,
+    "macs_eval": 7194624.0,
+    "macs_train_fwd": 12367872.0,
+    "R_eval": 6,
+    "K_train_mean": 10
+   },
+   "nextlat": {
+    "hidden": 512,
+    "psi_params": 657664,
+    "psi_macs": 655360,
+    "kl_head_macs": 2097152,
+    "train_equiv_with_kl": 6160384,
+    "train_equiv_no_kl": 1966080
+   }
+  },
+  "macs": {
+   "encoder": 7912448.0,
+   "core_eval": 7194624.0,
+   "core_train": 12367872.0,
+   "decoder": 4376576.0,
+   "head": 2097152,
+   "fwd_eval": 21580800.0,
+   "fwd_train": 26754048.0,
+   "core_share_eval": 0.3333807829181495,
+   "nextlat_train_equiv": 6160384,
+   "train_equiv": 86422528.0,
+   "train_vs_today": 1.0279951944236283
+  },
+  "est_tok_s": [
+   1605,
+   1766
+  ],
+  "est_tokens_24h": [
+   138672000,
+   152582400
+  ]
+ }
+}

@@ -1,0 +1,360 @@
+"""Train HRM THINKER-25M (PROMPT section 6). One process, one device; resumable.
+
+  python train.py --run_dir ../runs/main --hours 24 --micro_bs 4 --accum 8 --total_steps N --warmup 300
+  python train.py --run_dir ../runs/main --resume ../runs/main/ckpt_last.pt
+
+Loss = NTP + 0.1 NCP + VQ (plain NTP on every valid position; no answer up-weighting).
+R ~ U{1..4} per optimizer step (same R for all micro-batches of the step), R = 4 at evaluation.
+Codebook: k-means++ init from the first real optimizer batch before the first training forward; dead-code restart
+every 100 optimizer steps after optimizer.step() (own counter; DECISIONS D-007).
+Guards (PROMPT 6.3), handled in-process:
+  divergence (NTP EMA > 3x its 1-hour minimum, or non-finite loss/gradient): reload the last checkpoint, halve the LR
+      for the rest of the run, log to GUARDS.jsonl (and DECISIONS.md by the operator);
+  memory (current allocated > 90% of recommended max): save, halve the micro-batch, double accumulation, continue.
+"""
+import argparse, json, math, os, random, subprocess, sys, time
+import numpy as np
+import torch
+import torch.nn.functional as F
+
+from model import build_model, forward, param_groups, param_table
+from concept_core_v2 import ConceptVocab
+from data import ShardStream, target_mask, make_batch, Canon
+from evaluate import Evaluator
+
+
+def now():
+    return time.strftime("%Y-%m-%d %H:%M:%S")
+
+
+def lr_at(step, a):
+    warm = min(1.0, (step + 1) / a.warmup)
+    prog = min(step, a.total_steps) / a.total_steps
+    return a.lr * a.lr_scale * warm * (0.1 + 0.9 * 0.5 * (1 + math.cos(math.pi * prog)))
+
+
+@torch.no_grad()
+def restart_dead_now(vocab, c):
+    """Copy of ConceptVocab.restart_dead without its `step % every` check (called every 100 optimizer steps)."""
+    x = c.detach().reshape(-1, vocab.S, vocab.ds)
+    dead_total = 0
+    hits_total = float(vocab.hits.sum())
+    used = (vocab.hits > 0).float().mean(1)                      # per segment, since the last restart
+    for j in range(vocab.S):
+        dead = vocab.hits[j] == 0
+        nd = int(dead.sum())
+        if nd:
+            vocab.e[j, dead] = x[torch.randint(len(x), (nd,), device=x.device), j]
+            dead_total += nd
+    vocab.hits.zero_()
+    return dict(restart_dead=dead_total, hits_total=hits_total, codes_used_min_seg=float(used.min()),
+                codes_used_mean=float(used.mean()))
+
+
+def rng_state():
+    st = dict(py=random.getstate(), np=np.random.get_state(), torch=torch.get_rng_state())
+    if torch.backends.mps.is_available():
+        st["mps"] = torch.mps.get_rng_state()
+    return st
+
+
+def set_rng_state(st):
+    random.setstate(st["py"]); np.random.set_state(st["np"]); torch.set_rng_state(st["torch"])
+    if "mps" in st and torch.backends.mps.is_available():
+        torch.mps.set_rng_state(st["mps"])
+
+
+def save_ckpt(path_dir, state, step, keep=3, best=False):
+    tmp = os.path.join(path_dir, "ckpt.tmp")
+    torch.save(state, tmp)
+    final = os.path.join(path_dir, f"ckpt_step{step:06d}.pt")
+    os.replace(tmp, final)                                      # atomic
+    for name, flag in (("ckpt_last.pt", True), ("ckpt_best.pt", best)):
+        if flag:
+            dst = os.path.join(path_dir, name)
+            t = dst + ".tmp"
+            if os.path.exists(t):
+                os.remove(t)
+            os.link(final, t); os.replace(t, dst)               # hard link: last/best survive pruning
+    steps = sorted(f for f in os.listdir(path_dir) if f.startswith("ckpt_step"))
+    for f in steps[:-keep]:
+        os.remove(os.path.join(path_dir, f))
+
+
+def swap_used_mb():
+    s = subprocess.run(["sysctl", "-n", "vm.swapusage"], capture_output=True, text=True).stdout
+    try:
+        return float(s.split("used =")[1].split("M")[0])
+    except Exception:
+        return -1.0
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--run_dir", required=True)
+    ap.add_argument("--data_dir", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data"))
+    ap.add_argument("--device", default="mps")
+    ap.add_argument("--layout", default="confined")            # S2: stack
+    ap.add_argument("--fixed_R", type=int, default=0)           # S3: 1 (training and evaluation)
+    ap.add_argument("--eval_R", type=int, default=4)
+    ap.add_argument("--micro_bs", type=int, default=4)
+    ap.add_argument("--accum", type=int, default=8)
+    ap.add_argument("--lr", type=float, default=6e-4)
+    ap.add_argument("--lr_scale", type=float, default=1.0)
+    ap.add_argument("--warmup", type=int, default=300)
+    ap.add_argument("--total_steps", type=int, required=True)   # cosine length (from calibrate.py)
+    ap.add_argument("--hours", type=float, default=24.0)        # wall-clock training budget (evals included)
+    ap.add_argument("--max_steps", type=int, default=0)         # hard stop (0 = total_steps)
+    ap.add_argument("--eval_every_min", type=float, default=60.0)
+    ap.add_argument("--eval_every_steps", type=int, default=0)  # testing: eval + checkpoint every N steps instead
+    ap.add_argument("--extra_eval_steps", default="")           # e.g. "140" (screen comparison points, PROMPT 7.6)
+    ap.add_argument("--log_every", type=int, default=50)
+    ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--d", type=int, default=384)
+    ap.add_argument("--V", type=int, default=8192)
+    ap.add_argument("--small", action="store_true")             # CPU smoke-test config
+    ap.add_argument("--final_eval", action="store_true")        # screens: + all probes x 256 at the end
+    ap.add_argument("--no_final_eval", action="store_true")     # calibration: skip the final eval
+    ap.add_argument("--resume", default="")
+    ap.add_argument("--mem_frac_guard", type=float, default=0.90)
+    ap.add_argument("--keep", type=int, default=3)             # step checkpoints kept (+ last and best links)
+    ap.add_argument("--div_min_wall_min", type=float, default=30.0)
+    ap.add_argument("--debug_force_divergence_step", type=int, default=0)   # testing the guard only
+    a = ap.parse_args()
+    os.makedirs(a.run_dir, exist_ok=True)
+    dev = torch.device(a.device)
+    torch.manual_seed(a.seed); random.seed(a.seed); np.random.seed(a.seed)
+
+    if a.small:
+        m, ecfg, dcfg = build_model(d=a.d, V=a.V, layout=a.layout, S=8, N=32, n_heads=4, n_kv=2, head_dim=a.d // 4,
+                                    d_ff=int(2.75 * a.d), engram_rows=1021, engram_dim=8, gr_rank=8)
+    else:
+        m, ecfg, dcfg = build_model(d=a.d, V=a.V, layout=a.layout)
+    m = m.to(dev)
+    opt = torch.optim.AdamW(param_groups(m, 0.1), lr=a.lr, betas=(0.9, 0.95), eps=1e-8)
+    st = dict(step=0, elapsed=0.0, best=float("inf"), cursor=0)
+
+    def load(path):
+        ck = torch.load(path, map_location="cpu", weights_only=False)
+        m.load_state_dict(ck["model"]); opt.load_state_dict(ck["opt"])
+        for k in ("step", "elapsed", "best", "cursor"):
+            st[k] = ck[k]
+        a.lr_scale, a.micro_bs, a.accum = ck["lr_scale"], ck["micro_bs"], ck["accum"]
+        a.total_steps, a.warmup = ck["total_steps"], ck["warmup"]
+        set_rng_state(ck["rng"])
+        return ck
+
+    if a.resume:
+        load(a.resume)
+        print(f"{now()} resumed from {a.resume}: step {st['step']}, elapsed {st['elapsed']/3600:.2f} h, "
+              f"cursor {st['cursor']}, lr_scale {a.lr_scale}, micro_bs {a.micro_bs} x accum {a.accum}", flush=True)
+    json.dump(dict(vars(a), params=param_table(m), time=now()), open(os.path.join(a.run_dir, "config.json"), "w"), indent=1)
+    rec_max = torch.mps.recommended_max_memory() if dev.type == "mps" else 0
+    max_steps = a.max_steps or a.total_steps
+
+    # ---- codebook k-means++ init from the first real optimizer batch (before the first training forward)
+    if st["step"] == 0 and not a.resume:
+        tok_rows = np.load(os.path.join(a.data_dir, "train", "tok.npy"), mmap_mode="r")
+        doc_rows = np.load(os.path.join(a.data_dir, "train", "doc.npy"), mmap_mode="r")
+        order = np.random.RandomState(a.seed).permutation(tok_rows.shape[0])   # same order as ShardStream
+        canon = Canon(a.data_dir)
+        m.eval()
+        cs = []
+        with torch.no_grad():
+            for i in range(a.accum):
+                idx = order[i * a.micro_bs:(i + 1) * a.micro_bs]
+                ids, doc, ei = make_batch(np.asarray(tok_rows[idx]), np.asarray(doc_rows[idx]), canon, ecfg)
+                cs.append(m.enc(ids.to(dev), doc.to(dev), ei.to(dev))[1].float().cpu())
+        with torch.random.fork_rng(devices=[]):                 # do not disturb the global RNG sequence
+            torch.manual_seed(a.seed + 12345)
+            tmp = ConceptVocab(ecfg.d_model, m.core.vocab.S, m.core.vocab.N)
+            tmp.init_from(torch.cat(cs))
+        m.core.vocab.e.data.copy_(tmp.e.data.to(dev))
+        n_c = sum(c.shape[0] * c.shape[1] for c in cs)
+        print(f"{now()} codebook k-means++ init from {n_c} concepts ({a.accum} x {a.micro_bs} rows)", flush=True)
+        del cs, tmp
+    m.train()
+
+    stream = ShardStream(a.data_dir, "train", ecfg, a.micro_bs, seed=a.seed, cursor=st["cursor"])
+    ev = Evaluator(a.data_dir, ecfg, dev, batch_rows=4)
+    extra = {int(x) for x in a.extra_eval_steps.split(",") if x}
+    tlog = open(os.path.join(a.run_dir, "train_log.jsonl"), "a")
+    elog = open(os.path.join(a.run_dir, "log.jsonl"), "a")
+    glog = open(os.path.join(a.run_dir, "GUARDS.jsonl"), "a")
+    t_start = time.time() - st["elapsed"]
+    last_eval_wall = time.time()
+    tok_count, t_win, ema = 0, time.time(), None
+    hist = []                                                   # (wall, NTP EMA) for the divergence guard
+    eval_secs = [0.0]
+    last_c = None
+    new_acc = lambda: dict(loss=0.0, ntp=0.0, ncp=0.0, vq=0.0, n=0, gn=0.0, gn_cb=0.0, gn_wo_cb=0.0)
+    acc = new_acc()
+    params_other = [p for n, p in m.named_parameters() if n != "core.vocab.e"]
+
+    def do_eval(tag):
+        m.eval()
+        t0 = time.time()
+        res = ev.quick(m, R=a.fixed_R or a.eval_R)
+        if a.final_eval and tag == "final":
+            from probes import PROBES
+            res["probes_256"] = ev.item_accuracy(m, ev.select("val", PROBES, 256), R=a.fixed_R or a.eval_R)
+        res.update(step=st["step"], tag=tag, wall_h=(time.time() - t_start) / 3600,
+                   tokens=st["step"] * a.accum * a.micro_bs * 1024, eval_sec=time.time() - t0, time=now(),
+                   lr_scale=a.lr_scale)
+        is_best = res["val_lang_mean"] < st["best"]
+        if is_best:
+            st["best"] = res["val_lang_mean"]
+        res["is_best"] = is_best
+        elog.write(json.dumps(res) + "\n"); elog.flush()
+        print(f"{now()} EVAL[{tag}] step {st['step']} val_lang {res['val_lang_mean']:.4f} "
+              f"(ts {res['val_tinystories']['nats']:.3f} wk {res['val_wikitext']['nats']:.3f}) probes " +
+              " ".join(f"{k[3:]}={v['exact']:.3f}" for k, v in res['probes'].items()) +
+              f" swap_recall1={res['recall1_plan_swap']['exact']:.3f} codes_min={res['codebook']['codes_used_frac_min']:.2f}"
+              f" VE={res['codebook']['var_explained']:.3f} ncp={res['codebook']['ncp_ce']:.3f}/H={res['codebook']['code_entropy']:.3f}"
+              f" ({res['eval_sec']:.0f}s)", flush=True)
+        if dev.type == "mps":
+            torch.mps.empty_cache()
+        m.train()
+        eval_secs[0] += time.time() - t0
+        return is_best
+
+    def checkpoint(is_best):
+        state = dict(model=m.state_dict(), opt=opt.state_dict(), step=st["step"], elapsed=time.time() - t_start,
+                     best=st["best"], cursor=stream.cursor, lr_scale=a.lr_scale, micro_bs=a.micro_bs, accum=a.accum,
+                     total_steps=a.total_steps, warmup=a.warmup, rng=rng_state(), args=vars(a))
+        save_ckpt(a.run_dir, state, st["step"], keep=a.keep, best=is_best)
+
+    def guard_event(kind, **kw):
+        rec = dict(kind=kind, step=st["step"], time=now(), wall_h=(time.time() - t_start) / 3600, **kw)
+        glog.write(json.dumps(rec) + "\n"); glog.flush()
+        print(f"{now()} GUARD {rec}", flush=True)
+
+    print(f"{now()} start: step {st['step']}/{max_steps} (cosine over {a.total_steps}), micro_bs {a.micro_bs} x accum "
+          f"{a.accum} x 1024, lr {a.lr} (scale {a.lr_scale}), warmup {a.warmup}, budget {a.hours} h, layout {a.layout}, "
+          f"fixed_R {a.fixed_R}", flush=True)
+    stop_reason = None
+    while True:
+        if os.path.exists(os.path.join(a.run_dir, "PAUSE")):     # code/pause.sh: save and exit 4 (D-034)
+            stop_reason = "pause"; break
+        if st["step"] >= max_steps:
+            stop_reason = "max_steps"; break
+        if time.time() - t_start >= a.hours * 3600:
+            stop_reason = "time_budget"; break
+        R = a.fixed_R or random.randint(1, 4)
+        lr = lr_at(st["step"], a)
+        for g in opt.param_groups:
+            g["lr"] = lr
+        opt.zero_grad(set_to_none=True)
+        lsum = torch.zeros(4, device=dev)                       # loss, ntp, ncp, vq (read once per step)
+        for _ in range(a.accum):
+            ids, doc, ei = stream.next()
+            ids, doc, ei = ids.to(dev), doc.to(dev), ei.to(dev)
+            logits, x = forward(m, ids, doc, ei, R)
+            tgt = ids[:, 1:].masked_fill(~target_mask(ids, doc), -100)
+            ntp = F.cross_entropy(logits[:, :-1].reshape(-1, logits.shape[-1]).float(), tgt.reshape(-1), ignore_index=-100)
+            ncp, vq = m.core.losses(x["c_hat"], x["logits_c"], x["cdoc"])
+            loss = ntp + 0.1 * ncp + vq
+            (loss / a.accum).backward()
+            lsum += torch.stack([loss.detach(), ntp.detach(), ncp.detach(), vq.detach()]) / a.accum
+            last_c = x["c_hat"].detach()
+            tok_count += ids.numel()
+        gn_cb = m.core.vocab.e.grad.detach().norm() if m.core.vocab.e.grad is not None else torch.zeros(())
+        gn_wo = torch.norm(torch.stack([p.grad.detach().norm() for p in params_other if p.grad is not None]))
+        gn = torch.nn.utils.clip_grad_norm_(m.parameters(), 1.0)
+        lv = lsum.tolist()
+        losses = dict(loss=lv[0], ntp=lv[1], ncp=lv[2], vq=lv[3])
+        bad = not math.isfinite(losses["loss"]) or not torch.isfinite(gn)
+        if bad:
+            nf = [n for n, p in m.named_parameters() if p.grad is not None and not torch.isfinite(p.grad).all()]
+            print(f"{now()} NONFINITE at step {st['step']}: losses {losses}, gn {gn.item()}, gn_cb {gn_cb.item()}, "
+                  f"gn_wo {gn_wo.item()}, R {R}, nonfinite grads {nf[:8]} ({len(nf)}), "
+                  f"codebook finite {bool(torch.isfinite(m.core.vocab.e).all())}", flush=True)
+        if not bad:
+            opt.step()
+            st["step"] += 1
+            if st["step"] % 100 == 0:
+                r = restart_dead_now(m.core.vocab, last_c)
+                r.update(step=st["step"], hits_expected=100 * a.accum * a.micro_bs * last_c.shape[1] * m.core.vocab.S)
+                tlog.write(json.dumps(r) + "\n"); tlog.flush()
+            for k in losses:
+                acc[k] += losses[k]
+            acc["n"] += 1; acc["gn"] += gn.item(); acc["gn_cb"] += gn_cb.item(); acc["gn_wo_cb"] += gn_wo.item()
+            ema = losses["ntp"] if ema is None else 0.98 * ema + 0.02 * losses["ntp"]
+        # ---- divergence guard (PROMPT 6.3): NaN, or NTP EMA > 3x its 1-hour minimum
+        diverged = bad
+        if not bad and st["step"] % a.log_every == 0:
+            hist.append((time.time(), ema))
+            recent = [l for (w, l) in hist if time.time() - w < 3600]
+            if len(recent) >= 2 and time.time() - t_start > a.div_min_wall_min * 60 and ema > 3 * min(recent):
+                diverged = True
+        if a.debug_force_divergence_step and st["step"] == a.debug_force_divergence_step and not bad:
+            diverged, a.debug_force_divergence_step = True, 0
+        if diverged:
+            last = os.path.join(a.run_dir, "ckpt_last.pt")
+            guard_event("divergence", nonfinite=bad, ema=ema, lr_scale_old=a.lr_scale)
+            if not os.path.exists(last):
+                stop_reason = "divergence_no_ckpt"; break
+            stream.close()
+            old_scale = a.lr_scale
+            load(last)
+            a.lr_scale = old_scale * 0.5
+            stream = ShardStream(a.data_dir, "train", ecfg, a.micro_bs, seed=a.seed, cursor=st["cursor"])
+            hist.clear(); ema = None
+            acc = new_acc()
+            tok_count, t_win = 0, time.time()
+            guard_event("reloaded", from_step=st["step"], lr_scale_new=a.lr_scale)
+            continue
+        if st["step"] % a.log_every == 0 and acc["n"]:
+            dt = time.time() - t_win - eval_secs[0]
+            eval_secs[0] = 0.0
+            n = acc["n"]
+            rec = dict(step=st["step"], time=now(), wall_h=(time.time() - t_start) / 3600, lr=lr, R_last=R,
+                       loss=acc["loss"] / n, ntp=acc["ntp"] / n, ncp=acc["ncp"] / n, vq=acc["vq"] / n,
+                       gn_preclip=acc["gn"] / n, gn_codebook=acc["gn_cb"] / n, gn_without_codebook=acc["gn_wo_cb"] / n,
+                       tok_s=tok_count / max(dt, 1e-9), epochs=stream.epochs(), ntp_ema=ema, swap_mb=swap_used_mb(),
+                       micro_bs=a.micro_bs, accum=a.accum)
+            if dev.type == "mps":
+                rec.update(mps_alloc_gib=torch.mps.current_allocated_memory() / 2**30,
+                           mps_driver_gib=torch.mps.driver_allocated_memory() / 2**30)
+            tlog.write(json.dumps(rec) + "\n"); tlog.flush()
+            print(f"{now()} step {st['step']} loss {rec['loss']:.4f} ntp {rec['ntp']:.4f} ncp {rec['ncp']:.3f} "
+                  f"vq {rec['vq']:.4f} gn {rec['gn_preclip']:.2f} (cb {rec['gn_codebook']:.2f}) lr {lr:.2e} "
+                  f"{rec['tok_s']:.0f} tok/s", flush=True)
+            acc = new_acc()
+            tok_count, t_win = 0, time.time()
+            # ---- memory guard: save, halve the micro-batch, double accumulation, continue
+            if dev.type == "mps" and rec_max and torch.mps.current_allocated_memory() > a.mem_frac_guard * rec_max \
+                    and a.micro_bs > 1:
+                checkpoint(False)
+                guard_event("memory", alloc_gib=torch.mps.current_allocated_memory() / 2**30,
+                            micro_bs_old=a.micro_bs, accum_old=a.accum)
+                a.micro_bs //= 2; a.accum *= 2
+                cur = stream.cursor
+                stream.close()
+                stream = ShardStream(a.data_dir, "train", ecfg, a.micro_bs, seed=a.seed, cursor=cur)
+                torch.mps.empty_cache()
+        if st["step"] in extra:
+            extra.discard(st["step"])
+            do_eval(f"step{st['step']}")
+        due = (st["step"] % a.eval_every_steps == 0) if a.eval_every_steps else \
+            (time.time() - last_eval_wall >= a.eval_every_min * 60)
+        if due and st["step"] < max_steps:
+            is_best = do_eval("hourly")
+            checkpoint(is_best)
+            last_eval_wall = time.time()
+    # ---- end
+    stream.close()
+    if stop_reason in ("max_steps", "time_budget"):
+        if a.no_final_eval:
+            checkpoint(False)
+        else:
+            is_best = do_eval("final")
+            checkpoint(is_best)
+    elif stop_reason == "pause":
+        checkpoint(False)
+    print(f"{now()} STOP ({stop_reason}) at step {st['step']}, {(time.time() - t_start)/3600:.2f} h", flush=True)
+    sys.exit(0 if stop_reason in ("max_steps", "time_budget") else 4 if stop_reason == "pause" else 3)
+
+
+if __name__ == "__main__":
+    main()

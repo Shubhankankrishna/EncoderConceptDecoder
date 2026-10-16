@@ -1,0 +1,114 @@
+2026-09-27 07:49:33 codebook k-means++ init from 8192 concepts (16 x 2 rows)
+2026-09-27 07:49:33 start: step 0/3600 (cosine over 3600), micro_bs 2 x accum 16 x 1024, lr 0.0006 (scale 1.0), warmup 300, budget 24.0 h, layout confined, fixed_R 0
+2026-09-27 08:05:13 step 50 loss 11.8043 ntp 8.3179 ncp 4.742 vq 3.0123 gn 1.37 (cb 0.03) lr 1.00e-04 1743 tok/s
+2026-09-27 08:21:36 step 100 loss 9.6218 ntp 6.0605 ncp 4.488 vq 3.1124 gn 1.11 (cb 0.05) lr 2.00e-04 1667 tok/s
+2026-09-27 08:38:01 step 150 loss 8.0841 ntp 4.4501 ncp 4.176 vq 3.2164 gn 0.60 (cb 0.05) lr 2.99e-04 1662 tok/s
+2026-09-27 08:51:47 EVAL[hourly] step 185 val_lang 5.0891 (ts 4.235 wk 5.943) probes recall1=0.000 carry3=0.000 multi4=0.000 hop=0.000 bind=0.047 swap_recall1=0.000 codes_min=0.76 VE=0.521 ncp=3.972/H=3.996 (134s)
+2026-09-27 08:56:44 step 200 loss 7.4116 ntp 3.7811 ncp 4.018 vq 3.2287 gn 0.52 (cb 0.05) lr 3.97e-04 1656 tok/s
+2026-09-27 09:12:55 step 250 loss 7.1308 ntp 3.4822 ncp 3.967 vq 3.2520 gn 0.45 (cb 0.04) lr 4.95e-04 1688 tok/s
+2026-09-27 09:19:52 EVAL[step265] step 265 val_lang 4.5630 (ts 3.631 wk 5.495) probes recall1=0.000 carry3=0.000 multi4=0.000 hop=0.000 bind=0.031 swap_recall1=0.016 codes_min=0.81 VE=0.554 ncp=3.897/H=4.216 (130s)
+2026-09-27 09:31:49 step 300 loss 6.9248 ntp 3.2637 ncp 3.939 vq 3.2672 gn 0.41 (cb 0.04) lr 5.91e-04 1633 tok/s
+2026-09-27 09:47:35 step 350 loss 6.8331 ntp 3.1760 ncp 3.904 vq 3.2667 gn 0.38 (cb 0.04) lr 5.88e-04 1732 tok/s
+2026-09-27 09:53:58 EVAL[hourly] step 365 val_lang 4.1221 (ts 3.206 wk 5.038) probes recall1=0.000 carry3=0.000 multi4=0.000 hop=0.000 bind=0.086 swap_recall1=0.000 codes_min=0.89 VE=0.569 ncp=3.834/H=4.335 (127s)
+2026-09-27 10:04:44 step 400 loss 6.6348 ntp 2.9979 ncp 3.900 vq 3.2469 gn 0.35 (cb 0.04) lr 5.84e-04 1815 tok/s
+2026-09-27 10:21:20 step 450 loss 6.5147 ntp 2.9181 ncp 3.876 vq 3.2090 gn 0.35 (cb 0.03) lr 5.80e-04 1646 tok/s
+2026-09-27 10:37:03 step 500 loss 6.3694 ntp 2.7963 ncp 3.844 vq 3.1886 gn 0.33 (cb 0.03) lr 5.75e-04 1738 tok/s
+2026-09-27 10:52:40 step 550 loss 6.3745 ntp 2.8420 ncp 3.793 vq 3.1532 gn 0.33 (cb 0.03) lr 5.70e-04 1748 tok/s
+2026-09-27 10:56:01 EVAL[hourly] step 554 val_lang 3.7176 (ts 2.831 wk 4.604) probes recall1=0.008 carry3=0.000 multi4=0.000 hop=0.000 bind=0.055 swap_recall1=0.008 codes_min=0.91 VE=0.593 ncp=3.638/H=4.457 (121s)
+2026-09-27 10:57:08 resumed from ../runs/main/ckpt_last.pt: step 554, elapsed 3.11 h, cursor 17728, lr_scale 1.0, micro_bs 2 x accum 16
+2026-09-27 10:57:08 start: step 554/4050 (cosine over 4050), micro_bs 2 x accum 16 x 1024, lr 0.0006 (scale 1.0), warmup 300, budget 24.0 h, layout confined, fixed_R 0
+2026-09-27 11:12:09 step 600 loss 6.1763 ntp 2.6887 ncp 3.748 vq 3.1128 gn 0.32 (cb 0.03) lr 5.71e-04 1673 tok/s
+2026-09-27 11:26:20 step 650 loss 6.1745 ntp 2.7156 ncp 3.720 vq 3.0868 gn 0.33 (cb 0.03) lr 5.67e-04 1924 tok/s
+2026-09-27 11:39:15 step 700 loss 6.0660 ntp 2.6366 ncp 3.704 vq 3.0591 gn 0.32 (cb 0.03) lr 5.61e-04 2116 tok/s
+2026-09-27 11:52:50 step 750 loss 5.9975 ntp 2.6113 ncp 3.632 vq 3.0230 gn 0.32 (cb 0.03) lr 5.56e-04 2009 tok/s
+2026-09-27 11:59:06 EVAL[hourly] step 766 val_lang 3.4911 (ts 2.634 wk 4.348) probes recall1=0.008 carry3=0.000 multi4=0.000 hop=0.000 bind=0.078 swap_recall1=0.016 codes_min=0.95 VE=0.607 ncp=3.495/H=4.531 (111s)
+2026-09-27 11:59:32 resumed from ../runs/main/ckpt_last.pt: step 766, elapsed 4.14 h, cursor 24512, lr_scale 1.0, micro_bs 2 x accum 16
+2026-09-27 11:59:32 start: step 766/4050 (cosine over 4050), micro_bs 2 x accum 16 x 1024, lr 0.0006 (scale 1.0), warmup 300, budget 24.0 h, layout confined, fixed_R 0
+2026-09-27 12:03:51 STOP (pause) at step 782, 4.21 h
+2026-09-27 12:47:49 resumed from ../runs/main/ckpt_last.pt: step 782, elapsed 4.21 h, cursor 25024, lr_scale 1.0, micro_bs 2 x accum 16
+2026-09-27 12:47:49 start: step 782/4050 (cosine over 4050), micro_bs 2 x accum 16 x 1024, lr 0.0006 (scale 1.0), warmup 300, budget 24.0 h, layout confined, fixed_R 0
+2026-09-27 12:52:30 step 800 loss 5.9192 ntp 2.5351 ncp 3.669 vq 3.0172 gn 0.32 (cb 0.03) lr 5.50e-04 2105 tok/s
+2026-09-27 13:05:12 step 850 loss 5.9395 ntp 2.5847 ncp 3.634 vq 2.9914 gn 0.32 (cb 0.03) lr 5.44e-04 2148 tok/s
+2026-09-27 13:18:18 step 900 loss 5.8857 ntp 2.5550 ncp 3.604 vq 2.9704 gn 0.32 (cb 0.03) lr 5.37e-04 2087 tok/s
+2026-09-27 13:31:49 step 950 loss 5.8272 ntp 2.5260 ncp 3.560 vq 2.9452 gn 0.32 (cb 0.03) lr 5.30e-04 2019 tok/s
+2026-09-27 13:45:36 step 1000 loss 5.8069 ntp 2.5150 ncp 3.555 vq 2.9364 gn 0.32 (cb 0.03) lr 5.23e-04 1980 tok/s
+2026-09-27 13:49:55 EVAL[hourly] step 1009 val_lang 3.3238 (ts 2.487 wk 4.161) probes recall1=0.117 carry3=0.000 multi4=0.000 hop=0.000 bind=0.047 swap_recall1=0.008 codes_min=0.95 VE=0.621 ncp=3.397/H=4.598 (110s)
+2026-09-27 14:01:31 step 1050 loss 5.8029 ntp 2.5399 ncp 3.525 vq 2.9106 gn 0.32 (cb 0.03) lr 5.15e-04 1939 tok/s
+2026-09-27 14:15:34 step 1100 loss 5.7511 ntp 2.5047 ncp 3.490 vq 2.8974 gn 0.32 (cb 0.02) lr 5.08e-04 1943 tok/s
+2026-09-27 14:29:46 step 1150 loss 5.6939 ntp 2.4654 ncp 3.483 vq 2.8802 gn 0.32 (cb 0.02) lr 5.00e-04 1925 tok/s
+2026-09-27 14:45:03 step 1200 loss 5.6521 ntp 2.4516 ncp 3.448 vq 2.8557 gn 0.32 (cb 0.02) lr 4.91e-04 1787 tok/s
+2026-09-27 14:52:09 EVAL[hourly] step 1217 val_lang 3.2265 (ts 2.408 wk 4.045) probes recall1=0.336 carry3=0.000 multi4=0.000 hop=0.000 bind=0.062 swap_recall1=0.008 codes_min=0.97 VE=0.628 ncp=3.302/H=4.640 (125s)
+2026-09-27 15:01:54 step 1250 loss 5.6131 ntp 2.4110 ncp 3.458 vq 2.8564 gn 0.32 (cb 0.02) lr 4.83e-04 1849 tok/s
+2026-09-27 15:20:02 step 1300 loss 5.6649 ntp 2.4742 ncp 3.434 vq 2.8473 gn 0.32 (cb 0.02) lr 4.74e-04 1506 tok/s
+2026-09-27 15:36:33 step 1350 loss 5.5931 ntp 2.4319 ncp 3.390 vq 2.8222 gn 0.33 (cb 0.02) lr 4.65e-04 1654 tok/s
+2026-09-27 15:51:49 step 1400 loss 5.5220 ntp 2.3766 ncp 3.357 vq 2.8097 gn 0.32 (cb 0.02) lr 4.56e-04 1787 tok/s
+2026-09-27 15:54:10 EVAL[hourly] step 1402 val_lang 3.1568 (ts 2.339 wk 3.975) probes recall1=0.477 carry3=0.008 multi4=0.000 hop=0.016 bind=0.055 swap_recall1=0.008 codes_min=0.97 VE=0.634 ncp=3.172/H=4.669 (107s)
+2026-09-27 16:08:28 step 1450 loss 5.5432 ntp 2.3958 ncp 3.391 vq 2.8083 gn 0.32 (cb 0.02) lr 4.47e-04 1837 tok/s
+2026-09-27 16:24:53 step 1500 loss 5.4790 ntp 2.3432 ncp 3.373 vq 2.7985 gn 0.32 (cb 0.02) lr 4.37e-04 1664 tok/s
+2026-09-27 16:40:51 step 1550 loss 5.4732 ntp 2.3479 ncp 3.350 vq 2.7904 gn 0.32 (cb 0.02) lr 4.27e-04 1711 tok/s
+2026-09-27 16:56:14 EVAL[hourly] step 1593 val_lang 3.0823 (ts 2.276 wk 3.888) probes recall1=0.602 carry3=0.000 multi4=0.000 hop=0.000 bind=0.047 swap_recall1=0.016 codes_min=0.98 VE=0.636 ncp=3.163/H=4.687 (121s)
+2026-09-27 16:58:22 step 1600 loss 5.4165 ntp 2.3042 ncp 3.312 vq 2.7811 gn 0.32 (cb 0.02) lr 4.18e-04 1760 tok/s
+2026-09-27 17:13:37 step 1650 loss 5.3996 ntp 2.2905 ncp 3.323 vq 2.7768 gn 0.32 (cb 0.02) lr 4.08e-04 1791 tok/s
+2026-09-27 17:28:12 step 1700 loss 5.4115 ntp 2.3128 ncp 3.317 vq 2.7669 gn 0.32 (cb 0.02) lr 3.98e-04 1874 tok/s
+2026-09-27 17:43:02 step 1750 loss 5.4136 ntp 2.3246 ncp 3.301 vq 2.7589 gn 0.33 (cb 0.02) lr 3.87e-04 1840 tok/s
+2026-09-27 17:58:41 EVAL[hourly] step 1792 val_lang 3.0316 (ts 2.228 wk 3.835) probes recall1=0.820 carry3=0.008 multi4=0.000 hop=0.000 bind=0.047 swap_recall1=0.016 codes_min=0.98 VE=0.639 ncp=3.126/H=4.705 (129s)
+2026-09-27 18:01:07 step 1800 loss 5.4169 ntp 2.3436 ncp 3.292 vq 2.7441 gn 0.33 (cb 0.02) lr 3.77e-04 1715 tok/s
+2026-09-27 18:16:53 step 1850 loss 5.3396 ntp 2.2783 ncp 3.267 vq 2.7346 gn 0.33 (cb 0.02) lr 3.67e-04 1732 tok/s
+2026-09-27 18:32:35 step 1900 loss 5.3518 ntp 2.2913 ncp 3.292 vq 2.7313 gn 0.33 (cb 0.02) lr 3.56e-04 1739 tok/s
+2026-09-27 18:46:26 step 1950 loss 5.3571 ntp 2.2998 ncp 3.285 vq 2.7288 gn 0.33 (cb 0.02) lr 3.46e-04 1972 tok/s
+2026-09-27 19:00:43 EVAL[hourly] step 1992 val_lang 2.9915 (ts 2.191 wk 3.792) probes recall1=0.836 carry3=0.000 multi4=0.000 hop=0.008 bind=0.070 swap_recall1=0.016 codes_min=0.98 VE=0.642 ncp=3.076/H=4.718 (116s)
+2026-09-27 19:03:11 step 2000 loss 5.3188 ntp 2.2774 ncp 3.238 vq 2.7176 gn 0.34 (cb 0.02) lr 3.35e-04 1843 tok/s
+2026-09-27 19:18:14 step 2050 loss 5.2881 ntp 2.2638 ncp 3.218 vq 2.7025 gn 0.33 (cb 0.02) lr 3.25e-04 1816 tok/s
+2026-09-27 19:33:26 step 2100 loss 5.2555 ntp 2.2347 ncp 3.214 vq 2.6994 gn 0.33 (cb 0.02) lr 3.15e-04 1795 tok/s
+2026-09-27 19:48:41 step 2150 loss 5.2838 ntp 2.2692 ncp 3.208 vq 2.6938 gn 0.34 (cb 0.02) lr 3.04e-04 1791 tok/s
+2026-09-27 20:02:39 EVAL[hourly] step 2190 val_lang 2.9493 (ts 2.151 wk 3.748) probes recall1=0.906 carry3=0.070 multi4=0.000 hop=0.062 bind=0.047 swap_recall1=0.000 codes_min=0.99 VE=0.645 ncp=3.036/H=4.729 (108s)
+2026-09-27 20:05:51 step 2200 loss 5.2792 ntp 2.2670 ncp 3.212 vq 2.6911 gn 0.33 (cb 0.02) lr 2.94e-04 1780 tok/s
+2026-09-27 20:22:27 step 2250 loss 5.2845 ntp 2.2775 ncp 3.209 vq 2.6861 gn 0.34 (cb 0.02) lr 2.83e-04 1644 tok/s
+2026-09-27 20:38:10 step 2300 loss 5.2032 ntp 2.2152 ncp 3.166 vq 2.6714 gn 0.33 (cb 0.02) lr 2.73e-04 1739 tok/s
+2026-09-27 20:54:12 step 2350 loss 5.2239 ntp 2.2377 ncp 3.170 vq 2.6691 gn 0.33 (cb 0.02) lr 2.63e-04 1702 tok/s
+2026-09-27 21:05:20 EVAL[hourly] step 2376 val_lang 2.9125 (ts 2.125 wk 3.700) probes recall1=0.922 carry3=0.125 multi4=0.000 hop=0.047 bind=0.023 swap_recall1=0.016 codes_min=0.98 VE=0.648 ncp=2.981/H=4.736 (146s)
+2026-09-27 21:13:08 step 2400 loss 5.1328 ntp 2.1609 ncp 3.142 vq 2.6576 gn 0.33 (cb 0.02) lr 2.53e-04 1657 tok/s
+2026-09-27 21:32:09 step 2450 loss 5.1817 ntp 2.2091 ncp 3.144 vq 2.6582 gn 0.34 (cb 0.02) lr 2.43e-04 1435 tok/s
+2026-09-27 21:48:18 step 2500 loss 5.1508 ntp 2.1895 ncp 3.130 vq 2.6483 gn 0.34 (cb 0.02) lr 2.33e-04 1691 tok/s
+2026-09-27 22:03:03 step 2550 loss 5.1175 ntp 2.1611 ncp 3.124 vq 2.6439 gn 0.34 (cb 0.02) lr 2.23e-04 1852 tok/s
+2026-09-27 22:07:45 EVAL[hourly] step 2559 val_lang 2.8816 (ts 2.092 wk 3.672) probes recall1=0.945 carry3=0.180 multi4=0.000 hop=0.109 bind=0.062 swap_recall1=0.016 codes_min=0.99 VE=0.648 ncp=2.955/H=4.738 (125s)
+2026-09-27 22:19:45 step 2600 loss 5.1637 ntp 2.2041 ncp 3.143 vq 2.6453 gn 0.34 (cb 0.01) lr 2.14e-04 1868 tok/s
+2026-09-27 22:33:59 step 2650 loss 5.1605 ntp 2.2057 ncp 3.140 vq 2.6408 gn 0.34 (cb 0.01) lr 2.04e-04 1920 tok/s
+2026-09-27 22:48:25 step 2700 loss 5.0936 ntp 2.1624 ncp 3.087 vq 2.6225 gn 0.34 (cb 0.02) lr 1.95e-04 1891 tok/s
+2026-09-27 23:04:00 step 2750 loss 5.0887 ntp 2.1585 ncp 3.095 vq 2.6207 gn 0.34 (cb 0.02) lr 1.86e-04 1753 tok/s
+2026-09-27 23:09:54 EVAL[hourly] step 2764 val_lang 2.8539 (ts 2.067 wk 3.641) probes recall1=0.945 carry3=0.273 multi4=0.000 hop=0.078 bind=0.094 swap_recall1=0.008 codes_min=0.99 VE=0.649 ncp=2.916/H=4.738 (113s)
+2026-09-27 23:20:43 step 2800 loss 5.0679 ntp 2.1421 ncp 3.084 vq 2.6173 gn 0.34 (cb 0.02) lr 1.77e-04 1843 tok/s
+2026-09-27 23:37:06 step 2850 loss 5.1118 ntp 2.1857 ncp 3.096 vq 2.6164 gn 0.36 (cb 0.02) lr 1.69e-04 1666 tok/s
+2026-09-27 23:54:29 step 2900 loss 5.0214 ntp 2.1073 ncp 3.056 vq 2.6085 gn 0.34 (cb 0.02) lr 1.61e-04 1571 tok/s
+2026-09-28 00:12:18 EVAL[hourly] step 2944 val_lang 2.8290 (ts 2.049 wk 3.609) probes recall1=0.977 carry3=0.273 multi4=0.000 hop=0.109 bind=0.055 swap_recall1=0.016 codes_min=0.99 VE=0.650 ncp=2.900/H=4.740 (137s)
+2026-09-28 00:14:24 step 2950 loss 5.0635 ntp 2.1493 ncp 3.062 vq 2.6080 gn 0.34 (cb 0.02) lr 1.53e-04 1548 tok/s
+2026-09-28 00:31:42 step 3000 loss 5.0677 ntp 2.1561 ncp 3.064 vq 2.6052 gn 0.34 (cb 0.02) lr 1.45e-04 1578 tok/s
+2026-09-28 00:48:47 step 3050 loss 5.0208 ntp 2.1188 ncp 3.040 vq 2.5980 gn 0.34 (cb 0.02) lr 1.37e-04 1598 tok/s
+2026-09-28 01:05:28 step 3100 loss 5.0603 ntp 2.1544 ncp 3.056 vq 2.6002 gn 0.34 (cb 0.01) lr 1.30e-04 1637 tok/s
+2026-09-28 01:14:35 EVAL[hourly] step 3121 val_lang 2.8157 (ts 2.033 wk 3.598) probes recall1=0.984 carry3=0.375 multi4=0.023 hop=0.070 bind=0.070 swap_recall1=0.016 codes_min=0.99 VE=0.651 ncp=2.882/H=4.737 (132s)
+2026-09-28 01:24:16 step 3150 loss 5.0997 ntp 2.1786 ncp 3.076 vq 2.6134 gn 0.35 (cb 0.02) lr 1.23e-04 1646 tok/s
+2026-09-28 01:40:38 step 3200 loss 5.0960 ntp 2.1659 ncp 3.077 vq 2.6224 gn 0.35 (cb 0.02) lr 1.17e-04 1668 tok/s
+2026-09-28 01:57:08 step 3250 loss 5.0789 ntp 2.1474 ncp 3.059 vq 2.6255 gn 0.35 (cb 0.02) lr 1.10e-04 1656 tok/s
+2026-09-28 02:13:31 step 3300 loss 5.0701 ntp 2.1473 ncp 3.044 vq 2.6184 gn 0.35 (cb 0.02) lr 1.05e-04 1666 tok/s
+2026-09-28 02:17:05 EVAL[hourly] step 3304 val_lang 2.7961 (ts 2.018 wk 3.574) probes recall1=0.984 carry3=0.422 multi4=0.016 hop=0.117 bind=0.086 swap_recall1=0.008 codes_min=0.99 VE=0.651 ncp=2.860/H=4.742 (131s)
+2026-09-28 02:32:27 step 3350 loss 5.0337 ntp 2.1145 ncp 3.038 vq 2.6155 gn 0.34 (cb 0.02) lr 9.89e-05 1632 tok/s
+2026-09-28 02:49:17 step 3400 loss 5.0307 ntp 2.1166 ncp 3.027 vq 2.6114 gn 0.35 (cb 0.02) lr 9.37e-05 1622 tok/s
+2026-09-28 03:06:06 step 3450 loss 5.0351 ntp 2.1298 ncp 3.015 vq 2.6039 gn 0.35 (cb 0.02) lr 8.88e-05 1623 tok/s
+2026-09-28 03:19:24 EVAL[hourly] step 3484 val_lang 2.7847 (ts 2.007 wk 3.562) probes recall1=0.984 carry3=0.484 multi4=0.023 hop=0.109 bind=0.086 swap_recall1=0.008 codes_min=0.99 VE=0.652 ncp=2.834/H=4.740 (130s)
+2026-09-28 03:24:35 step 3500 loss 5.0215 ntp 2.1233 ncp 3.002 vq 2.5979 gn 0.35 (cb 0.02) lr 8.43e-05 1675 tok/s
+2026-09-28 03:40:40 step 3550 loss 4.9706 ntp 2.0763 ncp 2.989 vq 2.5954 gn 0.35 (cb 0.02) lr 8.01e-05 1699 tok/s
+2026-09-28 03:57:01 step 3600 loss 5.0474 ntp 2.1514 ncp 3.007 vq 2.5953 gn 0.35 (cb 0.02) lr 7.64e-05 1669 tok/s
+2026-09-28 04:13:26 step 3650 loss 5.0431 ntp 2.1440 ncp 3.019 vq 2.5972 gn 0.36 (cb 0.02) lr 7.30e-05 1664 tok/s
+2026-09-28 04:21:54 EVAL[hourly] step 3669 val_lang 2.7711 (ts 1.996 wk 3.546) probes recall1=0.977 carry3=0.492 multi4=0.031 hop=0.078 bind=0.062 swap_recall1=0.008 codes_min=0.99 VE=0.653 ncp=2.804/H=4.738 (131s)
+2026-09-28 04:32:08 step 3700 loss 4.9894 ntp 2.0948 ncp 2.998 vq 2.5948 gn 0.35 (cb 0.02) lr 6.99e-05 1653 tok/s
+2026-09-28 04:48:29 step 3750 loss 4.9782 ntp 2.0901 ncp 2.979 vq 2.5901 gn 0.35 (cb 0.02) lr 6.73e-05 1671 tok/s
+2026-09-28 05:04:45 step 3800 loss 4.9826 ntp 2.0967 ncp 2.986 vq 2.5873 gn 0.35 (cb 0.02) lr 6.51e-05 1679 tok/s
+2026-09-28 05:21:04 step 3850 loss 4.9560 ntp 2.0784 ncp 2.964 vq 2.5812 gn 0.35 (cb 0.02) lr 6.33e-05 1673 tok/s
+2026-09-28 05:24:14 EVAL[hourly] step 3853 val_lang 2.7613 (ts 1.987 wk 3.535) probes recall1=0.977 carry3=0.562 multi4=0.047 hop=0.109 bind=0.070 swap_recall1=0.008 codes_min=0.99 VE=0.654 ncp=2.796/H=4.742 (131s)
+2026-09-28 05:39:34 step 3900 loss 5.0224 ntp 2.1399 ncp 3.002 vq 2.5823 gn 0.36 (cb 0.02) lr 6.19e-05 1674 tok/s
+2026-09-28 05:55:53 step 3950 loss 4.9874 ntp 2.1085 ncp 2.981 vq 2.5808 gn 0.35 (cb 0.02) lr 6.08e-05 1674 tok/s
+2026-09-28 06:12:02 step 4000 loss 4.9503 ntp 2.0842 ncp 2.952 vq 2.5709 gn 0.35 (cb 0.02) lr 6.02e-05 1692 tok/s
+2026-09-28 06:26:37 EVAL[hourly] step 4039 val_lang 2.7545 (ts 1.981 wk 3.528) probes recall1=0.984 carry3=0.617 multi4=0.047 hop=0.102 bind=0.055 swap_recall1=0.023 codes_min=0.99 VE=0.654 ncp=2.774/H=4.741 (126s)
+2026-09-28 06:30:08 step 4050 loss 4.9618 ntp 2.0893 ncp 2.967 vq 2.5758 gn 0.35 (cb 0.02) lr 6.00e-05 1706 tok/s
+2026-09-28 06:32:17 EVAL[final] step 4050 val_lang 2.7542 (ts 1.981 wk 3.528) probes recall1=0.984 carry3=0.594 multi4=0.055 hop=0.086 bind=0.047 swap_recall1=0.016 codes_min=0.99 VE=0.654 ncp=2.782/H=4.742 (128s)
+2026-09-28 06:32:19 STOP (max_steps) at step 4050, 21.95 h

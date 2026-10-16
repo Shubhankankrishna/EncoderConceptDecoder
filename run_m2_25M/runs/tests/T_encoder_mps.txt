@@ -1,0 +1,17 @@
+unit tests PASS | reach(L)=63 | mix at init=[0.107, 0.107, 0.787]
+params: non-embedding 26.84M, Engram table 50.33M, embedding 4.19M
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/run_m2_25M/code/hrm_encoder.py", line 455, in <module>
+    mps_smoke_test()
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/run_m2_25M/code/hrm_encoder.py", line 440, in mps_smoke_test
+    enc = enc.to("mps")
+          ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1381, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 933, in _apply
+    module._apply(fn)
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 933, in _apply
+    module._apply(fn)
+TypeError: EncoderLayer._apply() missing 3 required positional arguments: 'G', 'y', and 's'
+python hrm_encoder.py --mps  5.55s user 0.52s system 160% cpu 3.770 total

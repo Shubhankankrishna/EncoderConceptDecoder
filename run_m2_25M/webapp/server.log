@@ -1,0 +1,24 @@
+dashboard on http://127.0.0.1:8765  (runs: /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/run_m2_25M/runs)
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54253)
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/run_m2_25M/webapp/server.py", line 590, in __init__
+    super().__init__(*a, directory=ROOT, **kw)
+  File "/opt/anaconda3/lib/python3.12/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/opt/anaconda3/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/opt/anaconda3/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/run_m2_25M/webapp/server.py", line 634, in do_GET
+    self.wfile.write(body)
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 840, in write
+    self._sock.sendall(b)
+ConnectionResetError: [Errno 54] Connection reset by peer
+----------------------------------------

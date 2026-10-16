@@ -1,0 +1,27 @@
+#!/bin/bash
+# Pause the main run safely (D-034). Usage: bash code/pause.sh [--now]
+#   default: the trainer saves a checkpoint at the end of the current step (<= ~25 s; up to ~2.5 min if mid-eval) and exits.
+#   --now  : only needed before the pause-aware trainer is live; kills immediately, losing work since the last checkpoint.
+cd "$(dirname "$0")/.."
+M=runs/main
+T0=$(date +%s)
+touch $M/PAUSE
+echo "$(date '+%F %T') pause requested" | tee -a runs/chain.log
+if pgrep -f swap_at_ckpt.sh >/dev/null && [ "$1" != "--now" ]; then
+  echo "Switch to the pause-aware trainer is still pending (happens at the next hourly save);"
+  echo "waiting for it, the run stops right after that save. (Ctrl-C and rerun with --now to stop immediately.)"
+  while pgrep -f swap_at_ckpt.sh >/dev/null; do sleep 5; done
+fi
+if [ "$1" == "--now" ]; then
+  pkill -f swap_at_ckpt.sh; pkill -f chain2.sh; pkill -f chain3.sh; pkill -f run_job.sh; pkill -f run_job2.sh
+  pkill -f "run_dir ../runs/main"
+fi
+echo "waiting for the trainer to save and exit..."
+while pgrep -f "run_dir ../runs/main" >/dev/null; do sleep 3; done
+sleep 3
+pkill -f chain3.sh; pkill -f run_job2.sh; pkill -f chain2.sh; pkill -f run_job.sh   # normally already gone
+if [ -e $M/ckpt.tmp ]; then echo "WARNING: $M/ckpt.tmp exists (interrupted save). ckpt_last.pt is still the previous good one."; fi
+if [ $(stat -f %m $M/ckpt_last.pt) -ge $T0 ]; then echo "checkpoint saved during this pause:"; else echo "NOTE: no new checkpoint (--now); resume starts from:"; fi
+ls -l $M/ckpt_last.pt
+grep -E "STOP|EVAL\[hourly\]" $M/stdout.log | tail -2
+if pgrep -f "train.py|chain[23].sh|run_job2?.sh" >/dev/null; then echo "something still running:"; pgrep -fl "train.py|chain[23].sh|run_job2?.sh"; else echo; echo "SAFE TO CLOSE LID. Resume later with: bash code/resume.sh"; fi

@@ -1,0 +1,6 @@
+PASS [confined] causality; core OFF: reach exactly 70 (encoder 63 + decoder 7), bit-identical beyond; core ON: reaches the row end; the plan first changes at t=103 (end of token 101's chunk)
+PASS [confined_read] causality; core OFF: reach exactly 70 (encoder 63 + decoder 7), bit-identical beyond; core ON: reaches the row end; the plan first changes at t=103 (end of token 101's chunk)
+PASS [stack] causality; core OFF: reach exactly 93 (encoder 63 + decoder 30), bit-identical beyond; core ON: reaches the row end; the plan first changes at t=103 (end of token 101's chunk)
+PASS no leakage across documents through encoder -> core -> decoder (all layouts)
+PASS gradients: NTP -> core + encoder FULL layers F4, F8 (only via the plan), never the codebook | NCP -> core + encoder | VQ -> codebook only
+python e2e.py --test  3.27s user 0.48s system 233% cpu 1.601 total

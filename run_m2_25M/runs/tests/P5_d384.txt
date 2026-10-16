@@ -1,0 +1,5 @@
+P5 config: d=384, heads 6/2x64, d_ff=1056, pattern SSSFSSSF, Engram 131071x48, core S=48 N=128, decoder confined L=4 w=8; V=96, T=512, float64, randomised weights
+PASS P5/P1 (random weights): causality - editing token 301 changes nothing before it (first change at t=301)
+PASS P5/P2 (random weights): core OFF reach exactly 70 (bit-identical from t=372); core ON the edit reaches the row end (t=511); plan first changes at t=303 = 4*floor(p/4)+3
+PASS P5/P3 (random weights): two packed documents - editing document 0 (t=253) leaves document 1's logits, concepts and core states bit-identical
+python test_p5.py  6.61s user 1.01s system 185% cpu 4.109 total

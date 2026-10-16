@@ -1,0 +1,28 @@
+lang tinystories: intact=1.9768 core_off=2.5548 plan_swap=2.8489 u_off=2.4881 c_off=2.0008 R1=1.9780 R2=1.9768 R3=1.9767 R6=1.9769 R8=1.9770 R4=1.9768
+lang wikitext: intact=3.6290 core_off=4.0843 plan_swap=3.8513 u_off=4.0586 c_off=3.6490 R1=3.6295 R2=3.6290 R3=3.6290 R6=3.6291 R8=3.6291 R4=3.6290
+part lang done in 971s
+trunc tinystories: {'gain_beyond_70': 0.0761507534013024, 'swap_cost': 0.9250142542051947, 'rows': 256, 'rows_ctx_ge_512': 1, 'gain_beyond_70_ctx512': 0.07181119918823242, 'swap_cost_ctx512': 1.4612550735473633, 'curve': {'r72': 2.0926892232484335, 'r128': 2.04029101668542, 'r256': 2.019905154848744, 'r512': 2.0162323603330945, 'r1024': 2.016538469847131}, 'curve_ctx512': {'r72': 2.513450860977173, 'r128': 2.461122989654541, 'r256': 2.3480305671691895, 'r512': 2.366687536239624, 'r1024': 2.4416396617889404}}
+trunc wikitext: {'gain_beyond_70': 0.040114204406738185, 'swap_cost': 0.18699757766723657, 'rows': 256, 'rows_ctx_ge_512': 234, 'gain_beyond_70_ctx512': 0.041956766293599054, 'swap_cost_ctx512': 0.1741839726256509, 'curve': {'r72': 3.6879530487060546, 'r128': 3.6601827392578126, 'r256': 3.6530936603546142, 'r512': 3.6469178924560546, 'r1024': 3.6478388442993164}, 'curve_ctx512': {'r72': 3.7230793517878933, 'r128': 3.6940565129630585, 'r256': 3.6861373815271588, 'r512': 3.680138641443008, 'r1024': 3.681122585494294}}
+part trunc done in 277s
+items test: intact probes lr_recall1=0.971 lr_carry3=0.580 lr_multi4=0.082 lr_hop=0.092 lr_bind=0.029 | synthetic macro 0.554
+items test: plan_swap probes lr_recall1=0.004 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.049
+items ood: intact probes lr_recall1=0.801 lr_carry3=0.166 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.053 | synthetic macro 0.221
+items ood: plan_swap probes lr_recall1=0.004 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.057
+part items done in 8659s
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/run_m2_25M/code/final_eval.py:120: UserWarning: The operator 'aten::mode' is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/mps/MPSFallback.mm:15.)
+  maj = (yy[n:] == torch.mode(yy[:n]).values).float().mean().item()
+probe G-E1: {'pos0': 0.6476, 'pos1': 0.6297, 'pos2': 0.6577, 'pos3': 0.6992}
+probe u->answer lr_recall1: {'tok0': 0.67}
+probe u->answer lr_carry3: {'tok0': 0.466, 'tok1': 0.097, 'tok2': 0.029}
+probe u->answer lr_multi4: {'tok0': 0.585, 'tok1': 0.215, 'tok2': 0.063}
+probe u->answer lr_hop: {'tok0': 0.184, 'tok1': 0.107}
+probe u->answer lr_bind: {'tok0': 0.291}
+probe lr_hop bridge by pass: {'pass1': 0.126, 'pass2': 0.126, 'pass4': 0.117}
+part probes done in 352s
+health: {'codes_used_frac_min': 1.0, 'codes_used_frac_mean': 1.0, 'perplexity_mean': 108.48751068115234, 'var_explained': 0.6505693916198971, 'ncp_ce': 2.697831869125366, 'code_entropy': 4.685644626617432, 'n_concepts': 14976}
+loop dynamics: {'state_norm': [9.773, 18.495, 27.074, 35.592, 44.075, 52.535, 60.98, 69.413], 'step': [9.773, 8.753, 8.597, 8.529, 8.491, 8.467, 8.45, 8.437], 'consecutive_step_angle_deg': [6.703, 1.252, 0.554, 0.317, 0.208, 0.147, 0.111], 'turn_deg': [3.195, 1.412, 0.825, 0.55, 0.397, 0.302, 0.239], 'grad': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'grad_ratio_pass1_pass4': 1.1366570081183063, 'sqrt_dc': 19.595917942265423}
+part health done in 12s
+gen tinystories: greedy[0] = ' wanted to go on the slide.\n\nShe asked her daddy, "What is that?" Her daddy said, "It\'s a big slide. It\'s going to be fun!"\n\nMandy was so excited. She said, "Yes, please!"\n\nThey went to the park and the slide was very high. They saw a big tree with lots of leaves. She wanted to climb it, but she was'
+gen wikitext: greedy[0] = ' in the 1950s. The 1950s and 1950s, the 1950s and 1950s were the first to be used in the 1950s. The 1950s and 1950s were the first to be used in the 1950s. The 1950s and 1950s were the first to be used in the 1950s. The 1950s and 1950s were the first'
+part gen done in 111s
+ALL DONE in 10382s -> ../runs/main/eval_final.json
