@@ -1,0 +1,24 @@
+PASS test_parameter_ledger: {'v4': 1212032, 'v41': 1212036, 'v41stack': 1212036, 'llm': 1206864}
+PASS test_backbone_identity: all inherited tensors bit-identical; only four zero temperatures added
+PASS test_retrieval_oracle: manual masked softmax oracle max error 4.44e-16
+PASS test_R_reach: global reach to document end; R-local exactly window 8; no future/doc/row leak
+PASS test_R_document_isolation: changing one whole document cannot change another
+PASS test_private_plans: u_j affects only legal positions 6j+5..6j+10, including document edges
+PASS test_stack_positive_control: stack leaks plans forward through K/V while remaining causal and document-isolated
+PASS test_null_alignment: first five positions null per document; every plan concept is complete
+PASS test_no_decoder_engram: no decoder Engram parameters or handoff
+PASS test_full_causality_documents: full graph causal at ten boundary/interior positions; document isolation
+PASS test_block_parity: block/full logits parity 8.88e-16
+PASS test_core_input_reach: C_j can reach later plans throughout its document; u_j remains private
+PASS test_gradient_routes: {'R_tau': 0.0002658707863156214, 'R_KV': 0.49783797635146104, 'core': 0.9808789297711019, 'pool': 0.004507774096942595, 'G': 0.4292873250644812}
+PASS test_padding_finite: partial chunks, padding-only row and empty chunks have finite outputs and gradients
+_rows_v41_v4: v4 on pinpad, compute 1,212,032 params, 2.81 MFLOP/token
+12:36:26 _rows_v41_v4 FINAL {}
+_rows_v41_v41: v41 on pinpad, compute 1,212,036 params, 2.87 MFLOP/token
+12:36:29 _rows_v41_v41 FINAL {}
+_rows_v41_v41stack: v41stack on pinpad, compute 1,212,036 params, 2.87 MFLOP/token
+12:36:31 _rows_v41_v41stack FINAL {}
+_rows_v41_llm: llm on pinpad, compute 1,206,864 params, 3.78 MFLOP/token
+12:36:33 _rows_v41_llm FINAL {}
+PASS test_runner_rows: all four actual training loops receive identical batches
+15/15 passed, 0 failed

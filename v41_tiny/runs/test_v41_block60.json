@@ -1,0 +1,88 @@
+[
+  {
+    "test": "test_parameter_ledger",
+    "pass_": true,
+    "detail": {
+      "v4": 1212032,
+      "v41": 1212036,
+      "v41stack": 1212036,
+      "llm": 1206864
+    }
+  },
+  {
+    "test": "test_backbone_identity",
+    "pass_": true,
+    "detail": "all inherited tensors bit-identical; only four zero temperatures added"
+  },
+  {
+    "test": "test_retrieval_oracle",
+    "pass_": true,
+    "detail": "manual masked softmax oracle max error 4.44e-16"
+  },
+  {
+    "test": "test_R_reach",
+    "pass_": true,
+    "detail": "global reach to document end; R-local exactly window 8; no future/doc/row leak"
+  },
+  {
+    "test": "test_R_document_isolation",
+    "pass_": true,
+    "detail": "changing one whole document cannot change another"
+  },
+  {
+    "test": "test_private_plans",
+    "pass_": true,
+    "detail": "u_j affects only legal positions 6j+5..6j+10, including document edges"
+  },
+  {
+    "test": "test_stack_positive_control",
+    "pass_": true,
+    "detail": "stack leaks plans forward through K/V while remaining causal and document-isolated"
+  },
+  {
+    "test": "test_null_alignment",
+    "pass_": true,
+    "detail": "first five positions null per document; every plan concept is complete"
+  },
+  {
+    "test": "test_no_decoder_engram",
+    "pass_": true,
+    "detail": "no decoder Engram parameters or handoff"
+  },
+  {
+    "test": "test_full_causality_documents",
+    "pass_": true,
+    "detail": "full graph causal at ten boundary/interior positions; document isolation"
+  },
+  {
+    "test": "test_block_parity",
+    "pass_": true,
+    "detail": "block/full logits parity 8.88e-16"
+  },
+  {
+    "test": "test_core_input_reach",
+    "pass_": true,
+    "detail": "C_j can reach later plans throughout its document; u_j remains private"
+  },
+  {
+    "test": "test_gradient_routes",
+    "pass_": true,
+    "detail": {
+      "R_tau": 0.0002658707863156214,
+      "R_KV": 0.49783797635146104,
+      "core": 0.9808789297711019,
+      "pool": 0.004507774096942595,
+      "G": 0.4292873250644812
+    }
+  },
+  {
+    "test": "test_padding_finite",
+    "pass_": true,
+    "detail": "partial chunks, padding-only row and empty chunks have finite outputs and gradients"
+  },
+  {
+    "test": "test_runner_rows",
+    "pass_": true,
+    "detail": "all four actual training loops receive identical batches"
+  }
+]

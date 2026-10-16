@@ -1,0 +1,16 @@
+KILLED    S layers see the full context  by test_window: S reach != 62 (window 60 + conv 3)
+KILLED    no causal mask  by test_causal_and_docs: future leak at p=30
+KILLED    no document mask  by test_causal_and_docs: document leak
+KILLED    middle block ignores M  by test_loops: 
+KILLED    expert walks over other colours  by test_pinpad_expert: ([0, 1, 4, 5, 6, 0, 1], (0, 1, 4, 5, 0, 1))
+KILLED    position token lags the move  by test_pinpad_expert: position token != dynamics
+KILLED    boundary flags swapped  by test_boundary_flags: 
+KILLED    action metric misaligned  by test_metrics_oracle: {'ntp_header': 6.639379929009807e-12, 'ntp_action': 6.6385208441268076e-12, 'ntp_position'
+_test_rows_v4: v4 on pinpad, compute 1,212,032 params, 2.81 MFLOP/token
+12:42:44 _test_rows_v4 FINAL {}
+_test_rows_llm: llm on pinpad, compute 1,206,864 params, 3.78 MFLOP/token
+12:42:46 _test_rows_llm FINAL {}
+KILLED    LLM runner skips the 2 init batches' consumption  by test_runner_rows: training rows differ between arch
+KILLED    val fillers from the train store  by test_filler_fix: (133137, 133137, 1.0)
+KILLED    LLM FFN 256 (param mismatch)  by test_param_match: (1059408, 1212032)
+11/11 mutants killed by assertions

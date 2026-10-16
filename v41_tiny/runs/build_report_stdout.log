@@ -1,0 +1,291 @@
+# v4.1 registered comparisons
+
+Differences are left minus right. Item-level paired SE and training-seed SE are separate.
+
+## pin_v41_minus_noR
+
+Pairs: v41_pin_s0_6M / ref_vs_pin_v4_s0_6M, v41_pin_s1_6M / ref_vs_pin_v4_s1_6M
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+| heldin/act_opt | +0.0564 | 0.0045 | 0.0124 | 2 |
+| heldin/act_opt_b2 | +0.1458 | 0.0189 | 0.0191 | 2 |
+| heldin/ntp_action | -0.1539 | 0.0053 | 0.0084 | 2 |
+| heldout/act_opt | +0.0577 | 0.0040 | 0.0051 | 2 |
+| heldout/act_opt_b2 | +0.1592 | 0.0183 | 0.0158 | 2 |
+| heldout/ntp_action | -0.1666 | 0.0049 | 0.0107 | 2 |
+| long/act_opt | +0.0558 | 0.0051 | 0.0028 | 2 |
+| long/act_opt_b2 | +0.1576 | 0.0251 | 0.0117 | 2 |
+| long/ntp_action | -0.0609 | 0.0084 | 0.0183 | 2 |
+| roll_temp1/task | +0.0000 | 0.0000 | 0.0000 | 2 |
+| roll_temp1/comp | +0.0000 | 0.0000 | 0.0000 | 2 |
+| roll_temp1/complete | -0.0039 | 0.0028 | 0.0039 | 2 |
+| roll_temp1/pair_ok | +0.0237 | 0.0158 | 0.0180 | 2 |
+| roll_greedy/task | +0.0000 | 0.0000 | 0.0000 | 2 |
+| roll_greedy/comp | +0.0000 | 0.0000 | 0.0000 | 2 |
+| roll_greedy/complete | +0.2090 | 0.0254 | 0.0137 | 2 |
+| roll_greedy/pair_ok | +0.1218 | 0.0233 | 0.0406 | 2 |
+
+## pin_v41_minus_LLM
+
+Pairs: v41_pin_s0_6M / ref_vs_pin_llm_s0_6M, v41_pin_s1_6M / ref_vs_pin_llm_s1_6M
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+| heldin/act_opt | -0.0767 | 0.0040 | 0.0050 | 2 |
+| heldin/act_opt_b2 | -0.1302 | 0.0133 | 0.0000 | 2 |
+| heldin/ntp_action | +0.1305 | 0.0042 | 0.0109 | 2 |
+| heldout/act_opt | -0.0652 | 0.0038 | 0.0009 | 2 |
+| heldout/act_opt_b2 | -0.0992 | 0.0137 | 0.0075 | 2 |
+| heldout/ntp_action | +0.1236 | 0.0040 | 0.0080 | 2 |
+| long/act_opt | -0.0685 | 0.0051 | 0.0069 | 2 |
+| long/act_opt_b2 | -0.0846 | 0.0191 | 0.0299 | 2 |
+| long/ntp_action | -1.3788 | 0.0375 | 0.6126 | 2 |
+| roll_temp1/task | +0.0000 | 0.0000 | 0.0000 | 2 |
+| roll_temp1/comp | -0.0039 | 0.0028 | 0.0039 | 2 |
+| roll_temp1/complete | +0.0000 | 0.0048 | 0.0078 | 2 |
+| roll_temp1/pair_ok | -0.0904 | 0.0176 | 0.0316 | 2 |
+| roll_greedy/task | -0.0020 | 0.0020 | 0.0020 | 2 |
+| roll_greedy/comp | -0.0078 | 0.0039 | 0.0000 | 2 |
+| roll_greedy/complete | -0.2148 | 0.0194 | 0.0078 | 2 |
+| roll_greedy/pair_ok | -0.1187 | 0.0219 | 0.0200 | 2 |
+
+## pin_stack_minus_v41
+
+Pairs: v41_stack_pin_s0_6M / v41_pin_s0_6M
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+| heldin/act_opt | -0.0095 | 0.0050 | unavailable | 1 |
+| heldin/act_opt_b2 | -0.0052 | 0.0175 | unavailable | 1 |
+| heldin/ntp_action | +0.0155 | 0.0045 | unavailable | 1 |
+| heldout/act_opt | -0.0078 | 0.0047 | unavailable | 1 |
+| heldout/act_opt_b2 | +0.0050 | 0.0165 | unavailable | 1 |
+| heldout/ntp_action | +0.0226 | 0.0044 | unavailable | 1 |
+| long/act_opt | -0.0160 | 0.0062 | unavailable | 1 |
+| long/act_opt_b2 | +0.0182 | 0.0271 | unavailable | 1 |
+| long/ntp_action | +0.0055 | 0.0107 | unavailable | 1 |
+| intervention/core_off/act_opt | -0.1759 | 0.0083 | unavailable | 1 |
+| intervention/core_off/act_opt_b2 | -0.0967 | 0.0286 | unavailable | 1 |
+| intervention/core_off/ntp_action | +11.2661 | 0.0641 | unavailable | 1 |
+| intervention/M1/act_opt | -0.0078 | 0.0047 | unavailable | 1 |
+| intervention/M1/act_opt_b2 | +0.0100 | 0.0173 | unavailable | 1 |
+| intervention/M1/ntp_action | +0.0235 | 0.0045 | unavailable | 1 |
+| intervention/loop_off/act_opt | -0.0102 | 0.0046 | unavailable | 1 |
+| intervention/loop_off/act_opt_b2 | +0.0000 | 0.0165 | unavailable | 1 |
+| intervention/loop_off/ntp_action | +0.0229 | 0.0044 | unavailable | 1 |
+| intervention/u_off/act_opt | -0.0463 | 0.0067 | unavailable | 1 |
+| intervention/u_off/act_opt_b2 | -0.0617 | 0.0224 | unavailable | 1 |
+| intervention/u_off/ntp_action | +0.0907 | 0.0082 | unavailable | 1 |
+| intervention/c_off/act_opt | -0.0112 | 0.0052 | unavailable | 1 |
+| intervention/c_off/act_opt_b2 | +0.0033 | 0.0181 | unavailable | 1 |
+| intervention/c_off/ntp_action | +0.0327 | 0.0050 | unavailable | 1 |
+| intervention/core_shared_off/act_opt | -0.0107 | 0.0049 | unavailable | 1 |
+| intervention/core_shared_off/act_opt_b2 | +0.0033 | 0.0177 | unavailable | 1 |
+| intervention/core_shared_off/ntp_action | +0.0300 | 0.0050 | unavailable | 1 |
+| intervention/enc_shared_off/act_opt | -0.0079 | 0.0048 | unavailable | 1 |
+| intervention/enc_shared_off/act_opt_b2 | +0.0050 | 0.0178 | unavailable | 1 |
+| intervention/enc_shared_off/ntp_action | +0.0177 | 0.0046 | unavailable | 1 |
+| intervention/R_local/act_opt | +0.1015 | 0.0078 | unavailable | 1 |
+| intervention/R_local/act_opt_b2 | -0.0400 | 0.0209 | unavailable | 1 |
+| intervention/R_local/ntp_action | -3.8980 | 0.0560 | unavailable | 1 |
+| intervention/core_off_R_local/act_opt | -0.0795 | 0.0100 | unavailable | 1 |
+| intervention/core_off_R_local/act_opt_b2 | -0.0883 | 0.0269 | unavailable | 1 |
+| intervention/core_off_R_local/ntp_action | +7.1375 | 0.0721 | unavailable | 1 |
+| roll_temp1/task | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_temp1/comp | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_temp1/complete | +0.0000 | 0.0078 | unavailable | 1 |
+| roll_temp1/pair_ok | +0.0034 | 0.0224 | unavailable | 1 |
+| roll_greedy/task | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_greedy/comp | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_greedy/complete | -0.0508 | 0.0319 | unavailable | 1 |
+| roll_greedy/pair_ok | -0.0412 | 0.0338 | unavailable | 1 |
+
+## pin_loopoff_minus_v41
+
+Pairs: 
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+
+## text_v41_minus_noR
+
+Pairs: v41_text_s0_5M / ref_vs_text_v4_s0, v41_text_s1_5M / ref_vs_text_v4_s1
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+| row_ntp | -0.0107 | 0.0018 | 0.0034 | 2 |
+| probe/lr_carry3 | +0.0000 | 0.0000 | 0.0000 | 2 |
+| probe/lr_multi4 | +0.0000 | 0.0000 | 0.0000 | 2 |
+| probe/lr_recall1 | +0.0026 | 0.0058 | 0.0026 | 2 |
+
+## text_v41_minus_LLM
+
+Pairs: v41_text_s0_5M / ref_vs_text_llm_s0, v41_text_s1_5M / ref_vs_text_llm_s1
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+| row_ntp | -0.0177 | 0.0040 | 0.0011 | 2 |
+| probe/lr_carry3 | +0.0000 | 0.0000 | 0.0000 | 2 |
+| probe/lr_multi4 | +0.0000 | 0.0000 | 0.0000 | 2 |
+| probe/lr_recall1 | +0.0026 | 0.0058 | 0.0026 | 2 |
+
+## fresh_LLM_minus_reference
+
+Pairs: fresh_pin_llm_s0_6M / ref_vs_pin_llm_s0_6M
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+| heldin/act_opt | +0.0000 | 0.0000 | unavailable | 1 |
+| heldin/act_opt_b2 | +0.0000 | 0.0000 | unavailable | 1 |
+| heldin/ntp_action | +0.0000 | 0.0000 | unavailable | 1 |
+| heldout/act_opt | +0.0000 | 0.0000 | unavailable | 1 |
+| heldout/act_opt_b2 | +0.0000 | 0.0000 | unavailable | 1 |
+| heldout/ntp_action | +0.0000 | 0.0000 | unavailable | 1 |
+| long/act_opt | +0.0000 | 0.0000 | unavailable | 1 |
+| long/act_opt_b2 | +0.0000 | 0.0000 | unavailable | 1 |
+| long/ntp_action | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_temp1/task | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_temp1/comp | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_temp1/complete | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_temp1/pair_ok | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_greedy/task | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_greedy/comp | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_greedy/complete | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_greedy/pair_ok | +0.0000 | 0.0000 | unavailable | 1 |
+
+## pin_v41_minus_fresh_LLM
+
+Pairs: v41_pin_s0_6M / fresh_pin_llm_s0_6M
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+| heldin/act_opt | -0.0717 | 0.0058 | unavailable | 1 |
+| heldin/act_opt_b2 | -0.1302 | 0.0197 | unavailable | 1 |
+| heldin/ntp_action | +0.1196 | 0.0062 | unavailable | 1 |
+| heldout/act_opt | -0.0643 | 0.0055 | unavailable | 1 |
+| heldout/act_opt_b2 | -0.1067 | 0.0207 | unavailable | 1 |
+| heldout/ntp_action | +0.1156 | 0.0061 | unavailable | 1 |
+| long/act_opt | -0.0616 | 0.0079 | unavailable | 1 |
+| long/act_opt_b2 | -0.1146 | 0.0277 | unavailable | 1 |
+| long/ntp_action | -0.7663 | 0.0375 | unavailable | 1 |
+| roll_temp1/task | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_temp1/comp | -0.0078 | 0.0055 | unavailable | 1 |
+| roll_temp1/complete | -0.0078 | 0.0055 | unavailable | 1 |
+| roll_temp1/pair_ok | -0.1220 | 0.0243 | unavailable | 1 |
+| roll_greedy/task | -0.0039 | 0.0039 | unavailable | 1 |
+| roll_greedy/comp | -0.0078 | 0.0055 | unavailable | 1 |
+| roll_greedy/complete | -0.2227 | 0.0278 | unavailable | 1 |
+| roll_greedy/pair_ok | -0.1388 | 0.0322 | unavailable | 1 |
+
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v41_tiny/RESULT_TABLES.md
+{
+  "registered_matrix_complete": false,
+  "R_P1": {
+    "mean": 0.05766952101804709,
+    "paired_item_se": 0.004015739895685112,
+    "seed_se": 0.005126414809093673,
+    "seed_min": 0.05254310620895342,
+    "seed_max": 0.06279593582714077,
+    "n_seeds": 2,
+    "per_seed": [
+      {
+        "seed": 0,
+        "mean": 0.06279593582714077,
+        "se": 0.006127034030906425,
+        "n": 200
+      },
+      {
+        "seed": 1,
+        "mean": 0.05254310620895342,
+        "se": 0.00519269887662503,
+        "n": 200
+      }
+    ]
+  },
+  "R_minus_LLM_P1": {
+    "mean": -0.0651926756511357,
+    "paired_item_se": 0.0037760939615077323,
+    "seed_se": 0.0008568771895829871,
+    "seed_min": -0.0660495528407187,
+    "seed_max": -0.06433579846155273,
+    "n_seeds": 2,
+    "per_seed": [
+      {
+        "seed": 0,
+        "mean": -0.06433579846155273,
+        "se": 0.005465820136967911,
+        "n": 200
+      },
+      {
+        "seed": 1,
+        "mean": -0.0660495528407187,
+        "se": 0.005211559522336546,
+        "n": 200
+      }
+    ]
+  },
+  "text_guard": {
+    "mean": -0.010666249319911003,
+    "paired_item_se": 0.0018365656811739183,
+    "seed_se": 0.003402912989258766,
+    "seed_min": -0.01406916230916977,
+    "seed_max": -0.007263336330652237,
+    "n_seeds": 2,
+    "per_seed": [
+      {
+        "seed": 0,
+        "mean": -0.007263336330652237,
+        "se": 0.0028292976195249354,
+        "n": 64
+      },
+      {
+        "seed": 1,
+        "mean": -0.01406916230916977,
+        "se": 0.0023424280106790494,
+        "n": 64
+      }
+    ]
+  },
+  "stack_P1": {
+    "mean": -0.007752138727926656,
+    "paired_item_se": 0.0047281877170311445,
+    "seed_se": null,
+    "seed_min": -0.007752138727926656,
+    "seed_max": -0.007752138727926656,
+    "n_seeds": 1,
+    "per_seed": [
+      {
+        "seed": 0,
+        "mean": -0.007752138727926656,
+        "se": 0.0047281877170311445,
+        "n": 200
+      }
+    ]
+  },
+  "trained_loopoff_b2": null,
+  "R_outcome": "O2 partial fix",
+  "text_guard_passes": true,
+  "stack_improves_P1_by_2_item_SE": false,
+  "keep_F_loop_by_registered_rule": false,
+  "loop_text_control": "not run; the registered rule therefore uses pinpad only"
+}
+{
+  "original_code_files": 24,
+  "original_code_unchanged": true,
+  "reference_artifacts": 50,
+  "reference_copies_and_originals_unchanged": true,
+  "pending_full_budget_runs": [
+    "v41_pin_s2_6M",
+    "v41_loopoff_pin_s0_6M",
+    "v41_stack_pin_s1_6M",
+    "v41_loopoff_pin_s1_6M",
+    "v41_stack_pin_s2_6M",
+    "v41_loopoff_pin_s2_6M"
+  ],
+  "all_completed_analyses": true,
+  "new_full_budget_real_tokens": 46002266,
+  "new_full_budget_optimizer_steps": 27859,
+  "nonfinite_training_records": []
+}
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v41_tiny/REPORT.md

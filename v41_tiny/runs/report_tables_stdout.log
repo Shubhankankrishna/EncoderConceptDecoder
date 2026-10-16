@@ -1,0 +1,137 @@
+# v4.1 registered comparisons
+
+Differences are left minus right. Item-level paired SE and training-seed SE are separate.
+
+## pin_v41_minus_noR
+
+Pairs: v41_pin_s0_6M / ref_vs_pin_v4_s0_6M, v41_pin_s1_6M / ref_vs_pin_v4_s1_6M
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+| heldin/act_opt | +0.0564 | 0.0045 | 0.0124 | 2 |
+| heldin/act_opt_b2 | +0.1458 | 0.0189 | 0.0191 | 2 |
+| heldin/ntp_action | -0.1539 | 0.0053 | 0.0084 | 2 |
+| heldout/act_opt | +0.0577 | 0.0040 | 0.0051 | 2 |
+| heldout/act_opt_b2 | +0.1592 | 0.0183 | 0.0158 | 2 |
+| heldout/ntp_action | -0.1666 | 0.0049 | 0.0107 | 2 |
+| long/act_opt | +0.0558 | 0.0051 | 0.0028 | 2 |
+| long/act_opt_b2 | +0.1576 | 0.0251 | 0.0117 | 2 |
+| long/ntp_action | -0.0609 | 0.0084 | 0.0183 | 2 |
+| roll_temp1/task | +0.0000 | 0.0000 | 0.0000 | 2 |
+| roll_temp1/comp | +0.0000 | 0.0000 | 0.0000 | 2 |
+| roll_temp1/complete | -0.0039 | 0.0028 | 0.0039 | 2 |
+| roll_temp1/pair_ok | +0.0237 | 0.0158 | 0.0180 | 2 |
+| roll_greedy/task | +0.0000 | 0.0000 | 0.0000 | 2 |
+| roll_greedy/comp | +0.0000 | 0.0000 | 0.0000 | 2 |
+| roll_greedy/complete | +0.2090 | 0.0254 | 0.0137 | 2 |
+| roll_greedy/pair_ok | +0.1218 | 0.0233 | 0.0406 | 2 |
+
+## pin_v41_minus_LLM
+
+Pairs: v41_pin_s0_6M / ref_vs_pin_llm_s0_6M, v41_pin_s1_6M / ref_vs_pin_llm_s1_6M
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+| heldin/act_opt | -0.0767 | 0.0040 | 0.0050 | 2 |
+| heldin/act_opt_b2 | -0.1302 | 0.0133 | 0.0000 | 2 |
+| heldin/ntp_action | +0.1305 | 0.0042 | 0.0109 | 2 |
+| heldout/act_opt | -0.0652 | 0.0038 | 0.0009 | 2 |
+| heldout/act_opt_b2 | -0.0992 | 0.0137 | 0.0075 | 2 |
+| heldout/ntp_action | +0.1236 | 0.0040 | 0.0080 | 2 |
+| long/act_opt | -0.0685 | 0.0051 | 0.0069 | 2 |
+| long/act_opt_b2 | -0.0846 | 0.0191 | 0.0299 | 2 |
+| long/ntp_action | -1.3788 | 0.0375 | 0.6126 | 2 |
+| roll_temp1/task | +0.0000 | 0.0000 | 0.0000 | 2 |
+| roll_temp1/comp | -0.0039 | 0.0028 | 0.0039 | 2 |
+| roll_temp1/complete | +0.0000 | 0.0048 | 0.0078 | 2 |
+| roll_temp1/pair_ok | -0.0904 | 0.0176 | 0.0316 | 2 |
+| roll_greedy/task | -0.0020 | 0.0020 | 0.0020 | 2 |
+| roll_greedy/comp | -0.0078 | 0.0039 | 0.0000 | 2 |
+| roll_greedy/complete | -0.2148 | 0.0194 | 0.0078 | 2 |
+| roll_greedy/pair_ok | -0.1187 | 0.0219 | 0.0200 | 2 |
+
+## pin_stack_minus_v41
+
+Pairs: 
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+
+## pin_loopoff_minus_v41
+
+Pairs: 
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+
+## text_v41_minus_noR
+
+Pairs: v41_text_s0_5M / ref_vs_text_v4_s0
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+| row_ntp | -0.0073 | 0.0028 | unavailable | 1 |
+| probe/lr_carry3 | +0.0000 | 0.0000 | unavailable | 1 |
+| probe/lr_multi4 | +0.0000 | 0.0000 | unavailable | 1 |
+| probe/lr_recall1 | +0.0052 | 0.0090 | unavailable | 1 |
+
+## text_v41_minus_LLM
+
+Pairs: v41_text_s0_5M / ref_vs_text_llm_s0
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+| row_ntp | -0.0166 | 0.0055 | unavailable | 1 |
+| probe/lr_carry3 | +0.0000 | 0.0000 | unavailable | 1 |
+| probe/lr_multi4 | +0.0000 | 0.0000 | unavailable | 1 |
+| probe/lr_recall1 | +0.0052 | 0.0090 | unavailable | 1 |
+
+## fresh_LLM_minus_reference
+
+Pairs: fresh_pin_llm_s0_6M / ref_vs_pin_llm_s0_6M
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+| heldin/act_opt | +0.0000 | 0.0000 | unavailable | 1 |
+| heldin/act_opt_b2 | +0.0000 | 0.0000 | unavailable | 1 |
+| heldin/ntp_action | +0.0000 | 0.0000 | unavailable | 1 |
+| heldout/act_opt | +0.0000 | 0.0000 | unavailable | 1 |
+| heldout/act_opt_b2 | +0.0000 | 0.0000 | unavailable | 1 |
+| heldout/ntp_action | +0.0000 | 0.0000 | unavailable | 1 |
+| long/act_opt | +0.0000 | 0.0000 | unavailable | 1 |
+| long/act_opt_b2 | +0.0000 | 0.0000 | unavailable | 1 |
+| long/ntp_action | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_temp1/task | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_temp1/comp | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_temp1/complete | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_temp1/pair_ok | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_greedy/task | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_greedy/comp | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_greedy/complete | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_greedy/pair_ok | +0.0000 | 0.0000 | unavailable | 1 |
+
+## pin_v41_minus_fresh_LLM
+
+Pairs: v41_pin_s0_6M / fresh_pin_llm_s0_6M
+
+| Metric | Difference | Paired item SE | Seed SE | Seeds |
+|---|---:|---:|---:|---:|
+| heldin/act_opt | -0.0717 | 0.0058 | unavailable | 1 |
+| heldin/act_opt_b2 | -0.1302 | 0.0197 | unavailable | 1 |
+| heldin/ntp_action | +0.1196 | 0.0062 | unavailable | 1 |
+| heldout/act_opt | -0.0643 | 0.0055 | unavailable | 1 |
+| heldout/act_opt_b2 | -0.1067 | 0.0207 | unavailable | 1 |
+| heldout/ntp_action | +0.1156 | 0.0061 | unavailable | 1 |
+| long/act_opt | -0.0616 | 0.0079 | unavailable | 1 |
+| long/act_opt_b2 | -0.1146 | 0.0277 | unavailable | 1 |
+| long/ntp_action | -0.7663 | 0.0375 | unavailable | 1 |
+| roll_temp1/task | +0.0000 | 0.0000 | unavailable | 1 |
+| roll_temp1/comp | -0.0078 | 0.0055 | unavailable | 1 |
+| roll_temp1/complete | -0.0078 | 0.0055 | unavailable | 1 |
+| roll_temp1/pair_ok | -0.1220 | 0.0243 | unavailable | 1 |
+| roll_greedy/task | -0.0039 | 0.0039 | unavailable | 1 |
+| roll_greedy/comp | -0.0078 | 0.0055 | unavailable | 1 |
+| roll_greedy/complete | -0.2227 | 0.0278 | unavailable | 1 |
+| roll_greedy/pair_ok | -0.1388 | 0.0322 | unavailable | 1 |
+
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v41_tiny/RESULT_TABLES.md

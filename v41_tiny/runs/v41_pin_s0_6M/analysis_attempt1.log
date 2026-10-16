@@ -1,0 +1,15 @@
+13:04:18 v41_pin_s0_6M units done in 6 s
+13:04:42 v41_pin_s0_6M interventions done in 24 s
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v41_tiny/code/analyze_vs.py", line 383, in <module>
+    arm(sys.argv[2])
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v41_tiny/code/analyze_vs.py", line 309, in arm
+    ro = rollouts(m, greedy=(pol == "greedy"), seed=a["seed"])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v41_tiny/code/analyze_vs.py", line 160, in rollouts
+    lg = R.fwd(m, ids.to(device), doc.to(device), ei.to(device))[0][:, n - 1, PP.ACT0:PP.ACT0 + 4].double().cpu()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.

@@ -1,0 +1,93 @@
+{
+  "parity": {
+    "logits_max_abs": 3.5762786865234375e-07,
+    "loss_abs": 0.0,
+    "n_gradients": 489,
+    "worst_gradients": [
+      [
+        7.264316082000732e-08,
+        4.880161747079886e-07,
+        "enc.embed.weight"
+      ],
+      [
+        1.4901161193847656e-08,
+        8.502460739674973e-08,
+        "core.E0"
+      ],
+      [
+        1.0244548320770264e-08,
+        3.488662987036382e-07,
+        "core.shared.w2.weight"
+      ],
+      [
+        9.546056389808655e-09,
+        7.498228772057137e-07,
+        "core.layers.0.attn.v.weight"
+      ],
+      [
+        8.381903171539307e-09,
+        7.466058055735617e-07,
+        "enc.shared.w2.weight"
+      ],
+      [
+        7.450580596923828e-09,
+        2.2327997388517426e-07,
+        "core.e"
+      ],
+      [
+        6.05359673500061e-09,
+        7.642967587938222e-07,
+        "core.layers.0.attn.o.weight"
+      ],
+      [
+        6.05359673500061e-09,
+        6.138865288362336e-07,
+        "core.layers.0.ffn.w2.weight"
+      ],
+      [
+        6.05359673500061e-09,
+        4.142650447361635e-07,
+        "core.layers.1.attn.v.weight"
+      ],
+      [
+        5.820766091346741e-09,
+        7.992996344770799e-07,
+        "enc.pooler.Wv.weight"
+      ]
+    ]
+  },
+  "benchmarks": [
+    {
+      "arch": "v41",
+      "device": "cpu",
+      "steps": 8,
+      "seconds": 2.688828584000021,
+      "seconds_per_step": 0.3361035730000026,
+      "real_tokens_per_second": 5067.6343152114805
+    },
+    {
+      "arch": "llm",
+      "device": "cpu",
+      "steps": 8,
+      "seconds": 2.8962615830000686,
+      "seconds_per_step": 0.3620326978750086,
+      "real_tokens_per_second": 4704.6855435915495
+    },
+    {
+      "arch": "v41",
+      "device": "mps",
+      "steps": 8,
+      "seconds": 3.9810817499999303,
+      "seconds_per_step": 0.4976352187499913,
+      "real_tokens_per_second": 3422.6878159435532
+    },
+    {
+      "arch": "llm",
+      "device": "mps",
+      "steps": 8,
+      "seconds": 3.2764307499999177,
+      "seconds_per_step": 0.4095538437499897,
+      "real_tokens_per_second": 4158.793833808434
+    }
+  ]
+}

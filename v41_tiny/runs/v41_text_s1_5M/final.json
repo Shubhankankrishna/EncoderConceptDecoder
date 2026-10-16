@@ -1,0 +1,132 @@
+{
+ "val_ntp": 2.5828313022244522,
+ "probes": {
+  "lr_recall1": 0.020833333333333332,
+  "lr_carry3": 0.0,
+  "lr_multi4": 0.0
+ },
+ "probe_row_ntp": {
+  "val_pool": 3.287107422876089,
+  "train_pool": 3.4904401328219747
+ },
+ "interventions": {
+  "core_off": {
+   "val_ntp": 2.6916891127024525,
+   "probes": {
+    "lr_recall1": 0.026041666666666668,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "plan_swap": {
+   "val_ntp": 2.672163411353021,
+   "probes": {
+    "lr_recall1": 0.026041666666666668,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "M1": {
+   "val_ntp": 2.5833223479266922,
+   "probes": {
+    "lr_recall1": 0.020833333333333332,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "loop_off": {
+   "val_ntp": 2.5830618377952117,
+   "probes": {
+    "lr_recall1": 0.020833333333333332,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "u_off": {
+   "val_ntp": 2.6253192152494136,
+   "probes": {
+    "lr_recall1": 0.020833333333333332,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "c_off": {
+   "val_ntp": 2.5936277322266257,
+   "probes": {
+    "lr_recall1": 0.020833333333333332,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "core_shared_off": {
+   "val_ntp": 2.583910386410395,
+   "probes": {
+    "lr_recall1": 0.020833333333333332,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "enc_shared_off": {
+   "val_ntp": 2.5877878071227456,
+   "probes": {
+    "lr_recall1": 0.020833333333333332,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "R_local": {
+   "val_ntp": 2.674808616971399,
+   "probes": {
+    "lr_recall1": 0.026041666666666668,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "core_off_R_local": {
+   "val_ntp": 2.8080776070206346,
+   "probes": {
+    "lr_recall1": 0.015625,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  }
+ },
+ "step": 3396,
+ "real_tokens": 5000881,
+ "wall": 2965.3975989818573,
+ "params": {
+  "encoder": 624911,
+  "core": 306409,
+  "decoder": 280716,
+  "compute": 1212036,
+  "pooler": 12760,
+  "engram_table": 392928,
+  "embedding": 524288,
+  "codebooks": 20480
+ },
+ "args": {
+  "name": "v41_text_s1_5M",
+  "arch": "v41",
+  "data": "text",
+  "seed": 1,
+  "T": 480,
+  "B": 4,
+  "p_syn": 0.5,
+  "real_tokens": 5000000.0,
+  "max_steps": 0,
+  "lr": 0.002,
+  "warmup": 400,
+  "wd": 0.1,
+  "clip": 1.0,
+  "threads": 2,
+  "eval_every_tokens": 1000000.0,
+  "n_probe": 128,
+  "n_probe_final": 192,
+  "restart_every": 200,
+  "block": 60,
+  "device": "cpu",
+  "checkpoint_every": 500,
+  "over": ""
+ },
+ "flops_per_token": 3908266.6666666665
+}

@@ -1,0 +1,90 @@
+{
+ "val_ntp": 2.6089716071798668,
+ "probes": {
+  "lr_recall1": 0.005208333333333333,
+  "lr_carry3": 0.0,
+  "lr_multi4": 0.0
+ },
+ "probe_row_ntp": {
+  "val_pool": 3.3417605354625834,
+  "train_pool": 3.536723561029798
+ },
+ "interventions": {
+  "M1": {
+   "val_ntp": 2.653275172944132,
+   "probes": {
+    "lr_recall1": 0.0,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "loop_off": {
+   "val_ntp": 2.6317736978324167,
+   "probes": {
+    "lr_recall1": 0.010416666666666666,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  }
+ },
+ "step": 3412,
+ "real_tokens": 5000545,
+ "wall": 4018.810388803482,
+ "params": {
+  "compute": 1206864,
+  "embedding": 524288,
+  "layer_S": 75424,
+  "layer_F": 75428,
+  "unique_layers": 16,
+  "depth": 22,
+  "schedule": [
+   0,
+   1,
+   2,
+   3,
+   3,
+   4,
+   5,
+   6,
+   7,
+   7,
+   8,
+   9,
+   10,
+   11,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "engram_table": 0,
+  "codebooks": 0
+ },
+ "args": {
+  "name": "vs_text_llm_s0",
+  "arch": "llm",
+  "data": "text",
+  "seed": 0,
+  "T": 480,
+  "B": 4,
+  "p_syn": 0.5,
+  "real_tokens": 5000000.0,
+  "max_steps": 0,
+  "lr": 0.002,
+  "warmup": 400,
+  "wd": 0.1,
+  "clip": 1.0,
+  "threads": 2,
+  "eval_every_tokens": 1000000.0,
+  "n_probe": 128,
+  "n_probe_final": 192,
+  "restart_every": 200,
+  "block": 60,
+  "over": ""
+ },
+ "flops_per_token": 4817920.0
+}

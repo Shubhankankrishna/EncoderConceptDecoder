@@ -1,0 +1,97 @@
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v41_tiny/code/gradient_audit.py:48: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  report={"losses":{k:float(v) for k,v in objectives.items()},"groups":{}}
+{
+  "losses": {
+    "ntp": 0.8431192636489868,
+    "action_ntp": 0.7809516787528992,
+    "weighted_coarse": 0.10125324130058289,
+    "weighted_fine": 0.35071679949760437
+  },
+  "groups": {
+    "encoder_S": {
+      "parameters": 411864,
+      "gradient_norms": {
+        "ntp": 0.0921139046549797,
+        "action_ntp": 0.24923785030841827,
+        "weighted_coarse": 0.015166440047323704,
+        "weighted_fine": 0.017225828021764755
+      },
+      "action_gradient_rms": 0.0003883623141499998,
+      "concept_to_action_norm": 0.04384623095393181,
+      "action_concept_cosine": 0.050013456493616104
+    },
+    "encoder_F": {
+      "parameters": 154192,
+      "gradient_norms": {
+        "ntp": 0.007777232676744461,
+        "action_ntp": 0.02160421758890152,
+        "weighted_coarse": 0.025417372584342957,
+        "weighted_fine": 0.03011377714574337
+      },
+      "action_gradient_rms": 5.50183576123275e-05,
+      "concept_to_action_norm": 0.5743405818939209,
+      "action_concept_cosine": 0.15891002118587494
+    },
+    "encoder_shared": {
+      "parameters": 18440,
+      "gradient_norms": {
+        "ntp": 0.022605780512094498,
+        "action_ntp": 0.05668443441390991,
+        "weighted_coarse": 0.005518385674804449,
+        "weighted_fine": 0.005824629683047533
+      },
+      "action_gradient_rms": 0.00041742971305068044,
+      "concept_to_action_norm": 0.05682964250445366,
+      "action_concept_cosine": -0.02310434728860855
+    },
+    "pooler": {
+      "parameters": 12760,
+      "gradient_norms": {
+        "ntp": 0.014188389293849468,
+        "action_ntp": 0.04154587164521217,
+        "weighted_coarse": 0.028567664325237274,
+        "weighted_fine": 0.026494625955820084
+      },
+      "action_gradient_rms": 0.00036779221964412985,
+      "concept_to_action_norm": 0.5295368432998657,
+      "action_concept_cosine": 0.4586270749568939
+    },
+    "core": {
+      "parameters": 306409,
+      "gradient_norms": {
+        "ntp": 0.0203001219779253,
+        "action_ntp": 0.05496089160442352,
+        "weighted_coarse": 0.03858615458011627,
+        "weighted_fine": 0.034468188881874084
+      },
+      "action_gradient_rms": 9.92894284501173e-05,
+      "concept_to_action_norm": 0.6598085165023804,
+      "action_concept_cosine": 0.2806772291660309
+    },
+    "R": {
+      "parameters": 68006,
+      "gradient_norms": {
+        "ntp": 0.23250961303710938,
+        "action_ntp": 0.572011411190033,
+        "weighted_coarse": 0.0,
+        "weighted_fine": 0.0
+      },
+      "action_gradient_rms": 0.0021934668595574676,
+      "concept_to_action_norm": 0.0,
+      "action_concept_cosine": 0.0
+    },
+    "plan": {
+      "parameters": 8640,
+      "gradient_norms": {
+        "ntp": 0.09052586555480957,
+        "action_ntp": 0.26990675926208496,
+        "weighted_coarse": 0.0,
+        "weighted_fine": 0.0
+      },
+      "action_gradient_rms": 0.0029037343990301933,
+      "concept_to_action_norm": 0.0,
+      "action_concept_cosine": 0.0
+    }
+  }
+}

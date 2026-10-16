@@ -1,0 +1,17 @@
+PASS test_param_match: LLM 1,206,864 vs v4-rec 1,212,032 (-0.43%), 16 unique / 22 deep both, SSSF x4
+PASS test_causal_and_docs: no future leak at 6 positions; no cross-document leak
+PASS test_window: S reach exactly 62 (window 60 + short conv 3); F reaches position 0
+PASS test_loops: M = 1 and enc_loop = 1 change the output; schedules 22 / 18 / 20
+PASS test_block_parity: block-60 vs full-mask SDPA max |diff| 5.6e-17
+PASS test_same_rows: pinpad streams identical across arch (8 batches), documents start on 6-token boundaries
+_test_rows_v4: v4 on pinpad, compute 1,212,032 params, 2.81 MFLOP/token
+12:39:36 _test_rows_v4 FINAL {}
+_test_rows_llm: llm on pinpad, compute 1,206,864 params, 3.78 MFLOP/token
+12:39:38 _test_rows_llm FINAL {}
+PASS test_runner_rows: R.main: the 4 training batches are identical for v4 and the LLM
+PASS test_pinpad_expert: 180 expert episodes replayed: optimal actions, dynamics, visit order == task; BFS == Bellman; long max 212 tokens
+PASS test_boundary_flags: one flagged first action per visit; flag 1 for pair starts, 2 for pair seconds
+PASS test_metrics_oracle: oracle act_opt 1.00 pos_acc 1.00; shifted oracle pos_acc 0.00
+PASS test_filler_fix: fillers: train pool 133,137 sentences (60,000 docs; was 3,000 docs), val pool 16,750 from the val store; overlap 2.36%
+PASS test_train_steps: v4/pinpad ntp 4.31->4.04; v4/text ntp 9.01->8.60; llm/pinpad ntp 4.31->4.17; llm/text ntp 9.00->8.71
+12 passed, 0 failed (block 60)
