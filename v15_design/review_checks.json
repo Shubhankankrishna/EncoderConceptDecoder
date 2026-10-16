@@ -1,0 +1,264 @@
+{
+  "checked_at_IST": "2026-10-16T11:40:50.494199+05:30",
+  "scope": "Analytical toy checks, formula counts, completed-source arithmetic and document references; no implemented v15 tests",
+  "all_passed": true,
+  "checks": {
+    "parameter_accounting": {
+      "passed": true,
+      "detail": {
+        "student": 6881071,
+        "removed": 91136,
+        "address_sites": 65884,
+        "prior": 33408,
+        "bridge": 66696,
+        "codec_trainable": 260608,
+        "codec_codebooks": 4096,
+        "ordinary_transformer": 6849984,
+        "ordinary_engram": 6873424,
+        "generic_head": 26085,
+        "generic_delta_student": 6873748
+      }
+    },
+    "component_memory": {
+      "passed": true,
+      "detail": {
+        "M_MiB": 1.0,
+        "P_MiB": 0.125,
+        "joint_MiB": 2.0,
+        "naive_13_M_states_MiB": 13.0,
+        "not_total_peak_memory": true
+      }
+    },
+    "release_and_copy_baseline": {
+      "passed": true,
+      "detail": "Release at row 4g+3; forecasts cover the next four predictions; previous future labels are unavailable."
+    },
+    "partial_target_counts": {
+      "passed": true,
+      "detail": {
+        "cases": 28,
+        "examples": [
+          [
+            4,
+            3,
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            5,
+            3,
+            [
+              1,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            7,
+            3,
+            [
+              3,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            8,
+            3,
+            [
+              4,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            8,
+            7,
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            15,
+            3,
+            [
+              4,
+              4,
+              3,
+              0
+            ]
+          ]
+        ]
+      }
+    },
+    "correlated_alternatives": {
+      "passed": true,
+      "detail": {
+        "conditional_cross_pair_mass": 1e-06,
+        "independent_marginal_cross_pair_mass": 0.5
+      }
+    },
+    "joint_top_four_and_tail": {
+      "passed": true,
+      "detail": {
+        "retained_mass": 0.012932014168615807,
+        "tail_mass": 0.9870679858313842,
+        "selection": [
+          [
+            26,
+            8
+          ],
+          [
+            26,
+            26
+          ],
+          [
+            26,
+            0
+          ],
+          [
+            13,
+            11
+          ]
+        ]
+      }
+    },
+    "delta_homogeneous_transition": {
+      "passed": true,
+      "detail": {
+        "max_norm_ratio": 0.9999991862075956,
+        "scope": "Fixed addresses, zero incoming value; not a full network stability test"
+      }
+    },
+    "rls_equals_direct_ridge": {
+      "passed": true,
+      "detail": {
+        "steps": 32,
+        "max_abs_error": 5.551115123125783e-16,
+        "minimum_denominator": 1.0309916953563438
+      }
+    },
+    "document_completeness": {
+      "passed": true,
+      "detail": {
+        "lines": 850,
+        "words": 17294,
+        "spec_sha256": "c1b6f8304dcf0d342e0019cdfb7e3e9451153d91de2c35160c28253ad037730a"
+      }
+    },
+    "completed_v14_comparison": {
+      "passed": true,
+      "detail": {
+        "v14_final_step": 12977,
+        "v14_tokens": 101816716,
+        "reasoning_delta": 0.0896,
+        "reasoning_relative_percent": 31.671968893601978,
+        "text_nll_delta": -0.1143,
+        "text_perplexity_v13_v14": [
+          16.451225945552654,
+          14.674334273245401
+        ],
+        "parameter_reduction_percent": 12.091995267156076,
+        "token_exposure_increase_percent": 4.045019040178155,
+        "full_budget_tokens_per_second_v13_v14": [
+          2470.9452676019355,
+          2571.1291919191917
+        ]
+      }
+    },
+    "completed_v14_diagnostics": {
+      "passed": true,
+      "detail": {
+        "V1": true,
+        "V2": true,
+        "V3_families_passing": [],
+        "V4": true,
+        "V5": {
+          "v14": 0.8622,
+          "v13": 0.9236,
+          "passes": true
+        },
+        "guard": {
+          "agreement": {
+            "a": 0.8648,
+            "b": 0.4096
+          },
+          "passes": false
+        },
+        "warning": "Historical probe split is by group, not document; technical V5 pass is not low absolute churn."
+      }
+    },
+    "continual_acquisition_retention_tradeoff": {
+      "passed": true,
+      "detail": {
+        "mean_acquisition_gains": {
+          "seq": 0.14583333333333334,
+          "replay": 0.11363333333333332,
+          "v14": 0.05945
+        },
+        "final_averages": {
+          "frozen": 0.29,
+          "seq": 0.3239,
+          "replay": 0.3341,
+          "v14": 0.3033
+        },
+        "v14_minus_replay_paired": {
+          "final_average": -0.0307,
+          "final_average_ci": [
+            -0.0386,
+            -0.0236
+          ],
+          "s0_before_return": 0.0105,
+          "s0_before_return_ci": [
+            -0.0091,
+            0.0287
+          ]
+        },
+        "note": "Paired estimates are saved estimates, not differences of rounded table entries."
+      }
+    },
+    "two_stage_budget": {
+      "passed": true,
+      "detail": {
+        "total_device_hours": 11.0,
+        "stage_A_hours": 2.2,
+        "stage_B_hours": 8.8,
+        "stage_A_includes": [
+          "codec training",
+          "readiness checks",
+          "initialization buffers"
+        ],
+        "stage_B_includes": [
+          "label extraction",
+          "student training",
+          "blocking checks"
+        ],
+        "allocation_is_proposed_not_measured_optimum": true
+      }
+    },
+    "references": {
+      "passed": true,
+      "detail": {
+        "local_reference_count": 49,
+        "missing_local_references": [],
+        "paper_identifiers_and_official_repositories_present": [
+          "https://arxiv.org/abs/2610.14162v1",
+          "https://arxiv.org/abs/2610.18809v1",
+          "https://github.com/HazyResearch/ncm",
+          "https://github.com/davidgonmar/depth-memory"
+        ],
+        "scope": "Local existence and public link presence; web metadata was verified separately during review."
+      }
+    }
+  }
+}

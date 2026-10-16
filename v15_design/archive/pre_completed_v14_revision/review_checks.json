@@ -1,0 +1,157 @@
+{
+  "checked_at_IST": "2026-10-16T01:38:26.353650+05:30",
+  "scope": "Analytical toy checks, formula counts, and specification presence only",
+  "all_passed": true,
+  "checks": {
+    "parameter_accounting": {
+      "passed": true,
+      "detail": {
+        "student": 6881071,
+        "removed": 91136,
+        "address_sites": 65884,
+        "prior": 33408,
+        "bridge": 66696,
+        "codec_trainable": 260608,
+        "codec_codebooks": 4096,
+        "ordinary_transformer": 6849984
+      }
+    },
+    "component_memory": {
+      "passed": true,
+      "detail": {
+        "M_MiB": 1.0,
+        "P_MiB": 0.125,
+        "joint_MiB": 2.0,
+        "naive_13_M_states_MiB": 13.0,
+        "not_total_peak_memory": true
+      }
+    },
+    "release_and_copy_baseline": {
+      "passed": true,
+      "detail": "Release at row 4g+3; forecasts cover the next four predictions; previous future labels are unavailable."
+    },
+    "partial_target_counts": {
+      "passed": true,
+      "detail": {
+        "cases": 28,
+        "examples": [
+          [
+            4,
+            3,
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            5,
+            3,
+            [
+              1,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            7,
+            3,
+            [
+              3,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            8,
+            3,
+            [
+              4,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            8,
+            7,
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            15,
+            3,
+            [
+              4,
+              4,
+              3,
+              0
+            ]
+          ]
+        ]
+      }
+    },
+    "correlated_alternatives": {
+      "passed": true,
+      "detail": {
+        "conditional_cross_pair_mass": 1e-06,
+        "independent_marginal_cross_pair_mass": 0.5
+      }
+    },
+    "joint_top_four_and_tail": {
+      "passed": true,
+      "detail": {
+        "retained_mass": 0.012932014168615804,
+        "tail_mass": 0.9870679858313842,
+        "selection": [
+          [
+            26,
+            8
+          ],
+          [
+            26,
+            26
+          ],
+          [
+            26,
+            0
+          ],
+          [
+            13,
+            11
+          ]
+        ]
+      }
+    },
+    "delta_homogeneous_transition": {
+      "passed": true,
+      "detail": {
+        "max_norm_ratio": 0.9999991862075956,
+        "scope": "Fixed addresses, zero incoming value; not a full network stability test"
+      }
+    },
+    "rls_equals_direct_ridge": {
+      "passed": true,
+      "detail": {
+        "steps": 32,
+        "max_abs_error": 3.3306690738754696e-16,
+        "minimum_denominator": 1.0309916953563438
+      }
+    },
+    "document_completeness": {
+      "passed": true,
+      "detail": {
+        "lines": 521,
+        "words": 9241,
+        "spec_sha256": "22949d45d45e701a47dfd002f924cf5962fb7ccbec1e6775d170a9ee5f0abc91"
+      }
+    }
+  }
+}
