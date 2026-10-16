@@ -1,0 +1,70 @@
+params 6,807,755 (twin 3,479,720); budget 11.0 h; B 8 x 1024; ckpt off
+W1015 13:50:23.319000 40987 site-packages/torch/_inductor/utils.py:1679] [1/0] Not enough SMs to use max_autotune_gemm mode
+/opt/anaconda3/lib/python3.12/site-packages/torch/_inductor/lowering.py:1904: FutureWarning: `torch._prims_common.check` is deprecated and will be removed in the future. Please use `torch._check*` functions instead.
+  check(
+non-finite grads: 0 [] ntp 7.761044979095459 ncp 13.938032150268555
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v14_tiny/train.py:244: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  beta=[round(float(x), 3) for x in model.beta.softmax(0)], tokens=state['tokens'],
+step 1 0.00h grid  ntp 7.761 ncp 13.94 acc1 a/b 0.04/0.03 cc 0.10/0.05 sig 0.1256/0.0759/0.6526 lam 0.000 87 tok/s 89.276s/step wait 5.58s mem 7.85GB
+non-finite grads: 0 [] ntp 11.220484733581543 ncp 14.050507545471191
+step 2 0.02h prog  ntp 11.220 ncp 14.05 acc1 a/b 0.02/0.01 cc 0.19/0.13 sig 0.0752/0.0815/0.6505 lam 0.002 4195 tok/s 1.943s/step wait 0.001s mem 8.15GB
+step 3 0.03h state ntp 11.404 ncp 14.11 acc1 a/b 0.01/0.01 cc 0.20/0.15 sig 0.0774/0.0795/0.6501 lam 0.002 960 tok/s 8.263s/step wait 0.0s mem 10.89GB
+step 4 0.03h plan  ntp 8.036 ncp 14.29 acc1 a/b 0.00/0.02 cc 0.56/0.23 sig 0.1528/0.0931/0.6472 lam 0.003 4562 tok/s 1.773s/step wait 0.007s mem 10.63GB
+step 5 0.03h text  ntp 11.177 ncp 14.10 acc1 a/b 0.01/0.01 cc 0.18/0.09 sig 0.0665/0.0719/0.6519 lam 0.003 4101 tok/s 1.634s/step wait 0.009s mem 10.63GB
+step 6 0.03h grid  ntp 7.736 ncp 13.94 acc1 a/b 0.05/0.03 cc 0.09/0.04 sig 0.1242/0.0738/0.6533 lam 0.003 4967 tok/s 1.614s/step wait 0.005s mem 10.63GB
+step 7 0.03h state ntp 11.412 ncp 14.12 acc1 a/b 0.01/0.02 cc 0.21/0.13 sig 0.0762/0.0780/0.6505 lam 0.003 4985 tok/s 1.608s/step wait 0.002s mem 10.63GB
+step 8 0.03h plan  ntp 8.093 ncp 14.29 acc1 a/b 0.00/0.02 cc 0.53/0.23 sig 0.1398/0.0923/0.6474 lam 0.003 4970 tok/s 1.613s/step wait 0.001s mem 10.63GB
+step 9 0.03h prog  ntp 11.149 ncp 14.02 acc1 a/b 0.01/0.02 cc 0.19/0.11 sig 0.0758/0.0806/0.6507 lam 0.003 4954 tok/s 1.647s/step wait 0.001s mem 10.63GB
+step 10 0.03h text  ntp 11.184 ncp 14.06 acc1 a/b 0.01/0.02 cc 0.16/0.09 sig 0.0668/0.0695/0.6526 lam 0.003 4173 tok/s 1.632s/step wait 0.003s mem 10.63GB
+step 11 0.03h grid  ntp 7.326 ncp 13.93 acc1 a/b 0.05/0.03 cc 0.08/0.04 sig 0.1308/0.0740/0.6532 lam 0.003 4820 tok/s 1.637s/step wait 0.007s mem 10.63GB
+step 12 0.03h state ntp 11.318 ncp 14.05 acc1 a/b 0.01/0.02 cc 0.22/0.12 sig 0.0774/0.0780/0.6505 lam 0.003 4929 tok/s 1.615s/step wait 0.002s mem 10.63GB
+step 13 0.03h plan  ntp 7.931 ncp 14.27 acc1 a/b 0.00/0.02 cc 0.51/0.20 sig 0.1359/0.0894/0.6482 lam 0.003 5020 tok/s 1.608s/step wait 0.006s mem 10.63GB
+step 14 0.03h prog  ntp 11.037 ncp 13.96 acc1 a/b 0.01/0.02 cc 0.19/0.11 sig 0.0757/0.0816/0.6505 lam 0.003 4882 tok/s 1.668s/step wait 0.001s mem 10.63GB
+step 15 0.03h grid  ntp 7.210 ncp 13.90 acc1 a/b 0.05/0.02 cc 0.10/0.05 sig 0.1213/0.0784/0.6514 lam 0.003 4418 tok/s 1.762s/step wait 0.027s mem 10.63GB
+step 16 0.03h state ntp 11.166 ncp 13.98 acc1 a/b 0.01/0.01 cc 0.18/0.11 sig 0.0750/0.0782/0.6505 lam 0.003 4810 tok/s 1.666s/step wait 0.001s mem 10.63GB
+step 17 0.03h plan  ntp 7.590 ncp 14.21 acc1 a/b 0.00/0.02 cc 0.49/0.19 sig 0.1406/0.0908/0.6478 lam 0.003 4891 tok/s 1.646s/step wait 0.001s mem 10.63GB
+step 18 0.03h prog  ntp 10.945 ncp 13.87 acc1 a/b 0.02/0.02 cc 0.17/0.11 sig 0.0759/0.0824/0.6505 lam 0.003 4938 tok/s 1.653s/step wait 0.001s mem 10.63GB
+step 19 0.03h text  ntp 11.167 ncp 13.88 acc1 a/b 0.01/0.03 cc 0.15/0.07 sig 0.0663/0.0708/0.6523 lam 0.003 4632 tok/s 1.598s/step wait 0.002s mem 10.63GB
+step 20 0.04h grid  ntp 7.152 ncp 13.85 acc1 a/b 0.06/0.02 cc 0.10/0.05 sig 0.1229/0.0758/0.6523 lam 0.003 4676 tok/s 1.654s/step wait 0.001s mem 10.63GB
+step 21 0.04h state ntp 10.927 ncp 13.82 acc1 a/b 0.01/0.02 cc 0.20/0.12 sig 0.0771/0.0786/0.6504 lam 0.003 4687 tok/s 1.712s/step wait 0.001s mem 10.63GB
+step 22 0.04h plan  ntp 7.554 ncp 14.08 acc1 a/b 0.00/0.02 cc 0.50/0.17 sig 0.1389/0.0918/0.6476 lam 0.003 4631 tok/s 1.766s/step wait 0.001s mem 10.63GB
+step 23 0.04h prog  ntp 10.717 ncp 13.72 acc1 a/b 0.04/0.02 cc 0.16/0.10 sig 0.0755/0.0808/0.6509 lam 0.003 4650 tok/s 1.757s/step wait 0.001s mem 10.63GB
+step 24 0.04h grid  ntp 7.161 ncp 13.82 acc1 a/b 0.07/0.04 cc 0.10/0.04 sig 0.1251/0.0766/0.6522 lam 0.003 4643 tok/s 1.693s/step wait 0.001s mem 10.63GB
+step 25 0.04h state ntp 10.535 ncp 13.67 acc1 a/b 0.03/0.04 cc 0.19/0.11 sig 0.0763/0.0793/0.6502 lam 0.003 4813 tok/s 1.667s/step wait 0.0s mem 10.63GB
+step 26 0.04h plan  ntp 7.560 ncp 13.92 acc1 a/b 0.00/0.03 cc 0.48/0.16 sig 0.1371/0.0906/0.6479 lam 0.003 4810 tok/s 1.669s/step wait 0.001s mem 10.63GB
+step 27 0.04h prog  ntp 10.364 ncp 13.61 acc1 a/b 0.06/0.03 cc 0.19/0.09 sig 0.0752/0.0826/0.6502 lam 0.003 4927 tok/s 1.659s/step wait 0.001s mem 10.63GB
+step 28 0.04h grid  ntp 6.473 ncp 13.78 acc1 a/b 0.05/0.07 cc 0.10/0.05 sig 0.1165/0.0752/0.6528 lam 0.004 4601 tok/s 1.683s/step wait 0.001s mem 10.63GB
+step 29 0.04h state ntp 10.152 ncp 13.51 acc1 a/b 0.09/0.06 cc 0.19/0.11 sig 0.0775/0.0792/0.6502 lam 0.004 4808 tok/s 1.655s/step wait 0.001s mem 10.63GB
+step 30 0.04h plan  ntp 6.972 ncp 13.74 acc1 a/b 0.01/0.03 cc 0.48/0.17 sig 0.1380/0.0925/0.6474 lam 0.004 4562 tok/s 1.766s/step wait 0.001s mem 10.63GB
+step 31 0.04h prog  ntp 9.787 ncp 13.46 acc1 a/b 0.10/0.05 cc 0.17/0.09 sig 0.0738/0.0847/0.6496 lam 0.004 3031 tok/s 2.688s/step wait 0.002s mem 10.63GB
+step 32 0.04h text  ntp 10.833 ncp 13.42 acc1 a/b 0.12/0.09 cc 0.14/0.06 sig 0.0668/0.0722/0.6518 lam 0.004 3566 tok/s 1.878s/step wait 0.023s mem 10.63GB
+step 33 0.04h grid  ntp 6.341 ncp 13.73 acc1 a/b 0.04/0.09 cc 0.10/0.04 sig 0.1114/0.0783/0.6515 lam 0.004 4125 tok/s 1.889s/step wait 0.01s mem 10.63GB
+step 34 0.04h state ntp 9.149 ncp 13.31 acc1 a/b 0.17/0.11 cc 0.17/0.10 sig 0.0750/0.0810/0.6497 lam 0.004 4873 tok/s 1.664s/step wait 0.001s mem 10.63GB
+step 35 0.04h plan  ntp 5.811 ncp 13.52 acc1 a/b 0.04/0.24 cc 0.48/0.18 sig 0.1346/0.0937/0.6471 lam 0.004 4893 tok/s 1.655s/step wait 0.001s mem 10.63GB
+step 36 0.04h prog  ntp 8.757 ncp 13.30 acc1 a/b 0.12/0.11 cc 0.19/0.09 sig 0.0742/0.0823/0.6503 lam 0.004 4159 tok/s 1.969s/step wait 0.001s mem 10.63GB
+step 37 0.04h grid  ntp 5.811 ncp 13.69 acc1 a/b 0.03/0.15 cc 0.10/0.04 sig 0.1214/0.0804/0.6509 lam 0.004 4086 tok/s 1.907s/step wait 0.001s mem 10.63GB
+step 38 0.04h state ntp 8.005 ncp 13.13 acc1 a/b 0.22/0.19 cc 0.18/0.10 sig 0.0761/0.0803/0.6499 lam 0.004 4600 tok/s 1.758s/step wait 0.001s mem 10.63GB
+step 39 0.04h plan  ntp 5.079 ncp 13.32 acc1 a/b 0.05/0.33 cc 0.47/0.16 sig 0.1308/0.0950/0.6468 lam 0.004 4444 tok/s 1.817s/step wait 0.001s mem 10.63GB
+step 40 0.05h prog  ntp 7.401 ncp 13.14 acc1 a/b 0.12/0.24 cc 0.17/0.08 sig 0.0715/0.0840/0.6498 lam 0.004 4560 tok/s 1.788s/step wait 0.001s mem 10.63GB
+step 41 0.05h text  ntp 9.838 ncp 13.09 acc1 a/b 0.19/0.20 cc 0.16/0.06 sig 0.0663/0.0737/0.6515 lam 0.004 4495 tok/s 1.691s/step wait 0.016s mem 10.63GB
+step 42 0.05h grid  ntp 5.011 ncp 13.64 acc1 a/b 0.03/0.16 cc 0.11/0.05 sig 0.1119/0.0789/0.6515 lam 0.004 4058 tok/s 1.896s/step wait 0.002s mem 10.63GB
+step 43 0.05h state ntp 6.514 ncp 12.95 acc1 a/b 0.24/0.26 cc 0.16/0.09 sig 0.0761/0.0818/0.6495 lam 0.004 4419 tok/s 1.804s/step wait 0.001s mem 10.63GB
+step 44 0.05h plan  ntp 4.207 ncp 13.11 acc1 a/b 0.05/0.32 cc 0.48/0.15 sig 0.1338/0.0955/0.6467 lam 0.004 4809 tok/s 1.679s/step wait 0.001s mem 10.63GB
+step 45 0.05h prog  ntp 6.272 ncp 13.02 acc1 a/b 0.14/0.23 cc 0.16/0.07 sig 0.0744/0.0843/0.6499 lam 0.004 4830 tok/s 1.686s/step wait 0.001s mem 10.63GB
+step 46 0.05h grid  ntp 4.601 ncp 13.54 acc1 a/b 0.02/0.18 cc 0.11/0.05 sig 0.1155/0.0861/0.6493 lam 0.004 4527 tok/s 1.739s/step wait 0.001s mem 10.63GB
+step 47 0.05h state ntp 5.784 ncp 12.82 acc1 a/b 0.27/0.26 cc 0.14/0.08 sig 0.0755/0.0821/0.6495 lam 0.004 4892 tok/s 1.647s/step wait 0.001s mem 10.63GB
+step 48 0.05h plan  ntp 4.112 ncp 12.93 acc1 a/b 0.05/0.28 cc 0.44/0.11 sig 0.1202/0.0981/0.6461 lam 0.004 4944 tok/s 1.624s/step wait 0.001s mem 10.63GB
+step 49 0.05h prog  ntp 5.360 ncp 12.86 acc1 a/b 0.13/0.24 cc 0.17/0.08 sig 0.0735/0.0859/0.6494 lam 0.004 4988 tok/s 1.636s/step wait 0.001s mem 10.63GB
+step 50 0.05h text  ntp 8.505 ncp 12.75 acc1 a/b 0.25/0.20 cc 0.14/0.05 sig 0.0652/0.0762/0.6507 lam 0.005 4111 tok/s 1.683s/step wait 0.02s mem 10.63GB
+step 51 0.05h grid  ntp 4.553 ncp 13.54 acc1 a/b 0.02/0.17 cc 0.12/0.05 sig 0.1127/0.0863/0.6493 lam 0.005 4694 tok/s 1.703s/step wait 0.001s mem 10.63GB
+step 52 0.05h state ntp 5.108 ncp 12.57 acc1 a/b 0.24/0.26 cc 0.15/0.08 sig 0.0750/0.0824/0.6494 lam 0.005 5010 tok/s 1.619s/step wait 0.001s mem 10.63GB
+step 53 0.05h plan  ntp 4.020 ncp 12.57 acc1 a/b 0.15/0.28 cc 0.46/0.11 sig 0.1175/0.0950/0.6468 lam 0.005 4375 tok/s 1.841s/step wait 0.001s mem 10.63GB
+step 54 0.05h prog  ntp 5.139 ncp 12.68 acc1 a/b 0.13/0.20 cc 0.16/0.06 sig 0.0721/0.0849/0.6498 lam 0.005 4575 tok/s 1.78s/step wait 0.001s mem 10.63GB
+step 55 0.05h grid  ntp 4.238 ncp 13.59 acc1 a/b 0.02/0.13 cc 0.07/0.03 sig 0.1070/0.0806/0.6509 lam 0.005 4373 tok/s 1.775s/step wait 0.004s mem 10.63GB
+step 56 0.05h state ntp 5.301 ncp 12.32 acc1 a/b 0.17/0.24 cc 0.13/0.08 sig 0.0745/0.0829/0.6493 lam 0.005 4858 tok/s 1.645s/step wait 0.001s mem 10.63GB
+step 57 0.05h plan  ntp 3.776 ncp 12.23 acc1 a/b 0.19/0.28 cc 0.46/0.10 sig 0.1114/0.0969/0.6463 lam 0.005 4724 tok/s 1.705s/step wait 0.001s mem 10.63GB
+step 58 0.05h prog  ntp 5.129 ncp 12.40 acc1 a/b 0.11/0.21 cc 0.17/0.06 sig 0.0715/0.0852/0.6497 lam 0.005 4824 tok/s 1.689s/step wait 0.001s mem 10.63GB
+step 59 0.05h text  ntp 8.362 ncp 12.18 acc1 a/b 0.18/0.20 cc 0.13/0.05 sig 0.0650/0.0745/0.6512 lam 0.005 4047 tok/s 1.698s/step wait 0.018s mem 10.63GB
+step 60 0.05h grid  ntp 4.065 ncp 13.41 acc1 a/b 0.01/0.16 cc 0.11/0.04 sig 0.1101/0.0835/0.6499 lam 0.005 4491 tok/s 1.763s/step wait 0.001s mem 10.63GB
+finished 60 steps 473,820 tokens

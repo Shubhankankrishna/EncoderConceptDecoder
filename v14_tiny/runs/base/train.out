@@ -1,0 +1,334 @@
+params 6,807,755 (twin 3,479,720); budget 11.0 h; B 8 x 1024; ckpt on
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v14_tiny/train.py:244: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  beta=[round(float(x), 3) for x in model.beta.softmax(0)], tokens=state['tokens'],
+step 1 0.00h grid  ntp 7.761 ncp 13.94 acc1 a/b 0.04/0.03 cc 0.10/0.05 sig 0.1256/0.0759/0.6526 lam 0.000 236 tok/s 33.004s/step wait 7.895s mem 4.51GB
+step 2 0.01h prog  ntp 11.220 ncp 14.06 acc1 a/b 0.02/0.01 cc 0.19/0.13 sig 0.0752/0.0815/0.6505 lam 0.001 4411 tok/s 1.848s/step wait 0.0s mem 4.71GB
+step 3 0.01h state ntp 11.404 ncp 14.11 acc1 a/b 0.01/0.01 cc 0.20/0.15 sig 0.0774/0.0795/0.6501 lam 0.001 4049 tok/s 1.96s/step wait 0.0s mem 4.71GB
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v14_tiny/train.py", line 282, in <module>
+    main()
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v14_tiny/train.py", line 220, in main
+    ok = maps.solve(state['step'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v14_tiny/v14.py", line 312, in solve
+    A = self.A.double().cpu(); Bm = self.Bm.double().cpu()
+        ^^^^^^^^^^^^^^^
+TypeError: Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.
+params 6,807,755 (twin 3,479,720); budget 11.0 h; B 8 x 1024; ckpt on
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v14_tiny/train.py:244: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  beta=[round(float(x), 3) for x in model.beta.softmax(0)], tokens=state['tokens'],
+step 1 0.00h grid  ntp 7.761 ncp 13.94 acc1 a/b 0.04/0.03 cc 0.10/0.05 sig 0.1256/0.0759/0.6526 lam 0.000 242 tok/s 32.168s/step wait 6.314s mem 4.51GB
+step 2 0.01h prog  ntp 11.220 ncp 14.06 acc1 a/b 0.02/0.01 cc 0.19/0.13 sig 0.0752/0.0815/0.6505 lam 0.001 4436 tok/s 1.838s/step wait 0.001s mem 4.71GB
+step 3 0.01h state ntp 11.404 ncp 14.11 acc1 a/b 0.01/0.01 cc 0.20/0.15 sig 0.0774/0.0795/0.6501 lam 0.001 4357 tok/s 1.821s/step wait 0.0s mem 4.71GB
+Process SpawnPoolWorker-2:
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 420, in _send_bytes
+    self._send(header)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+/opt/anaconda3/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 7 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+params 6,807,755 (twin 3,479,720); budget 11.0 h; B 8 x 1024; ckpt on
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v14_tiny/train.py:244: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  beta=[round(float(x), 3) for x in model.beta.softmax(0)], tokens=state['tokens'],
+step 1 0.00h grid  ntp 7.761 ncp 13.94 acc1 a/b 0.04/0.03 cc 0.10/0.05 sig 0.1256/0.0759/0.6526 lam 0.000 263 tok/s 29.616s/step wait 5.515s mem 4.51GB
+step 2 0.01h prog  ntp 11.220 ncp 14.06 acc1 a/b 0.02/0.01 cc 0.19/0.13 sig 0.0752/0.0815/0.6505 lam 0.001 4493 tok/s 1.815s/step wait 0.0s mem 4.71GB
+step 3 0.01h state ntp 11.404 ncp 14.11 acc1 a/b 0.01/0.01 cc 0.20/0.15 sig 0.0774/0.0795/0.6501 lam 0.001 4361 tok/s 1.82s/step wait 0.0s mem 4.71GB
+step 200 0.16h prog  ntp 1.961 ncp 10.93 acc1 a/b 0.17/0.13 cc 0.14/0.02 sig 0.0219/0.0325/0.6754 lam 0.014 2493 tok/s 3.173s/step wait 0.001s mem 4.71GB
+step 400 0.32h grid  ntp 0.624 ncp 11.78 acc1 a/b 0.16/0.11 cc 0.09/0.03 sig 0.0206/0.0273/0.6823 lam 0.029 2687 tok/s 2.946s/step wait 0.001s mem 4.71GB
+step 600 0.46h state ntp 0.442 ncp 11.56 acc1 a/b 0.14/0.08 cc 0.05/0.01 sig 0.0055/0.0224/0.6771 lam 0.042 2952 tok/s 2.677s/step wait 0.001s mem 4.71GB
+step 800 0.61h grid  ntp 0.427 ncp 11.33 acc1 a/b 0.15/0.10 cc 0.08/0.02 sig 0.0115/0.0194/0.6819 lam 0.055 3069 tok/s 2.568s/step wait 0.001s mem 4.71GB
+step 1000 0.75h prog  ntp 0.609 ncp 11.49 acc1 a/b 0.14/0.07 cc 0.11/0.02 sig 0.0046/0.0182/0.6814 lam 0.068 3345 tok/s 2.351s/step wait 0.001s mem 4.71GB
+step 1200 0.89h state ntp 0.390 ncp 12.05 acc1 a/b 0.12/0.06 cc 0.05/0.01 sig 0.0038/0.0163/0.6800 lam 0.081 3128 tok/s 2.519s/step wait 0.001s mem 4.71GB
+step 1400 1.03h grid  ntp 0.364 ncp 9.90 acc1 a/b 0.18/0.11 cc 0.12/0.02 sig 0.0072/0.0135/0.6823 lam 0.094 2936 tok/s 2.681s/step wait 0.001s mem 4.71GB
+step 1600 1.19h state ntp 0.458 ncp 12.27 acc1 a/b 0.11/0.06 cc 0.07/0.01 sig 0.0037/0.0129/0.6833 lam 0.100 2494 tok/s 3.154s/step wait 0.001s mem 5.12GB
+step 1800 1.37h state ntp 0.393 ncp 12.35 acc1 a/b 0.11/0.06 cc 0.07/0.01 sig 0.0033/0.0139/0.6813 lam 0.100 2403 tok/s 3.274s/step wait 0.002s mem 5.12GB
+step 2000 1.52h grid  ntp 0.363 ncp 9.90 acc1 a/b 0.17/0.11 cc 0.11/0.02 sig 0.0094/0.0123/0.6831 lam 0.100 2754 tok/s 2.848s/step wait 0.001s mem 5.4GB
+step 2200 1.69h state ntp 0.387 ncp 12.40 acc1 a/b 0.11/0.06 cc 0.07/0.00 sig 0.0034/0.0136/0.6814 lam 0.100 2725 tok/s 2.891s/step wait 0.003s mem 6.15GB
+step 2400 1.85h text  ntp 3.503 ncp 12.59 acc1 a/b 0.06/0.05 cc 0.04/0.01 sig 0.0031/0.0115/0.6824 lam 0.100 2638 tok/s 2.972s/step wait 0.003s mem 6.15GB
+step 2600 2.02h grid  ntp 0.327 ncp 9.52 acc1 a/b 0.19/0.12 cc 0.12/0.02 sig 0.0059/0.0146/0.6804 lam 0.100 2949 tok/s 2.669s/step wait 0.002s mem 6.21GB
+step 2800 2.18h state ntp 0.419 ncp 12.32 acc1 a/b 0.10/0.06 cc 0.08/0.00 sig 0.0032/0.0155/0.6790 lam 0.100 2754 tok/s 2.854s/step wait 0.002s mem 6.21GB
+step 3000 2.33h prog  ntp 0.672 ncp 11.98 acc1 a/b 0.12/0.06 cc 0.10/0.01 sig 0.0025/0.0126/0.6821 lam 0.100 3348 tok/s 2.352s/step wait 0.001s mem 7.76GB
+step 3200 2.45h state ntp 0.334 ncp 12.15 acc1 a/b 0.13/0.06 cc 0.07/0.00 sig 0.0028/0.0127/0.6808 lam 0.100 3460 tok/s 2.269s/step wait 0.002s mem 7.28GB
+step 3400 2.60h text  ntp 3.382 ncp 12.91 acc1 a/b 0.07/0.05 cc 0.04/0.00 sig 0.0020/0.0123/0.6809 lam 0.100 2623 tok/s 2.998s/step wait 0.004s mem 7.28GB
+step 3600 2.77h state ntp 0.381 ncp 12.39 acc1 a/b 0.12/0.06 cc 0.08/0.00 sig 0.0028/0.0120/0.6817 lam 0.100 2701 tok/s 2.913s/step wait 0.005s mem 7.35GB
+step 3800 2.94h text  ntp 3.047 ncp 12.20 acc1 a/b 0.06/0.05 cc 0.04/0.00 sig 0.0020/0.0079/0.6856 lam 0.100 2989 tok/s 2.63s/step wait 0.003s mem 7.35GB
+step 4000 3.07h grid  ntp 0.315 ncp 9.41 acc1 a/b 0.19/0.11 cc 0.13/0.01 sig 0.0062/0.0140/0.6803 lam 0.100 3176 tok/s 2.481s/step wait 0.002s mem 8.65GB
+step 4200 3.20h state ntp 0.350 ncp 12.19 acc1 a/b 0.11/0.07 cc 0.08/0.00 sig 0.0025/0.0122/0.6815 lam 0.100 3386 tok/s 2.32s/step wait 0.003s mem 8.42GB
+step 4400 3.33h text  ntp 3.085 ncp 12.03 acc1 a/b 0.06/0.05 cc 0.05/0.00 sig 0.0023/0.0069/0.6872 lam 0.100 3277 tok/s 2.384s/step wait 0.003s mem 8.42GB
+step 4600 3.47h prog  ntp 0.689 ncp 11.94 acc1 a/b 0.14/0.06 cc 0.12/0.01 sig 0.0021/0.0150/0.6792 lam 0.100 3012 tok/s 2.582s/step wait 0.004s mem 8.49GB
+step 4800 3.61h state ntp 0.318 ncp 12.25 acc1 a/b 0.12/0.06 cc 0.08/0.00 sig 0.0021/0.0122/0.6811 lam 0.100 3146 tok/s 2.495s/step wait 0.004s mem 8.49GB
+step 5000 3.77h grid  ntp 0.305 ncp 9.28 acc1 a/b 0.19/0.11 cc 0.14/0.01 sig 0.0068/0.0134/0.6805 lam 0.100 2624 tok/s 2.982s/step wait 0.003s mem 9.83GB
+step 5200 3.93h plan  ntp 0.503 ncp 10.15 acc1 a/b 0.20/0.09 cc 0.12/0.01 sig 0.0044/0.0124/0.6822 lam 0.100 2358 tok/s 3.325s/step wait 0.004s mem 9.6GB
+step 5400 4.07h text  ntp 3.091 ncp 12.82 acc1 a/b 0.07/0.06 cc 0.04/0.00 sig 0.0018/0.0083/0.6848 lam 0.100 3070 tok/s 2.557s/step wait 0.004s mem 9.6GB
+step 5600 4.23h prog  ntp 0.616 ncp 11.95 acc1 a/b 0.13/0.06 cc 0.13/0.01 sig 0.0020/0.0152/0.6788 lam 0.100 3175 tok/s 2.466s/step wait 0.004s mem 9.67GB
+step 5800 4.37h state ntp 0.308 ncp 12.15 acc1 a/b 0.12/0.07 cc 0.09/0.00 sig 0.0022/0.0132/0.6801 lam 0.100 3107 tok/s 2.531s/step wait 0.004s mem 9.67GB
+step 6000 4.51h grid  ntp 0.229 ncp 8.02 acc1 a/b 0.22/0.14 cc 0.11/0.01 sig 0.0079/0.0158/0.6783 lam 0.100 2443 tok/s 3.195s/step wait 0.004s mem 10.88GB
+step 6200 4.68h text  ntp 2.850 ncp 13.00 acc1 a/b 0.06/0.05 cc 0.04/0.00 sig 0.0017/0.0084/0.6846 lam 0.100 2548 tok/s 3.06s/step wait 0.006s mem 10.78GB
+step 6400 4.81h state ntp 0.294 ncp 11.98 acc1 a/b 0.11/0.07 cc 0.07/0.00 sig 0.0017/0.0119/0.6811 lam 0.100 2470 tok/s 3.158s/step wait 0.006s mem 10.78GB
+step 6600 4.95h plan  ntp 0.359 ncp 9.87 acc1 a/b 0.21/0.09 cc 0.15/0.01 sig 0.0039/0.0139/0.6801 lam 0.100 3534 tok/s 2.217s/step wait 0.003s mem 10.85GB
+step 6800 5.08h plan  ntp 0.368 ncp 9.88 acc1 a/b 0.21/0.09 cc 0.14/0.01 sig 0.0049/0.0135/0.6804 lam 0.100 3346 tok/s 2.328s/step wait 0.004s mem 10.85GB
+step 7000 5.21h prog  ntp 0.571 ncp 11.84 acc1 a/b 0.14/0.07 cc 0.13/0.01 sig 0.0017/0.0134/0.6800 lam 0.100 3023 tok/s 2.585s/step wait 0.005s mem 12.18GB
+step 7200 5.37h grid  ntp 0.244 ncp 8.86 acc1 a/b 0.21/0.12 cc 0.12/0.01 sig 0.0053/0.0146/0.6789 lam 0.100 2745 tok/s 2.859s/step wait 0.004s mem 12.07GB
+step 7400 5.54h state ntp 0.228 ncp 11.87 acc1 a/b 0.12/0.09 cc 0.08/0.00 sig 0.0018/0.0123/0.6808 lam 0.100 2373 tok/s 3.296s/step wait 0.012s mem 12.07GB
+step 7600 5.83h prog  ntp 0.615 ncp 11.91 acc1 a/b 0.13/0.07 cc 0.12/0.01 sig 0.0016/0.0150/0.6789 lam 0.100 794 tok/s 9.842s/step wait 0.035s mem 12.03GB
+step 7800 6.17h text  ntp 2.825 ncp 12.47 acc1 a/b 0.06/0.05 cc 0.04/0.00 sig 0.0014/0.0087/0.6841 lam 0.100 2417 tok/s 3.234s/step wait 0.007s mem 12.15GB
+step 8000 6.36h state ntp 0.295 ncp 12.01 acc1 a/b 0.11/0.08 cc 0.08/0.00 sig 0.0019/0.0129/0.6802 lam 0.100 1422 tok/s 5.525s/step wait 0.016s mem 13.39GB
+step 8200 7.16h prog  ntp 0.507 ncp 11.82 acc1 a/b 0.13/0.07 cc 0.12/0.01 sig 0.0015/0.0125/0.6810 lam 0.100 865 tok/s 9.076s/step wait 0.046s mem 13.28GB
+step 8400 7.64h text  ntp 2.722 ncp 11.96 acc1 a/b 0.06/0.06 cc 0.04/0.00 sig 0.0014/0.0098/0.6827 lam 0.100 1091 tok/s 7.159s/step wait 0.04s mem 13.16GB
+Process SpawnPoolWorker-5:
+Process SpawnPoolWorker-2:
+Process SpawnPoolWorker-3:
+Process SpawnPoolWorker-4:
+Process SpawnPoolWorker-1:
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 420, in _send_bytes
+    self._send(header)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 420, in _send_bytes
+    self._send(header)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 420, in _send_bytes
+    self._send(header)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 420, in _send_bytes
+    self._send(header)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 420, in _send_bytes
+    self._send(header)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/opt/anaconda3/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+/opt/anaconda3/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 7 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+resumed at step 8434, elapsed 8.04 h
+params 6,807,755 (twin 3,479,720); budget 11.0 h; B 8 x 1024; ckpt on
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v14_tiny/train.py:254: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  beta=[round(float(x), 3) for x in model.beta.softmax(0)], tokens=state['tokens'],
+step 8600 8.15h plan  ntp 0.211 ncp 9.59 acc1 a/b 0.22/0.10 cc 0.15/0.01 sig 0.0037/0.0120/0.6816 lam 0.100 3143 tok/s 2.494s/step wait 0.001s mem 5.18GB
+step 8740: twin, normaliser, codebook and residue maps frozen (t = 0.750)
+step 8800 8.29h plan  ntp 0.230 ncp 9.75 acc1 a/b 0.22/0.09 cc 0.15/0.01 sig 0.0033/0.0118/0.6816 lam 0.100 3147 tok/s 2.485s/step wait 0.0s mem 5.18GB
+step 9000 8.43h state ntp 0.286 ncp 11.88 acc1 a/b 0.11/0.08 cc 0.07/0.00 sig 0.0019/0.0120/0.6808 lam 0.100 3610 tok/s 2.175s/step wait 0.0s mem 5.75GB
+step 9200 8.56h grid  ntp 0.229 ncp 7.78 acc1 a/b 0.23/0.15 cc 0.14/0.01 sig 0.0041/0.0148/0.6788 lam 0.100 3478 tok/s 2.244s/step wait 0.001s mem 6.21GB
+step 9400 8.69h state ntp 0.295 ncp 11.72 acc1 a/b 0.12/0.08 cc 0.07/0.00 sig 0.0018/0.0122/0.6807 lam 0.100 3128 tok/s 2.505s/step wait 0.001s mem 6.21GB
+step 9600 8.82h state ntp 0.285 ncp 11.86 acc1 a/b 0.12/0.08 cc 0.08/0.00 sig 0.0017/0.0124/0.6804 lam 0.100 3716 tok/s 2.1s/step wait 0.001s mem 6.27GB
+step 9800 8.94h prog  ntp 0.489 ncp 11.73 acc1 a/b 0.13/0.07 cc 0.12/0.00 sig 0.0017/0.0124/0.6810 lam 0.100 3831 tok/s 2.052s/step wait 0.0s mem 6.27GB
+step 10000 9.05h state ntp 0.244 ncp 11.84 acc1 a/b 0.11/0.08 cc 0.07/0.00 sig 0.0017/0.0131/0.6799 lam 0.100 3467 tok/s 2.266s/step wait 0.001s mem 7.82GB
+step 10200 9.19h plan  ntp 0.201 ncp 9.57 acc1 a/b 0.22/0.10 cc 0.15/0.01 sig 0.0042/0.0122/0.6813 lam 0.100 3201 tok/s 2.443s/step wait 0.002s mem 7.34GB
+step 10400 9.31h plan  ntp 0.191 ncp 9.64 acc1 a/b 0.22/0.09 cc 0.16/0.01 sig 0.0035/0.0112/0.6820 lam 0.100 3798 tok/s 2.068s/step wait 0.001s mem 7.34GB
+step 10600 9.43h state ntp 0.266 ncp 11.73 acc1 a/b 0.13/0.08 cc 0.08/0.00 sig 0.0017/0.0127/0.6802 lam 0.100 3781 tok/s 2.078s/step wait 0.001s mem 7.42GB
+step 10800 9.56h grid  ntp 0.205 ncp 8.37 acc1 a/b 0.21/0.13 cc 0.14/0.01 sig 0.0042/0.0123/0.6810 lam 0.100 3716 tok/s 2.101s/step wait 0.001s mem 7.42GB
+step 11000: MPS cache maintenance 8.72 -> 7.69 GB (live tensors 3.79 GB)
+step 11000 9.68h grid  ntp 0.196 ncp 8.41 acc1 a/b 0.22/0.14 cc 0.13/0.01 sig 0.0045/0.0103/0.6829 lam 0.100 3037 tok/s 2.584s/step wait 0.001s mem 7.7GB
+step 11100: MPS cache maintenance 8.45 -> 7.44 GB (live tensors 3.79 GB)
+step 11100: non-finite gradient in 558 tensors ['s0', 'e_r', 'src_norm', 'beta', 'e_h', 'emb.weight']; update skipped
+step 11200: MPS cache maintenance 8.45 -> 7.45 GB (live tensors 3.79 GB)
+step 11200 9.81h text  ntp 2.717 ncp 12.13 acc1 a/b 0.07/0.06 cc 0.05/0.00 sig 0.0012/0.0096/0.6828 lam 0.100 3370 tok/s 2.318s/step wait 0.002s mem 7.45GB
+step 11300: MPS cache maintenance 8.45 -> 7.45 GB (live tensors 3.79 GB)
+step 11400: MPS cache maintenance 8.45 -> 7.45 GB (live tensors 3.79 GB)
+step 11400 9.94h grid  ntp 0.215 ncp 7.81 acc1 a/b 0.22/0.15 cc 0.12/0.01 sig 0.0045/0.0129/0.6802 lam 0.100 3095 tok/s 2.534s/step wait 0.002s mem 7.45GB
+step 11500: MPS cache maintenance 8.82 -> 7.70 GB (live tensors 4.32 GB)
+step 11600: MPS cache maintenance 8.48 -> 7.45 GB (live tensors 4.32 GB)
+step 11600 10.05h state ntp 0.251 ncp 11.65 acc1 a/b 0.12/0.09 cc 0.08/0.00 sig 0.0017/0.0133/0.6796 lam 0.100 3863 tok/s 2.027s/step wait 0.002s mem 7.46GB
+step 11700: MPS cache maintenance 8.47 -> 7.45 GB (live tensors 4.32 GB)
+step 11800: MPS cache maintenance 8.47 -> 7.45 GB (live tensors 4.32 GB)
+step 11800 10.18h plan  ntp 0.192 ncp 9.38 acc1 a/b 0.23/0.10 cc 0.16/0.01 sig 0.0030/0.0122/0.6809 lam 0.100 2981 tok/s 2.625s/step wait 0.002s mem 7.45GB
+step 11900: MPS cache maintenance 8.47 -> 7.45 GB (live tensors 4.32 GB)
+step 12000: MPS cache maintenance 10.15 -> 8.99 GB (live tensors 4.84 GB)
+step 12000 10.33h prog  ntp 0.424 ncp 11.71 acc1 a/b 0.13/0.08 cc 0.11/0.01 sig 0.0016/0.0126/0.6806 lam 0.100 3361 tok/s 2.338s/step wait 0.002s mem 8.99GB
+step 12100: MPS cache maintenance 9.53 -> 8.49 GB (live tensors 4.84 GB)
+step 12200: MPS cache maintenance 9.53 -> 8.49 GB (live tensors 4.84 GB)
+step 12200 10.47h prog  ntp 0.439 ncp 11.64 acc1 a/b 0.14/0.08 cc 0.12/0.01 sig 0.0014/0.0124/0.6808 lam 0.100 2975 tok/s 2.62s/step wait 0.003s mem 8.5GB
+step 12300: MPS cache maintenance 9.53 -> 8.49 GB (live tensors 4.84 GB)
+step 12400: MPS cache maintenance 9.53 -> 8.50 GB (live tensors 4.84 GB)
+step 12400 10.60h plan  ntp 0.171 ncp 9.46 acc1 a/b 0.22/0.10 cc 0.15/0.01 sig 0.0031/0.0123/0.6809 lam 0.100 3563 tok/s 2.198s/step wait 0.003s mem 8.51GB
+step 12500: MPS cache maintenance 10.23 -> 8.80 GB (live tensors 5.37 GB)
+step 12600: MPS cache maintenance 9.60 -> 9.56 GB (live tensors 5.37 GB)
+step 12600 10.75h prog  ntp 0.434 ncp 11.60 acc1 a/b 0.14/0.08 cc 0.13/0.01 sig 0.0017/0.0131/0.6802 lam 0.100 3561 tok/s 2.21s/step wait 0.002s mem 9.56GB
+step 12700: MPS cache maintenance 9.60 -> 8.56 GB (live tensors 5.37 GB)
+step 12800: MPS cache maintenance 9.60 -> 8.56 GB (live tensors 5.37 GB)
+step 12800 10.87h text  ntp 2.763 ncp 11.36 acc1 a/b 0.07/0.06 cc 0.05/0.00 sig 0.0014/0.0098/0.6825 lam 0.100 3638 tok/s 2.147s/step wait 0.002s mem 8.56GB
+step 12900: MPS cache maintenance 9.60 -> 8.56 GB (live tensors 5.37 GB)
+finished 12977 steps 101,816,716 tokens
