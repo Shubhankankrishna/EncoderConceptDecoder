@@ -1,0 +1,231 @@
+{
+  "captured_unix": 1791729330.7860942,
+  "scope": "train/dev only; no sealed test contents",
+  "manifest_sha256": "eaa15b5604c97015937a714d43d5fedb5485cb36748b81837fdb01d871874253",
+  "files": {
+    "v10/proposed_v10.md": "18311fc099711c27388e7d460695598f159dff0a57b1fa59c49f04037ea791cc",
+    "v10/V10_RCDL_Architecture_Reviewed.md": "ce6e45052ed921e55693ff60fd7d6675624cbc9564ee5bf68e250ba9405fe899",
+    "v10_10M/model.py": "46997b31a7f28fa7039f5ab84b96794914f9af7b18105cce419f46a39474b238",
+    "v10_10M/train.py": "8586cfea18af112ab26f78b45de09247ba4307fd9585bd860419ee27ea6b6999",
+    "v10_10M/memory.py": "7cda2f9be8c8d5c4308819aae16283c6db7936cd0ecd324b06955f328be17d61",
+    "v10_10M/data.py": "0d63b2c4a591d62c4000fefa5f7b08334b438faa8743b89fd68e54a65faccd65",
+    "v10_10M/data_tools/prepare_v2.py": "dfd3b7ac65e7b0ad0be75e0a2b7eb51ca17d27fc7846bac4de900fe99b84d134"
+  },
+  "active_source_sha256": "3cbaf426badbfc45f723431838c4f5340cbf7ce2c99f1a8438ed8e3b7152a0e9",
+  "attachment_sha256": "da5813d39386bba3ec4bdd7d4c94c2bd570158194bad623054bfd7be524add1d",
+  "families": {
+    "text_train": {
+      "records": 26998,
+      "tokens": 35167033,
+      "record_length_p0_p50_p95_p100": [
+        77.0,
+        752.0,
+        3823.149999999998,
+        130209.0
+      ],
+      "supervised_length_p0_p50_p95_p100": [
+        76.0,
+        751.0,
+        3822.149999999998,
+        130208.0
+      ],
+      "duplicate_identity_count": 0
+    },
+    "text_dev": {
+      "records": 1500,
+      "tokens": 1869839,
+      "record_length_p0_p50_p95_p100": [
+        85.0,
+        731.5,
+        4196.799999999998,
+        23693.0
+      ],
+      "supervised_length_p0_p50_p95_p100": [
+        84.0,
+        730.5,
+        4195.799999999998,
+        23692.0
+      ],
+      "duplicate_identity_count": 0
+    },
+    "math_train": {
+      "records": 239904,
+      "tokens": 10006501,
+      "record_length_p0_p50_p95_p100": [
+        21.0,
+        40.0,
+        62.0,
+        82.0
+      ],
+      "supervised_length_p0_p50_p95_p100": [
+        7.0,
+        9.0,
+        26.0,
+        36.0
+      ],
+      "duplicate_identity_count": 0,
+      "wrapped_answers": 239904,
+      "modules": {
+        "arithmetic__add_sub_multiple": 59995,
+        "arithmetic__mul": 59926,
+        "algebra__linear_1d": 59991,
+        "comparison__sort": 59992
+      },
+      "duplicate_clean_questions": 0,
+      "clean_answer_character_quantiles": [
+        1.0,
+        3.0,
+        22.0,
+        30.0
+      ],
+      "sampled_answer_tokens_wrapped_clean_mean": [
+        11.299583333333333,
+        7.2995833333333335
+      ],
+      "answer_token_comparison_sample_n": 2400
+    },
+    "math_dev": {
+      "records": 4037,
+      "tokens": 183851,
+      "record_length_p0_p50_p95_p100": [
+        28.0,
+        43.0,
+        66.0,
+        80.0
+      ],
+      "supervised_length_p0_p50_p95_p100": [
+        7.0,
+        8.0,
+        28.0,
+        35.0
+      ],
+      "duplicate_identity_count": 0,
+      "wrapped_answers": 4037,
+      "modules": {
+        "arithmetic__add_sub_multiple": 995,
+        "arithmetic__mul": 1016,
+        "algebra__linear_1d": 1035,
+        "comparison__sort": 991
+      },
+      "duplicate_clean_questions": 0,
+      "clean_answer_character_quantiles": [
+        1.0,
+        3.0,
+        25.0,
+        30.0
+      ],
+      "sampled_answer_tokens_wrapped_clean_mean": [
+        12.341463414634147,
+        8.341463414634147
+      ],
+      "answer_token_comparison_sample_n": 41
+    },
+    "sudoku_easy_train": {
+      "records": 12802,
+      "tokens": 2189142,
+      "record_length_p0_p50_p95_p100": [
+        171.0,
+        171.0,
+        171.0,
+        171.0
+      ],
+      "supervised_length_p0_p50_p95_p100": [
+        82.0,
+        82.0,
+        82.0,
+        82.0
+      ],
+      "duplicate_identity_count": 0,
+      "invalid_ground_truth": {},
+      "clues_p0_p50_p95_p100": [
+        17.0,
+        26.0,
+        34.0,
+        36.0
+      ]
+    },
+    "sudoku_easy_dev": {
+      "records": 292,
+      "tokens": 49932,
+      "record_length_p0_p50_p95_p100": [
+        171.0,
+        171.0,
+        171.0,
+        171.0
+      ],
+      "supervised_length_p0_p50_p95_p100": [
+        82.0,
+        82.0,
+        82.0,
+        82.0
+      ],
+      "duplicate_identity_count": 0,
+      "invalid_ground_truth": {},
+      "clues_p0_p50_p95_p100": [
+        17.0,
+        26.0,
+        34.0,
+        35.0
+      ]
+    },
+    "sudoku_hard_train": {
+      "records": 37198,
+      "tokens": 6360858,
+      "record_length_p0_p50_p95_p100": [
+        171.0,
+        171.0,
+        171.0,
+        171.0
+      ],
+      "supervised_length_p0_p50_p95_p100": [
+        82.0,
+        82.0,
+        82.0,
+        82.0
+      ],
+      "duplicate_identity_count": 0,
+      "invalid_ground_truth": {},
+      "clues_p0_p50_p95_p100": [
+        18.0,
+        25.0,
+        27.0,
+        28.0
+      ]
+    },
+    "sudoku_hard_dev": {
+      "records": 722,
+      "tokens": 123462,
+      "record_length_p0_p50_p95_p100": [
+        171.0,
+        171.0,
+        171.0,
+        171.0
+      ],
+      "supervised_length_p0_p50_p95_p100": [
+        82.0,
+        82.0,
+        82.0,
+        82.0
+      ],
+      "duplicate_identity_count": 0,
+      "invalid_ground_truth": {},
+      "clues_p0_p50_p95_p100": [
+        21.0,
+        25.0,
+        27.0,
+        28.0
+      ]
+    }
+  },
+  "exact_train_dev_identity_overlap": {
+    "text": 0,
+    "math": 0,
+    "sudoku_easy": 0,
+    "sudoku_hard": 0
+  },
+  "clean_math_train_dev_question_overlap": 0,
+  "limitations": [
+    "Exact identity checks do not establish semantic or Sudoku-isomorphism separation.",
+    "Answer-token comparison uses the active tokenizer on a deterministic every-100th-record sample, excludes EOS."
+  ]
+}

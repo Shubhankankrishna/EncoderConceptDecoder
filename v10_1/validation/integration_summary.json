@@ -1,0 +1,574 @@
+{
+  "manifest": {
+    "v10_1_source_sha256": "eff05193120f957f5ff6dc9654e9efda7734d8b6db7e9330cb95858a899856da",
+    "v10_source_sha256": "3cbaf426badbfc45f723431838c4f5340cbf7ce2c99f1a8438ed8e3b7152a0e9",
+    "active_data_manifest_sha256": "eaa15b5604c97015937a714d43d5fedb5485cb36748b81837fdb01d871874253",
+    "torch_version": "2.10.0",
+    "scope": "Integration smoke, not trained quality comparison; cleaned math with legacy tokenizer; no sealed test",
+    "device": "cpu",
+    "threads": 2,
+    "context": 192,
+    "batch_size": 2,
+    "steps_per_arm": 16,
+    "seeds": [
+      311
+    ],
+    "candidate_schedule": "Every fifth smoke step rotates across four test families; production specification is every fourth optimizer update",
+    "candidate_strategy": "detached scoring plus winning-branch recomputation",
+    "active_tokenizer_sha256": "95de470f001e1cf95e01262384d7fa0040857c043a0c4bd8548a0ac7d309e2fa",
+    "training_identities": {
+      "text": [
+        {
+          "index": 866,
+          "identity": "b1767ff3eb629278d194e5d91f2f86ff782f29c14d9c97ae420bcdaaeecacf4c"
+        },
+        {
+          "index": 1247,
+          "identity": "27eb99587397aef7824bd0edfb176a368d5c13f66147ff43b9c01c1bfa495271"
+        },
+        {
+          "index": 2119,
+          "identity": "f8d12926a8660ac6ca842fbef9d77dbf807b19d71df5adc8068c73430ace6439"
+        },
+        {
+          "index": 7530,
+          "identity": "398fcc875f637087241d7cd5e367f4a7c8176fd5aa456d1fda8877c3caab558e"
+        },
+        {
+          "index": 12470,
+          "identity": "db7b30f738d4968e84ea2aa212a7188badb129e1f5c14c1e8b64d29aeb29b902"
+        },
+        {
+          "index": 13126,
+          "identity": "342bb0026f3294c8b54331306d52a90907f6baf4ff0b778e6bb48432d95be0ab"
+        },
+        {
+          "index": 14196,
+          "identity": "725aacdebc702fc37abaf9e2216ea3bcee4cc95c57ffbbb3480ca379c3829722"
+        },
+        {
+          "index": 23519,
+          "identity": "f50027dda53f2d2d651e167435f2323359e444e001c92e398a85c8968a197ae7"
+        }
+      ],
+      "math": [
+        {
+          "index": 65441,
+          "identity": "c4de33dcd0b8c69673d3174554b3ccf788a9a831fc2c9c2a8e8fda10f0a05d08"
+        },
+        {
+          "index": 81655,
+          "identity": "78274ea5d3fbe274c934b7c1126acc6bca6f86e84b0dc85252a787f3df698a87"
+        },
+        {
+          "index": 91994,
+          "identity": "d7c1708851caf17c03ead9bc1e66d0d4b249e9e1e94d0534a4e732ded2a510e5"
+        },
+        {
+          "index": 125351,
+          "identity": "d8180c6875d31cb2f337a6c444691375ec3883caa96ab9f4b3f141ad1509fb84"
+        },
+        {
+          "index": 157045,
+          "identity": "73a00834dd97d1edd61236f6d63ed71f30fa124470d3ac69f965ead852f5f6c7"
+        },
+        {
+          "index": 157515,
+          "identity": "0d771e52e5f6b5286d674d849c2bafd6819e2f6d4c5cf4618ec46cee12971473"
+        },
+        {
+          "index": 163753,
+          "identity": "812c67bdc43d2a1245713535d04ca735a453a2d18f7753ec21ffa650c4bcde98"
+        },
+        {
+          "index": 213648,
+          "identity": "b4ce6a9b8163108aacceef2d4cd2a0ded50285b951d4617e8e902f8e25c81433"
+        }
+      ],
+      "sudoku_easy": [
+        {
+          "index": 882,
+          "identity": "d1115a747ae16fb7cc1620370e78bec117c901b8ba912286b6a37ca05a130ef6"
+        },
+        {
+          "index": 1564,
+          "identity": "74101c4e6d954cd0872fcc1a3bef4cb2f97fec6a2af29c0550828512f733e6e9"
+        },
+        {
+          "index": 3799,
+          "identity": "b6891583bb76452cd4a3b291538d5cd580c3717a71820696f8c01a110381a581"
+        },
+        {
+          "index": 4420,
+          "identity": "9a6bcba612f8b3356efd2e0f8570e3c39d606453be7940ff31700f8480d57665"
+        },
+        {
+          "index": 4676,
+          "identity": "6604d7365b2fe0b2605afff0541a1db3377f5cd9a1646c8a53f481a14975b049"
+        },
+        {
+          "index": 5564,
+          "identity": "646e99cb75cde0c1988e8fe9a30746af80c77664f81bf4440ba28914df6052de"
+        },
+        {
+          "index": 8170,
+          "identity": "28a3a8441d2b5957b76c2edd80ca3c0b67739026fc1a33e4615a347c0821dc9b"
+        },
+        {
+          "index": 11635,
+          "identity": "dd12ea0939809cf5ba22c1f247ab0362c7ad882ac2c48dbe458ca641f1f5f35f"
+        }
+      ],
+      "sudoku_hard": [
+        {
+          "index": 526,
+          "identity": "99c131277b3f97991b84109933f3cfa16772c4c15f65594d6710a7fb275c80e6"
+        },
+        {
+          "index": 16938,
+          "identity": "db3ed7d4fb8afc83368e613739825eedb8213d854cdf24ddd54decd223578520"
+        },
+        {
+          "index": 21978,
+          "identity": "d88978aa0c53147c299b89f67a08466353a753567da28baf409b7908fbdf7d01"
+        },
+        {
+          "index": 24277,
+          "identity": "711a8e395492681fdb3b101d2edf97ed4d1bf90755a5459901182ab90c124a9a"
+        },
+        {
+          "index": 26447,
+          "identity": "93f61911afc0647c046e61ca178dff4c0b8b087a82c1cc7ea4010367b3d9c374"
+        },
+        {
+          "index": 31835,
+          "identity": "31db667834c53a3590f3a5f3be8bc8e7e2033bd07e175139932e437e4ab43bfe"
+        },
+        {
+          "index": 33432,
+          "identity": "ae30ade8cd8163059ef0cf38c1da13a80b59885a861cacf8a9c1252c8f171171"
+        },
+        {
+          "index": 34396,
+          "identity": "d962006705e58040bc2eab84ce02524a4d479d47ec5d1c443fb07e74cd638742"
+        }
+      ]
+    },
+    "development_identities": {
+      "text": [
+        {
+          "index": 200,
+          "identity": "06b946efc8cddbf7a2695fc6d502026f95b67e477d05aafaddadb940707fe9c2"
+        },
+        {
+          "index": 636,
+          "identity": "cbeaa3fc1bd19acc4dab617a12decaba6f358171e670528a43c89c9d243cbfbe"
+        },
+        {
+          "index": 769,
+          "identity": "12bb58dc5afc65b1372d488d93f0edc6bd4d8926faebfe6555332437cc978e48"
+        },
+        {
+          "index": 1119,
+          "identity": "b28924a20d74b738a71e67e834d7d23944dae7200c99021896a9e804b4942793"
+        }
+      ],
+      "math": [
+        {
+          "index": 469,
+          "identity": "812e801d93e239a29d8fbc07244920936bb4e3e3f082ee6886a013a5edfea469"
+        },
+        {
+          "index": 798,
+          "identity": "f7075f2ff5a9eff7f1980bdf5ed9fcf18269409c5bf3cf7c7dd12f2270941de4"
+        },
+        {
+          "index": 1777,
+          "identity": "3fb019614a568881c970eb5b0b2838d2743f06eac7c6f035be9dda091f5771fa"
+        },
+        {
+          "index": 1886,
+          "identity": "c7ae0c3108fac204ff74c922cd252df49d53613d9ba66487f37f37df17b7bbc3"
+        }
+      ],
+      "sudoku_easy": [
+        {
+          "index": 30,
+          "identity": "fa8d0f334dec7fea1bea90dcea4771c6bcd5fd17a3db7ccb161cd47f95311e0b"
+        },
+        {
+          "index": 95,
+          "identity": "c3504eb9d0e2b54bb2e6fda85dcdb73134b533850277cd069097011c0654d298"
+        },
+        {
+          "index": 119,
+          "identity": "c98aad2f0c8332a0533c529cae8869713fbf9d42d918592578b4ad27f2d277bf"
+        },
+        {
+          "index": 171,
+          "identity": "34392a2b355fca47f2a349eb3f26fe226c92a1044a1b1fe6e5b9fcb05ca1156e"
+        }
+      ],
+      "sudoku_hard": [
+        {
+          "index": 153,
+          "identity": "9fdcf6012d83a0834797fb4647a95069a185941ab412097478d752e619b7daad"
+        },
+        {
+          "index": 499,
+          "identity": "02ab8063cdd2116d9609fec1f9d9bbd80186ee54f3c8202a83505c0258391092"
+        },
+        {
+          "index": 646,
+          "identity": "24dc8e1792230f97b3c7cc168e31cfa8f1fce67b12b8d0d0c653726b47833b71"
+        },
+        {
+          "index": 657,
+          "identity": "3711c1ef4a9f574ecc3f54ebcc3971ba3a59d8e36c275a6aefdeaec9cf85fec5"
+        }
+      ]
+    }
+  },
+  "arms": {
+    "A": {
+      "parameters": {
+        "dense": 5465890,
+        "engram": 20000320,
+        "total": 25466210,
+        "encoder_distinct": 12,
+        "encoder_executed": 16,
+        "concept_distinct": 4,
+        "concept_executed": 8
+      },
+      "architecture": {
+        "encoder_concept_crc": false,
+        "concept_decoder_crc": false,
+        "deep_supervision": false,
+        "chunk_objective": false,
+        "utility_exploration": false
+      },
+      "initial_dev": {
+        "text": {
+          "nll": 9.03182315826416,
+          "supervised_tokens": 384
+        },
+        "math": {
+          "nll": 8.912345886230469,
+          "supervised_tokens": 8
+        },
+        "sudoku_easy": {
+          "nll": 8.963174819946289,
+          "supervised_tokens": 164
+        },
+        "sudoku_hard": {
+          "nll": 8.959040641784668,
+          "supervised_tokens": 164
+        }
+      },
+      "final_dev": {
+        "text": {
+          "nll": 8.748394966125488,
+          "supervised_tokens": 384
+        },
+        "math": {
+          "nll": 7.851535320281982,
+          "supervised_tokens": 8
+        },
+        "sudoku_easy": {
+          "nll": 7.699906349182129,
+          "supervised_tokens": 164
+        },
+        "sudoku_hard": {
+          "nll": 7.700387477874756,
+          "supervised_tokens": 164
+        }
+      },
+      "seconds": 2.4709367752075195,
+      "peak_sampled_rss_gib": 0.838348388671875,
+      "ordinary_step_seconds_median": 0.15135027095675468,
+      "candidate_step_seconds_median": 0.18440206249943003,
+      "final_loss": {
+        "total": 8.192675590515137,
+        "token": 7.749161243438721,
+        "latent": 0.8389351963996887,
+        "vq": 15.357887268066406,
+        "chunk": 0.0,
+        "explore": 0.838247537612915,
+        "selector": 2.444347858428955
+      },
+      "all_finite": true
+    },
+    "B": {
+      "parameters": {
+        "dense": 5499428,
+        "engram": 20000320,
+        "total": 25499748,
+        "encoder_distinct": 12,
+        "encoder_executed": 16,
+        "concept_distinct": 4,
+        "concept_executed": 8
+      },
+      "architecture": {
+        "encoder_concept_crc": true,
+        "concept_decoder_crc": false,
+        "deep_supervision": false,
+        "chunk_objective": false,
+        "utility_exploration": false
+      },
+      "initial_dev": {
+        "text": {
+          "nll": 9.031817436218262,
+          "supervised_tokens": 384
+        },
+        "math": {
+          "nll": 8.91231632232666,
+          "supervised_tokens": 8
+        },
+        "sudoku_easy": {
+          "nll": 8.963129043579102,
+          "supervised_tokens": 164
+        },
+        "sudoku_hard": {
+          "nll": 8.959004402160645,
+          "supervised_tokens": 164
+        }
+      },
+      "final_dev": {
+        "text": {
+          "nll": 8.74854564666748,
+          "supervised_tokens": 384
+        },
+        "math": {
+          "nll": 7.850531578063965,
+          "supervised_tokens": 8
+        },
+        "sudoku_easy": {
+          "nll": 7.698917388916016,
+          "supervised_tokens": 164
+        },
+        "sudoku_hard": {
+          "nll": 7.699397563934326,
+          "supervised_tokens": 164
+        }
+      },
+      "seconds": 2.845438241958618,
+      "peak_sampled_rss_gib": 0.86785888671875,
+      "ordinary_step_seconds_median": 0.1656895205087494,
+      "candidate_step_seconds_median": 0.21040022899978794,
+      "final_loss": {
+        "total": 8.188711166381836,
+        "token": 7.748350620269775,
+        "latent": 0.8381415605545044,
+        "vq": 15.18646240234375,
+        "chunk": 0.0,
+        "explore": 0.8374431133270264,
+        "selector": 2.4187545776367188
+      },
+      "all_finite": true
+    },
+    "C": {
+      "parameters": {
+        "dense": 5482790,
+        "engram": 20000320,
+        "total": 25483110,
+        "encoder_distinct": 12,
+        "encoder_executed": 16,
+        "concept_distinct": 4,
+        "concept_executed": 8
+      },
+      "architecture": {
+        "encoder_concept_crc": false,
+        "concept_decoder_crc": true,
+        "deep_supervision": false,
+        "chunk_objective": false,
+        "utility_exploration": false
+      },
+      "initial_dev": {
+        "text": {
+          "nll": 9.031493186950684,
+          "supervised_tokens": 384
+        },
+        "math": {
+          "nll": 8.912786483764648,
+          "supervised_tokens": 8
+        },
+        "sudoku_easy": {
+          "nll": 8.961813926696777,
+          "supervised_tokens": 164
+        },
+        "sudoku_hard": {
+          "nll": 8.957700729370117,
+          "supervised_tokens": 164
+        }
+      },
+      "final_dev": {
+        "text": {
+          "nll": 8.747843742370605,
+          "supervised_tokens": 384
+        },
+        "math": {
+          "nll": 7.850795745849609,
+          "supervised_tokens": 8
+        },
+        "sudoku_easy": {
+          "nll": 7.699302673339844,
+          "supervised_tokens": 164
+        },
+        "sudoku_hard": {
+          "nll": 7.6997761726379395,
+          "supervised_tokens": 164
+        }
+      },
+      "seconds": 2.4777867794036865,
+      "peak_sampled_rss_gib": 0.883392333984375,
+      "ordinary_step_seconds_median": 0.16049941652454436,
+      "candidate_step_seconds_median": 0.1807551039964892,
+      "final_loss": {
+        "total": 8.17136001586914,
+        "token": 7.748690605163574,
+        "latent": 0.8446431159973145,
+        "vq": 15.405792236328125,
+        "chunk": 0.0,
+        "explore": 0.8439233303070068,
+        "selector": 1.9951047897338867
+      },
+      "all_finite": true
+    },
+    "D": {
+      "parameters": {
+        "dense": 5516328,
+        "engram": 20000320,
+        "total": 25516648,
+        "encoder_distinct": 12,
+        "encoder_executed": 16,
+        "concept_distinct": 4,
+        "concept_executed": 8
+      },
+      "architecture": {
+        "encoder_concept_crc": true,
+        "concept_decoder_crc": true,
+        "deep_supervision": false,
+        "chunk_objective": false,
+        "utility_exploration": false
+      },
+      "initial_dev": {
+        "text": {
+          "nll": 9.031896591186523,
+          "supervised_tokens": 384
+        },
+        "math": {
+          "nll": 8.913718223571777,
+          "supervised_tokens": 8
+        },
+        "sudoku_easy": {
+          "nll": 8.963380813598633,
+          "supervised_tokens": 164
+        },
+        "sudoku_hard": {
+          "nll": 8.959442138671875,
+          "supervised_tokens": 164
+        }
+      },
+      "final_dev": {
+        "text": {
+          "nll": 8.748499870300293,
+          "supervised_tokens": 384
+        },
+        "math": {
+          "nll": 7.851653099060059,
+          "supervised_tokens": 8
+        },
+        "sudoku_easy": {
+          "nll": 7.700955867767334,
+          "supervised_tokens": 164
+        },
+        "sudoku_hard": {
+          "nll": 7.701435565948486,
+          "supervised_tokens": 164
+        }
+      },
+      "seconds": 2.721191883087158,
+      "peak_sampled_rss_gib": 1.017852783203125,
+      "ordinary_step_seconds_median": 0.16043364597135223,
+      "candidate_step_seconds_median": 0.1890339379897341,
+      "final_loss": {
+        "total": 8.193593978881836,
+        "token": 7.750136852264404,
+        "latent": 0.840592086315155,
+        "vq": 15.338357925415039,
+        "chunk": 0.0,
+        "explore": 0.840091347694397,
+        "selector": 2.4401073455810547
+      },
+      "all_finite": true
+    },
+    "S": {
+      "parameters": {
+        "dense": 5731496,
+        "engram": 20000320,
+        "total": 25731816,
+        "encoder_distinct": 12,
+        "encoder_executed": 16,
+        "concept_distinct": 4,
+        "concept_executed": 8
+      },
+      "architecture": {
+        "encoder_concept_crc": true,
+        "concept_decoder_crc": true,
+        "deep_supervision": true,
+        "chunk_objective": true,
+        "utility_exploration": true
+      },
+      "initial_dev": {
+        "text": {
+          "nll": 9.031896591186523,
+          "supervised_tokens": 384
+        },
+        "math": {
+          "nll": 8.913718223571777,
+          "supervised_tokens": 8
+        },
+        "sudoku_easy": {
+          "nll": 8.963380813598633,
+          "supervised_tokens": 164
+        },
+        "sudoku_hard": {
+          "nll": 8.959442138671875,
+          "supervised_tokens": 164
+        }
+      },
+      "final_dev": {
+        "text": {
+          "nll": 8.757424354553223,
+          "supervised_tokens": 384
+        },
+        "math": {
+          "nll": 7.834217548370361,
+          "supervised_tokens": 8
+        },
+        "sudoku_easy": {
+          "nll": 7.699899196624756,
+          "supervised_tokens": 164
+        },
+        "sudoku_hard": {
+          "nll": 7.699958801269531,
+          "supervised_tokens": 164
+        }
+      },
+      "seconds": 2.672109842300415,
+      "peak_sampled_rss_gib": 1.04046630859375,
+      "ordinary_step_seconds_median": 0.1690522295248229,
+      "candidate_step_seconds_median": 0.19621837500017136,
+      "final_loss": {
+        "total": 9.724651336669922,
+        "token": 7.751765727996826,
+        "latent": 0.9284219741821289,
+        "vq": 15.695813179016113,
+        "chunk": 8.047443389892578,
+        "explore": 8.14252758026123,
+        "selector": 2.0817654132843018
+      },
+      "all_finite": true
+    }
+  }
+}

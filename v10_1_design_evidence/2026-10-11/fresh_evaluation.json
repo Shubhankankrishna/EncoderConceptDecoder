@@ -1,0 +1,1435 @@
+{
+  "run_id": "pretrain_24h",
+  "step": 50689,
+  "tokens": 107655458,
+  "checkpoint_mtime": 1791728826.404769,
+  "source_sha256": "3cbaf426badbfc45f723431838c4f5340cbf7ce2c99f1a8438ed8e3b7152a0e9",
+  "device": "cpu",
+  "threads": 2,
+  "created_unix": 1791729264.164536,
+  "selection": "Same balanced development identities as checkpoint 17607 audit; seed 1927",
+  "limitations": "Active math corpus contains bytes-literal wrappers. Strict scoring unchanged. Partial Sudoku diagnostics never count as solved. No test data, optimizer steps or memory writes.",
+  "memory_writes": 0,
+  "text_check": {
+    "train": {
+      "sampled_sequences": 32,
+      "unique_sequences": 32,
+      "tokens": 11187,
+      "nll": 3.8109924145994616,
+      "perplexity": 45.19526906241291,
+      "batch_nlls": [
+        3.324697732925415,
+        3.8880536556243896,
+        3.8472859859466553,
+        3.863083600997925,
+        4.230025291442871,
+        3.3462767601013184,
+        4.096346378326416,
+        4.434215545654297,
+        2.9295685291290283,
+        3.556839942932129,
+        3.7376832962036133,
+        4.319793701171875,
+        2.9625468254089355,
+        4.296710968017578,
+        3.821385145187378,
+        3.2616302967071533
+      ],
+      "batch_weights": [
+        607,
+        768,
+        768,
+        740,
+        768,
+        713,
+        768,
+        768,
+        269,
+        714,
+        768,
+        768,
+        464,
+        768,
+        768,
+        768
+      ],
+      "selection": "Seed 2861, 16 batches of 2 with replacement; text only; context 384"
+    },
+    "dev": {
+      "sampled_sequences": 32,
+      "unique_sequences": 32,
+      "tokens": 11255,
+      "nll": 4.574169681147436,
+      "perplexity": 96.94750836454655,
+      "batch_nlls": [
+        4.317074775695801,
+        4.703061103820801,
+        4.59527587890625,
+        4.7398295402526855,
+        4.76313591003418,
+        4.524540424346924,
+        4.975526332855225,
+        4.402285575866699,
+        5.402984619140625,
+        4.445135593414307,
+        4.532482624053955,
+        4.839003086090088,
+        4.022683143615723,
+        4.278936386108398,
+        4.195983409881592,
+        4.8440399169921875
+      ],
+      "batch_weights": [
+        768,
+        708,
+        580,
+        768,
+        768,
+        768,
+        522,
+        768,
+        567,
+        768,
+        768,
+        625,
+        768,
+        750,
+        685,
+        674
+      ],
+      "selection": "Seed 2861, 16 batches of 2 with replacement; text only; context 384",
+      "concept_ablation": {
+        "delta_nll": 0.0010549638071149152,
+        "batch_deltas": [
+          -0.00066375732421875,
+          0.0005612373352050781,
+          0.0008087158203125,
+          0.0013952255249023438,
+          0.00131988525390625,
+          0.0021195411682128906,
+          0.0007519721984863281,
+          0.004542827606201172,
+          0.0002598762512207031,
+          0.000762939453125,
+          0.00033283233642578125,
+          0.0004215240478515625,
+          0.0006279945373535156,
+          -0.00048160552978515625,
+          0.0006570816040039062,
+          0.0031142234802246094
+        ],
+        "paired_batch_bootstrap_ci95": [
+          0.00045134262785165915,
+          0.0017389169270444146
+        ],
+        "ci_limitation": "Descriptive paired-batch resampling; small sampled documents, not a population guarantee."
+      },
+      "engram_ablation": {
+        "sampled_sequences": 8,
+        "delta_nll": 0.5084102721119738,
+        "batch_deltas": [
+          {
+            "tokens": 768,
+            "delta_nll": 0.687840461730957
+          },
+          {
+            "tokens": 708,
+            "delta_nll": 0.41387224197387695
+          },
+          {
+            "tokens": 580,
+            "delta_nll": 0.4319143295288086
+          },
+          {
+            "tokens": 768,
+            "delta_nll": 0.47390270233154297
+          }
+        ]
+      }
+    },
+    "train_dev_gap": 0.7631772665479741
+  },
+  "generation": {
+    "math": {
+      "n": 64,
+      "correct": 6,
+      "examples": [
+        {
+          "index": 2510,
+          "identity": "dc8a3acd7a726cb47961134824b00f61177f7477ec8a428d5ec1dba4feaa7407",
+          "source": "algebra__linear_1d",
+          "response": " b'-26\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2799,
+          "identity": "ac75078987e570833460ccb9b7d0e57d1c5e1ccdc10b2d389cb78dd50c0605e4",
+          "source": "algebra__linear_1d",
+          "response": " b'-1\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2385,
+          "identity": "be199b618794de35206b58bda4aea8cb2e46867e0b6059ef9bd9d1c5f02e67db",
+          "source": "algebra__linear_1d",
+          "response": " b'-26\\n'",
+          "correct": true,
+          "eos": true,
+          "reason": "exact",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2413,
+          "identity": "20da5a711195bc0127ccee54bc041448440753e9f8d38fcff03dd29d5654383e",
+          "source": "algebra__linear_1d",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2173,
+          "identity": "081279b9d4d7340312c32efeab0b2ff5330da5c0243cb56d086b8e99f00e9487",
+          "source": "algebra__linear_1d",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2761,
+          "identity": "8daedc05bf02cd86c44ac06f8410532186169550efbd44089fa2edd99fd94318",
+          "source": "algebra__linear_1d",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2137,
+          "identity": "be17e6f55aca4a36c0f51e0f6d18021d83b8a855dea93e19410ec003e70116a6",
+          "source": "algebra__linear_1d",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2940,
+          "identity": "e800a2b38b67d6ffc6d89413c449c227aa2a0cd37d066409cbc316a4a634895f",
+          "source": "algebra__linear_1d",
+          "response": " b'-26\\n'",
+          "correct": true,
+          "eos": true,
+          "reason": "exact",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2228,
+          "identity": "490d9425d6db98ca1cb46fc301c2f5eea509ae9ee0a043f15897d326c526baf8",
+          "source": "algebra__linear_1d",
+          "response": " b'-26\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2925,
+          "identity": "048220e9f8b0dc8ac25b47c1cc79934c6b1d23286962ca285daaad1d523805bf",
+          "source": "algebra__linear_1d",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2610,
+          "identity": "c830ee977c6609378d081f367542d88e9281389861e8fb42093e70ee29d9ef2c",
+          "source": "algebra__linear_1d",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2073,
+          "identity": "c84a14f3ce563dae33597874e58d08645758b0c705bb10352aa4f865d34f1120",
+          "source": "algebra__linear_1d",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2783,
+          "identity": "da48bea33f2715ca974004fb56df6fb263a0df61bf05f33e1a692508d21cbc56",
+          "source": "algebra__linear_1d",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2230,
+          "identity": "ff4c09cf0ead8f3fa034863c8255b321269c3c15cf6e4ed923e3b798d9c9cac6",
+          "source": "algebra__linear_1d",
+          "response": " b'-26\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2969,
+          "identity": "a9719ee35ee6d40a884c103f1606379950a15139175715fdd83e45a3e5239ea5",
+          "source": "algebra__linear_1d",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 2346,
+          "identity": "1d57ebb504be5a72330df730391e9700c7b19498227c3a2602e4ac2c82c1d0cd",
+          "source": "algebra__linear_1d",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 568,
+          "identity": "d13030b182649c04074b3ba5c481f5d46dd2e268057ed2bbf7bb467075f9924e",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 510,
+          "identity": "2baa2267e83c5a9a4b4b5498ced33351f6de0c4fe8c94eaa619a21dc03282932",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-26\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 751,
+          "identity": "0368c545c03524e41cabb2b7d6d8657a832c0f73d72d4308480d4a3e73b99dcb",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 664,
+          "identity": "f06dadfd7e828ad406ba37cfbfb8b1c3871ad989d3aa329955cfd676f7587243",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 773,
+          "identity": "1a3992d3e52e22a70a0aef8186f1e76d0834a28018844e205b63fc7b12b73a5c",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 46,
+          "identity": "0b8ee7b14d466e1496cb142a107c29b724a58da9ff4478837b710516f5503dc1",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 596,
+          "identity": "8ed067d30c7459b420803535b5199de0ae0576ca6bbc40c1888274b2dc9ccec6",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-2\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 393,
+          "identity": "dcf4d7455813323a50a6d2abdced95aefcbcc596cd3a9652048c366466d35f5d",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 572,
+          "identity": "ff3ffddbdeab4803bd6d27a4a6a399aeb0e9746c789ba8e8f4c44ea985cd14df",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 630,
+          "identity": "9fdf44033be78f69292960afec4415f60162de998e47a78ccf07e0dda8316978",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-26\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 696,
+          "identity": "4774b4a5c165d34c3538b00dc3c07adfc11d4c09c1d3891432a78fad08ab6b68",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-26\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 526,
+          "identity": "0a0c80f9dba1b5d28d36c565dde391187a63365e5710ebf6addf79085f95e978",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 400,
+          "identity": "c385dbf1f6d28e4c871bd605aab6cdd476ffbceceb2024d1a0b423c477a3b1f7",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 377,
+          "identity": "29dbf41f47183746b172d39f7b74ea804877621c794dccaadc2e85a21ddc4940",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-26\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 335,
+          "identity": "eb95538deeec159d4e504a29a5c18a33e5d409b515d0e3b60ff54eb397443a11",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-16\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 913,
+          "identity": "38d0853de6ecbb895d6b70b5047297c12c88d2e2c7b1db1fcdfe54df3a09d7a1",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " b'-26\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1694,
+          "identity": "8c4df0a5842025768eb372ab8ce908f6b9d3b716ad0ccd5fdbd534bead760fea",
+          "source": "arithmetic__mul",
+          "response": " b'-1568800\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1752,
+          "identity": "55c4ac935cb460278e7d53c5cbb27caf9f3158e2c9ee7994014d85002fb740e4",
+          "source": "arithmetic__mul",
+          "response": " b'1268.8\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1271,
+          "identity": "51355a478a5f42bd2c391fb83c2eff731cade4d076dafe47035a9ccc5a323fdf",
+          "source": "arithmetic__mul",
+          "response": " b'-1.466666\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1377,
+          "identity": "12dae0196c1450aec9e02dc07a3bea8278669cf742fce76bc6cddb4cad8272cb",
+          "source": "arithmetic__mul",
+          "response": " b'128887.5\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1114,
+          "identity": "be9570bf0dbca3a212d5249a72cd64343f53c91dede9161ed8716e6c3d41d936",
+          "source": "arithmetic__mul",
+          "response": " b'-128866.55\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1305,
+          "identity": "a1d86af7adb5f9c07e3f45b1685d72d5874ad24da093cb9976c6db7c0ee49e98",
+          "source": "arithmetic__mul",
+          "response": " b'26668805\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1283,
+          "identity": "91477a37b113aca469b58a1152ec09445f7ea670b1e3d0b1d49e5ee5c12a67f2",
+          "source": "arithmetic__mul",
+          "response": " b'12666.86\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1848,
+          "identity": "4a7d49f54408749dce6d42463bee38153e50807dff5205509469412883bb60d1",
+          "source": "arithmetic__mul",
+          "response": " b'1266.87\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1695,
+          "identity": "fce7e62d730cf34ad00c15cbe0c4023cccfda8393866c029fae50c277421241c",
+          "source": "arithmetic__mul",
+          "response": " b'-166.867\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1193,
+          "identity": "2b2a29959ee66f2d52841f1175b0e93ad5dffeb036d15c47312bab9ebb65b236",
+          "source": "arithmetic__mul",
+          "response": " b'-124.8666\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1780,
+          "identity": "3ab58ba7c2fc71fce9cdec1585d6c3575da6545a0667868541854a54b67064bf",
+          "source": "arithmetic__mul",
+          "response": " b'128.88775\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1628,
+          "identity": "360d664f175983ff8d99672baddcbf866e07407de59de4038a7ee9bb612495ee",
+          "source": "arithmetic__mul",
+          "response": " b'1.88866\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1582,
+          "identity": "769a769db1d69d49b3b4c5e4efefbc4aff307309a20ff5c01a5c33a17c57baa9",
+          "source": "arithmetic__mul",
+          "response": " b'-0.16787\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1719,
+          "identity": "e857351befd5358c5eeeb285484827170fcbc082b7b65fe0e9be8fdcfe0f45c6",
+          "source": "arithmetic__mul",
+          "response": " b'-12444.8\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1496,
+          "identity": "fbe7124114ef5dc503b64b1a13916aba0ce2b8725b192a0b402676956f6b2722",
+          "source": "arithmetic__mul",
+          "response": " b'-224448000\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 1360,
+          "identity": "8e0a5847e85ca695be1f2b392d83b829451aab849d77da6f9ece0f5d442def53",
+          "source": "arithmetic__mul",
+          "response": " b'-12.866\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3905,
+          "identity": "77590cb929cd6fc415539704bc64c96597167c5e2b333e8c16bacb88537b3df3",
+          "source": "comparison__sort",
+          "response": " b'-27, -20, -20, -4\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3368,
+          "identity": "0a87272b07bc0b7ed0b02cd951ea97f077f779fe4b22e5beb4b2cd9f735a41bd",
+          "source": "comparison__sort",
+          "response": " b'5, -14, -1666, -916\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3766,
+          "identity": "7f003ebd6f4d63f90633b8cfd82c243336b3a7049f7d09adbf202c7c648a7c61",
+          "source": "comparison__sort",
+          "response": " b'-4, -3, -1, 5, 138, 138\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3307,
+          "identity": "4e98f2f18bcecdd15e8d00fe46ac9ef8c3ce5a958cfc6eca2d5cb8db86b698da",
+          "source": "comparison__sort",
+          "response": " b'245, 6, 4, 5, -3, -83, -5\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3775,
+          "identity": "b21e6227f7ccccebc407ce44d5bae6599c4cde9ee92d550fc531617c93c18e1e",
+          "source": "comparison__sort",
+          "response": " b'1, -0.1, -241, -1916\\n'",
+          "correct": true,
+          "eos": true,
+          "reason": "exact",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3849,
+          "identity": "66fd366110c8771fe809e41a467ca59981bb7d97ff5330a2a9c1be8ac2e504fb",
+          "source": "comparison__sort",
+          "response": " b'917271, -3, -4\\n'",
+          "correct": true,
+          "eos": true,
+          "reason": "exact",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3151,
+          "identity": "221d76f3f5b0803a2850134aea720666b2b86764a4402bbd216258108a3e2078",
+          "source": "comparison__sort",
+          "response": " b'-2, -15, -15, -71, -782\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 4036,
+          "identity": "8d421cd970b25ce57a5da31e2c1b246b402e58eb133cfc39f3eb719949dab6ca",
+          "source": "comparison__sort",
+          "response": " b'-341, 0, 3, 12\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3574,
+          "identity": "249bff71d8cab53cfdea7af9af3ed8ee0807ea7cb2e8e18a4571a227c7fa90b7",
+          "source": "comparison__sort",
+          "response": " b'50, 11, 2, -4, -5, -12\\n'",
+          "correct": true,
+          "eos": true,
+          "reason": "exact",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3802,
+          "identity": "735fc6c772d808d8268f9d5905f3ce673a4af72198d3b9263ebb764e9c4b774f",
+          "source": "comparison__sort",
+          "response": " b'-236, -436, -320\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3713,
+          "identity": "71d5a34f1c1cb4d97bf74a06fb7116df3ad719f272600bf2e894bebbc62b3bbe",
+          "source": "comparison__sort",
+          "response": " b'-6341, -3, -1, -5, 2, 3, 2\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3258,
+          "identity": "3a548fdb308246d69b359f1a5d95e6bdb548d1f6fa0c534a8c24dcd8b43faaf4",
+          "source": "comparison__sort",
+          "response": " b'287, 0.1, -9118\\n'",
+          "correct": true,
+          "eos": true,
+          "reason": "exact",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3863,
+          "identity": "1531b06b21fff5e3d6309ccd455f66454df82bd0ba9ffc6da18c731d6225bd4f",
+          "source": "comparison__sort",
+          "response": " b'39/5, 1791, -1/9\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3547,
+          "identity": "34583223344e7f17198f0c1a8e25da0b0a02e680651d95842838f7f2beff77fd",
+          "source": "comparison__sort",
+          "response": " b'800, 1, 2, 0, -1, -4\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3778,
+          "identity": "fe63e96157f7c05c21e48119426573dfbdfb91182f0537879eab12b63b0293c0",
+          "source": "comparison__sort",
+          "response": " b'21.7, 110, 0.08, -3/5\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        },
+        {
+          "index": 3703,
+          "identity": "8de369498f52eacf4007f7b13eb3ebb530b623600edef9898e81abdfc12853b3",
+          "source": "comparison__sort",
+          "response": " b'2, 1, 2, 3, 39675\\n'",
+          "correct": false,
+          "eos": true,
+          "reason": "incorrect_or_unterminated",
+          "partial_diagnostics": {}
+        }
+      ],
+      "reason_counts": {
+        "incorrect_or_unterminated": 58,
+        "exact": 6
+      },
+      "by_module": {
+        "algebra__linear_1d": {
+          "n": 16,
+          "correct": 2
+        },
+        "arithmetic__add_sub_multiple": {
+          "n": 16,
+          "correct": 0
+        },
+        "arithmetic__mul": {
+          "n": 16,
+          "correct": 0
+        },
+        "comparison__sort": {
+          "n": 16,
+          "correct": 4
+        }
+      }
+    },
+    "sudoku_easy": {
+      "n": 16,
+      "correct": 0,
+      "examples": [
+        {
+          "index": 217,
+          "identity": "e9cc8e17a0812610e9618457d3bee39db9e6c748031a9a0c59bedcb73b25bb6e",
+          "source": "puzzles1_unbiased",
+          "response": "248657319637219485159843726785496231941328657362571948827164395596432872413985267",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 25,
+            "clues": 25,
+            "clue_accuracy": 1.0,
+            "valid_rows": 8,
+            "valid_columns": 4,
+            "valid_boxes": 7
+          }
+        },
+        {
+          "index": 177,
+          "identity": "3e9d47d90d8e926c71c887d862136cea723cc33204af56545e1870366f080d94",
+          "source": "puzzles1_unbiased",
+          "response": "679258314481367925235149678164925837528473169793816542812634795647592483356281274",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 25,
+            "clues": 25,
+            "clue_accuracy": 1.0,
+            "valid_rows": 7,
+            "valid_columns": 5,
+            "valid_boxes": 6
+          }
+        },
+        {
+          "index": 11,
+          "identity": "56524a4d5b863173f7114a4395b817efd45c03ed732486bbdab39fae23ab81db",
+          "source": "puzzles1_unbiased",
+          "response": "431687225872513634695424817728145369953762481164839275267934588389371742541298193",
+          "correct": false,
+          "eos": true,
+          "reason": "clues",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 23,
+            "clues": 24,
+            "clue_accuracy": 0.9583333333333334,
+            "valid_rows": 3,
+            "valid_columns": 2,
+            "valid_boxes": 5
+          }
+        },
+        {
+          "index": 13,
+          "identity": "b3dee4d12c1aa36c654ac79bda730b6bc1ae695eabf91ff91717388f479eac75",
+          "source": "puzzles1_unbiased",
+          "response": "468237519512649378379851642827416953164372854953984127645138729291724486786593244",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 25,
+            "clues": 25,
+            "clue_accuracy": 1.0,
+            "valid_rows": 5,
+            "valid_columns": 4,
+            "valid_boxes": 4
+          }
+        },
+        {
+          "index": 229,
+          "identity": "56e3c9e597ca28c543e9f19f4d25b4e74e03914b562d9f318ffe14649222590d",
+          "source": "puzzles1_unbiased",
+          "response": "365298741724165839198743256217689354486572917259341687634857192571924683942438461",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 27,
+            "clues": 27,
+            "clue_accuracy": 1.0,
+            "valid_rows": 7,
+            "valid_columns": 2,
+            "valid_boxes": 4
+          }
+        },
+        {
+          "index": 278,
+          "identity": "b0bc873329c97ae4566222d7739044546e4333ae190be168d02eb8daadc1ccf8",
+          "source": "puzzles1_unbiased",
+          "response": "267159348349286571185473269514726893738917624992845137423698715857362419671534282",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 28,
+            "clues": 28,
+            "clue_accuracy": 1.0,
+            "valid_rows": 6,
+            "valid_columns": 4,
+            "valid_boxes": 3
+          }
+        },
+        {
+          "index": 285,
+          "identity": "a8ca44554a417c7ad75e60c4841b6c1a78e4ac92fe0a6147cf7bca969106a6db",
+          "source": "puzzles1_unbiased",
+          "response": "762341985815967243943528617498176325627459381531234879376492158284713596194865723",
+          "correct": false,
+          "eos": true,
+          "reason": "clues",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 24,
+            "clues": 26,
+            "clue_accuracy": 0.9230769230769231,
+            "valid_rows": 8,
+            "valid_columns": 2,
+            "valid_boxes": 5
+          }
+        },
+        {
+          "index": 215,
+          "identity": "e01064d7fe244a0425439c91b796befb13f23779e2aaf89a266299706a057a90",
+          "source": "puzzles1_unbiased",
+          "response": "574821639682394175139267458467419328928753416315276944256948731891687244744132695",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 27,
+            "clues": 27,
+            "clue_accuracy": 1.0,
+            "valid_rows": 5,
+            "valid_columns": 3,
+            "valid_boxes": 2
+          }
+        },
+        {
+          "index": 25,
+          "identity": "be196b235a917dc2552d8e65b4d8ad817de411304f78ad3ebd82abc0ff51727a",
+          "source": "puzzles1_unbiased",
+          "response": "148763259739528164256149783671392485493871625825684397364215978982436541517928836",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 26,
+            "clues": 26,
+            "clue_accuracy": 1.0,
+            "valid_rows": 6,
+            "valid_columns": 5,
+            "valid_boxes": 5
+          }
+        },
+        {
+          "index": 30,
+          "identity": "fa8d0f334dec7fea1bea90dcea4771c6bcd5fd17a3db7ccb161cd47f95311e0b",
+          "source": "puzzles1_unbiased",
+          "response": "642918375978652143135724869486237951297185642513449738724869513865391427351478294",
+          "correct": false,
+          "eos": true,
+          "reason": "clues",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 23,
+            "clues": 24,
+            "clue_accuracy": 0.9583333333333334,
+            "valid_rows": 6,
+            "valid_columns": 4,
+            "valid_boxes": 3
+          }
+        },
+        {
+          "index": 262,
+          "identity": "d9d45029cb8a4c678ffc6ca45051a9a345214d5f519474314d537b781d30d126",
+          "source": "puzzles1_unbiased",
+          "response": "167823459825946173349715682638274195291658764754369821576431928912887346483592617",
+          "correct": false,
+          "eos": true,
+          "reason": "clues",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 25,
+            "clues": 27,
+            "clue_accuracy": 0.9259259259259259,
+            "valid_rows": 7,
+            "valid_columns": 6,
+            "valid_boxes": 5
+          }
+        },
+        {
+          "index": 18,
+          "identity": "3a54c85f56001012021ae2ca8a70db058b9a466685fbb8c0d7d762e481ba8408",
+          "source": "puzzles1_unbiased",
+          "response": "324751968976248315158369247691825473247416589832937621783594162415762893269183754",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 28,
+            "clues": 28,
+            "clue_accuracy": 1.0,
+            "valid_rows": 7,
+            "valid_columns": 4,
+            "valid_boxes": 8
+          }
+        },
+        {
+          "index": 224,
+          "identity": "6d185163a9c201409dc39c5ea4992184ede6d01ef14640f7cb7e8ff4e25fbc0a",
+          "source": "puzzles1_unbiased",
+          "response": "752896314463213987819475263271968451945327628638714295327681549684139772196524836",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 27,
+            "clues": 27,
+            "clue_accuracy": 1.0,
+            "valid_rows": 4,
+            "valid_columns": 5,
+            "valid_boxes": 3
+          }
+        },
+        {
+          "index": 225,
+          "identity": "1bf9c5d96b8f7d16610e72ddde43585dfecacd4b5ecb79c688deb67eb00e2814",
+          "source": "puzzles1_unbiased",
+          "response": "247163589391825674685794231529681473874239165136547928768913242423658791915472836",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 26,
+            "clues": 26,
+            "clue_accuracy": 1.0,
+            "valid_rows": 8,
+            "valid_columns": 2,
+            "valid_boxes": 8
+          }
+        },
+        {
+          "index": 257,
+          "identity": "cd98457323f15b275a5a0aac91c0bf9bed5997fdd9db3bdd6d5645a17dd1c955",
+          "source": "puzzles1_unbiased",
+          "response": "817539462265471893349268715182356947953784126647921358278193634796845273431762589",
+          "correct": false,
+          "eos": true,
+          "reason": "clues",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 22,
+            "clues": 23,
+            "clue_accuracy": 0.9565217391304348,
+            "valid_rows": 7,
+            "valid_columns": 2,
+            "valid_boxes": 7
+          }
+        },
+        {
+          "index": 167,
+          "identity": "562ed3e318a360e7bd1942be49fe7cad23db249f18450b6596ab805ad0fe136c",
+          "source": "puzzles1_unbiased",
+          "response": "261789345743625189589143726395416278417298563826754913974853622638521497152974836",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 25,
+            "clues": 25,
+            "clue_accuracy": 1.0,
+            "valid_rows": 8,
+            "valid_columns": 4,
+            "valid_boxes": 5
+          }
+        }
+      ],
+      "reason_counts": {
+        "row_or_column": 11,
+        "clues": 5
+      },
+      "partial_diagnostics": {
+        "format_valid": 16,
+        "clue_consistent": 11,
+        "clue_accuracy": 0.9830508474576272,
+        "mean_valid_rows": 6.375,
+        "mean_valid_columns": 3.625,
+        "mean_valid_boxes": 5.0
+      }
+    },
+    "sudoku_hard": {
+      "n": 16,
+      "correct": 0,
+      "examples": [
+        {
+          "index": 543,
+          "identity": "41c9a12565dbb530dbc8f42f8eece20d186c910694ef7dd333a92c4e1756529d",
+          "source": "puzzles4_forum_hardest_1905",
+          "response": "486251347132749865759368421867912534221473895943584672314827956675234289298195742",
+          "correct": false,
+          "eos": true,
+          "reason": "clues",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 25,
+            "clues": 26,
+            "clue_accuracy": 0.9615384615384616,
+            "valid_rows": 4,
+            "valid_columns": 3,
+            "valid_boxes": 3
+          }
+        },
+        {
+          "index": 121,
+          "identity": "0359ba97038340dc501a5e862eaf8e9565c87d35f9fe170f322dea761c25f87b",
+          "source": "puzzles4_forum_hardest_1905",
+          "response": "742351968639247518581962743294685327857492614163714892425176984318524279976823441",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 23,
+            "clues": 23,
+            "clue_accuracy": 1.0,
+            "valid_rows": 3,
+            "valid_columns": 4,
+            "valid_boxes": 3
+          }
+        },
+        {
+          "index": 389,
+          "identity": "e4c2f7c93785b17a99b77ea4dd20f9dd881a3dc0eaea4de83b40ad673f24a3c6",
+          "source": "01_file1",
+          "response": "347128659825976431619543827576281943942731568183469782293415766161897395458392614",
+          "correct": false,
+          "eos": true,
+          "reason": "clues",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 26,
+            "clues": 27,
+            "clue_accuracy": 0.9629629629629629,
+            "valid_rows": 5,
+            "valid_columns": 1,
+            "valid_boxes": 4
+          }
+        },
+        {
+          "index": 654,
+          "identity": "a57c3a1597334b22a8f0df9f34c751385b892958170c3d336634a3d45b07478e",
+          "source": "puzzles4_forum_hardest_1905",
+          "response": "124689357956347281783521964267853419348792645519467832871235496632914778495176523",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 26,
+            "clues": 26,
+            "clue_accuracy": 1.0,
+            "valid_rows": 6,
+            "valid_columns": 7,
+            "valid_boxes": 5
+          }
+        },
+        {
+          "index": 180,
+          "identity": "843f0d65451de00487fb6ba9127d281ae045433a4991f3ed127b421c9932b460",
+          "source": "01_file1",
+          "response": "264785391857124693139697284625941837478352916391867152516238479742719563983549261",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 26,
+            "clues": 26,
+            "clue_accuracy": 1.0,
+            "valid_rows": 5,
+            "valid_columns": 3,
+            "valid_boxes": 4
+          }
+        },
+        {
+          "index": 230,
+          "identity": "4f1b0b21a6ae1a2a060ba46debd265403ce9c841920d3b2ee28e40f849adfdc9",
+          "source": "puzzles4_forum_hardest_1905",
+          "response": "621354789537129684984786521758243967213615849149872358372968415895437192461591273",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 25,
+            "clues": 25,
+            "clue_accuracy": 1.0,
+            "valid_rows": 3,
+            "valid_columns": 6,
+            "valid_boxes": 3
+          }
+        },
+        {
+          "index": 310,
+          "identity": "2ea4e70936f49f495b3573129f852f87d969a634f9bbc990553d6ed3e88b285c",
+          "source": "01_file1",
+          "response": "291745386463281759587639421627391845914826537835477692746952138159348264362163975",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 26,
+            "clues": 26,
+            "clue_accuracy": 1.0,
+            "valid_rows": 6,
+            "valid_columns": 2,
+            "valid_boxes": 5
+          }
+        },
+        {
+          "index": 245,
+          "identity": "dd1849ff3e5976e0aea63e249120513c7869dfcccd6bdf800bf3229613cd0cc2",
+          "source": "puzzles4_forum_hardest_1905",
+          "response": "762145398913628475458796213254861937697354182831279564386913247175432689249587831",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 23,
+            "clues": 23,
+            "clue_accuracy": 1.0,
+            "valid_rows": 7,
+            "valid_columns": 4,
+            "valid_boxes": 5
+          }
+        },
+        {
+          "index": 479,
+          "identity": "37a3a923a557ebb49df2551dba0d9dff5c9dea4a024eb181b76344da9bbcff70",
+          "source": "puzzles4_forum_hardest_1905",
+          "response": "249581376175369284836742519754813642328546719961278943482637195617195428593824637",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 25,
+            "clues": 25,
+            "clue_accuracy": 1.0,
+            "valid_rows": 5,
+            "valid_columns": 4,
+            "valid_boxes": 7
+          }
+        },
+        {
+          "index": 131,
+          "identity": "88f7c887f20edbd747abab781cc87feb3632ffa8459311f7b8f724f1738e4ac6",
+          "source": "puzzles4_forum_hardest_1905",
+          "response": "796245813245871692821963475672189564389754261414627989158432726932516487764892151",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 25,
+            "clues": 25,
+            "clue_accuracy": 1.0,
+            "valid_rows": 4,
+            "valid_columns": 2,
+            "valid_boxes": 3
+          }
+        },
+        {
+          "index": 408,
+          "identity": "5ed4cdf153e6aa7f6e20f636ce1bd6387019106cbd727be1ca9017f71a608f73",
+          "source": "01_file1",
+          "response": "862417539137582649945631827196854273378291465254376891689423715411769382723118954",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 26,
+            "clues": 26,
+            "clue_accuracy": 1.0,
+            "valid_rows": 7,
+            "valid_columns": 3,
+            "valid_boxes": 4
+          }
+        },
+        {
+          "index": 420,
+          "identity": "858558b5b03e40c0398c1ab68650ff574a747c1ab7ce6ad8a32b226da248a6a3",
+          "source": "puzzles4_forum_hardest_1905",
+          "response": "627451938834926517519873624198647253463285179275319486956142878341768792782534261",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 25,
+            "clues": 25,
+            "clue_accuracy": 1.0,
+            "valid_rows": 6,
+            "valid_columns": 5,
+            "valid_boxes": 7
+          }
+        },
+        {
+          "index": 225,
+          "identity": "d8ad2f4d8ce102815b507e88a2bb7d29a3c305520fddab80c078ac78f239a804",
+          "source": "puzzles4_forum_hardest_1905",
+          "response": "247865391618273459395418726972584631435721689861396274756132948189452817324967165",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 24,
+            "clues": 24,
+            "clue_accuracy": 1.0,
+            "valid_rows": 6,
+            "valid_columns": 2,
+            "valid_boxes": 4
+          }
+        },
+        {
+          "index": 322,
+          "identity": "53ccb92ba5e4813b5baf172d0ff8124cd5fc4631693c1cd1bb02e5ce81395226",
+          "source": "01_file1",
+          "response": "813624957964753218275189643124768359789342165657193482332876591647921838491635274",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 27,
+            "clues": 27,
+            "clue_accuracy": 1.0,
+            "valid_rows": 6,
+            "valid_columns": 1,
+            "valid_boxes": 3
+          }
+        },
+        {
+          "index": 314,
+          "identity": "6ed3b77959e37f2df0e9b50db4fd8074746a19be05a75a8b46dadebd13c17a8c",
+          "source": "01_file1",
+          "response": "276853941195342867348176529769425138854631279512987463427518396931264785681793214",
+          "correct": false,
+          "eos": true,
+          "reason": "clues",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 26,
+            "clues": 27,
+            "clue_accuracy": 0.9629629629629629,
+            "valid_rows": 8,
+            "valid_columns": 4,
+            "valid_boxes": 4
+          }
+        },
+        {
+          "index": 493,
+          "identity": "3a9c537f94b8b7dbc0dbbce02d8800fe4c4d8c9824e043795e656962ed4eb667",
+          "source": "01_file1",
+          "response": "245768913617395482983421765361829754759643821428516397874196523132957648596238271",
+          "correct": false,
+          "eos": true,
+          "reason": "row_or_column",
+          "partial_diagnostics": {
+            "format_valid": true,
+            "clue_correct": 26,
+            "clues": 26,
+            "clue_accuracy": 1.0,
+            "valid_rows": 8,
+            "valid_columns": 4,
+            "valid_boxes": 5
+          }
+        }
+      ],
+      "reason_counts": {
+        "clues": 3,
+        "row_or_column": 13
+      },
+      "partial_diagnostics": {
+        "format_valid": 16,
+        "clue_consistent": 13,
+        "clue_accuracy": 0.9926289926289926,
+        "mean_valid_rows": 5.5625,
+        "mean_valid_columns": 3.4375,
+        "mean_valid_boxes": 4.3125
+      }
+    }
+  },
+  "seconds": 72.6373860836029
+}

@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "run_id": "pipeline_cpu_v2",
+  "source_sha256": "f22eeb372c8423b8812ff88ffa3e2ac5e46a059e7011fa71661d2bd2e1b5aae7",
+  "data_sha256": "def40ad02c456e93b227be6d43fb91e91eb4735449d0cda2d709a6f60f0568f2",
+  "split": "train",
+  "step": 4,
+  "tokens": 1923,
+  "wall_time": 1791747778.8328419,
+  "loss": {
+    "total": 10.213672637939453,
+    "token": 9.063621624164028,
+    "latent": 1.001152413694755,
+    "vq": 14.643153988796733,
+    "chunk": 9.035036563873291,
+    "explore": 0.0,
+    "selector": 0.0
+  },
+  "dense_grad_norm": 1.483903408050537,
+  "dense_grad_norm_post": 1.0,
+  "dense_clip_factor": 0.6738983107490397,
+  "engram_grad_norm": 0.005432534031569958,
+  "engram_grad_norm_post": 0.005432534031569958,
+  "engram_clip_factor": 1.0,
+  "engram_rows_touched": 2536,
+  "component_grad_norms": {
+    "embedding": 1.0096116677240274,
+    "engram": 0.014800323369383625,
+    "e1": 0.8622680923246127,
+    "e2": 0.3862986216869882,
+    "exit_reader": 0.010575255256455356,
+    "e3": 0.3715716091061374,
+    "pooler": 0.023226470151074593,
+    "core": 0.07525234765399642,
+    "head": 0.06340629231128964,
+    "decoder": 0.30029000181941784,
+    "encoder_concept_crc": 0.004440180394838662,
+    "chunk_readout": 0.22823486943083807
+  },
+  "tokens_per_second": 2475.058601199,
+  "step_seconds": 0.3062553749768995,
+  "elapsed_hours": 0.0010377054166747256,
+  "remaining_hours": 23.998962291876474,
+  "learning_rate": 5.9999999727026245e-06,
+  "family": "text",
+  "batch_indices": [
+    18247,
+    9619
+  ],
+  "input_tokens": 758,
+  "supervised_tokens": 758,
+  "family_supervised_tokens": {
+    "text": 1526,
+    "sudoku_easy": 164,
+    "math": 12
+  },
+  "family_input_tokens": {
+    "text": 1526,
+    "sudoku_easy": 340,
+    "math": 57
+  },
+  "candidate_requested": false,
+  "candidate_executed": false,
+  "nonfinite_count": 0,
+  "selector_regret": null,
+  "candidate_documents": 0,
+  "chunk_supervised_targets": 16,
+  "code_counts": [
+    0,
+    22,
+    0,
+    54,
+    11,
+    6,
+    0,
+    1
+  ],
+  "latent_visits": [
+    1.001334279127743,
+    1.0010615418786588
+  ],
+  "objective_denominators": {
+    "token": 758,
+    "latent": 92,
+    "vq": 92,
+    "chunk": 2,
+    "explore": 0,
+    "selector": 0
+  },
+  "objective_numerators": {
+    "token": 6870.225191116334,
+    "latent": 92.10602205991745,
+    "vq": 1347.1701669692995,
+    "chunk": 18.070073127746582,
+    "explore": 0.0,
+    "selector": 0.0
+  },
+  "rss_gb": 0.9916839599609375,
+  "system_available_gb": 8.884521484375,
+  "status": "smoke_complete",
+  "pid": 66625,
+  "deadline_unix": 1791834175.9194257,
+  "error": null,
+  "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_1/validation/pipeline_cpu_v2/latest.pt",
+  "last_metrics": {
+    "schema_version": 1,
+    "run_id": "pipeline_cpu_v2",
+    "source_sha256": "f22eeb372c8423b8812ff88ffa3e2ac5e46a059e7011fa71661d2bd2e1b5aae7",
+    "data_sha256": "def40ad02c456e93b227be6d43fb91e91eb4735449d0cda2d709a6f60f0568f2",
+    "split": "train",
+    "step": 4,
+    "tokens": 1923,
+    "wall_time": 1791747778.8328419,
+    "loss": {
+      "total": 10.213672637939453,
+      "token": 9.063621624164028,
+      "latent": 1.001152413694755,
+      "vq": 14.643153988796733,
+      "chunk": 9.035036563873291,
+      "explore": 0.0,
+      "selector": 0.0
+    },
+    "dense_grad_norm": 1.483903408050537,
+    "dense_grad_norm_post": 1.0,
+    "dense_clip_factor": 0.6738983107490397,
+    "engram_grad_norm": 0.005432534031569958,
+    "engram_grad_norm_post": 0.005432534031569958,
+    "engram_clip_factor": 1.0,
+    "engram_rows_touched": 2536,
+    "component_grad_norms": {
+      "embedding": 1.0096116677240274,
+      "engram": 0.014800323369383625,
+      "e1": 0.8622680923246127,
+      "e2": 0.3862986216869882,
+      "exit_reader": 0.010575255256455356,
+      "e3": 0.3715716091061374,
+      "pooler": 0.023226470151074593,
+      "core": 0.07525234765399642,
+      "head": 0.06340629231128964,
+      "decoder": 0.30029000181941784,
+      "encoder_concept_crc": 0.004440180394838662,
+      "chunk_readout": 0.22823486943083807
+    },
+    "tokens_per_second": 2475.058601199,
+    "step_seconds": 0.3062553749768995,
+    "elapsed_hours": 0.0008092815972243746,
+    "remaining_hours": 23.999190716875923,
+    "learning_rate": 5.9999999727026245e-06,
+    "family": "text",
+    "batch_indices": [
+      18247,
+      9619
+    ],
+    "input_tokens": 758,
+    "supervised_tokens": 758,
+    "family_supervised_tokens": {
+      "text": 1526,
+      "sudoku_easy": 164,
+      "math": 12
+    },
+    "family_input_tokens": {
+      "text": 1526,
+      "sudoku_easy": 340,
+      "math": 57
+    },
+    "candidate_requested": false,
+    "candidate_executed": false,
+    "nonfinite_count": 0,
+    "selector_regret": null,
+    "candidate_documents": 0,
+    "chunk_supervised_targets": 16,
+    "code_counts": [
+      0,
+      22,
+      0,
+      54,
+      11,
+      6,
+      0,
+      1
+    ],
+    "latent_visits": [
+      1.001334279127743,
+      1.0010615418786588
+    ],
+    "objective_denominators": {
+      "token": 758,
+      "latent": 92,
+      "vq": 92,
+      "chunk": 2,
+      "explore": 0,
+      "selector": 0
+    },
+    "objective_numerators": {
+      "token": 6870.225191116334,
+      "latent": 92.10602205991745,
+      "vq": 1347.1701669692995,
+      "chunk": 18.070073127746582,
+      "explore": 0.0,
+      "selector": 0.0
+    },
+    "rss_gb": 0.9916839599609375,
+    "system_available_gb": 8.884521484375
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "v10_1_source_sha256": "eff05193120f957f5ff6dc9654e9efda7734d8b6db7e9330cb95858a899856da",
+  "v10_source_sha256": "3cbaf426badbfc45f723431838c4f5340cbf7ce2c99f1a8438ed8e3b7152a0e9",
+  "active_data_manifest_sha256": "eaa15b5604c97015937a714d43d5fedb5485cb36748b81837fdb01d871874253",
+  "torch_version": "2.10.0",
+  "parity": {
+    "logit_max_absolute_error": 6.258487701416016e-07,
+    "objective_absolute_error": 4.76837158203125e-07,
+    "gradient_max_absolute_errors": {
+      "embedding.weight": 2.682209014892578e-07,
+      "encoder_concept_crc.projections.0.weight": 3.092281986027956e-10,
+      "core.layers.0.attn.qkv.weight": 3.3760443329811096e-09,
+      "head.codebook": 1.4842953532934189e-09,
+      "decoder.concept_projection.weight": 2.6193447411060333e-10,
+      "chunk_readout.projection.weight": 1.1175870895385742e-08
+    }
+  },
+  "limitations": "Brief shared-device integration; not an exclusive or thermally steady Metal performance benchmark",
+  "full_size_metal": {
+    "A": {
+      "parameters": {
+        "dense": 5465890,
+        "engram": 20000320,
+        "total": 25466210,
+        "encoder_distinct": 12,
+        "encoder_executed": 16,
+        "concept_distinct": 4,
+        "concept_executed": 8
+      },
+      "context": 384,
+      "batch_size": 1,
+      "updates": [
+        {
+          "candidate": false,
+          "seconds": 2.1734988749958575,
+          "loss": 9.306859016418457,
+          "dense_grad_norm_pre": 1.9668662548065186,
+          "dense_grad_norm_post": 1.0,
+          "dense_clip_factor": 0.5084229787136036,
+          "engram_grad_norm_pre": 0.007298206444829702,
+          "engram_grad_norm_post": 0.007298206444829702,
+          "engram_rows_touched": 1437,
+          "mps_allocated_gib": 0.20351123809814453,
+          "mps_driver_gib": 1.2499847412109375
+        },
+        {
+          "candidate": false,
+          "seconds": 0.18472783302422613,
+          "loss": 9.102883338928223,
+          "dense_grad_norm_pre": 1.2852497100830078,
+          "dense_grad_norm_post": 1.0,
+          "dense_clip_factor": 0.7780589189437864,
+          "engram_grad_norm_pre": 0.0035123471170663834,
+          "engram_grad_norm_post": 0.0035123471170663834,
+          "engram_rows_touched": 1437,
+          "mps_allocated_gib": 0.19629526138305664,
+          "mps_driver_gib": 1.3671722412109375
+        },
+        {
+          "candidate": true,
+          "seconds": 0.653462624992244,
+          "loss": 9.192312240600586,
+          "dense_grad_norm_pre": 2.0716359615325928,
+          "dense_grad_norm_post": 1.0,
+          "dense_clip_factor": 0.48271029204387905,
+          "engram_grad_norm_pre": 0.006849322468042374,
+          "engram_grad_norm_post": 0.006849322468042374,
+          "engram_rows_touched": 1437,
+          "mps_allocated_gib": 0.19217252731323242,
+          "mps_driver_gib": 1.3821258544921875
+        }
+      ]
+    },
+    "D": {
+      "parameters": {
+        "dense": 5516328,
+        "engram": 20000320,
+        "total": 25516648,
+        "encoder_distinct": 12,
+        "encoder_executed": 16,
+        "concept_distinct": 4,
+        "concept_executed": 8
+      },
+      "context": 384,
+      "batch_size": 1,
+      "updates": [
+        {
+          "candidate": false,
+          "seconds": 0.3492635419825092,
+          "loss": 9.30632209777832,
+          "dense_grad_norm_pre": 1.9663926362991333,
+          "dense_grad_norm_post": 1.0,
+          "dense_clip_factor": 0.5085454357081294,
+          "engram_grad_norm_pre": 0.007294618058949709,
+          "engram_grad_norm_post": 0.007294618058949709,
+          "engram_rows_touched": 1437,
+          "mps_allocated_gib": 0.22395014762878418,
+          "mps_driver_gib": 1.2669525146484375
+        },
+        {
+          "candidate": false,
+          "seconds": 0.2510859999456443,
+          "loss": 9.102972984313965,
+          "dense_grad_norm_pre": 1.2848032712936401,
+          "dense_grad_norm_post": 1.0,
+          "dense_clip_factor": 0.7783292760401536,
+          "engram_grad_norm_pre": 0.0035009526181966066,
+          "engram_grad_norm_post": 0.0035009526181966066,
+          "engram_rows_touched": 1437,
+          "mps_allocated_gib": 0.21302413940429688,
+          "mps_driver_gib": 1.3841400146484375
+        },
+        {
+          "candidate": true,
+          "seconds": 0.34092787496047094,
+          "loss": 9.193365097045898,
+          "dense_grad_norm_pre": 2.0679445266723633,
+          "dense_grad_norm_post": 1.0,
+          "dense_clip_factor": 0.48357196583466955,
+          "engram_grad_norm_pre": 0.006831937935203314,
+          "engram_grad_norm_post": 0.006831937935203314,
+          "engram_rows_touched": 1437,
+          "mps_allocated_gib": 0.2062516212463379,
+          "mps_driver_gib": 1.3997802734375
+        }
+      ]
+    },
+    "S": {
+      "parameters": {
+        "dense": 5731496,
+        "engram": 20000320,
+        "total": 25731816,
+        "encoder_distinct": 12,
+        "encoder_executed": 16,
+        "concept_distinct": 4,
+        "concept_executed": 8
+      },
+      "context": 384,
+      "batch_size": 1,
+      "updates": [
+        {
+          "candidate": false,
+          "seconds": 0.42232862499076873,
+          "loss": 10.208791732788086,
+          "dense_grad_norm_pre": 2.1723785400390625,
+          "dense_grad_norm_post": 1.0,
+          "dense_clip_factor": 0.46032493028678995,
+          "engram_grad_norm_pre": 0.007600080221891403,
+          "engram_grad_norm_post": 0.007600080221891403,
+          "engram_rows_touched": 1437,
+          "mps_allocated_gib": 0.21882104873657227,
+          "mps_driver_gib": 1.2713623046875
+        },
+        {
+          "candidate": false,
+          "seconds": 0.22474404197419062,
+          "loss": 9.977615356445312,
+          "dense_grad_norm_pre": 1.3968051671981812,
+          "dense_grad_norm_post": 1.0,
+          "dense_clip_factor": 0.7159194592656588,
+          "engram_grad_norm_pre": 0.0033891319762915373,
+          "engram_grad_norm_post": 0.0033891319762915373,
+          "engram_rows_touched": 1437,
+          "mps_allocated_gib": 0.21710872650146484,
+          "mps_driver_gib": 1.3963623046875
+        },
+        {
+          "candidate": true,
+          "seconds": 0.9405874999938533,
+          "loss": 10.809213638305664,
+          "dense_grad_norm_pre": 2.226541519165039,
+          "dense_grad_norm_post": 1.0,
+          "dense_clip_factor": 0.4491270391288295,
+          "engram_grad_norm_pre": 0.005418018903583288,
+          "engram_grad_norm_post": 0.005418018903583288,
+          "engram_rows_touched": 1437,
+          "mps_allocated_gib": 0.21123099327087402,
+          "mps_driver_gib": 1.4139404296875
+        }
+      ]
+    }
+  },
+  "text_sample": {
+    "index": 1247,
+    "identity": "27eb99587397aef7824bd0edfb176a368d5c13f66147ff43b9c01c1bfa495271"
+  }
+}

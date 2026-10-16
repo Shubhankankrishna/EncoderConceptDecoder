@@ -1,0 +1,2951 @@
+{
+  "captured_unix": 1791729264.2875211,
+  "overview": {
+    "schema_version": 1,
+    "generated_at": 1791729264.17561,
+    "run": {
+      "id": "pretrain_24h",
+      "path": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_10M/runs/pretrain_24h",
+      "manifest": {
+        "model": {
+          "vocab_size": 8192,
+          "width": 128,
+          "heads": 4,
+          "e1_layers": 4,
+          "e2_layers": 4,
+          "e3_layers": 4,
+          "encoder_visits": 2,
+          "concept_layers": 4,
+          "concept_visits": 2,
+          "decoder_layers": 4,
+          "ffn_expansion": 4,
+          "window": 64,
+          "group": 8,
+          "slots": 2,
+          "codes": 8,
+          "code_width": 32,
+          "gate_rank": 32,
+          "pq_segments": 8,
+          "pq_words": 32,
+          "engram_rows": [
+            156241,
+            156253,
+            156257,
+            156259
+          ],
+          "engram_dim": 32,
+          "engram_cpu": true
+        },
+        "parameters": {
+          "dense": 5465890,
+          "engram": 20000320,
+          "total": 25466210,
+          "encoder_distinct": 12,
+          "encoder_executed": 16,
+          "concept_distinct": 4,
+          "concept_executed": 8
+        },
+        "training": {
+          "run_dir": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_10M/runs/pretrain_24h",
+          "device": "mps",
+          "hours": 24,
+          "batch_size": 8,
+          "accumulate": 1,
+          "context": 384,
+          "lr": 0.0003,
+          "seed": 1011,
+          "candidate_every": 4,
+          "log_every": 20,
+          "checkpoint_seconds": 600,
+          "eval_seconds": 1800,
+          "max_steps": 0,
+          "resume": false,
+          "no_eval": false,
+          "skip_initial_eval": false
+        },
+        "start_unix": 1791700935.538214,
+        "deadline_unix": 1791787335.538214,
+        "device": "mps",
+        "torch": "2.10.0",
+        "source_sha256": "3cbaf426badbfc45f723431838c4f5340cbf7ce2c99f1a8438ed8e3b7152a0e9",
+        "data_sha256": "eaa15b5604c97015937a714d43d5fedb5485cb36748b81837fdb01d871874253",
+        "loss_weights": {
+          "token": 1,
+          "concept": 0.1,
+          "vq": 0.01,
+          "selector": 0.05,
+          "explore": 0.1
+        },
+        "auxiliary_candidate_every": 4,
+        "gradcuit_xi": 0,
+        "rbf_pretraining_writes": 0,
+        "target": "online code-free pooler with stop-gradient",
+        "precision": "float32",
+        "table_optimizer": "CPU SparseAdam, 5x dense LR",
+        "baseline_evaluation": "development only; sealed test excluded"
+      },
+      "status": {
+        "status": "running",
+        "pid": 52954,
+        "deadline_unix": 1791787335.538214,
+        "step": 51460,
+        "tokens": 109290528,
+        "loss": {
+          "total": 2.6350135996937754,
+          "token": 2.534076499193907,
+          "concept": 0.275946781039238,
+          "explore": 0.06822125241160393,
+          "vq": 4.1173130631446835,
+          "selector": 0.5069431781768798
+        },
+        "dense_grad_norm": 2.560915946960449,
+        "tokens_per_second": 3502.44314610563,
+        "elapsed_hours": 7.86496125055684,
+        "remaining_hours": 16.13503874944316,
+        "learning_rate": 0.00023455898187359044,
+        "family_supervised_tokens": {
+          "text": 95413136,
+          "sudoku_easy": 4296800,
+          "math": 1008616,
+          "sudoku_hard": 781952
+        },
+        "rss_gb": 1.9085845947265625,
+        "system_available_gb": 2.6885223388671875,
+        "mps_allocated_gb": 0.2185676097869873,
+        "mps_driver_gb": 4.257476806640625
+      },
+      "health": {
+        "trainer_alive": true,
+        "trainer_pid": 52954,
+        "status_age_seconds": 10.079336643218994,
+        "process_started_unix": 1791700933.689252,
+        "checkpoint_age_seconds": 433.07393407821655,
+        "checkpoint_bytes": 305966589
+      },
+      "updated": 1791729259.4799879
+    },
+    "latest_evaluation": {
+      "event_id": 3072,
+      "step": 49559,
+      "wall_time": 1791728223.895459,
+      "payload": {
+        "split": "dev",
+        "families": {
+          "text": {
+            "nll": 4.676518367274141,
+            "perplexity": 107.39550918430496,
+            "supervised_tokens": 2274,
+            "no_concepts_nll": 4.675803877747468,
+            "concept_ablation_delta_nll": -0.0007144895266728568,
+            "pooled_coordinate_std": 0.5127947529157003,
+            "code_counts": [
+              0,
+              19,
+              55,
+              9,
+              74,
+              39,
+              13,
+              75
+            ]
+          },
+          "math": {
+            "nll": 0.28006345644458996,
+            "perplexity": 1.323213776115052,
+            "supervised_tokens": 111,
+            "no_concepts_nll": 0.27976868261356613,
+            "concept_ablation_delta_nll": -0.00029477383102383126,
+            "pooled_coordinate_std": 0.6152759393056234,
+            "code_counts": [
+              0,
+              12,
+              12,
+              0,
+              2,
+              1,
+              0,
+              7
+            ]
+          },
+          "sudoku_easy": {
+            "nll": 0.25903578599294025,
+            "perplexity": 1.2956801711998696,
+            "supervised_tokens": 492,
+            "no_concepts_nll": 0.25934934616088867,
+            "concept_ablation_delta_nll": 0.00031356016794842345,
+            "pooled_coordinate_std": 0.48558448751767475,
+            "code_counts": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              125
+            ]
+          },
+          "sudoku_hard": {
+            "nll": 0.26720290382703143,
+            "perplexity": 1.3063054738221096,
+            "supervised_tokens": 492,
+            "no_concepts_nll": 0.2671698530515035,
+            "concept_ablation_delta_nll": -3.30507755279541e-05,
+            "pooled_coordinate_std": 0.4785710672537486,
+            "code_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              126
+            ]
+          }
+        },
+        "generation": {
+          "math": {
+            "correct": 0,
+            "n": 8,
+            "examples": [
+              {
+                "identity": "87cca843ed4d3aef78eff5d17eb4ce5c34b49b530bddccbfee003580292152fe",
+                "correct": false,
+                "reason": "incorrect_or_unterminated",
+                "response": " b'3\\n'",
+                "generated_tokens": 7,
+                "eos": true
+              },
+              {
+                "identity": "861a761d173af360ded7cbdfe65cd761316452e2de81dc2dc479709ae42381ae",
+                "correct": false,
+                "reason": "incorrect_or_unterminated",
+                "response": " b'3\\n'",
+                "generated_tokens": 7,
+                "eos": true
+              },
+              {
+                "identity": "31197fa971f9ffd68502bb59e9b54a89b5c25ada2b482a9eb07866f6d0618222",
+                "correct": false,
+                "reason": "incorrect_or_unterminated",
+                "response": " b'3\\n'",
+                "generated_tokens": 7,
+                "eos": true
+              },
+              {
+                "identity": "26e59cddfc34082dc7a9caee771567aae45aede83a3840471269312fb695a7fb",
+                "correct": false,
+                "reason": "incorrect_or_unterminated",
+                "response": " b'3\\n'",
+                "generated_tokens": 7,
+                "eos": true
+              },
+              {
+                "identity": "a92430499e73694b155fe964cf1353e1ab8d257b5b95a19440fa2655afa324fc",
+                "correct": false,
+                "reason": "incorrect_or_unterminated",
+                "response": " b'-10\\n'",
+                "generated_tokens": 8,
+                "eos": true
+              },
+              {
+                "identity": "b19cce77b5d8c1493a4a0ca1be26cd06a886449e4d5d31b872df94a60cffa24d",
+                "correct": false,
+                "reason": "incorrect_or_unterminated",
+                "response": " b'3\\n'",
+                "generated_tokens": 7,
+                "eos": true
+              },
+              {
+                "identity": "ce93c3edb827387f982237768a2b6ea32144e14d1b36e0a252c0c6a17839182c",
+                "correct": false,
+                "reason": "incorrect_or_unterminated",
+                "response": " b'37\\n'",
+                "generated_tokens": 8,
+                "eos": true
+              },
+              {
+                "identity": "36b38c232ab03ae5c41d422deb2b733fe23229cd421086223d25af1d4446f041",
+                "correct": false,
+                "reason": "incorrect_or_unterminated",
+                "response": " b'36\\n'",
+                "generated_tokens": 8,
+                "eos": true
+              }
+            ],
+            "metric": "complete exact/constraint-valid answer with EOS"
+          },
+          "sudoku_easy": {
+            "correct": 0,
+            "n": 2,
+            "examples": [
+              {
+                "identity": "cb6353a34ec739e8de4ed67d04d8877c9b7685583e0f7e093c072b4a57d0152f",
+                "correct": false,
+                "reason": "row_or_column",
+                "response": "798561234135928476264374185576832149821659743943417652312946857469785321587236914",
+                "generated_tokens": 82,
+                "eos": true
+              },
+              {
+                "identity": "688b02636fcc689c2098a55429230fc9f4ab16145efd6b3b35b06fdd6f687172",
+                "correct": false,
+                "reason": "row_or_column",
+                "response": "798162543342584967465793281934675128571428639826349457687213594159437826423956371",
+                "generated_tokens": 82,
+                "eos": true
+              }
+            ],
+            "metric": "complete exact/constraint-valid answer with EOS"
+          },
+          "sudoku_hard": {
+            "correct": 0,
+            "n": 2,
+            "examples": [
+              {
+                "identity": "17a8e8c534cb475c19bb1dac270b67000828661a0d8cd873b54f4efa0943c522",
+                "correct": false,
+                "reason": "clues",
+                "response": "413976582286134759957852643164723895839541276527688934742395168691487352435269487",
+                "generated_tokens": 82,
+                "eos": true
+              },
+              {
+                "identity": "cbf2732d5f383e8d867ace9ad25a0b41fd79ce7b853f29b61580265ef6583f19",
+                "correct": false,
+                "reason": "row_or_column",
+                "response": "619375428834692715257184396763419582241587963998263147572946831336821679489735214",
+                "generated_tokens": 82,
+                "eos": true
+              }
+            ],
+            "metric": "complete exact/constraint-valid answer with EOS"
+          }
+        },
+        "selector_policy": "prefix_argmax",
+        "memory_writes": 0,
+        "interpretation": "Teacher-forced loss and free-generation success are distinct metrics"
+      }
+    },
+    "alerts": [
+      {
+        "severity": "research",
+        "code": "small_concept_effect",
+        "family": "text",
+        "message": "Concept ablation changes NLL by less than 0.005 on this small sample; benefit is unproven.",
+        "value": -0.0007144895266728568
+      },
+      {
+        "severity": "research",
+        "code": "small_concept_effect",
+        "family": "math",
+        "message": "Concept ablation changes NLL by less than 0.005 on this small sample; benefit is unproven.",
+        "value": -0.00029477383102383126
+      },
+      {
+        "severity": "research",
+        "code": "small_concept_effect",
+        "family": "sudoku_easy",
+        "message": "Concept ablation changes NLL by less than 0.005 on this small sample; benefit is unproven.",
+        "value": 0.00031356016794842345
+      },
+      {
+        "severity": "research",
+        "code": "small_concept_effect",
+        "family": "sudoku_hard",
+        "message": "Concept ablation changes NLL by less than 0.005 on this small sample; benefit is unproven.",
+        "value": -3.30507755279541e-05
+      },
+      {
+        "severity": "research",
+        "code": "zero_sample_success",
+        "family": "math",
+        "message": "Zero complete answers in 8 sampled problems; not proof of zero population accuracy."
+      },
+      {
+        "severity": "research",
+        "code": "zero_sample_success",
+        "family": "sudoku_easy",
+        "message": "Zero complete answers in 2 sampled problems; not proof of zero population accuracy."
+      },
+      {
+        "severity": "research",
+        "code": "zero_sample_success",
+        "family": "sudoku_hard",
+        "message": "Zero complete answers in 2 sampled problems; not proof of zero population accuracy."
+      },
+      {
+        "severity": "warning",
+        "priority": "P1",
+        "code": "math_serialized_bytes",
+        "message": "All 239,904 math training answers retain Python bytes-literal wrappers (for example b'10\\n'). Predictable wrapper tokens dilute NLL; this run is not a clean math benchmark.",
+        "action": "Tested decoder and separate prepare_v2 entry point provided; active corpus is unchanged."
+      },
+      {
+        "severity": "warning",
+        "priority": "P2",
+        "code": "math_eval_single_module",
+        "message": "The trainer first-eight math generation check samples addition/subtraction only; other modules are absent.",
+        "action": "Use separate balanced audit results: 16 examples per module."
+      },
+      {
+        "severity": "research",
+        "priority": "P1",
+        "code": "reasoning_not_established",
+        "message": "Checkpoint 17607 scored 2/64 balanced math and 0/16 easy plus 0/16 hard Sudoku. Complete-answer reasoning remains weak at this early checkpoint."
+      },
+      {
+        "severity": "research",
+        "priority": "P2",
+        "code": "concept_benefit_unproven",
+        "message": "Learned checkpoint gradients reach the concept core, but removing concept guidance changes NLL by under 0.001 in all four offline batches. Code changes affect logits only weakly; no useful concept contribution established yet."
+      },
+      {
+        "severity": "info",
+        "priority": "P2",
+        "code": "gradient_coverage_limited",
+        "message": "Live logs contain only dense preclip gradient norm on the last update of each 20-step interval; sparse Engram and per-layer live gradients were never recorded. CPU checkpoint probes are labeled separately."
+      },
+      {
+        "severity": "info",
+        "priority": "P2",
+        "code": "continual_learning_unvalidated",
+        "message": "RBF wiring and frozen-backbone write contracts passed, but retention/transfer gains have not been measured. No RBF writes occur in this pretraining run."
+      }
+    ],
+    "ingestion_issues": [],
+    "artifacts": [
+      {
+        "path": "evaluation_0003185.json",
+        "kind": "evaluation",
+        "size": 5848,
+        "mtime": 1791702771.10178,
+        "digest": "2bbb11164be6a48ca2c6c173b5509b09f5f64ea13bc639477c3c147a76bde6d0"
+      },
+      {
+        "path": "evaluation_0006441.json",
+        "kind": "evaluation",
+        "size": 5847,
+        "mtime": 1791704588.063881,
+        "digest": "38b1dca844e52aeceb169aff7346119a4b2c1ee0ae356a9e85ea26ccf8b15cc5"
+      },
+      {
+        "path": "evaluation_0009779.json",
+        "kind": "evaluation",
+        "size": 5864,
+        "mtime": 1791706404.8771758,
+        "digest": "be777df644948db13563cec21e31d5aa1726fe13a997f5b050531eb06db37227"
+      },
+      {
+        "path": "evaluation_0013117.json",
+        "kind": "evaluation",
+        "size": 5871,
+        "mtime": 1791708221.6242743,
+        "digest": "35470e5b09b6491fbd64f04d258e4ec47e106de7a5f9635f5e8e508258c9b41f"
+      },
+      {
+        "path": "evaluation_0016494.json",
+        "kind": "evaluation",
+        "size": 5872,
+        "mtime": 1791710039.5093048,
+        "digest": "f2945b4a78b459e71af935c46f72e475a03eb61347a4baaa79fa4f26197f095d"
+      },
+      {
+        "path": "evaluation_0019668.json",
+        "kind": "evaluation",
+        "size": 5883,
+        "mtime": 1791711857.4786782,
+        "digest": "6a6b7784727c2106d29a2a48655d63c4f02fd6acac8e880b641e89c0ee4eab95"
+      },
+      {
+        "path": "evaluation_0022721.json",
+        "kind": "evaluation",
+        "size": 5882,
+        "mtime": 1791713676.4883323,
+        "digest": "94c63ee5a218d89f7f2daf4dda69f701f1f748b4dffea7bbbc3d2aa7fdf63da1"
+      },
+      {
+        "path": "evaluation_0025937.json",
+        "kind": "evaluation",
+        "size": 5885,
+        "mtime": 1791715500.9440334,
+        "digest": "644c74b283af4c29ddb327d7e21bf9ef30bc11cf2840c44c8772ec58b646bb28"
+      },
+      {
+        "path": "evaluation_0029241.json",
+        "kind": "evaluation",
+        "size": 5870,
+        "mtime": 1791717319.6252449,
+        "digest": "bf77fd0a6ff8391e6d5ef0bb5654787571f04874efd8b6469b39c5287ffc9253"
+      },
+      {
+        "path": "evaluation_0032515.json",
+        "kind": "evaluation",
+        "size": 5866,
+        "mtime": 1791719137.4655995,
+        "digest": "d2f49f147260addb0e0430074df7581f3d9dae19eb0602aff3e4ce491af89e16"
+      },
+      {
+        "path": "evaluation_0035813.json",
+        "kind": "evaluation",
+        "size": 5867,
+        "mtime": 1791720955.2956882,
+        "digest": "c88f68575416b549c6d0ce49f5659f0be8a93820ce84ead3382ddf624b928dc0"
+      },
+      {
+        "path": "evaluation_0039209.json",
+        "kind": "evaluation",
+        "size": 5862,
+        "mtime": 1791722772.1600578,
+        "digest": "4e9e2eeb73d37ec5bea17c58bd96afea55f0896cbc1aad9656ccfea0cd7cdedb"
+      },
+      {
+        "path": "evaluation_0042642.json",
+        "kind": "evaluation",
+        "size": 5870,
+        "mtime": 1791724589.528015,
+        "digest": "4ec5447105612514f0380778dfbd26187a1bfada9abc9065621e480e09fe6b3a"
+      },
+      {
+        "path": "evaluation_0046069.json",
+        "kind": "evaluation",
+        "size": 5880,
+        "mtime": 1791726406.7076735,
+        "digest": "70b1de0ae73759ca416735072f8616fed4bd23f5f6c4cdc7cfb630e92ccd90ca"
+      },
+      {
+        "path": "evaluation_0049559.json",
+        "kind": "evaluation",
+        "size": 5873,
+        "mtime": 1791728223.895459,
+        "digest": "93cd0c0d9c10e1971ab5b5b815eb3cb6e015ca7bf64b2f52a6f80e98fc047042"
+      },
+      {
+        "path": "evaluation_initial.json",
+        "kind": "evaluation",
+        "size": 2260,
+        "mtime": 1791700937.4191275,
+        "digest": "007e9da67cb50774968fc06d38d3cda1f94df68d27866090fd4624838b8613d3"
+      },
+      {
+        "path": "latest.pt",
+        "kind": "checkpoint",
+        "size": 305966589,
+        "mtime": 1791728826.404769,
+        "digest": null
+      }
+    ],
+    "metric_availability": {
+      "train.loss.*": {
+        "available": true,
+        "source": "train.jsonl",
+        "cadence": "20 optimizer steps (first at step 1)",
+        "meaning": "Mean of microbatch-normalized losses over the logging interval; not token-weighted across families. Exploration/selector include zero on non-auxiliary updates."
+      },
+      "train.gradient.dense_preclip_norm": {
+        "available": true,
+        "source": "train.jsonl",
+        "meaning": "Dense parameters only, L2 norm before clipping, measured on the final update of the logging interval. Excludes sparse Engram table; not an interval average."
+      },
+      "derived.dense_clip_scale": {
+        "available": true,
+        "meaning": "Inferred from clip_grad_norm_(max_norm=1); not separately measured."
+      },
+      "train.memory.*": {
+        "available": true,
+        "meaning": "Logged GiB counters; Apple unified-memory counters overlap and must not be summed."
+      },
+      "eval.*": {
+        "available": true,
+        "cadence": "About 30 minutes; small fixed development samples",
+        "meaning": "Per-family NLL, concept ablation, coordinate spread, code counts and strict complete-answer generation; zero-trial accuracy is absent, not zero."
+      },
+      "probe.*": {
+        "available": true,
+        "cadence": "Explicit one-off CPU checkpoint audit",
+        "meaning": "Fresh gradient and ablation probes, labeled by stored checkpoint step. Never historical optimizer-step gradients."
+      },
+      "probe_eval.*": {
+        "available": true,
+        "cadence": "Explicit balanced development audit",
+        "meaning": "Independent stratified generation evaluation; separate from the trainer small fixed sample."
+      },
+      "host.*": {
+        "available": true,
+        "cadence": "30 seconds while trainer is active",
+        "meaning": "External CPU/RSS/system memory samples, independent from train memory counters."
+      },
+      "per_layer_gradient_norms": {
+        "available": false,
+        "reason": "Not emitted by the running trainer; unavailable historically. Can be measured in explicitly labeled checkpoint probes."
+      },
+      "engram_gradient_norm": {
+        "available": false,
+        "reason": "Trainer checks/clips this norm but does not log it."
+      },
+      "gradient_histograms": {
+        "available": false,
+        "reason": "Not captured by this run."
+      },
+      "gpu_utilization_and_temperature": {
+        "available": false,
+        "reason": "No reliable public cross-process MPS utilization/temperature source is configured."
+      },
+      "rbf_activity": {
+        "available": false,
+        "reason": "RBF bank is intentionally empty during pretraining; no continual-learning episode has been run in this training run."
+      },
+      "checkpoint_step": {
+        "available": false,
+        "reason": "Collector records checkpoint filesystem metadata without deserializing it; only an explicit checkpoint audit can establish its exact stored step."
+      }
+    }
+  },
+  "collector": {
+    "schema_version": 1,
+    "status": "ok",
+    "pid": 56001,
+    "started_unix": 1791714008.07801,
+    "last_success_unix": 1791729259.5417118,
+    "last_error": null,
+    "poll_seconds": 5,
+    "database": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_10M/telemetry/data/telemetry.sqlite3"
+  },
+  "training_records": 2574,
+  "all_logged_losses_gradients_finite": true,
+  "windows": [
+    {
+      "start_hour": 0,
+      "end_hour": 0.5,
+      "records": 160,
+      "loss_means": {
+        "total": 5.008283847059663,
+        "token": 4.813855205712547,
+        "concept": 0.4833453135501201,
+        "explore": 0.12515143022284306,
+        "vq": 11.272371764535968,
+        "selector": 0.41710514401624865
+      },
+      "grad_median": 0.9560554921627045,
+      "grad_p95": 2.957585382461541,
+      "grad_max": 4.420569896697998,
+      "dense_clip_fraction": 0.4375,
+      "throughput_median": 3877.3526940430766,
+      "throughput_token_delta_per_second": 3820.2970874880816
+    },
+    {
+      "start_hour": 0.5,
+      "end_hour": 1,
+      "records": 159,
+      "loss_means": {
+        "total": 3.8809519690162735,
+        "token": 3.755869717605459,
+        "concept": 0.32758223377871065,
+        "explore": 0.08048639799345214,
+        "vq": 6.0974417333333,
+        "selector": 0.4660193766063115
+      },
+      "grad_median": 1.313879370689392,
+      "grad_p95": 3.241285228729247,
+      "grad_max": 6.028791427612305,
+      "dense_clip_fraction": 0.89937106918239,
+      "throughput_median": 3917.6185044126814,
+      "throughput_token_delta_per_second": 3885.0627165763067
+    },
+    {
+      "start_hour": 1,
+      "end_hour": 2,
+      "records": 331,
+      "loss_means": {
+        "total": 3.3700645722741447,
+        "token": 3.2615390661349837,
+        "concept": 0.2958109979070386,
+        "explore": 0.07156374300084445,
+        "vq": 4.847782619121932,
+        "selector": 0.4662041377264927
+      },
+      "grad_median": 1.5393352508544922,
+      "grad_p95": 3.6042468547821045,
+      "grad_max": 5.393894195556641,
+      "dense_clip_fraction": 1.0,
+      "throughput_median": 3909.16426930093,
+      "throughput_token_delta_per_second": 3874.3454208665944
+    },
+    {
+      "start_hour": 2,
+      "end_hour": 3,
+      "records": 324,
+      "loss_means": {
+        "total": 3.1462773096506242,
+        "token": 3.035730886509941,
+        "concept": 0.3140669777299519,
+        "explore": 0.07514781129810913,
+        "vq": 4.780212891469768,
+        "selector": 0.476456327855955
+      },
+      "grad_median": 1.8641007542610168,
+      "grad_p95": 3.631931269168849,
+      "grad_max": 6.219064235687256,
+      "dense_clip_fraction": 1.0,
+      "throughput_median": 3964.2722758332006,
+      "throughput_token_delta_per_second": 3852.896400583313
+    },
+    {
+      "start_hour": 7.36496125055684,
+      "end_hour": 7.86496125055684,
+      "records": 168,
+      "loss_means": {
+        "total": 2.7463305888298364,
+        "token": 2.64295277910174,
+        "concept": 0.29988652159947726,
+        "explore": 0.06859378274086685,
+        "vq": 4.2078797425542565,
+        "selector": 0.48901970131056655
+      },
+      "grad_median": 2.8509953022003174,
+      "grad_p95": 4.316505217552185,
+      "grad_max": 5.610682964324951,
+      "dense_clip_fraction": 1.0,
+      "throughput_median": 3980.5702831827575,
+      "throughput_token_delta_per_second": 3937.9231774762948
+    }
+  ],
+  "evaluations": [
+    {
+      "step": 0,
+      "wall_time": 1791700937.4191275,
+      "families": {
+        "text": {
+          "nll": 9.028388977050781,
+          "perplexity": 8336.418586557596,
+          "supervised_tokens": 768,
+          "no_concepts_nll": 9.028746604919434,
+          "concept_ablation_delta_nll": 0.00035762786865234375,
+          "pooled_coordinate_std": 0.695090651512146,
+          "code_counts": [
+            15,
+            10,
+            4,
+            0,
+            19,
+            3,
+            45,
+            0
+          ]
+        },
+        "math": {
+          "nll": 9.003904342651367,
+          "perplexity": 8134.782985485254,
+          "supervised_tokens": 22,
+          "no_concepts_nll": 9.001616477966309,
+          "concept_ablation_delta_nll": -0.0022878646850585938,
+          "pooled_coordinate_std": 0.33252960443496704,
+          "code_counts": [
+            0,
+            1,
+            4,
+            0,
+            5,
+            0,
+            0,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 9.023707389831543,
+          "perplexity": 8297.482129174181,
+          "supervised_tokens": 164,
+          "no_concepts_nll": 9.02513313293457,
+          "concept_ablation_delta_nll": 0.0014257431030273438,
+          "pooled_coordinate_std": 0.440829336643219,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            42,
+            0,
+            0,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 9.034421920776367,
+          "perplexity": 8386.863744159955,
+          "supervised_tokens": 164,
+          "no_concepts_nll": 9.03572940826416,
+          "concept_ablation_delta_nll": 0.0013074874877929688,
+          "pooled_coordinate_std": 0.41913461685180664,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            42,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 0,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {}
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 0,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": []
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 0,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": []
+        }
+      }
+    },
+    {
+      "step": 3185,
+      "wall_time": 1791702771.10178,
+      "families": {
+        "text": {
+          "nll": 5.765204167932193,
+          "perplexity": 319.0041678092307,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 5.764209301930934,
+          "concept_ablation_delta_nll": -0.0009948660012595312,
+          "pooled_coordinate_std": 0.46969543894131977,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            92,
+            0,
+            166,
+            26
+          ]
+        },
+        "math": {
+          "nll": 1.1955695173761867,
+          "perplexity": 3.3054397399114808,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 1.197304636508495,
+          "concept_ablation_delta_nll": 0.0017351191323082826,
+          "pooled_coordinate_std": 0.5041586756706238,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            30,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 1.3189796606699626,
+          "perplexity": 3.7396037651618337,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 1.3195565144220989,
+          "concept_ablation_delta_nll": 0.0005768537521362305,
+          "pooled_coordinate_std": 0.42311012744903564,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            28,
+            2,
+            96,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 1.3128963708877563,
+          "perplexity": 3.716923726354094,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 1.3138212362925212,
+          "concept_ablation_delta_nll": 0.0009248654047648852,
+          "pooled_coordinate_std": 0.4220554331938426,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            24,
+            2,
+            100,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'14\\n'": 6,
+            " b'1\\n'": 2
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 26,
+              "clues": 27,
+              "clue_accuracy": 0.9629629629629629,
+              "valid_rows": 0,
+              "valid_columns": 0,
+              "valid_boxes": 0
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 26,
+              "clues": 27,
+              "clue_accuracy": 0.9629629629629629,
+              "valid_rows": 1,
+              "valid_columns": 0,
+              "valid_boxes": 0
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 24,
+              "clues": 24,
+              "clue_accuracy": 1.0,
+              "valid_rows": 1,
+              "valid_columns": 0,
+              "valid_boxes": 0
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 21,
+              "clues": 23,
+              "clue_accuracy": 0.9130434782608695,
+              "valid_rows": 0,
+              "valid_columns": 0,
+              "valid_boxes": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 6441,
+      "wall_time": 1791704588.063881,
+      "families": {
+        "text": {
+          "nll": 5.21747268410031,
+          "perplexity": 184.46738708706997,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 5.21727167522058,
+          "concept_ablation_delta_nll": -0.00020100887972951398,
+          "pooled_coordinate_std": 0.408509482940038,
+          "code_counts": [
+            0,
+            0,
+            0,
+            154,
+            6,
+            123,
+            1,
+            0
+          ]
+        },
+        "math": {
+          "nll": 1.0357236899771132,
+          "perplexity": 2.817144237142984,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 1.0404539033099338,
+          "concept_ablation_delta_nll": 0.004730213332820643,
+          "pooled_coordinate_std": 0.5847199559211731,
+          "code_counts": [
+            0,
+            0,
+            0,
+            8,
+            12,
+            13,
+            0,
+            1
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.9042475422223409,
+          "perplexity": 2.470072598275548,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.9029461145401001,
+          "concept_ablation_delta_nll": -0.001301427682240841,
+          "pooled_coordinate_std": 0.49518518646558124,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            120,
+            6,
+            0,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.8903523087501526,
+          "perplexity": 2.4359877199174473,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.8892845710118612,
+          "concept_ablation_delta_nll": -0.0010677377382913855,
+          "pooled_coordinate_std": 0.49247099955876666,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            120,
+            6,
+            0,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 1,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'10\\n'": 4,
+            " b'2\\n'": 2,
+            " b'1\\n'": 1,
+            " b'11\\n'": 1
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 4,
+              "valid_columns": 1,
+              "valid_boxes": 0
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 1,
+              "valid_columns": 0,
+              "valid_boxes": 0
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 24,
+              "clues": 24,
+              "clue_accuracy": 1.0,
+              "valid_rows": 2,
+              "valid_columns": 0,
+              "valid_boxes": 0
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 22,
+              "clues": 23,
+              "clue_accuracy": 0.9565217391304348,
+              "valid_rows": 2,
+              "valid_columns": 0,
+              "valid_boxes": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 9779,
+      "wall_time": 1791706404.8771758,
+      "families": {
+        "text": {
+          "nll": 4.94504429482533,
+          "perplexity": 140.4770731210547,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 4.945904756913399,
+          "concept_ablation_delta_nll": 0.0008604620880694469,
+          "pooled_coordinate_std": 0.4068293074766795,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            280
+          ]
+        },
+        "math": {
+          "nll": 0.7325133348370457,
+          "perplexity": 2.080302539537856,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 0.7322552386704866,
+          "concept_ablation_delta_nll": -0.0002580961665591408,
+          "pooled_coordinate_std": 0.5851810971895853,
+          "code_counts": [
+            0,
+            0,
+            10,
+            0,
+            0,
+            0,
+            10,
+            14
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.7299804091453552,
+          "perplexity": 2.0750399554697685,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.7304704785346985,
+          "concept_ablation_delta_nll": 0.0004900693893432617,
+          "pooled_coordinate_std": 0.4467261830965678,
+          "code_counts": [
+            0,
+            0,
+            10,
+            0,
+            116,
+            0,
+            0,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.7496968110402426,
+          "perplexity": 2.116358262871072,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.7517914772033691,
+          "concept_ablation_delta_nll": 0.0020946661631265906,
+          "pooled_coordinate_std": 0.4412618080774943,
+          "code_counts": [
+            0,
+            0,
+            10,
+            0,
+            116,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'1\\n'": 6,
+            " b'2\\n'": 1,
+            " b'3\\n'": 1
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 4,
+              "valid_columns": 0,
+              "valid_boxes": 1
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 2,
+              "valid_columns": 0,
+              "valid_boxes": 0
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 24,
+              "clues": 24,
+              "clue_accuracy": 1.0,
+              "valid_rows": 2,
+              "valid_columns": 1,
+              "valid_boxes": 1
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 23,
+              "clues": 23,
+              "clue_accuracy": 1.0,
+              "valid_rows": 6,
+              "valid_columns": 0,
+              "valid_boxes": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 13117,
+      "wall_time": 1791708221.6242743,
+      "families": {
+        "text": {
+          "nll": 4.848773663150919,
+          "perplexity": 127.58383311410981,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 4.847051029154996,
+          "concept_ablation_delta_nll": -0.001722633995922429,
+          "pooled_coordinate_std": 0.4572100241978963,
+          "code_counts": [
+            2,
+            0,
+            0,
+            9,
+            0,
+            253,
+            20,
+            0
+          ]
+        },
+        "math": {
+          "nll": 0.6262888352613192,
+          "perplexity": 1.8706553710340603,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 0.6218993218095453,
+          "concept_ablation_delta_nll": -0.004389513451773852,
+          "pooled_coordinate_std": 0.6610620816548666,
+          "code_counts": [
+            0,
+            0,
+            5,
+            2,
+            4,
+            5,
+            18,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.5950773159662882,
+          "perplexity": 1.813171126618647,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.5926337043444315,
+          "concept_ablation_delta_nll": -0.0024436116218566895,
+          "pooled_coordinate_std": 0.4422100782394409,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            120,
+            0,
+            0,
+            6
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.6027002930641174,
+          "perplexity": 1.8270457041975467,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.6023334860801697,
+          "concept_ablation_delta_nll": -0.0003668069839477539,
+          "pooled_coordinate_std": 0.44146297375361127,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            120,
+            0,
+            0,
+            6
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'-10\\n'": 4,
+            " b'10\\n'": 2,
+            " b'-1\\n'": 1,
+            " b'-15\\n'": 1
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 5,
+              "valid_columns": 0,
+              "valid_boxes": 1
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 5,
+              "valid_columns": 0,
+              "valid_boxes": 4
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 24,
+              "clues": 24,
+              "clue_accuracy": 1.0,
+              "valid_rows": 3,
+              "valid_columns": 1,
+              "valid_boxes": 2
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 22,
+              "clues": 23,
+              "clue_accuracy": 0.9565217391304348,
+              "valid_rows": 5,
+              "valid_columns": 0,
+              "valid_boxes": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 16494,
+      "wall_time": 1791710039.5093048,
+      "families": {
+        "text": {
+          "nll": 4.780412595945172,
+          "perplexity": 119.15350215597833,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 4.780038140379974,
+          "concept_ablation_delta_nll": -0.00037445556519877243,
+          "pooled_coordinate_std": 0.5546248356501261,
+          "code_counts": [
+            3,
+            0,
+            3,
+            7,
+            3,
+            149,
+            119,
+            0
+          ]
+        },
+        "math": {
+          "nll": 0.40194662277762955,
+          "perplexity": 1.494731545928553,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 0.4012700622683173,
+          "concept_ablation_delta_nll": -0.0006765605093122518,
+          "pooled_coordinate_std": 0.6485779881477356,
+          "code_counts": [
+            0,
+            0,
+            2,
+            2,
+            0,
+            1,
+            29,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.47231946388880414,
+          "perplexity": 1.6037096292149113,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.47062792380650836,
+          "concept_ablation_delta_nll": -0.0016915400822957727,
+          "pooled_coordinate_std": 0.42097360889116925,
+          "code_counts": [
+            0,
+            0,
+            5,
+            15,
+            32,
+            32,
+            42,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.5265085200468699,
+          "perplexity": 1.6930108638395667,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.5265480279922485,
+          "concept_ablation_delta_nll": 3.950794537865843e-05,
+          "pooled_coordinate_std": 0.41551976402600604,
+          "code_counts": [
+            0,
+            0,
+            2,
+            21,
+            25,
+            37,
+            41,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'-12\\n'": 2,
+            " b'12\\n'": 3,
+            " b'2\\n'": 1,
+            " b'1\\n'": 1,
+            " b'-11\\n'": 1
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": false
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 4,
+              "valid_columns": 0,
+              "valid_boxes": 2
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 24,
+              "clues": 24,
+              "clue_accuracy": 1.0,
+              "valid_rows": 6,
+              "valid_columns": 0,
+              "valid_boxes": 7
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 22,
+              "clues": 23,
+              "clue_accuracy": 0.9565217391304348,
+              "valid_rows": 2,
+              "valid_columns": 0,
+              "valid_boxes": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 19668,
+      "wall_time": 1791711857.4786782,
+      "families": {
+        "text": {
+          "nll": 4.7207698230693085,
+          "perplexity": 112.25463562188625,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 4.720066879544221,
+          "concept_ablation_delta_nll": -0.000702943525087818,
+          "pooled_coordinate_std": 0.4983360171318054,
+          "code_counts": [
+            16,
+            0,
+            4,
+            34,
+            17,
+            209,
+            3,
+            1
+          ]
+        },
+        "math": {
+          "nll": 0.4265362461944958,
+          "perplexity": 1.5319420530061125,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 0.4260374484835444,
+          "concept_ablation_delta_nll": -0.0004987977109514041,
+          "pooled_coordinate_std": 0.6863845189412435,
+          "code_counts": [
+            1,
+            0,
+            3,
+            1,
+            0,
+            26,
+            3,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.43151246507962543,
+          "perplexity": 1.5395843310350175,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.430554062128067,
+          "concept_ablation_delta_nll": -0.0009584029515584125,
+          "pooled_coordinate_std": 0.423133244117101,
+          "code_counts": [
+            0,
+            0,
+            105,
+            0,
+            9,
+            0,
+            12,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.4556447168191274,
+          "perplexity": 1.5771898961702417,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.4559197723865509,
+          "concept_ablation_delta_nll": 0.0002750555674235211,
+          "pooled_coordinate_std": 0.4130265414714813,
+          "code_counts": [
+            0,
+            0,
+            119,
+            0,
+            1,
+            0,
+            6,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'-11\\n'": 2,
+            " b'-10\\n'": 4,
+            " b'-1\\n'": 1,
+            " b'10\\n'": 1
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 5,
+              "valid_columns": 0,
+              "valid_boxes": 0
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 7,
+              "valid_columns": 1,
+              "valid_boxes": 2
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 24,
+              "clues": 24,
+              "clue_accuracy": 1.0,
+              "valid_rows": 5,
+              "valid_columns": 1,
+              "valid_boxes": 2
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 23,
+              "clues": 23,
+              "clue_accuracy": 1.0,
+              "valid_rows": 5,
+              "valid_columns": 1,
+              "valid_boxes": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 22721,
+      "wall_time": 1791713676.4883323,
+      "families": {
+        "text": {
+          "nll": 4.674601298208916,
+          "perplexity": 107.1898217973614,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 4.672194875953695,
+          "concept_ablation_delta_nll": -0.0024064222552215853,
+          "pooled_coordinate_std": 0.6008659402529398,
+          "code_counts": [
+            0,
+            2,
+            35,
+            218,
+            29,
+            0,
+            0,
+            0
+          ]
+        },
+        "math": {
+          "nll": 0.36128760820573513,
+          "perplexity": 1.435176169969609,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 0.36272762313082413,
+          "concept_ablation_delta_nll": 0.0014400149250889949,
+          "pooled_coordinate_std": 0.6464571555455526,
+          "code_counts": [
+            0,
+            0,
+            6,
+            15,
+            6,
+            0,
+            7,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.5059917171796163,
+          "perplexity": 1.6586295965623783,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.5057796140511831,
+          "concept_ablation_delta_nll": -0.00021210312843322754,
+          "pooled_coordinate_std": 0.42513832449913025,
+          "code_counts": [
+            0,
+            0,
+            115,
+            0,
+            3,
+            0,
+            8,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.486391802628835,
+          "perplexity": 1.6264371137278257,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.486897071202596,
+          "concept_ablation_delta_nll": 0.0005052685737609863,
+          "pooled_coordinate_std": 0.4166944622993469,
+          "code_counts": [
+            0,
+            0,
+            118,
+            0,
+            2,
+            0,
+            6,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'-11\\n'": 6,
+            " b'-10\\n'": 1,
+            " b'10\\n'": 1
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 3,
+              "valid_columns": 0,
+              "valid_boxes": 3
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 7,
+              "valid_columns": 3,
+              "valid_boxes": 5
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 24,
+              "clues": 24,
+              "clue_accuracy": 1.0,
+              "valid_rows": 5,
+              "valid_columns": 0,
+              "valid_boxes": 0
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 23,
+              "clues": 23,
+              "clue_accuracy": 1.0,
+              "valid_rows": 4,
+              "valid_columns": 1,
+              "valid_boxes": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 25937,
+      "wall_time": 1791715500.9440334,
+      "families": {
+        "text": {
+          "nll": 4.66876315693113,
+          "perplexity": 106.56585564770009,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 4.6673659246640975,
+          "concept_ablation_delta_nll": -0.0013972322670321446,
+          "pooled_coordinate_std": 0.6239857276280721,
+          "code_counts": [
+            0,
+            56,
+            44,
+            3,
+            3,
+            158,
+            8,
+            12
+          ]
+        },
+        "math": {
+          "nll": 0.3822850485642751,
+          "perplexity": 1.4656298012660491,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 0.3792030721365868,
+          "concept_ablation_delta_nll": -0.00308197642768826,
+          "pooled_coordinate_std": 0.6690763831138611,
+          "code_counts": [
+            1,
+            0,
+            3,
+            0,
+            0,
+            19,
+            6,
+            5
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.4095587531725566,
+          "perplexity": 1.5061530532118437,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.41067756215731305,
+          "concept_ablation_delta_nll": 0.0011188089847564697,
+          "pooled_coordinate_std": 0.47804077466328937,
+          "code_counts": [
+            0,
+            0,
+            119,
+            0,
+            0,
+            0,
+            7,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.38866040110588074,
+          "perplexity": 1.475003556692582,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.38914236426353455,
+          "concept_ablation_delta_nll": 0.0004819631576538086,
+          "pooled_coordinate_std": 0.47171879808108014,
+          "code_counts": [
+            0,
+            0,
+            120,
+            0,
+            0,
+            0,
+            6,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'-11\\n'": 6,
+            " b'-118\\n'": 1,
+            " b'-1880008\\n'": 1
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 5,
+              "valid_columns": 1,
+              "valid_boxes": 6
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 5,
+              "valid_columns": 1,
+              "valid_boxes": 2
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 24,
+              "clues": 24,
+              "clue_accuracy": 1.0,
+              "valid_rows": 6,
+              "valid_columns": 2,
+              "valid_boxes": 5
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 22,
+              "clues": 23,
+              "clue_accuracy": 0.9565217391304348,
+              "valid_rows": 6,
+              "valid_columns": 1,
+              "valid_boxes": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 29241,
+      "wall_time": 1791717319.6252449,
+      "families": {
+        "text": {
+          "nll": 4.642786911735434,
+          "perplexity": 103.8333190226127,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 4.641882958072471,
+          "concept_ablation_delta_nll": -0.0009039536629629197,
+          "pooled_coordinate_std": 0.5517560044924418,
+          "code_counts": [
+            0,
+            208,
+            21,
+            26,
+            14,
+            14,
+            0,
+            1
+          ]
+        },
+        "math": {
+          "nll": 0.29590004669116426,
+          "perplexity": 1.3443357793070976,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 0.29667346447974713,
+          "concept_ablation_delta_nll": 0.0007734177885828641,
+          "pooled_coordinate_std": 0.6139135559399923,
+          "code_counts": [
+            0,
+            13,
+            2,
+            2,
+            2,
+            12,
+            3,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.3665713568528493,
+          "perplexity": 1.442779349070914,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.3683326641718547,
+          "concept_ablation_delta_nll": 0.0017613073190053674,
+          "pooled_coordinate_std": 0.465224027633667,
+          "code_counts": [
+            0,
+            36,
+            0,
+            0,
+            0,
+            90,
+            0,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.357869287331899,
+          "perplexity": 1.4302786527218116,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.36012324690818787,
+          "concept_ablation_delta_nll": 0.0022539595762888776,
+          "pooled_coordinate_std": 0.45974478125572205,
+          "code_counts": [
+            0,
+            38,
+            0,
+            0,
+            0,
+            88,
+            0,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'11\\n'": 3,
+            " b'10\\n'": 4,
+            " b'100\\n'": 1
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 5,
+              "valid_columns": 3,
+              "valid_boxes": 3
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 4,
+              "valid_columns": 2,
+              "valid_boxes": 2
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 24,
+              "clues": 24,
+              "clue_accuracy": 1.0,
+              "valid_rows": 7,
+              "valid_columns": 1,
+              "valid_boxes": 7
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 22,
+              "clues": 23,
+              "clue_accuracy": 0.9565217391304348,
+              "valid_rows": 7,
+              "valid_columns": 2,
+              "valid_boxes": 5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 32515,
+      "wall_time": 1791719137.4655995,
+      "families": {
+        "text": {
+          "nll": 4.658482576737618,
+          "perplexity": 105.47590906417054,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 4.659792915183195,
+          "concept_ablation_delta_nll": 0.0013103384455774858,
+          "pooled_coordinate_std": 0.5619578758875529,
+          "code_counts": [
+            0,
+            77,
+            0,
+            72,
+            32,
+            77,
+            0,
+            26
+          ]
+        },
+        "math": {
+          "nll": 0.30628046218876365,
+          "perplexity": 1.3583632226516744,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 0.3033488949945381,
+          "concept_ablation_delta_nll": -0.0029315671942255483,
+          "pooled_coordinate_std": 0.6680760582288107,
+          "code_counts": [
+            5,
+            0,
+            2,
+            2,
+            0,
+            19,
+            1,
+            5
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.3068571786085765,
+          "perplexity": 1.359146838966726,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.3061276078224182,
+          "concept_ablation_delta_nll": -0.0007295707861582623,
+          "pooled_coordinate_std": 0.5112498998641968,
+          "code_counts": [
+            1,
+            7,
+            0,
+            2,
+            0,
+            86,
+            0,
+            30
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.31844086448351544,
+          "perplexity": 1.374982308490664,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.31732914845148724,
+          "concept_ablation_delta_nll": -0.0011117160320281982,
+          "pooled_coordinate_std": 0.5090170502662659,
+          "code_counts": [
+            0,
+            7,
+            0,
+            0,
+            0,
+            90,
+            0,
+            29
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'-13\\n'": 1,
+            " b'10\\n'": 2,
+            " b'-10\\n'": 3,
+            " b'-1\\n'": 1,
+            " b'13\\n'": 1
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 6,
+              "valid_columns": 3,
+              "valid_boxes": 5
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 26,
+              "clues": 27,
+              "clue_accuracy": 0.9629629629629629,
+              "valid_rows": 6,
+              "valid_columns": 1,
+              "valid_boxes": 5
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 23,
+              "clues": 24,
+              "clue_accuracy": 0.9583333333333334,
+              "valid_rows": 7,
+              "valid_columns": 0,
+              "valid_boxes": 6
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 23,
+              "clues": 23,
+              "clue_accuracy": 1.0,
+              "valid_rows": 8,
+              "valid_columns": 2,
+              "valid_boxes": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 35813,
+      "wall_time": 1791720955.2956882,
+      "families": {
+        "text": {
+          "nll": 4.649747511327739,
+          "perplexity": 104.55858238636094,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 4.6495341738799,
+          "concept_ablation_delta_nll": -0.00021333744783902375,
+          "pooled_coordinate_std": 0.5558199882507324,
+          "code_counts": [
+            0,
+            177,
+            14,
+            0,
+            7,
+            55,
+            18,
+            13
+          ]
+        },
+        "math": {
+          "nll": 0.32378045409112366,
+          "perplexity": 1.382343785879425,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 0.3263656078158198,
+          "concept_ablation_delta_nll": 0.002585153724696143,
+          "pooled_coordinate_std": 0.6425859332084656,
+          "code_counts": [
+            0,
+            2,
+            2,
+            0,
+            0,
+            25,
+            0,
+            5
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.3309432764848073,
+          "perplexity": 1.392280815006318,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.33024677634239197,
+          "concept_ablation_delta_nll": -0.0006965001424153461,
+          "pooled_coordinate_std": 0.4935671587785085,
+          "code_counts": [
+            0,
+            56,
+            0,
+            0,
+            0,
+            68,
+            0,
+            2
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.34234801928202313,
+          "perplexity": 1.4082503105041428,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.3400431076685588,
+          "concept_ablation_delta_nll": -0.0023049116134643555,
+          "pooled_coordinate_std": 0.4887166718641917,
+          "code_counts": [
+            0,
+            58,
+            0,
+            0,
+            0,
+            67,
+            0,
+            1
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'3\\n'": 3,
+            " b'13\\n'": 4,
+            " b'1\\n'": 1
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 6,
+              "valid_columns": 1,
+              "valid_boxes": 2
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 5,
+              "valid_columns": 4,
+              "valid_boxes": 2
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": false
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 23,
+              "clues": 23,
+              "clue_accuracy": 1.0,
+              "valid_rows": 5,
+              "valid_columns": 3,
+              "valid_boxes": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 39209,
+      "wall_time": 1791722772.1600578,
+      "families": {
+        "text": {
+          "nll": 4.64404804788353,
+          "perplexity": 103.96434958092907,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 4.643526335190343,
+          "concept_ablation_delta_nll": -0.0005217126931871263,
+          "pooled_coordinate_std": 0.5398961901664734,
+          "code_counts": [
+            140,
+            1,
+            14,
+            2,
+            118,
+            4,
+            5,
+            0
+          ]
+        },
+        "math": {
+          "nll": 0.3808147760930362,
+          "perplexity": 1.4634765094669455,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 0.3836853540426976,
+          "concept_ablation_delta_nll": 0.0028705779496613903,
+          "pooled_coordinate_std": 0.6392546892166138,
+          "code_counts": [
+            29,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.2704066385825475,
+          "perplexity": 1.3104972411399074,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.27039702236652374,
+          "concept_ablation_delta_nll": -9.616216023744517e-06,
+          "pooled_coordinate_std": 0.47874245047569275,
+          "code_counts": [
+            83,
+            0,
+            0,
+            0,
+            42,
+            0,
+            1,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.29438209533691406,
+          "perplexity": 1.3422966910002945,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.2946164011955261,
+          "concept_ablation_delta_nll": 0.00023430585861206055,
+          "pooled_coordinate_std": 0.4733656744162242,
+          "code_counts": [
+            83,
+            0,
+            0,
+            0,
+            43,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'14\\n'": 4,
+            " b'11\\n'": 3,
+            " b'1\\n'": 1
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 26,
+              "clues": 27,
+              "clue_accuracy": 0.9629629629629629,
+              "valid_rows": 6,
+              "valid_columns": 2,
+              "valid_boxes": 4
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 4,
+              "valid_columns": 2,
+              "valid_boxes": 3
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 24,
+              "clues": 24,
+              "clue_accuracy": 1.0,
+              "valid_rows": 5,
+              "valid_columns": 2,
+              "valid_boxes": 4
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 22,
+              "clues": 23,
+              "clue_accuracy": 0.9565217391304348,
+              "valid_rows": 7,
+              "valid_columns": 1,
+              "valid_boxes": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 42642,
+      "wall_time": 1791724589.528015,
+      "families": {
+        "text": {
+          "nll": 4.665716646843661,
+          "perplexity": 106.24169572244746,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 4.664670439697507,
+          "concept_ablation_delta_nll": -0.00104620714615411,
+          "pooled_coordinate_std": 0.5868400533994039,
+          "code_counts": [
+            1,
+            133,
+            5,
+            16,
+            0,
+            112,
+            17,
+            0
+          ]
+        },
+        "math": {
+          "nll": 0.37863783672586215,
+          "perplexity": 1.4602940750807154,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 0.3817173092214911,
+          "concept_ablation_delta_nll": 0.0030794724956289543,
+          "pooled_coordinate_std": 0.6358868082364401,
+          "code_counts": [
+            0,
+            12,
+            4,
+            0,
+            0,
+            18,
+            0,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.27063119908173877,
+          "perplexity": 1.310791560099536,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.2717832376559575,
+          "concept_ablation_delta_nll": 0.00115203857421875,
+          "pooled_coordinate_std": 0.5604765017827352,
+          "code_counts": [
+            82,
+            16,
+            0,
+            0,
+            0,
+            18,
+            10,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.2839144666989644,
+          "perplexity": 1.328319310358256,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.2845297654469808,
+          "concept_ablation_delta_nll": 0.0006152987480163574,
+          "pooled_coordinate_std": 0.5565483967463175,
+          "code_counts": [
+            81,
+            12,
+            0,
+            2,
+            1,
+            20,
+            10,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'-13\\n'": 2,
+            " b'-17\\n'": 3,
+            " b'-11\\n'": 2,
+            " b'-139\\n'": 1
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 6,
+              "valid_columns": 1,
+              "valid_boxes": 3
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 5,
+              "valid_columns": 3,
+              "valid_boxes": 3
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 23,
+              "clues": 24,
+              "clue_accuracy": 0.9583333333333334,
+              "valid_rows": 8,
+              "valid_columns": 6,
+              "valid_boxes": 8
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 22,
+              "clues": 23,
+              "clue_accuracy": 0.9565217391304348,
+              "valid_rows": 6,
+              "valid_columns": 1,
+              "valid_boxes": 5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 46069,
+      "wall_time": 1791726406.7076735,
+      "families": {
+        "text": {
+          "nll": 4.634152893026146,
+          "perplexity": 102.94067928287147,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 4.6333476798830056,
+          "concept_ablation_delta_nll": -0.0008052131431401932,
+          "pooled_coordinate_std": 0.508343517780304,
+          "code_counts": [
+            0,
+            40,
+            0,
+            1,
+            32,
+            198,
+            1,
+            12
+          ]
+        },
+        "math": {
+          "nll": 0.30201089556689736,
+          "perplexity": 1.3525759637110946,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 0.30113458848214364,
+          "concept_ablation_delta_nll": -0.0008763070847537247,
+          "pooled_coordinate_std": 0.6516387462615967,
+          "code_counts": [
+            0,
+            7,
+            4,
+            0,
+            0,
+            19,
+            2,
+            2
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.2789206604162852,
+          "perplexity": 1.3217024763852516,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.2789035141468048,
+          "concept_ablation_delta_nll": -1.7146269480405874e-05,
+          "pooled_coordinate_std": 0.4667185644308726,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            126
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.31142709652582806,
+          "perplexity": 1.3653722424153258,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.31204594175020856,
+          "concept_ablation_delta_nll": 0.0006188452243804932,
+          "pooled_coordinate_std": 0.46326149503389996,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            126
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'11\\n'": 3,
+            " b'12\\n'": 1,
+            " b'110\\n'": 2,
+            " b'10\\n'": 1,
+            " b'1104\\n'": 1
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 5,
+              "valid_columns": 4,
+              "valid_boxes": 4
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 4,
+              "valid_columns": 3,
+              "valid_boxes": 4
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 23,
+              "clues": 24,
+              "clue_accuracy": 0.9583333333333334,
+              "valid_rows": 6,
+              "valid_columns": 3,
+              "valid_boxes": 8
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 23,
+              "clues": 23,
+              "clue_accuracy": 1.0,
+              "valid_rows": 8,
+              "valid_columns": 2,
+              "valid_boxes": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 49559,
+      "wall_time": 1791728223.895459,
+      "families": {
+        "text": {
+          "nll": 4.676518367274141,
+          "perplexity": 107.39550918430496,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 4.675803877747468,
+          "concept_ablation_delta_nll": -0.0007144895266728568,
+          "pooled_coordinate_std": 0.5127947529157003,
+          "code_counts": [
+            0,
+            19,
+            55,
+            9,
+            74,
+            39,
+            13,
+            75
+          ]
+        },
+        "math": {
+          "nll": 0.28006345644458996,
+          "perplexity": 1.323213776115052,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 0.27976868261356613,
+          "concept_ablation_delta_nll": -0.00029477383102383126,
+          "pooled_coordinate_std": 0.6152759393056234,
+          "code_counts": [
+            0,
+            12,
+            12,
+            0,
+            2,
+            1,
+            0,
+            7
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.25903578599294025,
+          "perplexity": 1.2956801711998696,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.25934934616088867,
+          "concept_ablation_delta_nll": 0.00031356016794842345,
+          "pooled_coordinate_std": 0.48558448751767475,
+          "code_counts": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            125
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.26720290382703143,
+          "perplexity": 1.3063054738221096,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.2671698530515035,
+          "concept_ablation_delta_nll": -3.30507755279541e-05,
+          "pooled_coordinate_std": 0.4785710672537486,
+          "code_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            126
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "response_counts": {
+            " b'3\\n'": 5,
+            " b'-10\\n'": 1,
+            " b'37\\n'": 1,
+            " b'36\\n'": 1
+          }
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 7,
+              "valid_columns": 1,
+              "valid_boxes": 5
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 27,
+              "clues": 27,
+              "clue_accuracy": 1.0,
+              "valid_rows": 6,
+              "valid_columns": 2,
+              "valid_boxes": 6
+            }
+          ]
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "metric": "complete exact/constraint-valid answer with EOS",
+          "partial_diagnostics": [
+            {
+              "format_valid": true,
+              "clue_correct": 22,
+              "clues": 24,
+              "clue_accuracy": 0.9166666666666666,
+              "valid_rows": 6,
+              "valid_columns": 3,
+              "valid_boxes": 3
+            },
+            {
+              "format_valid": true,
+              "clue_correct": 23,
+              "clues": 23,
+              "clue_accuracy": 1.0,
+              "valid_rows": 6,
+              "valid_columns": 3,
+              "valid_boxes": 6
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "host_first": {
+    "id": 913,
+    "kind": "host",
+    "source": "collector",
+    "step": 18100,
+    "wall_time": 1791710936.938398,
+    "time_quality": "collector_clock",
+    "ingested_at": 1791710936.938405,
+    "payload": {
+      "system_available_gib": 2.3283843994140625,
+      "system_memory_percent": 85.4,
+      "swap_used_gib": 3.1920166015625,
+      "disk_free_gib": 55.62139892578125,
+      "collector_rss_mib": 29.78125,
+      "trainer_alive": true,
+      "trainer_rss_gib": 1.29150390625,
+      "trainer_threads": 16
+    }
+  },
+  "host_latest": {
+    "id": 3200,
+    "kind": "host",
+    "source": "collector",
+    "step": 51440,
+    "wall_time": 1791729239.245354,
+    "time_quality": "collector_clock",
+    "ingested_at": 1791729239.2453601,
+    "payload": {
+      "system_available_gib": 2.5328826904296875,
+      "system_memory_percent": 84.2,
+      "swap_used_gib": 6.78509521484375,
+      "disk_free_gib": 51.69845962524414,
+      "collector_rss_mib": 23.28125,
+      "trainer_alive": true,
+      "trainer_rss_gib": 1.375213623046875,
+      "trainer_threads": 17,
+      "trainer_cpu_percent": 34.4
+    }
+  }
+}

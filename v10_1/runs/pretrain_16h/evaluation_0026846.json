@@ -1,0 +1,393 @@
+{
+  "split": "dev",
+  "families": {
+    "text": {
+      "nll": 4.910151481628418,
+      "no_concepts_nll": 4.914776086807251,
+      "no_pq_nll": 4.91205358505249,
+      "no_continuous_nll": 4.912813901901245,
+      "one_visit_nll": 4.910183429718018,
+      "perplexity": 135.65996284415343,
+      "supervised_tokens": 768,
+      "concept_ablation_delta_nll": 0.004624605178833008,
+      "pq_ablation_delta_nll": 0.0019021034240722656,
+      "continuous_ablation_delta_nll": 0.0026624202728271484,
+      "one_visit_delta_nll": 3.1948089599609375e-05,
+      "latent_visit_mse": [
+        0.7786746025085449,
+        0.7790584564208984
+      ],
+      "latent_group_count": 94,
+      "pooled_coordinate_std": 0.7968606650829315,
+      "code_counts": [
+        27,
+        27,
+        23,
+        7,
+        1,
+        7,
+        4,
+        0
+      ]
+    },
+    "math": {
+      "nll": 1.6195337091173445,
+      "no_concepts_nll": 1.6175271272659302,
+      "no_pq_nll": 1.6188764912741525,
+      "no_continuous_nll": 1.6182207890919276,
+      "one_visit_nll": 1.6196001257215227,
+      "perplexity": 5.050734655874252,
+      "supervised_tokens": 14,
+      "concept_ablation_delta_nll": -0.002006581851414335,
+      "pq_ablation_delta_nll": -0.0006572178431920594,
+      "continuous_ablation_delta_nll": -0.0013129200254169415,
+      "one_visit_delta_nll": 6.641660417816553e-05,
+      "latent_visit_mse": [
+        0.5775894323984782,
+        0.5784147580464681
+      ],
+      "latent_group_count": 6,
+      "pooled_coordinate_std": 0.6541124880313873,
+      "code_counts": [
+        6,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    "sudoku_easy": {
+      "nll": 0.31717486679553986,
+      "no_concepts_nll": 0.31570298969745636,
+      "no_pq_nll": 0.31564781069755554,
+      "no_continuous_nll": 0.31722258031368256,
+      "one_visit_nll": 0.31714461743831635,
+      "perplexity": 1.3732426854788113,
+      "supervised_tokens": 164,
+      "concept_ablation_delta_nll": -0.001471877098083496,
+      "pq_ablation_delta_nll": -0.001527056097984314,
+      "continuous_ablation_delta_nll": 4.7713518142700195e-05,
+      "one_visit_delta_nll": -3.0249357223510742e-05,
+      "latent_visit_mse": [
+        0.5311463177204132,
+        0.5327572226524353
+      ],
+      "latent_group_count": 40,
+      "pooled_coordinate_std": 0.6713026762008667,
+      "code_counts": [
+        28,
+        0,
+        0,
+        8,
+        4,
+        2,
+        0,
+        0
+      ]
+    },
+    "sudoku_hard": {
+      "nll": 0.2343837022781372,
+      "no_concepts_nll": 0.23338158428668976,
+      "no_pq_nll": 0.2334621101617813,
+      "no_continuous_nll": 0.2342778965830803,
+      "one_visit_nll": 0.2342953383922577,
+      "perplexity": 1.2641294485116628,
+      "supervised_tokens": 164,
+      "concept_ablation_delta_nll": -0.0010021179914474487,
+      "pq_ablation_delta_nll": -0.000921592116355896,
+      "continuous_ablation_delta_nll": -0.00010580569505691528,
+      "one_visit_delta_nll": -8.83638858795166e-05,
+      "latent_visit_mse": [
+        0.5309609174728394,
+        0.5344060659408569
+      ],
+      "latent_group_count": 40,
+      "pooled_coordinate_std": 0.6726273596286774,
+      "code_counts": [
+        32,
+        0,
+        0,
+        7,
+        2,
+        1,
+        0,
+        0
+      ]
+    }
+  },
+  "generation": {
+    "math": {
+      "n": 16,
+      "correct": 0,
+      "planned_n": 16,
+      "examples": [
+        {
+          "identity": "1f46e745d7dd6935383f608a53bd9392d761072c1e9b748a96b0517972e28ea0",
+          "source": "algebra__linear_1d",
+          "response": " -10",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 4
+        },
+        {
+          "identity": "a55ee5796d4d5bb93d8d15eee3dd74238806e45771ad6cfaace6a069fff38250",
+          "source": "algebra__linear_1d",
+          "response": " -14",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 4
+        },
+        {
+          "identity": "a739648169314518b02380ef68c9b03e814548b0adefa4383a0526a0c2268975",
+          "source": "algebra__linear_1d",
+          "response": " -13",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 4
+        },
+        {
+          "identity": "906323c1755cd38dd77667a2dbcaf3f3ccf32b7398a2b3b09e568c5ce48cc5a3",
+          "source": "algebra__linear_1d",
+          "response": " -10",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 4
+        },
+        {
+          "identity": "401ed477b75226bc55cd1b3b8e7ee501851da5d1bb8e64c0114ffccb9ee15c80",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " -14",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 4
+        },
+        {
+          "identity": "cfa2812f667a5502c2851f6fe2926226454e5ee4f436375082db0ce84ea4a645",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " -10",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 4
+        },
+        {
+          "identity": "58f4da753c80d735760718fc0ab103362e099d2e45654207a657a67be6479e45",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " -10",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 4
+        },
+        {
+          "identity": "ff559bc7e2c765c6a09af90aab915b13e5035c617c29b343dfa1d4f185bd50c4",
+          "source": "arithmetic__add_sub_multiple",
+          "response": " -14",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 4
+        },
+        {
+          "identity": "fc21f09733d5af26cc4b7639c70f115eefe9b0d5becc6eff2c938a6a57d6a5fa",
+          "source": "arithmetic__mul",
+          "response": " 1333388.4",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 11
+        },
+        {
+          "identity": "29c9f6a18ff43b2adcca364238cb355f97fe068d105328d737787aa137bb1792",
+          "source": "arithmetic__mul",
+          "response": " -1343434.4",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 11
+        },
+        {
+          "identity": "769a769db1d69d49b3b4c5e4efefbc4aff307309a20ff5c01a5c33a17c57baa9",
+          "source": "arithmetic__mul",
+          "response": " -0.10008",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 9
+        },
+        {
+          "identity": "496d649715191ff1810b19e85de6917e065fd9efd551f1f9b214d4ba3cd49f85",
+          "source": "arithmetic__mul",
+          "response": " -1303.47",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 9
+        },
+        {
+          "identity": "de8a8cffd1ab07b297b20e860d449b66a19917a88d934e27a57b82ba791c123d",
+          "source": "comparison__sort",
+          "response": " 1830, 4, 2, 4, -3",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 18
+        },
+        {
+          "identity": "1c57702d8b4009e765be1fd0d13ba967be25acd26d8fec667da4b75f0920ea92",
+          "source": "comparison__sort",
+          "response": " 34.2, 0.1, 2/15, -3",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 20
+        },
+        {
+          "identity": "a13a890d7b1b0a3e30b8b0b96c096458a273b66ec494d6c4c312148be626f4f4",
+          "source": "comparison__sort",
+          "response": " 5, 4, 1, 0, -24, -184",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 21
+        },
+        {
+          "identity": "516b2e43c722f02a8de6507e9fefb8d459e8e142e91c82092da56aef399e6648",
+          "source": "comparison__sort",
+          "response": " -1, 8, 22, 931",
+          "eos": true,
+          "raw_exact": false,
+          "target_grammar_supported": true,
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "generated_tokens": 15
+        }
+      ],
+      "identity_set_sha256": "5506ddbad408decf2f01a964561bbc34d65fc4f64e731ad06959a3aabe0c670b",
+      "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+      "raw_exact_correct": 0,
+      "by_module": {
+        "algebra__linear_1d": {
+          "n": 4,
+          "correct": 0
+        },
+        "arithmetic__add_sub_multiple": {
+          "n": 4,
+          "correct": 0
+        },
+        "arithmetic__mul": {
+          "n": 4,
+          "correct": 0
+        },
+        "comparison__sort": {
+          "n": 4,
+          "correct": 0
+        }
+      }
+    },
+    "sudoku_easy": {
+      "n": 2,
+      "correct": 0,
+      "planned_n": 2,
+      "examples": [
+        {
+          "identity": "e39b80819dcdc61b09665c825a4d6980aaefaccbe99b75901f7645cf32b2fb40",
+          "source": "puzzles2_17_clue",
+          "response": "847165329953812467626374815562348791184296538739581246418723654275643182381956743",
+          "eos": true,
+          "correct": false,
+          "reason": "row_or_column",
+          "generated_tokens": 82
+        },
+        {
+          "identity": "de9a2225137ad56da1b7ab4241d7ee9db88e633a6526b62b4c071f3890750860",
+          "source": "puzzles1_unbiased",
+          "response": "387261495925483167614759823536928741149537628278145639493176582852694317761382954",
+          "eos": true,
+          "correct": false,
+          "reason": "row_or_column",
+          "generated_tokens": 82
+        }
+      ],
+      "identity_set_sha256": "b79176356f91d3b65437685cc0090a52ba2208f400bcf32078e9efe721195f02",
+      "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+    },
+    "sudoku_hard": {
+      "n": 2,
+      "correct": 0,
+      "planned_n": 2,
+      "examples": [
+        {
+          "identity": "05aa6cb17d61b3aeda1ec4f2842bbfd1b3dfb939f853c1862b28a18bccedffda",
+          "source": "puzzles4_forum_hardest_1905",
+          "response": "867521349251473682439862571345298167128314965697685423714835226582941736973626814",
+          "eos": true,
+          "correct": false,
+          "reason": "row_or_column",
+          "generated_tokens": 82
+        },
+        {
+          "identity": "0cc56fadedabbe357c7525f7f6cbaa3c07d38d859dbf6b311b33ca2cb4c9eea7",
+          "source": "puzzles4_forum_hardest_1905",
+          "response": "473861289985723941126498387349587126568942713217349854791235648852194632634876491",
+          "eos": true,
+          "correct": false,
+          "reason": "row_or_column",
+          "generated_tokens": 82
+        }
+      ],
+      "identity_set_sha256": "ed8107bccfc9092f9069386ab2e4a93444822b7f61e54da1bbdad9f80e6e1a7d",
+      "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+    }
+  },
+  "memory_writes": 0,
+  "selector_policy": "prefix_argmax",
+  "selection": "Fixed seed 1927, balanced math modules; random without replacement within each module/family",
+  "interpretation": "Teacher-forced NLL and strict complete free-generation success are distinct; no output repair",
+  "seconds": 23.799674034118652,
+  "budget_exhausted": false,
+  "schema_version": 1,
+  "run_id": "pretrain_16h",
+  "step": 26846,
+  "source_sha256": "44012c37f54b48a707f75ad309fcdbb81da71d6fcfddb67470abf6a1ccfd82f5",
+  "data_sha256": "def40ad02c456e93b227be6d43fb91e91eb4735449d0cda2d709a6f60f0568f2",
+  "wall_time": 1791765470.043541
+}

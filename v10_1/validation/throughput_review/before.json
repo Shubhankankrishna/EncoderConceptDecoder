@@ -1,0 +1,669 @@
+{
+  "captured": 1791750067.954945,
+  "last_step": 3063,
+  "records": 3063,
+  "all_finite": true,
+  "groups": {
+    "text_candidate_False": {
+      "n": 714,
+      "tok_s_median": 4186.326721568536,
+      "seconds_median": 0.6799032920098398,
+      "tokens_median": 2880.0,
+      "seconds_p95": 0.7652839856687933
+    },
+    "text_candidate_True": {
+      "n": 253,
+      "tok_s_median": 3538.3666864320207,
+      "seconds_median": 0.8051243330119178,
+      "tokens_median": 2889.0,
+      "seconds_p95": 0.8776757584069855
+    },
+    "math_candidate_False": {
+      "n": 244,
+      "tok_s_median": 1020.3144506769033,
+      "seconds_median": 0.25454070849809796,
+      "tokens_median": 262.5,
+      "seconds_p95": 0.3158363061782438
+    },
+    "math_candidate_True": {
+      "n": 76,
+      "tok_s_median": 806.1251949947263,
+      "seconds_median": 0.32287310450919904,
+      "tokens_median": 264.5,
+      "seconds_p95": 0.3676841147535015
+    },
+    "sudoku_easy_candidate_False": {
+      "n": 151,
+      "tok_s_median": 3527.1695221594696,
+      "seconds_median": 0.38557829201454297,
+      "tokens_median": 1360.0,
+      "seconds_p95": 0.45546993750031106
+    },
+    "sudoku_easy_candidate_True": {
+      "n": 42,
+      "tok_s_median": 2822.9664649765,
+      "seconds_median": 0.48176368753775023,
+      "tokens_median": 1360.0,
+      "seconds_p95": 0.5474325315793975
+    },
+    "sudoku_hard_candidate_False": {
+      "n": 16,
+      "tok_s_median": 3504.92762881855,
+      "seconds_median": 0.388027395500103,
+      "tokens_median": 1360.0,
+      "seconds_p95": 0.45711053151171654
+    },
+    "sudoku_hard_candidate_True": {
+      "n": 4,
+      "tok_s_median": 2754.385834259463,
+      "seconds_median": 0.4937747289950494,
+      "tokens_median": 1360.0,
+      "seconds_p95": 0.5003023204946657
+    }
+  },
+  "loss_early_late": {
+    "text": [
+      {
+        "n": 319,
+        "token_nll": 7.476440953659527
+      },
+      {
+        "n": 320,
+        "token_nll": 5.712148969777025
+      }
+    ],
+    "math": [
+      {
+        "n": 95,
+        "token_nll": 5.146533554423808
+      },
+      {
+        "n": 116,
+        "token_nll": 1.593691787697528
+      }
+    ],
+    "sudoku_easy": [
+      {
+        "n": 76,
+        "token_nll": 5.29067630830564
+      },
+      {
+        "n": 58,
+        "token_nll": 1.7640265616877326
+      }
+    ],
+    "sudoku_hard": [
+      {
+        "n": 10,
+        "token_nll": 4.189676594734192
+      },
+      {
+        "n": 6,
+        "token_nll": 1.77606862783432
+      }
+    ]
+  },
+  "grad_recent": {
+    "median": 1.7553397417068481,
+    "p95": 3.613095617294309,
+    "max": 12.01500415802002
+  },
+  "cache_steps": {
+    "0": 0.7706485624948982,
+    "2": 0.7406933330348693,
+    "20": 0.7489960415114183,
+    "40": 0.7646914789802395,
+    "60": 0.7725369999825489
+  },
+  "overview": {
+    "schema_version": 1,
+    "generated_at": 1791750068.004875,
+    "run": {
+      "id": "pretrain_16h",
+      "path": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_1/runs/pretrain_16h",
+      "manifest": {
+        "version": "V10.1 RCDL",
+        "model": {
+          "vocab_size": 8192,
+          "width": 128,
+          "heads": 4,
+          "e1_layers": 4,
+          "e2_layers": 4,
+          "e3_layers": 4,
+          "encoder_visits": 2,
+          "concept_layers": 4,
+          "concept_visits": 2,
+          "decoder_layers": 4,
+          "ffn_expansion": 4,
+          "window": 64,
+          "group": 8,
+          "slots": 2,
+          "codes": 8,
+          "code_width": 32,
+          "gate_rank": 32,
+          "pq_segments": 8,
+          "pq_words": 32,
+          "engram_rows": [
+            156241,
+            156253,
+            156257,
+            156259
+          ],
+          "engram_dim": 32,
+          "engram_cpu": true
+        },
+        "architecture": {
+          "encoder_concept_crc": true,
+          "concept_decoder_crc": true,
+          "deep_supervision": true,
+          "chunk_objective": true,
+          "utility_exploration": true
+        },
+        "parameters": {
+          "dense": 5731496,
+          "engram": 20000320,
+          "total": 25731816,
+          "encoder_distinct": 12,
+          "encoder_executed": 16,
+          "concept_distinct": 4,
+          "concept_executed": 8
+        },
+        "training": {
+          "run_dir": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_1/runs/pretrain_16h",
+          "data_dir": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_1/data",
+          "hours": 16.0,
+          "device": "mps",
+          "seed": 1012,
+          "batch_size": 8,
+          "microbatch_size": 8,
+          "context": 384,
+          "lr": 0.0003,
+          "candidate_every": 4,
+          "threads": 4,
+          "memory_fraction": 0.45,
+          "log_every": 20,
+          "checkpoint_seconds": 600,
+          "eval_seconds": 1800,
+          "max_steps": 0,
+          "resume": true,
+          "no_eval": false
+        },
+        "start_unix": 1791748208.483677,
+        "deadline_unix": 1791805824.6183074,
+        "sessions": [
+          {
+            "start_unix": 1791748208.483677,
+            "resume": false,
+            "step": 0,
+            "hours": 16.0
+          },
+          {
+            "start_unix": 1791748277.3764071,
+            "resume": true,
+            "step": 80,
+            "hours": 16.0
+          }
+        ],
+        "source_sha256": "44012c37f54b48a707f75ad309fcdbb81da71d6fcfddb67470abf6a1ccfd82f5",
+        "dependency_hashes": {
+          "v10_1_source_sha256": "861c1edc1861dcaf7f8e8e6cbbe4fc7ecd0e045037d41c2f89c8cfcd2596d5c1",
+          "v10_source_sha256": "3cbaf426badbfc45f723431838c4f5340cbf7ce2c99f1a8438ed8e3b7152a0e9",
+          "active_data_manifest_sha256": "eaa15b5604c97015937a714d43d5fedb5485cb36748b81837fdb01d871874253",
+          "torch_version": "2.10.0",
+          "cleaner_sha256": "3c2b7d879ad02a850fa04d677d009c1e6acc0fbbaea8cc9d04a10aa109f4d3a9"
+        },
+        "data_sha256": "def40ad02c456e93b227be6d43fb91e91eb4735449d0cda2d709a6f60f0568f2",
+        "tokenizer_sha256": "3229a1d90189c4a77ae40430a5d99a3f20b0ebf0ca66e51f6f212fca7ac74c4c",
+        "device": "mps",
+        "torch": "2.10.0",
+        "precision": "float32",
+        "loss_weights": {
+          "token": 1,
+          "latent": 0.1,
+          "vq": 0.01,
+          "chunk": 0.1,
+          "explore": 0.1,
+          "selector": 0.05
+        },
+        "gradcuit_xi": 0,
+        "rbf_pretraining_writes": 0,
+        "initialization": "Fresh random weights and new clean-data tokenizer",
+        "auxiliary_candidate_every": 4,
+        "candidate_strategy": "Detached K-way scoring; differentiate recomputed winner",
+        "effective_batch": 8,
+        "actual_microbatch": 8,
+        "schedule_hours": 16.0,
+        "extension_policy": "--resume --hours 24 extends total active wall budget; original cosine schedule continues at its 10% floor after 16 hours",
+        "elapsed_semantics": "active process wall time, including evaluation and checkpoint I/O; excludes stopped downtime",
+        "table_optimizer": "CPU SparseAdam, 5x dense LR",
+        "baseline_evaluation": "Balanced development only; sealed test reserved"
+      },
+      "status": {
+        "schema_version": 1,
+        "run_id": "pretrain_16h",
+        "source_sha256": "44012c37f54b48a707f75ad309fcdbb81da71d6fcfddb67470abf6a1ccfd82f5",
+        "data_sha256": "def40ad02c456e93b227be6d43fb91e91eb4735449d0cda2d709a6f60f0568f2",
+        "split": "train",
+        "step": 3040,
+        "tokens": 6403058,
+        "wall_time": 1791750053.914688,
+        "loss": {
+          "total": 1.9950151443481445,
+          "token": 1.609831690788269,
+          "latent": 0.5231379866600037,
+          "vq": 11.134391784667969,
+          "chunk": 2.2152581214904785,
+          "explore": 0.0,
+          "selector": 0.0
+        },
+        "dense_grad_norm": 1.221308708190918,
+        "dense_grad_norm_post": 1.0,
+        "dense_clip_factor": 0.8187938015125309,
+        "engram_grad_norm": 0.16973626613616943,
+        "engram_grad_norm_post": 0.16973626613616943,
+        "engram_clip_factor": 1.0,
+        "engram_rows_touched": 1269,
+        "component_grad_norms": {
+          "embedding": 0.9750299253517406,
+          "engram": 0.09665269347646598,
+          "e1": 0.5964088526833156,
+          "e2": 0.14272088335567026,
+          "exit_reader": 0.025348548843155388,
+          "e3": 0.2418105022805309,
+          "pooler": 0.0016028957999360716,
+          "core": 0.006857821079011925,
+          "head": 0.026465319065452603,
+          "decoder": 0.3047536003740898,
+          "encoder_concept_crc": 0.0006246571349357917,
+          "chunk_readout": 0.05250591383491105
+        },
+        "tokens_per_second": 2913.3542211212684,
+        "step_seconds": 0.46681587502826005,
+        "elapsed_hours": 0.5081358611227834,
+        "remaining_hours": 15.491862066189448,
+        "learning_rate": 0.00029932897088620375,
+        "family": "sudoku_hard",
+        "batch_indices": [
+          14512,
+          8989,
+          36057,
+          18105,
+          1178,
+          31947,
+          21272,
+          557
+        ],
+        "input_tokens": 1360,
+        "supervised_tokens": 656,
+        "family_supervised_tokens": {
+          "text": 5631958,
+          "math": 42545,
+          "sudoku_easy": 259776,
+          "sudoku_hard": 32144
+        },
+        "family_input_tokens": {
+          "text": 5631958,
+          "math": 165900,
+          "sudoku_easy": 538560,
+          "sudoku_hard": 66640
+        },
+        "candidate_requested": false,
+        "candidate_executed": false,
+        "nonfinite_count": 0,
+        "selector_regret": null,
+        "candidate_documents": 0,
+        "chunk_supervised_targets": 64,
+        "code_counts": [
+          0,
+          0,
+          0,
+          162,
+          0,
+          0,
+          6,
+          0
+        ],
+        "latent_visits": [
+          0.522679328918457,
+          0.5233672857284546
+        ],
+        "objective_denominators": {
+          "token": 656,
+          "latent": 160,
+          "vq": 160,
+          "chunk": 8,
+          "explore": 0,
+          "selector": 0
+        },
+        "objective_numerators": {
+          "token": 1056.0495891571045,
+          "latent": 83.70207786560059,
+          "vq": 1781.502685546875,
+          "chunk": 17.722064971923828,
+          "explore": 0.0,
+          "selector": 0.0
+        },
+        "rss_gb": 1.7835845947265625,
+        "system_available_gb": 3.2091827392578125,
+        "mps_allocated_gb": 0.08928298950195312,
+        "mps_driver_gb": 4.2571868896484375,
+        "status": "running",
+        "pid": 66803,
+        "deadline_unix": 1791805824.6183074,
+        "error": null,
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_1/runs/pretrain_16h/latest.pt",
+        "last_metrics": null
+      },
+      "health": {
+        "trainer_alive": true,
+        "trainer_pid": 66803,
+        "status_age_seconds": 11.62476634979248,
+        "checkpoint_age_seconds": 584.7125208377838,
+        "checkpoint_bytes": 309185957,
+        "process_started_unix": 1791748275.095557
+      },
+      "updated": 1791750065.5418549
+    },
+    "latest_evaluation": {
+      "event_id": 17,
+      "step": 0,
+      "wall_time": 1791748210.970257,
+      "payload": {
+        "split": "dev",
+        "families": {
+          "text": {
+            "nll": 9.045892715454102,
+            "no_concepts_nll": 9.046647071838379,
+            "no_pq_nll": 9.046104431152344,
+            "no_continuous_nll": 9.046434879302979,
+            "one_visit_nll": 9.045805931091309,
+            "perplexity": 8483.621620082658,
+            "supervised_tokens": 768,
+            "concept_ablation_delta_nll": 0.0007543563842773438,
+            "pq_ablation_delta_nll": 0.0002117156982421875,
+            "continuous_ablation_delta_nll": 0.0005421638488769531,
+            "one_visit_delta_nll": -8.678436279296875e-05,
+            "latent_visit_mse": [
+              1.0262033343315125,
+              1.032227098941803
+            ],
+            "latent_group_count": 94,
+            "pooled_coordinate_std": 0.49262113869190216,
+            "code_counts": [
+              0,
+              49,
+              0,
+              28,
+              2,
+              12,
+              5,
+              0
+            ]
+          },
+          "math": {
+            "nll": 9.015978949410576,
+            "no_concepts_nll": 9.01728630065918,
+            "no_pq_nll": 9.01517118726458,
+            "no_continuous_nll": 9.018096787588936,
+            "one_visit_nll": 9.014227730887276,
+            "perplexity": 8233.602695048334,
+            "supervised_tokens": 14,
+            "concept_ablation_delta_nll": 0.0013073512486041494,
+            "pq_ablation_delta_nll": -0.0008077621459960938,
+            "continuous_ablation_delta_nll": 0.0021178381783606426,
+            "one_visit_delta_nll": -0.0017512185232995137,
+            "latent_visit_mse": [
+              1.0163743495941162,
+              1.0173063278198242
+            ],
+            "latent_group_count": 6,
+            "pooled_coordinate_std": 0.35268712043762207,
+            "code_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              8
+            ]
+          },
+          "sudoku_easy": {
+            "nll": 9.063078880310059,
+            "no_concepts_nll": 9.061667919158936,
+            "no_pq_nll": 9.063657760620117,
+            "no_continuous_nll": 9.061098098754883,
+            "one_visit_nll": 9.06325101852417,
+            "perplexity": 8630.682627483484,
+            "supervised_tokens": 164,
+            "concept_ablation_delta_nll": -0.0014109611511230469,
+            "pq_ablation_delta_nll": 0.0005788803100585938,
+            "continuous_ablation_delta_nll": -0.0019807815551757812,
+            "one_visit_delta_nll": 0.00017213821411132812,
+            "latent_visit_mse": [
+              1.0181406736373901,
+              1.010133981704712
+            ],
+            "latent_group_count": 40,
+            "pooled_coordinate_std": 0.3583603799343109,
+            "code_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              42
+            ]
+          },
+          "sudoku_hard": {
+            "nll": 9.051373481750488,
+            "no_concepts_nll": 9.050296306610107,
+            "no_pq_nll": 9.05190658569336,
+            "no_continuous_nll": 9.0497727394104,
+            "one_visit_nll": 9.051580429077148,
+            "perplexity": 8530.246019536173,
+            "supervised_tokens": 164,
+            "concept_ablation_delta_nll": -0.0010771751403808594,
+            "pq_ablation_delta_nll": 0.0005331039428710938,
+            "continuous_ablation_delta_nll": -0.0016007423400878906,
+            "one_visit_delta_nll": 0.00020694732666015625,
+            "latent_visit_mse": [
+              1.016295850276947,
+              1.0079967975616455
+            ],
+            "latent_group_count": 40,
+            "pooled_coordinate_std": 0.3330719769001007,
+            "code_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              42
+            ]
+          }
+        },
+        "generation": {
+          "math": {
+            "n": 0,
+            "correct": 0,
+            "planned_n": 0,
+            "examples": [],
+            "identity_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS",
+            "raw_exact_correct": 0,
+            "by_module": {
+              "algebra__linear_1d": {
+                "n": 0,
+                "correct": 0
+              },
+              "arithmetic__add_sub_multiple": {
+                "n": 0,
+                "correct": 0
+              },
+              "arithmetic__mul": {
+                "n": 0,
+                "correct": 0
+              },
+              "comparison__sort": {
+                "n": 0,
+                "correct": 0
+              }
+            }
+          },
+          "sudoku_easy": {
+            "n": 0,
+            "correct": 0,
+            "planned_n": 0,
+            "examples": [],
+            "identity_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+          },
+          "sudoku_hard": {
+            "n": 0,
+            "correct": 0,
+            "planned_n": 0,
+            "examples": [],
+            "identity_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "metric": "Complete exact numeric or ordered-list match / constraint-valid board, with EOS"
+          }
+        },
+        "memory_writes": 0,
+        "selector_policy": "prefix_argmax",
+        "selection": "Fixed seed 1927, balanced math modules; random without replacement within each module/family",
+        "interpretation": "Teacher-forced NLL and strict complete free-generation success are distinct; no output repair",
+        "seconds": 2.2540879249572754,
+        "budget_exhausted": false,
+        "schema_version": 1,
+        "run_id": "pretrain_16h",
+        "step": 0,
+        "source_sha256": "44012c37f54b48a707f75ad309fcdbb81da71d6fcfddb67470abf6a1ccfd82f5",
+        "data_sha256": "def40ad02c456e93b227be6d43fb91e91eb4735449d0cda2d709a6f60f0568f2",
+        "wall_time": 1791748210.969915
+      }
+    },
+    "alerts": [
+      {
+        "severity": "research",
+        "code": "small_concept_effect",
+        "family": "text",
+        "message": "Concept ablation changes NLL by less than 0.005 on this small sample; benefit is unproven.",
+        "value": 0.0007543563842773438
+      },
+      {
+        "severity": "research",
+        "code": "small_concept_effect",
+        "family": "math",
+        "message": "Concept ablation changes NLL by less than 0.005 on this small sample; benefit is unproven.",
+        "value": 0.0013073512486041494
+      },
+      {
+        "severity": "research",
+        "code": "small_concept_effect",
+        "family": "sudoku_easy",
+        "message": "Concept ablation changes NLL by less than 0.005 on this small sample; benefit is unproven.",
+        "value": -0.0014109611511230469
+      },
+      {
+        "severity": "research",
+        "code": "small_concept_effect",
+        "family": "sudoku_hard",
+        "message": "Concept ablation changes NLL by less than 0.005 on this small sample; benefit is unproven.",
+        "value": -0.0010771751403808594
+      }
+    ],
+    "ingestion_issues": [],
+    "artifacts": [
+      {
+        "path": "evaluation_initial.json",
+        "kind": "evaluation",
+        "size": 5253,
+        "mtime": 1791748210.970257,
+        "digest": "ab24c4f29811f22cd70c1ce0153bde8039d70522cbe8ff469462b8f0dfa878b1"
+      },
+      {
+        "path": "latest.pt",
+        "kind": "checkpoint",
+        "size": 309185957,
+        "mtime": 1791749480.8274403,
+        "digest": null
+      }
+    ],
+    "metric_availability": {
+      "train.loss.*": {
+        "available": true,
+        "source": "train.jsonl",
+        "cadence": "Every optimizer step",
+        "meaning": "Effective-batch normalized losses. Total = token + .1 latent + .01 VQ + .1 chunk + .1 exploration + .05 selector. No interval averaging."
+      },
+      "train.gradient.dense_preclip_norm": {
+        "available": true,
+        "cadence": "Every optimizer step",
+        "meaning": "Dense gradient before clip=1; Engram excluded"
+      },
+      "derived.dense_clip_scale": {
+        "available": true,
+        "meaning": "Inferred from clip_grad_norm_(max_norm=1); not separately measured."
+      },
+      "train.memory.*": {
+        "available": true,
+        "meaning": "Logged GiB counters; Apple unified-memory counters overlap and must not be summed."
+      },
+      "eval.*": {
+        "available": true,
+        "cadence": "Every 30 minutes",
+        "meaning": "Fixed dev panels, balanced math generation, separate PQ/continuous/both route and recurrence ablations"
+      },
+      "probe.*": {
+        "available": true,
+        "cadence": "Explicit one-off CPU checkpoint audit",
+        "meaning": "Fresh gradient and ablation probes, labeled by stored checkpoint step. Never historical optimizer-step gradients."
+      },
+      "probe_eval.*": {
+        "available": true,
+        "cadence": "Explicit balanced development audit",
+        "meaning": "Independent stratified generation evaluation; separate from the trainer small fixed sample."
+      },
+      "host.*": {
+        "available": true,
+        "cadence": "30 seconds while trainer is active",
+        "meaning": "External CPU/RSS/system memory samples, independent from train memory counters."
+      },
+      "per_layer_gradient_norms": {
+        "available": false,
+        "reason": "Component norms recorded; layer histograms are not collected"
+      },
+      "engram_gradient_norm": {
+        "available": true,
+        "cadence": "Every optimizer step",
+        "meaning": "CPU sparse coalesced table gradient, independently clipped to 1"
+      },
+      "gradient_histograms": {
+        "available": false,
+        "reason": "Not captured by this run."
+      },
+      "gpu_utilization_and_temperature": {
+        "available": false,
+        "reason": "No reliable public cross-process MPS utilization/temperature source is configured."
+      },
+      "rbf_activity": {
+        "available": false,
+        "reason": "RBF bank is intentionally empty during pretraining; no continual-learning episode has been run in this training run."
+      },
+      "checkpoint_step": {
+        "available": false,
+        "reason": "Collector records checkpoint filesystem metadata without deserializing it; only an explicit checkpoint audit can establish its exact stored step."
+      },
+      "train.component_grad_norms.*": {
+        "available": true,
+        "cadence": "Every 20 steps and step 1",
+        "meaning": "Preclip component L2 norm of the accumulated total objective"
+      }
+    }
+  }
+}

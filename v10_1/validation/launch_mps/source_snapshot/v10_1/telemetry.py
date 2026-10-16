@@ -1,0 +1,70 @@
+"""V10.1 adapter for the tested read-only SQLite collector and dashboard."""
+from pathlib import Path
+import time
+import psutil
+from v10_10M.telemetry import server,store
+
+ROOT=Path(__file__).resolve().parent
+
+
+class Store(store.Store):
+    def event(self,db,run_id,kind,source,record_key,payload,step,wall_time,quality,metrics):
+        if kind=='training':
+            if store.finite_number(payload.get('wall_time')):wall_time=payload['wall_time'];quality='trainer_clock'
+            for key in ('dense_grad_norm_post','dense_clip_factor','engram_grad_norm','engram_grad_norm_post','engram_clip_factor','engram_rows_touched'):
+                if store.finite_number(payload.get(key)):metrics['train.gradient.'+key]=payload[key]
+            for key in ('component_grad_norms','latent_visits','code_counts','family_input_tokens','objective_numerators','objective_denominators'):
+                metrics.update(store.flatten_numeric(payload.get(key,{}),'train.'+key))
+            for key in ('step_seconds','input_tokens','supervised_tokens','selector_regret','candidate_documents','chunk_supervised_targets'):
+                if store.finite_number(payload.get(key)):metrics['train.'+key]=payload[key]
+        return super().event(db,run_id,kind,source,record_key,payload,step,wall_time,quality,metrics)
+
+
+class Monitor(server.Monitor):
+    def sample(self,include_host=False):
+        # Base monitor protects against PID reuse by checking exact module/run.
+        # This adapter applies the same rule to V10.1's process names.
+        health,host=super().sample(include_host=False)
+        pid=health.get('trainer_pid');valid=False
+        try:
+            proc=psutil.Process(pid) if pid else None
+            if proc:
+                cmd=proc.cmdline()
+                valid=any(x in ('v10_1.supervise','v10_1.train') for x in cmd) and str(self.run) in cmd
+                valid=valid and proc.is_running() and proc.status()!=psutil.STATUS_ZOMBIE
+                if valid:
+                    if self.process is None or self.process.pid!=pid or self.process.create_time()!=proc.create_time():
+                        self.process=proc;self.last_cpu_pid=None
+                    health['process_started_unix']=proc.create_time()
+        except (psutil.NoSuchProcess,psutil.AccessDenied):self.process=None
+        health['trainer_alive']=valid
+        if include_host:
+            vm=psutil.virtual_memory();swap=psutil.swap_memory();disk=psutil.disk_usage(self.run)
+            host=dict(system_available_gib=vm.available/2**30,system_memory_percent=vm.percent,
+                swap_used_gib=swap.used/2**30,disk_free_gib=disk.free/2**30,
+                collector_rss_mib=psutil.Process().memory_info().rss/2**20,trainer_alive=valid)
+            if valid:
+                try:
+                    cpu=self.process.cpu_percent(None)
+                    host.update(trainer_rss_gib=self.process.memory_info().rss/2**30,trainer_threads=self.process.num_threads())
+                    if self.last_cpu_pid==pid:host['trainer_cpu_percent']=cpu
+                    self.last_cpu_pid=pid
+                except (psutil.NoSuchProcess,psutil.AccessDenied):pass
+        return health,host
+
+
+def configure():
+    server.ROOT=ROOT;server.DEFAULT_DATA=ROOT/'telemetry_data';server.WEB=ROOT/'web'
+    server.Store=Store;server.Monitor=Monitor
+    store.METRIC_AVAILABILITY.update({
+        'train.loss.*':dict(available=True,source='train.jsonl',cadence='Every optimizer step',
+            meaning='Effective-batch normalized losses. Total = token + .1 latent + .01 VQ + .1 chunk + .1 exploration + .05 selector. No interval averaging.'),
+        'train.gradient.dense_preclip_norm':dict(available=True,cadence='Every optimizer step',meaning='Dense gradient before clip=1; Engram excluded'),
+        'engram_gradient_norm':dict(available=True,cadence='Every optimizer step',meaning='CPU sparse coalesced table gradient, independently clipped to 1'),
+        'train.component_grad_norms.*':dict(available=True,cadence='Every 20 steps and step 1',meaning='Preclip component L2 norm of the accumulated total objective'),
+        'per_layer_gradient_norms':dict(available=False,reason='Component norms recorded; layer histograms are not collected'),
+        'eval.*':dict(available=True,cadence='Every 30 minutes',meaning='Fixed dev panels, balanced math generation, separate PQ/continuous/both route and recurrence ablations')})
+
+
+if __name__=='__main__':
+    configure();server.main()

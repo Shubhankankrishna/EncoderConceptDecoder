@@ -1,0 +1,11 @@
+{
+  "device": "mps",
+  "context": 384,
+  "batch_size": 8,
+  "candidate_update": true,
+  "memory_fraction_cap": 0.15,
+  "limitation": "One shared-device update, not a sustained throughput or thermal benchmark",
+  "available_gib_before": 3.2576446533203125,
+  "status": "failed_or_resource_limited",
+  "error": "MPS backend out of memory (MPS allocated: 2.09 GiB, other allocations: 38.75 MiB, max allowed: 1.78 GiB). Tried to allocate 4.50 MiB on private pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure)."
+}

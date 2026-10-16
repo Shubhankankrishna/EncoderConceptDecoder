@@ -1,0 +1,111 @@
+{
+  "version": "V10.1 RCDL",
+  "model": {
+    "vocab_size": 8192,
+    "width": 128,
+    "heads": 4,
+    "e1_layers": 4,
+    "e2_layers": 4,
+    "e3_layers": 4,
+    "encoder_visits": 2,
+    "concept_layers": 4,
+    "concept_visits": 2,
+    "decoder_layers": 4,
+    "ffn_expansion": 4,
+    "window": 64,
+    "group": 8,
+    "slots": 2,
+    "codes": 8,
+    "code_width": 32,
+    "gate_rank": 32,
+    "pq_segments": 8,
+    "pq_words": 32,
+    "engram_rows": [
+      156241,
+      156253,
+      156257,
+      156259
+    ],
+    "engram_dim": 32,
+    "engram_cpu": true
+  },
+  "architecture": {
+    "encoder_concept_crc": true,
+    "concept_decoder_crc": true,
+    "deep_supervision": true,
+    "chunk_objective": true,
+    "utility_exploration": true
+  },
+  "parameters": {
+    "dense": 5731496,
+    "engram": 20000320,
+    "total": 25731816,
+    "encoder_distinct": 12,
+    "encoder_executed": 16,
+    "concept_distinct": 4,
+    "concept_executed": 8
+  },
+  "training": {
+    "run_dir": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_1/validation/launch_mps",
+    "data_dir": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_1/data",
+    "hours": 16,
+    "device": "mps",
+    "seed": 1012,
+    "batch_size": 8,
+    "microbatch_size": 8,
+    "context": 384,
+    "lr": 0.0003,
+    "candidate_every": 4,
+    "threads": 4,
+    "memory_fraction": 0.45,
+    "log_every": 1,
+    "checkpoint_seconds": 1.0,
+    "eval_seconds": 0.0,
+    "max_steps": 1,
+    "resume": false,
+    "no_eval": false
+  },
+  "start_unix": 1791747948.5466208,
+  "deadline_unix": 1791805548.546622,
+  "sessions": [
+    {
+      "start_unix": 1791747948.546622,
+      "resume": false,
+      "step": 0,
+      "hours": 16
+    }
+  ],
+  "source_sha256": "9f555a0ad466e32bbcb1e8e1df7edce3acb14e16ff766d8bb97dfee2a321b324",
+  "dependency_hashes": {
+    "v10_1_source_sha256": "5345bb9e878c282ec9afcb2d9d5874007fdd87056434b17bbae182471dc90533",
+    "v10_source_sha256": "3cbaf426badbfc45f723431838c4f5340cbf7ce2c99f1a8438ed8e3b7152a0e9",
+    "active_data_manifest_sha256": "eaa15b5604c97015937a714d43d5fedb5485cb36748b81837fdb01d871874253",
+    "torch_version": "2.10.0",
+    "cleaner_sha256": "3c2b7d879ad02a850fa04d677d009c1e6acc0fbbaea8cc9d04a10aa109f4d3a9"
+  },
+  "data_sha256": "def40ad02c456e93b227be6d43fb91e91eb4735449d0cda2d709a6f60f0568f2",
+  "tokenizer_sha256": "3229a1d90189c4a77ae40430a5d99a3f20b0ebf0ca66e51f6f212fca7ac74c4c",
+  "device": "mps",
+  "torch": "2.10.0",
+  "precision": "float32",
+  "loss_weights": {
+    "token": 1,
+    "latent": 0.1,
+    "vq": 0.01,
+    "chunk": 0.1,
+    "explore": 0.1,
+    "selector": 0.05
+  },
+  "gradcuit_xi": 0,
+  "rbf_pretraining_writes": 0,
+  "initialization": "Fresh random weights and new clean-data tokenizer",
+  "auxiliary_candidate_every": 4,
+  "candidate_strategy": "Detached K-way scoring; differentiate recomputed winner",
+  "effective_batch": 8,
+  "actual_microbatch": 8,
+  "schedule_hours": 16,
+  "extension_policy": "--resume --hours 24 extends total active wall budget; original cosine schedule continues at its 10% floor after 16 hours",
+  "elapsed_semantics": "active process wall time, including evaluation and checkpoint I/O; excludes stopped downtime",
+  "table_optimizer": "CPU SparseAdam, 5x dense LR",
+  "baseline_evaluation": "Balanced development only; sealed test reserved"
+}

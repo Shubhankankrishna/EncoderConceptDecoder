@@ -1,0 +1,35 @@
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg    # of Calls  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                            aten::copy_        39.66%     294.661ms        39.66%     294.673ms     147.410us          1999  
+                                          aten::nonzero        30.28%     224.979ms        30.35%     225.516ms      20.501ms            11  
+                                              aten::bmm         6.37%      47.342ms         6.37%      47.342ms     239.100us           198  
+                                              aten::sum         3.16%      23.477ms         3.16%      23.498ms      39.228us           599  
+                                              aten::pow         3.03%      22.535ms         3.14%      23.325ms      37.865us           616  
+                                  aten::linear_backward         2.24%      16.640ms         2.40%      17.840ms      87.883us           203  
+                               aten::linalg_vector_norm         1.21%       9.018ms         1.21%       9.020ms      31.649us           285  
+                                         aten::addcdiv_         1.18%       8.781ms         1.18%       8.781ms      31.030us           283  
+                                         aten::addcmul_         1.16%       8.623ms         1.16%       8.623ms      30.471us           283  
+                                              aten::mul         1.13%       8.374ms         1.42%      10.536ms       5.255us          2005  
+                                           aten::linear         1.10%       8.200ms         1.17%       8.689ms      42.591us           204  
+                              aten::_local_scalar_dense         0.99%       7.320ms         0.99%       7.341ms       7.936us           925  
+                              Optimizer.step#AdamW.step         0.54%       3.980ms         3.74%      27.776ms      27.776ms             1  
+                                             aten::mean         0.50%       3.683ms         0.50%       3.683ms      32.596us           113  
+                                             aten::add_         0.38%       2.842ms         0.54%       3.990ms       3.482us          1146  
+                                            aten::where         0.31%       2.319ms         0.52%       3.878ms      42.148us            92  
+                           aten::_softmax_backward_data         0.30%       2.256ms         0.30%       2.257ms      56.415us            40  
+                                            aten::empty         0.27%       2.015ms         0.27%       2.017ms       1.603us          1258  
+                                              aten::add         0.27%       2.003ms         0.30%       2.226ms       6.490us           343  
+                                              aten::all         0.24%       1.809ms         0.24%       1.809ms      54.831us            33  
+      autograd::engine::evaluate_function: MulBackward0         0.24%       1.773ms         2.07%      15.411ms      27.085us           569  
+                                         aten::_softmax         0.23%       1.698ms         0.23%       1.698ms      42.441us            40  
+                                            aten::fill_         0.21%       1.581ms         0.21%       1.581ms      13.871us           114  
+                                              aten::cat         0.21%       1.557ms         0.21%       1.557ms       7.483us           208  
+                                              aten::div         0.21%       1.556ms         0.28%       2.045ms       4.779us           428  
+                                             aten::mul_         0.20%       1.511ms         0.28%       2.112ms       2.984us           708  
+                                    aten::gelu_backward         0.17%       1.231ms         0.17%       1.231ms      38.475us            32  
+                                 aten::sigmoid_backward         0.14%       1.046ms         0.14%       1.046ms      30.766us            34  
+                                             aten::gelu         0.14%       1.039ms         0.14%       1.039ms      32.456us            32  
+                                         aten::_to_copy         0.14%       1.011ms        39.77%     295.452ms     164.597us          1795  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 742.978ms

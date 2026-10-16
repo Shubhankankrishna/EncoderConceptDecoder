@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_1/train.py", line 167, in main
+    write_status();print(json.dumps(metrics,allow_nan=False),flush=True)
+    ^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_1/train.py", line 124, in write_status
+    atomic_json(run/'status.json',dict(**metrics,status=status,pid=os.getpid(),step=step,tokens=tokens,
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: dict() got multiple values for keyword argument 'step'
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_1/train.py", line 194, in <module>
+    if __name__=='__main__':main(parser().parse_args())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_1/train.py", line 177, in main
+    save();write_status()
+           ^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_1/train.py", line 124, in write_status
+    atomic_json(run/'status.json',dict(**metrics,status=status,pid=os.getpid(),step=step,tokens=tokens,
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: dict() got multiple values for keyword argument 'step'
