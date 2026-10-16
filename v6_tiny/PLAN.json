@@ -1,0 +1,169 @@
+{
+  "started": "2026-10-04T14:50:57+05:30",
+  "started_epoch": 1791105657.793998,
+  "target_hours": 6.0,
+  "maximum_hours": 7.0,
+  "deadline_epoch": 1791130857.793998,
+  "expected_training_h": 4.546595182346509,
+  "evaluation_reserve_min": 90,
+  "expected_finish": "2026-10-04T20:38:45+05:30",
+  "latest_finish": "2026-10-04T21:50:57+05:30",
+  "foundation_seed": 0,
+  "training_batch": 64,
+  "input_slots_per_update": 12288,
+  "precision": "FP32",
+  "active_parameters": 2063904,
+  "control_parameters": 2048,
+  "scope": "One full foundation/core seed plus matched Z/objective/extra-training controls; independent foundation seeds deferred",
+  "implementation_sha256": "2043e18416dd800952fbc38062ec4913537ebeb645c3f04c86ed5b93dc8c7811",
+  "draft_sha256": "7bef1ead33fbb49d4067fc714f4b25b04bae46b0805365af6f02027d0d4f3543",
+  "stages": [
+    {
+      "name": "A_ncp_s0",
+      "stage": "A",
+      "steps": 18000,
+      "source": null,
+      "options": {}
+    },
+    {
+      "name": "B0_det_s0",
+      "stage": "B0",
+      "steps": 6000,
+      "source": "A_ncp_s0",
+      "options": {}
+    },
+    {
+      "name": "B1_gated_b025_s0",
+      "stage": "B1",
+      "steps": 6000,
+      "source": "B0_det_s0",
+      "options": {
+        "kind": "gated",
+        "beta": 0.25
+      }
+    },
+    {
+      "name": "B1_direct_b025_s0",
+      "stage": "B1",
+      "steps": 6000,
+      "source": "B0_det_s0",
+      "options": {
+        "kind": "direct",
+        "beta": 0.25
+      }
+    },
+    {
+      "name": "B1_gated_b0_s0",
+      "stage": "B1",
+      "steps": 6000,
+      "source": "B0_det_s0",
+      "options": {
+        "kind": "gated",
+        "beta": 0
+      }
+    },
+    {
+      "name": "B0_extra_compute_s0",
+      "stage": "det_extra",
+      "steps": 9386,
+      "source": "B0_det_s0",
+      "options": {}
+    },
+    {
+      "name": "A_no_forecast_prefix_s0",
+      "stage": "A",
+      "steps": 18000,
+      "source": null,
+      "options": {
+        "alpha": 0,
+        "stop_after": 9000
+      }
+    }
+  ],
+  "benchmark": {
+    "device": "mps",
+    "precision": "float32",
+    "batch": 64,
+    "training": {
+      "A": {
+        "median_step_s": 0.2241224585013697,
+        "p90_step_s": 0.2266276294889394,
+        "input_slots_per_s": 54827.16940625075,
+        "gradient_relative_error": 2.4384280550293624e-07,
+        "eager_compiled_losses": [
+          14.958076477050781,
+          14.958076477050781
+        ],
+        "gradient_norms": [
+          3.80367112159729,
+          3.80367112159729
+        ],
+        "memory_bytes": {
+          "allocated": 51496960,
+          "driver": 2641248256
+        },
+        "compiled": true
+      },
+      "B0": {
+        "median_step_s": 0.1742730840051081,
+        "p90_step_s": 0.17497334969812073,
+        "input_slots_per_s": 70510.02781152268,
+        "gradient_relative_error": 7.399714263556234e-08,
+        "eager_compiled_losses": [
+          7.034214496612549,
+          7.034214496612549
+        ],
+        "gradient_norms": [
+          3.8078980445861816,
+          3.8078975677490234
+        ],
+        "memory_bytes": {
+          "allocated": 42990336,
+          "driver": 2654420992
+        },
+        "compiled": true
+      },
+      "B1": {
+        "median_step_s": 0.2726174164999975,
+        "p90_step_s": 0.2744256832898827,
+        "input_slots_per_s": 45074.15614805415,
+        "gradient_relative_error": 2.161732254535309e-06,
+        "eager_compiled_losses": [
+          4.503828048706055,
+          4.503828048706055
+        ],
+        "gradient_norms": [
+          1.165304274763912e-05,
+          1.1380274372640997e-05
+        ],
+        "memory_bytes": {
+          "allocated": 38685696,
+          "driver": 5239619584
+        },
+        "compiled": true,
+        "score_then_replay_step_s": 0.40044010449491907,
+        "candidate_execution": "vectorized_two_candidate_batch; one retained graph; encoder features computed once"
+      }
+    },
+    "generation": {
+      "eager_cache": {
+        "batch": 8,
+        "median_s": 0.637978541009943,
+        "generated_tokens_per_s": 852.6932569531702,
+        "greedy_token_disagreements": 0,
+        "cache_kv_elements": 2949120
+      },
+      "compiled_static_cache": {
+        "batch": 8,
+        "median_s": 0.27851368802657817,
+        "generated_tokens_per_s": 1953.2253651680016,
+        "greedy_token_disagreements": 0,
+        "cache_kv_elements": 2949120
+      }
+    },
+    "selected_generation": "compiled_static_cache",
+    "selected_training": "compiled_fp32_retained_candidates",
+    "not_claimed": "Short warmed timings; long-run thermal throughput is logged separately"
+  },
+  "primary": "Preselected gated beta=.25 / GradCuit KL=.05 versus strongest development retry anchor at a locked development batch-time budget"
+}

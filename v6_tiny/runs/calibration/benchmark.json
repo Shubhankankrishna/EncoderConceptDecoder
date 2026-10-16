@@ -1,0 +1,85 @@
+{
+  "device": "mps",
+  "precision": "float32",
+  "batch": 64,
+  "training": {
+    "A": {
+      "median_step_s": 0.2241224585013697,
+      "p90_step_s": 0.2266276294889394,
+      "input_slots_per_s": 54827.16940625075,
+      "gradient_relative_error": 2.4384280550293624e-07,
+      "eager_compiled_losses": [
+        14.958076477050781,
+        14.958076477050781
+      ],
+      "gradient_norms": [
+        3.80367112159729,
+        3.80367112159729
+      ],
+      "memory_bytes": {
+        "allocated": 51496960,
+        "driver": 2641248256
+      },
+      "compiled": true
+    },
+    "B0": {
+      "median_step_s": 0.1742730840051081,
+      "p90_step_s": 0.17497334969812073,
+      "input_slots_per_s": 70510.02781152268,
+      "gradient_relative_error": 7.399714263556234e-08,
+      "eager_compiled_losses": [
+        7.034214496612549,
+        7.034214496612549
+      ],
+      "gradient_norms": [
+        3.8078980445861816,
+        3.8078975677490234
+      ],
+      "memory_bytes": {
+        "allocated": 42990336,
+        "driver": 2654420992
+      },
+      "compiled": true
+    },
+    "B1": {
+      "median_step_s": 0.2726174164999975,
+      "p90_step_s": 0.2744256832898827,
+      "input_slots_per_s": 45074.15614805415,
+      "gradient_relative_error": 2.161732254535309e-06,
+      "eager_compiled_losses": [
+        4.503828048706055,
+        4.503828048706055
+      ],
+      "gradient_norms": [
+        1.165304274763912e-05,
+        1.1380274372640997e-05
+      ],
+      "memory_bytes": {
+        "allocated": 38685696,
+        "driver": 5239619584
+      },
+      "compiled": true,
+      "score_then_replay_step_s": 0.40044010449491907,
+      "candidate_execution": "vectorized_two_candidate_batch; one retained graph; encoder features computed once"
+    }
+  },
+  "generation": {
+    "eager_cache": {
+      "batch": 8,
+      "median_s": 0.637978541009943,
+      "generated_tokens_per_s": 852.6932569531702,
+      "greedy_token_disagreements": 0,
+      "cache_kv_elements": 2949120
+    },
+    "compiled_static_cache": {
+      "batch": 8,
+      "median_s": 0.27851368802657817,
+      "generated_tokens_per_s": 1953.2253651680016,
+      "greedy_token_disagreements": 0,
+      "cache_kv_elements": 2949120
+    }
+  },
+  "selected_generation": "compiled_static_cache",
+  "selected_training": "compiled_fp32_retained_candidates",
+  "not_claimed": "Short warmed timings; long-run thermal throughput is logged separately"
+}
