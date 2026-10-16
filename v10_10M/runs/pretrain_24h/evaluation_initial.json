@@ -1,0 +1,100 @@
+{
+  "split": "dev",
+  "families": {
+    "text": {
+      "nll": 9.028388977050781,
+      "perplexity": 8336.418586557596,
+      "supervised_tokens": 768,
+      "no_concepts_nll": 9.028746604919434,
+      "concept_ablation_delta_nll": 0.00035762786865234375,
+      "pooled_coordinate_std": 0.695090651512146,
+      "code_counts": [
+        15,
+        10,
+        4,
+        0,
+        19,
+        3,
+        45,
+        0
+      ]
+    },
+    "math": {
+      "nll": 9.003904342651367,
+      "perplexity": 8134.782985485254,
+      "supervised_tokens": 22,
+      "no_concepts_nll": 9.001616477966309,
+      "concept_ablation_delta_nll": -0.0022878646850585938,
+      "pooled_coordinate_std": 0.33252960443496704,
+      "code_counts": [
+        0,
+        1,
+        4,
+        0,
+        5,
+        0,
+        0,
+        0
+      ]
+    },
+    "sudoku_easy": {
+      "nll": 9.023707389831543,
+      "perplexity": 8297.482129174181,
+      "supervised_tokens": 164,
+      "no_concepts_nll": 9.02513313293457,
+      "concept_ablation_delta_nll": 0.0014257431030273438,
+      "pooled_coordinate_std": 0.440829336643219,
+      "code_counts": [
+        0,
+        0,
+        0,
+        0,
+        42,
+        0,
+        0,
+        0
+      ]
+    },
+    "sudoku_hard": {
+      "nll": 9.034421920776367,
+      "perplexity": 8386.863744159955,
+      "supervised_tokens": 164,
+      "no_concepts_nll": 9.03572940826416,
+      "concept_ablation_delta_nll": 0.0013074874877929688,
+      "pooled_coordinate_std": 0.41913461685180664,
+      "code_counts": [
+        0,
+        0,
+        0,
+        0,
+        42,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "generation": {
+    "math": {
+      "correct": 0,
+      "n": 0,
+      "examples": [],
+      "metric": "complete exact/constraint-valid answer with EOS"
+    },
+    "sudoku_easy": {
+      "correct": 0,
+      "n": 0,
+      "examples": [],
+      "metric": "complete exact/constraint-valid answer with EOS"
+    },
+    "sudoku_hard": {
+      "correct": 0,
+      "n": 0,
+      "examples": [],
+      "metric": "complete exact/constraint-valid answer with EOS"
+    }
+  },
+  "selector_policy": "prefix_argmax",
+  "memory_writes": 0,
+  "interpretation": "Teacher-forced loss and free-generation success are distinct metrics"
+}

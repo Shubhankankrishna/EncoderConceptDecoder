@@ -1,0 +1,46 @@
+{
+  "run_id": "pretrain_24h",
+  "source_sha256": "3cbaf426badbfc45f723431838c4f5340cbf7ce2c99f1a8438ed8e3b7152a0e9",
+  "created_unix": 1791711382.781054,
+  "step": 17607,
+  "findings": [
+    {
+      "severity": "warning",
+      "priority": "P1",
+      "code": "math_serialized_bytes",
+      "message": "All 239,904 math training answers retain Python bytes-literal wrappers (for example b'10\\n'). Predictable wrapper tokens dilute NLL; this run is not a clean math benchmark.",
+      "action": "Tested decoder and separate prepare_v2 entry point provided; active corpus is unchanged."
+    },
+    {
+      "severity": "warning",
+      "priority": "P2",
+      "code": "math_eval_single_module",
+      "message": "The trainer first-eight math generation check samples addition/subtraction only; other modules are absent.",
+      "action": "Use separate balanced audit results: 16 examples per module."
+    },
+    {
+      "severity": "research",
+      "priority": "P1",
+      "code": "reasoning_not_established",
+      "message": "Checkpoint 17607 scored 2/64 balanced math and 0/16 easy plus 0/16 hard Sudoku. Complete-answer reasoning remains weak at this early checkpoint."
+    },
+    {
+      "severity": "research",
+      "priority": "P2",
+      "code": "concept_benefit_unproven",
+      "message": "Learned checkpoint gradients reach the concept core, but removing concept guidance changes NLL by under 0.001 in all four offline batches. Code changes affect logits only weakly; no useful concept contribution established yet."
+    },
+    {
+      "severity": "info",
+      "priority": "P2",
+      "code": "gradient_coverage_limited",
+      "message": "Live logs contain only dense preclip gradient norm on the last update of each 20-step interval; sparse Engram and per-layer live gradients were never recorded. CPU checkpoint probes are labeled separately."
+    },
+    {
+      "severity": "info",
+      "priority": "P2",
+      "code": "continual_learning_unvalidated",
+      "message": "RBF wiring and frozen-backbone write contracts passed, but retention/transfer gains have not been measured. No RBF writes occur in this pretraining run."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "run_id": "pretrain_24h",
+  "training_log_samples": 934,
+  "observed_step": 18660,
+  "observed_tokens": 39801382,
+  "dense_norm_min": 0.35359126329421997,
+  "dense_norm_max": 6.219064235687256,
+  "logged_dense_norm_fraction_above_1": 0.8865096359743041,
+  "paired_math_mean_teacher_forced_token_accuracy": 0.71875,
+  "balanced_generation": {
+    "math": {
+      "n": 64,
+      "correct": 2,
+      "by_module": {
+        "algebra__linear_1d": {
+          "n": 16,
+          "correct": 0
+        },
+        "arithmetic__add_sub_multiple": {
+          "n": 16,
+          "correct": 1
+        },
+        "arithmetic__mul": {
+          "n": 16,
+          "correct": 0
+        },
+        "comparison__sort": {
+          "n": 16,
+          "correct": 1
+        }
+      }
+    },
+    "sudoku_easy": {
+      "n": 16,
+      "correct": 0
+    },
+    "sudoku_hard": {
+      "n": 16,
+      "correct": 0
+    }
+  },
+  "first_math_answer_tokenization": [
+    "\u0120b",
+    "'",
+    "1",
+    "0",
+    "\\",
+    "n",
+    "'",
+    "<eos>"
+  ],
+  "source_sha256": "3cbaf426badbfc45f723431838c4f5340cbf7ce2c99f1a8438ed8e3b7152a0e9",
+  "source_matches_active_manifest": true
+}

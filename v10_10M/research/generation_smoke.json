@@ -1,0 +1,127 @@
+{
+  "split": "dev",
+  "families": {
+    "text": {
+      "nll": 8.666431427001953,
+      "perplexity": 5804.747678794004,
+      "supervised_tokens": 768,
+      "no_concepts_nll": 8.666739463806152,
+      "concept_ablation_delta_nll": 0.00030803680419921875,
+      "pooled_coordinate_std": 0.09179116785526276,
+      "code_counts": [
+        0,
+        0,
+        0,
+        0,
+        96,
+        0,
+        0,
+        0
+      ]
+    },
+    "math": {
+      "nll": 8.595368385314941,
+      "perplexity": 5406.560406779989,
+      "supervised_tokens": 22,
+      "no_concepts_nll": 8.59451675415039,
+      "concept_ablation_delta_nll": -0.0008516311645507812,
+      "pooled_coordinate_std": 0.10745952278375626,
+      "code_counts": [
+        0,
+        0,
+        0,
+        0,
+        10,
+        0,
+        0,
+        0
+      ]
+    },
+    "sudoku_easy": {
+      "nll": 8.213542938232422,
+      "perplexity": 3690.5948803664883,
+      "supervised_tokens": 164,
+      "no_concepts_nll": 8.214926719665527,
+      "concept_ablation_delta_nll": 0.0013837814331054688,
+      "pooled_coordinate_std": 0.40436530113220215,
+      "code_counts": [
+        0,
+        0,
+        0,
+        0,
+        23,
+        0,
+        19,
+        0
+      ]
+    },
+    "sudoku_hard": {
+      "nll": 8.225469589233398,
+      "perplexity": 3734.874848471127,
+      "supervised_tokens": 164,
+      "no_concepts_nll": 8.226950645446777,
+      "concept_ablation_delta_nll": 0.0014810562133789062,
+      "pooled_coordinate_std": 0.4021005928516388,
+      "code_counts": [
+        0,
+        0,
+        0,
+        0,
+        21,
+        0,
+        21,
+        0
+      ]
+    }
+  },
+  "generation": {
+    "math": {
+      "correct": 0,
+      "n": 1,
+      "examples": [
+        {
+          "identity": "87cca843ed4d3aef78eff5d17eb4ce5c34b49b530bddccbfee003580292152fe",
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "response": ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+          "generated_tokens": 48,
+          "eos": false
+        }
+      ],
+      "metric": "complete exact/constraint-valid answer with EOS"
+    },
+    "sudoku_easy": {
+      "correct": 0,
+      "n": 1,
+      "examples": [
+        {
+          "identity": "cb6353a34ec739e8de4ed67d04d8877c9b7685583e0f7e093c072b4a57d0152f",
+          "correct": false,
+          "reason": "unterminated",
+          "response": "1111111111111111111111111111111111111111111111111111111111111111111,,,,,,,,,,,,,,,,,",
+          "generated_tokens": 84,
+          "eos": false
+        }
+      ],
+      "metric": "complete exact/constraint-valid answer with EOS"
+    },
+    "sudoku_hard": {
+      "correct": 0,
+      "n": 1,
+      "examples": [
+        {
+          "identity": "17a8e8c534cb475c19bb1dac270b67000828661a0d8cd873b54f4efa0943c522",
+          "correct": false,
+          "reason": "unterminated",
+          "response": "111111111111111111111111111111111111111111111111111111111111111111111111,,,,,,,,,,,,",
+          "generated_tokens": 84,
+          "eos": false
+        }
+      ],
+      "metric": "complete exact/constraint-valid answer with EOS"
+    }
+  },
+  "selector_policy": "prefix_argmax",
+  "memory_writes": 0,
+  "interpretation": "Teacher-forced loss and free-generation success are distinct metrics"
+}

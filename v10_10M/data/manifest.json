@@ -1,0 +1,321 @@
+{
+  "version": 1,
+  "text": {
+    "path": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/data/fineweb_edu.jsonl.gz",
+    "sha256": "39b26d4184c42b497a11c89e58b3ff59dc30e340d4981614a50339b82e407dab",
+    "original_manifest": {
+      "fresh_source": {
+        "dataset": "HuggingFaceFW/fineweb-edu",
+        "configuration": "sample-10BT",
+        "source": "https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu",
+        "license": "ODC-By; see upstream attribution",
+        "documents": 30000,
+        "characters": 147137857,
+        "seconds": 17.767801761627197,
+        "selection": "first 30,000 streaming records with >=300 characters",
+        "content_sha256": "39b26d4184c42b497a11c89e58b3ff59dc30e340d4981614a50339b82e407dab"
+      },
+      "splits": {
+        "dev": {
+          "documents": 1500,
+          "tokens": 2928290,
+          "sha256": "cf6eed7a7e99c8d5fb4bbfafcdabb4c5a8f37026b52ca85c9e2fbdeeed562e23"
+        },
+        "test": {
+          "documents": 1500,
+          "tokens": 2914738,
+          "sha256": "6391a7d4c0135bb51a6dce9cc6284670eafee6a26e5f6601213b65515d7bf60c"
+        },
+        "train": {
+          "documents": 26998,
+          "tokens": 54716006,
+          "sha256": "89ebea2aa4bd131af61d8c2d6422da9f6b3ca802655663acd32c3640df6595c8"
+        }
+      },
+      "removed_exact_or_lexical_near_duplicates": 2,
+      "near_duplicate_filter": "bottom-32 5-word-shingle hashes, 8x4 candidate bands, signature Jaccard >=.8; first 2000 words; not semantic deduplication",
+      "tokenizer_sha256": "959ef096fcf832a929571b849ea9763a59e4a1fc6ac1b7388951ce8254d0a899",
+      "tiny_stories": "legacy training corpus only; its inspected validation corpus is development diagnostic only",
+      "context": 384,
+      "symbolic_training": "streaming tasks with evaluation canonical instances excluded",
+      "split_seed": 71005,
+      "legacy_train_tokens": 133553935,
+      "legacy_train_documents": 529875,
+      "legacy_train_sha256": "89f840405dc7f3cc289cc12da800e1c1495534f2d956c34f329533233cad1f86",
+      "symbolic": {
+        "dev_standard": {
+          "n": 128,
+          "nodes": 10,
+          "task": "graph",
+          "hard": false,
+          "min_distance": 4,
+          "sha256": "03748373a9b9bd454ebe0678e574e447a8520a2573e7362559e66b8795dc2ad4"
+        },
+        "dev_hard": {
+          "n": 128,
+          "nodes": 14,
+          "task": "graph",
+          "hard": true,
+          "min_distance": 4,
+          "sha256": "af0da1a7c11650ff20e55f79a0f657fdd5a04320ab0b54369a202d57071c6c79"
+        },
+        "dev_long": {
+          "n": 128,
+          "nodes": 18,
+          "task": "graph",
+          "hard": true,
+          "min_distance": 5,
+          "sha256": "61f678573d77e44d2654aa50cb8d43d66bdbf1c63f5871c5a600fc232a716c93"
+        },
+        "dev_pointer": {
+          "n": 128,
+          "nodes": 14,
+          "task": "pointer",
+          "hard": false,
+          "min_distance": 4,
+          "sha256": "1a856910b190dbe722b84add98dcecace23eedc79cd85048ea45bbcec443f499"
+        },
+        "dev_pointer_long": {
+          "n": 128,
+          "nodes": 18,
+          "task": "pointer",
+          "hard": true,
+          "min_distance": 4,
+          "sha256": "33213cbb2626a2fd59017f09ecc711347dfb294f2d159370133fe321867efde8"
+        },
+        "dev_lookup": {
+          "n": 128,
+          "nodes": 18,
+          "task": "lookup",
+          "hard": false,
+          "min_distance": 4,
+          "sha256": "8ebb3596e151b3f83930f4609dc627dad7f0a299cbceb570920dd249ed5ecaa6"
+        },
+        "dev_layout": {
+          "n": 128,
+          "nodes": 14,
+          "task": "graph",
+          "hard": true,
+          "min_distance": 4,
+          "sha256": "85f309b59c9f8a4a21b6ddb76edff786ad677d188e86da42bddbc178ce1e4de3"
+        },
+        "dev_compose": {
+          "n": 128,
+          "nodes": 18,
+          "task": "compose",
+          "hard": false,
+          "min_distance": 4,
+          "sha256": "f874ad4f7f6249f52e39101a71c5040e203abb5e0c50a77ff046651af9e441bf"
+        },
+        "test_standard": {
+          "n": 512,
+          "nodes": 10,
+          "task": "graph",
+          "hard": false,
+          "min_distance": 4,
+          "sha256": "6322378257f581606d23a121ce51e3e0705780e2143764b7e7febcb9cdeecc61"
+        },
+        "test_hard": {
+          "n": 512,
+          "nodes": 14,
+          "task": "graph",
+          "hard": true,
+          "min_distance": 4,
+          "sha256": "e1ffbeb14109a9afcaada20f855cc74309c7ec2e8c40506490a014ed05c5b1af"
+        },
+        "test_long": {
+          "n": 256,
+          "nodes": 18,
+          "task": "graph",
+          "hard": true,
+          "min_distance": 5,
+          "sha256": "c5b1c77b4b91efc6be4bfffcf64b7474a93f2709afa46d7fb7878c3c8898b8f8"
+        },
+        "test_pointer": {
+          "n": 256,
+          "nodes": 14,
+          "task": "pointer",
+          "hard": false,
+          "min_distance": 4,
+          "sha256": "3c6104736f24d8a89c3007d1a886a81b297faaf0ee437ab8c98f4c866f2215d4"
+        },
+        "test_pointer_long": {
+          "n": 256,
+          "nodes": 18,
+          "task": "pointer",
+          "hard": true,
+          "min_distance": 4,
+          "sha256": "68ca985ed2648ca1ed1cc1f1625cf616890ea4079a021ad46994f36f7144356c"
+        },
+        "test_lookup": {
+          "n": 256,
+          "nodes": 18,
+          "task": "lookup",
+          "hard": false,
+          "min_distance": 4,
+          "sha256": "4e183dabf42a554e2953dd7d9afe27a7d8a98a5822730cad8008a6bf49066213"
+        },
+        "test_layout": {
+          "n": 256,
+          "nodes": 14,
+          "task": "graph",
+          "hard": true,
+          "min_distance": 4,
+          "sha256": "81f12f2bfc9be89fdfe30a6d9568bc6af9b1bb2b94c59befbca5b4edccafc45e"
+        },
+        "test_compose": {
+          "n": 256,
+          "nodes": 18,
+          "task": "compose",
+          "hard": false,
+          "min_distance": 4,
+          "sha256": "12b7b76cf008339be4969a0305b5a442e4fd55befdf69c2795a90c3ea24b9880"
+        }
+      }
+    }
+  },
+  "math": [
+    {
+      "url": "https://huggingface.co/datasets/deepmind/math_dataset/resolve/ee37b6c8f92cceb4e32abae57ed6fd35a0863845/arithmetic__add_sub_multiple/math_dataset-test.parquet",
+      "sha256": "3ec871a0681990563bdd0cafabf1cc8a4304f0a5def9f9064a79b9deac71d43a",
+      "rows": 10000,
+      "sampled": 2000
+    },
+    {
+      "url": "https://huggingface.co/datasets/deepmind/math_dataset/resolve/ee37b6c8f92cceb4e32abae57ed6fd35a0863845/arithmetic__mul/math_dataset-test.parquet",
+      "sha256": "b2880780aeda02ba790e8f27996d8f96ec98c31dc573a49740dfd93ed8f4ede2",
+      "rows": 10000,
+      "sampled": 2000
+    },
+    {
+      "url": "https://huggingface.co/datasets/deepmind/math_dataset/resolve/ee37b6c8f92cceb4e32abae57ed6fd35a0863845/algebra__linear_1d/math_dataset-test.parquet",
+      "sha256": "a95114d5206ba416165abf93f9a6cdf1f1695783cc20eea9d708b2bd28daebf3",
+      "rows": 10000,
+      "sampled": 2000
+    },
+    {
+      "url": "https://huggingface.co/datasets/deepmind/math_dataset/resolve/ee37b6c8f92cceb4e32abae57ed6fd35a0863845/comparison__sort/math_dataset-test.parquet",
+      "sha256": "0d92d21effee7b43296ee0d44aa2f046742e2a860ee13c5f2f80c77f23b1e592",
+      "rows": 10000,
+      "sampled": 2000
+    },
+    {
+      "url": "https://huggingface.co/datasets/deepmind/math_dataset/resolve/ee37b6c8f92cceb4e32abae57ed6fd35a0863845/arithmetic__add_sub_multiple/math_dataset-train.parquet",
+      "sha256": "1b42d01fb3996e68da4d2439fc6b13a8c9c94e111c6d78de8c30c01ff42f3d9a",
+      "rows": 1999998,
+      "sampled": 60000
+    },
+    {
+      "url": "https://huggingface.co/datasets/deepmind/math_dataset/resolve/ee37b6c8f92cceb4e32abae57ed6fd35a0863845/arithmetic__mul/math_dataset-train.parquet",
+      "sha256": "5afdcc46c81498cb2ef78184ddcbc58bbd398e08c0c48cd2c063cff0f9ab6204",
+      "rows": 1999998,
+      "sampled": 60000
+    },
+    {
+      "url": "https://huggingface.co/datasets/deepmind/math_dataset/resolve/ee37b6c8f92cceb4e32abae57ed6fd35a0863845/algebra__linear_1d/math_dataset-train.parquet",
+      "sha256": "6bcc987d9401a7cfcb7835d42dc0de5e491d146092757c3b2c5a77cad725fbef",
+      "rows": 1999998,
+      "sampled": 60000
+    },
+    {
+      "url": "https://huggingface.co/datasets/deepmind/math_dataset/resolve/ee37b6c8f92cceb4e32abae57ed6fd35a0863845/comparison__sort/math_dataset-train.parquet",
+      "sha256": "dfe5a9e675e353aa1059de3106aa9ff4ab9599f15bec11a6ec8f1c178988c81f",
+      "rows": 1999998,
+      "sampled": 60000
+    }
+  ],
+  "sudoku_revision": "58942f96baeb572ca3127e2a9e9c70f330783d6b",
+  "sudoku_train_sample": 50000,
+  "sudoku_test_sample": 2048,
+  "tokenizer_sha256": "95de470f001e1cf95e01262384d7fa0040857c043a0c4bd8548a0ac7d309e2fa",
+  "vocab_size": 8192,
+  "datasets": {
+    "text_train": {
+      "records": 26998,
+      "tokens": 35167033,
+      "excluded_oversize": 0,
+      "sha256": "b1a0356c5b4b3c5068e52f1a5c476a798fb2127bcb0c9004836f8b7c50d88272",
+      "meta_sha256": "fa40df6061eb24e05e7fb8192a0dcff2c1de04387ea2ac952d125a76b5b71be7"
+    },
+    "math_train": {
+      "records": 239904,
+      "tokens": 10006501,
+      "excluded_oversize": 0,
+      "sha256": "ac4eaee1887d94b49e72a82748d7ee37877d0a9c6cb978eb5925c61e32c13696",
+      "meta_sha256": "2fd70c7db3ec067c0a93fb8f5ff8f132cab461fe0ba39747f8c7a623c054b0ce"
+    },
+    "sudoku_easy_train": {
+      "records": 12802,
+      "tokens": 2189142,
+      "excluded_oversize": 0,
+      "sha256": "6b68958ae8c29eb4c3cc0672497882c56393bcf8057dd0431f2b71cb3a78c80f",
+      "meta_sha256": "e01b77e00297fd2a025026c4a35d6255c3c2df440fbe959a68711acd339ba0e3"
+    },
+    "sudoku_hard_train": {
+      "records": 37198,
+      "tokens": 6360858,
+      "excluded_oversize": 0,
+      "sha256": "ecb6c55c805a317ca0dcccd7f39c4c33729e33d57e488d7067c39ad5b402fd76",
+      "meta_sha256": "1d7f562be685d68278b3aef8e713079f35f9819cf0cf28d6c44437fdbb0129de"
+    },
+    "text_dev": {
+      "records": 1500,
+      "tokens": 1869839,
+      "excluded_oversize": 0,
+      "sha256": "3b7152981fffa15b64d0f82880c3fc74b351f03323ac69a0e5b128464f7cdc46",
+      "meta_sha256": "9b7083bc0d5b9f11587a66033a9b4527ad560a3712a37b39310002029949b087"
+    },
+    "math_dev": {
+      "records": 4037,
+      "tokens": 183851,
+      "excluded_oversize": 0,
+      "sha256": "3933923ac1bb1a1e098b41d7bfb50a389f06b38b0384297d289100d2297bae04",
+      "meta_sha256": "6ce0553e7bb9bb2baef7888acb1ec21466c8235858918392ef65e4d9e2cd6408"
+    },
+    "sudoku_easy_dev": {
+      "records": 292,
+      "tokens": 49932,
+      "excluded_oversize": 0,
+      "sha256": "46ab2ced6e41ca816158877a865cda49ed8a60c3ed852a4d81d28522dcf04fbe",
+      "meta_sha256": "62bcefed09382d02bec79ba4bde4116411f44d8516fefbb97336b42e635be56e"
+    },
+    "sudoku_hard_dev": {
+      "records": 722,
+      "tokens": 123462,
+      "excluded_oversize": 0,
+      "sha256": "b3a1ead4e51b3beee597fd3f9e4f3368936b3e55ba50c5d3293c2d7b7dc284e7",
+      "meta_sha256": "86462ab04381906ae2e63a0010131669cbed0fcbdaa30899f7cb0e6ecb4fd5fe"
+    },
+    "text_test": {
+      "records": 1500,
+      "tokens": 1869292,
+      "excluded_oversize": 0,
+      "sha256": "f3a05ba9c35c1b73a4207e8127f583517b889e1ceda6272bf19e848c68b1f4a4",
+      "meta_sha256": "cca0fed015bc66a8d1848064d006e735cfa2a5dbf24c409f3d1d210defc596f1"
+    },
+    "math_test": {
+      "records": 3963,
+      "tokens": 180696,
+      "excluded_oversize": 0,
+      "sha256": "9c4c78e45d50f359f11c4b737de28f0c7535631b5be64ec45a627d75fd75caa4",
+      "meta_sha256": "0a1ac3e3b6bdd6bfb93e95c38fd641ca171a00325949e801491dc81ee51b56f4"
+    },
+    "sudoku_easy_test": {
+      "records": 270,
+      "tokens": 46170,
+      "excluded_oversize": 0,
+      "sha256": "c0e397736a562f384ad219f41ca2aa0470634708a23cdff0f5be030d9363a95e",
+      "meta_sha256": "7c95c5c47db3f32f9a98d9ebd4d6618796f4fdd1fd2f1d0acb12ddc5510a2626"
+    },
+    "sudoku_hard_test": {
+      "records": 764,
+      "tokens": 130644,
+      "excluded_oversize": 0,
+      "sha256": "94a1c624452c21ac05b7ec03992e9dc7061a0ddfa441e1d49be2788c9006648e",
+      "meta_sha256": "f48f819e02d5ccf4d65a34224f3b77c129f7e7b07b3cab54e1971e0199230a46"
+    }
+  },
+  "split_policy": "Preserve official or existing source split; official math/Sudoku test deterministically divided into development/sealed test before training; no test tokenizer fitting",
+  "text_reuse": "Previously cached public FineWeb-Edu; new randomly initialized V10 model. Not a fresh external test corpus.",
+  "near_duplicates": "FineWeb inherits prior lexical near-dedup; math exact normalized question dedup only; Sudoku inherits upstream equivalence-separated train/test. Dev/test equivalence not independently audited."
+}

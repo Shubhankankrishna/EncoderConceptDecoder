@@ -1,0 +1,532 @@
+{
+  "schema_version": 1,
+  "generated_at": 1791711487.474902,
+  "run": {
+    "id": "pretrain_24h",
+    "path": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_10M/runs/pretrain_24h",
+    "manifest": {
+      "model": {
+        "vocab_size": 8192,
+        "width": 128,
+        "heads": 4,
+        "e1_layers": 4,
+        "e2_layers": 4,
+        "e3_layers": 4,
+        "encoder_visits": 2,
+        "concept_layers": 4,
+        "concept_visits": 2,
+        "decoder_layers": 4,
+        "ffn_expansion": 4,
+        "window": 64,
+        "group": 8,
+        "slots": 2,
+        "codes": 8,
+        "code_width": 32,
+        "gate_rank": 32,
+        "pq_segments": 8,
+        "pq_words": 32,
+        "engram_rows": [
+          156241,
+          156253,
+          156257,
+          156259
+        ],
+        "engram_dim": 32,
+        "engram_cpu": true
+      },
+      "parameters": {
+        "dense": 5465890,
+        "engram": 20000320,
+        "total": 25466210,
+        "encoder_distinct": 12,
+        "encoder_executed": 16,
+        "concept_distinct": 4,
+        "concept_executed": 8
+      },
+      "training": {
+        "run_dir": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_10M/runs/pretrain_24h",
+        "device": "mps",
+        "hours": 24,
+        "batch_size": 8,
+        "accumulate": 1,
+        "context": 384,
+        "lr": 0.0003,
+        "seed": 1011,
+        "candidate_every": 4,
+        "log_every": 20,
+        "checkpoint_seconds": 600,
+        "eval_seconds": 1800,
+        "max_steps": 0,
+        "resume": false,
+        "no_eval": false,
+        "skip_initial_eval": false
+      },
+      "start_unix": 1791700935.538214,
+      "deadline_unix": 1791787335.538214,
+      "device": "mps",
+      "torch": "2.10.0",
+      "source_sha256": "3cbaf426badbfc45f723431838c4f5340cbf7ce2c99f1a8438ed8e3b7152a0e9",
+      "data_sha256": "eaa15b5604c97015937a714d43d5fedb5485cb36748b81837fdb01d871874253",
+      "loss_weights": {
+        "token": 1,
+        "concept": 0.1,
+        "vq": 0.01,
+        "selector": 0.05,
+        "explore": 0.1
+      },
+      "auxiliary_candidate_every": 4,
+      "gradcuit_xi": 0,
+      "rbf_pretraining_writes": 0,
+      "target": "online code-free pooler with stop-gradient",
+      "precision": "float32",
+      "table_optimizer": "CPU SparseAdam, 5x dense LR",
+      "baseline_evaluation": "development only; sealed test excluded"
+    },
+    "status": {
+      "status": "running",
+      "pid": 52954,
+      "deadline_unix": 1791787335.538214,
+      "step": 19020,
+      "tokens": 40574544,
+      "loss": {
+        "total": 2.6647194415330886,
+        "token": 2.5380897179245947,
+        "concept": 0.3814560681581497,
+        "explore": 0.07749044001102448,
+        "vq": 5.745367789268494,
+        "selector": 0.4656280159950256
+      },
+      "dense_grad_norm": 1.8933689594268799,
+      "tokens_per_second": 3538.9669644992623,
+      "elapsed_hours": 2.9275955944591097,
+      "remaining_hours": 21.072404405275982,
+      "learning_rate": 0.00029020899009903696,
+      "family_supervised_tokens": {
+        "text": 35597770,
+        "sudoku_easy": 1563904,
+        "math": 370784,
+        "sudoku_hard": 241408
+      },
+      "rss_gb": 1.3013763427734375,
+      "system_available_gb": 2.4322662353515625,
+      "mps_allocated_gb": 0.21639561653137207,
+      "mps_driver_gb": 4.2547607421875
+    },
+    "health": {
+      "trainer_alive": true,
+      "trainer_pid": 52954,
+      "status_age_seconds": 12.09479546546936,
+      "process_started_unix": 1791700933.689252,
+      "checkpoint_age_seconds": 241.34005999565125,
+      "checkpoint_bytes": 305966589
+    },
+    "updated": 1791711486.978636
+  },
+  "latest_evaluation": {
+    "event_id": 911,
+    "step": 16494,
+    "wall_time": 1791710039.5093048,
+    "payload": {
+      "split": "dev",
+      "families": {
+        "text": {
+          "nll": 4.780412595945172,
+          "perplexity": 119.15350215597833,
+          "supervised_tokens": 2274,
+          "no_concepts_nll": 4.780038140379974,
+          "concept_ablation_delta_nll": -0.00037445556519877243,
+          "pooled_coordinate_std": 0.5546248356501261,
+          "code_counts": [
+            3,
+            0,
+            3,
+            7,
+            3,
+            149,
+            119,
+            0
+          ]
+        },
+        "math": {
+          "nll": 0.40194662277762955,
+          "perplexity": 1.494731545928553,
+          "supervised_tokens": 111,
+          "no_concepts_nll": 0.4012700622683173,
+          "concept_ablation_delta_nll": -0.0006765605093122518,
+          "pooled_coordinate_std": 0.6485779881477356,
+          "code_counts": [
+            0,
+            0,
+            2,
+            2,
+            0,
+            1,
+            29,
+            0
+          ]
+        },
+        "sudoku_easy": {
+          "nll": 0.47231946388880414,
+          "perplexity": 1.6037096292149113,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.47062792380650836,
+          "concept_ablation_delta_nll": -0.0016915400822957727,
+          "pooled_coordinate_std": 0.42097360889116925,
+          "code_counts": [
+            0,
+            0,
+            5,
+            15,
+            32,
+            32,
+            42,
+            0
+          ]
+        },
+        "sudoku_hard": {
+          "nll": 0.5265085200468699,
+          "perplexity": 1.6930108638395667,
+          "supervised_tokens": 492,
+          "no_concepts_nll": 0.5265480279922485,
+          "concept_ablation_delta_nll": 3.950794537865843e-05,
+          "pooled_coordinate_std": 0.41551976402600604,
+          "code_counts": [
+            0,
+            0,
+            2,
+            21,
+            25,
+            37,
+            41,
+            0
+          ]
+        }
+      },
+      "generation": {
+        "math": {
+          "correct": 0,
+          "n": 8,
+          "examples": [
+            {
+              "identity": "87cca843ed4d3aef78eff5d17eb4ce5c34b49b530bddccbfee003580292152fe",
+              "correct": false,
+              "reason": "incorrect_or_unterminated",
+              "response": " b'-12\\n'",
+              "generated_tokens": 8,
+              "eos": true
+            },
+            {
+              "identity": "861a761d173af360ded7cbdfe65cd761316452e2de81dc2dc479709ae42381ae",
+              "correct": false,
+              "reason": "incorrect_or_unterminated",
+              "response": " b'12\\n'",
+              "generated_tokens": 8,
+              "eos": true
+            },
+            {
+              "identity": "31197fa971f9ffd68502bb59e9b54a89b5c25ada2b482a9eb07866f6d0618222",
+              "correct": false,
+              "reason": "incorrect_or_unterminated",
+              "response": " b'12\\n'",
+              "generated_tokens": 8,
+              "eos": true
+            },
+            {
+              "identity": "26e59cddfc34082dc7a9caee771567aae45aede83a3840471269312fb695a7fb",
+              "correct": false,
+              "reason": "incorrect_or_unterminated",
+              "response": " b'2\\n'",
+              "generated_tokens": 7,
+              "eos": true
+            },
+            {
+              "identity": "a92430499e73694b155fe964cf1353e1ab8d257b5b95a19440fa2655afa324fc",
+              "correct": false,
+              "reason": "incorrect_or_unterminated",
+              "response": " b'-12\\n'",
+              "generated_tokens": 8,
+              "eos": true
+            },
+            {
+              "identity": "b19cce77b5d8c1493a4a0ca1be26cd06a886449e4d5d31b872df94a60cffa24d",
+              "correct": false,
+              "reason": "incorrect_or_unterminated",
+              "response": " b'1\\n'",
+              "generated_tokens": 7,
+              "eos": true
+            },
+            {
+              "identity": "ce93c3edb827387f982237768a2b6ea32144e14d1b36e0a252c0c6a17839182c",
+              "correct": false,
+              "reason": "incorrect_or_unterminated",
+              "response": " b'-11\\n'",
+              "generated_tokens": 8,
+              "eos": true
+            },
+            {
+              "identity": "36b38c232ab03ae5c41d422deb2b733fe23229cd421086223d25af1d4446f041",
+              "correct": false,
+              "reason": "incorrect_or_unterminated",
+              "response": " b'12\\n'",
+              "generated_tokens": 8,
+              "eos": true
+            }
+          ],
+          "metric": "complete exact/constraint-valid answer with EOS"
+        },
+        "sudoku_easy": {
+          "correct": 0,
+          "n": 2,
+          "examples": [
+            {
+              "identity": "cb6353a34ec739e8de4ed67d04d8877c9b7685583e0f7e093c072b4a57d0152f",
+              "correct": false,
+              "reason": "format",
+              "response": "7984612531351284964629735818796321456214597381431869722159436289647158139872361945",
+              "generated_tokens": 83,
+              "eos": true
+            },
+            {
+              "identity": "688b02636fcc689c2098a55429230fc9f4ab16145efd6b3b35b06fdd6f687172",
+              "correct": false,
+              "reason": "row_or_column",
+              "response": "791264853325381976864793212934615728581279634672839156287913294143657829123928673",
+              "generated_tokens": 82,
+              "eos": true
+            }
+          ],
+          "metric": "complete exact/constraint-valid answer with EOS"
+        },
+        "sudoku_hard": {
+          "correct": 0,
+          "n": 2,
+          "examples": [
+            {
+              "identity": "17a8e8c534cb475c19bb1dac270b67000828661a0d8cd873b54f4efa0943c522",
+              "correct": false,
+              "reason": "row_or_column",
+              "response": "432976581986153742157482396694713825813942671527865934763291418941587263238614795",
+              "generated_tokens": 82,
+              "eos": true
+            },
+            {
+              "identity": "cbf2732d5f383e8d867ace9ad25a0b41fd79ce7b853f29b61580265ef6583f19",
+              "correct": false,
+              "reason": "clues",
+              "response": "891765243632498715987132496163549182249817363758261945579324631916843872412937659",
+              "generated_tokens": 82,
+              "eos": true
+            }
+          ],
+          "metric": "complete exact/constraint-valid answer with EOS"
+        }
+      },
+      "selector_policy": "prefix_argmax",
+      "memory_writes": 0,
+      "interpretation": "Teacher-forced loss and free-generation success are distinct metrics"
+    }
+  },
+  "alerts": [
+    {
+      "severity": "research",
+      "code": "small_concept_effect",
+      "family": "text",
+      "message": "Concept ablation changes NLL by less than 0.005 on this small sample; benefit is unproven.",
+      "value": -0.00037445556519877243
+    },
+    {
+      "severity": "research",
+      "code": "small_concept_effect",
+      "family": "math",
+      "message": "Concept ablation changes NLL by less than 0.005 on this small sample; benefit is unproven.",
+      "value": -0.0006765605093122518
+    },
+    {
+      "severity": "research",
+      "code": "small_concept_effect",
+      "family": "sudoku_easy",
+      "message": "Concept ablation changes NLL by less than 0.005 on this small sample; benefit is unproven.",
+      "value": -0.0016915400822957727
+    },
+    {
+      "severity": "research",
+      "code": "small_concept_effect",
+      "family": "sudoku_hard",
+      "message": "Concept ablation changes NLL by less than 0.005 on this small sample; benefit is unproven.",
+      "value": 3.950794537865843e-05
+    },
+    {
+      "severity": "research",
+      "code": "zero_sample_success",
+      "family": "math",
+      "message": "Zero complete answers in 8 sampled problems; not proof of zero population accuracy."
+    },
+    {
+      "severity": "research",
+      "code": "zero_sample_success",
+      "family": "sudoku_easy",
+      "message": "Zero complete answers in 2 sampled problems; not proof of zero population accuracy."
+    },
+    {
+      "severity": "research",
+      "code": "zero_sample_success",
+      "family": "sudoku_hard",
+      "message": "Zero complete answers in 2 sampled problems; not proof of zero population accuracy."
+    },
+    {
+      "severity": "warning",
+      "priority": "P1",
+      "code": "math_serialized_bytes",
+      "message": "All 239,904 math training answers retain Python bytes-literal wrappers (for example b'10\\n'). Predictable wrapper tokens dilute NLL; this run is not a clean math benchmark.",
+      "action": "Tested decoder and separate prepare_v2 entry point provided; active corpus is unchanged."
+    },
+    {
+      "severity": "warning",
+      "priority": "P2",
+      "code": "math_eval_single_module",
+      "message": "The trainer first-eight math generation check samples addition/subtraction only; other modules are absent.",
+      "action": "Use separate balanced audit results: 16 examples per module."
+    },
+    {
+      "severity": "research",
+      "priority": "P1",
+      "code": "reasoning_not_established",
+      "message": "Checkpoint 17607 scored 2/64 balanced math and 0/16 easy plus 0/16 hard Sudoku. Complete-answer reasoning remains weak at this early checkpoint."
+    },
+    {
+      "severity": "research",
+      "priority": "P2",
+      "code": "concept_benefit_unproven",
+      "message": "Learned checkpoint gradients reach the concept core, but removing concept guidance changes NLL by under 0.001 in all four offline batches. Code changes affect logits only weakly; no useful concept contribution established yet."
+    },
+    {
+      "severity": "info",
+      "priority": "P2",
+      "code": "gradient_coverage_limited",
+      "message": "Live logs contain only dense preclip gradient norm on the last update of each 20-step interval; sparse Engram and per-layer live gradients were never recorded. CPU checkpoint probes are labeled separately."
+    },
+    {
+      "severity": "info",
+      "priority": "P2",
+      "code": "continual_learning_unvalidated",
+      "message": "RBF wiring and frozen-backbone write contracts passed, but retention/transfer gains have not been measured. No RBF writes occur in this pretraining run."
+    }
+  ],
+  "ingestion_issues": [],
+  "artifacts": [
+    {
+      "path": "evaluation_0003185.json",
+      "kind": "evaluation",
+      "size": 5848,
+      "mtime": 1791702771.10178,
+      "digest": "2bbb11164be6a48ca2c6c173b5509b09f5f64ea13bc639477c3c147a76bde6d0"
+    },
+    {
+      "path": "evaluation_0006441.json",
+      "kind": "evaluation",
+      "size": 5847,
+      "mtime": 1791704588.063881,
+      "digest": "38b1dca844e52aeceb169aff7346119a4b2c1ee0ae356a9e85ea26ccf8b15cc5"
+    },
+    {
+      "path": "evaluation_0009779.json",
+      "kind": "evaluation",
+      "size": 5864,
+      "mtime": 1791706404.8771758,
+      "digest": "be777df644948db13563cec21e31d5aa1726fe13a997f5b050531eb06db37227"
+    },
+    {
+      "path": "evaluation_0013117.json",
+      "kind": "evaluation",
+      "size": 5871,
+      "mtime": 1791708221.6242743,
+      "digest": "35470e5b09b6491fbd64f04d258e4ec47e106de7a5f9635f5e8e508258c9b41f"
+    },
+    {
+      "path": "evaluation_0016494.json",
+      "kind": "evaluation",
+      "size": 5872,
+      "mtime": 1791710039.5093048,
+      "digest": "f2945b4a78b459e71af935c46f72e475a03eb61347a4baaa79fa4f26197f095d"
+    },
+    {
+      "path": "evaluation_initial.json",
+      "kind": "evaluation",
+      "size": 2260,
+      "mtime": 1791700937.4191275,
+      "digest": "007e9da67cb50774968fc06d38d3cda1f94df68d27866090fd4624838b8613d3"
+    },
+    {
+      "path": "latest.pt",
+      "kind": "checkpoint",
+      "size": 305966589,
+      "mtime": 1791711245.6376839,
+      "digest": null
+    }
+  ],
+  "metric_availability": {
+    "train.loss.*": {
+      "available": true,
+      "source": "train.jsonl",
+      "cadence": "20 optimizer steps (first at step 1)",
+      "meaning": "Mean of microbatch-normalized losses over the logging interval; not token-weighted across families. Exploration/selector include zero on non-auxiliary updates."
+    },
+    "train.gradient.dense_preclip_norm": {
+      "available": true,
+      "source": "train.jsonl",
+      "meaning": "Dense parameters only, L2 norm before clipping, measured on the final update of the logging interval. Excludes sparse Engram table; not an interval average."
+    },
+    "derived.dense_clip_scale": {
+      "available": true,
+      "meaning": "Inferred from clip_grad_norm_(max_norm=1); not separately measured."
+    },
+    "train.memory.*": {
+      "available": true,
+      "meaning": "Logged GiB counters; Apple unified-memory counters overlap and must not be summed."
+    },
+    "eval.*": {
+      "available": true,
+      "cadence": "About 30 minutes; small fixed development samples",
+      "meaning": "Per-family NLL, concept ablation, coordinate spread, code counts and strict complete-answer generation; zero-trial accuracy is absent, not zero."
+    },
+    "probe.*": {
+      "available": true,
+      "cadence": "Explicit one-off CPU checkpoint audit",
+      "meaning": "Fresh gradient and ablation probes, labeled by stored checkpoint step. Never historical optimizer-step gradients."
+    },
+    "probe_eval.*": {
+      "available": true,
+      "cadence": "Explicit balanced development audit",
+      "meaning": "Independent stratified generation evaluation; separate from the trainer small fixed sample."
+    },
+    "host.*": {
+      "available": true,
+      "cadence": "30 seconds while trainer is active",
+      "meaning": "External CPU/RSS/system memory samples, independent from train memory counters."
+    },
+    "per_layer_gradient_norms": {
+      "available": false,
+      "reason": "Not emitted by the running trainer; unavailable historically. Can be measured in explicitly labeled checkpoint probes."
+    },
+    "engram_gradient_norm": {
+      "available": false,
+      "reason": "Trainer checks/clips this norm but does not log it."
+    },
+    "gradient_histograms": {
+      "available": false,
+      "reason": "Not captured by this run."
+    },
+    "gpu_utilization_and_temperature": {
+      "available": false,
+      "reason": "No reliable public cross-process MPS utilization/temperature source is configured."
+    },
+    "rbf_activity": {
+      "available": false,
+      "reason": "RBF bank is intentionally empty during pretraining; no continual-learning episode has been run in this training run."
+    },
+    "checkpoint_step": {
+      "available": false,
+      "reason": "Collector records checkpoint filesystem metadata without deserializing it; only an explicit checkpoint audit can establish its exact stored step."
+    }
+  }
+}

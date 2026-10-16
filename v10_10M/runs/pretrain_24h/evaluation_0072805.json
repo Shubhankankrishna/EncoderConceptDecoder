@@ -1,0 +1,199 @@
+{
+  "split": "dev",
+  "families": {
+    "text": {
+      "nll": 4.599406349312976,
+      "perplexity": 99.42527423632431,
+      "supervised_tokens": 2274,
+      "no_concepts_nll": 4.597898923627305,
+      "concept_ablation_delta_nll": -0.00150742568567086,
+      "pooled_coordinate_std": 0.40531397859255475,
+      "code_counts": [
+        0,
+        0,
+        0,
+        19,
+        0,
+        196,
+        0,
+        69
+      ]
+    },
+    "math": {
+      "nll": 0.28344936279563215,
+      "perplexity": 1.3277016475119716,
+      "supervised_tokens": 111,
+      "no_concepts_nll": 0.2848210006549552,
+      "concept_ablation_delta_nll": 0.0013716378593230383,
+      "pooled_coordinate_std": 0.6092107892036438,
+      "code_counts": [
+        1,
+        4,
+        1,
+        0,
+        1,
+        19,
+        0,
+        8
+      ]
+    },
+    "sudoku_easy": {
+      "nll": 0.23942517737547556,
+      "perplexity": 1.2705186175318954,
+      "supervised_tokens": 492,
+      "no_concepts_nll": 0.23885317146778107,
+      "concept_ablation_delta_nll": -0.0005720059076944894,
+      "pooled_coordinate_std": 0.4195488890012105,
+      "code_counts": [
+        0,
+        0,
+        0,
+        4,
+        0,
+        96,
+        0,
+        26
+      ]
+    },
+    "sudoku_hard": {
+      "nll": 0.2543344348669052,
+      "perplexity": 1.2896030203714135,
+      "supervised_tokens": 492,
+      "no_concepts_nll": 0.2540104140837987,
+      "concept_ablation_delta_nll": -0.0003240207831065045,
+      "pooled_coordinate_std": 0.4149709741274516,
+      "code_counts": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        99,
+        0,
+        26
+      ]
+    }
+  },
+  "generation": {
+    "math": {
+      "correct": 0,
+      "n": 8,
+      "examples": [
+        {
+          "identity": "87cca843ed4d3aef78eff5d17eb4ce5c34b49b530bddccbfee003580292152fe",
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "response": " b'-1\\n'",
+          "generated_tokens": 7,
+          "eos": true
+        },
+        {
+          "identity": "861a761d173af360ded7cbdfe65cd761316452e2de81dc2dc479709ae42381ae",
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "response": " b'-1\\n'",
+          "generated_tokens": 7,
+          "eos": true
+        },
+        {
+          "identity": "31197fa971f9ffd68502bb59e9b54a89b5c25ada2b482a9eb07866f6d0618222",
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "response": " b'-1\\n'",
+          "generated_tokens": 7,
+          "eos": true
+        },
+        {
+          "identity": "26e59cddfc34082dc7a9caee771567aae45aede83a3840471269312fb695a7fb",
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "response": " b'-2\\n'",
+          "generated_tokens": 7,
+          "eos": true
+        },
+        {
+          "identity": "a92430499e73694b155fe964cf1353e1ab8d257b5b95a19440fa2655afa324fc",
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "response": " b'-1\\n'",
+          "generated_tokens": 7,
+          "eos": true
+        },
+        {
+          "identity": "b19cce77b5d8c1493a4a0ca1be26cd06a886449e4d5d31b872df94a60cffa24d",
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "response": " b'-1\\n'",
+          "generated_tokens": 7,
+          "eos": true
+        },
+        {
+          "identity": "ce93c3edb827387f982237768a2b6ea32144e14d1b36e0a252c0c6a17839182c",
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "response": " b'-1\\n'",
+          "generated_tokens": 7,
+          "eos": true
+        },
+        {
+          "identity": "36b38c232ab03ae5c41d422deb2b733fe23229cd421086223d25af1d4446f041",
+          "correct": false,
+          "reason": "incorrect_or_unterminated",
+          "response": " b'-10\\n'",
+          "generated_tokens": 8,
+          "eos": true
+        }
+      ],
+      "metric": "complete exact/constraint-valid answer with EOS"
+    },
+    "sudoku_easy": {
+      "correct": 0,
+      "n": 2,
+      "examples": [
+        {
+          "identity": "cb6353a34ec739e8de4ed67d04d8877c9b7685583e0f7e093c072b4a57d0152f",
+          "correct": false,
+          "reason": "row_or_column",
+          "response": "894561273731928456265374981978632145126859734543147862412983617619785329387216594",
+          "generated_tokens": 82,
+          "eos": true
+        },
+        {
+          "identity": "688b02636fcc689c2098a55429230fc9f4ab16145efd6b3b35b06fdd6f687172",
+          "correct": false,
+          "reason": "row_or_column",
+          "response": "298154763471286945365793281934675128512848639847139356789312594154567829823941475",
+          "generated_tokens": 82,
+          "eos": true
+        }
+      ],
+      "metric": "complete exact/constraint-valid answer with EOS"
+    },
+    "sudoku_hard": {
+      "correct": 0,
+      "n": 2,
+      "examples": [
+        {
+          "identity": "17a8e8c534cb475c19bb1dac270b67000828661a0d8cd873b54f4efa0943c522",
+          "correct": false,
+          "reason": "row_or_column",
+          "response": "412876593386159427957432816194723865863945271525761984745294138691387452238615749",
+          "generated_tokens": 82,
+          "eos": true
+        },
+        {
+          "identity": "cbf2732d5f383e8d867ace9ad25a0b41fd79ce7b853f29b61580265ef6583f19",
+          "correct": false,
+          "reason": "row_or_column",
+          "response": "912375846834692715657184296761459382249718563388263157573926421196847675428531936",
+          "generated_tokens": 82,
+          "eos": true
+        }
+      ],
+      "metric": "complete exact/constraint-valid answer with EOS"
+    }
+  },
+  "selector_policy": "prefix_argmax",
+  "memory_writes": 0,
+  "interpretation": "Teacher-forced loss and free-generation success are distinct metrics"
+}

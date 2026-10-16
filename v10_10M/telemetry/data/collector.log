@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_10M/telemetry/server.py", line 186, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_10M/telemetry/server.py", line 171, in main
+    server=ThreadingHTTPServer(('127.0.0.1',args.port),make_handler(store,collector))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/opt/anaconda3/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_10M/telemetry/server.py", line 186, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_10M/telemetry/server.py", line 179, in main
+    print(encode(dict(status='ready',**collector.health())),flush=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: dict() got multiple values for keyword argument 'status'
+{"event":"ready","schema_version":1,"status":"ok","pid":55061,"started_unix":1791710946.2894132,"last_success_unix":1791710946.311564,"last_error":null,"poll_seconds":5,"database":"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_10M/telemetry/data/telemetry.sqlite3"}
+{"event":"ready","schema_version":1,"status":"ok","pid":55259,"started_unix":1791711486.94682,"last_success_unix":1791711486.977371,"last_error":null,"poll_seconds":5,"database":"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_10M/telemetry/data/telemetry.sqlite3"}
+{"event":"ready","schema_version":1,"status":"ok","pid":55871,"started_unix":1791713546.3836741,"last_success_unix":1791713546.4140549,"last_error":null,"poll_seconds":5,"database":"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_10M/telemetry/data/telemetry.sqlite3"}
+{"event":"ready","schema_version":1,"status":"ok","pid":56001,"started_unix":1791714008.07801,"last_success_unix":1791714008.1025212,"last_error":null,"poll_seconds":5,"database":"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v10_10M/telemetry/data/telemetry.sqlite3"}

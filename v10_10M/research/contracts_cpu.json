@@ -1,0 +1,45 @@
+{
+  "device": "cpu",
+  "seconds": 0.2800301659735851,
+  "checks": {
+    "future_tokens_cannot_change_past_logits": 0.0,
+    "full_vs_prefix_recomputation": 2.980232238769531e-07,
+    "padding_and_batch_isolation": 0.0,
+    "partial_group_lengths": [
+      1,
+      7,
+      8,
+      9,
+      15,
+      16
+    ],
+    "shift_rows_7_11_15_19": true,
+    "candidate_history_matches_committed_prefix": true,
+    "group_causal_concept_attention": true,
+    "actual_layer_applications": {
+      "e1": 4,
+      "e2": 8,
+      "e3": 4,
+      "concept": 8,
+      "decoder": 4
+    },
+    "retained_states_change_between_two_visits": true,
+    "end_to_end_and_sparse_engram_gradients": true,
+    "first_write_through_real_PQ_and_decoder": {
+      "writes": 7,
+      "version": 1,
+      "eta": 0.01,
+      "bytes": 14392,
+      "prewrite_token_loss": 4.557071685791016,
+      "prewrite_concept_loss": 1.1123392581939697
+    },
+    "small_real_model_memory_step": {
+      "before": 4.668305397033691,
+      "after": 4.668305397033691
+    },
+    "snapshot_and_feedback_guards": true,
+    "rbf_exact_sum_code_partition_query_gradient": true,
+    "sudoku_strict_verifier": true
+  },
+  "status": "passed"
+}

@@ -1,0 +1,56 @@
+{
+  "train": {
+    "rows": 239904,
+    "serialized_answer_count": 239904,
+    "sources": {
+      "arithmetic__add_sub_multiple": 59995,
+      "arithmetic__mul": 59926,
+      "algebra__linear_1d": 59991,
+      "comparison__sort": 59992
+    }
+  },
+  "dev": {
+    "rows": 4037,
+    "serialized_answer_count": 4037,
+    "sources": {
+      "arithmetic__add_sub_multiple": 995,
+      "arithmetic__mul": 1016,
+      "algebra__linear_1d": 1035,
+      "comparison__sort": 991
+    }
+  },
+  "test": {
+    "rows": 3963,
+    "serialized_answer_count": 3963,
+    "sources": {
+      "arithmetic__add_sub_multiple": 1005,
+      "arithmetic__mul": 984,
+      "algebra__linear_1d": 965,
+      "comparison__sort": 1009
+    }
+  },
+  "upstream_example": {
+    "file": "v10_10M/data/raw/comparison__sort_train.parquet",
+    "schema": "question: string\nanswer: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"question\": {\"dtype\": \"string\", \"_ty' + 65",
+    "rows": [
+      {
+        "raw_question": "b'Sort 221, -2, 80, -5, -1 in decreasing order.\\n'",
+        "clean_question": "Sort 221, -2, 80, -5, -1 in decreasing order.",
+        "raw_answer": "b'221, 80, -1, -2, -5\\n'",
+        "clean_answer": "221, 80, -1, -2, -5"
+      },
+      {
+        "raw_question": "b'Put -2, 3, 462, -4, -176 in ascending order.\\n'",
+        "clean_question": "Put -2, 3, 462, -4, -176 in ascending order.",
+        "raw_answer": "b'-176, -4, -2, 3, 462\\n'",
+        "clean_answer": "-176, -4, -2, 3, 462"
+      },
+      {
+        "raw_question": "b'Sort 16, 0, 2, -4 in ascending order.\\n'",
+        "clean_question": "Sort 16, 0, 2, -4 in ascending order.",
+        "raw_answer": "b'-4, 0, 2, 16\\n'",
+        "clean_answer": "-4, 0, 2, 16"
+      }
+    ]
+  }
+}
