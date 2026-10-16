@@ -1,0 +1,100 @@
+{
+  "stage": "A",
+  "out": "v7_tiny/tests/production_A",
+  "source": null,
+  "seed": 991,
+  "tokens": 200000,
+  "batch": 32,
+  "seconds": 86400,
+  "alpha": 0.1,
+  "beta": 0.25,
+  "lr": 0.001,
+  "flat": false,
+  "plain": false,
+  "constant_alpha": false,
+  "eager": false,
+  "replay": false,
+  "resume": false,
+  "max_steps": 3,
+  "mini": false,
+  "cfg": {
+    "d": 192,
+    "heads": 6,
+    "ff": 576,
+    "le": 3,
+    "lc": 4,
+    "ld": 3,
+    "vocab": 2048,
+    "k": 4,
+    "segments": 12,
+    "codes": 64,
+    "dz": 48,
+    "rank": 48,
+    "routing": true,
+    "forecast": true,
+    "continuous": true,
+    "kind": "hierarchy",
+    "flat_layers": 12,
+    "flat_ff": 464
+  },
+  "device": "mps",
+  "precision": "float32",
+  "implementation_sha256": "ddeba2be41d559d10bada1a6bec6aba5ac5bc405baa5d1d1a9e876c2d540c09c",
+  "data_manifest_sha256": "b0adbcb498b087806592349ba3c76f6d91826b5e5070a347aaf023a12ca625ba",
+  "active_parameters": 5365938,
+  "resident_parameters": 5365938,
+  "trainable_parameters": 5365938,
+  "created_utc": "2026-10-04T20:15:24Z",
+  "status": "pilot_prefix_completed",
+  "completed_steps": 3,
+  "completed_targets": 19530,
+  "target_budget": 200000,
+  "wall_s": 11.277237415983109,
+  "last": {
+    "step": 1,
+    "targets": 6541,
+    "progress": 0.032705,
+    "loss": 8.12088394165039,
+    "gradient_norm": 7.33420467376709,
+    "lr": 5e-07,
+    "elapsed_s": 9.339622415980557,
+    "scored_targets_per_s": 700.3495118612102,
+    "input_slots_per_s": 1315.6848802553968,
+    "memory": {
+      "allocated": 194605824,
+      "driver": 5062868992
+    },
+    "gradient_alignment": {
+      "encoder": {
+        "token_norm": 1.6963980197906494,
+        "ncp_norm": 0.14740882813930511,
+        "cosine": -0.03501352295279503
+      },
+      "concept": {
+        "token_norm": 0.0011518314713612199,
+        "ncp_norm": 0.0023546568118035793,
+        "cosine": 0.08285876363515854
+      },
+      "head": {
+        "token_norm": 0.01037770975381136,
+        "ncp_norm": 0.15246208012104034,
+        "cosine": 0.36205390095710754
+      }
+    },
+    "text": 7.63355016708374,
+    "symbolic": 7.463353633880615,
+    "ncp": 0.8829885721206665,
+    "vq": 0.572432279586792,
+    "distillation": 0.0,
+    "alpha": 0.0
+  },
+  "frozen_hash_preserved": false,
+  "unique_text_documents": 71,
+  "unique_symbolic_instances": 48,
+  "symbolic_exposure": {
+    "pointer": 13,
+    "graph": 26,
+    "compose": 3,
+    "lookup": 6
+  }
+}

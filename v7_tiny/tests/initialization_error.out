@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/train.py", line 137, in <module>
+    try:main()
+        ^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/train.py", line 78, in main
+    s=configure(args.stage,args.source,cfg)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/train.py", line 12, in configure
+    if source:s,ck=load_system(source,device)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/runtime.py", line 63, in load_system
+    ck=torch.load(path,map_location='cpu',weights_only=False);cfg=Config(**ck['cfg']);s=System(cfg)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/serialization.py", line 1500, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/serialization.py", line 768, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/serialization.py", line 749, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'v7_tiny/tests/nonexistent.pt'

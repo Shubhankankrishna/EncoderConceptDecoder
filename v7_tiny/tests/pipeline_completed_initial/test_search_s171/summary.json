@@ -1,0 +1,162 @@
+{
+  "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/B1_ncp_s171/checkpoint.pt",
+  "split": "test",
+  "suite": "hard",
+  "requested_items": 4,
+  "parameters": {
+    "temperature": 0.8,
+    "top_k": 128,
+    "candidate_limit": 16,
+    "length": 1,
+    "lr": 0.03,
+    "kl": 0.0
+  },
+  "warmup_seconds": 0.07451666600536555,
+  "seconds": 81.923074041988,
+  "status": "completed",
+  "arms": {
+    "retry@30": {
+      "n": 4,
+      "success_rate": 0.0,
+      "items": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "success": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "total_seconds": 15.371092582994606,
+      "gradient_seconds": 0.0,
+      "generations": 64,
+      "deadline_overrun_seconds": 0.0
+    },
+    "gradcuit@30": {
+      "n": 4,
+      "success_rate": 0.0,
+      "items": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "success": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "total_seconds": 17.704485624970403,
+      "gradient_seconds": 1.4397050798288547,
+      "generations": 64,
+      "deadline_overrun_seconds": 0.0
+    },
+    "ab_hybrid@30": {
+      "n": 4,
+      "success_rate": 0.0,
+      "items": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "success": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "total_seconds": 16.233564582973486,
+      "gradient_seconds": 0.19182316801743582,
+      "generations": 64,
+      "deadline_overrun_seconds": 0.0
+    },
+    "hybrid_random@30": {
+      "n": 4,
+      "success_rate": 0.0,
+      "items": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "success": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "total_seconds": 16.12460062399623,
+      "gradient_seconds": 0.14470770899788477,
+      "generations": 64,
+      "deadline_overrun_seconds": 0.0
+    },
+    "hybrid_chain@30": {
+      "n": 4,
+      "success_rate": 0.0,
+      "items": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "success": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "total_seconds": 16.396380418009358,
+      "gradient_seconds": 0.33938095706980675,
+      "generations": 64,
+      "deadline_overrun_seconds": 0.0
+    }
+  },
+  "comparisons": {
+    "gradcuit-retry@30": {
+      "difference": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "units": 4,
+      "method": "paired unit bootstrap",
+      "draws": 4000
+    },
+    "ab_hybrid-retry@30": {
+      "difference": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "units": 4,
+      "method": "paired unit bootstrap",
+      "draws": 4000
+    },
+    "hybrid_random-retry@30": {
+      "difference": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "units": 4,
+      "method": "paired unit bootstrap",
+      "draws": 4000
+    },
+    "hybrid_chain-retry@30": {
+      "difference": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "units": 4,
+      "method": "paired unit bootstrap",
+      "draws": 4000
+    }
+  },
+  "scope": "paired problem-level uncertainty on this trained seed; search RNG is not an independent training seed"
+}

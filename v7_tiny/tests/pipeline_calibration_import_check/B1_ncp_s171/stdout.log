@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/train.py", line 136, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/train.py", line 101, in main
+    w=s.adapters.write(v,z,site);ratio=float((w.float().square().mean(-1).sqrt()/scale(v).squeeze(-1)).mean());factor=.01/max(ratio,1e-8);s.adapters.U[site].weight.mul_(min(factor,100));factors.append(factor)
+                                                                                 ^^^^^
+NameError: name 'scale' is not defined

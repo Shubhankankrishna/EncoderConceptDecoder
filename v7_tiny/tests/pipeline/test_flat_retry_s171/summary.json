@@ -1,0 +1,41 @@
+{
+  "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/A_flat_s171/checkpoint.pt",
+  "split": "test",
+  "suite": "hard",
+  "requested_items": 4,
+  "parameters": {
+    "temperature": 0.8,
+    "top_k": 128,
+    "candidate_limit": 16,
+    "length": 1,
+    "lr": 0.03,
+    "kl": 0.0
+  },
+  "warmup_seconds": 0.023723749996861443,
+  "seconds": 15.689008292014478,
+  "status": "completed",
+  "arms": {
+    "retry@30": {
+      "n": 4,
+      "success_rate": 0.0,
+      "items": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "success": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "total_seconds": 15.659399832977215,
+      "gradient_seconds": 0.0,
+      "generations": 64,
+      "deadline_overrun_seconds": 0.0
+    }
+  },
+  "comparisons": {},
+  "scope": "paired problem-level uncertainty on this trained seed; search RNG is not an independent training seed"
+}

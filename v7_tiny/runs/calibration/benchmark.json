@@ -1,0 +1,142 @@
+{
+  "device": "mps",
+  "precision": "FP32",
+  "training": [
+    {
+      "stage": "A",
+      "batch": 8,
+      "compiled": true,
+      "median_step_s": 0.2437229580100393,
+      "p90_step_s": 0.24466029558971059,
+      "input_slots_per_s": 12604.475282437119,
+      "scored_targets_per_s": 6765.878821855081,
+      "targets_per_step": 1649,
+      "eager_compiled_gradient_relative_error": 2.760944539659249e-07,
+      "eager_compiled_loss_error": 0.0,
+      "active_parameters": 5365938,
+      "memory": {
+        "allocated": 178184704,
+        "driver": 2546892800
+      }
+    },
+    {
+      "stage": "A",
+      "batch": 16,
+      "compiled": true,
+      "median_step_s": 0.4533685210044496,
+      "p90_step_s": 0.48100381731346714,
+      "input_slots_per_s": 13551.88928068453,
+      "scored_targets_per_s": 7117.829867963702,
+      "targets_per_step": 3227,
+      "eager_compiled_gradient_relative_error": 2.899020898894378e-07,
+      "eager_compiled_loss_error": 0.0,
+      "active_parameters": 5365938,
+      "memory": {
+        "allocated": 172250880,
+        "driver": 3918544896
+      }
+    },
+    {
+      "stage": "A",
+      "batch": 32,
+      "compiled": true,
+      "median_step_s": 0.8395031459949678,
+      "p90_step_s": 0.868289136889507,
+      "input_slots_per_s": 14637.229245206017,
+      "scored_targets_per_s": 7880.851943870688,
+      "targets_per_step": 6616,
+      "eager_compiled_gradient_relative_error": 2.5501256573079445e-07,
+      "eager_compiled_loss_error": 0.0,
+      "active_parameters": 5365938,
+      "memory": {
+        "allocated": 160496640,
+        "driver": 6798245888
+      }
+    },
+    {
+      "stage": "B0",
+      "batch": 32,
+      "compiled": true,
+      "median_step_s": 0.6806943539850181,
+      "p90_step_s": 0.7027990249975119,
+      "input_slots_per_s": 18052.155020916267,
+      "scored_targets_per_s": 9719.487110870934,
+      "targets_per_step": 6616,
+      "eager_compiled_gradient_relative_error": 1.1048210524222668e-07,
+      "eager_compiled_loss_error": 0.0,
+      "active_parameters": 5365938,
+      "memory": {
+        "allocated": 98037504,
+        "driver": 4357160960
+      }
+    },
+    {
+      "stage": "B1",
+      "batch": 16,
+      "compiled": true,
+      "median_step_s": 0.537055604509078,
+      "p90_step_s": 0.5388730170030612,
+      "input_slots_per_s": 11440.156193167792,
+      "scored_targets_per_s": 5721.940101172627,
+      "targets_per_step": 3073,
+      "eager_compiled_gradient_relative_error": 2.753657497578388e-07,
+      "eager_compiled_loss_error": null,
+      "active_parameters": 5407410,
+      "memory": {
+        "allocated": 99538432,
+        "driver": 4349181952
+      }
+    },
+    {
+      "stage": "flat",
+      "batch": 32,
+      "compiled": true,
+      "median_step_s": 1.1639020834991243,
+      "p90_step_s": 1.1665817457949743,
+      "input_slots_per_s": 10557.589142771945,
+      "scored_targets_per_s": 5684.32696684401,
+      "targets_per_step": 6616,
+      "eager_compiled_gradient_relative_error": 2.5562812311363814e-07,
+      "eager_compiled_loss_error": 0.0,
+      "active_parameters": 5366208,
+      "memory": {
+        "allocated": 106645760,
+        "driver": 6538674176
+      }
+    },
+    {
+      "stage": "A",
+      "batch": 32,
+      "compiled": false,
+      "median_step_s": 1.5377655834890902,
+      "p90_step_s": 1.5441028338856995,
+      "input_slots_per_s": 7990.814810745944,
+      "scored_targets_per_s": 4302.346255525323,
+      "targets_per_step": 6616,
+      "eager_compiled_gradient_relative_error": 1.1959795642724202e-07,
+      "eager_compiled_loss_error": 0.0,
+      "active_parameters": 5365938,
+      "memory": {
+        "allocated": 202317056,
+        "driver": 6807109632
+      }
+    }
+  ],
+  "generation": [
+    {
+      "compiled_static": false,
+      "median_s": 0.4114002080168575,
+      "tokens_per_s": 48.6144625361504
+    },
+    {
+      "compiled_static": true,
+      "median_s": 0.1490513339813333,
+      "tokens_per_s": 134.18195909943842
+    }
+  ],
+  "batch": 32,
+  "compiled": true,
+  "compiled_static_generation": true,
+  "status": "completed",
+  "scope": "Warmed calibration; sustained thermal throughput and complete elapsed costs are recorded during training."
+}

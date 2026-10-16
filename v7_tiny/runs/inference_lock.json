@@ -1,0 +1,49 @@
+{
+  "parameters": {
+    "temperature": 0.6,
+    "top_k": 0,
+    "candidate_limit": 16,
+    "length": 1,
+    "lr": 0.01,
+    "kl": 0.0
+  },
+  "grad_method": "gradcuit",
+  "methods": [
+    "retry",
+    "latent",
+    "combined",
+    "gradcuit",
+    "ab_prior",
+    "random_chain",
+    "ab_hybrid",
+    "hybrid_random",
+    "hybrid_chain"
+  ],
+  "budgets_seconds": [
+    1.871,
+    3.742,
+    7.484
+  ],
+  "primary_budget_s": 3.742,
+  "selection_dataset": "development only",
+  "competence_gate": false,
+  "interpretation": "diagnostic search only: standard foundation competence below 80%",
+  "test_methods": [
+    "retry",
+    "gradcuit",
+    "ab_hybrid",
+    "hybrid_random",
+    "hybrid_chain"
+  ],
+  "uncertainty": "paired problem intervals per trained seed; three separately trained seeds shown individually; incomplete runs cannot confirm repeatability",
+  "flat_retry_parameters": {
+    "temperature": 0.6,
+    "top_k": 0,
+    "candidate_limit": 16,
+    "length": 1,
+    "lr": 0.01,
+    "kl": 0.0
+  },
+  "sealed_hard_items": 64,
+  "scope": "bounded diagnosis of a weak foundation"
+}

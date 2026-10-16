@@ -1,0 +1,50 @@
+{
+  "status": "completed",
+  "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/mean_Z/checkpoint.pt",
+  "anchor_errors": {
+    "default_zero": 0.0,
+    "lambda0_original": 0.0,
+    "lambda1_refit": 0.0
+  },
+  "control_gradient_norm": 0.00022065895609557629,
+  "cache_max_abs_error": 2.384185791015625e-07,
+  "forecast": {
+    "mse": 1.2577201128005981,
+    "persistence_mse": 1.8207212686538696,
+    "skill_vs_persistence": 0.30921875058312476,
+    "target_variance": 0.9689812660217285,
+    "normalized_mse": 1.2979818670430259,
+    "effective_rank": 28.642927169799805
+  },
+  "vocabulary": {
+    "mean_marginal_entropy": 2.078970432281494,
+    "hard_codes_used_per_segment": [
+      8,
+      8,
+      8,
+      8
+    ]
+  },
+  "port_interventions": {
+    "forecast_only": {
+      "nll": 7.645266056060791,
+      "delta": 0.0005946159362792969
+    },
+    "continuous_only": {
+      "nll": 7.646448135375977,
+      "delta": 0.0017766952514648438
+    },
+    "neither": {
+      "nll": 7.6470537185668945,
+      "delta": 0.0023822784423828125
+    }
+  },
+  "intervention_scope": "inference distribution-shift diagnostics; not retrained port ablations",
+  "active_parameters": 204530,
+  "resident_parameters": 259110,
+  "deployment_parameters": 204530,
+  "deployment": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/mean_Z/deployment.pt",
+  "deployment_max_abs_error": 0.0,
+  "reload_max_abs_error": 0.0,
+  "seconds": 1.156414124998264
+}

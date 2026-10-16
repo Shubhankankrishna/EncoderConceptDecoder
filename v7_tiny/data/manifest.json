@@ -1,0 +1,170 @@
+{
+  "fresh_source": {
+    "dataset": "HuggingFaceFW/fineweb-edu",
+    "configuration": "sample-10BT",
+    "source": "https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu",
+    "license": "ODC-By; see upstream attribution",
+    "documents": 30000,
+    "characters": 147137857,
+    "seconds": 17.767801761627197,
+    "selection": "first 30,000 streaming records with >=300 characters",
+    "content_sha256": "39b26d4184c42b497a11c89e58b3ff59dc30e340d4981614a50339b82e407dab"
+  },
+  "splits": {
+    "dev": {
+      "documents": 1500,
+      "tokens": 2928290,
+      "sha256": "cf6eed7a7e99c8d5fb4bbfafcdabb4c5a8f37026b52ca85c9e2fbdeeed562e23"
+    },
+    "test": {
+      "documents": 1500,
+      "tokens": 2914738,
+      "sha256": "6391a7d4c0135bb51a6dce9cc6284670eafee6a26e5f6601213b65515d7bf60c"
+    },
+    "train": {
+      "documents": 26998,
+      "tokens": 54716006,
+      "sha256": "89ebea2aa4bd131af61d8c2d6422da9f6b3ca802655663acd32c3640df6595c8"
+    }
+  },
+  "removed_exact_or_lexical_near_duplicates": 2,
+  "near_duplicate_filter": "bottom-32 5-word-shingle hashes, 8x4 candidate bands, signature Jaccard >=.8; first 2000 words; not semantic deduplication",
+  "tokenizer_sha256": "959ef096fcf832a929571b849ea9763a59e4a1fc6ac1b7388951ce8254d0a899",
+  "tiny_stories": "legacy training corpus only; its inspected validation corpus is development diagnostic only",
+  "context": 384,
+  "symbolic_training": "streaming tasks with evaluation canonical instances excluded",
+  "split_seed": 71005,
+  "legacy_train_tokens": 133553935,
+  "legacy_train_documents": 529875,
+  "legacy_train_sha256": "89f840405dc7f3cc289cc12da800e1c1495534f2d956c34f329533233cad1f86",
+  "symbolic": {
+    "dev_standard": {
+      "n": 128,
+      "nodes": 10,
+      "task": "graph",
+      "hard": false,
+      "min_distance": 4,
+      "sha256": "03748373a9b9bd454ebe0678e574e447a8520a2573e7362559e66b8795dc2ad4"
+    },
+    "dev_hard": {
+      "n": 128,
+      "nodes": 14,
+      "task": "graph",
+      "hard": true,
+      "min_distance": 4,
+      "sha256": "af0da1a7c11650ff20e55f79a0f657fdd5a04320ab0b54369a202d57071c6c79"
+    },
+    "dev_long": {
+      "n": 128,
+      "nodes": 18,
+      "task": "graph",
+      "hard": true,
+      "min_distance": 5,
+      "sha256": "61f678573d77e44d2654aa50cb8d43d66bdbf1c63f5871c5a600fc232a716c93"
+    },
+    "dev_pointer": {
+      "n": 128,
+      "nodes": 14,
+      "task": "pointer",
+      "hard": false,
+      "min_distance": 4,
+      "sha256": "1a856910b190dbe722b84add98dcecace23eedc79cd85048ea45bbcec443f499"
+    },
+    "dev_pointer_long": {
+      "n": 128,
+      "nodes": 18,
+      "task": "pointer",
+      "hard": true,
+      "min_distance": 4,
+      "sha256": "33213cbb2626a2fd59017f09ecc711347dfb294f2d159370133fe321867efde8"
+    },
+    "dev_lookup": {
+      "n": 128,
+      "nodes": 18,
+      "task": "lookup",
+      "hard": false,
+      "min_distance": 4,
+      "sha256": "8ebb3596e151b3f83930f4609dc627dad7f0a299cbceb570920dd249ed5ecaa6"
+    },
+    "dev_layout": {
+      "n": 128,
+      "nodes": 14,
+      "task": "graph",
+      "hard": true,
+      "min_distance": 4,
+      "sha256": "85f309b59c9f8a4a21b6ddb76edff786ad677d188e86da42bddbc178ce1e4de3"
+    },
+    "dev_compose": {
+      "n": 128,
+      "nodes": 18,
+      "task": "compose",
+      "hard": false,
+      "min_distance": 4,
+      "sha256": "f874ad4f7f6249f52e39101a71c5040e203abb5e0c50a77ff046651af9e441bf"
+    },
+    "test_standard": {
+      "n": 512,
+      "nodes": 10,
+      "task": "graph",
+      "hard": false,
+      "min_distance": 4,
+      "sha256": "6322378257f581606d23a121ce51e3e0705780e2143764b7e7febcb9cdeecc61"
+    },
+    "test_hard": {
+      "n": 512,
+      "nodes": 14,
+      "task": "graph",
+      "hard": true,
+      "min_distance": 4,
+      "sha256": "e1ffbeb14109a9afcaada20f855cc74309c7ec2e8c40506490a014ed05c5b1af"
+    },
+    "test_long": {
+      "n": 256,
+      "nodes": 18,
+      "task": "graph",
+      "hard": true,
+      "min_distance": 5,
+      "sha256": "c5b1c77b4b91efc6be4bfffcf64b7474a93f2709afa46d7fb7878c3c8898b8f8"
+    },
+    "test_pointer": {
+      "n": 256,
+      "nodes": 14,
+      "task": "pointer",
+      "hard": false,
+      "min_distance": 4,
+      "sha256": "3c6104736f24d8a89c3007d1a886a81b297faaf0ee437ab8c98f4c866f2215d4"
+    },
+    "test_pointer_long": {
+      "n": 256,
+      "nodes": 18,
+      "task": "pointer",
+      "hard": true,
+      "min_distance": 4,
+      "sha256": "68ca985ed2648ca1ed1cc1f1625cf616890ea4079a021ad46994f36f7144356c"
+    },
+    "test_lookup": {
+      "n": 256,
+      "nodes": 18,
+      "task": "lookup",
+      "hard": false,
+      "min_distance": 4,
+      "sha256": "4e183dabf42a554e2953dd7d9afe27a7d8a98a5822730cad8008a6bf49066213"
+    },
+    "test_layout": {
+      "n": 256,
+      "nodes": 14,
+      "task": "graph",
+      "hard": true,
+      "min_distance": 4,
+      "sha256": "81f12f2bfc9be89fdfe30a6d9568bc6af9b1bb2b94c59befbca5b4edccafc45e"
+    },
+    "test_compose": {
+      "n": 256,
+      "nodes": 18,
+      "task": "compose",
+      "hard": false,
+      "min_distance": 4,
+      "sha256": "12b7b76cf008339be4969a0305b5a442e4fd55befdf69c2795a90c3ea24b9880"
+    }
+  }
+}

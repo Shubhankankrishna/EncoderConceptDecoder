@@ -1,0 +1,50 @@
+{
+  "status": "completed",
+  "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/A_alpha0_s171/checkpoint.pt",
+  "anchor_errors": {
+    "default_zero": 0.0,
+    "lambda0_original": 0.0,
+    "lambda1_refit": 0.0
+  },
+  "control_gradient_norm": null,
+  "cache_max_abs_error": 2.384185791015625e-07,
+  "forecast": {
+    "mse": 1.2580413818359375,
+    "persistence_mse": 1.820589303970337,
+    "skill_vs_persistence": 0.308992215272053,
+    "target_variance": 0.9690261483192444,
+    "normalized_mse": 1.2982532865784726,
+    "effective_rank": 28.642040252685547
+  },
+  "vocabulary": {
+    "mean_marginal_entropy": 2.0789809226989746,
+    "hard_codes_used_per_segment": [
+      8,
+      8,
+      8,
+      8
+    ]
+  },
+  "port_interventions": {
+    "forecast_only": {
+      "nll": 7.645255088806152,
+      "delta": 0.0005955696105957031
+    },
+    "continuous_only": {
+      "nll": 7.646435737609863,
+      "delta": 0.0017762184143066406
+    },
+    "neither": {
+      "nll": 7.647042751312256,
+      "delta": 0.0023832321166992188
+    }
+  },
+  "intervention_scope": "inference distribution-shift diagnostics; not retrained port ablations",
+  "active_parameters": 203378,
+  "resident_parameters": 203378,
+  "deployment_parameters": 203378,
+  "deployment": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/A_alpha0_s171/deployment.pt",
+  "deployment_max_abs_error": 0.0,
+  "reload_max_abs_error": 0.0,
+  "seconds": 1.0557582499750424
+}

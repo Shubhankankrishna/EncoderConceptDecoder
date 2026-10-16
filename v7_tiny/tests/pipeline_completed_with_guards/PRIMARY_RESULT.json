@@ -1,0 +1,378 @@
+{
+  "status": "completed_with_limits",
+  "model_parameters": 5365938,
+  "flat_parameters": 5366208,
+  "exploration_parameters": 41472,
+  "foundation_comparisons": {
+    "ncp-flat_s171": {
+      "matched_complete_endpoints": false,
+      "text": {
+        "difference": 0.004486801107620757,
+        "ci95": [
+          -0.00039382416647968293,
+          0.009343956531494777
+        ],
+        "units": 4,
+        "method": "paired document bootstrap, token-weighted ratio"
+      },
+      "standard": {
+        "difference": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "units": 4,
+        "method": "paired unit bootstrap",
+        "draws": 4000
+      },
+      "hard": {
+        "difference": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "units": 4,
+        "method": "paired unit bootstrap",
+        "draws": 4000
+      },
+      "text_preserved": false,
+      "standard_preserved": false,
+      "quality_gain_supported": false
+    },
+    "ncp-alpha0_s171": {
+      "matched_complete_endpoints": false,
+      "text": {
+        "difference": 1.2430136259791122e-05,
+        "ci95": [
+          -1.5936072127937336e-06,
+          2.6931961896214098e-05
+        ],
+        "units": 4,
+        "method": "paired document bootstrap, token-weighted ratio"
+      },
+      "standard": {
+        "difference": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "units": 4,
+        "method": "paired unit bootstrap",
+        "draws": 4000
+      },
+      "hard": {
+        "difference": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "units": 4,
+        "method": "paired unit bootstrap",
+        "draws": 4000
+      },
+      "text_preserved": false,
+      "standard_preserved": false,
+      "quality_gain_supported": false
+    },
+    "alpha0-flat_s171": {
+      "matched_complete_endpoints": false,
+      "text": {
+        "difference": 0.004474370971360966,
+        "ci95": [
+          -0.0004160310829899637,
+          0.009342522285003263
+        ],
+        "units": 4,
+        "method": "paired document bootstrap, token-weighted ratio"
+      },
+      "standard": {
+        "difference": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "units": 4,
+        "method": "paired unit bootstrap",
+        "draws": 4000
+      },
+      "hard": {
+        "difference": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "units": 4,
+        "method": "paired unit bootstrap",
+        "draws": 4000
+      },
+      "text_preserved": false,
+      "standard_preserved": false,
+      "quality_gain_supported": false
+    }
+  },
+  "search": {
+    "test_search_s171": {
+      "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/B1_ncp_s171/checkpoint.pt",
+      "split": "test",
+      "suite": "hard",
+      "requested_items": 4,
+      "parameters": {
+        "temperature": 0.8,
+        "top_k": 128,
+        "candidate_limit": 16,
+        "length": 1,
+        "lr": 0.03,
+        "kl": 0.0
+      },
+      "warmup_seconds": 0.07399025000631809,
+      "seconds": 84.44832145801047,
+      "status": "completed",
+      "arms": {
+        "retry@30": {
+          "n": 4,
+          "success_rate": 0.0,
+          "items": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "success": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "total_seconds": 15.835855040990282,
+          "gradient_seconds": 0.0,
+          "generations": 64,
+          "deadline_overrun_seconds": 0.0
+        },
+        "gradcuit@30": {
+          "n": 4,
+          "success_rate": 0.0,
+          "items": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "success": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "total_seconds": 18.05906441801926,
+          "gradient_seconds": 1.380539503064938,
+          "generations": 64,
+          "deadline_overrun_seconds": 0.0
+        },
+        "ab_hybrid@30": {
+          "n": 4,
+          "success_rate": 0.0,
+          "items": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "success": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "total_seconds": 16.83934879201115,
+          "gradient_seconds": 0.18628104199888185,
+          "generations": 64,
+          "deadline_overrun_seconds": 0.0
+        },
+        "hybrid_random@30": {
+          "n": 4,
+          "success_rate": 0.0,
+          "items": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "success": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "total_seconds": 16.679726041009417,
+          "gradient_seconds": 0.14042158401571214,
+          "generations": 64,
+          "deadline_overrun_seconds": 0.0
+        },
+        "hybrid_chain@30": {
+          "n": 4,
+          "success_rate": 0.0,
+          "items": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "success": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "total_seconds": 16.944749457994476,
+          "gradient_seconds": 0.32309012504993007,
+          "generations": 64,
+          "deadline_overrun_seconds": 0.0
+        }
+      },
+      "comparisons": {
+        "gradcuit-retry@30": {
+          "difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "units": 4,
+          "method": "paired unit bootstrap",
+          "draws": 4000
+        },
+        "ab_hybrid-retry@30": {
+          "difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "units": 4,
+          "method": "paired unit bootstrap",
+          "draws": 4000
+        },
+        "hybrid_random-retry@30": {
+          "difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "units": 4,
+          "method": "paired unit bootstrap",
+          "draws": 4000
+        },
+        "hybrid_chain-retry@30": {
+          "difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "units": 4,
+          "method": "paired unit bootstrap",
+          "draws": 4000
+        },
+        "ab_hybrid-hybrid_random@30": {
+          "difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "units": 4,
+          "method": "paired unit bootstrap",
+          "draws": 4000
+        },
+        "ab_hybrid-hybrid_chain@30": {
+          "difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "units": 4,
+          "method": "paired unit bootstrap",
+          "draws": 4000
+        }
+      },
+      "scope": "paired problem-level uncertainty on this trained seed; search RNG is not an independent training seed"
+    }
+  },
+  "limits": [
+    {
+      "name": "larger-scale/distributed/BF16/context>384 training",
+      "reason": "Requires a separate experiment; not validated by this tiny run"
+    },
+    {
+      "name": "full V5/V6 causal bridge and retrained port-only ablations",
+      "reason": "Repository evidence reviewed; targeted 24-hour programme tests V7 matched foundations and staged controls, not the entire research programme"
+    },
+    {
+      "name": "matched token-control site, control-dimension sweep, binding-language tasks and fractional-feedback search",
+      "reason": "Not included in the initial 24-hour scope; two-hop composition is tested, but general variable binding is not"
+    }
+  ],
+  "smoke": true,
+  "complete_foundation_seeds": {
+    "ncp": [],
+    "alpha0": [],
+    "flat": []
+  },
+  "confirmation_scope": "Three complete independently trained foundations required; search RNG repetitions alone do not count.",
+  "training_elapsed_seconds": 2.0576772480271757,
+  "selected_training": {
+    "pilots": [
+      {
+        "family": "ncp",
+        "alpha": 0.1,
+        "lr": 0.001,
+        "score": 7.568157768291176,
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/pilot_ncp_lr0.001/checkpoint.pt",
+        "plain": false
+      },
+      {
+        "family": "flat",
+        "alpha": 0.0,
+        "lr": 0.001,
+        "score": 7.485696624282564,
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/pilot_flat_lr0.001/checkpoint.pt",
+        "plain": false
+      }
+    ],
+    "selected": {
+      "ncp": {
+        "family": "ncp",
+        "alpha": 0.1,
+        "lr": 0.001,
+        "score": 7.568157768291176,
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/pilot_ncp_lr0.001/checkpoint.pt",
+        "plain": false
+      },
+      "flat": {
+        "family": "flat",
+        "alpha": 0.0,
+        "lr": 0.001,
+        "score": 7.485696624282564,
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/pilot_flat_lr0.001/checkpoint.pt",
+        "plain": false
+      }
+    },
+    "selection": "lowest balanced fresh-text and standard-symbolic development NLL; no test access",
+    "common_tokens": 4000
+  },
+  "lineages": {
+    "lineages": {
+      "171": {
+        "foundation": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/A_ncp_s171/checkpoint.pt",
+        "refit": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/B0_ncp_s171/checkpoint.pt",
+        "refit_accepted": true,
+        "anchor": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/B0_ncp_s171/checkpoint.pt",
+        "adapters": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/B1_ncp_s171/checkpoint.pt"
+      }
+    },
+    "controls": {
+      "mean_Z": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/mean_Z/checkpoint.pt"
+    },
+    "foundations": {
+      "flat_s171": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/A_flat_s171/checkpoint.pt",
+      "alpha0_s171": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/A_alpha0_s171/checkpoint.pt",
+      "ncp_s171": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/A_ncp_s171/checkpoint.pt"
+    }
+  }
+}

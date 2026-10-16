@@ -1,0 +1,63 @@
+{
+  "status": "failed",
+  "model_parameters": 5365938,
+  "flat_parameters": 5366208,
+  "exploration_parameters": 41472,
+  "foundation_comparisons": {},
+  "search": {},
+  "limits": [],
+  "smoke": true,
+  "complete_foundation_seeds": {
+    "ncp": [],
+    "alpha0": [],
+    "flat": []
+  },
+  "confirmation_scope": "Three complete independently trained foundations required; search RNG repetitions alone do not count.",
+  "training_elapsed_seconds": 1.5151264579908457,
+  "selected_training": {
+    "pilots": [
+      {
+        "family": "ncp",
+        "alpha": 0.1,
+        "lr": 0.001,
+        "score": 7.568157768291176,
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/pilot_ncp_lr0.001/checkpoint.pt",
+        "plain": false
+      },
+      {
+        "family": "flat",
+        "alpha": 0.0,
+        "lr": 0.001,
+        "score": 7.485696624282564,
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/pilot_flat_lr0.001/checkpoint.pt",
+        "plain": false
+      }
+    ],
+    "selected": {
+      "ncp": {
+        "family": "ncp",
+        "alpha": 0.1,
+        "lr": 0.001,
+        "score": 7.568157768291176,
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/pilot_ncp_lr0.001/checkpoint.pt",
+        "plain": false
+      },
+      "flat": {
+        "family": "flat",
+        "alpha": 0.0,
+        "lr": 0.001,
+        "score": 7.485696624282564,
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/pilot_flat_lr0.001/checkpoint.pt",
+        "plain": false
+      }
+    },
+    "selection": "lowest balanced fresh-text and standard-symbolic development NLL; no test access",
+    "common_tokens": 4000
+  },
+  "lineages": {},
+  "failure": {
+    "error": "RuntimeError('{\"error\": \"child exit 1\", \"log\": \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/B1_ncp_s171/stdout.log\"}')",
+    "traceback": "Traceback (most recent call last):\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/drive.py\", line 187, in main\n    try:run(q)\n        ^^^^^^\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/drive.py\", line 111, in run\n    b1=q.train(f'B1_ncp_s{seed}','B1',anchor,seed,chosen['ncp']['alpha'],chosen['ncp']['lr'],q.adapter_tokens)\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/drive.py\", line 64, in train\n    raise RuntimeError(json.dumps(f))\nRuntimeError: {\"error\": \"child exit 1\", \"log\": \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/B1_ncp_s171/stdout.log\"}\n",
+    "stage": "B1_ncp_s171"
+  }
+}

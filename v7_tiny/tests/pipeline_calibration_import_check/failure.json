@@ -1,0 +1,5 @@
+{
+  "error": "RuntimeError('{\"error\": \"child exit 1\", \"log\": \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/B1_ncp_s171/stdout.log\"}')",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/drive.py\", line 187, in main\n    try:run(q)\n        ^^^^^^\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/drive.py\", line 111, in run\n    b1=q.train(f'B1_ncp_s{seed}','B1',anchor,seed,chosen['ncp']['alpha'],chosen['ncp']['lr'],q.adapter_tokens)\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/drive.py\", line 64, in train\n    raise RuntimeError(json.dumps(f))\nRuntimeError: {\"error\": \"child exit 1\", \"log\": \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/B1_ncp_s171/stdout.log\"}\n",
+  "stage": "B1_ncp_s171"
+}

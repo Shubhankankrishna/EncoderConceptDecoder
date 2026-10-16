@@ -1,0 +1,17 @@
+{
+  "status": "failed",
+  "stage": "B1_ncp_s171",
+  "driver_pid": 32073,
+  "child_pid": null,
+  "started_epoch": 1791144327.278551,
+  "deadline_epoch": 1791147927.278551,
+  "elapsed_s": 50.18931293487549,
+  "remaining_s": 3549.81068611145,
+  "implementation_sha256": "cfac7084fcba4edc2a31bf921fb86a539483f4ef7550f059ff7c5b46571908da",
+  "skipped": [],
+  "failure": {
+    "error": "RuntimeError('{\"error\": \"child exit 1\", \"log\": \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/B1_ncp_s171/stdout.log\"}')",
+    "traceback": "Traceback (most recent call last):\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/drive.py\", line 187, in main\n    try:run(q)\n        ^^^^^^\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/drive.py\", line 111, in run\n    b1=q.train(f'B1_ncp_s{seed}','B1',anchor,seed,chosen['ncp']['alpha'],chosen['ncp']['lr'],q.adapter_tokens)\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/code/drive.py\", line 64, in train\n    raise RuntimeError(json.dumps(f))\nRuntimeError: {\"error\": \"child exit 1\", \"log\": \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/tests/pipeline/B1_ncp_s171/stdout.log\"}\n",
+    "stage": "B1_ncp_s171"
+  }
+}
