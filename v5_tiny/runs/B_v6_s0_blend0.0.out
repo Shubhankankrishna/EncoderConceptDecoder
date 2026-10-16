@@ -1,0 +1,112 @@
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0] Graph break from `Tensor.item()`, consider setting:
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]     torch._dynamo.config.capture_scalar_outputs = True
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0] or:
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]     env TORCHDYNAMO_CAPTURE_SCALAR_OUTPUTS=1
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0] to include these operations in the captured graph.
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0] 
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0] Graph break: from user code at:
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]   File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v5_tiny/code/eval_b.py", line 59, in f
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]     Z = sysm.z_prior_schedule(e, starts, eta_z, mode=z_mode)[0] if core.use_z else None
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]   File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v5_tiny/code/system_v5.py", line 53, in z_prior_schedule
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]     oh, first = window_tensors(win)
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]   File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v5_tiny/code/system_v5.py", line 21, in window_tensors
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]     nW = int(win.max()) + 1
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0] 
+W1003 15:31:04.995000 18025 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0] 
+W1003 15:31:05.848000 18025 site-packages/torch/_inductor/utils.py:1679] [6/0] Not enough SMs to use max_autotune_gemm mode
+{
+ "run": "B_v6_s0",
+ "variant": "gram",
+ "lam": 0.0,
+ "core_params": 746912,
+ "teacher": {
+  "text": 1.8128156661987305,
+  "graph": 0.1130855605006218
+ },
+ "nll": {
+  "prior_sample": {
+   "text": {
+    "delta": 0.0,
+    "se": 0.0,
+    "base": 1.8128156661987305
+   },
+   "graph": {
+    "delta": 0.0,
+    "se": 0.0,
+    "base": 0.11111390590667725
+   },
+   "colour": {
+    "delta": 0.0,
+    "se": 0.0,
+    "base": 0.5080230832099915
+   }
+  },
+  "prior_mean": {
+   "text": {
+    "delta": 0.0,
+    "se": 0.0,
+    "base": 1.8128156661987305
+   },
+   "graph": {
+    "delta": 0.0,
+    "se": 0.0,
+    "base": 0.11111390590667725
+   },
+   "colour": {
+    "delta": 0.0,
+    "se": 0.0,
+    "base": 0.5080230832099915
+   }
+  },
+  "posterior": {
+   "text": {
+    "delta": -0.15439572930335999,
+    "se": 0.0018907767653277019,
+    "base": 1.8128156661987305
+   },
+   "graph": {
+    "delta": -0.109831303358078,
+    "se": 0.0011289156850738213,
+    "base": 0.11111390590667725
+   },
+   "colour": {
+    "delta": -0.503636360168457,
+    "se": 0.005007423607641792,
+    "base": 0.5080230832099915
+   }
+  },
+  "oracle_best_of_8": {
+   "text": {
+    "delta": -0.0510561466217041,
+    "se": 0.001086505445255838,
+    "base": 1.8128156661987305
+   },
+   "graph": {
+    "delta": 2.2118911147117615e-09,
+    "se": 3.731820092232706e-10,
+    "base": 0.11111390590667725
+   }
+  },
+  "mixture_of_8_posthoc": {
+   "text": {
+    "delta": -0.051056157797575,
+    "se": 0.001086505445255838,
+    "base": 1.8128156661987305
+   },
+   "graph": {
+    "delta": 9.167706593871117e-10,
+    "se": 3.7878928042096797e-10,
+    "base": 0.11111390590667725
+   }
+  }
+ },
+ "gate": {
+  "mode": "prior_sample",
+  "text_ok": true,
+  "graph_ok": true
+ },
+ "raw_h_norm_per_transition": [
+  12.225212097167969,
+  12.907554626464844
+ ]
+}

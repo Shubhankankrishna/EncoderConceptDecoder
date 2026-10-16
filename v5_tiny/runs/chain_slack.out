@@ -1,0 +1,28 @@
+start C_v3_noxm_s0: phase_b.py --variant z --xm 0 --teacher A_ncp_s0 --init B_v3_s0 --distill 0 --steps 1500 --seed 1 --out C_v3_noxm_s0
+end C_v3_noxm_s0 rc=0
+start C_v3_noxm_s0_evalb: eval_b.py --run C_v3_noxm_s0 --no_control
+end C_v3_noxm_s0_evalb rc=0
+start D_v6_gated_s0: phase_d.py --core_run C_v6_s0 --gate_kl --out D_v6_gated_s0
+end D_v6_gated_s0 rc=0
+start V2_bestof11: v2_bestof.py
+end V2_bestof11 rc=0
+start B_v3_s0_nllfix: eval_b.py --run B_v3_s0 --no_control --tag nllfix
+end B_v3_s0_nllfix rc=0
+start B_v6_s0_nllfix: eval_b.py --run B_v6_s0 --no_control --tag nllfix
+end B_v6_s0_nllfix rc=0
+start A_ncp_a0_s0: phase_a.py --arch ncp --alpha 0 --seed 0 --steps 18000 --eval_every 1000 --out A_ncp_a0_s0
+end A_ncp_a0_s0 rc=0
+start A_ncp_a0_s0_evala: eval_a.py --run A_ncp_a0_s0
+end A_ncp_a0_s0_evala rc=0
+start B_v5_s0: phase_b.py --variant xmonly --xm 1 --teacher A_ncp_s0 --steps 6000 --out B_v5_s0
+end B_v5_s0 rc=0
+start B_v5_s0_evalb: eval_b.py --run B_v5_s0
+end B_v5_s0_evalb rc=0
+start B_v4_s0: phase_b.py --variant gram --xm 0 --teacher A_ncp_s0 --steps 6000 --out B_v4_s0
+end B_v4_s0 rc=0
+start B_v4_s0_evalb: eval_b.py --run B_v4_s0
+end B_v4_s0_evalb rc=0
+start B_v3b1_s0: phase_b.py --variant z --xm 0 --beta_z 1.0 --teacher A_ncp_s0 --steps 6000 --out B_v3b1_s0
+end B_v3b1_s0 rc=0
+start B_v3b1_s0_evalb: eval_b.py --run B_v3b1_s0
+end B_v3b1_s0_evalb rc=0

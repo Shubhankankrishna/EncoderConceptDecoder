@@ -1,0 +1,20 @@
+start B_v2_s0: phase_b.py --variant det --xm 0 --teacher A_ncp_s0 --steps 6000 --out B_v2_s0
+end B_v2_s0 rc=0
+start B_v2a_s0: phase_b.py --variant adapter --xm 0 --teacher A_ncp_s0 --steps 6000 --out B_v2a_s0
+end B_v2a_s0 rc=0
+start B_v3_s0: phase_b.py --variant z --xm 0 --teacher A_ncp_s0 --steps 6000 --out B_v3_s0
+end B_v3_s0 rc=0
+start B_v6_s0: phase_b.py --variant gram --xm 1 --teacher A_ncp_s0 --steps 6000 --out B_v6_s0
+end B_v6_s0 rc=0
+start A_v0_s0: phase_a.py --arch v0 --seed 0 --steps 18000 --eval_every 1000 --out A_v0_s0
+end A_v0_s0 rc=0
+start A_v0_s0_evala: eval_a.py --run A_v0_s0
+end A_v0_s0_evala rc=0
+start B_v2_s0_evalb: eval_b.py --run B_v2_s0
+end B_v2_s0_evalb rc=0
+start B_v2a_s0_evalb: eval_b.py --run B_v2a_s0
+end B_v2a_s0_evalb rc=0
+start B_v3_s0_evalb: eval_b.py --run B_v3_s0
+end B_v3_s0_evalb rc=0
+start B_v6_s0_evalb: eval_b.py --run B_v6_s0
+end B_v6_s0_evalb rc=0

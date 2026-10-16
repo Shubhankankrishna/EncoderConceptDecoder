@@ -1,0 +1,194 @@
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0] Graph break from `Tensor.item()`, consider setting:
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0]     torch._dynamo.config.capture_scalar_outputs = True
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0] or:
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0]     env TORCHDYNAMO_CAPTURE_SCALAR_OUTPUTS=1
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0] to include these operations in the captured graph.
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0] 
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0] Graph break: from user code at:
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0]   File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v5_tiny/code/phase_e.py", line 35, in fz
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0]     Z0 = sysm.z_prior_schedule(e, starts_hold4(x.shape[0]), eta_z)[0]
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0]   File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v5_tiny/code/system_v5.py", line 53, in z_prior_schedule
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0]     oh, first = window_tensors(win)
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0]   File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v5_tiny/code/system_v5.py", line 21, in window_tensors
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0]     nW = int(win.max()) + 1
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0] 
+W1003 18:25:11.162000 20823 site-packages/torch/_dynamo/variables/tensor.py:1079] [0/0] 
+batch 0: {"base": 0.8359375, "gc_lr0.01": 0.8984375, "gc_lr0.1": 0.9765625, "gc_lr0.3": 0.9765625, "random_dz": 0.921875, "gc_fresh_noise": 0.9765625, "resample_prior": 1.0, "token_T1": 1.0, "base_from_mean": 0.8828125, "gc_from_mean": 0.953125, "token_T1_from_mean": 0.9921875}
+batch 128: {"base": 0.8515625, "gc_lr0.01": 0.8984375, "gc_lr0.1": 0.96484375, "gc_lr0.3": 0.97265625, "random_dz": 0.91015625, "gc_fresh_noise": 0.96875, "resample_prior": 1.0, "token_T1": 0.9921875, "base_from_mean": 0.91015625, "gc_from_mean": 0.96875, "token_T1_from_mean": 0.99609375}
+batch 256: {"base": 0.8567708333333334, "gc_lr0.01": 0.8958333333333334, "gc_lr0.1": 0.9583333333333334, "gc_lr0.3": 0.9713541666666666, "random_dz": 0.90625, "gc_fresh_noise": 0.9609375, "resample_prior": 1.0, "token_T1": 0.9895833333333334, "base_from_mean": 0.9114583333333334, "gc_from_mean": 0.9661458333333334, "token_T1_from_mean": 0.9973958333333334}
+batch 384: {"base": 0.859375, "gc_lr0.01": 0.896484375, "gc_lr0.1": 0.953125, "gc_lr0.3": 0.97265625, "random_dz": 0.904296875, "gc_fresh_noise": 0.955078125, "resample_prior": 0.998046875, "token_T1": 0.990234375, "base_from_mean": 0.916015625, "gc_from_mean": 0.970703125, "token_T1_from_mean": 0.998046875}
+{
+ "core_run": "C_v6_s0",
+ "U": 10,
+ "n": 512,
+ "set": "standard",
+ "success": {
+  "base": {
+   "success": 0.859375,
+   "se": 0.01537843620615474
+  },
+  "gc_lr0.01": {
+   "success": 0.896484375,
+   "se": 0.013476088875898459
+  },
+  "gc_lr0.1": {
+   "success": 0.953125,
+   "se": 0.00935050616324091
+  },
+  "gc_lr0.3": {
+   "success": 0.97265625,
+   "se": 0.007214367776781579
+  },
+  "random_dz": {
+   "success": 0.904296875,
+   "se": 0.013013919754184929
+  },
+  "gc_fresh_noise": {
+   "success": 0.955078125,
+   "se": 0.009163005273855156
+  },
+  "resample_prior": {
+   "success": 0.998046875,
+   "se": 0.001953125
+  },
+  "token_T1": {
+   "success": 0.990234375,
+   "se": 0.0043501934564264344
+  },
+  "base_from_mean": {
+   "success": 0.916015625,
+   "se": 0.012269877818253594
+  },
+  "gc_from_mean": {
+   "success": 0.970703125,
+   "se": 0.007460078764770778
+  },
+  "token_T1_from_mean": {
+   "success": 0.998046875,
+   "se": 0.001953125
+  }
+ },
+ "paired": {
+  "gc_lr0.01": {
+   "vs_resample_prior": {
+    "delta": -0.1015625,
+    "se": 0.01364591425011986
+   },
+   "vs_token_T1": {
+    "delta": -0.09375,
+    "se": 0.012894342385625175
+   },
+   "vs_random_dz": {
+    "delta": -0.0078125,
+    "se": 0.007306902996261209
+   },
+   "vs_base_from_mean": {
+    "delta": -0.01953125,
+    "se": 0.014864013746114868
+   },
+   "vs_token_T1_from_mean": {
+    "delta": -0.1015625,
+    "se": 0.01364591425011986
+   }
+  },
+  "gc_lr0.1": {
+   "vs_resample_prior": {
+    "delta": -0.044921875,
+    "se": 0.009571049602939394
+   },
+   "vs_token_T1": {
+    "delta": -0.037109375,
+    "se": 0.008807410961326905
+   },
+   "vs_random_dz": {
+    "delta": 0.048828125,
+    "se": 0.009926361866271303
+   },
+   "vs_base_from_mean": {
+    "delta": 0.037109375,
+    "se": 0.013586428367562492
+   },
+   "vs_token_T1_from_mean": {
+    "delta": -0.044921875,
+    "se": 0.009571049602939394
+   }
+  },
+  "gc_lr0.3": {
+   "vs_resample_prior": {
+    "delta": -0.025390625,
+    "se": 0.007488045418665332
+   },
+   "vs_token_T1": {
+    "delta": -0.017578125,
+    "se": 0.007531783212431782
+   },
+   "vs_random_dz": {
+    "delta": 0.068359375,
+    "se": 0.011501095059715883
+   },
+   "vs_base_from_mean": {
+    "delta": 0.056640625,
+    "se": 0.013453912386809857
+   },
+   "vs_token_T1_from_mean": {
+    "delta": -0.025390625,
+    "se": 0.007488045418665332
+   }
+  },
+  "gc_fresh_noise": {
+   "vs_resample_prior": {
+    "delta": -0.04296875,
+    "se": 0.00938715933175945
+   },
+   "vs_token_T1": {
+    "delta": -0.03515625,
+    "se": 0.00860375129648095
+   },
+   "vs_random_dz": {
+    "delta": 0.05078125,
+    "se": 0.01009822257213199
+   },
+   "vs_base_from_mean": {
+    "delta": 0.0390625,
+    "se": 0.013434200090876364
+   },
+   "vs_token_T1_from_mean": {
+    "delta": -0.04296875,
+    "se": 0.00938715933175945
+   }
+  },
+  "gc_from_mean": {
+   "vs_resample_prior": {
+    "delta": -0.02734375,
+    "se": 0.007726022733068634
+   },
+   "vs_token_T1": {
+    "delta": -0.01953125,
+    "se": 0.0082493883155124
+   },
+   "vs_random_dz": {
+    "delta": 0.06640625,
+    "se": 0.01406296714542637
+   },
+   "vs_base_from_mean": {
+    "delta": 0.0546875,
+    "se": 0.010058223587167469
+   },
+   "vs_token_T1_from_mean": {
+    "delta": -0.02734375,
+    "se": 0.007214367776781579
+   }
+  }
+ },
+ "mean_attempts": {
+  "gc_lr0.01": 2.203125,
+  "gc_lr0.1": 1.78515625,
+  "gc_lr0.3": 1.53515625
+ },
+ "mean_dz_norm": {
+  "gc_lr0.01": 0.03209030258585699,
+  "gc_lr0.1": 0.1544061889871955,
+  "gc_lr0.3": 0.2927598984679207
+ },
+ "wall_s": 5291.663203001022
+}

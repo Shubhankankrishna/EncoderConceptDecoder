@@ -1,0 +1,112 @@
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0] Graph break from `Tensor.item()`, consider setting:
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]     torch._dynamo.config.capture_scalar_outputs = True
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0] or:
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]     env TORCHDYNAMO_CAPTURE_SCALAR_OUTPUTS=1
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0] to include these operations in the captured graph.
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0] 
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0] Graph break: from user code at:
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]   File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v5_tiny/code/eval_b.py", line 59, in f
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]     Z = sysm.z_prior_schedule(e, starts, eta_z, mode=z_mode)[0] if core.use_z else None
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]   File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v5_tiny/code/system_v5.py", line 53, in z_prior_schedule
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]     oh, first = window_tensors(win)
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]   File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v5_tiny/code/system_v5.py", line 21, in window_tensors
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0]     nW = int(win.max()) + 1
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0] 
+W1003 15:31:36.268000 18034 site-packages/torch/_dynamo/variables/tensor.py:1079] [1/0] 
+W1003 15:31:37.851000 18034 site-packages/torch/_inductor/utils.py:1679] [6/0] Not enough SMs to use max_autotune_gemm mode
+{
+ "run": "B_v6_s0",
+ "variant": "gram",
+ "lam": 0.1,
+ "core_params": 746912,
+ "teacher": {
+  "text": 1.8128156661987305,
+  "graph": 0.1130855605006218
+ },
+ "nll": {
+  "prior_sample": {
+   "text": {
+    "delta": -0.0015620611375197768,
+    "se": 9.568338104420636e-05,
+    "base": 1.8128156661987305
+   },
+   "graph": {
+    "delta": -0.00044044828973710537,
+    "se": 8.539726327079803e-05,
+    "base": 0.11111390590667725
+   },
+   "colour": {
+    "delta": -0.0019529979908838868,
+    "se": 0.00039564164543584227,
+    "base": 0.5080230832099915
+   }
+  },
+  "prior_mean": {
+   "text": {
+    "delta": -0.002025907626375556,
+    "se": 0.00010043694936090986,
+    "base": 1.8128156661987305
+   },
+   "graph": {
+    "delta": -0.0007188897579908371,
+    "se": 8.852436186695399e-05,
+    "base": 0.11111390590667725
+   },
+   "colour": {
+    "delta": -0.0032764174975454807,
+    "se": 0.00040919333895723763,
+    "base": 0.5080230832099915
+   }
+  },
+  "posterior": {
+   "text": {
+    "delta": -0.15439572930335999,
+    "se": 0.0018907767653277019,
+    "base": 1.8128156661987305
+   },
+   "graph": {
+    "delta": -0.109831303358078,
+    "se": 0.0011289156850738213,
+    "base": 0.11111390590667725
+   },
+   "colour": {
+    "delta": -0.503636360168457,
+    "se": 0.005007423607641792,
+    "base": 0.5080230832099915
+   }
+  },
+  "oracle_best_of_8": {
+   "text": {
+    "delta": -0.061922311782836914,
+    "se": 0.0010997109284618185,
+    "base": 1.8128156661987305
+   },
+   "graph": {
+    "delta": -0.006179045885801315,
+    "se": 0.00010995241233994968,
+    "base": 0.11111390590667725
+   }
+  },
+  "mixture_of_8_posthoc": {
+   "text": {
+    "delta": -0.05294601991772652,
+    "se": 0.001093508073619219,
+    "base": 1.8128156661987305
+   },
+   "graph": {
+    "delta": -0.0005504569271579385,
+    "se": 7.39601973235669e-05,
+    "base": 0.11111390590667725
+   }
+  }
+ },
+ "gate": {
+  "mode": "prior_sample",
+  "text_ok": true,
+  "graph_ok": true
+ },
+ "raw_h_norm_per_transition": [
+  12.225212097167969,
+  12.907554626464844
+ ]
+}
