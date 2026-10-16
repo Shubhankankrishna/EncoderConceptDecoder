@@ -1,0 +1,86 @@
+{
+  "arm": "K1",
+  "config": {
+    "vocab_size": 1024,
+    "width": 56,
+    "heads": 4,
+    "e1_layers": 2,
+    "e2_layers": 1,
+    "e3_layers": 1,
+    "encoder_visits": 2,
+    "concept_layers": 2,
+    "concept_visits": 2,
+    "decoder_layers": 2,
+    "ffn_expansion": 4,
+    "window": 64,
+    "group": 8,
+    "slots": 2,
+    "codes": 8,
+    "code_width": 16,
+    "gate_rank": 16,
+    "pq_segments": 4,
+    "pq_words": 16,
+    "engram_rows": [
+      16381,
+      16411,
+      16417,
+      16421
+    ],
+    "engram_dim": 16,
+    "engram_cpu": true,
+    "context": 256
+  },
+  "parameters": {
+    "dense": 539414,
+    "engram": 1050080,
+    "dense_training_only": 67090,
+    "dense_deployed": 472324
+  },
+  "args": {
+    "arm": "K1",
+    "run_dir": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v11_tiny/runs/K1_s1",
+    "device": "mps",
+    "seed": 1,
+    "batch_size": 16,
+    "context": 256,
+    "lr": 0.001,
+    "candidate_every": 4,
+    "threads": 2,
+    "eval_every": 1000,
+    "max_steps": 6000,
+    "S": 2,
+    "foreach": true
+  },
+  "source_sha256": "56942e400682dbbcefad96cbe1eed27963e2428d8efd0cd415a808fff5847d77",
+  "data_manifest_sha256": "a1dee054e5f2d6a08adee77c412d0ab95f1c52f5441f272a9aeb455980a8e2ca",
+  "torch": "2.10.0",
+  "start_unix": 1791821605.314692,
+  "lambda_": {
+    "c": 0.1,
+    "vq": 0.01,
+    "h": 1.0,
+    "kl": 1.0
+  },
+  "S": 2,
+  "objective": "v11 latent objective + bridge",
+  "deviations_from_v11_md": [
+    "K = 1 for every V11 arm: no strategy codes, no prior, no visit-2 code injection (2,040 parameters fewer than V10.3 deployed).",
+    "L_v2 is computed by recomputing visit 2 for all rows from stopped committed inputs (u1, anchor, E->C sources) and taking the S sampled rows; v11.md \u00a75.2 attends to a stopped committed KV instead, so here the shared core weights also receive L_v2 gradient through earlier rows keys/values.",
+    "No random-prefix training: the objective test uses the inherited V10.3-tiny stream so the X8/C0 comparison is clean; alignment is tested by offset scoring in the evaluator for every arm."
+  ],
+  "trainer_notes": [
+    "Same trainer for all six arms; with --foreach off it reproduces v10_3_tiny.train bitwise for C0 and X8 over 12 steps (tests_trainer). Production runs use --foreach (AdamW multi-tensor), which differs from the inherited trainer only at rounding level.",
+    "Runs share the GPU three at a time; wall clock depends on co-scheduled arms. Equal-wall-time comparisons use solo smoke step times, not this run's elapsed time."
+  ],
+  "optimizer_rule": "decay ndim>=2 except head.codebook",
+  "end_unix": 1791825899.961049,
+  "steps": 6000,
+  "tokens": 18997792,
+  "family_supervised_tokens": {
+    "text": 15763987,
+    "math": 184770,
+    "sudoku_easy": 943328,
+    "sudoku_hard": 313568
+  },
+  "active_seconds": 4294.636326417036
+}

@@ -1,0 +1,167 @@
+{
+  "seconds": 5.174966812133789,
+  "torch": "2.10.0",
+  "results": [
+    {
+      "test": "parameter budget C0",
+      "passed": true,
+      "dense": 311704,
+      "engram": 1050080,
+      "dense_training_only": 0,
+      "dense_deployed": 311704
+    },
+    {
+      "test": "parameter budget A",
+      "passed": true,
+      "dense": 484782,
+      "engram": 1050080,
+      "dense_training_only": 41720,
+      "dense_deployed": 443062
+    },
+    {
+      "test": "parameter budget X8",
+      "passed": true,
+      "dense": 503428,
+      "engram": 1050080,
+      "dense_training_only": 29064,
+      "dense_deployed": 474364
+    },
+    {
+      "test": "parameter budget X4",
+      "passed": true,
+      "dense": 502912,
+      "engram": 1050080,
+      "dense_training_only": 29064,
+      "dense_deployed": 473848
+    },
+    {
+      "test": "state_dict strict round trip C0",
+      "passed": true,
+      "tensors": 86
+    },
+    {
+      "test": "state_dict strict round trip A",
+      "passed": true,
+      "tensors": 150
+    },
+    {
+      "test": "state_dict strict round trip X8",
+      "passed": true,
+      "tensors": 157
+    },
+    {
+      "test": "state_dict strict round trip X4",
+      "passed": true,
+      "tensors": 157
+    },
+    {
+      "test": "optimizer groups C0",
+      "passed": true,
+      "decayed": 41
+    },
+    {
+      "test": "codebook decayed is True for A",
+      "passed": true,
+      "decayed_matrices": 72
+    },
+    {
+      "test": "codebook decayed is False for X8",
+      "passed": true,
+      "decayed_matrices": 79
+    },
+    {
+      "test": "codebook decayed is False for X4",
+      "passed": true,
+      "decayed_matrices": 79
+    },
+    {
+      "test": "concept-history release mask and sentinel",
+      "passed": true,
+      "rows": 320,
+      "mismatches": 0
+    },
+    {
+      "test": "future perturbation leaves earlier logits unchanged C0",
+      "passed": true,
+      "max_abs_diff": 0.0
+    },
+    {
+      "test": "future perturbation leaves earlier logits unchanged A",
+      "passed": true,
+      "max_abs_diff": 0.0
+    },
+    {
+      "test": "future perturbation leaves earlier logits unchanged X8",
+      "passed": true,
+      "max_abs_diff": 0.0
+    },
+    {
+      "test": "future perturbation leaves earlier logits unchanged X4",
+      "passed": true,
+      "max_abs_diff": 0.0
+    },
+    {
+      "test": "candidate branch with committed code equals main forecast X8",
+      "passed": true,
+      "max_abs_diff": 1.2665987014770508e-07
+    },
+    {
+      "test": "candidate branch with committed code equals main forecast X4",
+      "passed": true,
+      "max_abs_diff": 1.1920928955078125e-07
+    },
+    {
+      "test": "candidate branch with committed code equals main forecast A",
+      "passed": true,
+      "max_abs_diff": 1.2665987014770508e-07
+    },
+    {
+      "test": "mixture loss analytic gradient",
+      "passed": true,
+      "logit_error": 2.7755575615628914e-17,
+      "ll_error": 2.7755575615628914e-17
+    },
+    {
+      "test": "mixture loss directional finite difference (float64)",
+      "passed": true,
+      "analytic": 3.0724151358018994,
+      "numeric": 3.0724138817106446,
+      "relative_error": 4.08177837728313e-07
+    },
+    {
+      "test": "all K code embeddings receive mixture gradient",
+      "passed": true,
+      "per_code_grad": [
+        0.0017502717024467374,
+        0.014104951301479903,
+        0.004012487726619562,
+        0.0018626001412171758,
+        0.001733708104958891,
+        0.008407137621450577,
+        0.0019145045455783818,
+        0.0011987094388674529
+      ]
+    },
+    {
+      "test": "RBF correction derivative through aligned, reader-key and reader-value routes (float64)",
+      "passed": true,
+      "analytic": 0.0004470744793442143,
+      "numeric": 0.00044707446633651665,
+      "relative_error": 2.909514767738465e-08
+    },
+    {
+      "test": "cpu/mps forward and gradient parity C0",
+      "passed": true,
+      "loss_cpu": 6.9564690589904785,
+      "loss_mps": 6.9564690589904785,
+      "gradient_relative_difference": 3.958610079735081e-07
+    },
+    {
+      "test": "cpu/mps forward and gradient parity X8",
+      "passed": true,
+      "loss_cpu": 8.355631828308105,
+      "loss_mps": 8.355631828308105,
+      "gradient_relative_difference": 4.522807444118371e-07
+    }
+  ]
+}

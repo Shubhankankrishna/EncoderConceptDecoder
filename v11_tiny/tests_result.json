@@ -1,0 +1,302 @@
+{
+ "passed": 59,
+ "total": 59,
+ "seconds": 8.106428861618042,
+ "results": [
+  {
+   "test": "parameter count C0",
+   "passed": true,
+   "detail": "{'dense': 311704, 'engram': 1050080, 'dense_training_only': 0, 'dense_deployed': 311704}"
+  },
+  {
+   "test": "parameter count ORD",
+   "passed": true,
+   "detail": "{'dense': 475664, 'engram': 0, 'dense_training_only': 0, 'dense_deployed': 475664}"
+  },
+  {
+   "test": "parameter count ORDE",
+   "passed": true,
+   "detail": "{'dense': 483224, 'engram': 1050080, 'dense_training_only': 0, 'dense_deployed': 483224}"
+  },
+  {
+   "test": "parameter count X8",
+   "passed": true,
+   "detail": "{'dense': 503428, 'engram': 1050080, 'dense_training_only': 29064, 'dense_deployed': 474364}"
+  },
+  {
+   "test": "parameter count NOAUX",
+   "passed": true,
+   "detail": "{'dense': 501388, 'engram': 1050080, 'dense_training_only': 29064, 'dense_deployed': 472324}"
+  },
+  {
+   "test": "parameter count K1NB",
+   "passed": true,
+   "detail": "{'dense': 501390, 'engram': 1050080, 'dense_training_only': 29066, 'dense_deployed': 472324}"
+  },
+  {
+   "test": "parameter count K1",
+   "passed": true,
+   "detail": "{'dense': 539414, 'engram': 1050080, 'dense_training_only': 67090, 'dense_deployed': 472324}"
+  },
+  {
+   "test": "bridge = one block (38,024)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "L_v2 reaches no encoder/pooler/embedding parameter",
+   "passed": true,
+   "detail": "{'log_sigma2': 0.062009215354919434, 'embedding.': 0.0, 'engram.': 0.0, 'e1.': 0.0, 'e2.': 0.0, 'exit_reader.': 0.0, 'e3.': 0.0, 'pooler.': 0.0, 'core.layers': 11.490846623666584, 'head.': 5.3595985770225525, 'decoder.': 0.0, 'encoder_concept_crc.': 0.045922088786028326}"
+  },
+  {
+   "test": "L_v2 reaches core blocks, head, log_sigma2",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "L_v2 reaches no decoder parameter",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "L_v1: decoder 0, pooler/encoder/core > 0",
+   "passed": true,
+   "detail": "{'e1.': 38.76133060082793, 'pooler.': 4.302578277410248, 'core.layers': 9.271473755128682, 'decoder.': 0.0, 'probe.': 0.0, 'bridge.': 0.0}"
+  },
+  {
+   "test": "L_vq reaches only the codebook",
+   "passed": true,
+   "detail": "{'e1.': 0.0, 'pooler.': 0.0, 'core.': 0.0, 'head.codebook': 15.932579040527344, 'head.logits': 0.0}"
+  },
+  {
+   "test": "bridge losses: decoder (incl. outn) 0; bridge, core, pooler, encoder > 0",
+   "passed": true,
+   "detail": "{'engram.': 1.4298634569859132, 'e1.': 243.04847071319818, 'pooler.': 26.761115148259705, 'core.layers': 63.60071835294366, 'head.': 0.0, 'decoder.': 0.0, 'probe.': 0.0, 'bridge.': 165.931796355173}"
+  },
+  {
+   "test": "bridge losses: PQ head 0 (anchor is u1, not the forecast)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "L_KL embedding gradient reproducible",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "L_KL: embedding-as-head receives no gradient (zero once the encoder-input use is cut)",
+   "passed": true,
+   "detail": "None"
+  },
+  {
+   "test": "L_KL: embedding-as-encoder-input receives gradient",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "L_probe reaches only probe.*",
+   "passed": true,
+   "detail": "{'embedding.': 0.0, 'pooler.': 0.0, 'core.': 0.0, 'head.': 0.0, 'decoder.': 0.0, 'probe.': 69.80490963160992}"
+  },
+  {
+   "test": "L_NTP: bridge/probe/sigmas 0; core/pooler/head > 0",
+   "passed": true,
+   "detail": "{'log_sigma1': 0.0, 'log_sigma2': 0.0, 'pooler.': 0.5201800747482821, 'core.': 1.8888361175195314, 'head.': 0.11010104743763804, 'probe.': 0.0, 'bridge.': 0.0}"
+  },
+  {
+   "test": "NOAUX: absent terms are None (not 0)",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "test": "NOAUX: trunk still trained",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "K1NB: absent terms are None (not 0)",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "test": "K1NB: trunk still trained",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "Gaussian NLL closed form (K = 1)",
+   "passed": true,
+   "detail": "(1.84446382522583, 1.84446382522583)"
+  },
+  {
+   "test": "dNLL/dlog_sigma = 0 at sigma^2 = mean sq/D",
+   "passed": true,
+   "detail": "0.0"
+  },
+  {
+   "test": "log sigma floor applied",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "boundary sampler: only eligible, at most S per document, distinct",
+   "passed": true,
+   "detail": "[(0, 0), (0, 1), (2, 1)]"
+  },
+  {
+   "test": "boundary sampler deterministic under seed",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "visits=1 equals states[0] of visits=2",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "use_visit1 feeds u1 to the decoder",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "eval forward leaves target buffers identical",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "update_target_buffers is a no-op in eval()",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "deleting bridge and probe leaves logits identical",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "intervention ablate changes logits",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "intervention ablate_aligned changes logits",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "intervention ablate_reader changes logits",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "intervention zero_state changes logits",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "intervention zero_forecast_memory changes logits",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "intervention use_visit1 changes logits",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "unknown forward kwarg raises",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "buffers initialised from the first batch",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "normalized target ~ zero mean, unit variance on that batch",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "test": "future-token perturbation ORD (cuts 1,7,8,9,15,16,17,33)",
+   "passed": true,
+   "detail": "0.0"
+  },
+  {
+   "test": "prefix length invariance ORD (lengths 1..33)",
+   "passed": true,
+   "detail": "4.023313522338867e-07"
+  },
+  {
+   "test": "right padding isolation ORD",
+   "passed": true,
+   "detail": "3.2782554626464844e-07"
+  },
+  {
+   "test": "future-token perturbation ORDE (cuts 1,7,8,9,15,16,17,33)",
+   "passed": true,
+   "detail": "0.0"
+  },
+  {
+   "test": "prefix length invariance ORDE (lengths 1..33)",
+   "passed": true,
+   "detail": "4.3213367462158203e-07"
+  },
+  {
+   "test": "right padding isolation ORDE",
+   "passed": true,
+   "detail": "3.203749656677246e-07"
+  },
+  {
+   "test": "future-token perturbation NOAUX (cuts 1,7,8,9,15,16,17,33)",
+   "passed": true,
+   "detail": "0.0"
+  },
+  {
+   "test": "prefix length invariance NOAUX (lengths 1..33)",
+   "passed": true,
+   "detail": "3.2782554626464844e-07"
+  },
+  {
+   "test": "right padding isolation NOAUX",
+   "passed": true,
+   "detail": "2.682209014892578e-07"
+  },
+  {
+   "test": "future-token perturbation K1 (cuts 1,7,8,9,15,16,17,33)",
+   "passed": true,
+   "detail": "0.0"
+  },
+  {
+   "test": "prefix length invariance K1 (lengths 1..33)",
+   "passed": true,
+   "detail": "3.2782554626464844e-07"
+  },
+  {
+   "test": "right padding isolation K1",
+   "passed": true,
+   "detail": "2.682209014892578e-07"
+  },
+  {
+   "test": "bridge with no rows past the last boundary returns None",
+   "passed": true,
+   "detail": "0"
+  },
+  {
+   "test": "length 9: exactly one bridge row (t = 8)",
+   "passed": true,
+   "detail": "tensor(1)"
+  },
+  {
+   "test": "CPU/MPS parity K1 text (loss, grads)",
+   "passed": true,
+   "detail": "{'loss': 1.862645149230957e-09, 'grad': 2.9802322387695312e-08}"
+  },
+  {
+   "test": "CPU/MPS parity K1 math (loss, grads)",
+   "passed": true,
+   "detail": "{'loss': 4.76837158203125e-07, 'grad': 3.2782554626464844e-07}"
+  }
+ ]
+}

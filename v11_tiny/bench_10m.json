@@ -1,0 +1,148 @@
+{
+ "prior_v10_10M_tokens_per_second": 3855,
+ "batch": 8,
+ "context": 384,
+ "S": 3,
+ "results": [
+  {
+   "arm": "C0",
+   "parameters": {
+    "dense": 4037656,
+    "engram": 20000320,
+    "dense_training_only": 0,
+    "dense_deployed": 4037656
+   },
+   "timed_updates": 200,
+   "wall_seconds": 69.72321241698228,
+   "step_p50": 0.4350432914798148,
+   "step_p95": 0.4389033169456525,
+   "text_step_p50": 0.43607239599805325,
+   "input_tokens_per_second": 6120.615863879187,
+   "scored_tokens_per_second": 5737.787834666082,
+   "first50_vs_last50": [
+    0.4344560834870208,
+    0.4351983334927354
+   ],
+   "peak_driver_gb": 3.8846588134765625,
+   "split_medians": {
+    "forward_loss": 0.2002561044646427,
+    "backward": 0.23873677049414255,
+    "optimizer": 0.025898146006511524,
+    "step": 0.4652917704661377
+   },
+   "engram_hash_seconds_per_batch": 0.00012694479955825954,
+   "families": {
+    "math": 39,
+    "sudoku_easy": 27,
+    "text": 134
+   },
+   "tokens_in_16h_at_this_rate": 352547473.75944114,
+   "tokens_per_deployed_param_16h": 87.31488610209516
+  },
+  {
+   "arm": "K1",
+   "parameters": {
+    "dense": 5756318,
+    "engram": 20000320,
+    "dense_training_only": 346882,
+    "dense_deployed": 5409436
+   },
+   "timed_updates": 200,
+   "wall_seconds": 129.37819104199298,
+   "step_p50": 0.7047281039995141,
+   "step_p95": 0.8989310374920023,
+   "text_step_p50": 0.724839062517276,
+   "input_tokens_per_second": 3298.4616384185474,
+   "scored_tokens_per_second": 3092.151751218653,
+   "first50_vs_last50": [
+    0.7109170209732838,
+    0.7032083955127746
+   ],
+   "peak_driver_gb": 4.13885498046875,
+   "split_medians": {
+    "forward_loss": 0.32820089551387355,
+    "backward": 0.3301107919833157,
+    "optimizer": 0.04055035446071997,
+    "step": 0.702354938024655
+   },
+   "engram_hash_seconds_per_batch": 0.00012417082616593688,
+   "families": {
+    "math": 39,
+    "sudoku_easy": 27,
+    "text": 134
+   },
+   "tokens_in_16h_at_this_rate": 189991390.37290832,
+   "tokens_per_deployed_param_16h": 35.12221798592466
+  },
+  {
+   "arm": "NOAUX",
+   "parameters": {
+    "dense": 5558812,
+    "engram": 20000320,
+    "dense_training_only": 149376,
+    "dense_deployed": 5409436
+   },
+   "timed_updates": 200,
+   "wall_seconds": 107.21029575000284,
+   "step_p50": 0.6084975830162875,
+   "step_p95": 0.7387503163190559,
+   "text_step_p50": 0.6532611245056614,
+   "input_tokens_per_second": 3980.4852417822817,
+   "scored_tokens_per_second": 3731.51661602416,
+   "first50_vs_last50": [
+    0.6046253539680038,
+    0.6532611245056614
+   ],
+   "peak_driver_gb": 4.0549774169921875,
+   "split_medians": {
+    "forward_loss": 0.2634237495076377,
+    "backward": 0.3086015830049291,
+    "optimizer": 0.03981927101267502,
+    "step": 0.6113038959738333
+   },
+   "engram_hash_seconds_per_batch": 0.00013535104953916744,
+   "families": {
+    "math": 39,
+    "sudoku_easy": 27,
+    "text": 134
+   },
+   "tokens_in_16h_at_this_rate": 229275949.92665944,
+   "tokens_per_deployed_param_16h": 42.38444635016653
+  },
+  {
+   "arm": "K1NB",
+   "parameters": {
+    "dense": 5558814,
+    "engram": 20000320,
+    "dense_training_only": 149378,
+    "dense_deployed": 5409436
+   },
+   "timed_updates": 200,
+   "wall_seconds": 105.20294049999211,
+   "step_p50": 0.630714958475437,
+   "step_p95": 0.6682991000358015,
+   "text_step_p50": 0.6373652080364991,
+   "input_tokens_per_second": 4056.436046101126,
+   "scored_tokens_per_second": 3802.716902195619,
+   "first50_vs_last50": [
+    0.6382738960091956,
+    0.630010978988139
+   ],
+   "peak_driver_gb": 4.0862274169921875,
+   "split_medians": {
+    "forward_loss": 0.27963981247739866,
+    "backward": 0.3243874999752734,
+    "optimizer": 0.03935939600341953,
+    "step": 0.6452451664954424
+   },
+   "engram_hash_seconds_per_batch": 0.00012422812578734012,
+   "families": {
+    "math": 39,
+    "sudoku_easy": 27,
+    "text": 134
+   },
+   "tokens_in_16h_at_this_rate": 233650716.25542486,
+   "tokens_per_deployed_param_16h": 43.193175084320224
+  }
+ ]
+}

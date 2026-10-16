@@ -1,0 +1,148 @@
+{
+ "reference_balanced_4/4/2_c4_d4": {
+  "dense_incl_training_only": 5762982,
+  "deployed": 5416100,
+  "under_10M": true,
+  "c0_dense": 4037656,
+  "executed_blocks": {
+   "encoder": 14,
+   "encoder_unique": 10,
+   "concept": 8,
+   "concept_unique": 4,
+   "decoder": 4
+  },
+  "deployed_macs_per_token": 6305792.0,
+  "training_macs_per_token": 7705600.0,
+  "c0_macs_per_token": 5464064.0,
+  "compute_matched_ordinary_layers": 21,
+  "lora_rank4_per_phase": 98304
+ },
+ "E3_4_historical_4/4/4_c4_d4": {
+  "dense_incl_training_only": 6157990,
+  "deployed": 5811108,
+  "under_10M": true,
+  "c0_dense": 4432664,
+  "executed_blocks": {
+   "encoder": 16,
+   "encoder_unique": 12,
+   "concept": 8,
+   "concept_unique": 4,
+   "decoder": 4
+  },
+  "deployed_macs_per_token": 6764544.0,
+  "training_macs_per_token": 8164352.0,
+  "c0_macs_per_token": 5922816.0,
+  "compute_matched_ordinary_layers": 23,
+  "lora_rank4_per_phase": 98304
+ },
+ "decoder_8_4/4/2_c4_d8": {
+  "dense_incl_training_only": 6817710,
+  "deployed": 6470828,
+  "under_10M": true,
+  "c0_dense": 4829728,
+  "executed_blocks": {
+   "encoder": 14,
+   "encoder_unique": 10,
+   "concept": 8,
+   "concept_unique": 4,
+   "decoder": 8
+  },
+  "deployed_macs_per_token": 7534592.0,
+  "training_macs_per_token": 8934400.0,
+  "c0_macs_per_token": 6447104.0,
+  "compute_matched_ordinary_layers": 26,
+  "lora_rank4_per_phase": 131072
+ },
+ "concept_heavy_4/4/2_c8_d4": {
+  "dense_incl_training_only": 6552998,
+  "deployed": 6206116,
+  "under_10M": true,
+  "c0_dense": 4037656,
+  "executed_blocks": {
+   "encoder": 14,
+   "encoder_unique": 10,
+   "concept": 16,
+   "concept_unique": 8,
+   "decoder": 4
+  },
+  "deployed_macs_per_token": 6723584.0,
+  "training_macs_per_token": 8227840.0,
+  "c0_macs_per_token": 5464064.0,
+  "compute_matched_ordinary_layers": 23,
+  "lora_rank4_per_phase": 131072
+ },
+ "stress_ratio_param_matched_4/4/3_c5_d2": {
+  "dense_incl_training_only": 5630626,
+  "deployed": 5283744,
+  "under_10M": true,
+  "c0_dense": 3839124,
+  "executed_blocks": {
+   "encoder": 15,
+   "encoder_unique": 11,
+   "concept": 10,
+   "concept_unique": 5,
+   "decoder": 2
+  },
+  "deployed_macs_per_token": 6008832.0,
+  "training_macs_per_token": 7434752.0,
+  "c0_macs_per_token": 5185536.0,
+  "compute_matched_ordinary_layers": 20,
+  "lora_rank4_per_phase": 90112
+ },
+ "stress_ratio_at_cap_6/6/3_c7_d2": {
+  "dense_incl_training_only": 6884778,
+  "deployed": 6537896,
+  "under_10M": true,
+  "c0_dense": 4698268,
+  "executed_blocks": {
+   "encoder": 21,
+   "encoder_unique": 15,
+   "concept": 14,
+   "concept_unique": 7,
+   "decoder": 2
+  },
+  "deployed_macs_per_token": 7696384.0,
+  "training_macs_per_token": 9174528.0,
+  "c0_macs_per_token": 6664192.0,
+  "compute_matched_ordinary_layers": 27,
+  "lora_rank4_per_phase": 122880
+ },
+ "stress_120_60_20_symbolic": {
+  "width": 128,
+  "unique_blocks": 200,
+  "dense_params_approx": 40370176,
+  "rows": [
+   {
+    "e2_blocks": 0,
+    "executed_token_block_equivalents": 170.0,
+    "ratio_vs_200_layer_ordinary": 0.85
+   },
+   {
+    "e2_blocks": 24,
+    "executed_token_block_equivalents": 194.0,
+    "ratio_vs_200_layer_ordinary": 0.97
+   },
+   {
+    "e2_blocks": 40,
+    "executed_token_block_equivalents": 210.0,
+    "ratio_vs_200_layer_ordinary": 1.05
+   },
+   {
+    "e2_blocks": 48,
+    "executed_token_block_equivalents": 218.0,
+    "ratio_vs_200_layer_ordinary": 1.09
+   },
+   {
+    "e2_blocks": 60,
+    "executed_token_block_equivalents": 230.0,
+    "ratio_vs_200_layer_ordinary": 1.15
+   },
+   {
+    "e2_blocks": 120,
+    "executed_token_block_equivalents": 290.0,
+    "ratio_vs_200_layer_ordinary": 1.45
+   }
+  ],
+  "formula": "executed = (E - b) + 2b + D + 2C/4 = E + b + D + C/2 token-block equivalents; params = (E + C + D) * 12 d^2 + V d"
+ }
+}

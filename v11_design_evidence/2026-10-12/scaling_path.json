@@ -1,0 +1,238 @@
+[
+ {
+  "name": "R1 reference (Air; instantiated count is in param_budget.json)",
+  "width": 128,
+  "unique_blocks": {
+   "encoder": 10,
+   "e2_recurrent": 4,
+   "concept": 4,
+   "decoder": 4
+  },
+  "vocab": 8192,
+  "moe": null,
+  "total_params": 4587520,
+  "active_executed_params_per_token": 4980736.0,
+  "executed_block_equivalents": 20.0,
+  "assumed_tokens": 99614720.0,
+  "training_flops": 2976927732203520.0,
+  "serving": {
+   "decode_flops_per_token": 9961472.0,
+   "kv_bytes_per_token_at_T": 5760.0,
+   "T_serve": 384,
+   "concept_attention": "O(G^2), G = T/8 groups (2 slot rows each)"
+  },
+  "moe_all_to_all_bytes_per_token": 0
+ },
+ {
+  "name": "R2 dense ~60M",
+  "width": 384,
+  "unique_blocks": {
+   "encoder": 15,
+   "e2_recurrent": 6,
+   "concept": 6,
+   "decoder": 4
+  },
+  "vocab": 32768,
+  "moe": null,
+  "total_params": 56819712,
+  "active_executed_params_per_token": 62128128.0,
+  "executed_block_equivalents": 28.0,
+  "assumed_tokens": 1242562560.0,
+  "training_flops": 4.631885146541261e+17,
+  "serving": {
+   "decode_flops_per_token": 124256256.0,
+   "kv_bytes_per_token_at_T": 20328.0,
+   "T_serve": 4096,
+   "concept_attention": "O(G^2), G = T/8 groups (2 slot rows each)"
+  },
+  "moe_all_to_all_bytes_per_token": 0
+ },
+ {
+  "name": "R3 dense ~0.5B",
+  "width": 1024,
+  "unique_blocks": {
+   "encoder": 24,
+   "e2_recurrent": 10,
+   "concept": 10,
+   "decoder": 6
+  },
+  "vocab": 32768,
+  "moe": null,
+  "total_params": 536870912,
+  "active_executed_params_per_token": 599785472.0,
+  "executed_block_equivalents": 45.0,
+  "assumed_tokens": 11995709440.0,
+  "training_flops": 4.316911349067153e+19,
+  "serving": {
+   "decode_flops_per_token": 1199570944.0,
+   "kv_bytes_per_token_at_T": 86400.0,
+   "T_serve": 8192,
+   "concept_attention": "O(G^2), G = T/8 groups (2 slot rows each)"
+  },
+  "moe_all_to_all_bytes_per_token": 0
+ },
+ {
+  "name": "R4 dense ~3B",
+  "width": 2048,
+  "unique_blocks": {
+   "encoder": 34,
+   "e2_recurrent": 14,
+   "concept": 16,
+   "decoder": 8
+  },
+  "vocab": 65536,
+  "moe": null,
+  "total_params": 3053453312,
+  "active_executed_params_per_token": 3355443200.0,
+  "executed_block_equivalents": 64.0,
+  "assumed_tokens": 67108864000.0,
+  "training_flops": 1.3510798882111488e+21,
+  "serving": {
+   "decode_flops_per_token": 6710886400.0,
+   "kv_bytes_per_token_at_T": 247808.0,
+   "T_serve": 16384,
+   "concept_attention": "O(G^2), G = T/8 groups (2 slot rows each)"
+  },
+  "moe_all_to_all_bytes_per_token": 0
+ },
+ {
+  "name": "R5 MoE ~25B total",
+  "width": 2048,
+  "unique_blocks": {
+   "encoder": 34,
+   "e2_recurrent": 14,
+   "concept": 16,
+   "decoder": 8
+  },
+  "vocab": 65536,
+  "moe": {
+   "n_experts": 64,
+   "top_k": 4,
+   "expert_hidden": 1024
+  },
+  "total_params": 24468783104,
+  "active_executed_params_per_token": 2826960896.0,
+  "executed_block_equivalents": 64.0,
+  "assumed_tokens": 56539217920.0,
+  "training_flops": 9.590049489015747e+20,
+  "serving": {
+   "decode_flops_per_token": 5653921792.0,
+   "kv_bytes_per_token_at_T": 247808.0,
+   "T_serve": 16384,
+   "concept_attention": "O(G^2), G = T/8 groups (2 slot rows each)"
+  },
+  "moe_all_to_all_bytes_per_token": 2097152.0
+ },
+ {
+  "name": "H1 hypothetical 1T total (120/60/20, E2 = 48)",
+  "width": 7168,
+  "unique_blocks": {
+   "encoder": 120,
+   "e2_recurrent": 48,
+   "concept": 60,
+   "decoder": 20
+  },
+  "vocab": 163840,
+  "moe": {
+   "n_experts": 109,
+   "top_k": 8,
+   "expert_hidden": 2048
+  },
+  "total_params": 1002511032320,
+  "active_executed_params_per_token": 122954381312.0,
+  "executed_block_equivalents": 218.0,
+  "assumed_tokens": 2459087626240.0,
+  "training_flops": 1.8141335860580034e+24,
+  "serving": {
+   "decode_flops_per_token": 245908762624.0,
+   "kv_bytes_per_token_at_T": 386176.0,
+   "T_serve": 32768,
+   "concept_attention": "O(G^2), G = T/8 groups (2 slot rows each)"
+  },
+  "moe_all_to_all_bytes_per_token": 50003968.0
+ },
+ {
+  "name": "H3 hypothetical 3T total (120/60/20, E2 = 48)",
+  "width": 8192,
+  "unique_blocks": {
+   "encoder": 120,
+   "e2_recurrent": 48,
+   "concept": 60,
+   "decoder": 20
+  },
+  "vocab": 163840,
+  "moe": {
+   "n_experts": 293,
+   "top_k": 8,
+   "expert_hidden": 2048
+  },
+  "total_params": 3004943892480,
+  "active_executed_params_per_token": 148162756608.0,
+  "executed_block_equivalents": 218.0,
+  "assumed_tokens": 2963255132160.0,
+  "training_flops": 2.6342642934817737e+24,
+  "serving": {
+   "decode_flops_per_token": 296325513216.0,
+   "kv_bytes_per_token_at_T": 441344.0,
+   "T_serve": 32768,
+   "concept_attention": "O(G^2), G = T/8 groups (2 slot rows each)"
+  },
+  "moe_all_to_all_bytes_per_token": 57147392.0
+ },
+ {
+  "name": "H1n 1T total, narrower (d 4096, 120/60/20, E2 = 48)",
+  "width": 4096,
+  "unique_blocks": {
+   "encoder": 120,
+   "e2_recurrent": 48,
+   "concept": 60,
+   "decoder": 20
+  },
+  "vocab": 163840,
+  "moe": {
+   "n_experts": 261,
+   "top_k": 8,
+   "expert_hidden": 1536
+  },
+  "total_params": 999548682240,
+  "active_executed_params_per_token": 48450772992.0,
+  "executed_block_equivalents": 218.0,
+  "assumed_tokens": 969015459840.0,
+  "training_flops": 2.81697288422678e+23,
+  "serving": {
+   "decode_flops_per_token": 96901545984.0,
+   "kv_bytes_per_token_at_T": 220672.0,
+   "T_serve": 32768,
+   "concept_attention": "O(G^2), G = T/8 groups (2 slot rows each)"
+  },
+  "moe_all_to_all_bytes_per_token": 28573696.0
+ },
+ {
+  "name": "H3n 3T total, narrower (d 5120, 120/60/20, E2 = 48)",
+  "width": 5120,
+  "unique_blocks": {
+   "encoder": 120,
+   "e2_recurrent": 48,
+   "concept": 60,
+   "decoder": 20
+  },
+  "vocab": 163840,
+  "moe": {
+   "n_experts": 631,
+   "top_k": 8,
+   "expert_hidden": 1536
+  },
+  "total_params": 2999888076800,
+  "active_executed_params_per_token": 65548236800.0,
+  "executed_block_equivalents": 218.0,
+  "assumed_tokens": 1310964736000.0,
+  "training_flops": 5.1558856171066494e+23,
+  "serving": {
+   "decode_flops_per_token": 131096473600.0,
+   "kv_bytes_per_token_at_T": 275840.0,
+   "T_serve": 32768,
+   "concept_attention": "O(G^2), G = T/8 groups (2 slot rows each)"
+  },
+  "moe_all_to_all_bytes_per_token": 35717120.0
+ }
+]

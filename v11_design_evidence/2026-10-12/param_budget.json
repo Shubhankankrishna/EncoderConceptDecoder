@@ -1,0 +1,428 @@
+{
+ "reference_10M": {
+  "config": {
+   "vocab_size": 8192,
+   "width": 128,
+   "heads": 4,
+   "e1_layers": 4,
+   "e2_layers": 4,
+   "e3_layers": 2,
+   "encoder_visits": 2,
+   "concept_layers": 4,
+   "concept_visits": 2,
+   "decoder_layers": 4,
+   "ffn_expansion": 4,
+   "window": 64,
+   "group": 8,
+   "slots": 2,
+   "codes": 8,
+   "code_width": 32,
+   "gate_rank": 32,
+   "pq_segments": 8,
+   "pq_words": 32,
+   "engram_rows": [
+    156241,
+    156253,
+    156257,
+    156259
+   ],
+   "engram_dim": 32,
+   "engram_cpu": true
+  },
+  "modules": {
+   "embedding": 1048576,
+   "engram": 20033984,
+   "e1": 790016,
+   "e2": 928272,
+   "exit_reader": 16896,
+   "e3": 395008,
+   "pooler": 199041,
+   "encoder_concept_crc": 33538,
+   "core": 796937,
+   "head": 37120,
+   "decoder": 1137032,
+   "forecast_readout": 149376,
+   "engram_dense_part": 33664,
+   "engram_table": 20000320,
+   "decoder_concept_paths": 311808
+  },
+  "v10_3_shape": {
+   "dense": 5565476,
+   "training_only": 149376,
+   "deployed": 5416100
+  },
+  "v11": {
+   "dense_including_training_only": 5762982,
+   "training_only": {
+    "forecast_probe": 149376,
+    "bridge": 197504,
+    "log_sigmas": 2
+   },
+   "deployed": 5416100,
+   "engram_table": 20000320,
+   "under_10M": true
+  },
+  "c0_same_backbone": {
+   "dense": 4037656,
+   "engram_table": 20000320
+  },
+  "lora_rank4_per_phase": 98304,
+  "executed_blocks": {
+   "encoder": 14,
+   "encoder_unique": 10,
+   "concept": 8,
+   "concept_unique": 4,
+   "decoder": 4
+  },
+  "ordinary_transformer": {
+   "18": {
+    "dense": 4603776,
+    "layers": 18
+   },
+   "20": {
+    "dense": 4998784,
+    "layers": 20
+   },
+   "22": {
+    "dense": 5393792,
+    "layers": 22
+   },
+   "24": {
+    "dense": 5788800,
+    "layers": 24
+   },
+   "26": {
+    "dense": 6183808,
+    "layers": 26
+   },
+   "28": {
+    "dense": 6578816,
+    "layers": 28
+   }
+  },
+  "ordinary_block_params": 197504
+ },
+ "tiny_v10_3_shape": {
+  "config": {
+   "vocab_size": 1024,
+   "width": 56,
+   "heads": 4,
+   "e1_layers": 2,
+   "e2_layers": 1,
+   "e3_layers": 1,
+   "encoder_visits": 2,
+   "concept_layers": 2,
+   "concept_visits": 2,
+   "decoder_layers": 2,
+   "ffn_expansion": 4,
+   "window": 64,
+   "group": 8,
+   "slots": 2,
+   "codes": 8,
+   "code_width": 16,
+   "gate_rank": 16,
+   "pq_segments": 4,
+   "pq_words": 16,
+   "engram_rows": [
+    16381,
+    16411,
+    16417,
+    16421
+   ],
+   "engram_dim": 16,
+   "engram_cpu": true,
+   "context": 256
+  },
+  "modules": {
+   "embedding": 57344,
+   "engram": 1057640,
+   "e1": 76048,
+   "e2": 45980,
+   "exit_reader": 3808,
+   "e3": 38024,
+   "pooler": 38697,
+   "encoder_concept_crc": 6610,
+   "core": 78201,
+   "head": 4544,
+   "decoder": 117548,
+   "forecast_readout": 29064,
+   "engram_dense_part": 7560,
+   "engram_table": 1050080,
+   "decoder_concept_paths": 34608
+  },
+  "v10_3_shape": {
+   "dense": 503428,
+   "training_only": 29064,
+   "deployed": 474364
+  },
+  "v11": {
+   "dense_including_training_only": 541454,
+   "training_only": {
+    "forecast_probe": 29064,
+    "bridge": 38024,
+    "log_sigmas": 2
+   },
+   "deployed": 474364,
+   "engram_table": 1050080,
+   "under_10M": true
+  },
+  "c0_same_backbone": {
+   "dense": 311704,
+   "engram_table": 1050080
+  },
+  "lora_rank4_per_phase": 17920,
+  "executed_blocks": {
+   "encoder": 5,
+   "encoder_unique": 4,
+   "concept": 4,
+   "concept_unique": 2,
+   "decoder": 2
+  },
+  "ordinary_transformer": {
+   "6": {
+    "dense": 285544,
+    "layers": 6
+   },
+   "8": {
+    "dense": 361592,
+    "layers": 8
+   },
+   "10": {
+    "dense": 437640,
+    "layers": 10
+   }
+  },
+  "ordinary_block_params": 38024
+ },
+ "tiny_reference_depths": {
+  "config": {
+   "vocab_size": 1024,
+   "width": 56,
+   "heads": 4,
+   "e1_layers": 4,
+   "e2_layers": 4,
+   "e3_layers": 2,
+   "encoder_visits": 2,
+   "concept_layers": 4,
+   "concept_visits": 2,
+   "decoder_layers": 4,
+   "ffn_expansion": 4,
+   "window": 64,
+   "group": 8,
+   "slots": 2,
+   "codes": 8,
+   "code_width": 16,
+   "gate_rank": 16,
+   "pq_segments": 4,
+   "pq_words": 16,
+   "engram_rows": [
+    16381,
+    16411,
+    16417,
+    16421
+   ],
+   "engram_dim": 16,
+   "engram_cpu": true,
+   "context": 256
+  },
+  "modules": {
+   "embedding": 57344,
+   "engram": 1057640,
+   "e1": 152096,
+   "e2": 183920,
+   "exit_reader": 3808,
+   "e3": 76048,
+   "pooler": 38697,
+   "encoder_concept_crc": 6610,
+   "core": 154249,
+   "head": 4544,
+   "decoder": 219248,
+   "forecast_readout": 29064,
+   "engram_dense_part": 7560,
+   "engram_table": 1050080,
+   "decoder_concept_paths": 59808
+  },
+  "v10_3_shape": {
+   "dense": 933188,
+   "training_only": 29064,
+   "deployed": 904124
+  },
+  "v11": {
+   "dense_including_training_only": 971214,
+   "training_only": {
+    "forecast_probe": 29064,
+    "bridge": 38024,
+    "log_sigmas": 2
+   },
+   "deployed": 904124,
+   "engram_table": 1050080,
+   "under_10M": true
+  },
+  "c0_same_backbone": {
+   "dense": 640216,
+   "engram_table": 1050080
+  },
+  "lora_rank4_per_phase": 43008,
+  "executed_blocks": {
+   "encoder": 14,
+   "encoder_unique": 10,
+   "concept": 8,
+   "concept_unique": 4,
+   "decoder": 4
+  }
+ },
+ "decoder8_stress": {
+  "config": {
+   "vocab_size": 8192,
+   "width": 128,
+   "heads": 4,
+   "e1_layers": 4,
+   "e2_layers": 4,
+   "e3_layers": 2,
+   "encoder_visits": 2,
+   "concept_layers": 4,
+   "concept_visits": 2,
+   "decoder_layers": 8,
+   "ffn_expansion": 4,
+   "window": 64,
+   "group": 8,
+   "slots": 2,
+   "codes": 8,
+   "code_width": 32,
+   "gate_rank": 32,
+   "pq_segments": 8,
+   "pq_words": 32,
+   "engram_rows": [
+    156241,
+    156253,
+    156257,
+    156259
+   ],
+   "engram_dim": 32,
+   "engram_cpu": true
+  },
+  "modules": {
+   "embedding": 1048576,
+   "engram": 20033984,
+   "e1": 790016,
+   "e2": 928272,
+   "exit_reader": 16896,
+   "e3": 395008,
+   "pooler": 199041,
+   "encoder_concept_crc": 33538,
+   "core": 796937,
+   "head": 37120,
+   "decoder": 2191760,
+   "forecast_readout": 149376,
+   "engram_dense_part": 33664,
+   "engram_table": 20000320,
+   "decoder_concept_paths": 574464
+  },
+  "v10_3_shape": {
+   "dense": 6620204,
+   "training_only": 149376,
+   "deployed": 6470828
+  },
+  "v11": {
+   "dense_including_training_only": 6817710,
+   "training_only": {
+    "forecast_probe": 149376,
+    "bridge": 197504,
+    "log_sigmas": 2
+   },
+   "deployed": 6470828,
+   "engram_table": 20000320,
+   "under_10M": true
+  },
+  "c0_same_backbone": {
+   "dense": 4829728,
+   "engram_table": 20000320
+  },
+  "lora_rank4_per_phase": 131072,
+  "executed_blocks": {
+   "encoder": 14,
+   "encoder_unique": 10,
+   "concept": 8,
+   "concept_unique": 4,
+   "decoder": 8
+  }
+ },
+ "compute": {
+  "reference_10M": {
+   "macs": {
+    "T": 384,
+    "S": 3,
+    "K": 8,
+    "deployed": 6305792.0,
+    "c0": 5464064.0,
+    "training_only": {
+     "bridge": 167936.0,
+     "kl_head": 1048576,
+     "probe": 74752.0,
+     "mixture_variants": 108544.0,
+     "total": 1399808.0
+    },
+    "training_total": 7705600.0,
+    "train_overhead_vs_deployed": 0.22198765833062684,
+    "ordinary": {
+     "16": 4980736.0,
+     "17": 5226496.0,
+     "18": 5472256.0,
+     "19": 5718016.0,
+     "20": 5963776.0,
+     "21": 6209536.0,
+     "22": 6455296.0,
+     "23": 6701056.0,
+     "24": 6946816.0,
+     "25": 7192576.0,
+     "26": 7438336.0,
+     "27": 7684096.0,
+     "28": 7929856.0,
+     "29": 8175616.0
+    },
+    "compute_matched_ordinary_layers": 21
+   },
+   "gates": {
+    "per_gmm_block": 7184,
+    "gmms_per_phase_pos": 80,
+    "floats_per_phase_pos_and_neg": 287360
+   }
+  },
+  "tiny_v10_3_shape": {
+   "macs": {
+    "T": 256,
+    "S": 2,
+    "K": 8,
+    "deployed": 525392.0,
+    "c0": 424704.0,
+    "training_only": {
+     "bridge": 32144.0,
+     "kl_head": 57344,
+     "probe": 5348.0,
+     "mixture_variants": 10752.0,
+     "total": 105588.0
+    },
+    "training_total": 630980.0,
+    "train_overhead_vs_deployed": 0.20096994244297592,
+    "ordinary": {
+     "4": 265216.0,
+     "5": 317184.0,
+     "6": 369152.0,
+     "7": 421120.0,
+     "8": 473088.0,
+     "9": 525056.0,
+     "10": 577024.0,
+     "11": 628992.0,
+     "12": 680960.0,
+     "13": 732928.0
+    },
+    "compute_matched_ordinary_layers": 9
+   },
+   "gates": {
+    "per_gmm_block": 3152,
+    "gmms_per_phase_pos": 32,
+    "floats_per_phase_pos_and_neg": 50432
+   }
+  }
+ }
+}
