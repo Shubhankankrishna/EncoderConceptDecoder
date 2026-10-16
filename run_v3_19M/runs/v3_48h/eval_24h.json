@@ -1,0 +1,3113 @@
+{
+ "ckpt": "../runs/v3_48h/ckpt_last.pt",
+ "step": 8133,
+ "eval_R": "3",
+ "split": "val",
+ "time": "2026-10-01 01:10",
+ "lang": {
+  "tinystories": {
+   "intact": {
+    "nats": 1.8623289318028706,
+    "bpb": 0.6771296671492798,
+    "tokens": 256423,
+    "delta_vs_intact": 0.0
+   },
+   "core_off": {
+    "nats": 2.5283849753995353,
+    "bpb": 0.9193029478203633,
+    "tokens": 256423,
+    "delta_vs_intact": 0.6660560435966647
+   },
+   "plan_swap": {
+    "nats": 2.977306087164812,
+    "bpb": 1.0825274984327158,
+    "tokens": 256423,
+    "delta_vs_intact": 1.1149771553619412
+   },
+   "u_off": {
+    "nats": 2.4605038293659307,
+    "bpb": 0.8946218417952587,
+    "tokens": 256423,
+    "delta_vs_intact": 0.5981748975630601
+   },
+   "c_off": {
+    "nats": 1.8754200670132943,
+    "bpb": 0.6818895115979504,
+    "tokens": 256423,
+    "delta_vs_intact": 0.01309113521042371
+   },
+   "shared_ffn_off": {
+    "nats": 1.866702888147709,
+    "bpb": 0.6787200068327419,
+    "tokens": 256423,
+    "delta_vs_intact": 0.004373956344838392
+   },
+   "table_off": {
+    "nats": 1.8692912988103398,
+    "bpb": 0.6796611346971606,
+    "tokens": 256423,
+    "delta_vs_intact": 0.006962367007469217
+   },
+   "engram_off": {
+    "nats": 2.3384100190103365,
+    "bpb": 0.8502293933103195,
+    "tokens": 256423,
+    "delta_vs_intact": 0.4760810872074659
+   },
+   "engram_read2_off": {
+    "nats": 1.877250323364007,
+    "bpb": 0.6825549799007792,
+    "tokens": 256423,
+    "delta_vs_intact": 0.014921391561136366
+   },
+   "F_off": {
+    "nats": 2.0306465887786,
+    "bpb": 0.7383287803118446,
+    "tokens": 256423,
+    "delta_vs_intact": 0.16831765697572942
+   },
+   "R1": {
+    "nats": 1.8688943278659675,
+    "bpb": 0.6795167988610791,
+    "tokens": 256423,
+    "delta_vs_intact": 0.006565396063096918
+   },
+   "R2a": {
+    "nats": 1.86340049304823,
+    "bpb": 0.6775192792618391,
+    "tokens": 256423,
+    "delta_vs_intact": 0.0010715612453593426
+   },
+   "R2b": {
+    "nats": 1.8636417764177746,
+    "bpb": 0.6776070081935647,
+    "tokens": 256423,
+    "delta_vs_intact": 0.0013128446149039963
+   },
+   "R3": {
+    "nats": 1.8623289318028706,
+    "bpb": 0.6771296671492798,
+    "tokens": 256423,
+    "delta_vs_intact": 0.0
+   }
+  },
+  "wikitext": {
+   "intact": {
+    "nats": 3.403427754000722,
+    "bpb": 1.3544623242673393,
+    "tokens": 261734,
+    "delta_vs_intact": 0.0
+   },
+   "core_off": {
+    "nats": 3.9169618721022585,
+    "bpb": 1.5588335245599714,
+    "tokens": 261734,
+    "delta_vs_intact": 0.5135341181015365
+   },
+   "plan_swap": {
+    "nats": 3.787090891002411,
+    "bpb": 1.5071487633046157,
+    "tokens": 261734,
+    "delta_vs_intact": 0.38366313700168897
+   },
+   "u_off": {
+    "nats": 3.810096860176983,
+    "bpb": 1.516304450080568,
+    "tokens": 261734,
+    "delta_vs_intact": 0.40666910617626106
+   },
+   "c_off": {
+    "nats": 3.4168214138686603,
+    "bpb": 1.3597925997973102,
+    "tokens": 261734,
+    "delta_vs_intact": 0.013393659867938279
+   },
+   "shared_ffn_off": {
+    "nats": 3.4061727582321173,
+    "bpb": 1.3555547537472976,
+    "tokens": 261734,
+    "delta_vs_intact": 0.0027450042313952316
+   },
+   "table_off": {
+    "nats": 3.412119116969662,
+    "bpb": 1.3579212264503289,
+    "tokens": 261734,
+    "delta_vs_intact": 0.00869136296894002
+   },
+   "engram_off": {
+    "nats": 4.122775144564711,
+    "bpb": 1.6407410435478127,
+    "tokens": 261734,
+    "delta_vs_intact": 0.7193473905639891
+   },
+   "engram_read2_off": {
+    "nats": 3.4453592659317285,
+    "bpb": 1.3711498103006043,
+    "tokens": 261734,
+    "delta_vs_intact": 0.041931511931006415
+   },
+   "F_off": {
+    "nats": 3.514402921955115,
+    "bpb": 1.3986271177602447,
+    "tokens": 261734,
+    "delta_vs_intact": 0.11097516795439288
+   },
+   "R1": {
+    "nats": 3.4078204719235465,
+    "bpb": 1.3562104944527076,
+    "tokens": 261734,
+    "delta_vs_intact": 0.004392717922824474
+   },
+   "R2a": {
+    "nats": 3.4041528871213234,
+    "bpb": 1.3547509055339104,
+    "tokens": 261734,
+    "delta_vs_intact": 0.0007251331206012956
+   },
+   "R2b": {
+    "nats": 3.4044818045229124,
+    "bpb": 1.3548818048097138,
+    "tokens": 261734,
+    "delta_vs_intact": 0.0010540505221903196
+   },
+   "R3": {
+    "nats": 3.403427754000722,
+    "bpb": 1.3544623242673393,
+    "tokens": 261734,
+    "delta_vs_intact": 0.0
+   }
+  }
+ },
+ "seconds": {
+  "lang": 828.7114970684052,
+  "trunc": 196.4484190940857,
+  "items": 2257.185417175293,
+  "probes": 264.30773282051086,
+  "health": 10.992408275604248,
+  "audit": 33.45865821838379,
+  "gen": 87.73373007774353
+ },
+ "trunc": {
+  "tinystories": {
+   "r72": {
+    "nats": 2.0152798375339374,
+    "bpb": 0.7403605734403377,
+    "tokens": 2961
+   },
+   "r128": {
+    "nats": 1.9310013469269613,
+    "bpb": 0.7093988824273316,
+    "tokens": 2961
+   },
+   "r256": {
+    "nats": 1.9110825247798406,
+    "bpb": 0.7020812333780838,
+    "tokens": 2961
+   },
+   "r512": {
+    "nats": 1.9069700160569252,
+    "bpb": 0.7005704063159217,
+    "tokens": 2961
+   },
+   "r1024": {
+    "nats": 1.9071033636245804,
+    "bpb": 0.7006193946895547,
+    "tokens": 2961
+   },
+   "swap_r1024": {
+    "nats": 3.0571045100950625,
+    "bpb": 1.1230994356251074,
+    "tokens": 2961
+   },
+   "summary": {
+    "gain_beyond_70": 0.10817647390935692,
+    "swap_cost": 1.150001146470482,
+    "rows": 256,
+    "rows_ctx_ge_512": 3,
+    "gain_beyond_70_ctx512": 0.09557493527730306,
+    "swap_cost_ctx512": 1.3352770805358887,
+    "curve": {
+     "r72": 2.0152798375339374,
+     "r128": 1.9310013469269613,
+     "r256": 1.9110825247798406,
+     "r512": 1.9069700160569252,
+     "r1024": 1.9071033636245804
+    },
+    "curve_ctx512": {
+     "r72": 2.5402546723683677,
+     "r128": 2.453911383946737,
+     "r256": 2.426721731821696,
+     "r512": 2.436455408732096,
+     "r1024": 2.4446797370910645
+    }
+   }
+  },
+  "wikitext": {
+   "r72": {
+    "nats": 3.438667757370893,
+    "bpb": 1.3326752434132831,
+    "tokens": 4080
+   },
+   "r128": {
+    "nats": 3.404145943884756,
+    "bpb": 1.3192961182878362,
+    "tokens": 4080
+   },
+   "r256": {
+    "nats": 3.3857463724472945,
+    "bpb": 1.3121652597477638,
+    "tokens": 4080
+   },
+   "r512": {
+    "nats": 3.3756264518289005,
+    "bpb": 1.3082432269650002,
+    "tokens": 4080
+   },
+   "r1024": {
+    "nats": 3.367358024447572,
+    "bpb": 1.3050387509148098,
+    "tokens": 4080
+   },
+   "swap_r1024": {
+    "nats": 3.7489816927442363,
+    "bpb": 1.4529391736728294,
+    "tokens": 4080
+   },
+   "summary": {
+    "gain_beyond_70": 0.07130973292332099,
+    "swap_cost": 0.3816236682966645,
+    "rows": 256,
+    "rows_ctx_ge_512": 231,
+    "gain_beyond_70_ctx512": 0.06992480532947556,
+    "swap_cost_ctx512": 0.3392331607930072,
+    "curve": {
+     "r72": 3.438667757370893,
+     "r128": 3.404145943884756,
+     "r256": 3.3857463724472945,
+     "r512": 3.3756264518289005,
+     "r1024": 3.367358024447572
+    },
+    "curve_ctx512": {
+     "r72": 3.490509105451179,
+     "r128": 3.4584262534911496,
+     "r256": 3.440015791298507,
+     "r512": 3.429711714451447,
+     "r1024": 3.420584300121704
+    }
+   }
+  }
+ },
+ "items": {
+  "val": {
+   "intact": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.99609375
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.888671875,
+     "by_offset": [
+      0.9668,
+      0.9492,
+      0.9668
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.546875,
+     "by_offset": [
+      0.9497,
+      0.9487,
+      0.9434
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.154296875,
+     "exact_h4": 0.08139534883720931,
+     "exact_h2": 0.2558139534883721,
+     "exact_h3": 0.125
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.068359375
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.44
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.08
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.65
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.665
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.22
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.78
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.455
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.465
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.92
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.975
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.985
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.96
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.545
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.955
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.355
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.995
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.255
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.45
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.74
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.785
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.96
+    },
+    "_macro_synthetic": 0.6492857142857144
+   },
+   "core_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.00390625
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0059,
+      0.0039,
+      0.0039
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0093,
+      0.0068,
+      0.0098
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.056640625
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.01
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.015
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.08
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.025
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.04
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.38
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.035
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.025
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.01
+    },
+    "_macro_synthetic": 0.029523809523809525
+   },
+   "plan_swap": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.005859375
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0137,
+      0.0059,
+      0.0059
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0078,
+      0.0049,
+      0.0068
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.064453125
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.005
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.015
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.005
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.055
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.025
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.055
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.005
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.38
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.035
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.03
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.02904761904761905
+   },
+   "u_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.013671875
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0293,
+      0.0117,
+      0.0098
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0327,
+      0.0186,
+      0.0137
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.06640625
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.005
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.025
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.005
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.065
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.045
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.11
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.005
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.4
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.06
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.035
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.015
+    },
+    "_macro_synthetic": 0.03666666666666667
+   },
+   "c_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.99609375
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.873046875,
+     "by_offset": [
+      0.9668,
+      0.9473,
+      0.9531
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.49609375,
+     "by_offset": [
+      0.9468,
+      0.9395,
+      0.9277
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.140625,
+     "exact_h4": 0.0872093023255814,
+     "exact_h2": 0.25,
+     "exact_h3": 0.08333333333333333
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.068359375
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.44
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.095
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.625
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.685
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.235
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.78
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.45
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.46
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.89
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.91
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.965
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.92
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.5
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.925
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.305
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.98
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.265
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.425
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.63
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.705
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.96
+    },
+    "_macro_synthetic": 0.6261904761904762
+   },
+   "shared_ffn_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.99609375
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.861328125,
+     "by_offset": [
+      0.9609,
+      0.9492,
+      0.9434
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.41796875,
+     "by_offset": [
+      0.9438,
+      0.9312,
+      0.9062
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.14453125,
+     "exact_h4": 0.0872093023255814,
+     "exact_h2": 0.23837209302325582,
+     "exact_h3": 0.10714285714285714
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.07421875
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.45
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.085
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.63
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.655
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.225
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.765
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.405
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.445
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.88
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.91
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.99
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.955
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.495
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.935
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.345
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.99
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.22
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.405
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.65
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.73
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.965
+    },
+    "_macro_synthetic": 0.6252380952380954
+   },
+   "table_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.99609375
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.89453125,
+     "by_offset": [
+      0.9746,
+      0.9492,
+      0.9688
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.552734375,
+     "by_offset": [
+      0.9556,
+      0.9453,
+      0.9419
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.158203125,
+     "exact_h4": 0.11627906976744186,
+     "exact_h2": 0.25,
+     "exact_h3": 0.10714285714285714
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.06640625
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.45
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.075
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.65
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.645
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.2
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.775
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.465
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.46
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.91
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.975
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.985
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.945
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.545
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.925
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.34
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.99
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.245
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.435
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.735
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.765
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.955
+    },
+    "_macro_synthetic": 0.6414285714285715
+   },
+   "engram_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.4921875
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.0703125,
+     "by_offset": [
+      0.457,
+      0.373,
+      0.2773
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.3911,
+      0.437,
+      0.373
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.044921875
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.375
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.025
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.08
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.19
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.205
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.64
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.255
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.01
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.6
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.715
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.085
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.345
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.085
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.315
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.06
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.155
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.02
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.35
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.24
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.215
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.895
+    },
+    "_macro_synthetic": 0.27904761904761904
+   },
+   "engram_read2_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.99609375
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.892578125,
+     "by_offset": [
+      0.9707,
+      0.957,
+      0.959
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.53125,
+     "by_offset": [
+      0.9507,
+      0.9414,
+      0.9385
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.140625,
+     "exact_h4": 0.0755813953488372,
+     "exact_h2": 0.23837209302325582,
+     "exact_h3": 0.10714285714285714
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.06640625
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.445
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.075
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.635
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.615
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.21
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.78
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.425
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.435
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.9
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.945
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.95
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.945
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.52
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.95
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.35
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.97
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.305
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.45
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.745
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.78
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.965
+    },
+    "_macro_synthetic": 0.6378571428571429
+   },
+   "F_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.93359375
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.240234375,
+     "by_offset": [
+      0.9648,
+      0.7148,
+      0.3809
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.938,
+      0.6787,
+      0.3276
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.037109375,
+     "exact_h4": 0.01744186046511628,
+     "exact_h2": 0.05813953488372093,
+     "exact_h3": 0.03571428571428571
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.05859375
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.27
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.055
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.03
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.44
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.125
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.455
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.29
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.015
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.55
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.175
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.89
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.055
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.105
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.11
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.035
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.23
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.095
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.06
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.18
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.145
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.56
+    },
+    "_macro_synthetic": 0.23190476190476195
+   },
+   "R1": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.99609375
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.880859375,
+     "by_offset": [
+      0.9609,
+      0.9512,
+      0.9688
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.45703125,
+     "by_offset": [
+      0.9365,
+      0.9331,
+      0.9385
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.140625,
+     "exact_h4": 0.09302325581395349,
+     "exact_h2": 0.21511627906976744,
+     "exact_h3": 0.1130952380952381
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.0703125
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.445
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.065
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.65
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.66
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.225
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.77
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.45
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.49
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.89
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.945
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.985
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.945
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.56
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.945
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.31
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.995
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.275
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.425
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.745
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.79
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.955
+    },
+    "_macro_synthetic": 0.6438095238095238
+   },
+   "R2a": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.99609375
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.892578125,
+     "by_offset": [
+      0.9668,
+      0.9551,
+      0.9668
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.537109375,
+     "by_offset": [
+      0.9458,
+      0.9458,
+      0.9463
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.146484375,
+     "exact_h4": 0.08139534883720931,
+     "exact_h2": 0.2441860465116279,
+     "exact_h3": 0.1130952380952381
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.06640625
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.445
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.085
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.65
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.675
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.225
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.785
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.455
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.49
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.915
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.965
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.985
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.95
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.54
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.955
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.35
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.995
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.26
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.435
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.745
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.805
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.955
+    },
+    "_macro_synthetic": 0.6507142857142858
+   },
+   "R2b": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.99609375
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.890625,
+     "by_offset": [
+      0.9648,
+      0.9551,
+      0.9668
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.537109375,
+     "by_offset": [
+      0.9463,
+      0.9473,
+      0.9463
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.140625,
+     "exact_h4": 0.0872093023255814,
+     "exact_h2": 0.22093023255813954,
+     "exact_h3": 0.1130952380952381
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.068359375
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.445
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.08
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.655
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.67
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.225
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.775
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.455
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.485
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.92
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.965
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.985
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.96
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.555
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.955
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.355
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.995
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.265
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.425
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.74
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.795
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.96
+    },
+    "_macro_synthetic": 0.6507142857142857
+   }
+  }
+ },
+ "probes": {
+  "G_E1_concept_to_token": {
+   "pos0": {
+    "acc": 0.5439382195472717,
+    "n_train": 25900,
+    "n_test": 6475,
+    "classes": 4187,
+    "majority_baseline": 0.044015444815158844
+   },
+   "pos1": {
+    "acc": 0.5423938035964966,
+    "n_train": 25900,
+    "n_test": 6475,
+    "classes": 4216,
+    "majority_baseline": 0.04895753040909767
+   },
+   "pos2": {
+    "acc": 0.5848648548126221,
+    "n_train": 25900,
+    "n_test": 6475,
+    "classes": 4224,
+    "majority_baseline": 0.047567568719387054
+   },
+   "pos3": {
+    "acc": 0.6965250968933105,
+    "n_train": 25900,
+    "n_test": 6475,
+    "classes": 4164,
+    "majority_baseline": 0.046640925109386444
+   }
+  },
+  "u_query_to_answer_lr_recall1": {
+   "tok0": {
+    "acc": 0.7864077687263489,
+    "n_train": 409,
+    "n_test": 103,
+    "classes": 124,
+    "majority_baseline": 0.009708737954497337
+   }
+  },
+  "u_query_to_answer_lr_carry3": {
+   "tok0": {
+    "acc": 0.5728155374526978,
+    "n_train": 409,
+    "n_test": 103,
+    "classes": 123,
+    "majority_baseline": 0.019417475908994675
+   },
+   "tok1": {
+    "acc": 0.1456310749053955,
+    "n_train": 409,
+    "n_test": 103,
+    "classes": 124,
+    "majority_baseline": 0.009708737954497337
+   },
+   "tok2": {
+    "acc": 0.03883495181798935,
+    "n_train": 409,
+    "n_test": 103,
+    "classes": 124,
+    "majority_baseline": 0.019417475908994675
+   }
+  },
+  "u_query_to_answer_lr_multi4": {
+   "tok0": {
+    "acc": 0.8073170781135559,
+    "n_train": 1638,
+    "n_test": 410,
+    "classes": 125,
+    "majority_baseline": 0.007317073177546263
+   },
+   "tok1": {
+    "acc": 0.19512194395065308,
+    "n_train": 1638,
+    "n_test": 410,
+    "classes": 125,
+    "majority_baseline": 0.009756097570061684
+   },
+   "tok2": {
+    "acc": 0.10000000149011612,
+    "n_train": 1638,
+    "n_test": 410,
+    "classes": 125,
+    "majority_baseline": 0.002439024392515421
+   }
+  },
+  "u_query_to_answer_lr_hop": {
+   "tok0": {
+    "acc": 0.2330097109079361,
+    "n_train": 409,
+    "n_test": 103,
+    "classes": 121,
+    "majority_baseline": 0.058252427726984024
+   },
+   "tok1": {
+    "acc": 0.06796116381883621,
+    "n_train": 409,
+    "n_test": 103,
+    "classes": 117,
+    "majority_baseline": 0.029126213863492012
+   }
+  },
+  "u_query_to_answer_lr_bind": {
+   "tok0": {
+    "acc": 0.3106796145439148,
+    "n_train": 409,
+    "n_test": 103,
+    "classes": 9,
+    "majority_baseline": 0.42718446254730225
+   }
+  },
+  "lr_hop_bridge_by_pass": {
+   "pass1": {
+    "acc": 0.17475728690624237,
+    "n_train": 409,
+    "n_test": 103,
+    "classes": 107,
+    "majority_baseline": 0.04854368790984154
+   },
+   "pass2": {
+    "acc": 0.17475728690624237,
+    "n_train": 409,
+    "n_test": 103,
+    "classes": 107,
+    "majority_baseline": 0.04854368790984154
+   },
+   "pass3": {
+    "acc": 0.17475728690624237,
+    "n_train": 409,
+    "n_test": 103,
+    "classes": 107,
+    "majority_baseline": 0.04854368790984154
+   }
+  }
+ },
+ "health": {
+  "codebook": {
+   "codes_used_frac_min": 1.0,
+   "codes_used_frac_mean": 1.0,
+   "perplexity_mean": 117.70304870605469,
+   "var_explained": 0.650984287180915,
+   "ncp_ce": 3.074105323175466,
+   "ncp_ce_M1": 3.0787785868423456,
+   "code_entropy": 4.76799201965332,
+   "n_concepts": 14787,
+   "ncp_pairs": 13685
+  },
+  "telemetry": {
+   "crc_mix_e0_L_G": [
+    0.109,
+    0.074,
+    0.817
+   ],
+   "engram_Wv_norm": 37.85385513305664,
+   "engram2_Wv_norm": 46.073516845703125,
+   "shared_w2_norm": 17.24098014831543,
+   "table_norm": 25.662992477416992,
+   "engram_alpha_mean": 0.7409019470214844,
+   "tau": {
+    "enc.layers.3.attn.log_tau": [
+     1.3072,
+     1.3349,
+     1.2312,
+     1.1234,
+     1.3334,
+     1.3589
+    ],
+    "enc.layers.7.attn.log_tau": [
+     1.3003,
+     0.9392,
+     0.9794,
+     1.6274,
+     1.0194,
+     1.0701
+    ],
+    "core.log_tau": [
+     2.2705,
+     1.9791,
+     2.309,
+     1.9239,
+     2.1514,
+     2.3751,
+     1.9909,
+     2.0611,
+     2.2078,
+     2.2673,
+     2.0513,
+     2.1288,
+     2.1524,
+     2.045,
+     2.2217,
+     2.2448,
+     1.9648,
+     2.1133,
+     2.2022,
+     2.0851,
+     2.0673,
+     2.4487,
+     2.2303,
+     2.1345,
+     2.0284,
+     2.1019,
+     2.1566,
+     2.2254,
+     2.3484,
+     2.1767,
+     2.0857,
+     2.2604
+    ],
+    "core.layers.0.attn.log_tau": [
+     1.0879,
+     0.7794,
+     0.7919,
+     0.8621,
+     1.0731,
+     0.968
+    ],
+    "core.layers.1.attn.log_tau": [
+     1.09,
+     0.9545,
+     1.138,
+     1.4713,
+     1.2273,
+     1.3936
+    ],
+    "core.layers.2.attn.log_tau": [
+     1.3167,
+     1.6647,
+     1.317,
+     2.037,
+     1.444,
+     0.817
+    ],
+    "core.layers.3.attn.log_tau": [
+     2.0928,
+     1.5482,
+     1.2879,
+     2.0004,
+     1.688,
+     1.7759
+    ]
+   },
+   "mps_alloc_gib": 0.38591885566711426,
+   "mps_driver_gib": 4.387420654296875,
+   "swap": "total = 2048.00M  used = 859.88M  free = 1188.12M  (encrypted)"
+  },
+  "loop_dynamics_lr_hop": {
+   "3": {
+    "sched": "3",
+    "state_norm": [
+     31.213157653808594,
+     66.77261352539062,
+     102.494873046875
+    ],
+    "step": [
+     31.213157653808594,
+     36.891151428222656,
+     36.57878112792969
+    ],
+    "consecutive_step_angle_deg": [
+     22.748233795166016,
+     6.212635040283203
+    ],
+    "turn_deg": [
+     12.24732494354248,
+     5.452287673950195
+    ],
+    "rho": 0.9778214693069458,
+    "rel_step": [
+     1.1819102648117128,
+     1.1719026166346995
+    ],
+    "grad": [
+     0.0001273476518690586,
+     0.0001181023835670203,
+     0.00011629479558905587
+    ],
+    "grad_ratio_S1_over_SM": 1.0950417103707681
+   },
+   "2b": {
+    "sched": "2b",
+    "state_norm": [
+     30.261245727539062,
+     67.853515625
+    ],
+    "step": [
+     30.261245727539062,
+     38.75104522705078
+    ],
+    "consecutive_step_angle_deg": [
+     21.338769912719727
+    ],
+    "turn_deg": [
+     11.827447891235352
+    ],
+    "rho": 0.9822715520858765,
+    "rel_step": [
+     1.2805502316709199
+    ],
+    "grad": [
+     0.00018160554463975132,
+     0.0001741209125611931
+    ],
+    "grad_ratio_S1_over_SM": 1.04298525644315
+   },
+   "2a": {
+    "sched": "2a",
+    "state_norm": [
+     31.213157653808594,
+     94.267578125
+    ],
+    "step": [
+     31.213157653808594,
+     65.1806640625
+    ],
+    "consecutive_step_angle_deg": [
+     25.879974365234375
+    ],
+    "turn_deg": [
+     17.41961669921875
+    ],
+    "rho": 0.9765819311141968,
+    "rel_step": [
+     2.0882431949190097
+    ],
+    "grad": [
+     0.00013686581223737448,
+     0.00012757876538671553
+    ],
+    "grad_ratio_S1_over_SM": 1.0727946129789558
+   }
+  }
+ },
+ "audit": {
+  "batches": {
+   "tinystories/1": {
+    "encoder": {
+     "g_main": 0.9021600731551881,
+     "g_short": 0.025611250596345513,
+     "norm_of_sum": 0.9074694508636116,
+     "cos": 0.19372207390995472,
+     "proj_short_on_main": 0.004961464580951617
+    },
+    "core_attn": {
+     "g_main": 0.24099949482704644,
+     "g_short": 0.01685427603180611,
+     "norm_of_sum": 0.24717995397755066,
+     "cos": 0.33643434783513454,
+     "proj_short_on_main": 0.005670357364994028
+    },
+    "core_own_ffn": {
+     "g_main": 0.09577486499239427,
+     "g_short": 0.009988430626326655,
+     "norm_of_sum": 0.09969169141538266,
+     "cos": 0.34800939362547983,
+     "proj_short_on_main": 0.003476067685538111
+    },
+    "core_reads_writes": {
+     "g_main": 0.04904530779018117,
+     "g_short": 0.004353455401764213,
+     "norm_of_sum": 0.050537637411265844,
+     "cos": 0.3036251728313205,
+     "proj_short_on_main": 0.001321818648774105
+    },
+    "core_shared": {
+     "g_main": 0.07703853923032841,
+     "g_short": 0.009598339077823235,
+     "norm_of_sum": 0.08084260924430026,
+     "cos": 0.343815211188688,
+     "proj_short_on_main": 0.003300054977102432
+    },
+    "core_table": {
+     "g_main": 0.010970767961840738,
+     "g_short": 0.0013762984601841707,
+     "norm_of_sum": 0.011056760245390925,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.04309143948020597,
+     "g_short": 0.011545611027722643,
+     "norm_of_sum": 0.05056275744990149,
+     "cos": 0.5692460275249197,
+     "proj_short_on_main": 0.006572293212879021
+    },
+    "dec_plan": {
+     "g_main": 0.28639108036159516,
+     "g_short": 0.0,
+     "norm_of_sum": 0.28639108036159516,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "tinystories/2a": {
+    "encoder": {
+     "g_main": 0.9021600723883451,
+     "g_short": 0.025506753184617318,
+     "norm_of_sum": 0.9076105317598688,
+     "cos": 0.2001959259457973,
+     "proj_short_on_main": 0.005106348071665378
+    },
+    "core_attn": {
+     "g_main": 0.2409994945617455,
+     "g_short": 0.016666607983091844,
+     "norm_of_sum": 0.24771781414519414,
+     "cos": 0.374141095076578,
+     "proj_short_on_main": 0.00623566296200602
+    },
+    "core_own_ffn": {
+     "g_main": 0.09577486475215392,
+     "g_short": 0.010498168068122912,
+     "norm_of_sum": 0.10042274259634841,
+     "cos": 0.39866850977069623,
+     "proj_short_on_main": 0.0041852890190408705
+    },
+    "core_reads_writes": {
+     "g_main": 0.049045308251937314,
+     "g_short": 0.004507715743370759,
+     "norm_of_sum": 0.050842065079858306,
+     "cos": 0.3599424580123024,
+     "proj_short_on_main": 0.001622518284689624
+    },
+    "core_shared": {
+     "g_main": 0.07703853909271152,
+     "g_short": 0.009249114047099218,
+     "norm_of_sum": 0.0808899384230953,
+     "cos": 0.3667869995528157,
+     "proj_short_on_main": 0.003392454789857322
+    },
+    "core_table": {
+     "g_main": 0.010970767972103557,
+     "g_short": 0.0010863862393445157,
+     "norm_of_sum": 0.011329276079509355,
+     "cos": 0.28587978634105765,
+     "proj_short_on_main": 0.0003105758659876753
+    },
+    "ncp_head": {
+     "g_main": 0.04309143944900972,
+     "g_short": 0.011478994363298524,
+     "norm_of_sum": 0.05064790147727173,
+     "cos": 0.5828107408605995,
+     "proj_short_on_main": 0.006690081209208659
+    },
+    "dec_plan": {
+     "g_main": 0.28639107941235714,
+     "g_short": 0.0,
+     "norm_of_sum": 0.28639107941235714,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "tinystories/2b": {
+    "encoder": {
+     "g_main": 0.9021600719318111,
+     "g_short": 0.025627259747316427,
+     "norm_of_sum": 0.9076043312422805,
+     "cos": 0.19887789393026384,
+     "proj_short_on_main": 0.0050966954457501166
+    },
+    "core_attn": {
+     "g_main": 0.24099949391172312,
+     "g_short": 0.01645228953290347,
+     "norm_of_sum": 0.2475672128584002,
+     "cos": 0.3705038888619564,
+     "proj_short_on_main": 0.006095637252623595
+    },
+    "core_own_ffn": {
+     "g_main": 0.09577486489964306,
+     "g_short": 0.010374111710216297,
+     "norm_of_sum": 0.10024184193528905,
+     "cos": 0.3864714432631327,
+     "proj_short_on_main": 0.004009297925220259
+    },
+    "core_reads_writes": {
+     "g_main": 0.04904530836602398,
+     "g_short": 0.004328278753663821,
+     "norm_of_sum": 0.050724482858036095,
+     "cos": 0.35047025991395137,
+     "proj_short_on_main": 0.0015169329797765929
+    },
+    "core_shared": {
+     "g_main": 0.07703853906222115,
+     "g_short": 0.009428539526332217,
+     "norm_of_sum": 0.08095451801740108,
+     "cos": 0.3646948240595941,
+     "proj_short_on_main": 0.0034385395636946565
+    },
+    "core_table": {
+     "g_main": 0.010970767989781452,
+     "g_short": 0.0011956986362225241,
+     "norm_of_sum": 0.011102258964786471,
+     "cos": 0.05613426812511868,
+     "proj_short_on_main": 6.711966784255392e-05
+    },
+    "ncp_head": {
+     "g_main": 0.04309143941184667,
+     "g_short": 0.011498669896373877,
+     "norm_of_sum": 0.05067119426671665,
+     "cos": 0.583738745141159,
+     "proj_short_on_main": 0.006712219136101707
+    },
+    "dec_plan": {
+     "g_main": 0.2863910802283751,
+     "g_short": 0.0,
+     "norm_of_sum": 0.2863910802283751,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "wikitext/1": {
+    "encoder": {
+     "g_main": 1.279174680512051,
+     "g_short": 0.020840767921944673,
+     "norm_of_sum": 1.2838304786752843,
+     "cos": 0.21565896300580978,
+     "proj_short_on_main": 0.004494498398291333
+    },
+    "core_attn": {
+     "g_main": 0.28111295996753766,
+     "g_short": 0.012033772215722204,
+     "norm_of_sum": 0.28589546370102126,
+     "cos": 0.3794003192502376,
+     "proj_short_on_main": 0.004565617020429643
+    },
+    "core_own_ffn": {
+     "g_main": 0.09816142995473871,
+     "g_short": 0.0072512718968359546,
+     "norm_of_sum": 0.10065826722197693,
+     "cos": 0.31177470274374247,
+     "proj_short_on_main": 0.002260763140150083
+    },
+    "core_reads_writes": {
+     "g_main": 0.05808031670741851,
+     "g_short": 0.003192037949801817,
+     "norm_of_sum": 0.06015167999909135,
+     "cos": 0.633007496367736,
+     "proj_short_on_main": 0.0020205839509148493
+    },
+    "core_shared": {
+     "g_main": 0.07720470684632519,
+     "g_short": 0.007008715030999504,
+     "norm_of_sum": 0.07960328942951461,
+     "cos": 0.3021542633901721,
+     "proj_short_on_main": 0.002117713127503282
+    },
+    "core_table": {
+     "g_main": 0.013771994518507727,
+     "g_short": 0.0010625733456906424,
+     "norm_of_sum": 0.013812924930396875,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.054516018150553854,
+     "g_short": 0.011627985869652446,
+     "norm_of_sum": 0.06070851411269232,
+     "cos": 0.4561499560123344,
+     "proj_short_on_main": 0.005304105242954008
+    },
+    "dec_plan": {
+     "g_main": 0.3758605723622242,
+     "g_short": 0.0,
+     "norm_of_sum": 0.3758605723622242,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "wikitext/2a": {
+    "encoder": {
+     "g_main": 1.279174681805508,
+     "g_short": 0.020354709559331705,
+     "norm_of_sum": 1.2836115250281979,
+     "cos": 0.21039808729619,
+     "proj_short_on_main": 0.004282591958752865
+    },
+    "core_attn": {
+     "g_main": 0.2811129603362541,
+     "g_short": 0.011537717429415426,
+     "norm_of_sum": 0.285602093011252,
+     "cos": 0.37166842295429015,
+     "proj_short_on_main": 0.004288205241483057
+    },
+    "core_own_ffn": {
+     "g_main": 0.09816143008411497,
+     "g_short": 0.007157314351700128,
+     "norm_of_sum": 0.10077618704085516,
+     "cos": 0.3337353523107885,
+     "proj_short_on_main": 0.002388648826763705
+    },
+    "core_reads_writes": {
+     "g_main": 0.05808031595312269,
+     "g_short": 0.003200907023663037,
+     "norm_of_sum": 0.06013543127251908,
+     "cos": 0.625844693066993,
+     "proj_short_on_main": 0.0020032706737603753
+    },
+    "core_shared": {
+     "g_main": 0.07720470681652375,
+     "g_short": 0.006686312935487739,
+     "norm_of_sum": 0.07945694857037242,
+     "cos": 0.29845436724250063,
+     "proj_short_on_main": 0.0019955592963463403
+    },
+    "core_table": {
+     "g_main": 0.013771994519613095,
+     "g_short": 0.0007522706196562109,
+     "norm_of_sum": 0.013983376821842189,
+     "cos": 0.2558371943664218,
+     "proj_short_on_main": 0.0001924588047371346
+    },
+    "ncp_head": {
+     "g_main": 0.05451601873327568,
+     "g_short": 0.011494180142761549,
+     "norm_of_sum": 0.06068118962567375,
+     "cos": 0.4612820543268637,
+     "proj_short_on_main": 0.0053020590290560905
+    },
+    "dec_plan": {
+     "g_main": 0.37586057280896457,
+     "g_short": 0.0,
+     "norm_of_sum": 0.37586057280896457,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "wikitext/2b": {
+    "encoder": {
+     "g_main": 1.2791746795368244,
+     "g_short": 0.020551683594437722,
+     "norm_of_sum": 1.2837866833208822,
+     "cos": 0.21678139161863363,
+     "proj_short_on_main": 0.0044552225697080524
+    },
+    "core_attn": {
+     "g_main": 0.2811129588615284,
+     "g_short": 0.011336032782351443,
+     "norm_of_sum": 0.28577238131710797,
+     "cos": 0.39427121101447204,
+     "proj_short_on_main": 0.004469471373197458
+    },
+    "core_own_ffn": {
+     "g_main": 0.09816142966470066,
+     "g_short": 0.007089254706513235,
+     "norm_of_sum": 0.10073625911343105,
+     "cos": 0.3318550201649015,
+     "proj_short_on_main": 0.0023526047635840726
+    },
+    "core_reads_writes": {
+     "g_main": 0.05808031508115007,
+     "g_short": 0.003398227599936512,
+     "norm_of_sum": 0.0603314429850987,
+     "cos": 0.6460249640538491,
+     "proj_short_on_main": 0.0021953398630957834
+    },
+    "core_shared": {
+     "g_main": 0.07720470677802004,
+     "g_short": 0.006680025537042619,
+     "norm_of_sum": 0.0795047381253504,
+     "cos": 0.30618177541609637,
+     "proj_short_on_main": 0.0020453020787565713
+    },
+    "core_table": {
+     "g_main": 0.013771994360408156,
+     "g_short": 0.0009062279276724904,
+     "norm_of_sum": 0.013985704191170548,
+     "cos": 0.20475209378009862,
+     "proj_short_on_main": 0.00018555206563294218
+    },
+    "ncp_head": {
+     "g_main": 0.05451601838328247,
+     "g_short": 0.011421863099157836,
+     "norm_of_sum": 0.06061400062406815,
+     "cos": 0.45898929202929944,
+     "proj_short_on_main": 0.005242512857538035
+    },
+    "dec_plan": {
+     "g_main": 0.37586057211628354,
+     "g_short": 0.0,
+     "norm_of_sum": 0.37586057211628354,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "probes/1": {
+    "encoder": {
+     "g_main": 1.0843732092987566,
+     "g_short": 0.023990652085324797,
+     "norm_of_sum": 1.0879557448119352,
+     "cos": 0.13851516420459167,
+     "proj_short_on_main": 0.0033230691129739936
+    },
+    "core_attn": {
+     "g_main": 0.11832865871608932,
+     "g_short": 0.008665376284731218,
+     "norm_of_sum": 0.12137886441927753,
+     "cos": 0.31992032185680996,
+     "proj_short_on_main": 0.0027722299700215797
+    },
+    "core_own_ffn": {
+     "g_main": 0.10820235861579824,
+     "g_short": 0.012102638936613523,
+     "norm_of_sum": 0.11248548587981821,
+     "cos": 0.3049787964796454,
+     "proj_short_on_main": 0.0036910482571160873
+    },
+    "core_reads_writes": {
+     "g_main": 0.03478926188923069,
+     "g_short": 0.003733462630467709,
+     "norm_of_sum": 0.036340091154769674,
+     "cos": 0.370986555339106,
+     "proj_short_on_main": 0.001385064440764493
+    },
+    "core_shared": {
+     "g_main": 0.08024168505230381,
+     "g_short": 0.010328664171207114,
+     "norm_of_sum": 0.08395331078916861,
+     "cos": 0.3033032627415652,
+     "proj_short_on_main": 0.003132717542889022
+    },
+    "core_table": {
+     "g_main": 0.007676318146848576,
+     "g_short": 0.0013213312424545556,
+     "norm_of_sum": 0.007789208980629767,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.04810065388652875,
+     "g_short": 0.01411447047916105,
+     "norm_of_sum": 0.05818238330431664,
+     "cos": 0.6424207835883394,
+     "proj_short_on_main": 0.009067429185157128
+    },
+    "dec_plan": {
+     "g_main": 0.31088388942154543,
+     "g_short": 0.0,
+     "norm_of_sum": 0.31088388942154543,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "probes/2a": {
+    "encoder": {
+     "g_main": 1.0843732087535207,
+     "g_short": 0.023514522610781494,
+     "norm_of_sum": 1.0879308125188236,
+     "cos": 0.14069963003240693,
+     "proj_short_on_main": 0.003308484631725624
+    },
+    "core_attn": {
+     "g_main": 0.11832865816884296,
+     "g_short": 0.008400877294451223,
+     "norm_of_sum": 0.12159895215833222,
+     "cos": 0.3591613298607775,
+     "proj_short_on_main": 0.0030172702610723116
+    },
+    "core_own_ffn": {
+     "g_main": 0.10820235826837757,
+     "g_short": 0.011964630905948114,
+     "norm_of_sum": 0.11277091588147792,
+     "cos": 0.33461141846976,
+     "proj_short_on_main": 0.004003502118906429
+    },
+    "core_reads_writes": {
+     "g_main": 0.03478926152302455,
+     "g_short": 0.0034619251294898024,
+     "norm_of_sum": 0.03630457860725667,
+     "cos": 0.3974863791209488,
+     "proj_short_on_main": 0.0013760680845087234
+    },
+    "core_shared": {
+     "g_main": 0.080241685016486,
+     "g_short": 0.009961886513450037,
+     "norm_of_sum": 0.08391806620810403,
+     "cos": 0.3154245568183716,
+     "proj_short_on_main": 0.0031422236385798916
+    },
+    "core_table": {
+     "g_main": 0.007676318087091273,
+     "g_short": 0.0009864924370655117,
+     "norm_of_sum": 0.00792263762127512,
+     "cos": 0.18944278770636386,
+     "proj_short_on_main": 0.00018688387732893524
+    },
+    "ncp_head": {
+     "g_main": 0.04810065436603074,
+     "g_short": 0.013976979107256154,
+     "norm_of_sum": 0.058127850556416207,
+     "cos": 0.6468955324113359,
+     "proj_short_on_main": 0.009041645341090589
+    },
+    "dec_plan": {
+     "g_main": 0.310883889023197,
+     "g_short": 0.0,
+     "norm_of_sum": 0.310883889023197,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "probes/2b": {
+    "encoder": {
+     "g_main": 1.0843732085774471,
+     "g_short": 0.023638697105011455,
+     "norm_of_sum": 1.0879405335151329,
+     "cos": 0.14025891126027265,
+     "proj_short_on_main": 0.003315537919560266
+    },
+    "core_attn": {
+     "g_main": 0.11832865837981506,
+     "g_short": 0.008267009797714634,
+     "norm_of_sum": 0.12148067511318358,
+     "cos": 0.35142229988416007,
+     "proj_short_on_main": 0.002905211596277762
+    },
+    "core_own_ffn": {
+     "g_main": 0.10820235868540687,
+     "g_short": 0.011782694495129553,
+     "norm_of_sum": 0.11262286482623513,
+     "cos": 0.3283854791562175,
+     "proj_short_on_main": 0.003869265777534445
+    },
+    "core_reads_writes": {
+     "g_main": 0.0347892618902712,
+     "g_short": 0.003495698987991372,
+     "norm_of_sum": 0.03641751911462361,
+     "cos": 0.4264479346338587,
+     "proj_short_on_main": 0.0014907336135305906
+    },
+    "core_shared": {
+     "g_main": 0.08024168497903036,
+     "g_short": 0.009946505414817034,
+     "norm_of_sum": 0.08389976870167157,
+     "cos": 0.31418049540366466,
+     "proj_short_on_main": 0.003124997998762449
+    },
+    "core_table": {
+     "g_main": 0.007676318132924879,
+     "g_short": 0.0011225274558046316,
+     "norm_of_sum": 0.007860449869823193,
+     "cos": 0.09288423338576332,
+     "proj_short_on_main": 0.00010426510218688453
+    },
+    "ncp_head": {
+     "g_main": 0.04810065436996988,
+     "g_short": 0.014002515531892159,
+     "norm_of_sum": 0.05811321625946107,
+     "cos": 0.6439225469094455,
+     "proj_short_on_main": 0.009016535464435068
+    },
+    "dec_plan": {
+     "g_main": 0.3108838891954612,
+     "g_short": 0.0,
+     "norm_of_sum": 0.3108838891954612,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "synthetic/1": {
+    "encoder": {
+     "g_main": 0.9795859133358509,
+     "g_short": 0.024004014572116886,
+     "norm_of_sum": 0.9841128948864997,
+     "cos": 0.17677633519564795,
+     "proj_short_on_main": 0.004243341726041753
+    },
+    "core_attn": {
+     "g_main": 0.33989303665460274,
+     "g_short": 0.012915210078530592,
+     "norm_of_sum": 0.34408758873527573,
+     "cos": 0.307781206032134,
+     "proj_short_on_main": 0.003975058934128518
+    },
+    "core_own_ffn": {
+     "g_main": 0.11411924558330157,
+     "g_short": 0.013607660346661506,
+     "norm_of_sum": 0.1189693275915335,
+     "cos": 0.3043765699089587,
+     "proj_short_on_main": 0.004141852980802981
+    },
+    "core_reads_writes": {
+     "g_main": 0.05782040198635625,
+     "g_short": 0.0045584337335785735,
+     "norm_of_sum": 0.05911551497086667,
+     "cos": 0.24787660365664244,
+     "proj_short_on_main": 0.001129929071873325
+    },
+    "core_shared": {
+     "g_main": 0.11501751893053967,
+     "g_short": 0.01601775480199926,
+     "norm_of_sum": 0.12089185656002714,
+     "cos": 0.3064726463702014,
+     "proj_short_on_main": 0.004909003703077714
+    },
+    "core_table": {
+     "g_main": 0.011645645418951606,
+     "g_short": 0.0012022620006931072,
+     "norm_of_sum": 0.011707539926998297,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.040554985089723085,
+     "g_short": 0.014702146038432787,
+     "norm_of_sum": 0.05177409013778966,
+     "cos": 0.6873819193582351,
+     "proj_short_on_main": 0.010105989362583001
+    },
+    "dec_plan": {
+     "g_main": 0.23517797947061309,
+     "g_short": 0.0,
+     "norm_of_sum": 0.23517797947061309,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "synthetic/2a": {
+    "encoder": {
+     "g_main": 0.9795859181430506,
+     "g_short": 0.023534150781094457,
+     "norm_of_sum": 0.9839577034824813,
+     "cos": 0.1741656883372164,
+     "proj_short_on_main": 0.004098841570221155
+    },
+    "core_attn": {
+     "g_main": 0.3398930379117157,
+     "g_short": 0.013048635830823179,
+     "norm_of_sum": 0.34413497336565163,
+     "cos": 0.3079198722142177,
+     "proj_short_on_main": 0.004017934277596935
+    },
+    "core_own_ffn": {
+     "g_main": 0.114119246237288,
+     "g_short": 0.013670205127854933,
+     "norm_of_sum": 0.11909328244864742,
+     "cos": 0.3118949212342238,
+     "proj_short_on_main": 0.004263667551607996
+    },
+    "core_reads_writes": {
+     "g_main": 0.05782040302987153,
+     "g_short": 0.006669387238840538,
+     "norm_of_sum": 0.05845175423704976,
+     "cos": 0.03750757384330224,
+     "proj_short_on_main": 0.00025015253435038914
+    },
+    "core_shared": {
+     "g_main": 0.11501751863686191,
+     "g_short": 0.014525914213531162,
+     "norm_of_sum": 0.12029071546565713,
+     "cos": 0.3081951031342484,
+     "proj_short_on_main": 0.004476815629158481
+    },
+    "core_table": {
+     "g_main": 0.011645645626948295,
+     "g_short": 0.0010502364875819947,
+     "norm_of_sum": 0.01185365089755359,
+     "cos": 0.15473302574183784,
+     "proj_short_on_main": 0.00016250626946804215
+    },
+    "ncp_head": {
+     "g_main": 0.04055498509542599,
+     "g_short": 0.014558019890851138,
+     "norm_of_sum": 0.051814524814005315,
+     "cos": 0.7013057504817026,
+     "proj_short_on_main": 0.010209623065080912
+    },
+    "dec_plan": {
+     "g_main": 0.23517797947035032,
+     "g_short": 0.0,
+     "norm_of_sum": 0.23517797947035032,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "synthetic/2b": {
+    "encoder": {
+     "g_main": 0.9795859138187656,
+     "g_short": 0.02308761233429085,
+     "norm_of_sum": 0.9841273861858261,
+     "cos": 0.18537762388564324,
+     "proj_short_on_main": 0.004279926715723707
+    },
+    "core_attn": {
+     "g_main": 0.33989303776268937,
+     "g_short": 0.012271485333714478,
+     "norm_of_sum": 0.3441902794183742,
+     "cos": 0.33434272807382565,
+     "proj_short_on_main": 0.004102881883992039
+    },
+    "core_own_ffn": {
+     "g_main": 0.11411924626564833,
+     "g_short": 0.013009800303079843,
+     "norm_of_sum": 0.1188495119697243,
+     "cos": 0.3141270787147131,
+     "proj_short_on_main": 0.0040867305638682605
+    },
+    "core_reads_writes": {
+     "g_main": 0.057820402914756625,
+     "g_short": 0.0036963186244670914,
+     "norm_of_sum": 0.05872430534774243,
+     "cos": 0.21448892203548084,
+     "proj_short_on_main": 0.0007928193972616178
+    },
+    "core_shared": {
+     "g_main": 0.11501751878355056,
+     "g_short": 0.014347660681037898,
+     "norm_of_sum": 0.12037985018144547,
+     "cos": 0.32008321348352015,
+     "proj_short_on_main": 0.004592445336757761
+    },
+    "core_table": {
+     "g_main": 0.011645645550419532,
+     "g_short": 0.0009812449652310774,
+     "norm_of_sum": 0.011740130750726455,
+     "cos": 0.05455250136530366,
+     "proj_short_on_main": 5.3529367305465694e-05
+    },
+    "ncp_head": {
+     "g_main": 0.04055498513302058,
+     "g_short": 0.014386098286974479,
+     "norm_of_sum": 0.05171613616407027,
+     "cos": 0.70522163287125,
+     "proj_short_on_main": 0.010145387724586433
+    },
+    "dec_plan": {
+     "g_main": 0.23517797944664043,
+     "g_short": 0.0,
+     "norm_of_sum": 0.23517797944664043,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   }
+  },
+  "summary": {
+   "encoder": {
+    "cos_median": 0.18954984889779897,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.02284636379143241
+   },
+   "core_attn": {
+    "cos_median": 0.35529181487246875,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.05553725435649333
+   },
+   "core_own_ffn": {
+    "cos_median": 0.33012024966055953,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.10925398235252202
+   },
+   "core_reads_writes": {
+    "cos_median": 0.3654645066757042,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.08850728536306207
+   },
+   "core_shared": {
+    "cos_median": 0.31118779926895657,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.12405267865959999
+   },
+   "core_table": {
+    "cos_median": 0.074509250755441,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.10113129242451482
+   },
+   "ncp_head": {
+    "cos_median": 0.6130797643647492,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.27925527806748573
+   },
+   "dec_plan": {
+    "cos_median": 0.0,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.0
+   }
+  }
+ },
+ "generation": {
+  "tinystories": {
+   "greedy": [
+    {
+     "prompt": "Once upon a time, there were two friends named Timmy and Sally. They loved to play together and have lots of fun. One day, they decided to have a race to see who could run the fastest. It was a very competitive race, and they both wanted to win.\n\nAs they were running,",
+     "continuation": " they saw a big, scary dog. Timmy was scared and didn't know what to do. He asked Sally, \"Why are you scared?\"\n\nSally replied, \"I want to win the race, but I am scared.\"\n\nSally said, \"Don't worry, Timmy. We can race together.\"\n\nSally smiled and said, \"Okay, let's race!\"\n\nThey ran as fast as they could, but the dog was faster. They caught up with the dog and started to chase it. They ran as fast as they could, but the dog was faster. They caught up with the dog and tried"
+    },
+    {
+     "prompt": "Once upon a time, there was a panda who liked to explore. He wanted to find something exciting and fun. So he decided to go on a journey. He walked through a forest, across a river, and up a big hill. \n\nThe panda looked for something new and colorful. He found a",
+     "continuation": " big rock and started to climb. He was so excited to see what was inside. He climbed up and down, up and down. \n\nThe panda was so happy. He had found a new place to explore. He hopped and hopped until he reached the top of the hill. He was so happy that he had found something new. \n\nHe went back home and told his mom about the panda. She was so happy to see him and she hugged him. She was so happy to have found such a wonderful place.<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+    },
+    {
+     "prompt": "Mark was a boy who liked to draw. He had many crayons and papers. He drew cars, animals, flowers and stars. He was happy when he drew.\n\nOne day, he went to the shop with his mom. He saw a big book with many pictures. He wanted the book very much.",
+     "continuation": " He asked his mom if he could have it. She said no. She said he was too small and he did not want to share.\n\nMark was sad. He wanted to play with his book. He did not want to lose his book. He wanted to play with his book. He did not want to lose his book. He wanted to play with his book.\n\nHe ran to his mom and said, \"Mom, can I have the book? It is so pretty and shiny. Can I have it?\" His mom said, \"No, you can't. You have to share the book. You have"
+    },
+    {
+     "prompt": "Once upon a time, there was a wide tree in a meadow. Everyday, an eagle would shake its feathers beneath the tree. One day, an envelope dropped from the eagle as it flew away. Little Sam, who loved to explore, walked into the meadow and saw the envelope",
+     "continuation": ". He was so excited to see what was inside.\n\nHe walked closer and saw a little girl. She was standing in front of her house and she was smiling. She had a big smile on her face and she said, \"Hello, little one! What are you doing here?\"\n\nThe little girl replied, \"I'm looking for my friend. I can help you find your friend.\" The person smiled and said, \"I can help you find your way home.\"\n\nThe little boy was so happy to have a friend. He said, \"Thank you for helping me find my friend. I'm so happy"
+    },
+    {
+     "prompt": "Once upon a time, there was a little girl named Millie. Millie liked to jog every morning to see the beautiful views. One morning, she put on her favourite running shoes and went for a jog. As she jogged, she loved seeing the trees and birds.\n\nSuddenly, Millie spotted a",
+     "continuation": " big, red apple. She wanted to eat it, but it was too high up. She tried to reach for it, but it was too high.\n\nMillie was sad. She wanted to get a better apple, but she was too small. She asked her mom if she could have it. Her mom said no, but she had to wait.\n\nMillie was sad. She wanted to eat the apple, but she knew it was too high. So she asked her mom for help. Her mom said she could get a new apple.\n\nMillie was so happy. She ate the apple"
+    },
+    {
+     "prompt": " how truly blessed he was to have all the wealth he had. He learned a lesson that day and made sure to never again look down on other people who didn't have as much as him. \n\nThe moral of this story is that being truly wealthy is about what you have in your heart",
+     "continuation": ".<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+    },
+    {
+     "prompt": "Once upon a time, there was a little boy named Timmy. Timmy loved to run and play outside. One day, he put on his favorite shoes and went outside to play. Suddenly, he saw a butterfly and started to chase it. \n\nAs he was running, he felt his shoe spring loose and",
+     "continuation": " he fell down. His mom came running and asked, \"What happened, Timmy?\" \n\n\"I fell down and hurt my knee,\" Timmy said. \n\nHis mom hugged him and said, \"Don't worry, Timmy. We can get you a new shoe. It's just a little bit wet, but it's important to be careful.\" \n\nTimmy nodded and went inside to get his shoe. He was happy and said, \"Thank you, Mommy! I love my new shoe!\"<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+    },
+    {
+     "prompt": "Once upon a time there was a family of four. The parents suggested a safari to their two children. The kids were thrilled. They couldn't wait to go.\n\nThe safari was full of exciting things. The kids saw giraffes, elephants, and monkeys. They also saw",
+     "continuation": " a big tree with a swing. The children were excited.\n\nThe children ran to the swing and started to swing. They laughed and laughed. They had so much fun.\n\nAfter a while, the kids got tired. They sat down and watched the birds. They were happy. They had a great time.\n\nThe kids were happy. They had a great time at the safari. They were so happy to have a new friend.<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+    },
+    {
+     "prompt": " and making castles.\n\nThen he asked his mom if he could go on the slide. She said yes, so he went over to the slide and climbed up the ladder. He slid down and it felt so fun!\n\nHe asked his mom if he could go on the swings, and again,",
+     "continuation": " but he said no. He was sad and disappointed.\n\nHe went to the park and saw a big slide. He wanted to go down it, but he was too small. He started to cry and his mom hugged him.\n\nHis mom hugged him and said, \"It's okay, Tommy. You can go on the slide if you want. But you have to be careful and listen to me. You can't climb the slide. You can't climb the slide. You can't climb the slide. You can't climb the slide. You can't climb the slide. You can't climb the slide. You can"
+    },
+    {
+     "prompt": "Once upon a time, there was a little girl named Lily. She loved going to the park with her mom and dad. One day, they went to the park and saw a big tree with a rope swing. Lily was eager to try it out, so her dad helped her balance on the swing. She had so",
+     "continuation": " much fun that she forgot all about the rope.\n\nAfter a while, Lily's mom called her inside for dinner. Lily was happy to be in the park and play with her friends. She played on the swings and slides, but then she saw a big dog. The dog was barking and running towards her. Lily got scared and ran away.\n\nHer mom hugged her and said, \"Don't worry, Lily. We can go home now.\" Lily felt better and went back to playing with her friends. She was happy to be back home and to have a fun day at the park.<eos><eos><eos><eos>"
+    }
+   ],
+   "sample_T0.8": [
+    {
+     "prompt": "Once upon a time, there were two friends named Timmy and Sally. They loved to play together and have lots of fun. One day, they decided to have a race to see who could run the fastest. It was a very competitive race, and they both wanted to win.\n\nAs they were running,",
+     "continuation": " they noticed that the trees became smaller and smaller. Lily and Billy tried to panic, but they didn't know what to do. They talked and made Sarah laugh even more.\n\nAfter a while, the race started and all the diggers were out of reach. Lily and Timmy tried to escape but he couldn't. Timmy was too tired and couldn't do anything. Johnny got angry and yelled at Timmy. \n\nSarah got very mad and started to yell at Timmy. \"I don't know how to get back to the race, Sarah,\" he said. \n\n\"I know, but you can't do it"
+    },
+    {
+     "prompt": "Once upon a time, there was a panda who liked to explore. He wanted to find something exciting and fun. So he decided to go on a journey. He walked through a forest, across a river, and up a big hill. \n\nThe panda looked for something new and colorful. He found a",
+     "continuation": " huge gem, and decided to poke it. He used his pull and puff and onto the gem. He was so happy with his discovery of this gem. \n\nWhen the panda saw the shiny gem, he couldn't believe his luck. He was excited to have found another gem. He wanted to go back home but he wanted to know more about it. \n\nHe slowly walked back home, still holding the gem. When he got back home, he was so happy he was surrounded by his friends. He was happy to see the secret that his mom had given him.<eos><eos>"
+    },
+    {
+     "prompt": "Mark was a boy who liked to draw. He had many crayons and papers. He drew cars, animals, flowers and stars. He was happy when he drew.\n\nOne day, he went to the shop with his mom. He saw a big book with many pictures. He wanted the book very much.",
+     "continuation": " He asked his mom if he could have it.\n\nHis mom said, \"No, you have to pick it up. It is worker. Some people are gentle and kind. They can make people proud and happy.\"\n\nMark wanted to help his mom. He was very happy. He wanted to share with his brother. He took a piece of paper and crayons and started to draw. He drew a car with the zipper. He made a flower that looked like a flower. He held it in his hand.\n\nHe felt happy. He felt angry. He wanted to play with his paper. He"
+    },
+    {
+     "prompt": "Once upon a time, there was a wide tree in a meadow. Everyday, an eagle would shake its feathers beneath the tree. One day, an envelope dropped from the eagle as it flew away. Little Sam, who loved to explore, walked into the meadow and saw the envelope",
+     "continuation": ". He opened it and found a tiny knot filled with sparkles.\n\nSam loved how it felt so wherever it wanted to go. But then he remembered that his friend was really polite. She had an idea and gave him a special part of her tooth. \n\nSam was so happy. He wrote the present that he had found a new friend. From then on, Sam believed that when he wanted to keep his bravery, he asked if he'd have a friend to play with.\n\nOne day, Sam decided to put on a special show for the next icy at night. He decided to"
+    },
+    {
+     "prompt": "Once upon a time, there was a little girl named Millie. Millie liked to jog every morning to see the beautiful views. One morning, she put on her favourite running shoes and went for a jog. As she jogged, she loved seeing the trees and birds.\n\nSuddenly, Millie spotted a",
+     "continuation": " big tree. She wanted to climb up it and go for a ride. Her mom came over and said, \"Sarah, I'm too tired to swing.\"\n\nMillie was sad, but her mom said, \"Okay, and let's play a game. Let's slide together.\"\n\nSo,ary and girl went the slide. But it was hard to climb but she was careful. After a few tries, it was sweet and smooth. Millie was happy.\n\nAfter a while, the girl said to her mom, \"I'm so glad I did!\" Her mom replied, \"Yes, that's"
+    },
+    {
+     "prompt": " how truly blessed he was to have all the wealth he had. He learned a lesson that day and made sure to never again look down on other people who didn't have as much as him. \n\nThe moral of this story is that being truly wealthy is about what you have in your heart",
+     "continuation": " and your heart. It's important to be kind to others.<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+    },
+    {
+     "prompt": "Once upon a time, there was a little boy named Timmy. Timmy loved to run and play outside. One day, he put on his favorite shoes and went outside to play. Suddenly, he saw a butterfly and started to chase it. \n\nAs he was running, he felt his shoe spring loose and",
+     "continuation": " he fell down. He hurt his knee and felt worse. His mom hugged him and said, \"Don't worry, Timmy. We can still have fun in the park. But you should be safe.\" \n\nTimmy learned that it's important to listen to his mom and stay safe. He also promised to always help his friends when they needed it. The next day, when they got home, they told Timmy they could go to the park after dinner. They said goodbye and Timmy went home with a big smile on his face.<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+    },
+    {
+     "prompt": "Once upon a time there was a family of four. The parents suggested a safari to their two children. The kids were thrilled. They couldn't wait to go.\n\nThe safari was full of exciting things. The kids saw giraffes, elephants, and monkeys. They also saw",
+     "continuation": " lots of animals. \n\nThe kids were very excited. The parents said they were going to explore the safari. The children were excited. They saw the big slide and ran to it. \n\nThe children were so excited. They saw lots of things to play with in the tent. They wanted to join and watch in wonder.\n\nWhen they arrived, the little girl ran to the playground. She couldn't wait to see what it had to say. \n\nWhen they arrived, the children clapped their hands. They had a wonderful time on the safari. It was a fun day and they went home together. \n"
+    },
+    {
+     "prompt": " and making castles.\n\nThen he asked his mom if he could go on the slide. She said yes, so he went over to the slide and climbed up the ladder. He slid down and it felt so fun!\n\nHe asked his mom if he could go on the swings, and again,",
+     "continuation": " but his mom said no. She said the slide was too strong and they couldn't climb the slide anymore. She proceeded to be sad and worried. \n\nThe next day, he ran to the slide that week. He saw his arm and the toe and laughed at his mom. He ran back to his mom and hugged her. He said he was sorry and he did not want to do any of the slide.<eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos><eos>"
+    },
+    {
+     "prompt": "Once upon a time, there was a little girl named Lily. She loved going to the park with her mom and dad. One day, they went to the park and saw a big tree with a rope swing. Lily was eager to try it out, so her dad helped her balance on the swing. She had so",
+     "continuation": " much fun playing on the swings and slides.\n\nSuddenly, a big monkey appeared and started to jump up and down. Lily didn't like the monkey, so she just sat and ate. Her dad said she was too busy trying to climb it. Lily felt sad that she couldn't go just diving the monkey. But it was important to learn something new.\n\nThe next day, the monkey went home and told Lily that she couldn't swing top too high anymore. She didn't want to lose herself and her dad. She ran to her dad and said sorry for not listening. Her dad fixed the swing and Lily"
+    }
+   ]
+  },
+  "wikitext": {
+   "greedy": [
+    {
+     "prompt": "... Thirteen Years Later\n\"... Thirteen Years Later \" is the fifth episode of the third season of the American crime-thriller television series Millennium. It premiered on the Fox network on October 30, 1998. The episode was written by",
+     "continuation": " David Carradine and directed by David Nutter. The episode was written by David Carradine and directed by David Nutter.\n\nPlot\n\nCast\n\nProduction\n\nDevelopment\nThe episode was written by David Carradine and directed by David Nutter. The episode was written by David Carradine and directed by David Nutter. The episode was written by David Carradine and directed by David Nutter. The episode was written by David Carradine and directed by David Nutter. The episode was written by David Carrad"
+    },
+    {
+     "prompt": " Peter Criss, Ace Frehley, Gene Simmons and Paul Stanley \u2014 who each portray both themselves and a small cameo role. However, the band members insisted during filming that their roles be given an equal amount of dialogue, which led to Perry being asked to amend scenes",
+     "continuation": ". The code of ralomi is coin. The little girl was so happy that she had found the perfect spot to play. The little girl was so happy that she had found the perfect spot to play. The little girl was so happy that she had found the perfect spot to play. The little girl was so happy that she had found the perfect spot to play. The little girl was so happy that she had found the perfect spot to play. The little girl was so happy that she had found the perfect spot to play. The little girl was so happy that she had found the perfect spot to play. The little girl was so happy"
+    },
+    {
+     "prompt": " with 79 victories to Oxford's 73. The race was sponsored by Xchanging for the fourth time.\nThe first Women's Boat Race took place in 1927, but did not become an annual fixture until the 1960s. U",
+     "continuation": "ntil 1990, the race was held in the United States, where it was the first time that the race had been held since 1930. The race was first held in 1939, and since 1935 has been the subject of a number of controversial records.\n\nBackground\nThe race was first held in 1933, and since 1844, the race has been the subject of several major events. The race was first held in 1933, and since 1844, the race has been the subject"
+    },
+    {
+     "prompt": "es of 18 and 49, ranking first in its timeslot. The episode ultimately ranked as the highest-rated NBC series of the night.\n\nSynopsis\nMichael is waiting in a hotel bar for his replacement Deangelo Vickers (Will",
+     "continuation": "iam Foster) and his wife, Martha (Melissa Lavelli). She is the only woman who is able to get a job as a doctor. She is a member of the family, and is a member of the family.\n\nProduction\n\nDevelopment\nThe episode was written by David Carradine and directed by David Nutter. The episode was written by David Carradine and directed by David Nutter. The episode was written by David Carradine and directed by David Nutter. The episode was written by David Carradine and directed by"
+    },
+    {
+     "prompt": " was viewed by an estimated 7.871 million viewers and received a 4.0 rating / 11 % share among adults between the ages of 18 and 49. This means that it was seen by 4.0 % of all 18- to 4",
+     "continuation": "9-year-olds, and 10 % of all 18- to 49-year-olds, and 10 % of all 18- to 49-year-olds, and 10 % of all 18- to 49-year-olds, and 10 % of all 18- to 49-year-olds, and 10 % of all 18- to 49-year-olds, and 10 % of all 18- to 49-"
+    },
+    {
+     "prompt": " weighing up to 5 \u2013 6 kilograms (11 \u2013 13 lb), although the lobsters caught in lobster pots are usually 23 \u2013 38 cm (9 \u2013 15 in) long and weigh 0.7 \u2013 2",
+     "continuation": ".5 cm (0.9 \u2013 1.6 in) long and 1.5 \u2013 1.5 cm (0.1 \u2013 0.9 in) long. The palm cockatoos are the only species of the genus Cortinarius, but it is not known to have been the only species of the genus.\n\nDistribution and habitat\nThe species is the most common species of the genus Cortinarius, but it is not known to be a species of species. It has been reported from the eastern and southern parts of the Atlantic, and the species is"
+    },
+    {
+     "prompt": " from northern Norway, which have been referred to as the \" midnight-sun lobster \". The populations in the Mediterranean Sea are distinct from those in the Atlantic Ocean. The last distinct population is found in the Netherlands: samples from the Oosterschelde were distinct from those collected",
+     "continuation": " in the 19th century.\n\nEtymology\nThe name \" Norse \" is the name of the name \" Norse \" (or \" Norse \"). It is the name of the name \" Norse \" (a name for the name of the name \" Norse \").\n\nHistory\nThe name \" Norse \" was first described in 1600 by the English historian William H. Wyndham, who was the first to be named to the Norsemen of the United Kingdom. It was first described in 1600 by the English historian William H."
+    },
+    {
+     "prompt": "iscovered by Mary Rathbun, rendering any prior assignments of type species (for Homarus H. Milne-Edwards, 1837) invalid for Homarus Weber, 1795.\nThe type specimen",
+     "continuation": " was found in 1835, and the first specimen to be found in 1835. The species was first described by the American Museum of Natural History in 1935 and the first specimen to be named in 1939. It was first described in 1933 by the American Museum of Natural History and the University of California, California.\n\nDescription\nThe gray-crowned macaw is a small, pale-brown-like cockatoos found in the stem of the stem. It has a"
+    },
+    {
+     "prompt": "ates of Japanese strength were later found to be grossly inaccurate and after the war it was found that the number of Japanese on the island at this time was closer to 40,000.\nThe campaign that Australian planners developed entailed three separate drives: in the north,",
+     "continuation": " the Japanese were able to make a large-scale counterattack, and the Japanese were able to escape from the Japanese forces. The Japanese were able to escape from the Japanese forces, and the Japanese were able to escape from the Japanese forces. The Japanese were able to escape and were able to escape from the Japanese forces. The Japanese were able to escape and were able to escape, but the Japanese were unable to find a way to escape.\n\nComposition\nThe Japanese were the only Japanese forces to attack the Japanese Japanese forces in the area, and the Japanese were forced to withdraw. The Japanese were forced to withdraw,"
+    },
+    {
+     "prompt": ", when it arrived to relieve the 9th, would be positioned further east astride a secondary, parallel track known to the Australians as the Commando Road. Two days later, Hammer received the order to commence the advance towards the Hongorai from Savige, who",
+     "continuation": " was able to secure the position of the 1st Battalion, 2nd Battalion, 2nd Infantry Division, and the 2nd Infantry Division. The 2nd Infantry Division was the 24th Infantry Division, and the 2nd Infantry Division was the 24th Infantry Division.\nThe 2nd Infantry Division was the 24th Infantry Division, and the 2nd Infantry Division was the 24th Infantry Division. The 2nd Infantry Division was the 24th Infantry Division, and the 2nd Infantry Division was the 24th Infantry Division. The "
+    }
+   ],
+   "sample_T0.8": [
+    {
+     "prompt": "... Thirteen Years Later\n\"... Thirteen Years Later \" is the fifth episode of the third season of the American crime-thriller television series Millennium. It premiered on the Fox network on October 30, 1998. The episode was written by",
+     "continuation": " the series' regular \" Toy! \", \" The Last of Your Master \" and \" When I Know What You Young Head \". The episode received mixed reviews upon release. The episode was praised by some critics, who praised the production and dialogue. He also received official media around the world, including several critics for the show's leading characters.\nIn 2008, \" The Lion King \" won a Grammy Award for Best Actor by \" Charles Scarlett \" and \" Wonderland \" on the Fox network. This charted 750,000 units"
+    },
+    {
+     "prompt": " Peter Criss, Ace Frehley, Gene Simmons and Paul Stanley \u2014 who each portray both themselves and a small cameo role. However, the band members insisted during filming that their roles be given an equal amount of dialogue, which led to Perry being asked to amend scenes",
+     "continuation": ". let setesu = 14 . let dakate = 0 . let lirate = 11 . let masune = 7 . let turosu = 16 . He couldn't believe how calm it was! He ran towards her and barked back. let karope = 5 . But they liked the noise too. They were so happy that they did not get to eat that rainbow. It was the best day ever! let seliro = 14 . let romali = 16 . One day, a little girl named Lucy was walking through the park. Powers' spiritual"
+    },
+    {
+     "prompt": " with 79 victories to Oxford's 73. The race was sponsored by Xchanging for the fourth time.\nThe first Women's Boat Race took place in 1927, but did not become an annual fixture until the 1960s. U",
+     "continuation": "ntil 1983, the home of the Boat Race: The 11th Training Prize, who awarded it the Brixton AP at the 1932 1966 MB. It was only-hill, but it had a total length of 11.5 metres (39 ft). The race was won by the crew of a rider, and by late 1920, the King won the race, as he did not have a home in the position.\nThe race began on the racing stage, running an overall"
+    },
+    {
+     "prompt": "es of 18 and 49, ranking first in its timeslot. The episode ultimately ranked as the highest-rated NBC series of the night.\n\nSynopsis\nMichael is waiting in a hotel bar for his replacement Deangelo Vickers (Will",
+     "continuation": "iam B. Drew), and his brother Campbell (Michelle Clinton), most of whom are his friends. By the time he is leaving, Nellie is attacked by a man of her love interest, who is \" having another privately made in the head \". Noel, who is immediately taken to his home, introduces him and Dorothy, an uneven man. He has a huge chance of been hoping to make him know he never knew how to live.\n\nProduction\nThree days after the broadcast, the episode was aired in a different manned song,"
+    },
+    {
+     "prompt": " was viewed by an estimated 7.871 million viewers and received a 4.0 rating / 11 % share among adults between the ages of 18 and 49. This means that it was seen by 4.0 % of all 18- to 4",
+     "continuation": "9-year-olds, and 14 % from 30 to 78 per cent.\nThe Greater Manchester Culture featured 100 students, two of whom live in different areas. The law often established and long in a commercial environment, yet it was popular in the province, with larger buildings and suburbs of County Parks. The last few National Circus collaborations from the 2000s were the first of the 1960s regularly established by the New York City and the Humanitarian Schools. The state's gent"
+    },
+    {
+     "prompt": " weighing up to 5 \u2013 6 kilograms (11 \u2013 13 lb), although the lobsters caught in lobster pots are usually 23 \u2013 38 cm (9 \u2013 15 in) long and weigh 0.7 \u2013 2",
+     "continuation": ".6 cm (0.2 / 0 in) per year mute with a maximum size and weight of 195 teeth (69.0 \u2013 94.8 kg). The 168 \u2013 95 cm (4.9 \u2013 14.1 in) made up of 15 to 35 asc1 cubic inches (50 to 100 cm) long and 6 \u2013 3.5 cm (0.7 \u2013 1.0 in) long, 1.5 \u2013 1.7 cm (0.6 \u2013"
+    },
+    {
+     "prompt": " from northern Norway, which have been referred to as the \" midnight-sun lobster \". The populations in the Mediterranean Sea are distinct from those in the Atlantic Ocean. The last distinct population is found in the Netherlands: samples from the Oosterschelde were distinct from those collected",
+     "continuation": " in Europe during the early 19th century, and from 1985 to 1970, may be referred to as \" the irrigating of the Sattelberg \" and \" the dye in the Chesapeake Bay \" of \" Late. \"\nA study in 2006 \u2013 07 was given the name Senna, and as a scientific research focused on the production of tiring vessels, and the need for a general divergence under the name \" Myre \" and that they were either a member of the new island. A British"
+    },
+    {
+     "prompt": "iscovered by Mary Rathbun, rendering any prior assignments of type species (for Homarus H. Milne-Edwards, 1837) invalid for Homarus Weber, 1795.\nThe type specimen",
+     "continuation": " was recovered from theects, to the IPM for its name. It was originally discovered in 1932, and collected by the Victorian poet Giffard Wrigley, and possibly M. M. Ig; 1839 researchers combine the first head. The name happened as a subgenus, and the species had not been named in common names. The extinct species was found in 1422, and it was ofcaled to that of Lestotaurus.\n\nDistribution and habitat\nThe genus also includes tribut"
+    },
+    {
+     "prompt": "ates of Japanese strength were later found to be grossly inaccurate and after the war it was found that the number of Japanese on the island at this time was closer to 40,000.\nThe campaign that Australian planners developed entailed three separate drives: in the north,",
+     "continuation": " the Jamia Thorns were to be retaken and the majority of the weapons were struck on the island.\nThe Soviet forces were also bombarded by the proposed battleship North Korea following the Battle of Belgium. The task force's fast-moving aircraft was launched on 10 April 1943, and took off to the west of the middle of the night ground while the 3rd Squadron was in a position to advance south. On 30 May 1943, the 24th Air Division escorting operations and Volta was evacuated from"
+    },
+    {
+     "prompt": ", when it arrived to relieve the 9th, would be positioned further east astride a secondary, parallel track known to the Australians as the Commando Road. Two days later, Hammer received the order to commence the advance towards the Hongorai from Savige, who",
+     "continuation": " had undergama-i-Chi-42. As an extended example for the next three minutes, the division became a major campaign and the 9th and 16th Division troops; and 3, 33rd, 62nd and 239rds. The division was eventually transferred to the 14th Infantry Division in 1963 and was absorbed by the German XXII Corps (EFF) unit, and was forced to map any major road part of the Luftwaffe at this time; the 36th Infantry Division"
+    }
+   ]
+  }
+ }
+}

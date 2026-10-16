@@ -1,0 +1,20 @@
+H1 (GradCuit latent steering in the concept stream) and H2 (Explorative-Modeling latent z) on the v2 concept core.
+Test bench: d=64, CPU, 1 seed, concept core in isolation, synthetic in-context tasks.
+
+H1: frozen v2 core (L1S checkpoint), latent offsets on the 2 concept-stream positions before the query, <=10 updates,
+binary verifier, stop when correct. Rates are over the model's FAILURES; budget 11 verifier calls.
+regime                 GradCuit(best lr)      random (matched norm)  sampling  rank-enumeration   extra passes (+4, no verifier)
+6 hops, 6 passes       38.5% (3.8 calls)      17.6%                  6.3%      48% (8.0 calls)    66%
+5 hops, 4 passes       29.0% (4.4 calls)      12.5%                  3.1%      35% (9.0 calls)    86%
+4 hops, 3 passes       26.4% (3.6 calls)      (0.6% at small norm)   3.6%      37% (8.7 calls)    99.7%
+After extra passes:  6 hops @10 passes: base 80.5%; of remaining failures GradCuit fixes 43.6% (3.7 calls), +4 more passes 9%.
+                     5 hops @8 passes:  base 93.3%; of remaining failures GradCuit fixes 74.1% (2.8 calls), +4 more passes 59%.
+Steered fixes keep intermediate hops correct 92-100% (reasoning repaired, not only the final answer suppressed).
+
+H2: branching in-context graph (valid chains up to 4 per query); data show ONE sampled mode per query.
+arm                              chain coherent  coverage of valid chains  unambiguous: per-latent (vote)
+deterministic v2 core (K=1)      59.0%           30.7%                     99.2%
+XM K=4 hard-min (6000 steps)     86.6%           91.9%                     84.5-92.9% (97.3%)
+XM K=4 relaxed WTA eps=0.05      87.7%           92.0%                     93.6-98.7% (99.5%)
+Latents stayed distinct (pairwise cos ~0.30) and shared wins evenly (23-27% each): no PRISM-style collapse.
+XM learned ~500 steps later than K=1 (first coherent chains at 2500-3000 vs 2000-2500).

@@ -1,0 +1,112 @@
+{
+  "time": "2026-09-29T10:26:26.639950+05:30",
+  "params": {
+    "encoder_non_embedding": 15510573,
+    "engram_table": 50331264,
+    "token_embedding": 3145728,
+    "concept_module": 2059064,
+    "codebook": 49152,
+    "decoder": 7532296,
+    "compute_params": 25052781,
+    "stored_total": 78578925
+  },
+  "analytical_macs_per_token": {
+    "1": {
+      "encoder": 16292352.0,
+      "core": 525504.0,
+      "decoder": 7326720.0,
+      "head": 3145728,
+      "total": 27290304.0
+    },
+    "2": {
+      "encoder": 16292352.0,
+      "core": 1014144.0,
+      "decoder": 7326720.0,
+      "head": 3145728,
+      "total": 27778944.0
+    },
+    "2.5": {
+      "encoder": 16292352.0,
+      "core": 1258464.0,
+      "decoder": 7326720.0,
+      "head": 3145728,
+      "total": 28023264.0
+    },
+    "4": {
+      "encoder": 16292352.0,
+      "core": 1991424.0,
+      "decoder": 7326720.0,
+      "head": 3145728,
+      "total": 28756224.0
+    },
+    "8": {
+      "encoder": 16292352.0,
+      "core": 3945984.0,
+      "decoder": 7326720.0,
+      "head": 3145728,
+      "total": 30710784.0
+    }
+  },
+  "scope": "Mechanics of the retained v1 architecture and proposed masks/normalization of answer loss; no v3 training result.",
+  "final_ntp_gradient_norm_by_state": [
+    0.0587021862860278,
+    0.03356845579640418,
+    0.027338261509515245,
+    0.02608063401213645
+  ],
+  "initial_state_zero": true,
+  "first_pass_is_nonzero": true,
+  "all_passes_receive_final_ntp": true,
+  "future_edit_max_change_to_earlier_logits": 0.0,
+  "other_document_max_change": 0.0,
+  "other_row_max_change": 0.0,
+  "batch_permutation_max_change": 0.0,
+  "plan_uses_only_completed_chunks": true,
+  "null_at_each_document_first_three_positions": true,
+  "mask_examples": {
+    "complete_chunks": [
+      [
+        true,
+        true,
+        false,
+        false,
+        true
+      ]
+    ],
+    "nonempty_chunks": [
+      [
+        true,
+        true,
+        true,
+        false,
+        true
+      ]
+    ],
+    "ncp_pairs": [
+      [
+        true,
+        false,
+        false,
+        false
+      ]
+    ],
+    "all_pad_loss": 0.0,
+    "all_pad_gradient_max": 0.0
+  },
+  "answer_loss": {
+    "value": 6.25,
+    "per_token_gradient": [
+      0.125,
+      0.125,
+      0.25,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.0,
+      0.0
+    ],
+    "accumulation_max_difference": 0.0,
+    "no_answer_tokens_have_zero_extra_weight": true
+  },
+  "passed": true
+}

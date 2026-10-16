@@ -1,0 +1,109 @@
+Review A/B: initial scratchpad state S0 (concept-level v2 task, 6000 steps, train hops 1-3, R~U{1..4}). Accuracy on 6-hop chains, hops 1..6.
+
+== S0=0 seed0  final |s0| = 0.0
+   R4   [1.0, 1.0, 0.999, 0.954, 0.164, 0.12]
+   R8   [1.0, 1.0, 1.0, 0.997, 0.937, 0.771]
+   R12  [1.0, 1.0, 1.0, 0.998, 0.963, 0.896]
+   R16  [1.0, 0.999, 1.0, 0.998, 0.979, 0.925]
+   pass  1  read_rms 0.318  |S|   0.38  step  0.38  turn None  grad 0.292
+   pass  2  read_rms 0.325  |S|   0.86  step  0.55  turn 22.3  grad 0.111
+   pass  3  read_rms 0.374  |S|   1.30  step  0.66  turn 24.0  grad 0.0202
+   pass  4  read_rms 0.445  |S|   1.71  step  0.62  turn 14.3  grad 0.0115
+   pass  5  read_rms 0.472  |S|   2.11  step  0.62  turn 11.2  grad 0.00582
+   pass  6  read_rms 0.479  |S|   2.55  step  0.61  turn 8.3  grad 0.0034
+   pass  7  read_rms 0.480  |S|   3.01  step  0.59  turn 6.0  grad 0.00212
+   pass  8  read_rms 0.477  |S|   3.48  step  0.57  turn 4.3  grad 0.0014
+   pass  9  read_rms 0.474  |S|   3.95  step  0.55  turn 3.2  grad 0.000944
+   pass 10  read_rms 0.470  |S|   4.43  step  0.53  turn 2.4  grad 0.000666
+   pass 11  read_rms 0.467  |S|   4.90  step  0.51  turn 1.9  grad 0.000478
+   pass 12  read_rms 0.464  |S|   5.37  step  0.50  turn 1.5  grad 0.000347
+
+== S0=0 seed1  final |s0| = 0.0
+   R4   [1.0, 1.0, 0.999, 0.805, 0.16, 0.125]
+   R8   [1.0, 1.0, 0.999, 0.938, 0.534, 0.216]
+   R12  [1.0, 0.999, 0.999, 0.964, 0.693, 0.318]
+   R16  [1.0, 0.997, 0.999, 0.972, 0.764, 0.395]
+   pass  1  read_rms 0.310  |S|   0.23  step  0.23  turn None  grad 2.0
+   pass  2  read_rms 0.325  |S|   0.58  step  0.39  turn 24.7  grad 1.03
+   pass  3  read_rms 0.369  |S|   0.80  step  0.51  turn 34.3  grad 0.144
+   pass  4  read_rms 0.411  |S|   1.17  step  0.50  turn 20.3  grad 0.0406
+   pass  5  read_rms 0.432  |S|   1.52  step  0.40  turn 7.6  grad 0.0244
+   pass  6  read_rms 0.428  |S|   1.86  step  0.37  turn 4.6  grad 0.0165
+   pass  7  read_rms 0.424  |S|   2.19  step  0.35  turn 3.3  grad 0.0118
+   pass  8  read_rms 0.421  |S|   2.51  step  0.35  turn 2.6  grad 0.00857
+   pass  9  read_rms 0.419  |S|   2.84  step  0.34  turn 2.1  grad 0.00638
+   pass 10  read_rms 0.418  |S|   3.16  step  0.34  turn 1.8  grad 0.00487
+   pass 11  read_rms 0.416  |S|   3.49  step  0.34  turn 1.5  grad 0.00384
+   pass 12  read_rms 0.415  |S|   3.81  step  0.34  turn 1.3  grad 0.00315
+
+== tiny s0 seed0  final |s0| = 0.5
+   R4   [1.0, 1.0, 1.0, 0.771, 0.13, 0.133]
+   R8   [1.0, 1.0, 0.999, 0.988, 0.813, 0.336]
+   R12  [1.0, 0.999, 0.999, 0.993, 0.94, 0.626]
+   R16  [1.0, 0.999, 0.999, 0.991, 0.965, 0.757]
+   pass  1  read_rms 0.279  |S|   0.83  step  0.47  turn 28.8  grad 0.255
+   pass  2  read_rms 0.319  |S|   1.71  step  1.10  turn 27.1  grad 0.149
+   pass  3  read_rms 0.382  |S|   2.15  step  1.85  turn 54.1  grad 0.0233
+   pass  4  read_rms 0.466  |S|   3.39  step  1.45  turn 17.7  grad 0.0102
+   pass  5  read_rms 0.479  |S|   4.72  step  1.47  turn 9.8  grad 0.00573
+   pass  6  read_rms 0.483  |S|   6.09  step  1.48  turn 6.3  grad 0.0037
+   pass  7  read_rms 0.485  |S|   7.49  step  1.49  turn 4.5  grad 0.00253
+   pass  8  read_rms 0.486  |S|   8.90  step  1.51  turn 3.5  grad 0.00175
+   pass  9  read_rms 0.486  |S|  10.34  step  1.51  turn 2.7  grad 0.00123
+   pass 10  read_rms 0.487  |S|  11.79  step  1.52  turn 2.2  grad 0.000875
+   pass 11  read_rms 0.487  |S|  13.25  step  1.52  turn 1.8  grad 0.000636
+   pass 12  read_rms 0.487  |S|  14.72  step  1.53  turn 1.5  grad 0.000476
+
+== tiny s0 seed1  final |s0| = 0.46
+   R4   [1.0, 1.0, 1.0, 0.988, 0.115, 0.145]
+   R8   [1.0, 1.0, 1.0, 1.0, 0.958, 0.68]
+   R12  [1.0, 1.0, 0.999, 0.999, 0.979, 0.84]
+   R16  [1.0, 0.999, 0.999, 0.998, 0.983, 0.886]
+   pass  1  read_rms 0.257  |S|   0.82  step  0.47  turn 27.9  grad 0.101
+   pass  2  read_rms 0.280  |S|   1.76  step  1.12  turn 24.8  grad 0.065
+   pass  3  read_rms 0.327  |S|   2.78  step  1.50  turn 25.2  grad 0.0177
+   pass  4  read_rms 0.370  |S|   4.15  step  1.88  turn 23.3  grad 0.00443
+   pass  5  read_rms 0.413  |S|   5.88  step  2.09  turn 15.6  grad 0.0021
+   pass  6  read_rms 0.442  |S|   7.80  step  2.13  turn 9.0  grad 0.00127
+   pass  7  read_rms 0.456  |S|   9.80  step  2.12  turn 5.0  grad 0.000819
+   pass  8  read_rms 0.463  |S|  11.84  step  2.11  turn 3.1  grad 0.000549
+   pass  9  read_rms 0.466  |S|  13.89  step  2.11  turn 2.2  grad 0.000374
+   pass 10  read_rms 0.468  |S|  15.94  step  2.10  turn 1.7  grad 0.000271
+   pass 11  read_rms 0.469  |S|  18.00  step  2.10  turn 1.3  grad 0.000202
+   pass 12  read_rms 0.470  |S|  20.07  step  2.10  turn 1.1  grad 0.000155
+
+== A1 unit-RMS s0 seed0  final |s0| = 7.27
+   R4   [1.0, 1.0, 1.0, 0.999, 0.088, 0.085]
+   R8   [1.0, 0.998, 0.997, 0.997, 0.998, 0.992]
+   R12  [1.0, 0.996, 0.992, 0.994, 0.996, 0.989]
+   R16  [1.0, 0.993, 0.991, 0.992, 0.994, 0.985]
+   pass  1  read_rms 0.408  |S|   4.98  step  4.74  turn 40.7  grad 0.000403
+   pass  2  read_rms 0.409  |S|   6.79  step  3.00  turn 20.1  grad 0.000338
+   pass  3  read_rms 0.443  |S|   9.21  step  3.65  turn 16.5  grad 0.000266
+   pass  4  read_rms 0.462  |S|  12.44  step  4.51  turn 14.9  grad 0.00022
+   pass  5  read_rms 0.483  |S|  16.35  step  5.28  turn 14.6  grad 0.00017
+   pass  6  read_rms 0.506  |S|  20.89  step  5.88  turn 13.2  grad 0.000105
+   pass  7  read_rms 0.527  |S|  26.15  step  6.21  turn 9.4  grad 5.23e-05
+   pass  8  read_rms 0.544  |S|  31.94  step  6.15  turn 4.8  grad 2.87e-05
+   pass  9  read_rms 0.555  |S|  37.85  step  6.02  turn 2.1  grad 1.76e-05
+   pass 10  read_rms 0.559  |S|  43.75  step  5.98  turn 1.4  grad 1.24e-05
+   pass 11  read_rms 0.561  |S|  49.66  step  5.97  turn 1.1  grad 9.66e-06
+   pass 12  read_rms 0.562  |S|  55.56  step  5.96  turn 0.9  grad 8.03e-06
+
+== A1 unit-RMS s0 seed1  final |s0| = 6.87
+   R4   [1.0, 1.0, 1.0, 0.993, 0.149, 0.135]
+   R8   [1.0, 1.0, 1.0, 0.999, 0.985, 0.84]
+   R12  [1.0, 0.999, 0.999, 0.999, 0.993, 0.937]
+   R16  [1.0, 0.999, 0.999, 0.999, 0.993, 0.969]
+   pass  1  read_rms 0.354  |S|   5.45  step  3.98  turn 34.8  grad 0.00706
+   pass  2  read_rms 0.379  |S|   8.83  step  4.88  turn 26.6  grad 0.00558
+   pass  3  read_rms 0.428  |S|  12.09  step  5.88  turn 23.1  grad 0.0019
+   pass  4  read_rms 0.460  |S|  17.01  step  7.48  turn 23.6  grad 0.000581
+   pass  5  read_rms 0.499  |S|  23.58  step  8.26  turn 17.1  grad 0.00031
+   pass  6  read_rms 0.523  |S|  31.06  step  8.46  turn 9.9  grad 0.000184
+   pass  7  read_rms 0.535  |S|  39.00  step  8.44  turn 5.3  grad 0.000112
+   pass  8  read_rms 0.541  |S|  47.07  step  8.37  turn 3.2  grad 7.29e-05
+   pass  9  read_rms 0.544  |S|  55.17  step  8.31  turn 2.1  grad 4.97e-05
+   pass 10  read_rms 0.545  |S|  63.26  step  8.26  turn 1.6  grad 3.38e-05
+   pass 11  read_rms 0.545  |S|  71.34  step  8.22  turn 1.3  grad 2.24e-05
+   pass 12  read_rms 0.545  |S|  79.39  step  8.18  turn 1.1  grad 1.48e-05

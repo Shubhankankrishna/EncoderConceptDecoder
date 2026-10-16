@@ -1,0 +1,15 @@
+2026-09-29 21:58:59 codebook k-means++ init from 985 complete chunks (2 micro-batches)
+2026-09-29 21:58:59 start: step 0/7600 (cosine over 7600) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 21:58:59 config: step 0, budget 48.0 h, milestone 24.0 h, micro_bs 2 x accum 2 x 1024, lr 0.0006 (scale 1.0), warmup 2, shortcut (('1', 0.5), ('2a', 0.25), ('2b', 0.25)), lam ncp/s/c 0.1/0.05/0.1, eval R 3, compile none
+2026-09-29 21:59:01 step 1 loss 15.1261 ntp 9.0032 ncp 2.707 ncp_s 2.708 scons 0.3186 vq 5.6850 gn 0.71 lr 3.00e-04 ang23 14.19 rho3 0.927 1994 tok/s
+2026-09-29 21:59:04 step 2 loss 15.1408 ntp 8.9680 ncp 2.708 ncp_s 2.707 scons 0.2557 vq 5.7411 gn 0.82 lr 6.00e-04 ang23 15.12 rho3 0.930 1763 tok/s
+2026-09-29 21:59:05 step 3 loss 15.2301 ntp 8.9328 ncp 2.700 ncp_s 2.703 scons 0.1297 vq 5.8792 gn 0.66 lr 6.00e-04 ang23 9.94 rho3 0.955 2254 tok/s
+2026-09-29 21:59:06 GUARD {'kind': 'memory_restart', 'step': 3, 'time': '2026-09-29 21:59:06', 'wall_h': 0.0017942625284194946, 'footprint_gib': 0.24, 'threshold_gib': 24.0}
+2026-09-29 21:59:06 RE-EXEC after checkpoint at step 3 (footprint 0.2 GiB)
+2026-09-29 21:59:08 resumed from ../runs/tests/reexec/ckpt_last.pt: step 3, elapsed 0.00 h, cursor 12, lr_scale 1.0, micro_bs 2 x accum 2, milestone_done False
+2026-09-29 21:59:08 start: step 3/7600 (cosine over 7600) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 21:59:08 config: step 3, budget 48.0 h, milestone 24.0 h, micro_bs 2 x accum 2 x 1024, lr 0.0006 (scale 1.0), warmup 2, shortcut (('1', 0.5), ('2a', 0.25), ('2b', 0.25)), lam ncp/s/c 0.1/0.05/0.1, eval R 3, compile none
+2026-09-29 21:59:09 step 4 loss 15.2653 ntp 8.9140 ncp 2.702 ncp_s 2.704 scons 0.1827 vq 5.9276 gn 0.71 lr 6.00e-04 ang23 8.56 rho3 0.961 2569 tok/s
+2026-09-29 21:59:11 step 5 loss 14.8811 ntp 8.8466 ncp 2.714 ncp_s 2.714 scons 0.0510 vq 5.6223 gn 0.88 lr 6.00e-04 ang23 5.92 rho3 0.978 2370 tok/s
+2026-09-29 21:59:13 step 6 loss 15.1316 ntp 8.8611 ncp 2.712 ncp_s 2.712 scons 0.0067 vq 5.8629 gn 0.67 lr 6.00e-04 ang23 4.51 rho3 0.984 2203 tok/s
+2026-09-29 21:59:13 STOP (max_steps) at step 6, 0.00 h

@@ -1,0 +1,9 @@
+PASS D1 reach over tok: confined (both plan inputs) = w-1 = 7 at depth 1, 2 and 6; stack = 10 per layer (10, 20, 60)
+PASS D2 plan confinement: chunk 10's plan changes ONLY positions [43, 44, 45, 46] (confined, both plan inputs); the stack spreads it to 34 positions (= later positions read it as a past plan)
+PASS D3 target-aligned index (chunk j* ends <= t, predicts the chunk of x_{t+1}); null plan at the first 3 tokens of every document; no plan leaks across documents
+PASS D4 (read arm) plan gate floor: with the gate driven to -1e4 it stays >= 0.5 and the plan still reaches the logits
+PASS D5 init: read gate 0.881, write scale 1.000; NTP at init 9.16 nats (ln V = 9.01)
+     gradients: NTP -> u, c_pred, tok, W_u, offsets, E | NextLat -> psi, never E (frozen head)
+     params (M2 config): decoder 13.12M (3.15M per layer x 4, plan 0.53M) | NextLat psi 2.63M (training only)
+     reach without the core: 70 tokens at any depth (w = 8)
+python hrm_decoder.py  2.69s user 0.21s system 263% cpu 1.103 total

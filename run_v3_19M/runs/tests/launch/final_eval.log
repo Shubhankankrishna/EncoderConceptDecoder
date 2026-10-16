@@ -1,0 +1,22 @@
+lang tinystories: intact=8.3284 core_off=8.5507 plan_swap=8.3284 u_off=8.4206 c_off=8.3344 shared_ffn_off=8.3273 table_off=8.3283 engram_off=8.3284 engram_read2_off=8.3284 F_off=8.3288 R1=8.3283 R2a=8.3283 R2b=8.3283 R3=8.3284
+lang wikitext: intact=8.4960 core_off=8.7268 plan_swap=8.4963 u_off=8.6217 c_off=8.5074 shared_ffn_off=8.4956 table_off=8.4960 engram_off=8.4960 engram_read2_off=8.4960 F_off=8.4959 R1=8.4954 R2a=8.4959 R2b=8.4959 R3=8.4960
+part lang done in 10s
+items test: intact probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000 | synthetic macro 0.000
+items test: plan_swap probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000
+items ood: intact probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000 | synthetic macro 0.000
+items ood: plan_swap probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000
+part items done in 79s
+audit summary: {'encoder': {'cos_median': 0.075, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.008}, 'core_attn': {'cos_median': -0.072, 'cos_frac_negative': 0.583, 'short_over_main_median': 0.507}, 'core_own_ffn': {'cos_median': 0.034, 'cos_frac_negative': 0.417, 'short_over_main_median': 0.541}, 'core_reads_writes': {'cos_median': 0.143, 'cos_frac_negative': 0.25, 'short_over_main_median': 0.703}, 'core_shared': {'cos_median': 0.046, 'cos_frac_negative': 0.333, 'short_over_main_median': 0.517}, 'core_table': {'cos_median': 0.0, 'cos_frac_negative': 0.333, 'short_over_main_median': 0.699}, 'ncp_head': {'cos_median': 0.996, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.486}, 'dec_plan': {'cos_median': 0.0, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.0}}
+part audit done in 18s
+ALL DONE in 107s -> ../runs/tests/launch/eval_final.json
+lang tinystories: intact=8.3284 core_off=8.5507 plan_swap=8.3284 u_off=8.4206 c_off=8.3344 shared_ffn_off=8.3273 table_off=8.3283 engram_off=8.3284 engram_read2_off=8.3284 F_off=8.3288 R1=8.3283 R2a=8.3283 R2b=8.3283 R3=8.3284
+lang wikitext: intact=8.4960 core_off=8.7268 plan_swap=8.4963 u_off=8.6217 c_off=8.5074 shared_ffn_off=8.4956 table_off=8.4960 engram_off=8.4960 engram_read2_off=8.4960 F_off=8.4959 R1=8.4954 R2a=8.4959 R2b=8.4959 R3=8.4960
+part lang done in 13s
+items test: intact probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000 | synthetic macro 0.000
+items test: plan_swap probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000
+items ood: intact probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000 | synthetic macro 0.000
+items ood: plan_swap probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000
+part items done in 60s
+audit summary: {'encoder': {'cos_median': 0.075, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.008}, 'core_attn': {'cos_median': -0.072, 'cos_frac_negative': 0.583, 'short_over_main_median': 0.507}, 'core_own_ffn': {'cos_median': 0.034, 'cos_frac_negative': 0.417, 'short_over_main_median': 0.541}, 'core_reads_writes': {'cos_median': 0.143, 'cos_frac_negative': 0.25, 'short_over_main_median': 0.703}, 'core_shared': {'cos_median': 0.046, 'cos_frac_negative': 0.333, 'short_over_main_median': 0.517}, 'core_table': {'cos_median': 0.0, 'cos_frac_negative': 0.333, 'short_over_main_median': 0.699}, 'ncp_head': {'cos_median': 0.996, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.486}, 'dec_plan': {'cos_median': 0.0, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.0}}
+part audit done in 15s
+ALL DONE in 88s -> ../runs/tests/launch/eval_best.json

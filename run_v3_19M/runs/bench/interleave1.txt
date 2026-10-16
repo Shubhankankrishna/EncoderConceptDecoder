@@ -1,0 +1,21 @@
+== base,block64 64%; charging
+warm-up done (64s incl. any compile)
+interleaved A/B, 12 measured steps per config, alloc 1.82 GiB, driver 6.99 GiB
+  base       driver max 7.02 GiB  median 16.75 s/step ( 1956 tok/s)  IQR 16.34-17.21  paired time ratio vs base: 1.000  -> +0.0 % tok/s
+  block64    driver max 6.99 GiB  median 15.68 s/step ( 2089 tok/s)  IQR 15.62-15.83  paired time ratio vs base: 0.943  -> +6.1 % tok/s
+swap before 4600.94 MB, after 4480.94 MB
+== base,block128 68%; charging
+warm-up done (65s incl. any compile)
+interleaved A/B, 12 measured steps per config, alloc 1.82 GiB, driver 7.00 GiB
+  base       driver max 7.04 GiB  median 17.48 s/step ( 1874 tok/s)  IQR 17.37-18.58  paired time ratio vs base: 1.000  -> +0.0 % tok/s
+  block128   driver max 7.04 GiB  median 16.82 s/step ( 1948 tok/s)  IQR 16.64-16.91  paired time ratio vs base: 0.953  -> +4.9 % tok/s
+swap before 4480.94 MB, after 4440.94 MB
+== base,memo0 72%; charging
+warm-up done (73s incl. any compile)
+interleaved A/B, 12 measured steps per config, alloc 1.82 GiB, driver 7.05 GiB
+  base       driver max 7.06 GiB  median 18.22 s/step ( 1799 tok/s)  IQR 17.33-19.15  paired time ratio vs base: 1.000  -> +0.0 % tok/s
+  memo0      driver max 7.06 GiB  median 17.67 s/step ( 1854 tok/s)  IQR 17.36-18.71  paired time ratio vs base: 0.991  -> +0.9 % tok/s
+swap before 4440.94 MB, after 4586.00 MB
+== base,b4,b4block64 76%; charging
+warm-up done (285s incl. any compile)
+== base,b4,b4block64: REJECTED — no measurement; warm-up not finished after 7.8 min, swap 4.6 -> 6.4 GB (thrashing at B4x8)

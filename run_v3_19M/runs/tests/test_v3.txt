@@ -1,0 +1,51 @@
+T0a_state_dict_transfers_from_v3_ref                       PASS [] []
+T0b_bit_parity_with_v3_ref_sched_3                         PASS max|d|=0.0e+00
+T0b_bit_parity_with_v3_ref_sched_2a                        PASS max|d|=0.0e+00
+T0b_bit_parity_with_v3_ref_sched_2b                        PASS max|d|=0.0e+00
+T0b_bit_parity_with_v3_ref_sched_1                         PASS max|d|=0.0e+00
+E6_one_engram_gather_per_forward (C4)                      PASS calls=1
+E1_two_reads_bit_identical_to_one_read_at_Wv2_0            PASS 
+E2_L_reach_63_with_read2_and_6head_F                       PASS reach=63
+E3_engram_off_equals_Wv_zero_forward                       PASS 
+E4_engram_read2_off_equals_Wv2_zero_forward                PASS 
+E5_F_off_leaves_L_path_and_changes_concepts                PASS 
+C1_init_identity_table0_sharedw2_0                         PASS 
+C1b_table_only_perturbation_changes_output (C6)            PASS 
+C1c_shared_only_perturbation_changes_output (C6)           PASS 
+C1d_M1_differs_from_M3                                     PASS 
+C2_causal_over_concepts                                    PASS 
+C3_document_isolation                                      PASS 
+C6_batch_row_permutation_invariant                         PASS 
+C7_batched_shortcut_1_equals_separate                      PASS 0.0e+00 0.0e+00
+C7_batched_shortcut_2a_equals_separate                     PASS 0.0e+00 0.0e+00
+C7_batched_shortcut_2b_equals_separate                     PASS 0.0e+00 0.0e+00
+C8_C_half_cache_bit_identical_to_v3_ref_read               PASS 
+C9_table_off_and_shared_off_equal_zeroed_params            PASS 
+G1_untouched_init_NTP_reaches_C_S1_S2_S3                   PASS 
+G2_untouched_init_table_sharedw2_Wv2_get_gradient          PASS 
+G3_untouched_init_expected_zero_branches_are_zero          PASS {'core.shared.w1.weight': 0.0, 'core.shared.w3.weight': 0.0, 'enc.engram2.Wk.weight': 0.0}
+G4_structurally_dead_gammaS_t0_layer1_attn                 PASS 
+G5_perturbed_every_parameter_gets_gradient                 PASS []
+D1_scons_teacher_gets_zero_grad_student_nonzero (C1)       PASS 
+D1m_mutant_without_detach_is_detected                      PASS teacher grad 7.15e-03
+D2_scons_does_not_touch_out_norm_gain                      PASS 
+R1_reuse_parity_loss_grads_and_one_AdamW_step (C3)         PASS dl=0.0e+00 dg=1.4e-16 dp=9.7e-14
+P1_future_token_edit_leaves_earlier_logits                 PASS 
+P2_other_document_edit_leaves_this_document                PASS 
+P3_first_three_positions_get_null_plan                     PASS 
+P4_use_u_use_c_switches_change_logits                      PASS 
+P5_decoder_token_path_reach_70                             PASS reach=70
+M1_masks_padded_and_partial_chunks                         PASS 
+M2_empty_pair_mask_gives_finite_zero                       PASS 
+M3_full_batch_denominator_equals_one_big_batch             PASS nA=247 nB=78
+O1_table_in_no_decay_group                                 PASS 
+O2_every_parameter_registered_once                         PASS 
+A1_compute_params_18986871_and_ledger_reconciles (C5)      PASS 
+X_mutant_future_leak_is_caught                             PASS 
+X_mutant_doc_cross_is_caught                               PASS 
+X_mutant_teacher_detach_removed_is_caught                  PASS 
+X_mutant_detached_prefix_is_caught                         PASS 
+X_mutant_duplicate_registration_is_caught                  PASS 
+X_mutant_table_decayed_is_caught                           PASS 
+
+49/49 PASS

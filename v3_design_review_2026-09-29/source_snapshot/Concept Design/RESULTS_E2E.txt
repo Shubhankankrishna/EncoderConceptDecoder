@@ -1,0 +1,55 @@
+END-TO-END TEST OF THE CONCEPT MODULE (tokens -> encoder_v1 -> concept core -> contract decoder), d=64, CPU, 1 seed per arm.
+Task: 8 facts [a R b] at tokens 0-23, random filler, then 7 queries [Q x R^h] '=' answer, every answer >= 89 tokens from any fact
+(beyond the 83-token local path), so far facts can reach the answer ONLY through the concept core. Curriculum: 1-hop for 1500 steps, then hops 1-3.
+
+== v2 loop core
+   step  1000  hop1..5 acc = [0.526, 0.058, 0.041, 0.062, 0.062]  answer NLL 3.841
+   step  1500  hop1..5 acc = [0.741, 0.015, 0.034, 0.034, 0.0]  answer NLL 4.929
+   step  3000  hop1..5 acc = [0.767, 0.204, 0.138, 0.159, 0.171]  answer NLL 2.034
+   step  4500  hop1..5 acc = [0.741, 0.226, 0.138, 0.117, 0.109]  answer NLL 1.853
+   step  6000  hop1..5 acc = [0.81, 0.153, 0.172, 0.186, 0.186]  answer NLL 1.797
+   step  7500  hop1..5 acc = [0.966, 0.672, 0.166, 0.159, 0.155]  answer NLL 1.12
+   step  8000  hop1..5 acc = [1.0, 0.788, 0.172, 0.179, 0.186]  answer NLL 0.983
+   step  8500  hop1..5 acc = [1.0, 0.781, 0.221, 0.207, 0.14]  answer NLL 1.11
+   step  9000  hop1..5 acc = [1.0, 0.803, 0.269, 0.214, 0.233]  answer NLL 1.04
+== NCP 4-layer stack
+   step  1000  hop1..5 acc = [0.397, 0.109, 0.055, 0.076, 0.07]  answer NLL 3.039
+   step  1500  hop1..5 acc = [1.0, 0.0, 0.0, 0.0, 0.023]  answer NLL 8.183
+   step  3000  hop1..5 acc = [1.0, 0.146, 0.131, 0.103, 0.155]  answer NLL 1.824
+   step  4500  hop1..5 acc = [1.0, 0.248, 0.131, 0.172, 0.171]  answer NLL 1.964
+   step  6000  hop1..5 acc = [1.0, 0.234, 0.124, 0.207, 0.078]  answer NLL 1.895
+   step  7500  hop1..5 acc = [1.0, 0.292, 0.207, 0.193, 0.062]  answer NLL 1.869
+   step  8000  hop1..5 acc = [1.0, 0.255, 0.186, 0.221, 0.023]  answer NLL 1.758
+   step  8500  hop1..5 acc = [1.0, 0.263, 0.193, 0.179, 0.101]  answer NLL 1.786
+   step  9000  hop1..5 acc = [1.0, 0.321, 0.241, 0.2, 0.194]  answer NLL 1.672
+== v2 loop, chunk-aligned facts (diagnostic)
+   step  1000  hop1..5 acc = [1.0, 0.0, 0.0, 0.0, 0.0]  answer NLL 8.349
+   step  1500  hop1..5 acc = [0.993, 0.0, 0.0, 0.024, 0.009]  answer NLL 9.213
+   step  3000  hop1..5 acc = [0.993, 0.178, 0.143, 0.056, 0.009]  answer NLL 1.924
+   step  4500  hop1..5 acc = [1.0, 0.164, 0.122, 0.152, 0.009]  answer NLL 1.679
+
+== step-9000 analysis (128 docs x 7 queries), hop1..5
+   loop, R1   passes: [1.0, 0.848, 0.228, 0.19, 0.187]
+   loop, R2   passes: [1.0, 0.848, 0.211, 0.2, 0.181]
+   loop, R4   passes: [1.0, 0.854, 0.216, 0.19, 0.181]
+   loop, R8   passes: [1.0, 0.854, 0.216, 0.195, 0.187]
+   loop, R16  passes: [1.0, 0.848, 0.216, 0.2, 0.181]
+   loop, plan OFF:    [0.0, 0.0, 0.023, 0.021, 0.022]
+   stack4:            [1.0, 0.269, 0.222, 0.246, 0.159]
+   stack4, plan OFF:  [0.0, 0.0, 0.0, 0.0, 0.0]
+   codebook used: loop 1.0, stack 1.0 | variance explained: loop 0.711, stack 0.566
+   NCP CE 1.502 vs code-marginal entropy 2.649 nats/segment (loop); stack 1.557 vs 3.268
+   loop state norm over 16 passes: [0.39, 0.79, 1.2, 1.6, 2.01, 2.41, 2.81, 3.22, 3.62, 4.02, 4.43, 4.83, 5.24, 5.64, 6.04, 6.45]
+   step size per pass: [0.404, 0.405, 0.405, 0.404, 0.404] ...
+   gradient reaching each pass: [0.0125, 0.0117, 0.0113, 0.0111, 0.011, 0.0109, 0.0109, 0.0109, 0.0108, 0.0108, 0.0108, 0.0109, 0.0109, 0.0109, 0.0109, 0.0109]
+
+== XM decision (branching task, 2-token answer paths, 3000 steps)
+   loop_K1: {'nll_mixture': 2.0734, 'greedy_path_coherent': 0.127, 'coverage_4_generations': 0.11}
+   loopz_K4: {'nll_mixture': 2.0435, 'nll_selected_k_LEAKY': 2.0467, 'nll_single_random_k': 2.0452, 'greedy_path_coherent': 0.1, 'coverage_4_generations': 0.048}
+   XM win shares over training: [0.006,0.02,0.776,0.198] @500 -> [0.021,0.222,0.754,0.003] @1000 -> [0.277,0.235,0.332,0.156] @2500
+
+== concept-level curriculum check (v2 loop, hop-1 for 1500 steps then 1-3; 8 passes at test):
+   step 1500 R1 [0.925, 0.106, 0.092, 0.098] R4 [1.0, 0.209, 0.103, 0.102] R8 [0.999, 0.221, 0.104, 0.107, 0.117, 0.118] pass step sizes [1.09, 1.1, 1.07, 1.0
+   step 2000 R1 [0.999, 0.051, 0.042, 0.039] R4 [1.0, 1.0, 0.996, 0.927] R8 [1.0, 0.995, 0.988, 0.985, 0.947, 0.771] pass step sizes [1.14, 1.1, 1.12, 1.1, 1.
+   step 3000 R1 [0.999, 0.077, 0.082, 0.062] R4 [1.0, 0.997, 0.998, 0.973] R8 [1.0, 0.996, 0.996, 0.997, 0.979, 0.877] pass step sizes [1.09, 1.1, 1.12, 1.09,
+   step 5000 R1 [1.0, 0.092, 0.102, 0.073] R4 [1.0, 0.996, 0.992, 0.745] R8 [1.0, 0.994, 0.998, 0.991, 0.852, 0.507] pass step sizes [1.02, 1.05, 1.09, 1.09, 

@@ -1,0 +1,26 @@
+lang tinystories: intact=1.8623 core_off=2.5284 plan_swap=2.9773 u_off=2.4605 c_off=1.8754 shared_ffn_off=1.8667 table_off=1.8693 engram_off=2.3384 engram_read2_off=1.8773 F_off=2.0306 R1=1.8689 R2a=1.8634 R2b=1.8636 R3=1.8623
+lang wikitext: intact=3.4034 core_off=3.9170 plan_swap=3.7871 u_off=3.8101 c_off=3.4168 shared_ffn_off=3.4062 table_off=3.4121 engram_off=4.1228 engram_read2_off=3.4454 F_off=3.5144 R1=3.4078 R2a=3.4042 R2b=3.4045 R3=3.4034
+part lang done in 829s
+trunc tinystories: {'gain_beyond_70': 0.10817647390935692, 'swap_cost': 1.150001146470482, 'rows': 256, 'rows_ctx_ge_512': 3, 'gain_beyond_70_ctx512': 0.09557493527730306, 'swap_cost_ctx512': 1.3352770805358887, 'curve': {'r72': 2.0152798375339374, 'r128': 1.9310013469269613, 'r256': 1.9110825247798406, 'r512': 1.9069700160569252, 'r1024': 1.9071033636245804}, 'curve_ctx512': {'r72': 2.5402546723683677, 'r128': 2.453911383946737, 'r256': 2.426721731821696, 'r512': 2.436455408732096, 'r1024': 2.4446797370910645}}
+trunc wikitext: {'gain_beyond_70': 0.07130973292332099, 'swap_cost': 0.3816236682966645, 'rows': 256, 'rows_ctx_ge_512': 231, 'gain_beyond_70_ctx512': 0.06992480532947556, 'swap_cost_ctx512': 0.3392331607930072, 'curve': {'r72': 3.438667757370893, 'r128': 3.404145943884756, 'r256': 3.3857463724472945, 'r512': 3.3756264518289005, 'r1024': 3.367358024447572}, 'curve_ctx512': {'r72': 3.490509105451179, 'r128': 3.4584262534911496, 'r256': 3.440015791298507, 'r512': 3.429711714451447, 'r1024': 3.420584300121704}}
+part trunc done in 196s
+items val: intact probes lr_recall1=0.996 lr_carry3=0.889 lr_multi4=0.547 lr_hop=0.154 lr_bind=0.068 | synthetic macro 0.649
+items val: plan_swap probes lr_recall1=0.006 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.064
+part items done in 2257s
+probe G-E1: {'pos0': 0.5439, 'pos1': 0.5424, 'pos2': 0.5849, 'pos3': 0.6965}
+probe u->answer lr_recall1: {'tok0': 0.786}
+probe u->answer lr_carry3: {'tok0': 0.573, 'tok1': 0.146, 'tok2': 0.039}
+probe u->answer lr_multi4: {'tok0': 0.807, 'tok1': 0.195, 'tok2': 0.1}
+probe u->answer lr_hop: {'tok0': 0.233, 'tok1': 0.068}
+probe u->answer lr_bind: {'tok0': 0.311}
+probe lr_hop bridge by pass: {'pass1': 0.175, 'pass2': 0.175, 'pass3': 0.175}
+part probes done in 264s
+health: {'codes_used_frac_min': 1.0, 'codes_used_frac_mean': 1.0, 'perplexity_mean': 117.70304870605469, 'var_explained': 0.650984287180915, 'ncp_ce': 3.074105323175466, 'ncp_ce_M1': 3.0787785868423456, 'code_entropy': 4.76799201965332, 'n_concepts': 14787, 'ncp_pairs': 13685}
+loop dynamics M3: {'sched': '3', 'state_norm': [31.213, 66.773, 102.495], 'step': [31.213, 36.891, 36.579], 'consecutive_step_angle_deg': [22.748, 6.213], 'turn_deg': [12.247, 5.452], 'rho': 0.9778214693069458, 'rel_step': [1.182, 1.172], 'grad': [0.0, 0.0, 0.0], 'grad_ratio_S1_over_SM': 1.0950417103707681}
+part health done in 11s
+audit summary: {'encoder': {'cos_median': 0.19, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.023}, 'core_attn': {'cos_median': 0.355, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.056}, 'core_own_ffn': {'cos_median': 0.33, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.109}, 'core_reads_writes': {'cos_median': 0.365, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.089}, 'core_shared': {'cos_median': 0.311, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.124}, 'core_table': {'cos_median': 0.075, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.101}, 'ncp_head': {'cos_median': 0.613, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.279}, 'dec_plan': {'cos_median': 0.0, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.0}}
+part audit done in 33s
+gen tinystories: greedy[0] = ' they saw a big, scary dog. Timmy was scared and didn\'t know what to do. He asked Sally, "Why are you scared?"\n\nSally replied, "I want to win the race, but I am scared."\n\nSally said, "Don\'t worry, Timmy. We can race together."\n\nSally smiled and said, "Okay, let\'s race!"\n\nThey ran as fast as they cou'
+gen wikitext: greedy[0] = ' David Carradine and directed by David Nutter. The episode was written by David Carradine and directed by David Nutter.\n\nPlot\n\nCast\n\nProduction\n\nDevelopment\nThe episode was written by David Carradine and directed by David Nutter. The episode was written by David Carradine and directed by David Nutte'
+part gen done in 88s
+ALL DONE in 3679s -> ../runs/v3_48h/eval_24h.json

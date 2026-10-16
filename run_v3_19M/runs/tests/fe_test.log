@@ -1,0 +1,29 @@
+lang tinystories: intact=6.7042 core_off=6.7603 plan_swap=6.7042 u_off=6.7172 c_off=6.7139 shared_ffn_off=6.7074 table_off=6.7042 engram_off=6.7044 engram_read2_off=6.7043 F_off=6.7042 R1=6.7042 R2a=6.7042 R2b=6.7042 R3=6.7042
+lang wikitext: intact=7.2949 core_off=7.3262 plan_swap=7.2957 u_off=7.2972 c_off=7.2924 shared_ffn_off=7.2999 table_off=7.2950 engram_off=7.2949 engram_read2_off=7.2949 F_off=7.2949 R1=7.2951 R2a=7.2950 R2b=7.2950 R3=7.2949
+part lang done in 25s
+trunc tinystories: {'gain_beyond_70': 2.956390381392282e-06, 'swap_cost': -9.737014770472285e-05, 'rows': 6, 'rows_ctx_ge_512': 0, 'gain_beyond_70_ctx512': None, 'swap_cost_ctx512': None, 'curve': {'r72': 6.522687816619873, 'r128': 6.52271671295166, 'r256': 6.522701549530029, 'r512': 6.5226846694946286, 'r1024': 6.522684860229492}, 'curve_ctx512': None}
+trunc wikitext: {'gain_beyond_70': -0.0002503395080566406, 'swap_cost': -0.00032033920288032647, 'rows': 6, 'rows_ctx_ge_512': 5, 'gain_beyond_70_ctx512': -0.0002503395080566406, 'swap_cost_ctx512': -0.0003204345703125, 'curve': {'r72': 7.612959003448486, 'r128': 7.613497161865235, 'r256': 7.61320915222168, 'r512': 7.613127040863037, 'r1024': 7.613209342956543}, 'curve_ctx512': {'r72': 7.612959098815918, 'r128': 7.6134974479675295, 'r256': 7.613209056854248, 'r512': 7.613127326965332, 'r1024': 7.613209438323975}}
+part trunc done in 6s
+items test: intact probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000 | synthetic macro 0.000
+items test: plan_swap probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000
+items ood: intact probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000 | synthetic macro 0.000
+items ood: plan_swap probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000
+part items done in 148s
+probe G-E1: {'pos0': 0.3174, 'pos1': 0.3091, 'pos2': 0.3372, 'pos3': 0.3107}
+probe u->answer lr_recall1: {'tok0': 0.0}
+probe u->answer lr_carry3: {'tok0': 0.0, 'tok1': 0.0, 'tok2': 0.0}
+probe u->answer lr_multi4: {'tok0': 0.0, 'tok1': 0.0, 'tok2': 0.0}
+probe u->answer lr_hop: {'tok0': 0.0, 'tok1': 0.0}
+probe u->answer lr_bind: {'tok0': 0.0}
+probe lr_hop bridge by pass: {'pass1': 0.0, 'pass2': 0.0, 'pass3': 0.0}
+part probes done in 21s
+health: {'codes_used_frac_min': 0.75, 'codes_used_frac_mean': 0.828125, 'perplexity_mean': 3.7265632152557373, 'var_explained': 0.0898791967260908, 'ncp_ce': 1.7867071535850305, 'ncp_ce_M1': 1.78606850366398, 'code_entropy': 1.296940565109253, 'n_concepts': 14976, 'ncp_pairs': 13834}
+loop dynamics M3: {'sched': '3', 'state_norm': [12.585, 24.858, 36.998], 'step': [12.585, 12.277, 12.142], 'consecutive_step_angle_deg': [2.136, 0.22], 'turn_deg': [1.055, 0.391], 'rho': 0.9998328685760498, 'rel_step': [0.976, 0.965], 'grad': [0.0, 0.0, 0.0], 'grad_ratio_S1_over_SM': 1.0097643938984637}
+part health done in 10s
+audit summary: {'encoder': {'cos_median': 0.027, 'cos_frac_negative': 0.083, 'short_over_main_median': 0.004}, 'core_attn': {'cos_median': 0.277, 'cos_frac_negative': 0.083, 'short_over_main_median': 0.23}, 'core_own_ffn': {'cos_median': 0.199, 'cos_frac_negative': 0.083, 'short_over_main_median': 0.246}, 'core_reads_writes': {'cos_median': 0.426, 'cos_frac_negative': 0.25, 'short_over_main_median': 0.158}, 'core_shared': {'cos_median': 0.178, 'cos_frac_negative': 0.167, 'short_over_main_median': 0.248}, 'core_table': {'cos_median': 0.032, 'cos_frac_negative': 0.083, 'short_over_main_median': 0.292}, 'ncp_head': {'cos_median': 0.999, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.5}, 'dec_plan': {'cos_median': 0.0, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.0}}
+part audit done in 14s
+gen tinystories: greedy[0] = '................................................................................................................................'
+gen wikitext: greedy[0] = '...\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+part gen done in 71s
+ALL DONE in 295s -> ../runs/tests/fe_test.json
+nice -n 19 python final_eval.py --ckpt ../runs/tests/s105/ckpt_last.pt --out   527.93s user 121.91s system 218% cpu 4:56.92 total

@@ -1,0 +1,674 @@
+[
+ {
+  "name": "R0 v2-like enc8 + core dc256 4L ff704, no shared, no mod",
+  "compute": 14327657,
+  "enc": 7263273,
+  "core": 3582776,
+  "dec": 3481608,
+  "share": [
+   0.5069407370653835,
+   0.2500601459122032,
+   0.24299911702241336
+  ],
+  "fwd_eval": 16108032.0,
+  "fwd_train": 17542400.0,
+  "core_mac_share_eval": 0.17605924795778902,
+  "tok_s": [
+   1737.9943270982073,
+   2389.742199760035
+  ],
+  "parts": {
+   "encoder": {
+    "params": 7263273,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "engram_proj": 215042,
+    "pool": 262144,
+    "macs": 7781376.0,
+    "layers": 8
+   },
+   "decoder": {
+    "params": 3481608,
+    "layer": 837250,
+    "plan": 132352,
+    "macs": 3393536.0,
+    "head_macs": 2097152
+   },
+   "core": {
+    "params": 3582776,
+    "per_layer": 873094,
+    "ffn": 540672,
+    "attn": 264324,
+    "shared": 0,
+    "mod": 24576,
+    "head": 65568,
+    "codebook": 32768,
+    "pq": [
+     32,
+     128,
+     8
+    ],
+    "macs_eval": 2835968.0,
+    "macs_train": 4270336.0,
+    "apps_eval": 12,
+    "apps_train": 18.0
+   }
+  }
+ },
+ {
+  "name": "R1 enc8 + core dc256 4L ff704 + shared1024 (parallel) + mod table",
+  "compute": 15115117,
+  "enc": 7263273,
+  "core": 4370236,
+  "dec": 3481608,
+  "share": [
+   0.48053038557359495,
+   0.28913014699125383,
+   0.23033946743515119
+  ],
+  "fwd_eval": 18467328.0,
+  "fwd_train": 21081344.0,
+  "core_mac_share_eval": 0.28132191078211205,
+  "tok_s": [
+   1505.2540198214201,
+   2069.7242772544528
+  ],
+  "parts": {
+   "encoder": {
+    "params": 7263273,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "engram_proj": 215042,
+    "pool": 262144,
+    "macs": 7781376.0,
+    "layers": 8
+   },
+   "decoder": {
+    "params": 3481608,
+    "layer": 837250,
+    "plan": 132352,
+    "macs": 3393536.0,
+    "head_macs": 2097152
+   },
+   "core": {
+    "params": 4370236,
+    "per_layer": 873094,
+    "ffn": 540672,
+    "attn": 264324,
+    "shared": 787460,
+    "mod": 24576,
+    "head": 65568,
+    "codebook": 32768,
+    "pq": [
+     32,
+     128,
+     8
+    ],
+    "macs_eval": 5195264.0,
+    "macs_train": 7809280.0,
+    "apps_eval": 12,
+    "apps_train": 18.0
+   }
+  }
+ },
+ {
+  "name": "R2 enc8 + core dc256 4L ff704 + shared1024 + mod PAPER",
+  "compute": 16406381,
+  "enc": 7263273,
+  "core": 5661500,
+  "dec": 3481608,
+  "share": [
+   0.44271024792122043,
+   0.3450791493870586,
+   0.21221060269172098
+  ],
+  "fwd_eval": 18467328.0,
+  "fwd_train": 21081344.0,
+  "core_mac_share_eval": 0.28132191078211205,
+  "tok_s": [
+   1505.2540198214201,
+   2069.7242772544528
+  ],
+  "parts": {
+   "encoder": {
+    "params": 7263273,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "engram_proj": 215042,
+    "pool": 262144,
+    "macs": 7781376.0,
+    "layers": 8
+   },
+   "decoder": {
+    "params": 3481608,
+    "layer": 837250,
+    "plan": 132352,
+    "macs": 3393536.0,
+    "head_macs": 2097152
+   },
+   "core": {
+    "params": 5661500,
+    "per_layer": 873094,
+    "ffn": 540672,
+    "attn": 264324,
+    "shared": 787460,
+    "mod": 1315840,
+    "head": 65568,
+    "codebook": 32768,
+    "pq": [
+     32,
+     128,
+     8
+    ],
+    "macs_eval": 5195264.0,
+    "macs_train": 7809280.0,
+    "apps_eval": 12,
+    "apps_train": 18.0
+   }
+  }
+ },
+ {
+  "name": "R3 enc8 + core dc384 4L ff704 + shared1024 + table",
+  "compute": 18133509,
+  "enc": 7394345,
+  "core": 7192020,
+  "dec": 3547144,
+  "share": [
+   0.40777242838107064,
+   0.39661490779308073,
+   0.1956126638258486
+  ],
+  "fwd_eval": 21667072.0,
+  "fwd_train": 25821568.0,
+  "core_mac_share_eval": 0.38064912508713683,
+  "tok_s": [
+   1276.321044194236,
+   1754.9414357670746
+  ],
+  "parts": {
+   "encoder": {
+    "params": 7394345,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "engram_proj": 215042,
+    "pool": 393216,
+    "macs": 7912448.0,
+    "layers": 8
+   },
+   "decoder": {
+    "params": 3547144,
+    "layer": 837250,
+    "plan": 197888,
+    "macs": 3409920.0,
+    "head_macs": 2097152
+   },
+   "core": {
+    "params": 7192020,
+    "per_layer": 1456520,
+    "ffn": 811008,
+    "attn": 543366,
+    "shared": 1181188,
+    "mod": 36864,
+    "head": 147504,
+    "codebook": 49152,
+    "pq": [
+     48,
+     128,
+     8
+    ],
+    "macs_eval": 8247552.0,
+    "macs_train": 12402048.0,
+    "apps_eval": 12,
+    "apps_train": 18.0
+   }
+  }
+ },
+ {
+  "name": "R4 enc8 + core dc384 4L ff1056 + shared1056 + table",
+  "compute": 19792389,
+  "enc": 7394345,
+  "core": 8850900,
+  "dec": 3547144,
+  "share": [
+   0.3735953754748858,
+   0.4471870475059883,
+   0.17921757701912588
+  ],
+  "fwd_eval": 22994176.0,
+  "fwd_train": 27812224.0,
+  "core_mac_share_eval": 0.41639482971688135,
+  "tok_s": [
+   1199.696599892166,
+   1649.5828248517284
+  ],
+  "parts": {
+   "encoder": {
+    "params": 7394345,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "engram_proj": 215042,
+    "pool": 393216,
+    "macs": 7912448.0,
+    "layers": 8
+   },
+   "decoder": {
+    "params": 3547144,
+    "layer": 837250,
+    "plan": 197888,
+    "macs": 3409920.0,
+    "head_macs": 2097152
+   },
+   "core": {
+    "params": 8850900,
+    "per_layer": 1862024,
+    "ffn": 1216512,
+    "attn": 543366,
+    "shared": 1218052,
+    "mod": 36864,
+    "head": 147504,
+    "codebook": 49152,
+    "pq": [
+     48,
+     128,
+     8
+    ],
+    "macs_eval": 9574656.0,
+    "macs_train": 14392704.0,
+    "apps_eval": 12,
+    "apps_train": 18.0
+   }
+  }
+ },
+ {
+  "name": "R5 enc10 SSSFSSSFSF + core dc256 + shared1024",
+  "compute": 16828023,
+  "enc": 8976179,
+  "core": 4370236,
+  "dec": 3481608,
+  "share": [
+   0.5334066277423082,
+   0.25969990651902486,
+   0.206893465738667
+  ],
+  "fwd_eval": 20439040.0,
+  "fwd_train": 23053056.0,
+  "core_mac_share_eval": 0.2541833667334669,
+  "tok_s": [
+   1400.7453707619052,
+   1926.0248847976195
+  ],
+  "parts": {
+   "encoder": {
+    "params": 8976179,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "engram_proj": 215042,
+    "pool": 262144,
+    "macs": 9753088.0,
+    "layers": 10
+   },
+   "decoder": {
+    "params": 3481608,
+    "layer": 837250,
+    "plan": 132352,
+    "macs": 3393536.0,
+    "head_macs": 2097152
+   },
+   "core": {
+    "params": 4370236,
+    "per_layer": 873094,
+    "ffn": 540672,
+    "attn": 264324,
+    "shared": 787460,
+    "mod": 24576,
+    "head": 65568,
+    "codebook": 32768,
+    "pq": [
+     32,
+     128,
+     8
+    ],
+    "macs_eval": 5195264.0,
+    "macs_train": 7809280.0,
+    "apps_eval": 12,
+    "apps_train": 18.0
+   }
+  }
+ },
+ {
+  "name": "R6 enc12 (SSSF)x3 + core dc256 + shared1024",
+  "compute": 18507647,
+  "enc": 10655803,
+  "core": 4370236,
+  "dec": 3481608,
+  "share": [
+   0.5757513637471041,
+   0.23613136775301583,
+   0.18811726849988009
+  ],
+  "fwd_eval": 22120448.0,
+  "fwd_train": 24734464.0,
+  "core_mac_share_eval": 0.23486251273030276,
+  "tok_s": [
+   1322.4474053740032,
+   1818.3651823892544
+  ],
+  "parts": {
+   "encoder": {
+    "params": 10655803,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "engram_proj": 215042,
+    "pool": 262144,
+    "macs": 11434496.0,
+    "layers": 12
+   },
+   "decoder": {
+    "params": 3481608,
+    "layer": 837250,
+    "plan": 132352,
+    "macs": 3393536.0,
+    "head_macs": 2097152
+   },
+   "core": {
+    "params": 4370236,
+    "per_layer": 873094,
+    "ffn": 540672,
+    "attn": 264324,
+    "shared": 787460,
+    "mod": 24576,
+    "head": 65568,
+    "codebook": 32768,
+    "pq": [
+     32,
+     128,
+     8
+    ],
+    "macs_eval": 5195264.0,
+    "macs_train": 7809280.0,
+    "apps_eval": 12,
+    "apps_train": 18.0
+   }
+  }
+ },
+ {
+  "name": "R7 enc8 2 engram reads + core dc256 + shared1024",
+  "compute": 15330159,
+  "enc": 7478315,
+  "core": 4370236,
+  "dec": 3481608,
+  "share": [
+   0.487817184414069,
+   0.2850744079040537,
+   0.22710840768187726
+  ],
+  "fwd_eval": 18680320.0,
+  "fwd_train": 21294336.0,
+  "core_mac_share_eval": 0.2781142935452926,
+  "tok_s": [
+   1493.2192873391848,
+   2053.176520091379
+  ],
+  "parts": {
+   "encoder": {
+    "params": 7478315,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "engram_proj": 215042,
+    "pool": 262144,
+    "macs": 7994368.0,
+    "layers": 8
+   },
+   "decoder": {
+    "params": 3481608,
+    "layer": 837250,
+    "plan": 132352,
+    "macs": 3393536.0,
+    "head_macs": 2097152
+   },
+   "core": {
+    "params": 4370236,
+    "per_layer": 873094,
+    "ffn": 540672,
+    "attn": 264324,
+    "shared": 787460,
+    "mod": 24576,
+    "head": 65568,
+    "codebook": 32768,
+    "pq": [
+     32,
+     128,
+     8
+    ],
+    "macs_eval": 5195264.0,
+    "macs_train": 7809280.0,
+    "apps_eval": 12,
+    "apps_train": 18.0
+   }
+  }
+ },
+ {
+  "name": "R8 = R1 but shared FFN once per pass",
+  "compute": 15114346,
+  "enc": 7263273,
+  "core": 4369465,
+  "dec": 3481608,
+  "share": [
+   0.48055489797573775,
+   0.28909388471059216,
+   0.23035121731367006
+  ],
+  "fwd_eval": 16697856.0,
+  "fwd_train": 18427136.0,
+  "core_mac_share_eval": 0.20516358507343696,
+  "tok_s": [
+   1673.3129885984683,
+   2300.805359322894
+  ],
+  "parts": {
+   "encoder": {
+    "params": 7263273,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "engram_proj": 215042,
+    "pool": 262144,
+    "macs": 7781376.0,
+    "layers": 8
+   },
+   "decoder": {
+    "params": 3481608,
+    "layer": 837250,
+    "plan": 132352,
+    "macs": 3393536.0,
+    "head_macs": 2097152
+   },
+   "core": {
+    "params": 4369465,
+    "per_layer": 873094,
+    "ffn": 540672,
+    "attn": 264324,
+    "shared": 786689,
+    "mod": 24576,
+    "head": 65568,
+    "codebook": 32768,
+    "pq": [
+     32,
+     128,
+     8
+    ],
+    "macs_eval": 3425792.0,
+    "macs_train": 5155072.0,
+    "apps_eval": 12,
+    "apps_train": 18.0
+   }
+  }
+ },
+ {
+  "name": "R9 = R1 with L_S through the decoder",
+  "compute": 15115117,
+  "enc": 7263273,
+  "core": 4370236,
+  "dec": 3481608,
+  "share": [
+   0.48053038557359495,
+   0.28913014699125383,
+   0.23033946743515119
+  ],
+  "fwd_eval": 18467328.0,
+  "fwd_train": 26572032.0,
+  "core_mac_share_eval": 0.28132191078211205,
+  "tok_s": [
+   1246.3117186312,
+   1713.6786131178999
+  ],
+  "parts": {
+   "encoder": {
+    "params": 7263273,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "engram_proj": 215042,
+    "pool": 262144,
+    "macs": 7781376.0,
+    "layers": 8
+   },
+   "decoder": {
+    "params": 3481608,
+    "layer": 837250,
+    "plan": 132352,
+    "macs": 3393536.0,
+    "head_macs": 2097152
+   },
+   "core": {
+    "params": 4370236,
+    "per_layer": 873094,
+    "ffn": 540672,
+    "attn": 264324,
+    "shared": 787460,
+    "mod": 24576,
+    "head": 65568,
+    "codebook": 32768,
+    "pq": [
+     32,
+     128,
+     8
+    ],
+    "macs_eval": 5195264.0,
+    "macs_train": 7809280.0,
+    "apps_eval": 12,
+    "apps_train": 18.0
+   }
+  }
+ },
+ {
+  "name": "R10 enc8 + core dc256 4L ff1024 + shared1024",
+  "compute": 16098157,
+  "enc": 7263273,
+  "core": 5353276,
+  "dec": 3481608,
+  "share": [
+   0.4511866172009628,
+   0.3325396814057659,
+   0.2162737013932713
+  ],
+  "fwd_eval": 19204608.0,
+  "fwd_train": 22187264.0,
+  "core_mac_share_eval": 0.30891252766002825,
+  "tok_s": [
+   1444.7925415341715,
+   1986.5897446094857
+  ],
+  "parts": {
+   "encoder": {
+    "params": 7263273,
+    "layer_S": 839812,
+    "layer_F": 873094,
+    "engram_proj": 215042,
+    "pool": 262144,
+    "macs": 7781376.0,
+    "layers": 8
+   },
+   "decoder": {
+    "params": 3481608,
+    "layer": 837250,
+    "plan": 132352,
+    "macs": 3393536.0,
+    "head_macs": 2097152
+   },
+   "core": {
+    "params": 5353276,
+    "per_layer": 1118854,
+    "ffn": 786432,
+    "attn": 264324,
+    "shared": 787460,
+    "mod": 24576,
+    "head": 65568,
+    "codebook": 32768,
+    "pq": [
+     32,
+     128,
+     8
+    ],
+    "macs_eval": 5932544.0,
+    "macs_train": 8915200.0,
+    "apps_eval": 12,
+    "apps_train": 18.0
+   }
+  }
+ },
+ {
+  "name": "R11 enc8 ff768 + core dc256 4L ff768 + shared1024 + dec ff768",
+  "compute": 15901549,
+  "enc": 7656489,
+  "core": 4566844,
+  "dec": 3678216,
+  "share": [
+   0.48149328093759924,
+   0.28719491415584736,
+   0.23131180490655345
+  ],
+  "fwd_eval": 19204608.0,
+  "fwd_train": 21892352.0,
+  "core_mac_share_eval": 0.27819989869098083,
+  "tok_s": [
+   1460.4355432200127,
+   2008.0988719275174
+  ],
+  "parts": {
+   "encoder": {
+    "params": 7656489,
+    "layer_S": 888964,
+    "layer_F": 922246,
+    "engram_proj": 215042,
+    "pool": 262144,
+    "macs": 8174592.0,
+    "layers": 8
+   },
+   "decoder": {
+    "params": 3678216,
+    "layer": 886402,
+    "plan": 132352,
+    "macs": 3590144.0,
+    "head_macs": 2097152
+   },
+   "core": {
+    "params": 4566844,
+    "per_layer": 922246,
+    "ffn": 589824,
+    "attn": 264324,
+    "shared": 787460,
+    "mod": 24576,
+    "head": 65568,
+    "codebook": 32768,
+    "pq": [
+     32,
+     128,
+     8
+    ],
+    "macs_eval": 5342720.0,
+    "macs_train": 8030464.0,
+    "apps_eval": 12,
+    "apps_train": 18.0
+   }
+  }
+ }
+]

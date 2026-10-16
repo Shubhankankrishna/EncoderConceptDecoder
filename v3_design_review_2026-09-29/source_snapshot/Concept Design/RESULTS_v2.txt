@@ -1,0 +1,31 @@
+Concept module v2 test: compositional chains, train hops 1-3, test hops 1-6 (hops 4-6 never trained). d=64, 1 seed, CPU.
+Accuracy at the k-th relation marker = k-hop answer. Loop arms evaluated with R passes.
+
+== N4  params 241k  train 20 min
+   final (step 6000) stack hop1..6 [1.0, 1.0, 0.992, 0.176, 0.035, 0.036]
+
+== L1S  params 72k  train 17 min
+   final (step 6000) R1    hop1..6 [1.0, 0.099, 0.098, 0.086, 0.066, 0.084]
+   final (step 6000) R2    hop1..6 [1.0, 0.999, 0.134, 0.127, 0.076, 0.107]
+   final (step 6000) R3    hop1..6 [1.0, 0.999, 0.999, 0.179, 0.118, 0.122]
+   final (step 6000) R4    hop1..6 [1.0, 1.0, 0.999, 0.954, 0.164, 0.12]
+   final (step 6000) R6    hop1..6 [1.0, 1.0, 0.999, 0.996, 0.878, 0.362]
+   final (step 6000) R8    hop1..6 [1.0, 1.0, 1.0, 0.997, 0.937, 0.771]
+   best checkpoint step 3000 R8 [1.0, 0.998, 0.994, 0.995, 0.985, 0.969]
+
+== L1F  params 72k  train 23 min
+   final (step 6000) R1    hop1..6 [0.971, 0.009, 0.013, 0.003, 0.008, 0.004]
+   final (step 6000) R2    hop1..6 [1.0, 0.957, 0.052, 0.026, 0.032, 0.028]
+   final (step 6000) R3    hop1..6 [1.0, 1.0, 0.968, 0.098, 0.078, 0.081]
+   final (step 6000) R4    hop1..6 [1.0, 1.0, 0.998, 0.961, 0.121, 0.107]
+   final (step 6000) R6    hop1..6 [1.0, 1.0, 0.999, 0.974, 0.509, 0.151]
+   final (step 6000) R8    hop1..6 [1.0, 1.0, 0.999, 0.984, 0.801, 0.313]
+   best checkpoint step 3250 R8 [1.0, 1.0, 1.0, 1.0, 0.999, 0.992]
+
+== L2S  params 140k  train 22 min
+   final (step 6000) R1    hop1..6 [1.0, 0.129, 0.151, 0.116, 0.112, 0.118]
+   final (step 6000) R2    hop1..6 [1.0, 1.0, 0.16, 0.122, 0.102, 0.125]
+   final (step 6000) R3    hop1..6 [1.0, 1.0, 0.998, 0.142, 0.122, 0.126]
+   final (step 6000) R4    hop1..6 [1.0, 1.0, 0.998, 0.688, 0.125, 0.124]
+   best checkpoint step 2750 R4 [1.0, 1.0, 0.999, 0.95, 0.104, 0.106]
+

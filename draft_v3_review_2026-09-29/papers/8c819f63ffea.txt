@@ -1,0 +1,1544 @@
+=== PAGE 1 ===
+On Learning to Think: Algorithmic Information Theory
+for Novel Combinations of Reinforcement Learning
+Controllers and Recurrent Neural World Models
+Technical Report
+J¨urgen Schmidhuber
+The Swiss AI Lab
+Istituto Dalle Molle di Studi sull’Intelligenza Artiﬁciale (IDSIA)
+Universit`a della Svizzera italiana (USI)
+Scuola universitaria professionale della Svizzera italiana (SUPSI)
+Galleria 2, 6928 Manno-Lugano, Switzerland
+30 November 2015
+Abstract
+This paper addresses the general problem of reinforcement learning (RL) in partially observable
+environments. In 2013, our large RL recurrent neural networks (RNNs) learned from scratch to
+drive simulated cars from high-dimensional video input. However, real brains are more powerful
+in many ways. In particular, they learn a predictive model of their initially unknown environment,
+and somehow use it for abstract (e.g., hierarchical) planning and reasoning. Guided by algorithmic
+information theory, we describe RNN-based AIs (RNNAIs) designed to do the same. Such an
+RNNAI can be trained on never-ending sequences of tasks, some of them provided by the user,
+others invented by the RNNAI itself in a curious, playful fashion, to improve its RNN-based world
+model. Unlike our previous model-building RNN-based RL machines dating back to 1990, the
+RNNAI learns to actively query its model for abstract reasoning and planning and decision making,
+essentially “learning to think.” The basic ideas of this report can be applied to many other cases
+where one RNN-like system exploits the algorithmic information content of another. They are
+taken from a grant proposal submitted in Fall 2014, and also explain concepts such as “mirror
+neurons.” Experimental results will be described in separate papers.
+1
+arXiv:1511.09249v1  [cs.AI]  30 Nov 2015
+
+=== PAGE 2 ===
+Contents
+1 Introduction to Reinforcement Learning (RL) with Recurrent
+Neural Networks (RNNs) in Partially Observable Environments 2
+1.1 RL through Direct and Indirect Search in RNN Program Space . . . . . . . . . . . . 3
+1.2 Deep Learning in NNs: Supervised & Unsupervised Learning (SL & UL) . . . . . . 3
+1.3 Gradient Descent-Based NNs for RL . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+1.3.1 Early RNN Controllers with Predictive RNN World Models . . . . . . . . . 5
+1.3.2 Early Predictive RNN World Models Combined with Traditional RL . . . . . 5
+1.4 Hierarchical & Multitask RL and Algorithmic Transfer Learning . . . . . . . . . . . 6
+2 Algorithmic Information Theory (AIT) for RNN-based AIs 6
+2.1 Basic AIT Argument . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.2 One RNN-Like System Actively Learns to Exploit Algorithmic Information of Another 7
+2.3 Consequences of the AIT Argument for Model-Building Controllers . . . . . . . . . 8
+3 The RNNAI and its Holy Data 8
+3.1 Standard Activation Spreading in Typical RNNs . . . . . . . . . . . . . . . . . . . . 9
+3.2 Alternating Training Phases for Controller C and World Model M . . . . . . . . . . 9
+4 The Gradient-Based World Model M 10
+4.1 M’s Compression Performance on the History so far . . . . . . . . . . . . . . . . . 10
+4.2 M’s Training . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+4.3 M may have a Built-In FNN Preprocessor . . . . . . . . . . . . . . . . . . . . . . . 11
+5 The Controller C Learning to Exploit RNN World Model M 11
+5.1 C as a Standard RL Machine whose States are M’s Activations . . . . . . . . . . . 12
+5.2 C as an Evolutionary RL (R)NN whose Inputs are M’s Activations . . . . . . . . . 12
+5.3 C Learns to Think with M: High-Level Plans and Abstractions . . . . . . . . . . . 12
+5.4 Incremental / Hierarchical / Multitask Learning of C with M . . . . . . . . . . . . 14
+6 Exploration: Rewarding C for Experiments that Improve M 14
+7 Conclusion 15
+1 Introduction to Reinforcement Learning (RL) with Recurrent
+Neural Networks (RNNs) in Partially Observable Environments1
+General Reinforcement Learning (RL) agents must discover, without the aid of a teacher, how to
+interact with a dynamic, initially unknown, partially observable environment in order to maximize
+their expected cumulative reward signals, e.g., [123, 272, 310]. There may be arbitrary, a priori
+unknown delays between actions and perceivable consequences. The RL problem is as hard as any
+problem of computer science, since any task with a computable description can be formulated in the
+RL framework, e.g., [109].
+To become a general problem solver that is able to run arbitrary problem-solving programs, the
+controller of a robot or an artiﬁcial agent must be a general-purpose computer [67, 35, 282, 194].
+1Parts of this introduction are similar to parts of a much more extensive recent Deep Learning overview [245] which has
+many additional references.
+2
+
+=== PAGE 3 ===
+Artiﬁcial recurrent neural networks (RNNs) ﬁt this bill. A typical RNN consists of many simple,
+connected processors called neurons, each producing a sequence of real-valued activations. Input
+neurons get activated through sensors perceiving the environment, other neurons get activated through
+weighted connections or wires from previously active neurons, and some neurons may affect the
+environment by triggering actions. Learning or credit assignment is about ﬁnding real-valued weights
+that make the NN exhibit desired behavior, such as driving a car. Depending on the problem and how
+the neurons are connected, such behavior may require long causal chains of computational stages,
+where each stage transforms the aggregate activation of the network, often in a non-linear manner.
+Unlike feedforward NNs (FNNs; [95, 23]) and Support Vector Machines (SVMs; [287, 253]),
+RNNs can in principle interact with a dynamic partially observable environment in arbitrary, com-
+putable ways, creating and processing memories of sequences of input patterns [258]. The weight
+matrix of an RNN is its program. Without a teacher, reward-maximizing programs of an RNN must
+be learned through repeated trial and error.
+1.1 RL through Direct and Indirect Search in RNN Program Space
+It is possible to train small RNNs with a few 100 or 1000 weights using evolutionary algorithms [200,
+255, 105, 56, 68] to search the space of NN weights [165, 307, 44, 321, 180, 259, 320, 164, 173,
+69, 71, 187, 121, 313, 66, 270, 269, 305], or through policy gradients (PGs) [314, 315, 316, 274,
+18, 1, 63, 128, 313, 210, 192, 191, 256, 85, 312, 190, 82, 93][245, Sec. 6.6]. For example, our
+evolutionary algorithms outperformed traditional, Dynamic Programming [20]-based RL methods
+[272][245, Sec. 6.2] in partially observable environments, e.g., [72]. However, these techniques by
+themselves are insufﬁcient for solving complex control problems involving high-dimensional sensory
+inputs such as video, from scratch. The program search space for networks of the size required for
+these tasks is simply too large.
+However, the search space can often be reduced dramatically by evolving compact encodings of
+neural networks (NNs), e.g., through Lindenmeyer Systems [115], graph rewriting [127], Cellular
+Encoding [83], HyperNEAT [268], and other techniques [245, Sec. 6.7]. In very general early work,
+we used universal assembler-like languages to encode NNs [235], later coefﬁcients of a Discrete
+Cosine Transform (DCT) [132]. The latter method, Compressed RNN Search [132], was used to
+successfully evolve RNN controllers with over a million weights (the largest ever evolved) to drive a
+simulated car in a video game, based solely on a high-dimensional video stream [132]—learning both
+control and visual processing from scratch, without unsupervised pre-training of a vision system. This
+was the ﬁrst published Deep Learner to learn control policies directly from high-dimensional sensory
+input using RL.
+One can further facilitate the learning task of controllers through certain types of supervised learn-
+ing (SL) and unsupervised learning (UL) based on gradient descent techniques. In particular, UL/SL
+can be used to compress the search space, and to build predictive world models to accelerate RL, as
+will be discussed later. But ﬁrst let us review the relevant NN algorithms for SL and UL.
+1.2 Deep Learning in NNs: Supervised & Unsupervised Learning (SL & UL)
+The term Deep Learning was ﬁrst introduced to Machine Learning in 1986 [49] and to NNs in 2000 [3,
+244]. The ﬁrst deep learning NNs, however, date back to the 1960s [113, 245] (certain more recent
+developments are covered in a survey [139]).
+To maximize differentiable objective functions of SL and UL, NN researchers almost invariably
+use backpropagation (BP) [125, 30, 52] in discrete graphs of nodes with differentiable activation
+functions [151, 265][245, Sec. 5.5]. Typical applications include BP in FNNs [297], or BP through
+time (BPTT) and similar methods in RNNs, e.g., [299, 317, 208][245]. BP and BPTT suffer from the
+3
+
+=== PAGE 4 ===
+Fundamental Deep Learning Problem ﬁrst discovered and analyzed in my lab in 1991: with standard
+activation functions, cumulative backpropagated error signals decay exponentially in the number of
+layers, or they explode [98, 99]. Hence most early FNNs [297, 211] had few layers. Similarly, early
+RNNs [245, Sec. 5.6.1] could not generalize well under both short and long time lags between relevant
+events. Over the years, several ways of overcoming the Fundamental Deep Learning Problem have
+been explored. For example, deep stacks of unsupervised RNNs [228] or FNNs [13, 96, 139] help to
+accelerate subsequent supervised learning through BPTT [228, 230] or BP [96]. One can also “distill”
+or compress the knowledge of a teacher RNN into a student RNN by forcing the student to predict the
+hidden units of the teacher [228, 230].
+Long Short-Term Memory(LSTM; [101, 61, 77]) alleviates theFundamental Deep Learning Prob-
+lem, and was the ﬁrst RNN architecture to win international contests (in connected handwriting), e.g.,
+[79, 247][245]. Connectionist Temporal Classiﬁcation (CTC) [76] is a widely used gradient-based
+method for ﬁnding RNN weights that maximize the probability of teacher-provided label sequences,
+given (typically much longer and more high-dimensional) streams of real-valued input vectors. For
+example, CTC was used by Baidu to break an important speech recognition record [88]. Many re-
+cent state-of-the-art results in sequence processing are based on LSTM, which learned to control
+robots [159], and was used to set benchmark records in prosody contour prediction [55] (IBM), text-
+to-speech synthesis [54] (Microsoft), large vocabulary speech recognition [213] (Google), and ma-
+chine translation [271] (Google). CTC-trained LSTM greatly improved Google V oice [214] and is
+now available to over a billion smartphone users. Nevertheless, at least in some applications, other
+RNNs may sometimes yield better results than gradient-based LSTM [158, 217, 323, 116, 250, 186,
+133]. Alternative NNs with differentiable memory have been proposed [229, 47, 175, 232, 231, 103,
+80, 303].
+Today’s faster computers, such as GPUs, mitigate the Fundamental Deep Learning Problem for
+FNNs [181, 34, 198, 38, 40]. In particular, many recent computer vision contests were won by
+fully supervised Max-Pooling Convolutional NNs (MPCNNs), which consist of alternating convo-
+lutional [58, 19] and max-pooling [296] layers topped off by standard fully connected output layers.
+All weights are trained by backpropagation [140, 199, 220, 245]. Ensembles [218, 28] of GPU-
+based MPCNNs [40, 41] achieved dramatic improvements of long-standing benchmark records, e.g.,
+MNIST (2011), won numerous competitions [247, 38, 41, 39, 161, 42, 36, 134, 322, 37, 245],
+and achieved the ﬁrst human-competitive or even superhuman results on well-known benchmarks,
+e.g., [247, 42, 245]. There are many recent variations and improvements [64, 74, 124, 75, 277, 266,
+245]. Supervised Transfer Learning from one dataset to another [32, 43] can speed up learning. A
+combination of Convolutional NNs (CNNs) and LSTM led to best results in automatic image caption
+generation [288].
+1.3 Gradient Descent-Based NNs for RL
+Perhaps the most well-known RL application is Tesauro’s backgammon player [280] from 1994 which
+learned to achieve the level of human world champions, by playing against itself. It uses a reactive
+(memory-free) policy based on the simplifying assumption ofMarkov Decision Processes: the current
+input of the RL agent conveys all information necessary to compute an optimal next output event or
+decision. The policy is implemented as a gradient-based FNN trained by the method of temporal
+differences [272][245, Sec. 6.2]. During play, the FNN learns to map board states to predictions of
+expected cumulative reward, and selects actions leading to states with maximal predicted reward. A
+very similar approach (also based on over 20-year-old methods) employed a CNN (see Sec. 1.2) to
+play several Atari video games directly from 84 ×84 pixel 60 Hz video input [167], using Neural
+Fitted Q-Learning (NFQ) [201] based on experience replay (1991) [149]. Even better results were
+4
+
+=== PAGE 5 ===
+achieved by using (slow) Monte Carlo tree planning to train comparatively fast deep NNs [86].
+Such FNN approaches cannot work in realistic partially observable environments where memories
+of previous inputs have to be stored for a priori unknown time intervals. This triggered work on
+partially observable Markov decision problems (POMDPs) [223, 222, 227, 204, 205, 206, 316, 148,
+278, 122, 152, 25, 114, 160, 126, 308, 309, 183]. Traditional RL techniques [272][245, Sec. 6.2]
+based on Dynamic Programming [20] can be combined with gradient descent methods to train an
+RNN as a value-function approximator that maps entire event histories to predictions of expected
+cumulative reward [227, 148]. LSTM [101, 61, 189, 78, 77] (see Sec. 1.2) was used in this way for
+RL robots [12].
+Gradient-based UL may be used to reduce an RL controller’s search space by feeding it only
+compact codes of high-dimensional inputs [118, 142, 46][245, Sec. 6.4]. For example, NFQ [201]
+was applied to real-world control tasks [138, 202] where purely visual inputs were compactly encoded
+in hidden layers of deep autoencoders [245, Sec. 5.7 and and 5.15]. RL combined with unsupervised
+learning based on Slow Feature Analysis[318, 131] enabled a humanoid robot to learn skills from raw
+video streams [154]. A RAAM RNN [193] was employed as a deep unsupervised sequence encoder
+for RL [65].
+1.3.1 Early RNN Controllers with Predictive RNN World Models
+One important application of gradient-based UL is to obtain a predictive world model, M, that a
+controller,C, may use to achieve its goals more efﬁciently, e.g., through cheap, “mental” M-based
+trials, as opposed to expensive trials in the real world [301, 273]. The ﬁrst combination of an RL
+RNN C and an UL RNN M was ours and dates back to 1990 [223, 222, 226, 227], generalizing
+earlier similar controller/model systems (CM systems) based on FNNs [298, 179]; compare related
+work [177, 119, 301, 300, 209, 120, 178, 302, 73, 45, 144, 166, 153, 196, 60][245, Sec. 6.1]. M
+tries to learn to predict C’s inputs (including reward signals) from previous inputs and actions. M is
+also temporarily used as a surrogate for the environment: M andC form a coupled RNN whereM’s
+outputs become inputs of C, whose outputs (actions) in turn become inputs of M. Now a gradient
+descent technique [299, 317, 208](see Sec. 1.2) can be used to learn and plan ahead by training C
+in a series of M-simulated trials to produce output action sequences achieving desired input events,
+such as high real-valued reward signals (while the weights of M remain ﬁxed). An RL active vision
+system, from 1991 [249], used this basic principle to learn sequential shifts (saccades) of a fovea to
+detect targets in a visual scene, thus learning a rudimentary version of selective attention.
+Those earlyCM systems, however, did not yet use powerful RNNs such as LSTM. A more fun-
+damental problem is that if the environment is too noisy, M will usually only learn to approximate
+the conditional expectations of predicted values, given parts of the history. In certain noisy environ-
+ments, Monte Carlo Tree Sampling (MCTS; [29]) and similar techniques may be applied toM to plan
+successful future action sequences for C. All such methods, however, are about simulating possible
+futures time step by time step, without proﬁting from human-like hierarchical planning or abstract
+reasoning, which often ignores irrelevant details.
+1.3.2 Early Predictive RNN World Models Combined with Traditional RL
+In the early 1990s, an RNNM as in Sec. 1.3.1 was also combined [227, 150] with traditional temporal
+difference methods [122, 272][245, Sec. 6.2] based on the Markov assumption (Sec. 1.3). While M
+is processing the history of actions and observations to predict future inputs and rewards, the internal
+states ofM are used as inputs to a temporal difference-based predictor of cumulative predicted reward,
+to be maximized through appropriate action sequences. One of our systems described in 1991 [227]
+actually collapsed the cumulative reward predictor into the predictive world model,M.
+5
+
+=== PAGE 6 ===
+1.4 Hierarchical & Multitask RL and Algorithmic Transfer Learning
+Work on NN-basedHierarchical RL(HRL) without predictive world models has been published since
+the early 1990s. In particular, gradient-based subgoal discovery with RNNs decomposes RL tasks
+into subtasks for submodules [225]. Numerous alternative HRL techniques have been proposed [204,
+206, 117, 279, 295, 171, 195, 50, 162, 51, 15, 215, 11, 260]. While HRL frameworks such as Feudal
+RL [48] and options [275, 16, 261] do not directly address the problem of automatic subgoal discovery,
+HQ-Learning [309] automatically decomposes problems in partially observable environments into
+sequences of simpler subtasks that can be solved by memoryless policies learnable by reactive sub-
+agents. Related methods include incremental NN evolution [70], hierarchical evolution of NNs [306,
+285], and hierarchical Policy Gradient algorithms [63]. Recent HRL organizes potentially deep NN-
+based RL sub-modules into self-organizing, 2-dimensional motor control maps [203] inspired by
+neurophysiological ﬁndings [81]. The methods above, however, assign credit in hierarchical fashion
+by limited ﬁxed schemes that are not themselves improved or adapted in problem-speciﬁc ways. The
+next sections will describe novel CM systems that overcome such drawbacks of above-mentioned
+methods.
+General methods for incremental multitask RL and algorithmic transfer learning that are not
+NN-speciﬁc include the evolutionary ADATE system [182], the Success-Story Algorithm for Self-
+Modifying Policies running on general-purpose computers [233, 252, 251], and the Optimal Ordered
+Problem Solver [238], which learns algorithmic solutions to new problems by inspecting and ex-
+ploiting (in arbitrary computable fashion) solutions to old problems, in a way that is asymptotically
+time-optimal. And P OWER PLAY [243, 267] incrementally learns to become a more and more general
+algorithmic problem solver, by continually searching the space of possible pairs of new tasks and
+modiﬁcations of the current solver, until it ﬁnds a more powerful solver that, unlike the unmodiﬁed
+solver, solves all previously learned tasks plus the new one, or at least simpliﬁes/compresses/speeds
+up previous solutions, without forgetting any.
+2 Algorithmic Information Theory (AIT) for RNN-based AIs
+Our early RNN-based CM systems (1990) mentioned in Sec. 1.3.1 learn a predictive model of their
+initially unknown environment. Real brains seem to do so too, but are still far superior to present
+artiﬁcial systems in many ways. They seem to exploit the model in smarter ways, e.g., to plan action
+sequences in hierarchical fashion, or through other types of abstract reasoning, continually building
+on earlier acquired skills, becoming increasingly general problem solvers able to deal with a large
+number of diverse and complex tasks. Here we describe RNN-based Artiﬁcial Intelligences (RNNAIs)
+designed to do the same by “learning to think.” 2
+While FNNs are traditionally linked [23] to concepts of statistical mechanics and information
+theory [24, 257, 136], the programs of general computers such as RNNs call for the framework of
+Algorithmic Information Theory (AIT) [263, 130, 33, 145, 264, 147] (own AIT work: [234, 235,
+236, 237, 238]). Given some universal programming language [67, 35, 282, 194] for a universal
+computer, the algorithmic information content or Kolmogorov complexity of some computable object
+is the length of the shortest program that computes it. Since any program for one computer can be
+translated into a functionally equivalent program for a different computer by a compiler program of
+constant size, the Kolmogorov complexity of most objects hardly depends on the particular computer
+used. Most computable objects of a given size, however, are hardly compressible, since there are
+only relatively few programs that are much shorter. Similar observations hold for practical variants
+2The terminology is partially inspired by our RNNAISSANCE workshop at NIPS 2003 [246].
+6
+
+=== PAGE 7 ===
+of Kolmogorov complexity that explicitly take into account program runtime [146, 6, 291, 147, 235,
+237]. Our RNNAIs are inspired by the following argument.
+2.1 Basic AIT Argument
+According to AIT, given some universal computer, U, whose programs are encoded as bit strings,
+the mutual information between two programs p and q is expressed as K(q| p), the length of the
+shortest program ¯w that computesq, givenp, ignoring an additive constant of O(1) depending onU
+(in practical applications the computation will be time-bounded [147]). That is, if p is a solution to
+problemP , and q is a fast (say, linear time) solution to problem Q, and if K(q| p) is small, and ¯w
+is both fast and much shorter than q, then asymptotically optimal universal search [146, 238] for a
+solution toQ, givenp, will generally ﬁnd ¯w ﬁrst (to computeq and solveQ), and thus solveQ much
+faster than search forq from scratch [238].
+2.2 One RNN-Like System Actively Learns to Exploit Algorithmic Informa-
+tion of Another
+The AIT argument 2.1 above has broad applicability. Let both C andM be RNNs or similar general
+parallel-sequential computers [229, 47, 175, 232, 231, 103, 80, 303]. M’s vector of learnable real-
+valued parameterswM is trained by any SL or UL or RL algorithm to perform a certain well-deﬁned
+task in some environment. Then wM is frozen. Now the goal is to train C’s parameterswC by some
+learning algorithm to perform another well-deﬁned task whose solution may share mutual algorithmic
+information with the solution to M’s task. To facilitate this, we simply allow C to learn to actively
+inspect and reuse (in essentially arbitrary computable fashion) the algorithmic information conveyed
+byM andwM .
+Let us consider a trial during which C makes an attempt to solve its given task within a series of
+discrete time steps t = ta,ta + 1,...,t b. C’s learning algorithm may use the experience gathered
+during the trial to modify wC in order to improve C’s performance in later trials. During the trial,
+we giveC an opportunity to explore and exploit or ignore M by interacting with it. In what follows,
+C(t),M(t),sense(t),act(t),query(t),answer(t),wM ,wC denote vectors of real values; fC,fM
+denote computable [67, 35, 282, 194] functions.
+At any timet,C(t) andM(t) denoteC’s andM’s currentstates, respectively. They may represent
+current neural activations or fast weights [229, 232, 231] or other dynamic variables that may change
+during information processing.sense(t) is the current input from the environment (including reward
+signals if any); a part ofC(t) encodes the current outputact(t) to the environment, another a memory
+of previous events (if any). Parts of C(t) andM(t) intersect in the sense that both C(t) andM(t)
+also encode C’s currentquery(t) toM, and M’s currentanswer(t) toC (in response to previous
+queries), thus representing an interface betweenC andM.
+M(ta) andC(ta) are initialized by default values. Forta≤t<t b,
+C(t + 1) =fC(wC,C (t),M (t),sense (t),wM)
+with learnable parameterswC;act(t) is a computable function ofC(t) and may inﬂuence in(t + 1),
+andM(t + 1) =fM(C(t),M (t),wM) with ﬁxed parameterswM . So both M(t + 1) andC(t + 1)
+are computable functions of previous events including queries and answers transmitted through the
+learnablefC.
+According to the AIT argument, provided that M conveys substantial algorithmic information
+aboutC’s task, and the trainable interfacefC betweenC andM allowsC to address and extract and
+exploit this information quickly, andwC is small compared to the ﬁxedwM , the search space of C’s
+7
+
+=== PAGE 8 ===
+learning algorithm (trying to ﬁnd a goodwC through a series of trials) should be much smaller than
+the one of a similar competing systemC′ that has no opportunity to queryM but has to learn the task
+from scratch.
+For example, suppose thatM has learned to represent (e.g., through predictive coding [228, 248])
+videos of people placing toys in boxes, or to summarize such videos through textual outputs. Now
+supposeC’s task is to learn to control a robot that places toys in boxes. Although the robot’s actuators
+may be quite different from human arms and hands, and although videos and video-describing texts
+are quite different from desirable trajectories of robot movements, M is expected to convey algo-
+rithmic information about C’s task, perhaps in form of connected high-level spatio-temporal feature
+detectors representing typical movements of hands and elbows independent of arm size. Learning a
+wC that addresses and extracts this information from M and partially reuses it to solve the robot’s
+task may be much faster than learning to solve the task from scratch without access toM.
+The setups of Sec. 5.3 are special cases of the general scheme in the present Sec. 2.2.
+2.3 Consequences of the AIT Argument for Model-Building Controllers
+The simple AIT insight above suggests that in many partially observable environments it should be
+possible to greatly speed up the program search of an RL RNN,C, by letting it learn to access, query,
+and exploit in arbitrary computable ways the program of a typically much bigger gradient-based UL
+RNN,M, used to model and compress the RL agent’s entire growing interaction history of all failed
+and successful trials.
+Note that the ¯w of Sec. 2.1 may implement all kinds of well-known, computable types of reason-
+ing, e.g., by hierarchical reuse of subprograms of p [238], by analogy, etc. That is, we may perhaps
+even expectC to learn to exploitM for human-like abstract thought.
+Such novel CM systems will be a central topic of Sec. 5. Sec. 6 will also discuss exploration
+based on efﬁciently improvingM throughC-generated experiments.
+3 The RNNAI and its Holy Data
+In what follows, letm,n,o denote positive integer constants, andi,k,h,t,τ positive integer variables
+assuming ranges implicit in the given contexts. The i-th component of any real-valued vector, v, is
+denoted byvi. Let the RNNAI’s life span a discrete sequence of time steps,t = 1, 2,...,t death.
+At the beginning of a given time step, t, there is a “normal” sensory input vector, in(t)∈ Rm,
+and a reward input vector,r(t)∈ Rn. For example, parts of in(t) may represent the pixel intensities
+of an incoming video frame, while components of r(t) may reﬂect external positive rewards, or neg-
+ative values produced by pain sensors whenever they measure excessive temperature or pressure. Let
+sense(t)∈ Rm+n denote the concatenation of the vectors in(t) andr(t). The total reward at time
+t isR(t) = ∑n
+i=1ri(t). The total cumulative reward up to time t isCR(t) = ∑t
+τ =1R(τ). During
+time stept, the RNNAI produces an output action vector, out(t)∈ Ro, which may inﬂuence the en-
+vironment and thus future sense(τ) forτ > t. At any given time, the RNNAI’s goal is to maximize
+CR(tdeath).
+Let all(t)∈ Rm+n+o denote the concatenation of sense(t) and out(t). Let H(t) denote the
+sequence (all(1),all (2),...,all (t)) up to timet.
+To be able to retrain its components on all observations ever made, the RNNAI stores its entire,
+growing, lifelong sensory-motor interaction historyH(·) including all inputs and actions and reward
+signals observed during all successful and failed trials [239, 240], including what initially looks like
+noise but later may turn out to be regular. This is normally not done, but is feasible today.
+8
+
+=== PAGE 9 ===
+That is, all data is “holy”, and never discarded, in line with what mathematically optimal general
+problem solvers should do [109, 237]. Remarkably, even human brains may have enough storage
+capacity to store 100 years of sensory input at a reasonable resolution [240].
+3.1 Standard Activation Spreading in Typical RNNs
+Many RNN-like models can be used to build general computers, e.g., neural pushdown automata [47,
+175], NNs with quickly modiﬁable, differentiable external memory based on fast weights [229], or
+closely related RNN-based meta-learners [232, 231, 103, 219]. Using sloppy but convenient termi-
+nology, we refer to all of them as RNNs. A typical implementation of M uses an LSTM network
+(see Sec. 1.2). If there are large 2-dimensional inputs such as video images, then they can be ﬁrst
+ﬁltered through a CNN (compare Sec. 1.2 and 4.3) before fed into the LSTM. Such a CNN-LSTM
+combination is still an RNN.
+Here we brieﬂy summarize information processing in standard RNNs. Using notation similar to
+the one of a previous survey [245, Sec. 2], leti,k,s denote positive integer variables assuming ranges
+implicit in the given contexts. Letnu,nw,T also denote positive integers.
+At any given moment, an RNN (such as the M of Sec. 4) can be described as a connected graph
+withnu units (or nodes or neurons) in a setN ={u1,u 2,...,u nu} and a setH⊆N×N of directed
+edges or connections between nodes. The input layer is the set of input units, a subset of N. In fully
+connected RNNs, all units have connections to all non-input units.
+The RNN’s behavior or program is determined bynw real-valued, possibly modiﬁable, parameters
+or weights, wi (i = 1,...,n w). During an episode of information processing (e.g., during a trial
+of Sec. 3.2), there is a partially causal sequence xs(s = 1,...,T ) of real values called events.
+Here the index s is used in a way that is much more ﬁne-grained than the one of the index t in
+Sec. 3, 4, 5: a single time step may involve numerous events. Each xs is either an input set by
+the environment, or the activation of a unit that may directly depend on other xk(k < s) through a
+current NN topology-dependent set, ins, of indices k representing incoming causal connections or
+links. Let the function v encode topology information, and map such event index pairs, (k,s ), to
+weight indices. For example, in the non-input case we may have xs = fs(nets) with real-valued
+nets = ∑
+k∈insxkwv(k,s) (additive case) or nets = ∏
+k∈insxkwv(k,s) (multiplicative case), where
+fs is a typically nonlinear real-valued activation function such astanh. Othernet functions combine
+additions and multiplications [113, 112]; many other activation functions are possible. The sequence,
+xs, may directly affect certainxk(k >s) through outgoing connections or links represented through
+a current set,outs, of indicesk withs∈ink. Some of the non-input events are called output events.
+Many of the xs may refer to different, time-varying activations of the same unit, e.g., in RNNs.
+During the episode, the same weight may get reused over and over again in topology-dependent ways.
+Such weight sharing across space and/or time may greatly reduce the NN’s descriptive complexity,
+which is the number of bits of information required to describe the NN (Sec. 4). Training algorithms
+for the RNNs of our RNNAIs will be discussed later.
+3.2 Alternating Training Phases for Controller C and World Model M
+Several novel implementations ofC are described in Sec. 5. All of them make use of a variable size
+RNN called the world model,M, which learns to compactly encode the growing history, for example,
+through predictive coding, trying to predict (the expected value of) each input component, given the
+history of actions and observations. M’s goal is to discover algorithmic regularities in the data so far
+by learning a program that compresses the data better in a lossless manner. Example details will be
+speciﬁed in Sec. 4.
+9
+
+=== PAGE 10 ===
+Algorithm 1 TrainC andM in Alternating Fashion
+1. InitializeC andM and their weights.
+2. FreezeM’s weights such that they cannot change whileC learns.
+3. Execute a new trial by generating a ﬁnite action sequence that prolongs the history of actions
+and observations. Actions may be due to C which may exploit M in various ways (see Sec. 5).
+TrainC’s weights on the prolonged (and recorded) history to generate action sequences with higher
+expected reward, using methods of Sec. 5.
+4. Unfreeze M’s weights, and re-train M in a “sleep phase” to better predict/compress the pro-
+longed history; see Sec. 4.
+5. If no stopping criterion is met, goto 2.
+BothC andM have real-valued parameters or weights that can be modiﬁed to improve perfor-
+mance. To avoid instabilities,C andM are trained in alternating fashion, as in Algorithm 1.
+4 The Gradient-Based World Model M
+A central objective of unsupervised learning is to compress the observed data [14, 228]. M’s goal is
+to compress the RL agent’s entire growing interaction history of all failed and successful trials [239,
+241], e.g., through predictive coding [228, 248].M hasm +n +o input units to receiveall(t) at time
+t < tdeath, and m +n output units to produce a prediction pred(t + 1)∈ Rm+n ofsense(t + 1)
+[223, 226, 222, 227].
+4.1 M ’s Compression Performance on the History so far
+Let us address details of trainingM in a “sleep phase” of step 4 in algorithm 1. (The training ofC will
+be discussed in Sec. 5.) Consider some M with given (typically suboptimal) weights and a default
+initialization of all unit activations. One example way of making M compress the history (but not
+the only one) is the following. Given H(t), we can train M by replaying [149] H(t) in semi-ofﬂine
+training, sequentially feeding all(1),all (2),...all (t) intoM’s input units in standard RNN fashion
+(Sec. 1.2, 3.1). Given H(τ) (τ < t), M calculates pred(τ + 1), a prediction of sense(τ + 1).
+A standard error function to be minimized by gradient descent in M’s weights (Sec. 1.2) would be
+E(t) = ∑t−1
+τ =1∥pred(τ + 1)−sense(τ + 1)∥2, the sum of the deviations of the predictions from the
+observations so far.
+However,M’s goal is not only to minimize the total prediction error, E. Instead, to avoid the
+erroneous “discovery” of “regular patterns” in irregular noise, we use AIT’s sound way of dealing
+with overﬁtting [263, 130, 289, 207, 147, 84], and measure M’s compression performance by the
+number of bits required to specify M, plus the bits needed to encode the observed deviations from
+M’s predictions [239, 241]. For example, whenever M incorrectly predicts certain input pixels of a
+perceived video frame, those pixel values will have to be encoded separately, which will cost storage
+space. (In typical applications, M can only execute a ﬁxed number of elementary computations per
+time step to compress and decompress data, which usually has to be done online. That is, in general
+M will not reﬂect the data’s true Kolmogorov complexity [263, 130], but at best a time-bounded
+variant thereof [147].)
+Let integer variables,bitsM andbitsH, denote estimates of the number of bits required to encode
+(by a ﬁxed algorithmic scheme) the current M, and the deviations of M’s predictions from the ob-
+servations on the current history, respectively. For example, to obtainbitsH, we may naively assume
+some simple, bell-shaped, zero-centered probability distribution Pe on the ﬁnite number of possible
+10
+
+=== PAGE 11 ===
+real-valued prediction errorsei,τ = (predi(τ)−sensei(τ))2 (in practical applications the errors will
+be given with limited precision), and encode eachei,τ by−logPe(ei,τ) bits [108, 257]. That is, large
+errors are considered unlikely and cost more bits than small ones. To obtain bitsM , we may naively
+multiply the current number ofM’s non-zero modiﬁable weights by a small integer constant reﬂecting
+the weight precision. Alternatively, we may assume some simple, bell-shaped, zero-centered proba-
+bility distribution,Pw, on the ﬁnite number of possible weight values (given with limited precision),
+and encode each wi by−logPw(wi) bits. That is, large absolute weight values are considered un-
+likely and cost more bits than small ones [91, 294, 135, 97]. Both alternatives ignore the possibility
+thatM’s entire weight matrix might be computable by a short computer program [235, 132], but have
+the advantage of being easy to calculate. Moreover, since M is a general computer itself, at least in
+principle it has a chance of learning equivalents of such short programs.
+4.2 M ’s Training
+To decreasebitsM +bitsH, we add a regularizing term to E, to punish excessive complexity [4, 5,
+91, 294, 155, 135, 97, 170, 169, 104, 290, 7, 290, 87, 286, 319, 100, 102].
+Step 1 of algorithm 1 starts with a small M. As the history grows, to ﬁnd an M with small
+bitsM +bitsH, step 4 uses sequential network construction: it regularly changesM’s size by adding
+or pruning units and connections [111, 112, 8, 168, 59, 107, 304, 176, 141, 92, 143, 204, 53, 296,
+106, 31, 57, 185, 283]. Whenever this helps (after additional training with BPTT ofM—see Sec. 1.2)
+to improvebitsM +bitsH on the history so far, the changes are kept, otherwise they are discarded.
+(Note that even animal brains grow and prune neurons.)
+Given history H(t), instead of re-training M in a sleep phase (step 4 of algorithm 1) on all of
+H(t), we may re-train it on parts thereof, by selecting trials randomly or otherwise from H(t), and
+replay them to retrainM in standard fashion (Sec. 1.2). To do this, however, all ofM’s unit activations
+need to be stored at the beginning of each trial. (M’s hidden unit activations, however, do not have to
+be stored if they are reset to zero at the beginning of each trial.)
+4.3 M may have a Built-In FNN Preprocessor
+To facilitateM’s task in certain environments, each frame of the sensory input stream (video, etc.)
+can ﬁrst be separately compressed through autoencoders [211] or autoencoder hierarchies [13, 21]
+based on CNNs or other FNNs (see Sec. 1.2) [42] used as sensory preprocessors to create less redun-
+dant sensory codes [118, 138, 142, 46]. The compressed codes are then fed into an RNN trained to
+predict not the raw inputs, but their compressed codes. Those predictions have to be decompressed
+again by the FNN, to evaluate the total compression performance, bitsM +bitsH, of the FNN-RNN
+combination representingM.
+5 The Controller C Learning to Exploit RNN World Model M
+Here we describe ways of using the world model, M, of Sec. 4 to facilitate the task of the RL con-
+troller,C. Especially the systems of Sec. 5.3 overcome drawbacks of early CM systems mentioned
+in Sec. 1.3.1, 1.3.2. Some of the setups of the present Sec. 5 can be viewed as special cases of the
+general scheme in Sec. 2.2.
+11
+
+=== PAGE 12 ===
+5.1 C as a Standard RL Machine whose States are M ’s Activations
+We start with details of an approach whose principles date back to the early 1990s [227, 150] (Sec. 1.3.2).
+Given an RNN or RNN-likeM as in Sec. 4, we implementC as a traditional RL machine [272][245,
+Sec. 6.2] based on the Markov assumption (Sec. 1.3). While M is processing the history of actions
+and observations to predict future inputs, the internal states of M are used as inputs to a predictor of
+cumulative expected future reward.
+More speciﬁcally, in step 3 of algorithm 1, consider a trial lasting from timeta≥ 1 totb≤tdeath.
+M is used as a preprocessor forC as follows. At the beginning of a given time step,t, of the trial(ta≤
+t<t b), lethidden(t)∈ Rh denote the vector ofM’s current hidden unit activations (those units that
+are neither input nor output units). Let state(t)∈ R2m+2n+h denote the concatenation of sense(t),
+hidden(t) and pred(t). (In cases where M’s activations are reset after each trial, hidden(ta) and
+pred(ta) are initialized by default values, e.g., zero vectors.)
+C is an RL machine with 2m + 2n +h-dimensional inputs and o-dimensional outputs. At time
+t, state(t) is fed into C, which then computes action out(t). Then M computes from sense(t),
+hidden(t) and out(t) the values hidden(t + 1) and pred(t + 1). Then out(t) is executed in the
+environment, to obtain the next inputsense(t + 1).
+The parameters or weights of C are trained to maximize reward by a standard RL method such
+as Q-learning or similar methods [17, 292, 293, 172, 254, 212, 262, 10, 122, 188, 157, 281, 26, 216,
+197, 272, 311, 9, 163, 174, 22, 27, 2, 137, 276, 156, 284]. Note that most of these methods evaluate
+not only input events but pairs of input and output (action) events.
+In one of the simplest cases,C is just a linear perceptron FNN (instead of an RNN like in the early
+system [227]). The fact that C has no built-in memory in this case is not a fundamental restriction
+sinceM is recurrent, and has been trained to predict not only normal sensory inputs, but also reward
+signals. That is, the state of M must contain all the historic information relevant to maximize future
+expected reward, provided the data history so far already contains the relevant experience, andM has
+learned to compactly extract and represent its regular aspects.
+This approach is different from other, previous combinations of traditional RL [272][245, Sec. 6.2]
+and RNNs [227, 148, 12] which use RNNs only as value function approximators that directly predict
+cumulative expected reward, instead of trying to predict all sensations time step by time step. TheCM
+system in the present section separates the hard task of prediction in partially observable environments
+from the comparatively simple task of RL under the Markovian assumption that the current input to
+C (which isM’s state) contains all information relevant for achieving the goal.
+5.2 C as an Evolutionary RL (R)NN whose Inputs are M ’s Activations
+This approach is essentially the same as the one of Sec. 5.1, except that C is now an FNN or RNN
+trained by evolutionary algorithms [200, 255, 105, 56, 68] applied to NNs [165, 321, 180, 259, 72,
+90, 89, 110, 94], or by policy gradient methods [314, 315, 316, 274, 18, 1, 63, 128, 313, 210, 192,
+191, 256, 85, 312, 190, 82, 93][245, Sec. 6.6], or by Compressed NN Search; see Sec. 1. C has
+2m + 2n +h input units ando output units. At timet,state(t) is fed intoC, which computesout(t);
+thenM computeshidden(t + 1) andpred(t + 1); thenout(t) is executed to obtainsense(t + 1).
+5.3 C Learns to Think with M : High-Level Plans and Abstractions
+Our RNN-basedCM systems of the early 1990s [223, 226](Sec. 1.3.1) could in principle plan ahead
+by performing numerous fast mental experiments on a predictive RNN world model, M, instead of
+time-consuming real experiments, extending earlier work on reactive systems without memory [301,
+273]. However, this can work well only in (near-)deterministic environments, and, even there, M
+12
+
+=== PAGE 13 ===
+would have to simulate many entire alternative futures, time step by time step, to ﬁnd an action
+sequence for C that maximizes reward. This method seems very different from the much smarter
+hierarchical planning methods of humans, who apparently can learn to identify and exploit a few
+relevant problem-speciﬁc abstractions of possible future events; reasoning abstractly, and efﬁciently
+ignoring irrelevant spatio-temporal details.
+We now describe a CM system that can in principle learn to plan and reason like this as well,
+according to the AIT argument (Sec. 2.1). This should be viewed as a main contribution of the
+present paper. See Figure 1.
+Consider an RNN C (with typically rather small feasible search space) as in Sec. 5.2. We add
+standard and/or multiplicative learnable connections (Sec. 3.1) from some of the units of C to some
+of the units of the typically huge unsupervised M, and from some of the units of M to some of the
+units ofC. The new connections are said to belong toC.C andM now collectively form a new RNN
+calledCM , with standard activation spreading as in Sec. 3.1. The activations of M are initialized to
+default values at the beginning of each trial. Now CM is trained on RL tasks in line with step 3 of
+algorithm 1, using search methods such as those of Sec. 5.2 (compare Sec. 1). The (typically many)
+connections ofM, however, do not change—only the (typically relatively few) connections of C do.
+What does that mean? It means that now C’s relatively small candidate programs are given time
+to “think” by feeding sequences of activations into M, and reading activations out of M, before and
+while interacting with the environment. Since C andM are general computers, C’s programs may
+query, edit or invoke subprograms ofM in arbitrary, computable ways through the new connections.
+Given some RL problem, according to the AIT argument (Sec. 2.1), this can greatly accelerate C’s
+search for a problem-solving weight vector ˆw, provided the (time-bounded [147]) mutual algorithmic
+information between ˆw and M’s program is high, as is to be expected in many cases since M’s
+environment-modeling program should reﬂect many regularities useful not only for prediction and
+coding, but also for decision making.3
+This simple but novel approach is much more general than previous computable, but restricted,
+ways of letting a feedforward C use a model M (Sec. 1.3.1)[301, 273][245, Sec. 6.1], by simulat-
+ing entire possible futures step by step, then propagating error signals or temporal difference errors
+backwards (see Section 1.3.1). Instead, we giveC’s program search an opportunity to discover sophis-
+ticated computable ways of exploitingM’s code, such as abstract hierarchical planning and analogy-
+based reasoning. For example, to represent previous observations, an M implemented as an LSTM
+network (Sec. 1.2) will develop high-level, abstract, spatio-temporal feature detectors that may be ac-
+tive for thousands of time steps, as long as those memories are useful to predict (and thus compress)
+future observations [62, 61, 189, 79]. However, C may learn to directly invoke the corresponding
+“abstract” units in M by inserting appropriate pattern sequences intoM.C might then short-cut from
+there to typical subsequent abstract representations, ignoring the long input sequences normally re-
+quired to invoke them inM, thus quickly anticipating a few possible positive outcomes to be pursued
+(plus computable ways of achieving them), or negative outcomes to be avoided.
+Note thatM (and by extensionM) does not at all have to be a perfect predictor. For example, it
+won’t be able to predict noise. InsteadM will have learned to approximate conditional expectations of
+future inputs, given the history so far. A naive way of exploitingM’s probabilistic knowledge would
+be to plan ahead through naive step-by-step Monte-Carlo simulations of possibleM-predicted futures,
+to ﬁnd and execute action sequences that maximize expected reward predicted by those simulations.
+However, we won’t limit the system to this naive approach. Instead it will be the task of C to learn
+to address useful problem-speciﬁc parts of the currentM, and reuse them for problem solving. Sure,
+3 An alternative way of letting C learn to access the program of M is to add C-owned connections from the weights of M
+to units of C, treating the current weights of M as additional real-valued inputs to C. This, however, will typically result in a
+much larger search space for C. There are many other variants of the general scheme described in Sec. 2.2.
+13
+
+=== PAGE 14 ===
+C will have to intelligently exploit M, which will cost bits of information (and thus search time for
+appropriate weight changes ofC), but this is often still much cheaper in the AIT sense than learning a
+goodC program from scratch, as in our previous non-RNN AIT-based work on algorithmic transfer
+learning [238], where self-invented recursive code for previous solutions sped up the search for code
+for more complex tasks by a factor of 1000.
+Numerous topologies are possible for the adaptive connections fromC toM, and back. Although
+in some applications C may ﬁnd it hard to exploit M, and might prefer to ignore M (by setting
+connections to and from M to zero), in some environments under certain CM topologies, C can
+greatly proﬁt fromM.
+WhileM’s weights are frozen in step 3 of algorithm 1, the weights of C can learn when to make
+C attend to history information represented by M’s state, and when to ignore such information, and
+instead use M’s innards in other computable ways. This can be further facilitated by introducing a
+special unit, ˆu, toC, where ˆu(t)all(t) instead ofall(t) is fed intoM at timet, such thatC can easily
+(by setting ˆu(t) = 0) forceM to completely ignore environmental inputs, to useM for “thinking” in
+other ways.
+ShouldM later grow (or shrink) in step 4 of algorithm 1, in line with Sec. 4.2,C may in turn grow
+additional connections to and fromM (or lose some) in the next incarnation of step 3.
+5.4 Incremental / Hierarchical / Multitask Learning of C with M
+A variant of the approach in Sec. 5.3 incrementally trains C on a never-ending series of tasks, con-
+tinually building on solutions to previous problems, instead of learning each new problem from
+scratch. In principle, this can be done through incremental NN evolution [70], hierarchical NN evo-
+lution [306, 285], hierarchical Policy Gradient algorithms [63], or asymptotically optimal ways of
+algorithmic transfer learning [238].
+Given a new task and aC trained on several previous tasks, such hierarchical/incremental methods
+may freeze the current weights of C, then enlargeC by adding new units and connections which are
+trained on the new task. This process reduces the size of the search space for the new task, giving the
+new weights the opportunity to learn to use the frozen parts ofC as subprograms.
+Incremental variants of Compressed RNN Search [132] (Sec. 1) do not directly search in C’s
+potentially large weight space, but in the frequency domain by representing the weight matrix as
+a small set of Fourier-type coefﬁcients. By searching for new coefﬁcients to be added to already
+learned set responsible for solving previous problems, C’s weight matrix is ﬁne tuned incrementally
+and indirectly (through superpositions). Given a current problem, in AIT-based OOPS style [238], we
+may impose growing run time limits on programs tested onC, until a solution is found.
+6 Exploration: Rewarding C for Experiments that Improve M
+Humans, even as infants, invent their own tasks in a curious and creative fashion, continually increas-
+ing their problem solving repertoire even without an external reward or teacher. They seem to get
+intrinsic reward for creating experiments leading to observations that obey a previously unknown law
+that allows for better compression of the observations—corresponding to the discovery of atemporar-
+ily interesting, subjectively novel regularity[224, 239, 241] (compare also [261, 184]).
+For example, a video of 100 falling apples can be greatly compressed via predictive coding once
+the law of gravity is discovered. Likewise, the video-like image sequence perceived while mov-
+ing through an ofﬁce can be greatly compressed by constructing an internal 3D model of the ofﬁce
+space [243]. The 3D model allows for re-computing the entire high-resolution video from a compact
+14
+
+=== PAGE 15 ===
+sequence of very low-dimensional eye coordinates and eye directions. The model itself can be spec-
+iﬁed by far fewer bits of information than needed to store the raw pixel data of a long video. Even
+if the 3D model is not precise, only relatively few extra bits will be required to encode the observed
+deviations from the predictions of the model.
+Even mirror neurons [129] are easily explained as by-products of history compression as in Sec. 3
+and 4. They ﬁre both when an animal acts and when the animal observes the same action performed by
+another. Due to mutual algorithmic information shared by perceptions of similar actions performed
+by various animals, efﬁcient RNN-based predictive coding (Sec. 3, 4) proﬁts from using the same
+feature detectors (neurons) to encode the shared information, thus saving storage space.
+Given the C-M combinations of Sec. 5, we motivate C to become an efﬁcient explorer and an
+artiﬁcial scientist, by adding to its standard external reward (or ﬁtness) for solving user-given tasks
+another intrinsic reward for generating novel action sequences (= experiments) that allowM to im-
+prove its compression performance on the resulting data [239, 241].
+At ﬁrst glance, repeatedly evaluatingM’s compression performance on the entire history seems
+impractical. A heuristic to overcome this is to focus on M’s improvements on the most recent trial,
+while regularly re-trainingM on randomly selected previous trials, to avoid catastrophic forgetting.
+A related problem is that C’s incremental program search may ﬁnd it difﬁcult to identify (and
+assign credit to) those parts ofC responsible for improvements of a huge, black box-like, monolithic
+M. But we can implement M as a self-modularizing, computation cost-minimizing, winner-take-all
+RNN [221, 242, 267]. Then it is possible to keep track of which parts of M are used to encode
+which parts of the history. That is, to evaluate weight changes of M, only the affected parts of the
+stored history have to be re-tested [243]. Then C’s search can be facilitated by tracking which parts
+ofC affected those parts of M. By penalizing C’s programs for the time consumed by such tests,
+the search forC is biased to prefer programs that conduct experiments causing data yielding quickly
+veriﬁable compression progress of M. That is, the program search will prefer to change weights of
+M that are not used to compress large parts of the history that are expensive to verify [242, 243].
+The ﬁrst implementations of this simple principle were described in our work on the P OWER PLAY
+framework [243, 267], which incrementally searches the space of possible pairs of new tasks and
+modiﬁcations of the current program, until it ﬁnds a more powerful program that, unlike the unmodi-
+ﬁed program, solves all previously learned tasks plus the new one, or simpliﬁes/compresses/speeds up
+previous solutions, without forgetting any. Under certain conditions this can accelerate the acquisition
+of external reward speciﬁed by user-deﬁned tasks.
+7 Conclusion
+We introduced novel combinations of a reinforcement learning (RL) controller,C, and an RNN-based
+predictive world model,M. The most generalCM systems implement principles ofalgorithmic [263,
+130, 147] as opposed to traditional [24, 257] information theory. Here both M andC are RNNs or
+RNN-like systems.M is actively exploited in arbitrary computable ways byC, whose program search
+space is typically much smaller, and which may learn to selectively probe and reuse M’s internal
+programs to plan and reason. The basic principles are not limited to RL, but apply to all kinds of
+active algorithmic transfer learning from one RNN to another. By combining gradient-based RNNs
+and RL RNNs, we create a qualitatively new type of self-improving, general purpose, connectionist
+control architecture. This RNNAI may continually build upon previously acquired problem solving
+procedures, some of them self-invented in a way that resembles a scientist’s search for novel data with
+unknown regularities, preferring still-unsolved but quickly learnable tasks over others.
+15
+
+=== PAGE 16 ===
+References
+[1] D. Aberdeen. Policy-Gradient Algorithms for Partially Observable Markov Decision Pro-
+cesses. PhD thesis, Australian National University, 2003.
+[2] J. Abounadi, D. Bertsekas, and V . S. Borkar. Learning algorithms for Markov decision pro-
+cesses with average cost. SIAM Journal on Control and Optimization, 40(3):681–698, 2002.
+[3] I. Aizenberg, N. N. Aizenberg, and J. Vandewalle.Multi-Valued and Universal Binary Neurons:
+Theory, Learning and Applications. Springer Science & Business Media, 2000.
+[4] H. Akaike. Statistical predictor identiﬁcation. Ann. Inst. Statist. Math., 22:203–217, 1970.
+[5] H. Akaike. A new look at the statistical model identiﬁcation. IEEE Transactions on Automatic
+Control, 19(6):716–723, 1974.
+[6] A. Allender. Application of time-bounded Kolmogorov complexity in complexity theory.
+In O. Watanabe, editor, Kolmogorov complexity and computational complexity , pages 6–22.
+EATCS Monographs on Theoretical Computer Science, Springer, 1992.
+[7] S. Amari and N. Murata. Statistical theory of learning curves under entropic loss criterion.
+Neural Computation, 5(1):140–153, 1993.
+[8] T. Ash. Dynamic node creation in backpropagation neural networks. Connection Science,
+1(4):365–375, 1989.
+[9] L. Baird and A. W. Moore. Gradient descent for general reinforcement learning. In Advances
+in neural information processing systems 12 (NIPS), pages 968–974. MIT Press, 1999.
+[10] L. C. Baird. Residual algorithms: Reinforcement learning with function approximation. In
+International Conference on Machine Learning, pages 30–37, 1995.
+[11] B. Bakker and J. Schmidhuber. Hierarchical reinforcement learning based on subgoal discov-
+ery and subpolicy specialization. In F. G. et al., editor, Proc. 8th Conference on Intelligent
+Autonomous Systems IAS-8, pages 438–445, Amsterdam, NL, 2004. IOS Press.
+[12] B. Bakker, V . Zhumatiy, G. Gruener, and J. Schmidhuber. A robot that reinforcement-learns to
+identify and memorize important previous observations. In Proceedings of the 2003 IEEE/RSJ
+International Conference on Intelligent Robots and Systems, IROS 2003, pages 430–435, 2003.
+[13] D. H. Ballard. Modular learning in neural networks. In Proc. AAAI, pages 279–284, 1987.
+[14] H. B. Barlow, T. P. Kaushal, and G. J. Mitchison. Finding minimum entropy codes. Neural
+Computation, 1(3):412–423, 1989.
+[15] A. G. Barto and S. Mahadevan. Recent advances in hierarchical reinforcement learning. Dis-
+crete Event Dynamic Systems, 13(4):341–379, 2003.
+[16] A. G. Barto, S. Singh, and N. Chentanez. Intrinsically motivated learning of hierarchical col-
+lections of skills. In Proceedings of International Conference on Developmental Learning
+(ICDL), pages 112–119. MIT Press, Cambridge, MA, 2004.
+[17] A. G. Barto, R. S. Sutton, and C. W. Anderson. Neuronlike adaptive elements that can solve
+difﬁcult learning control problems. IEEE Transactions on Systems, Man, and Cybernetics ,
+SMC-13:834–846, 1983.
+16
+
+=== PAGE 17 ===
+[18] J. Baxter and P. L. Bartlett. Inﬁnite-horizon policy-gradient estimation. J. Artif. Int. Res. ,
+15(1):319–350, 2001.
+[19] S. Behnke. Hierarchical Neural Networks for Image Interpretation , volume LNCS 2766 of
+Lecture Notes in Computer Science. Springer, 2003.
+[20] R. Bellman. Dynamic Programming. Princeton University Press, Princeton, NJ, USA, 1st
+edition, 1957.
+[21] Y . Bengio, A. Courville, and P. Vincent. Representation learning: A review and new perspec-
+tives. Pattern Analysis and Machine Intelligence, IEEE Transactions on , 35(8):1798–1828,
+2013.
+[22] D. P. Bertsekas. Dynamic Programming and Optimal Control. Athena Scientiﬁc, 2001.
+[23] C. M. Bishop. Pattern Recognition and Machine Learning. Springer, 2006.
+[24] L. Boltzmann. In F. Hasen ¨ohrl, editor, Wissenschaftliche Abhandlungen (collection of Boltz-
+mann’s articles in scientiﬁc journals). Barth, Leipzig, 1909.
+[25] C. Boutilier and D. Poole. Computing optimal policies for partially observable Markov decision
+processes using compact representations. In Proceedings of the AAAI, Portland, OR, 1996.
+[26] S. J. Bradtke, A. G. Barto, and L. P. Kaelbling. Linear least-squares algorithms for temporal
+difference learning. In Machine Learning, pages 22–33, 1996.
+[27] R. I. Brafman and M. Tennenholtz. R-MAX—a general polynomial time algorithm for near-
+optimal reinforcement learning. Journal of Machine Learning Research, 3:213–231, 2002.
+[28] L. Breiman. Bagging predictors. Machine Learning, 24:123–140, 1996.
+[29] C. B. Browne, E. Powley, D. Whitehouse, S. M. Lucas, P. I. Cowling, P. Rohlfshagen,
+S. Tavener, D. Perez, S. Samothrakis, and S. Colton. A survey of monte carlo tree search
+methods. IEEE Transactions on Computational Intelligence and AI in Games, 4(1):1–43, 2012.
+[30] A. E. Bryson. A gradient method for optimizing multi-stage allocation processes. In Proc.
+Harvard Univ. Symposium on digital computers and their applications, 1961.
+[31] N. Burgess. A constructive algorithm that converges for real-valued input patterns. Interna-
+tional Journal of Neural Systems, 5(1):59–66, 1994.
+[32] R. Caruana. Multitask learning. Machine Learning, 28(1):41–75, 1997.
+[33] G. J. Chaitin. On the length of programs for computing ﬁnite binary sequences. Journal of the
+ACM, 13:547–569, 1966.
+[34] K. Chellapilla, S. Puri, and P. Simard. High performance convolutional neural networks for
+document processing. In International Workshop on Frontiers in Handwriting Recognition ,
+2006.
+[35] A. Church. An unsolvable problem of elementary number theory. American Journal of Math-
+ematics, 58:345–363, 1936.
+[36] D. C. Ciresan, A. Giusti, L. M. Gambardella, and J. Schmidhuber. Deep neural networks seg-
+ment neuronal membranes in electron microscopy images. In Advances in Neural Information
+Processing Systems (NIPS), pages 2852–2860, 2012.
+17
+
+=== PAGE 18 ===
+[37] D. C. Ciresan, A. Giusti, L. M. Gambardella, and J. Schmidhuber. Mitosis detection in breast
+cancer histology images with deep neural networks. In Proc. MICCAI, volume 2, pages 411–
+418, 2013.
+[38] D. C. Ciresan, U. Meier, L. M. Gambardella, and J. Schmidhuber. Deep big simple neural nets
+for handwritten digit recogntion. Neural Computation, 22(12):3207–3220, 2010.
+[39] D. C. Ciresan, U. Meier, L. M. Gambardella, and J. Schmidhuber. Convolutional neural net-
+work committees for handwritten character classiﬁcation. In11th International Conference on
+Document Analysis and Recognition (ICDAR), pages 1250–1254, 2011.
+[40] D. C. Ciresan, U. Meier, J. Masci, L. M. Gambardella, and J. Schmidhuber. Flexible, high
+performance convolutional neural networks for image classiﬁcation. In Intl. Joint Conference
+on Artiﬁcial Intelligence IJCAI, pages 1237–1242, 2011.
+[41] D. C. Ciresan, U. Meier, J. Masci, and J. Schmidhuber. A committee of neural networks for
+trafﬁc sign classiﬁcation. In International Joint Conference on Neural Networks (IJCNN) ,
+pages 1918–1921, 2011.
+[42] D. C. Ciresan, U. Meier, and J. Schmidhuber. Multi-column deep neural networks for image
+classiﬁcation. In IEEE Conference on Computer Vision and Pattern Recognition CVPR 2012,
+2012. Long preprint arXiv:1202.2745v1 [cs.CV].
+[43] D. C. Ciresan, U. Meier, and J. Schmidhuber. Transfer learning for Latin and Chinese char-
+acters with deep neural networks. In International Joint Conference on Neural Networks
+(IJCNN), pages 1301–1306, 2012.
+[44] D. T. Cliff, P. Husbands, and I. Harvey. Evolving recurrent dynamical networks for robot
+control. In Artiﬁcial Neural Nets and Genetic Algorithms, pages 428–435. Springer, 1993.
+[45] A. Cochocki and R. Unbehauen. Neural networks for optimization and signal processing. John
+Wiley & Sons, Inc., 1993.
+[46] G. Cuccu, M. Luciw, J. Schmidhuber, and F. Gomez. Intrinsically motivated evolutionary
+search for vision-based reinforcement learning. In Proceedings of the 2011 IEEE Conference
+on Development and Learning and Epigenetic Robotics IEEE-ICDL-EPIROB, volume 2, pages
+1–7. IEEE, 2011.
+[47] S. Das, C. Giles, and G. Sun. Learning context-free grammars: Capabilities and limitations of
+a neural network with an external stack memory. In Proceedings of the The Fourteenth Annual
+Conference of the Cognitive Science Society, Bloomington, 1992.
+[48] P. Dayan and G. Hinton. Feudal reinforcement learning. In D. S. Lippman, J. E. Moody, and
+D. S. Touretzky, editors, Advances in Neural Information Processing Systems (NIPS) 5, pages
+271–278. Morgan Kaufmann, 1993.
+[49] R. Dechter. Learning while searching in constraint-satisfaction problems. In Proceedings of
+AAAI-86, 1986.
+[50] T. G. Dietterich. Hierarchical reinforcement learning with the MAXQ value function decom-
+position. J. Artif. Intell. Res. (JAIR), 13:227–303, 2000.
+[51] K. Doya, K. Samejima, K. ichi Katagiri, and M. Kawato. Multiple model-based reinforcement
+learning. Neural Computation, 14(6):1347–1369, 2002.
+18
+
+=== PAGE 19 ===
+[52] S. E. Dreyfus. The numerical solution of variational problems. Journal of Mathematical Anal-
+ysis and Applications, 5(1):30–45, 1962.
+[53] S. E. Fahlman. The recurrent cascade-correlation learning algorithm. In R. P. Lippmann,
+J. E. Moody, and D. S. Touretzky, editors,Advances in Neural Information Processing Systems
+(NIPS) 3, pages 190–196. Morgan Kaufmann, 1991.
+[54] Y . Fan, Y . Qian, F. Xie, and F. K. Soong. TTS synthesis with bidirectional LSTM based
+recurrent neural networks. In Proc. Interspeech, 2014.
+[55] R. Fernandez, A. Rendel, B. Ramabhadran, and R. Hoory. Prosody contour prediction with
+Long Short-Term Memory, bi-directional, deep recurrent neural networks. In Proc. Inter-
+speech, 2014.
+[56] L. Fogel, A. Owens, and M. Walsh. Artiﬁcial Intelligence through Simulated Evolution. Wiley,
+New York, 1966.
+[57] B. Fritzke. A growing neural gas network learns topologies. In G. Tesauro, D. S. Touretzky,
+and T. K. Leen, editors, NIPS, pages 625–632. MIT Press, 1994.
+[58] K. Fukushima. Neural network model for a mechanism of pattern recognition unaffected by
+shift in position - Neocognitron. Trans. IECE, J62-A(10):658–665, 1979.
+[59] S. I. Gallant. Connectionist expert systems. Communications of the ACM , 31(2):152–169,
+1988.
+[60] S. Ge, C. C. Hang, T. H. Lee, and T. Zhang. Stable adaptive neural network control. Springer,
+2010.
+[61] F. A. Gers, J. Schmidhuber, and F. Cummins. Learning to forget: Continual prediction with
+LSTM. Neural Computation, 12(10):2451–2471, 2000.
+[62] F. A. Gers, N. Schraudolph, and J. Schmidhuber. Learning precise timing with LSTM recurrent
+networks. Journal of Machine Learning Research, 3:115–143, 2002.
+[63] M. Ghavamzadeh and S. Mahadevan. Hierarchical policy gradient algorithms. In Proceedings
+of the Twentieth Conference on Machine Learning (ICML-2003), pages 226–233, 2003.
+[64] R. Girshick, J. Donahue, T. Darrell, and J. Malik. Rich feature hierarchies for accurate object
+detection and semantic segmentation. Technical Report arxiv.org/abs/1311.2524, UC Berkeley
+and ICSI, 2013.
+[65] L. Gisslen, M. Luciw, V . Graziano, and J. Schmidhuber. Sequential constant size compres-
+sor for reinforcement learning. In Proc. Fourth Conference on Artiﬁcial General Intelligence
+(AGI), Google, Mountain View, CA, pages 31–40. Springer, 2011.
+[66] T. Glasmachers, T. Schaul, Y . Sun, D. Wierstra, and J. Schmidhuber. Exponential natural
+evolution strategies. In Proceedings of the Genetic and Evolutionary Computation Conference
+(GECCO), pages 393–400. ACM, 2010.
+[67] K. G ¨odel. ¨Uber formal unentscheidbare S¨atze der Principia Mathematica und verwandter Sys-
+teme I. Monatshefte f¨ur Mathematik und Physik, 38:173–198, 1931.
+[68] D. E. Goldberg. Genetic Algorithms in Search, Optimization and Machine Learning. Addison-
+Wesley, Reading, MA, 1989.
+19
+
+=== PAGE 20 ===
+[69] F. J. Gomez. Robust Nonlinear Control through Neuroevolution. PhD thesis, Department of
+Computer Sciences, University of Texas at Austin, 2003.
+[70] F. J. Gomez and R. Miikkulainen. Incremental evolution of complex general behavior.Adaptive
+Behavior, 5:317–342, 1997.
+[71] F. J. Gomez and R. Miikkulainen. Active guidance for a ﬁnless rocket using neuroevolution.
+In Proc. GECCO 2003, Chicago, 2003.
+[72] F. J. Gomez, J. Schmidhuber, and R. Miikkulainen. Accelerated neural evolution through
+cooperatively coevolved synapses. Journal of Machine Learning Research, 9(May):937–965,
+2008.
+[73] H. Gomi and M. Kawato. Neural network control for a closed-loop system using feedback-
+error-learning. Neural Networks, 6(7):933–946, 1993.
+[74] I. J. Goodfellow, Y . Bulatov, J. Ibarz, S. Arnoud, and V . Shet. Multi-digit number recog-
+nition from street view imagery using deep convolutional neural networks. arXiv preprint
+arXiv:1312.6082 v4, 2014.
+[75] I. J. Goodfellow, D. Warde-Farley, M. Mirza, A. Courville, and Y . Bengio. Maxout networks.
+In International Conference on Machine Learning (ICML), 2013.
+[76] A. Graves, S. Fernandez, F. J. Gomez, and J. Schmidhuber. Connectionist temporal classiﬁca-
+tion: Labelling unsegmented sequence data with recurrent neural nets. In ICML’06: Proceed-
+ings of the 23rd International Conference on Machine Learning, pages 369–376, 2006.
+[77] A. Graves, M. Liwicki, S. Fernandez, R. Bertolami, H. Bunke, and J. Schmidhuber. A novel
+connectionist system for improved unconstrained handwriting recognition. IEEE Transactions
+on Pattern Analysis and Machine Intelligence, 31(5), 2009.
+[78] A. Graves and J. Schmidhuber. Framewise phoneme classiﬁcation with bidirectional LSTM
+and other neural network architectures. Neural Networks, 18(5-6):602–610, 2005.
+[79] A. Graves and J. Schmidhuber. Ofﬂine handwriting recognition with multidimensional recur-
+rent neural networks. In Advances in Neural Information Processing Systems (NIPS) 21, pages
+545–552. MIT Press, Cambridge, MA, 2009.
+[80] A. Graves, G. Wayne, and I. Danihelka. Neural Turing machines. Preprint arXiv:1410.5401,
+2014.
+[81] M. Graziano. The Intelligent Movement Machine: An Ethological Perspective on the Primate
+Motor System. Oxford University Press, USA, 2009.
+[82] I. Grondman, L. Busoniu, G. A. D. Lopes, and R. Babuska. A survey of actor-critic reinforce-
+ment learning: Standard and natural policy gradients. Systems, Man, and Cybernetics, Part C:
+Applications and Reviews, IEEE Transactions on, 42(6):1291–1307, Nov 2012.
+[83] F. Gruau, D. Whitley, and L. Pyeatt. A comparison between cellular encoding and direct
+encoding for genetic neural networks. NeuroCOLT Technical Report NC-TR-96-048, ESPRIT
+Working Group in Neural and Computational Learning, NeuroCOLT 8556, 1996.
+[84] P. D. Gr ¨unwald, I. J. Myung, and M. A. Pitt. Advances in minimum description length: Theory
+and applications. MIT Press, 2005.
+20
+
+=== PAGE 21 ===
+[85] M. Gr ¨uttner, F. Sehnke, T. Schaul, and J. Schmidhuber. Multi-Dimensional Deep Memory
+Atari-Go Players for Parameter Exploring Policy Gradients. InProceedings of the International
+Conference on Artiﬁcial Neural Networks ICANN, pages 114–123. Springer, 2010.
+[86] X. Guo, S. Singh, H. Lee, R. Lewis, and X. Wang. Deep learning for real-time Atari game play
+using ofﬂine Monte-Carlo tree search planning. In Advances in Neural Information Processing
+Systems 27 (NIPS). 2014.
+[87] I. Guyon, V . Vapnik, B. Boser, L. Bottou, and S. A. Solla. Structural risk minimization for
+character recognition. In D. S. Lippman, J. E. Moody, and D. S. Touretzky, editors, Advances
+in Neural Information Processing Systems (NIPS) 4, pages 471–479. Morgan Kaufmann, 1992.
+[88] A. Hannun, C. Case, J. Casper, B. Catanzaro, G. Diamos, E. Elsen, R. Prenger, S. Satheesh,
+S. Sengupta, A. Coates, and A. Y . Ng. DeepSpeech: Scaling up end-to-end speech recognition.
+Preprint arXiv:1412.5567, 2014.
+[89] N. Hansen, S. D. M ¨uller, and P. Koumoutsakos. Reducing the time complexity of the de-
+randomized evolution strategy with covariance matrix adaptation (CMA-ES). Evolutionary
+Computation, 11(1):1–18, 2003.
+[90] N. Hansen and A. Ostermeier. Completely derandomized self-adaptation in evolution strate-
+gies. Evolutionary Computation, 9(2):159–195, 2001.
+[91] S. J. Hanson and L. Y . Pratt. Comparing biases for minimal network construction with back-
+propagation. In D. S. Touretzky, editor, Advances in Neural Information Processing Systems
+(NIPS) 1, pages 177–185. San Mateo, CA: Morgan Kaufmann, 1989.
+[92] B. Hassibi and D. G. Stork. Second order derivatives for network pruning: Optimal brain
+surgeon. In D. S. Lippman, J. E. Moody, and D. S. Touretzky, editors, Advances in Neural
+Information Processing Systems 5, pages 164–171. Morgan Kaufmann, 1993.
+[93] N. Heess, D. Silver, and Y . W. Teh. Actor-critic reinforcement learning with energy-based
+policies. In Proc. European Workshop on Reinforcement Learning, pages 43–57, 2012.
+[94] V . Heidrich-Meisner and C. Igel. Neuroevolution strategies for episodic reinforcement learning.
+Journal of Algorithms, 64(4):152–168, 2009.
+[95] J. Hertz, A. Krogh, and R. Palmer. Introduction to the Theory of Neural Computation. Addison-
+Wesley, Redwood City, 1991.
+[96] G. Hinton and R. Salakhutdinov. Reducing the dimensionality of data with neural networks.
+Science, 313(5786):504–507, 2006.
+[97] G. E. Hinton and D. van Camp. Keeping neural networks simple. In Proceedings of the
+International Conference on Artiﬁcial Neural Networks, Amsterdam , pages 11–18. Springer,
+1993.
+[98] S. Hochreiter. Untersuchungen zu dynamischen neuronalen Netzen. Diploma thesis, Institut
+f¨ur Informatik, Lehrstuhl Prof. Brauer, Technische Universit ¨at M ¨unchen, 1991. Advisor: J.
+Schmidhuber.
+[99] S. Hochreiter, Y . Bengio, P. Frasconi, and J. Schmidhuber. Gradient ﬂow in recurrent nets: the
+difﬁculty of learning long-term dependencies. In S. C. Kremer and J. F. Kolen, editors,A Field
+Guide to Dynamical Recurrent Neural Networks. IEEE Press, 2001.
+21
+
+=== PAGE 22 ===
+[100] S. Hochreiter and J. Schmidhuber. Flat minima. Neural Computation, 9(1):1–42, 1997.
+[101] S. Hochreiter and J. Schmidhuber. Long Short-Term Memory.Neural Computation, 9(8):1735–
+1780, 1997. Based on TR FKI-207-95, TUM (1995).
+[102] S. Hochreiter and J. Schmidhuber. Feature extraction through LOCOCODE. Neural Compu-
+tation, 11(3):679–714, 1999.
+[103] S. Hochreiter, A. S. Younger, and P. R. Conwell. Learning to learn using gradient descent. In
+Lecture Notes on Comp. Sci. 2130, Proc. Intl. Conf. on Artiﬁcial Neural Networks (ICANN-
+2001), pages 87–94. Springer: Berlin, Heidelberg, 2001.
+[104] S. B. Holden. On the Theory of Generalization and Self-Structuring in Linearly Weighted
+Connectionist Networks. PhD thesis, Cambridge University, Engineering Department, 1994.
+[105] J. H. Holland. Adaptation in Natural and Artiﬁcial Systems . University of Michigan Press,
+Ann Arbor, 1975.
+[106] V . Honavar and L. Uhr. Generative learning structures and processes for generalized connec-
+tionist networks. Information Sciences, 70(1):75–108, 1993.
+[107] V . Honavar and L. M. Uhr. A network of neuron-like units that learns to perceive by generation
+as well as reweighting of its links. In D. Touretzky, G. E. Hinton, and T. Sejnowski, editors,
+Proc. of the 1988 Connectionist Models Summer School , pages 472–484, San Mateo, 1988.
+Morgan Kaufman.
+[108] D. A. Huffman. A method for construction of minimum-redundancy codes. Proceedings IRE,
+40:1098–1101, 1952.
+[109] M. Hutter. Universal Artiﬁcial Intelligence: Sequential Decisions based on Algorithmic Prob-
+ability. Springer, Berlin, 2005. (On J. Schmidhuber’s SNF grant 20-61847).
+[110] C. Igel. Neuroevolution for reinforcement learning using evolution strategies. In R. Reynolds,
+H. Abbass, K. C. Tan, B. Mckay, D. Essam, and T. Gedeon, editors,Congress on Evolutionary
+Computation (CEC 2003), volume 4, pages 2588–2595. IEEE, 2003.
+[111] A. G. Ivakhnenko. The group method of data handling – a rival of the method of stochastic
+approximation. Soviet Automatic Control, 13(3):43–55, 1968.
+[112] A. G. Ivakhnenko. Polynomial theory of complex systems. IEEE Transactions on Systems,
+Man and Cybernetics, (4):364–378, 1971.
+[113] A. G. Ivakhnenko and V . G. Lapa. Cybernetic Predicting Devices. CCM Information Corpo-
+ration, 1965.
+[114] T. Jaakkola, S. P. Singh, and M. I. Jordan. Reinforcement learning algorithm for partially
+observable Markov decision problems. In G. Tesauro, D. S. Touretzky, and T. K. Leen, editors,
+Advances in Neural Information Processing Systems (NIPS) 7 , pages 345–352. MIT Press,
+1995.
+[115] C. Jacob, A. Lindenmayer, and G. Rozenberg. Genetic L-System Programming. In Parallel
+Problem Solving from Nature III, Lecture Notes in Computer Science. Springer-Verlag, 1994.
+[116] H. Jaeger. Harnessing nonlinearity: Predicting chaotic systems and saving energy in wireless
+communication. Science, 304:78–80, 2004.
+22
+
+=== PAGE 23 ===
+[117] J. Jameson. Delayed reinforcement learning with multiple time scale hierarchical backpropa-
+gated adaptive critics. In Neural Networks for Control. 1991.
+[118] S. R. Jodogne and J. H. Piater. Closed-loop learning of visual control policies. J. Artiﬁcial
+Intelligence Research, 28:349–391, 2007.
+[119] M. I. Jordan. Supervised learning and systems with excess degrees of freedom. Technical
+Report COINS TR 88-27, Massachusetts Institute of Technology, 1988.
+[120] M. I. Jordan and D. E. Rumelhart. Supervised learning with a distal teacher. Technical Report
+Occasional Paper #40, Center for Cog. Sci., Massachusetts Institute of Technology, 1990.
+[121] C.-F. Juang. A hybrid of genetic algorithm and particle swarm optimization for recurrent net-
+work design. Systems, Man, and Cybernetics, Part B: Cybernetics, IEEE Transactions on ,
+34(2):997–1006, 2004.
+[122] L. P. Kaelbling, M. L. Littman, and A. R. Cassandra. Planning and acting in partially observable
+stochastic domains. Technical report, Brown University, Providence RI, 1995.
+[123] L. P. Kaelbling, M. L. Littman, and A. W. Moore. Reinforcement learning: a survey. Journal
+of AI research, 4:237–285, 1996.
+[124] A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei. Large-scale video
+classiﬁcation with convolutional neural networks. InIEEE Conference on Computer Vision and
+Pattern Recognition (CVPR), 2014.
+[125] H. J. Kelley. Gradient theory of optimal ﬂight paths. ARS Journal, 30(10):947–954, 1960.
+[126] H. Kimura, K. Miyazaki, and S. Kobayashi. Reinforcement learning in POMDPs with function
+approximation. In ICML, volume 97, pages 152–160, 1997.
+[127] H. Kitano. Designing neural networks using genetic algorithms with graph generation system.
+Complex Systems, 4:461–476, 1990.
+[128] N. Kohl and P. Stone. Policy gradient reinforcement learning for fast quadrupedal locomotion.
+In Robotics and Automation, 2004. Proceedings. ICRA’04. 2004 IEEE International Confer-
+ence on, volume 3, pages 2619–2624. IEEE, 2004.
+[129] E. Kohler, C. Keysers, M. A. Umilta, L. Fogassi, V . Gallese, and G. Rizzolatti. Hearing sounds,
+understanding actions: action representation in mirror neurons. Science, 297(5582):846–848,
+2002.
+[130] A. N. Kolmogorov. Three approaches to the quantitative deﬁnition of information. Problems
+of Information Transmission, 1:1–11, 1965.
+[131] V . R. Kompella, M. D. Luciw, and J. Schmidhuber. Incremental slow feature analysis: Adaptive
+low-complexity slow feature updating from high-dimensional input streams. Neural Computa-
+tion, 24(11):2994–3024, 2012.
+[132] J. Koutn ´ık, G. Cuccu, J. Schmidhuber, and F. Gomez. Evolving large-scale neural networks for
+vision-based reinforcement learning. In Proceedings of the Genetic and Evolutionary Compu-
+tation Conference (GECCO), pages 1061–1068, Amsterdam, July 2013. ACM.
+23
+
+=== PAGE 24 ===
+[133] J. Koutn ´ık, K. Greff, F. Gomez, and J. Schmidhuber. A Clockwork RNN. In Proceedings of
+the 31th International Conference on Machine Learning (ICML), volume 32, pages 1845–1853,
+2014. arXiv:1402.3511 [cs.NE].
+[134] A. Krizhevsky, I. Sutskever, and G. E. Hinton. Imagenet classiﬁcation with deep convolutional
+neural networks. In Advances in Neural Information Processing Systems (NIPS 2012), page 4,
+2012.
+[135] A. Krogh and J. A. Hertz. A simple weight decay can improve generalization. In D. S. Lippman,
+J. E. Moody, and D. S. Touretzky, editors,Advances in Neural Information Processing Systems
+4, pages 950–957. Morgan Kaufmann, 1992.
+[136] S. Kullback and R. A. Leibler. On information and sufﬁciency. The Annals of Mathematical
+Statistics, pages 79–86, 1951.
+[137] M. G. Lagoudakis and R. Parr. Least-squares policy iteration. JMLR, 4:1107–1149, 12 2003.
+[138] S. Lange and M. Riedmiller. Deep auto-encoder neural networks in reinforcement learning. In
+Neural Networks (IJCNN), The 2010 International Joint Conference on, pages 1–8, July 2010.
+[139] Y . LeCun, Y . Bengio, and G. Hinton. Deep learning. Nature, 521(7553):436–444, 2015.
+Critique by JS under http://www.idsia.ch/˜juergen/deep-learning-conspiracy.html.
+[140] Y . LeCun, B. Boser, J. S. Denker, D. Henderson, R. E. Howard, W. Hubbard, and L. D. Jackel.
+Back-propagation applied to handwritten zip code recognition.Neural Computation, 1(4):541–
+551, 1989.
+[141] Y . LeCun, J. S. Denker, and S. A. Solla. Optimal brain damage. In D. S. Touretzky, editor,
+Advances in Neural Information Processing Systems 2 , pages 598–605. Morgan Kaufmann,
+1990.
+[142] R. Legenstein, N. Wilbert, and L. Wiskott. Reinforcement learning on slow features of high-
+dimensional input streams. PLoS Computational Biology, 6(8), 2010.
+[143] A. U. Levin, T. K. Leen, and J. E. Moody. Fast pruning using principal components. In
+Advances in Neural Information Processing Systems 6, page 35. Morgan Kaufmann, 1994.
+[144] A. U. Levin and K. S. Narendra. Control of nonlinear dynamical systems using neural net-
+works. ii. observability, identiﬁcation, and control. IEEE Transactions on Neural Networks ,
+7(1):30–42, 1995.
+[145] L. A. Levin. On the notion of a random sequence. Soviet Math. Dokl., 14(5):1413–1416, 1973.
+[146] L. A. Levin. Universal sequential search problems. Problems of Information Transmission ,
+9(3):265–266, 1973.
+[147] M. Li and P. M. B. Vit ´anyi. An Introduction to Kolmogorov Complexity and its Applications
+(2nd edition). Springer, 1997.
+[148] L. Lin. Reinforcement Learning for Robots Using Neural Networks . PhD thesis, Carnegie
+Mellon University, Pittsburgh, January 1993.
+[149] L.-J. Lin. Programming robots using reinforcement learning and teaching. In Proceedings of
+the Ninth National Conference on Artiﬁcial Intelligence - Volume 2, AAAI’91, pages 781–786.
+AAAI Press, 1991.
+24
+
+=== PAGE 25 ===
+[150] L.-J. Lin and T. M. Mitchell. Memory approaches to reinforcement learning in non-markovian
+domains. Technical Report CMU-CS-92-138, School of Computer Science, Carnegie Mellon
+University, 1992.
+[151] S. Linnainmaa. The representation of the cumulative rounding error of an algorithm as a Taylor
+expansion of the local rounding errors. Master’s thesis, Univ. Helsinki, 1970.
+[152] M. L. Littman, A. R. Cassandra, and L. P. Kaelbling. Learning policies for partially observable
+environments: Scaling up. In A. Prieditis and S. Russell, editors, Machine Learning: Proceed-
+ings of the Twelfth International Conference , pages 362–370. Morgan Kaufmann Publishers,
+San Francisco, CA, 1995.
+[153] L. Ljung. System identiﬁcation. Springer, 1998.
+[154] M. Luciw, V . R. Kompella, S. Kazerounian, and J. Schmidhuber. An intrinsic value system for
+developing multiple invariant representations with incremental slowness learning. Frontiers in
+Neurorobotics, 7(9), 2013.
+[155] D. J. C. MacKay. A practical Bayesian framework for backprop networks. Neural Computa-
+tion, 4:448–472, 1992.
+[156] H. R. Maei and R. S. Sutton. GQ( λ): A general gradient algorithm for temporal-difference
+prediction learning with eligibility traces. In Proceedings of the Third Conference on Artiﬁcial
+General Intelligence, volume 1, pages 91–96, 2010.
+[157] S. Mahadevan. Average reward reinforcement learning: Foundations, algorithms, and empirical
+results. Machine Learning, 22:159, 1996.
+[158] J. Martens and I. Sutskever. Learning recurrent neural networks with Hessian-free optimiza-
+tion. In Proceedings of the 28th International Conference on Machine Learning (ICML), pages
+1033–1040, 2011.
+[159] H. Mayer, F. Gomez, D. Wierstra, I. Nagy, A. Knoll, and J. Schmidhuber. A system for robotic
+heart surgery that learns to tie knots using recurrent neural networks. Advanced Robotics ,
+22(13-14):1521–1537, 2008.
+[160] R. A. McCallum. Learning to use selective attention and short-term memory in sequential tasks.
+In P. Maes, M. Mataric, J.-A. Meyer, J. Pollack, and S. W. Wilson, editors, From Animals to
+Animats 4: Proceedings of the Fourth International Conference on Simulation of Adaptive
+Behavior, Cambridge, MA, pages 315–324. MIT Press, Bradford Books, 1996.
+[161] U. Meier, D. C. Ciresan, L. M. Gambardella, and J. Schmidhuber. Better digit recognition with
+a committee of simple neural nets. In 11th International Conference on Document Analysis
+and Recognition (ICDAR), pages 1135–1139, 2011.
+[162] I. Menache, S. Mannor, and N. Shimkin. Q-cut – dynamic discovery of sub-goals in reinforce-
+ment learning. In Proc. ECML’02, pages 295–306, 2002.
+[163] N. Meuleau, L. Peshkin, K. E. Kim, and L. P. Kaelbling. Learning ﬁnite state controllers
+for partially observable environments. In 15th International Conference of Uncertainty in AI ,
+pages 427–436, 1999.
+[164] O. Miglino, H. Lund, and S. Nolﬁ. Evolving mobile robots in simulated and real environments.
+Artiﬁcial Life, 2(4):417–434, 1995.
+25
+
+=== PAGE 26 ===
+[165] G. Miller, P. Todd, and S. Hedge. Designing neural networks using genetic algorithms. In Pro-
+ceedings of the 3rd International Conference on Genetic Algorithms , pages 379–384. Morgan
+Kauffman, 1989.
+[166] W. T. Miller, P. J. Werbos, and R. S. Sutton. Neural networks for control. MIT Press, 1995.
+[167] V . Mnih, K. Kavukcuoglu, D. Silver, A. A. Rusu, J. Veness, M. G. Bellemare,
+A. Graves, M. Riedmiller, A. K. Fidjeland, G. Ostrovski, S. Petersen, C. Beat-
+tie, A. Sadik, I. Antonoglou, H. King, D. Kumaran, D. Wierstra, S. Legg, and
+D. Hassabis. Human-level control through deep reinforcement learning. Nature,
+518(7540):529–533, 2015. Based on TR arXiv:1312.5602 (2013); critique by JS under
+http://www.idsia.ch/˜juergen/naturedeepmind.html.
+[168] J. E. Moody. Fast learning in multi-resolution hierarchies. In D. S. Touretzky, editor, Advances
+in Neural Information Processing Systems (NIPS) 1, pages 29–39. Morgan Kaufmann, 1989.
+[169] J. E. Moody. The effective number of parameters: An analysis of generalization and regu-
+larization in nonlinear learning systems. In D. S. Lippman, J. E. Moody, and D. S. Touretzky,
+editors, Advances in Neural Information Processing Systems (NIPS) 4, pages 847–854. Morgan
+Kaufmann, 1992.
+[170] J. E. Moody and J. Utans. Architecture selection strategies for neural networks: Application
+to corporate bond rating prediction. In A. N. Refenes, editor, Neural Networks in the Capital
+Markets. John Wiley & Sons, 1994.
+[171] A. Moore and C. Atkeson. The parti-game algorithm for variable resolution reinforcement
+learning in multidimensional state-spaces. Machine Learning, 21(3):199–233, 1995.
+[172] A. Moore and C. G. Atkeson. Prioritized sweeping: Reinforcement learning with less data and
+less time. Machine Learning, 13:103–130, 1993.
+[173] D. E. Moriarty. Symbiotic Evolution of Neural Networks in Sequential Decision Tasks . PhD
+thesis, Department of Computer Sciences, The University of Texas at Austin, 1997.
+[174] J. Morimoto and K. Doya. Robust reinforcement learning. In T. K. Leen, T. G. Dietterich,
+and V . Tresp, editors, Advances in Neural Information Processing Systems (NIPS) 13 , pages
+1061–1067. MIT Press, 2000.
+[175] M. C. Mozer and S. Das. A connectionist symbol manipulator that discovers the structure of
+context-free languages. Advances in Neural Information Processing Systems (NIPS) , pages
+863–863, 1993.
+[176] M. C. Mozer and P. Smolensky. Skeletonization: A technique for trimming the fat from a
+network via relevance assessment. In D. S. Touretzky, editor, Advances in Neural Information
+Processing Systems (NIPS) 1, pages 107–115. Morgan Kaufmann, 1989.
+[177] P. W. Munro. A dual back-propagation scheme for scalar reinforcement learning. Proceedings
+of the Ninth Annual Conference of the Cognitive Science Society, Seattle, WA, pages 165–176,
+1987.
+[178] K. S. Narendra and K. Parthasarathy. Identiﬁcation and control of dynamical systems using
+neural networks. Neural Networks, IEEE Transactions on, 1(1):4–27, 1990.
+26
+
+=== PAGE 27 ===
+[179] N. Nguyen and B. Widrow. The truck backer-upper: An example of self learning in neural
+networks. In Proceedings of the International Joint Conference on Neural Networks , pages
+357–363. IEEE Press, 1989.
+[180] S. Nolﬁ, D. Floreano, O. Miglino, and F. Mondada. How to evolve autonomous robots: Differ-
+ent approaches in evolutionary robotics. In R. A. Brooks and P. Maes, editors, Fourth Interna-
+tional Workshop on the Synthesis and Simulation of Living Systems (Artiﬁcial Life IV) , pages
+190–197. MIT, 1994.
+[181] K.-S. Oh and K. Jung. GPU implementation of neural networks. Pattern Recognition ,
+37(6):1311–1314, 2004.
+[182] J. R. Olsson. Inductive functional programming using incremental program transformation.
+Artiﬁcial Intelligence, 74(1):55–83, 1995.
+[183] M. Otsuka, J. Yoshimoto, and K. Doya. Free-energy-based reinforcement learning in a partially
+observable environment. In Proc. ESANN, 2010.
+[184] P.-Y . Oudeyer, A. Baranes, and F. Kaplan. Intrinsically motivated learning of real world sen-
+sorimotor skills with developmental constraints. In G. Baldassarre and M. Mirolli, editors,
+Intrinsically Motivated Learning in Natural and Artiﬁcial Systems. Springer, 2013.
+[185] R. Parekh, J. Yang, and V . Honavar. Constructive neural network learning algorithms for multi-
+category pattern classiﬁcation. IEEE Transactions on Neural Networks, 11(2):436–451, 2000.
+[186] R. Pascanu, T. Mikolov, and Y . Bengio. On the difﬁculty of training recurrent neural networks.
+In ICML’13: JMLR: W&CP volume 28, 2013.
+[187] F. Pasemann, U. Steinmetz, and U. Dieckman. Evolving structure and function of neuro-
+controllers. In P. J. Angeline, Z. Michalewicz, M. Schoenauer, X. Yao, and A. Zalzala, ed-
+itors, Proceedings of the Congress on Evolutionary Computation, volume 3, pages 1973–1978,
+Mayﬂower Hotel, Washington D.C., USA, 6-9 1999. IEEE Press.
+[188] J. Peng and R. J. Williams. Incremental multi-step Q-learning. Machine Learning, 22:283–290,
+1996.
+[189] J. A. P ´erez-Ortiz, F. A. Gers, D. Eck, and J. Schmidhuber. Kalman ﬁlters improve LSTM
+network performance in problems unsolvable by traditional recurrent nets. Neural Networks,
+16:241–250, 2003.
+[190] J. Peters. Policy gradient methods. Scholarpedia, 5(11):3698, 2010.
+[191] J. Peters and S. Schaal. Natural actor-critic. Neurocomputing, 71:1180–1190, March 2008.
+[192] J. Peters and S. Schaal. Reinforcement learning of motor skills with policy gradients. Neural
+Network, 21(4):682–697, 2008.
+[193] J. B. Pollack. Implications of recursive distributed representations. In Proc. NIPS, pages 527–
+536, 1988.
+[194] E. L. Post. Finite combinatory processes-formulation 1. The Journal of Symbolic Logic ,
+1(3):103–105, 1936.
+27
+
+=== PAGE 28 ===
+[195] D. Precup, R. S. Sutton, and S. Singh. Multi-time models for temporally abstract planning.
+In Advances in Neural Information Processing Systems (NIPS) , pages 1050–1056. Morgan
+Kaufmann, 1998.
+[196] D. Prokhorov, G. Puskorius, and L. Feldkamp. Dynamical neural networks for control. In
+J. Kolen and S. Kremer, editors, A ﬁeld guide to dynamical recurrent networks , pages 23–78.
+IEEE Press, 2001.
+[197] D. Prokhorov and D. Wunsch. Adaptive critic design. IEEE Transactions on Neural Networks,
+8(5):997–1007, 1997.
+[198] R. Raina, A. Madhavan, and A. Ng. Large-scale deep unsupervised learning using graphics
+processors. In Proceedings of the 26th Annual International Conference on Machine Learning
+(ICML), pages 873–880. ACM, 2009.
+[199] M. A. Ranzato, F. Huang, Y . Boureau, and Y . LeCun. Unsupervised learning of invariant feature
+hierarchies with applications to object recognition. In Proc. Computer Vision and Pattern
+Recognition Conference (CVPR’07), pages 1–8. IEEE Press, 2007.
+[200] I. Rechenberg. Evolutionsstrategie - Optimierung technischer Systeme nach Prinzipien der
+biologischen Evolution. Dissertation, 1971. Published 1973 by Fromman-Holzboog.
+[201] M. Riedmiller. Neural ﬁtted Q iteration—ﬁrst experiences with a data efﬁcient neural rein-
+forcement learning method. In Proc. ECML-2005, pages 317–328. Springer-Verlag Berlin
+Heidelberg, 2005.
+[202] M. Riedmiller, S. Lange, and A. V oigtlaender. Autonomous reinforcement learning on raw
+visual input data in a real world application. In International Joint Conference on Neural
+Networks (IJCNN), pages 1–8, Brisbane, Australia, 2012.
+[203] M. Ring, T. Schaul, and J. Schmidhuber. The two-dimensional organization of behavior. InPro-
+ceedings of the First Joint Conference on Development Learning and on Epigenetic Robotics
+ICDL-EPIROB, Frankfurt, August 2011.
+[204] M. B. Ring. Incremental development of complex behaviors through automatic construction
+of sensory-motor hierarchies. In L. Birnbaum and G. Collins, editors, Machine Learning:
+Proceedings of the Eighth International Workshop, pages 343–347. Morgan Kaufmann, 1991.
+[205] M. B. Ring. Learning sequential tasks by incrementally adding higher orders. In J. D. C.
+S. J. Hanson and C. L. Giles, editors, Advances in Neural Information Processing Systems 5 ,
+pages 115–122. Morgan Kaufmann, 1993.
+[206] M. B. Ring. Continual Learning in Reinforcement Environments . PhD thesis, University of
+Texas at Austin, Austin, Texas 78712, August 1994.
+[207] J. Rissanen. Stochastic complexity and modeling. The Annals of Statistics, 14(3):1080–1100,
+1986.
+[208] A. J. Robinson and F. Fallside. The utility driven dynamic error propagation network. Technical
+Report CUED/F-INFENG/TR.1, Cambridge University Engineering Department, 1987.
+[209] T. Robinson and F. Fallside. Dynamic reinforcement driven error propagation networks with
+application to game playing. In Proceedings of the 11th Conference of the Cognitive Science
+Society, Ann Arbor, pages 836–843, 1989.
+28
+
+=== PAGE 29 ===
+[210] T. R ¨uckstieß, M. Felder, and J. Schmidhuber. State-Dependent Exploration for policy gradient
+methods. In W. D. et al., editor, European Conference on Machine Learning (ECML) and
+Principles and Practice of Knowledge Discovery in Databases 2008, Part II, LNAI 5212, pages
+234–249, 2008.
+[211] D. E. Rumelhart, G. E. Hinton, and R. J. Williams. Learning internal representations by error
+propagation. In D. E. Rumelhart and J. L. McClelland, editors,Parallel Distributed Processing,
+volume 1, pages 318–362. MIT Press, 1986.
+[212] G. Rummery and M. Niranjan. On-line Q-learning using connectionist sytems. Technical
+Report CUED/F-INFENG-TR 166, Cambridge University, UK, 1994.
+[213] H. Sak, A. Senior, and F. Beaufays. Long Short-Term Memory recurrent neural network archi-
+tectures for large scale acoustic modeling. In Proc. Interspeech, 2014.
+[214] H. Sak, A. Senior, K. Rao, F. Beaufays, and J. Schalkwyk. Google V oice search: faster and
+more accurate. In Google Research Blog http://googleresearch.blogspot.ch/2015/09/google-
+voice-search-faster-and-more.html, 2015.
+[215] K. Samejima, K. Doya, and M. Kawato. Inter-module credit assignment in modular reinforce-
+ment learning. Neural Networks, 16(7):985–994, 2003.
+[216] J. C. Santamar ´ıa, R. S. Sutton, and A. Ram. Experiments with reinforcement learning in prob-
+lems with continuous state and action spaces. Adaptive Behavior, 6(2):163–217, 1997.
+[217] A. M. Sch ¨afer, S. Udluft, and H.-G. Zimmermann. Learning long term dependencies with
+recurrent neural networks. In S. D. Kollias, A. Stafylopatis, W. Duch, and E. Oja, editors,
+ICANN (1), volume 4131 of Lecture Notes in Computer Science, pages 71–80. Springer, 2006.
+[218] R. E. Schapire. The strength of weak learnability. Machine Learning, 5:197–227, 1990.
+[219] T. Schaul and J. Schmidhuber. Metalearning. Scholarpedia, 6(5):4650, 2010.
+[220] D. Scherer, A. M ¨uller, and S. Behnke. Evaluation of pooling operations in convolutional archi-
+tectures for object recognition. InProc. International Conference on Artiﬁcial Neural Networks
+(ICANN), pages 92–101, 2010.
+[221] J. Schmidhuber. A local learning algorithm for dynamic feedforward and recurrent networks.
+Connection Science, 1(4):403–412, 1989.
+[222] J. Schmidhuber. Learning algorithms for networks with internal and external feedback. In
+D. S. Touretzky, J. L. Elman, T. J. Sejnowski, and G. E. Hinton, editors, Proc. of the 1990
+Connectionist Models Summer School, pages 52–61. Morgan Kaufmann, 1990.
+[223] J. Schmidhuber. An on-line algorithm for dynamic reinforcement learning and planning in re-
+active environments. In Proc. IEEE/INNS International Joint Conference on Neural Networks,
+San Diego, volume 2, pages 253–258, 1990.
+[224] J. Schmidhuber. Curious model-building control systems. In Proceedings of the International
+Joint Conference on Neural Networks, Singapore , volume 2, pages 1458–1463. IEEE press,
+1991.
+[225] J. Schmidhuber. Learning to generate sub-goals for action sequences. In T. Kohonen,
+K. M ¨akisara, O. Simula, and J. Kangas, editors, Artiﬁcial Neural Networks , pages 967–972.
+Elsevier Science Publishers B.V ., North-Holland, 1991.
+29
+
+=== PAGE 30 ===
+[226] J. Schmidhuber. A possibility for implementing curiosity and boredom in model-building neu-
+ral controllers. In J. A. Meyer and S. W. Wilson, editors, Proc. of the International Confer-
+ence on Simulation of Adaptive Behavior: From Animals to Animats , pages 222–227. MIT
+Press/Bradford Books, 1991.
+[227] J. Schmidhuber. Reinforcement learning in Markovian and non-Markovian environments. In
+D. S. Lippman, J. E. Moody, and D. S. Touretzky, editors, Advances in Neural Information
+Processing Systems 3 (NIPS 3), pages 500–506. Morgan Kaufmann, 1991.
+[228] J. Schmidhuber. Learning complex, extended sequences using the principle of history com-
+pression. Neural Computation, 4(2):234–242, 1992. (Based on TR FKI-148-91, TUM, 1991).
+[229] J. Schmidhuber. Learning to control fast-weight memories: An alternative to recurrent nets.
+Neural Computation, 4(1):131–139, 1992.
+[230] J. Schmidhuber. Netzwerkarchitekturen, Zielfunktionen und Kettenregel. (Network architec-
+tures, objective functions, and chain rule.)Habilitation Thesis, Inst. f. Inf., Tech. Univ. Munich,
+1993.
+[231] J. Schmidhuber. On decreasing the ratio between learning complexity and number of time-
+varying variables in fully recurrent nets. In Proceedings of the International Conference on
+Artiﬁcial Neural Networks, Amsterdam, pages 460–463. Springer, 1993.
+[232] J. Schmidhuber. A self-referential weight matrix. In Proceedings of the International Confer-
+ence on Artiﬁcial Neural Networks, Amsterdam, pages 446–451. Springer, 1993.
+[233] J. Schmidhuber. On learning how to learn learning strategies. Technical Report FKI-198-94,
+Fakult¨at f¨ur Informatik, Technische Universit¨at M¨unchen, 1994. See [252, 251].
+[234] J. Schmidhuber. Discovering solutions with low Kolmogorov complexity and high general-
+ization capability. In A. Prieditis and S. Russell, editors, Machine Learning: Proceedings
+of the Twelfth International Conference , pages 488–496. Morgan Kaufmann Publishers, San
+Francisco, CA, 1995.
+[235] J. Schmidhuber. Discovering neural nets with low Kolmogorov complexity and high general-
+ization capability. Neural Networks, 10(5):857–873, 1997.
+[236] J. Schmidhuber. Hierarchies of generalized Kolmogorov complexities and nonenumerable uni-
+versal measures computable in the limit. International Journal of Foundations of Computer
+Science, 13(4):587–612, 2002.
+[237] J. Schmidhuber. The Speed Prior: a new simplicity measure yielding near-optimal computable
+predictions. In J. Kivinen and R. H. Sloan, editors, Proceedings of the 15th Annual Confer-
+ence on Computational Learning Theory (COLT 2002), Lecture Notes in Artiﬁcial Intelligence,
+pages 216–228. Springer, Sydney, Australia, 2002.
+[238] J. Schmidhuber. Optimal ordered problem solver. Machine Learning, 54:211–254, 2004.
+[239] J. Schmidhuber. Developmental robotics, optimal artiﬁcial curiosity, creativity, music, and the
+ﬁne arts. Connection Science, 18(2):173–187, 2006.
+[240] J. Schmidhuber. Simple algorithmic theory of subjective beauty, novelty, surprise, interesting-
+ness, attention, curiosity, creativity, art, science, music, jokes. SICE Journal of the Society of
+Instrument and Control Engineers, 48(1):21–32, 2009.
+30
+
+=== PAGE 31 ===
+[241] J. Schmidhuber. Formal theory of creativity, fun, and intrinsic motivation (1990-2010). IEEE
+Transactions on Autonomous Mental Development, 2(3):230–247, 2010.
+[242] J. Schmidhuber. Self-delimiting neural networks. Technical Report IDSIA-08-12,
+arXiv:1210.0118v1 [cs.NE], The Swiss AI Lab IDSIA, 2012.
+[243] J. Schmidhuber. P OWER PLAY: Training an Increasingly General Problem Solver by Continu-
+ally Searching for the Simplest Still Unsolvable Problem. Frontiers in Psychology, 2013.
+[244] J. Schmidhuber. Deep Learning. Scholarpedia, 10(11):32832, 2015.
+[245] J. Schmidhuber. Deep learning in neural networks: An overview. Neural Networks, 61:85–117,
+2015. Published online 2014; 888 references; based on TR arXiv:1404.7828 [cs.NE].
+[246] J. Schmidhuber and B. Bakker. NIPS 2003 RNNaissance workshop on recurrent neural net-
+works, Whistler, CA, 2003. http://www.idsia.ch/˜juergen/rnnaissance.html.
+[247] J. Schmidhuber, D. Ciresan, U. Meier, J. Masci, and A. Graves. On fast deep nets for AGI
+vision. In Proc. Fourth Conference on Artiﬁcial General Intelligence (AGI), Google, Mountain
+View, CA, pages 243–246, 2011.
+[248] J. Schmidhuber and S. Heil. Sequential neural text compression. IEEE Transactions on Neural
+Networks, 7(1):142–146, 1996.
+[249] J. Schmidhuber and R. Huber. Learning to generate artiﬁcial fovea trajectories for target detec-
+tion. International Journal of Neural Systems, 2(1 & 2):135–141, 1991.
+[250] J. Schmidhuber, D. Wierstra, M. Gagliolo, and F. J. Gomez. Training recurrent networks by
+EVOLINO. Neural Computation, 19(3):757–779, 2007.
+[251] J. Schmidhuber, J. Zhao, and N. Schraudolph. Reinforcement learning with self-modifying
+policies. In S. Thrun and L. Pratt, editors, Learning to learn, pages 293–309. Kluwer, 1997.
+[252] J. Schmidhuber, J. Zhao, and M. Wiering. Shifting inductive bias with success-story algorithm,
+adaptive Levin search, and incremental self-improvement. Machine Learning, 28:105–130,
+1997.
+[253] B. Sch ¨olkopf, C. J. C. Burges, and A. J. Smola, editors. Advances in Kernel Methods - Support
+Vector Learning. MIT Press, Cambridge, MA, 1998.
+[254] A. Schwartz. A reinforcement learning method for maximizing undiscounted rewards. In Proc.
+ICML, pages 298–305, 1993.
+[255] H. P. Schwefel. Numerische Optimierung von Computer-Modellen. Dissertation, 1974. Pub-
+lished 1977 by Birkh¨auser, Basel.
+[256] F. Sehnke, C. Osendorfer, T. R ¨uckstieß, A. Graves, J. Peters, and J. Schmidhuber. Parameter-
+exploring policy gradients. Neural Networks, 23(4):551–559, 2010.
+[257] C. E. Shannon. A mathematical theory of communication (parts I and II).Bell System Technical
+Journal, XXVII:379–423, 1948.
+[258] H. T. Siegelmann and E. D. Sontag. Turing computability with neural nets. Applied Mathe-
+matics Letters, 4(6):77–80, 1991.
+31
+
+=== PAGE 32 ===
+[259] K. Sims. Evolving virtual creatures. In A. Glassner, editor, Proceedings of SIGGRAPH ’94
+(Orlando, Florida, July 1994) , Computer Graphics Proceedings, Annual Conference, pages
+15–22. ACM SIGGRAPH, ACM Press, jul 1994. ISBN 0-89791-667-0.
+[260] ¨O. Simsek and A. G. Barto. Skill characterization based on betweenness. In NIPS’08, pages
+1497–1504, 2008.
+[261] S. Singh, A. G. Barto, and N. Chentanez. Intrinsically motivated reinforcement learning. In
+Advances in Neural Information Processing Systems 17 (NIPS) . MIT Press, Cambridge, MA,
+2005.
+[262] S. P. Singh. Reinforcement learning algorithms for average-payoff Markovian decision pro-
+cesses. In National Conference on Artiﬁcial Intelligence, pages 700–705, 1994.
+[263] R. J. Solomonoff. A formal theory of inductive inference. Part I. Information and Control,
+7:1–22, 1964.
+[264] R. J. Solomonoff. Complexity-based induction systems. IEEE Transactions on Information
+Theory, IT-24(5):422–432, 1978.
+[265] B. Speelpenning. Compiling Fast Partial Derivatives of Functions Given by Algorithms. PhD
+thesis, Department of Computer Science, University of Illinois, Urbana-Champaign, Jan. 1980.
+[266] R. K. Srivastava, J. Masci, S. Kazerounian, F. Gomez, and J. Schmidhuber. Compete to com-
+pute. In Advances in Neural Information Processing Systems (NIPS), pages 2310–2318, 2013.
+[267] R. K. Srivastava, B. R. Steunebrink, and J. Schmidhuber. First experiments with PowerPlay.
+Neural Networks, 41(0):130 – 136, 2013. Special Issue on Autonomous Learning.
+[268] K. O. Stanley, D. B. D’Ambrosio, and J. Gauci. A hypercube-based encoding for evolving
+large-scale neural networks. Artiﬁcial Life, 15(2):185–212, 2009.
+[269] Y . Sun, F. Gomez, T. Schaul, and J. Schmidhuber. A Linear Time Natural Evolution Strategy
+for Non-Separable Functions. In Proceedings of the Genetic and Evolutionary Computation
+Conference, page 61, Amsterdam, NL, July 2013. ACM.
+[270] Y . Sun, D. Wierstra, T. Schaul, and J. Schmidhuber. Efﬁcient natural evolution strategies.
+In Proc. 11th Genetic and Evolutionary Computation Conference (GECCO) , pages 539–546,
+2009.
+[271] I. Sutskever, O. Vinyals, and Q. V . Le. Sequence to sequence learning with neural networks.
+Technical Report arXiv:1409.3215 [cs.CL], Google, 2014. NIPS’2014.
+[272] R. Sutton and A. Barto. Reinforcement learning: An introduction. Cambridge, MA, MIT Press,
+1998.
+[273] R. S. Sutton. Integrated architectures for learning, planning and reacting based on dynamic
+programming. In Machine Learning: Proceedings of the Seventh International Workshop ,
+1990.
+[274] R. S. Sutton, D. A. McAllester, S. P. Singh, and Y . Mansour. Policy gradient methods for
+reinforcement learning with function approximation. In Advances in Neural Information Pro-
+cessing Systems (NIPS) 12, pages 1057–1063, 1999.
+32
+
+=== PAGE 33 ===
+[275] R. S. Sutton, D. Precup, and S. P. Singh. Between MDPs and semi-MDPs: A framework for
+temporal abstraction in reinforcement learning. Artif. Intell., 112(1-2):181–211, 1999.
+[276] R. S. Sutton, C. Szepesv ´ari, and H. R. Maei. A convergent O(n) algorithm for off-policy
+temporal-difference learning with linear function approximation. In Advances in Neural Infor-
+mation Processing Systems (NIPS’08), volume 21, pages 1609–1616, 2008.
+[277] C. Szegedy, W. Liu, Y . Jia, P. Sermanet, S. Reed, D. Anguelov, D. Erhan, V . Vanhoucke, and
+A. Rabinovich. Going deeper with convolutions. Technical Report arXiv:1409.4842 [cs.CV],
+Google, 2014.
+[278] A. Teller. The evolution of mental models. In J. Kenneth E. Kinnear, editor, Advances in
+Genetic Programming, pages 199–219. MIT Press, 1994.
+[279] J. Tenenberg, J. Karlsson, and S. Whitehead. Learning via task decomposition. In J. A. Meyer,
+H. Roitblat, and S. Wilson, editors, From Animals to Animats 2: Proceedings of the Second In-
+ternational Conference on Simulation of Adaptive Behavior, pages 337–343. MIT Press, 1993.
+[280] G. Tesauro. TD-gammon, a self-teaching backgammon program, achieves master-level play.
+Neural Computation, 6(2):215–219, 1994.
+[281] J. N. Tsitsiklis and B. van Roy. Feature-based methods for large scale dynamic programming.
+Machine Learning, 22(1-3):59–94, 1996.
+[282] A. M. Turing. On computable numbers, with an application to the Entscheidungsproblem.
+Proceedings of the London Mathematical Society, Series 2, 41:230–267, 1936.
+[283] P. E. Utgoff and D. J. Stracuzzi. Many-layered learning. Neural Computation, 14(10):2497–
+2529, 2002.
+[284] H. van Hasselt. Reinforcement learning in continuous state and action spaces. In M. Wiering
+and M. van Otterlo, editors, Reinforcement Learning, pages 207–251. Springer, 2012.
+[285] N. van Hoorn, J. Togelius, and J. Schmidhuber. Hierarchical controller learning in a ﬁrst-person
+shooter. In Proceedings of the IEEE Symposium on Computational Intelligence and Games ,
+2009.
+[286] V . Vapnik. Principles of risk minimization for learning theory. In D. S. Lippman, J. E. Moody,
+and D. S. Touretzky, editors, Advances in Neural Information Processing Systems (NIPS) 4 ,
+pages 831–838. Morgan Kaufmann, 1992.
+[287] V . Vapnik.The Nature of Statistical Learning Theory. Springer, New York, 1995.
+[288] O. Vinyals, A. Toshev, S. Bengio, and D. Erhan. Show and tell: A neural image caption
+generator. Preprint arXiv:1411.4555, 2014.
+[289] C. S. Wallace and D. M. Boulton. An information theoretic measure for classiﬁcation. Com-
+puter Journal, 11(2):185–194, 1968.
+[290] C. Wang, S. S. Venkatesh, and J. S. Judd. Optimal stopping and effective machine complexity
+in learning. In Advances in Neural Information Processing Systems (NIPS’6), pages 303–310.
+Morgan Kaufmann, 1994.
+[291] O. Watanabe. Kolmogorov complexity and computational complexity. EATCS Monographs on
+Theoretical Computer Science, Springer, 1992.
+33
+
+=== PAGE 34 ===
+[292] C. J. C. H. Watkins. Learning from Delayed Rewards. PhD thesis, King’s College, Oxford,
+1989.
+[293] C. J. C. H. Watkins and P. Dayan. Q-learning. Machine Learning, 8:279–292, 1992.
+[294] A. S. Weigend, D. E. Rumelhart, and B. A. Huberman. Generalization by weight-elimination
+with application to forecasting. In R. P. Lippmann, J. E. Moody, and D. S. Touretzky, editors,
+Advances in Neural Information Processing Systems (NIPS) 3, pages 875–882. San Mateo, CA:
+Morgan Kaufmann, 1991.
+[295] G. Weiss. Hierarchical chunking in classiﬁer systems. In Proceedings of the 12th National
+Conference on Artiﬁcial Intelligence, volume 2, pages 1335–1340. AAAI Press/The MIT Press,
+1994.
+[296] J. Weng, N. Ahuja, and T. S. Huang. Cresceptron: a self-organizing neural network which
+grows adaptively. In International Joint Conference on Neural Networks (IJCNN) , volume 1,
+pages 576–581. IEEE, 1992.
+[297] P. J. Werbos. Applications of advances in nonlinear sensitivity analysis. In Proceedings of the
+10th IFIP Conference, 31.8 - 4.9, NYC, pages 762–770, 1981.
+[298] P. J. Werbos. Building and understanding adaptive systems: A statistical/numerical approach to
+factory automation and brain research. IEEE Transactions on Systems, Man, and Cybernetics,
+17, 1987.
+[299] P. J. Werbos. Generalization of backpropagation with application to a recurrent gas market
+model. Neural Networks, 1, 1988.
+[300] P. J. Werbos. Backpropagation and neurocontrol: A review and prospectus. In IEEE/INNS
+International Joint Conference on Neural Networks, Washington, D.C., volume 1, pages 209–
+216, 1989.
+[301] P. J. Werbos. Neural networks for control and system identiﬁcation. In Proceedings of
+IEEE/CDC Tampa, Florida, 1989.
+[302] P. J. Werbos. Neural networks, system identiﬁcation, and control in the chemical industries.
+In D. A. S. D. A. White, editor, Handbook of Intelligent Control: Neural, Fuzzy, and Adaptive
+Approaches, pages 283–356. Thomson Learning, 1992.
+[303] J. Weston, S. Chopra, and A. Bordes. Memory networks. arXiv preprint arXiv:1410.3916 ,
+2014.
+[304] H. White. Learning in artiﬁcial neural networks: A statistical perspective.Neural Computation,
+1(4):425–464, 1989.
+[305] S. Whiteson. Evolutionary computation for reinforcement learning. In M. Wiering and M. van
+Otterlo, editors, Reinforcement Learning, pages 325–355. Springer, Berlin, Germany, 2012.
+[306] S. Whiteson, N. Kohl, R. Miikkulainen, and P. Stone. Evolving keepaway soccer players
+through task decomposition. Machine Learning, 59(1):5–30, May 2005.
+[307] A. P. Wieland. Evolving neural network controllers for unstable systems. InInternational Joint
+Conference on Neural Networks (IJCNN), volume 2, pages 667–673. IEEE, 1991.
+34
+
+=== PAGE 35 ===
+[308] M. Wiering and J. Schmidhuber. Solving POMDPs with Levin search and EIRA. In L. Saitta,
+editor, Machine Learning: Proceedings of the Thirteenth International Conference, pages 534–
+542. Morgan Kaufmann Publishers, San Francisco, CA, 1996.
+[309] M. Wiering and J. Schmidhuber. HQ-learning. Adaptive Behavior, 6(2):219–246, 1998.
+[310] M. Wiering and M. van Otterlo. Reinforcement Learning. Springer, 2012.
+[311] M. A. Wiering and J. Schmidhuber. Fast online Q( λ). Machine Learning, 33(1):105–116,
+1998.
+[312] D. Wierstra, A. Foerster, J. Peters, and J. Schmidhuber. Recurrent policy gradients. Logic
+Journal of IGPL, 18(2):620–634, 2010.
+[313] D. Wierstra, T. Schaul, J. Peters, and J. Schmidhuber. Natural evolution strategies. InCongress
+of Evolutionary Computation (CEC 2008), 2008.
+[314] R. J. Williams. Reinforcement-learning in connectionist networks: A mathematical analysis.
+Technical Report 8605, Institute for Cognitive Science, University of California, San Diego,
+1986.
+[315] R. J. Williams. Toward a theory of reinforcement-learning connectionist systems. Technical
+Report NU-CCS-88-3, College of Comp. Sci., Northeastern University, Boston, MA, 1988.
+[316] R. J. Williams. Simple statistical gradient-following algorithms for connectionist reinforcement
+learning. Machine Learning, 8:229–256, 1992.
+[317] R. J. Williams and D. Zipser. Gradient-based learning algorithms for recurrent networks and
+their computational complexity. In Back-propagation: Theory, Architectures and Applications.
+Hillsdale, NJ: Erlbaum, 1994.
+[318] L. Wiskott and T. Sejnowski. Slow feature analysis: Unsupervised learning of invariances.
+Neural Computation, 14(4):715–770, 2002.
+[319] D. H. Wolpert. Bayesian backpropagation over i-o functions rather than weights. In J. D.
+Cowan, G. Tesauro, and J. Alspector, editors,Advances in Neural Information Processing Sys-
+tems (NIPS) 6, pages 200–207. Morgan Kaufmann, 1994.
+[320] B. M. Yamauchi and R. D. Beer. Sequential behavior and learning in evolved dynamical neural
+networks. Adaptive Behavior, 2(3):219–246, 1994.
+[321] X. Yao. A review of evolutionary artiﬁcial neural networks.International Journal of Intelligent
+Systems, 4:203–222, 1993.
+[322] M. D. Zeiler and R. Fergus. Visualizing and understanding convolutional networks. Technical
+Report arXiv:1311.2901 [cs.CV], NYU, 2013.
+[323] H.-G. Zimmermann, C. Tietz, and R. Grothmann. Forecasting with recurrent neural networks:
+12 tricks. In G. Montavon, G. B. Orr, and K.-R. M¨uller, editors, Neural Networks: Tricks of the
+Trade (2nd ed.), volume 7700 of Lecture Notes in Computer Science, pages 687–707. Springer,
+2012.
+35
+
+=== PAGE 36 ===
+Store
+C’s intrinsic reward for M’s
+history by
+predictive
+coding
+Compress
+Query
+Inform
+CActions
+Input
+Reward
+M
+Lifelong history of actions/inputs/rewards
+compression improvements
+Figure 1: In a series of trials, an RNN controller C steers an agent interacting with an initially
+unknown, partially observable environment. The entire lifelong interaction history is stored, and
+used to train an RNN world model M, which learns to predict new inputs from histories of previous
+inputs and actions, using predictive coding to compress the history (Sec. 4). Given an RL problem,C
+may speed up its search for rewarding behavior by learning programs that address/query/exploitM’s
+program-encoded knowledge about predictable regularities, e.g., through extra connections from and
+to (a copy of)M—see Sec. 5.3. This may be much cheaper than learning reward-generating programs
+from scratch.C also may get intrinsic reward for creating experiments causing data with yet unknown
+regularities that improveM (Sec. 6). Not shown are deep FNNs as preprocessors (Sec. 4.3) for high-
+dimensional data (video etc) observed byC andM.
+36

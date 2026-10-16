@@ -1,0 +1,19 @@
+2026-09-30 00:50:01 codebook k-means++ init from 7703 complete chunks (16 micro-batches)
+2026-09-30 00:50:02 torch.compile(all) wrapped in 0.5s (compiles lazily)
+2026-09-30 00:50:02 start: step 0/7600 (cosine over 7600) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-30 00:50:02 config: step 0, budget 48.0 h, milestone 0.0 h, micro_bs 2 x accum 16 x 1024, lr 0.0006 (scale 1.0), warmup 300, shortcut (('1', 0.5), ('2a', 0.25), ('2b', 0.25)), lam ncp/s/c 0.1/0.05/0.1, eval R 3, compile all
+2026-09-30 00:51:46 step 10 loss 12.9057 ntp 8.9857 ncp 4.753 ncp_s 4.753 scons 0.1961 vq 3.1875 gn 1.02 lr 2.00e-05 ang23 15.64 rho3 0.920 3147 tok/s
+2026-09-30 00:53:56 step 20 loss 12.7285 ntp 8.8241 ncp 4.750 ncp_s 4.750 scons 0.1337 vq 3.1785 gn 1.07 lr 4.00e-05 ang23 9.29 rho3 0.958 2524 tok/s
+2026-09-30 00:55:41 step 30 loss 12.4212 ntp 8.5648 ncp 4.745 ncp_s 4.745 scons 0.0523 vq 3.1394 gn 1.16 lr 6.00e-05 ang23 4.29 rho3 0.984 3121 tok/s
+2026-09-30 00:57:20 step 40 loss 12.1193 ntp 8.2963 ncp 4.725 ncp_s 4.724 scons 0.0245 vq 3.1120 gn 1.21 lr 8.00e-05 ang23 2.83 rho3 0.991 3301 tok/s
+2026-09-30 00:59:00 step 50 loss 11.8109 ntp 8.0091 ncp 4.678 ncp_s 4.677 scons 0.0151 vq 3.0986 gn 1.24 lr 1.00e-04 ang23 2.58 rho3 0.992 3292 tok/s
+2026-09-30 01:00:39 step 60 loss 11.4706 ntp 7.6853 ncp 4.616 ncp_s 4.614 scons 0.0135 vq 3.0916 gn 1.27 lr 1.20e-04 ang23 2.61 rho3 0.991 3310 tok/s
+2026-09-30 01:02:19 step 70 loss 11.1350 ntp 7.3290 ncp 4.555 ncp_s 4.552 scons 0.0133 vq 3.1215 gn 1.28 lr 1.40e-04 ang23 2.87 rho3 0.991 3284 tok/s
+2026-09-30 01:04:10 step 80 loss 10.7720 ntp 6.9349 ncp 4.506 ncp_s 4.503 scons 0.0114 vq 3.1602 gn 1.28 lr 1.60e-04 ang23 2.20 rho3 0.993 2963 tok/s
+2026-09-30 01:05:49 step 90 loss 10.3957 ntp 6.5394 ncp 4.459 ncp_s 4.456 scons 0.0091 vq 3.1867 gn 1.25 lr 1.80e-04 ang23 2.43 rho3 0.992 3295 tok/s
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/run_v3_19M/code/train.py:472: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  ow = dict(step=st["step"], Wv1=float(m.enc.engram.Wv.weight.norm()), Wv2=float(m.enc.engram2.Wv.weight.norm()))
+2026-09-30 01:07:30 OPENED {'step': 100, 'Wv1': 1.6282017230987549, 'Wv2': 1.713376522064209, 'table': 0.6057586073875427, 'shared_w2': 1.0612928867340088, 'still_zero': []}
+2026-09-30 01:07:30 step 100 loss 9.9838 ntp 6.1159 ncp 4.410 ncp_s 4.407 scons 0.0082 vq 3.2057 gn 1.22 lr 2.00e-04 ang23 1.77 rho3 0.996 3252 tok/s
+2026-09-30 01:07:33 STOP (max_steps) at step 100, 0.29 h

@@ -1,0 +1,13 @@
+2026-09-29 21:55:34 codebook k-means++ init from 985 complete chunks (2 micro-batches)
+2026-09-29 21:55:34 start: step 0/7600 (cosine over 7600) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 21:55:34 config: step 0, budget 48.0 h, milestone 24.0 h, micro_bs 2 x accum 2 x 1024, lr 0.0006 (scale 1.0), warmup 20, shortcut (('1', 0.5), ('2a', 0.25), ('2b', 0.25)), lam ncp/s/c 0.1/0.05/0.1, eval R 3, compile none
+2026-09-29 21:56:15 step 25 loss 14.9764 ntp 8.8175 ncp 2.687 ncp_s 2.687 scons 0.0849 vq 5.7475 gn 0.78 lr 6.00e-04 ang23 1.03 rho3 0.997 2508 tok/s
+2026-09-29 21:57:01 step 50 loss 13.5448 ntp 8.0342 ncp 2.335 ncp_s 2.336 scons 0.0022 vq 5.1601 gn 1.15 lr 6.00e-04 ang23 0.62 rho3 0.999 2251 tok/s
+2026-09-29 21:57:45 step 75 loss 12.6156 ntp 7.2804 ncp 2.075 ncp_s 2.075 scons 0.0011 vq 5.0238 gn 1.17 lr 6.00e-04 ang23 0.57 rho3 0.999 2305 tok/s
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/run_v3_19M/code/train.py:440: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  ow = dict(step=st["step"], Wv1=float(m.enc.engram.Wv.weight.norm()), Wv2=float(m.enc.engram2.Wv.weight.norm()))
+2026-09-29 21:58:30 OPENED {'step': 100, 'Wv1': 1.149114727973938, 'Wv2': 1.3067361116409302, 'table': 0.8760095238685608, 'shared_w2': 0.8730529546737671, 'still_zero': []}
+2026-09-29 21:58:30 step 100 loss 12.1682 ntp 6.6124 ncp 1.968 ncp_s 1.967 scons 0.0007 vq 5.2606 gn 1.11 lr 6.00e-04 ang23 0.38 rho3 1.000 2302 tok/s
+2026-09-29 21:58:39 STOP (max_steps) at step 105, 0.05 h
+nice -n 19 python train.py --run_dir ../runs/tests/s105 --device cpu --size    345.55s user 71.83s system 223% cpu 3:07.11 total

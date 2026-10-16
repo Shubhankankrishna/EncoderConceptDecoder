@@ -1,0 +1,57 @@
+=== PAGE 1 ===
+50 75 100 125 150 175 200 225 250
+Optimizer step (preceding 50-step mean)
+4
+5
+6
+7
+8Training NTP, nats/token; lower is better
+A. v2 learns more slowly on the same data
+v1
+v2
+2 4 6 8 10 12 14 16
+Passes at fixed checkpoint 267
+0.03
+0.02
+0.01
+0.00
+0.01
+0.02
+0.03
+0.04
+Loss change from pass 1 (separate objectives)
+16 validation rows; inference test, not retraining
+B. Loops help tokens, but hurt concept prediction
+T oken prediction (NTP)
+Concept prediction (NCP)
+0.7
+ 0.6
+ 0.5
+ 0.4
+ 0.3
+ 0.2
+ 0.1
+ 0.0
+Cosine of raw gradients (negative = opposing)
+Core input
+Expert output
+Decoder plan
+Carry gain
+C. NextLat opposes NTP on these shared weights
+Batch 1
+Batch 2
+Batch 3
+Batch 4
+Batch 1 Batch 2 Batch 3 Batch 4
+0
+5
+10
+15
+20
+25
+30
+35Dropped real-chunk expert assignments (%)
+D. Expert capacity favors earlier batch rows
+First batch row
+Second batch row
+v2 early-training diagnosis  frozen at 22:34 IST, 28 Sep 2026

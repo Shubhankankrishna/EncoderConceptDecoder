@@ -1,0 +1,2973 @@
+{
+ "ckpt": "../runs/g3/ckpt_last.pt",
+ "step": 60,
+ "eval_R": "3",
+ "split": "val",
+ "time": "2026-09-30 00:47",
+ "lang": {
+  "tinystories": {
+   "intact": {
+    "nats": 5.1317038653751235,
+    "bpb": 1.8238640579328675,
+    "tokens": 2026,
+    "delta_vs_intact": 0.0
+   },
+   "core_off": {
+    "nats": 5.342408070088845,
+    "bpb": 1.8987506523105413,
+    "tokens": 2026,
+    "delta_vs_intact": 0.2107042047137213
+   },
+   "plan_swap": {
+    "nats": 5.133796774740869,
+    "bpb": 1.8246079009660656,
+    "tokens": 2026,
+    "delta_vs_intact": 0.0020929093657455766
+   },
+   "u_off": {
+    "nats": 5.532279584155972,
+    "bpb": 1.9662330790477696,
+    "tokens": 2026,
+    "delta_vs_intact": 0.40057571878084897
+   },
+   "c_off": {
+    "nats": 5.135705554355874,
+    "bpb": 1.8252863022584338,
+    "tokens": 2026,
+    "delta_vs_intact": 0.004001688980750373
+   },
+   "shared_ffn_off": {
+    "nats": 5.128895163653751,
+    "bpb": 1.8228658144150316,
+    "tokens": 2026,
+    "delta_vs_intact": -0.0028087017213724863
+   },
+   "table_off": {
+    "nats": 5.1316788005923,
+    "bpb": 1.8238551496330688,
+    "tokens": 2026,
+    "delta_vs_intact": -2.5064782823491782e-05
+   },
+   "engram_off": {
+    "nats": 5.137274995372655,
+    "bpb": 1.8258440988766036,
+    "tokens": 2026,
+    "delta_vs_intact": 0.005571129997531621
+   },
+   "engram_read2_off": {
+    "nats": 5.133879199315153,
+    "bpb": 1.8246371955673268,
+    "tokens": 2026,
+    "delta_vs_intact": 0.0021753339400296667
+   },
+   "F_off": {
+    "nats": 5.138498349580454,
+    "bpb": 1.826278892432167,
+    "tokens": 2026,
+    "delta_vs_intact": 0.006794484205330242
+   },
+   "R1": {
+    "nats": 5.130424597421027,
+    "bpb": 1.8234093920162147,
+    "tokens": 2026,
+    "delta_vs_intact": -0.0012792679540964969
+   },
+   "R2a": {
+    "nats": 5.131242576968164,
+    "bpb": 1.8237001109538786,
+    "tokens": 2026,
+    "delta_vs_intact": -0.0004612884069592482
+   },
+   "R2b": {
+    "nats": 5.131177504935835,
+    "bpb": 1.8236769836370934,
+    "tokens": 2026,
+    "delta_vs_intact": -0.0005263604392888865
+   },
+   "R3": {
+    "nats": 5.1317038653751235,
+    "bpb": 1.8238640579328675,
+    "tokens": 2026,
+    "delta_vs_intact": 0.0
+   }
+  },
+  "wikitext": {
+   "intact": {
+    "nats": 6.743865294603524,
+    "bpb": 2.4917943710196986,
+    "tokens": 2043,
+    "delta_vs_intact": 0.0
+   },
+   "core_off": {
+    "nats": 6.89188979900881,
+    "bpb": 2.546488023804434,
+    "tokens": 2043,
+    "delta_vs_intact": 0.14802450440528592
+   },
+   "plan_swap": {
+    "nats": 6.746432654949829,
+    "bpb": 2.492742986358208,
+    "tokens": 2043,
+    "delta_vs_intact": 0.002567360346304781
+   },
+   "u_off": {
+    "nats": 7.0309134850709745,
+    "bpb": 2.5978559594370325,
+    "tokens": 2043,
+    "delta_vs_intact": 0.2870481904674502
+   },
+   "c_off": {
+    "nats": 6.740940387145129,
+    "bpb": 2.4907136454087624,
+    "tokens": 2043,
+    "delta_vs_intact": -0.0029249074583947987
+   },
+   "shared_ffn_off": {
+    "nats": 6.743601436306902,
+    "bpb": 2.4916968778774797,
+    "tokens": 2043,
+    "delta_vs_intact": -0.00026385829662256555
+   },
+   "table_off": {
+    "nats": 6.7438428284079786,
+    "bpb": 2.4917860699731693,
+    "tokens": 2043,
+    "delta_vs_intact": -2.2466195545689516e-05
+   },
+   "engram_off": {
+    "nats": 6.7446018990149295,
+    "bpb": 2.4920665393750596,
+    "tokens": 2043,
+    "delta_vs_intact": 0.0007366044114052173
+   },
+   "engram_read2_off": {
+    "nats": 6.74407944046745,
+    "bpb": 2.4918734958887456,
+    "tokens": 2043,
+    "delta_vs_intact": 0.00021414586392598522
+   },
+   "F_off": {
+    "nats": 6.741477185817425,
+    "bpb": 2.4909119874354144,
+    "tokens": 2043,
+    "delta_vs_intact": -0.0023881087860990746
+   },
+   "R1": {
+    "nats": 6.7443523808431225,
+    "bpb": 2.4919743447731784,
+    "tokens": 2043,
+    "delta_vs_intact": 0.0004870862395982556
+   },
+   "R2a": {
+    "nats": 6.743873898678414,
+    "bpb": 2.4917975501439016,
+    "tokens": 2043,
+    "delta_vs_intact": 8.60407488989523e-06
+   },
+   "R2b": {
+    "nats": 6.743813670154185,
+    "bpb": 2.491775296274482,
+    "tokens": 2043,
+    "delta_vs_intact": -5.162444933937138e-05
+   },
+   "R3": {
+    "nats": 6.743865294603524,
+    "bpb": 2.4917943710196986,
+    "tokens": 2043,
+    "delta_vs_intact": 0.0
+   }
+  }
+ },
+ "seconds": {
+  "lang": 5.930037021636963,
+  "trunc": 2.0286500453948975,
+  "items": 14.246848821640015,
+  "probes": 9.553372859954834,
+  "health": 10.579736709594727,
+  "audit": 37.36687183380127,
+  "gen": 43.301377058029175
+ },
+ "trunc": {
+  "tinystories": {
+   "r72": {
+    "nats": 4.793027400970459,
+    "bpb": 1.8137381933704915,
+    "tokens": 32
+   },
+   "r128": {
+    "nats": 4.795528411865234,
+    "bpb": 1.8146846054400263,
+    "tokens": 32
+   },
+   "r256": {
+    "nats": 4.787201881408691,
+    "bpb": 1.811533747945609,
+    "tokens": 32
+   },
+   "r512": {
+    "nats": 4.787201881408691,
+    "bpb": 1.811533747945609,
+    "tokens": 32
+   },
+   "r1024": {
+    "nats": 4.787201881408691,
+    "bpb": 1.811533747945609,
+    "tokens": 32
+   },
+   "swap_r1024": {
+    "nats": 4.803027153015137,
+    "bpb": 1.8175222176813048,
+    "tokens": 32
+   },
+   "summary": {
+    "gain_beyond_70": 0.005825519561767578,
+    "swap_cost": 0.015825271606445312,
+    "rows": 2,
+    "rows_ctx_ge_512": 0,
+    "gain_beyond_70_ctx512": null,
+    "swap_cost_ctx512": null,
+    "curve": {
+     "r72": 4.793027400970459,
+     "r128": 4.795528411865234,
+     "r256": 4.787201881408691,
+     "r512": 4.787201881408691,
+     "r1024": 4.787201881408691
+    },
+    "curve_ctx512": null
+   }
+  },
+  "wikitext": {
+   "r72": {
+    "nats": 6.107460021972656,
+    "bpb": 1.8797231543738777,
+    "tokens": 32
+   },
+   "r128": {
+    "nats": 6.118006706237793,
+    "bpb": 1.8829691595124662,
+    "tokens": 32
+   },
+   "r256": {
+    "nats": 6.112209320068359,
+    "bpb": 1.8811848693200905,
+    "tokens": 32
+   },
+   "r512": {
+    "nats": 6.111929416656494,
+    "bpb": 1.8810987220637225,
+    "tokens": 32
+   },
+   "r1024": {
+    "nats": 6.116209030151367,
+    "bpb": 1.8824158798591304,
+    "tokens": 32
+   },
+   "swap_r1024": {
+    "nats": 6.128779888153076,
+    "bpb": 1.8862848749522045,
+    "tokens": 32
+   },
+   "summary": {
+    "gain_beyond_70": -0.008749008178710938,
+    "swap_cost": 0.012570858001708984,
+    "rows": 2,
+    "rows_ctx_ge_512": 1,
+    "gain_beyond_70_ctx512": -0.004152774810791016,
+    "swap_cost_ctx512": 0.018852710723876953,
+    "curve": {
+     "r72": 6.107460021972656,
+     "r128": 6.118006706237793,
+     "r256": 6.112209320068359,
+     "r512": 6.111929416656494,
+     "r1024": 6.116209030151367
+    },
+    "curve_ctx512": {
+     "r72": 6.074151992797852,
+     "r128": 6.070323467254639,
+     "r256": 6.074598789215088,
+     "r512": 6.069744110107422,
+     "r1024": 6.078304767608643
+    }
+   }
+  }
+ },
+ "items": {
+  "val": {
+   "intact": {
+    "lr_recall1": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 2,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "core_off": {
+    "lr_recall1": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 2,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "plan_swap": {
+    "lr_recall1": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 2,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "u_off": {
+    "lr_recall1": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 2,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "c_off": {
+    "lr_recall1": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 2,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "shared_ffn_off": {
+    "lr_recall1": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 2,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "table_off": {
+    "lr_recall1": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 2,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "engram_off": {
+    "lr_recall1": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 2,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "engram_read2_off": {
+    "lr_recall1": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 2,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "F_off": {
+    "lr_recall1": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 2,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "R1": {
+    "lr_recall1": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 2,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "R2a": {
+    "lr_recall1": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 2,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "R2b": {
+    "lr_recall1": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 2,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 2,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 2,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   }
+  }
+ },
+ "probes": {
+  "G_E1_concept_to_token": {
+   "pos0": {
+    "acc": 0.3333333432674408,
+    "n_train": 814,
+    "n_test": 204,
+    "classes": 484,
+    "majority_baseline": 0.04411764815449715
+   },
+   "pos1": {
+    "acc": 0.37254902720451355,
+    "n_train": 814,
+    "n_test": 204,
+    "classes": 491,
+    "majority_baseline": 0.04901960864663124
+   },
+   "pos2": {
+    "acc": 0.4166666567325592,
+    "n_train": 814,
+    "n_test": 204,
+    "classes": 485,
+    "majority_baseline": 0.07352941483259201
+   },
+   "pos3": {
+    "acc": 0.38725489377975464,
+    "n_train": 814,
+    "n_test": 204,
+    "classes": 502,
+    "majority_baseline": 0.07352941483259201
+   }
+  },
+  "u_query_to_answer_lr_recall1": {
+   "tok0": {
+    "acc": 1.0,
+    "n_train": 1,
+    "n_test": 1,
+    "classes": 2,
+    "majority_baseline": 0.0
+   }
+  },
+  "u_query_to_answer_lr_carry3": {
+   "tok0": {
+    "acc": 0.0,
+    "n_train": 1,
+    "n_test": 1,
+    "classes": 2,
+    "majority_baseline": 0.0
+   },
+   "tok1": {
+    "acc": 0.0,
+    "n_train": 1,
+    "n_test": 1,
+    "classes": 2,
+    "majority_baseline": 0.0
+   },
+   "tok2": {
+    "acc": 0.0,
+    "n_train": 1,
+    "n_test": 1,
+    "classes": 2,
+    "majority_baseline": 0.0
+   }
+  },
+  "u_query_to_answer_lr_multi4": {
+   "tok0": {
+    "acc": 0.0,
+    "n_train": 6,
+    "n_test": 2,
+    "classes": 8,
+    "majority_baseline": 0.0
+   },
+   "tok1": {
+    "acc": 0.0,
+    "n_train": 6,
+    "n_test": 2,
+    "classes": 8,
+    "majority_baseline": 0.0
+   },
+   "tok2": {
+    "acc": 0.0,
+    "n_train": 6,
+    "n_test": 2,
+    "classes": 7,
+    "majority_baseline": 0.0
+   }
+  },
+  "u_query_to_answer_lr_hop": {
+   "tok0": {
+    "acc": 0.0,
+    "n_train": 1,
+    "n_test": 1,
+    "classes": 2,
+    "majority_baseline": 0.0
+   },
+   "tok1": {
+    "acc": 0.0,
+    "n_train": 1,
+    "n_test": 1,
+    "classes": 2,
+    "majority_baseline": 0.0
+   }
+  },
+  "u_query_to_answer_lr_bind": {
+   "tok0": {
+    "acc": 1.0,
+    "n_train": 1,
+    "n_test": 1,
+    "classes": 1,
+    "majority_baseline": 1.0
+   },
+   "tok1": {
+    "acc": 0.0,
+    "n_train": 1,
+    "n_test": 1,
+    "classes": 2,
+    "majority_baseline": 0.0
+   }
+  },
+  "lr_hop_bridge_by_pass": {
+   "pass1": {
+    "acc": 1.0,
+    "n_train": 1,
+    "n_test": 1,
+    "classes": 2,
+    "majority_baseline": 0.0
+   },
+   "pass2": {
+    "acc": 1.0,
+    "n_train": 1,
+    "n_test": 1,
+    "classes": 2,
+    "majority_baseline": 0.0
+   },
+   "pass3": {
+    "acc": 1.0,
+    "n_train": 1,
+    "n_test": 1,
+    "classes": 2,
+    "majority_baseline": 0.0
+   }
+  }
+ },
+ "health": {
+  "codebook": {
+   "codes_used_frac_min": 0.7734375,
+   "codes_used_frac_mean": 0.873046875,
+   "perplexity_mean": 45.44139099121094,
+   "var_explained": 0.5031091843440152,
+   "ncp_ce": 4.016448352438801,
+   "ncp_ce_M1": 4.0152976356983014,
+   "code_entropy": 3.803422451019287,
+   "n_concepts": 14787,
+   "ncp_pairs": 13685
+  },
+  "telemetry": {
+   "crc_mix_e0_L_G": [
+    0.1854,
+    0.0907,
+    0.724
+   ],
+   "engram_Wv_norm": 4.741154193878174,
+   "engram2_Wv_norm": 4.998788833618164,
+   "shared_w2_norm": 2.4276890754699707,
+   "table_norm": 1.349818229675293,
+   "engram_alpha_mean": 0.7957629561424255,
+   "tau": {
+    "enc.layers.3.attn.log_tau": [
+     1.003,
+     1.0094,
+     1.0086,
+     1.0047,
+     1.0144,
+     1.0106
+    ],
+    "enc.layers.7.attn.log_tau": [
+     1.009,
+     1.0063,
+     1.0081,
+     1.008,
+     1.0082,
+     1.0085
+    ],
+    "core.log_tau": [
+     15.495,
+     15.4983,
+     15.5053,
+     15.5155,
+     15.4979,
+     15.5806,
+     15.5143,
+     15.4934,
+     15.5065,
+     15.4947,
+     15.5306,
+     15.5029,
+     15.6081,
+     15.5056,
+     15.4991,
+     15.4917,
+     15.4982,
+     15.5185,
+     15.4994,
+     15.5173,
+     15.5407,
+     15.5001,
+     15.4956,
+     15.5049,
+     15.4946,
+     15.5094,
+     15.4978,
+     15.513,
+     15.504,
+     15.507,
+     15.5129,
+     15.4983
+    ],
+    "core.layers.0.attn.log_tau": [
+     1.0025,
+     1.0,
+     1.0031,
+     0.9969,
+     0.9996,
+     1.001
+    ],
+    "core.layers.1.attn.log_tau": [
+     0.9977,
+     1.0018,
+     1.0014,
+     0.9936,
+     0.9962,
+     0.9972
+    ],
+    "core.layers.2.attn.log_tau": [
+     0.998,
+     0.9981,
+     0.9984,
+     0.9975,
+     1.0079,
+     1.0046
+    ],
+    "core.layers.3.attn.log_tau": [
+     1.0033,
+     1.0015,
+     1.0102,
+     1.0032,
+     1.0092,
+     0.9983
+    ]
+   },
+   "mps_alloc_gib": 0.39412426948547363,
+   "mps_driver_gib": 2.66815185546875,
+   "swap": "total = 3072.00M  used = 1922.69M  free = 1149.31M  (encrypted)"
+  },
+  "loop_dynamics_lr_hop": {
+   "3": {
+    "sched": "3",
+    "state_norm": [
+     22.560087203979492,
+     42.69806671142578,
+     62.28141403198242
+    ],
+    "step": [
+     22.560087203979492,
+     20.181716918945312,
+     19.605533599853516
+    ],
+    "consecutive_step_angle_deg": [
+     5.095932483673096,
+     0.6856319308280945
+    ],
+    "turn_deg": [
+     2.400066375732422,
+     1.003928303718567
+    ],
+    "rho": 0.9989286661148071,
+    "rel_step": [
+     0.894576192745627,
+     0.8690362507284631
+    ],
+    "grad": [
+     4.61279705632478e-05,
+     4.341424937592819e-05,
+     4.2763615056173876e-05
+    ],
+    "grad_ratio_S1_over_SM": 1.078673318489434
+   },
+   "2b": {
+    "sched": "2b",
+    "state_norm": [
+     22.534893035888672,
+     42.680206298828125
+    ],
+    "step": [
+     22.534893035888672,
+     20.188236236572266
+    ],
+    "consecutive_step_angle_deg": [
+     5.046597480773926
+    ],
+    "turn_deg": [
+     2.3788256645202637
+    ],
+    "rho": 0.9989829063415527,
+    "rel_step": [
+     0.8958656339935068
+    ],
+    "grad": [
+     6.477640999946743e-05,
+     6.25654574832879e-05
+    ],
+    "grad_ratio_S1_over_SM": 1.0353382298334526
+   },
+   "2a": {
+    "sched": "2a",
+    "state_norm": [
+     22.560087203979492,
+     42.75840759277344
+    ],
+    "step": [
+     22.560087203979492,
+     20.242694854736328
+    ],
+    "consecutive_step_angle_deg": [
+     5.1463847160339355
+    ],
+    "turn_deg": [
+     2.4280428886413574
+    ],
+    "rho": 0.9989492893218994,
+    "rel_step": [
+     0.8972791049834955
+    ],
+    "grad": [
+     6.466366176027805e-05,
+     6.244826363399625e-05
+    ],
+    "grad_ratio_S1_over_SM": 1.0354757361912583
+   }
+  }
+ },
+ "audit": {
+  "batches": {
+   "tinystories/1": {
+    "encoder": {
+     "g_main": 0.7347645059990496,
+     "g_short": 0.0035823329622359117,
+     "norm_of_sum": 0.7344412834086863,
+     "cos": -0.09264473888792787,
+     "proj_short_on_main": -0.0003318843018959632
+    },
+    "core_attn": {
+     "g_main": 0.09444017334009204,
+     "g_short": 0.00438249917179047,
+     "norm_of_sum": 0.09353283505598642,
+     "cos": -0.2292446849749126,
+     "proj_short_on_main": -0.0010046646420399216
+    },
+    "core_own_ffn": {
+     "g_main": 0.04464071162434681,
+     "g_short": 0.0022559851277638757,
+     "norm_of_sum": 0.04437949144397701,
+     "cos": -0.14071931946426128,
+     "proj_short_on_main": -0.00031746069190042713
+    },
+    "core_reads_writes": {
+     "g_main": 0.03391797019208101,
+     "g_short": 0.0011760861585612323,
+     "norm_of_sum": 0.033666212432959516,
+     "cos": -0.2306068067893166,
+     "proj_short_on_main": -0.0002712134735349197
+    },
+    "core_shared": {
+     "g_main": 0.11189403742340935,
+     "g_short": 0.00565025106720121,
+     "norm_of_sum": 0.11131728065880354,
+     "cos": -0.1270614540014151,
+     "proj_short_on_main": -0.0007179291160716333
+    },
+    "core_table": {
+     "g_main": 0.0033278451142815537,
+     "g_short": 0.00024315096134583763,
+     "norm_of_sum": 0.0033367162742209636,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.031272515602982706,
+     "g_short": 0.013550638544117727,
+     "norm_of_sum": 0.0429665206311142,
+     "cos": 0.8076832762691099,
+     "proj_short_on_main": 0.010944624134851488
+    },
+    "dec_plan": {
+     "g_main": 0.2350317638780394,
+     "g_short": 0.0,
+     "norm_of_sum": 0.2350317638780394,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "tinystories/2a": {
+    "encoder": {
+     "g_main": 0.7347645066897249,
+     "g_short": 0.002444661927782097,
+     "norm_of_sum": 0.7351131563017981,
+     "cos": 0.1409869659574595,
+     "proj_short_on_main": 0.00034466546798971184
+    },
+    "core_attn": {
+     "g_main": 0.0944401735966998,
+     "g_short": 0.0029560740524455322,
+     "norm_of_sum": 0.09501742125446423,
+     "cos": 0.18022138001320995,
+     "proj_short_on_main": 0.0005327477451529758
+    },
+    "core_own_ffn": {
+     "g_main": 0.044640711744605086,
+     "g_short": 0.0015488805681074561,
+     "norm_of_sum": 0.044933701136242975,
+     "cos": 0.17243449485589907,
+     "proj_short_on_main": 0.0002670804383537272
+    },
+    "core_reads_writes": {
+     "g_main": 0.03391797035278579,
+     "g_short": 0.0006337971697425114,
+     "norm_of_sum": 0.03403385682491483,
+     "cos": 0.17381400146321002,
+     "proj_short_on_main": 0.00011016282218900325
+    },
+    "core_shared": {
+     "g_main": 0.11189403773640816,
+     "g_short": 0.004042312457952666,
+     "norm_of_sum": 0.11263328973453957,
+     "cos": 0.16541947581297933,
+     "proj_short_on_main": 0.0006686772078668062
+    },
+    "core_table": {
+     "g_main": 0.003327845122201745,
+     "g_short": 0.00011882200677521144,
+     "norm_of_sum": 0.0033449140539053017,
+     "cos": 0.12616697379864658,
+     "proj_short_on_main": 1.4991413015510707e-05
+    },
+    "ncp_head": {
+     "g_main": 0.03127251572567698,
+     "g_short": 0.0135672710496316,
+     "norm_of_sum": 0.042981280701052706,
+     "cos": 0.8076565596373296,
+     "proj_short_on_main": 0.0109576954596126
+    },
+    "dec_plan": {
+     "g_main": 0.235031763892916,
+     "g_short": 0.0,
+     "norm_of_sum": 0.235031763892916,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "tinystories/2b": {
+    "encoder": {
+     "g_main": 0.7347645053366851,
+     "g_short": 0.002299247091391896,
+     "norm_of_sum": 0.7350589976051172,
+     "cos": 0.12654309714396456,
+     "proj_short_on_main": 0.0002909538480439827
+    },
+    "core_attn": {
+     "g_main": 0.09444017357840429,
+     "g_short": 0.002918085446291956,
+     "norm_of_sum": 0.09486892520654817,
+     "cos": 0.13181322369970203,
+     "proj_short_on_main": 0.0003846422497069264
+    },
+    "core_own_ffn": {
+     "g_main": 0.04464071174212871,
+     "g_short": 0.0015341604566723377,
+     "norm_of_sum": 0.04488222262843138,
+     "cos": 0.14066459406822707,
+     "proj_short_on_main": 0.00021580205787334023
+    },
+    "core_reads_writes": {
+     "g_main": 0.03391797010997962,
+     "g_short": 0.0006045614841401354,
+     "norm_of_sum": 0.033995924845425504,
+     "cos": 0.12018033023170581,
+     "proj_short_on_main": 7.265639880933165e-05
+    },
+    "core_shared": {
+     "g_main": 0.11189403779901778,
+     "g_short": 0.004017540821106383,
+     "norm_of_sum": 0.1125079187181793,
+     "cos": 0.13526688645264065,
+     "proj_short_on_main": 0.0005434402380674458
+    },
+    "core_table": {
+     "g_main": 0.0033278451248987826,
+     "g_short": 0.00011763670370774682,
+     "norm_of_sum": 0.003329846503745901,
+     "cos": -0.000656272547428525,
+     "proj_short_on_main": -7.72017392133776e-08
+    },
+    "ncp_head": {
+     "g_main": 0.0312725157080989,
+     "g_short": 0.0135672038199827,
+     "norm_of_sum": 0.04298031604371626,
+     "cos": 0.8075649909198689,
+     "proj_short_on_main": 0.010956398829692338
+    },
+    "dec_plan": {
+     "g_main": 0.23503176391244132,
+     "g_short": 0.0,
+     "norm_of_sum": 0.23503176391244132,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "wikitext/1": {
+    "encoder": {
+     "g_main": 0.7659583147456354,
+     "g_short": 0.010218109383653837,
+     "norm_of_sum": 0.7673156044208631,
+     "cos": 0.12627932451312435,
+     "proj_short_on_main": 0.0012903359507690237
+    },
+    "core_attn": {
+     "g_main": 0.10923911295376168,
+     "g_short": 0.00783193460233123,
+     "norm_of_sum": 0.1106975535444669,
+     "cos": 0.15161257320842847,
+     "proj_short_on_main": 0.0011874197582595679
+    },
+    "core_own_ffn": {
+     "g_main": 0.058013406447619036,
+     "g_short": 0.004124064519402572,
+     "norm_of_sum": 0.05869929350168147,
+     "cos": 0.13175245571408514,
+     "proj_short_on_main": 0.0005433556279546172
+    },
+    "core_reads_writes": {
+     "g_main": 0.01811872431150716,
+     "g_short": 0.0018247492542577345,
+     "norm_of_sum": 0.019343619250987213,
+     "cos": 0.6436023165283206,
+     "proj_short_on_main": 0.0011744128471236031
+    },
+    "core_shared": {
+     "g_main": 0.1291382060642222,
+     "g_short": 0.008280147629987637,
+     "norm_of_sum": 0.1302120973312304,
+     "cos": 0.09817471168160903,
+     "proj_short_on_main": 0.0008129011062551945
+    },
+    "core_table": {
+     "g_main": 0.0035106310690434578,
+     "g_short": 0.00041162374133803904,
+     "norm_of_sum": 0.0035346802694680005,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.03252010484744413,
+     "g_short": 0.014035392345505215,
+     "norm_of_sum": 0.04486598149495122,
+     "cos": 0.8307985881315001,
+     "proj_short_on_main": 0.011660584144517396
+    },
+    "dec_plan": {
+     "g_main": 0.24052643953344244,
+     "g_short": 0.0,
+     "norm_of_sum": 0.24052643953344244,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "wikitext/2a": {
+    "encoder": {
+     "g_main": 0.765958314503338,
+     "g_short": 0.006468053058383787,
+     "norm_of_sum": 0.7662534322414808,
+     "cos": 0.0414135750068567,
+     "proj_short_on_main": 0.00026786520048170583
+    },
+    "core_attn": {
+     "g_main": 0.10923911294476459,
+     "g_short": 0.004756497395849864,
+     "norm_of_sum": 0.10897802580251212,
+     "cos": -0.07659607137161614,
+     "proj_short_on_main": -0.0003643290140114225
+    },
+    "core_own_ffn": {
+     "g_main": 0.058013406345334625,
+     "g_short": 0.0025191003680212812,
+     "norm_of_sum": 0.05810754285030352,
+     "cos": 0.015688051377852077,
+     "proj_short_on_main": 3.9519775999483935e-05
+    },
+    "core_reads_writes": {
+     "g_main": 0.018118724305646997,
+     "g_short": 0.0012803935719144057,
+     "norm_of_sum": 0.018976782165823075,
+     "cos": 0.6506865705289003,
+     "proj_short_on_main": 0.0008331349022362336
+    },
+    "core_shared": {
+     "g_main": 0.12913820597312617,
+     "g_short": 0.005448906795252907,
+     "norm_of_sum": 0.1292670108975136,
+     "cos": 0.002553270542258571,
+     "proj_short_on_main": 1.39125332078318e-05
+    },
+    "core_table": {
+     "g_main": 0.00351063107339593,
+     "g_short": 0.00018984706106668593,
+     "norm_of_sum": 0.0035110620209252864,
+     "cos": -0.024768768079811623,
+     "proj_short_on_main": -4.7022778261945775e-06
+    },
+    "ncp_head": {
+     "g_main": 0.03252010486010337,
+     "g_short": 0.014035192583056653,
+     "norm_of_sum": 0.04486877183537057,
+     "cos": 0.8310908492038348,
+     "proj_short_on_main": 0.011664520122591917
+    },
+    "dec_plan": {
+     "g_main": 0.24052643953925645,
+     "g_short": 0.0,
+     "norm_of_sum": 0.24052643953925645,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "wikitext/2b": {
+    "encoder": {
+     "g_main": 0.7659583139072356,
+     "g_short": 0.0063960843768851436,
+     "norm_of_sum": 0.7660855654623306,
+     "cos": 0.015721663335403657,
+     "proj_short_on_main": 0.00010055708523822329
+    },
+    "core_attn": {
+     "g_main": 0.10923911255028329,
+     "g_short": 0.00470951950995999,
+     "norm_of_sum": 0.10870287173602332,
+     "cos": -0.1351397120258359,
+     "proj_short_on_main": -0.0006364431103560489
+    },
+    "core_own_ffn": {
+     "g_main": 0.058013406237953015,
+     "g_short": 0.002482229786806952,
+     "norm_of_sum": 0.05800369227832458,
+     "cos": -0.025306660685798572,
+     "proj_short_on_main": -6.281694695890566e-05
+    },
+    "core_reads_writes": {
+     "g_main": 0.018118724375860155,
+     "g_short": 0.0011844394404074597,
+     "norm_of_sum": 0.01888277132610882,
+     "cos": 0.6259859601199365,
+     "proj_short_on_main": 0.0007414424603073839
+    },
+    "core_shared": {
+     "g_main": 0.1291382058105679,
+     "g_short": 0.0053899907255523195,
+     "norm_of_sum": 0.12905282207897076,
+     "cos": -0.0367050064703331,
+     "proj_short_on_main": -0.00019783964445643326
+    },
+    "core_table": {
+     "g_main": 0.0035106310621450033,
+     "g_short": 0.00018811060596236615,
+     "norm_of_sum": 0.003513016058280823,
+     "cos": -0.014108568633395945,
+     "proj_short_on_main": -2.6539713948897434e-06
+    },
+    "ncp_head": {
+     "g_main": 0.03252010488327828,
+     "g_short": 0.014033721706608203,
+     "norm_of_sum": 0.044867908625247054,
+     "cos": 0.831138320233571,
+     "proj_short_on_main": 0.011663963885855746
+    },
+    "dec_plan": {
+     "g_main": 0.24052643954635408,
+     "g_short": 0.0,
+     "norm_of_sum": 0.24052643954635408,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "probes/1": {
+    "encoder": {
+     "g_main": 0.8305660566036578,
+     "g_short": 0.006283567228601634,
+     "norm_of_sum": 0.8301470743717098,
+     "cos": -0.07044492362652904,
+     "proj_short_on_main": -0.0004426454135210029
+    },
+    "core_attn": {
+     "g_main": 0.15130956429769263,
+     "g_short": 0.003923676616211999,
+     "norm_of_sum": 0.15068066933710053,
+     "cos": -0.1729146892263754,
+     "proj_short_on_main": -0.000678461322717094
+    },
+    "core_own_ffn": {
+     "g_main": 0.07112176825667953,
+     "g_short": 0.002058812744689738,
+     "norm_of_sum": 0.07093771780395203,
+     "cos": -0.10375458945999054,
+     "proj_short_on_main": -0.00021361127110028005
+    },
+    "core_reads_writes": {
+     "g_main": 0.020832681115383164,
+     "g_short": 0.0014157851870172037,
+     "norm_of_sum": 0.020652964221321287,
+     "cos": -0.1603703491074613,
+     "proj_short_on_main": -0.00022704996470312134
+    },
+    "core_shared": {
+     "g_main": 0.17392345830866587,
+     "g_short": 0.004769189135918468,
+     "norm_of_sum": 0.17341577829019839,
+     "cos": -0.12000520015192773,
+     "proj_short_on_main": -0.000572327496818295
+    },
+    "core_table": {
+     "g_main": 0.005133645064139294,
+     "g_short": 0.00022437471701400896,
+     "norm_of_sum": 0.005138546064617583,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.02962311184064755,
+     "g_short": 0.01046978307121848,
+     "norm_of_sum": 0.037244256048933444,
+     "cos": 0.6448374163862657,
+     "proj_short_on_main": 0.006751307865769187
+    },
+    "dec_plan": {
+     "g_main": 0.3111106885429208,
+     "g_short": 0.0,
+     "norm_of_sum": 0.3111106885429208,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "probes/2a": {
+    "encoder": {
+     "g_main": 0.8305660554917104,
+     "g_short": 0.0052799627640845006,
+     "norm_of_sum": 0.8311382820865292,
+     "cos": 0.10523581433475779,
+     "proj_short_on_main": 0.0005556411811356311
+    },
+    "core_attn": {
+     "g_main": 0.1513095646702525,
+     "g_short": 0.0026257297350494135,
+     "norm_of_sum": 0.15211102972988375,
+     "cos": 0.2973668812527808,
+     "proj_short_on_main": 0.0007808050623243346
+    },
+    "core_own_ffn": {
+     "g_main": 0.0711217684048271,
+     "g_short": 0.0014689120413650374,
+     "norm_of_sum": 0.07148514052746605,
+     "cos": 0.23768020281711782,
+     "proj_short_on_main": 0.00034913131191214864
+    },
+    "core_reads_writes": {
+     "g_main": 0.020832680963537947,
+     "g_short": 0.0010302587281184224,
+     "norm_of_sum": 0.020930134759142443,
+     "cos": 0.0700858374092271,
+     "proj_short_on_main": 7.220654570834487e-05
+    },
+    "core_shared": {
+     "g_main": 0.17392345895635514,
+     "g_short": 0.0035784503882582788,
+     "norm_of_sum": 0.17479187797548992,
+     "cos": 0.23299862544222344,
+     "proj_short_on_main": 0.0008337740216773698
+    },
+    "core_table": {
+     "g_main": 0.005133645084842946,
+     "g_short": 0.00011301732842667283,
+     "norm_of_sum": 0.005157000674676603,
+     "cos": 0.1961175223171805,
+     "proj_short_on_main": 2.2164678429946126e-05
+    },
+    "ncp_head": {
+     "g_main": 0.029623111888164605,
+     "g_short": 0.01049734434663412,
+     "norm_of_sum": 0.037272968730769226,
+     "cos": 0.6456554357511655,
+     "proj_short_on_main": 0.006777667438356086
+    },
+    "dec_plan": {
+     "g_main": 0.31111068842067185,
+     "g_short": 0.0,
+     "norm_of_sum": 0.31111068842067185,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "probes/2b": {
+    "encoder": {
+     "g_main": 0.8305660575863651,
+     "g_short": 0.005190158513683805,
+     "norm_of_sum": 0.8309822351994941,
+     "cos": 0.07708153476933767,
+     "proj_short_on_main": 0.0004000653839308922
+    },
+    "core_attn": {
+     "g_main": 0.1513095646797479,
+     "g_short": 0.002534841987839209,
+     "norm_of_sum": 0.15186927070246042,
+     "cos": 0.21283713727309667,
+     "proj_short_on_main": 0.0005395085121313429
+    },
+    "core_own_ffn": {
+     "g_main": 0.07112176840671511,
+     "g_short": 0.0014345751733654839,
+     "norm_of_sum": 0.07139737215495766,
+     "cos": 0.18240212354916266,
+     "proj_short_on_main": 0.0002616695580127724
+    },
+    "core_reads_writes": {
+     "g_main": 0.02083268082867359,
+     "g_short": 0.0009886749691755384,
+     "norm_of_sum": 0.02089426493618799,
+     "cos": 0.03865266398040447,
+     "proj_short_on_main": 3.8214921369378834e-05
+    },
+    "core_shared": {
+     "g_main": 0.1739234587238111,
+     "g_short": 0.003506694214347119,
+     "norm_of_sum": 0.17458863364074384,
+     "cos": 0.1799687640854996,
+     "proj_short_on_main": 0.0006310954237818231
+    },
+    "core_table": {
+     "g_main": 0.0051336450878221715,
+     "g_short": 0.00010963690901828753,
+     "norm_of_sum": 0.005138420342964944,
+     "cos": 0.03289716455208806,
+     "proj_short_on_main": 3.6067434369569123e-06
+    },
+    "ncp_head": {
+     "g_main": 0.029623111818517057,
+     "g_short": 0.010496389052869972,
+     "norm_of_sum": 0.037271226088948964,
+     "cos": 0.6455375640139687,
+     "proj_short_on_main": 0.00677581342013257
+    },
+    "dec_plan": {
+     "g_main": 0.31111068850971907,
+     "g_short": 0.0,
+     "norm_of_sum": 0.31111068850971907,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "synthetic/1": {
+    "encoder": {
+     "g_main": 1.5664676333362457,
+     "g_short": 0.008248888299550974,
+     "norm_of_sum": 1.5664740391977905,
+     "cos": -0.0018563841179528727,
+     "proj_short_on_main": -1.5313105230053706e-05
+    },
+    "core_attn": {
+     "g_main": 0.2131188385575587,
+     "g_short": 0.006242512939849606,
+     "norm_of_sum": 0.21318811055876316,
+     "cos": -0.0035469982058986996,
+     "proj_short_on_main": -2.2142182197945966e-05
+    },
+    "core_own_ffn": {
+     "g_main": 0.14236273081281642,
+     "g_short": 0.003720675890142025,
+     "norm_of_sum": 0.14228558129371094,
+     "cos": -0.03379732317462309,
+     "proj_short_on_main": -0.00012574888548715844
+    },
+    "core_reads_writes": {
+     "g_main": 0.03958914547723622,
+     "g_short": 0.0016759284438528522,
+     "norm_of_sum": 0.03961482399827848,
+     "cos": -0.005839577959368066,
+     "proj_short_on_main": -9.786714802201137e-06
+    },
+    "core_shared": {
+     "g_main": 0.27232971742305984,
+     "g_short": 0.006875586633457818,
+     "norm_of_sum": 0.27217561249926825,
+     "cos": -0.03503065123449214,
+     "proj_short_on_main": -0.00024085627738919672
+    },
+    "core_table": {
+     "g_main": 0.00714705436203209,
+     "g_short": 0.00034011980477572615,
+     "norm_of_sum": 0.0071551427334080936,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.04455641597806304,
+     "g_short": 0.010199243039252624,
+     "norm_of_sum": 0.049706433648825446,
+     "cos": 0.4196696404357843,
+     "proj_short_on_main": 0.0042803126590003245
+    },
+    "dec_plan": {
+     "g_main": 0.4971064939119284,
+     "g_short": 0.0,
+     "norm_of_sum": 0.4971064939119284,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "synthetic/2a": {
+    "encoder": {
+     "g_main": 1.56646763071693,
+     "g_short": 0.005190747901244406,
+     "norm_of_sum": 1.566484719415703,
+     "cos": 0.0016353316285703048,
+     "proj_short_on_main": 8.488594218839906e-06
+    },
+    "core_attn": {
+     "g_main": 0.2131188385202069,
+     "g_short": 0.004066665220213675,
+     "norm_of_sum": 0.21373985483653335,
+     "cos": 0.1433906378693418,
+     "proj_short_on_main": 0.0005831217199275063
+    },
+    "core_own_ffn": {
+     "g_main": 0.14236273083203668,
+     "g_short": 0.0025308119616693826,
+     "norm_of_sum": 0.14265332720104942,
+     "cos": 0.10605196093040518,
+     "proj_short_on_main": 0.00026839757128116346
+    },
+    "core_reads_writes": {
+     "g_main": 0.03958914545528184,
+     "g_short": 0.0007011957726449847,
+     "norm_of_sum": 0.0396964970889355,
+     "cos": 0.1444496116682829,
+     "proj_short_on_main": 0.00010128745706200964
+    },
+    "core_shared": {
+     "g_main": 0.2723297175331693,
+     "g_short": 0.004979540511100618,
+     "norm_of_sum": 0.27290806395836203,
+     "cos": 0.10712538002095233,
+     "proj_short_on_main": 0.0005334351695813809
+    },
+    "core_table": {
+     "g_main": 0.007147054356020531,
+     "g_short": 0.0001714385883316038,
+     "norm_of_sum": 0.007160104045201098,
+     "cos": 0.06419457750504268,
+     "proj_short_on_main": 1.1005427746008246e-05
+    },
+    "ncp_head": {
+     "g_main": 0.04455641595560106,
+     "g_short": 0.010210069538227015,
+     "norm_of_sum": 0.04971267153823846,
+     "cos": 0.41966339467668967,
+     "proj_short_on_main": 0.0042847924422974104
+    },
+    "dec_plan": {
+     "g_main": 0.49710649389674794,
+     "g_short": 0.0,
+     "norm_of_sum": 0.49710649389674794,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "synthetic/2b": {
+    "encoder": {
+     "g_main": 1.5664676286733503,
+     "g_short": 0.005297357815798793,
+     "norm_of_sum": 1.566446727384928,
+     "cos": -0.005636440874773425,
+     "proj_short_on_main": -2.9858244121268784e-05
+    },
+    "core_attn": {
+     "g_main": 0.2131188385741947,
+     "g_short": 0.004070273874289557,
+     "norm_of_sum": 0.2136264820295849,
+     "cos": 0.11531896307442314,
+     "proj_short_on_main": 0.00046937976261198666
+    },
+    "core_own_ffn": {
+     "g_main": 0.14236273071489633,
+     "g_short": 0.002531716078340737,
+     "norm_of_sum": 0.1426069526644131,
+     "cos": 0.08765594611627306,
+     "proj_short_on_main": 0.0002219199681447378
+    },
+    "core_reads_writes": {
+     "g_main": 0.03958914555758059,
+     "g_short": 0.0006664350603241008,
+     "norm_of_sum": 0.03958881821882673,
+     "cos": -0.008908067923022936,
+     "proj_short_on_main": -5.9366487836509775e-06
+    },
+    "core_shared": {
+     "g_main": 0.2723297172915919,
+     "g_short": 0.005000566656140765,
+     "norm_of_sum": 0.27281703612346364,
+     "cos": 0.08835882620416736,
+     "proj_short_on_main": 0.00044184420009229613
+    },
+    "core_table": {
+     "g_main": 0.007147054358264763,
+     "g_short": 0.00017233883596120175,
+     "norm_of_sum": 0.007156174829457834,
+     "cos": 0.040898873948334,
+     "proj_short_on_main": 7.0484643283798e-06
+    },
+    "ncp_head": {
+     "g_main": 0.04455641595418921,
+     "g_short": 0.010207472849472493,
+     "norm_of_sum": 0.049712332692107494,
+     "cos": 0.41979140215449384,
+     "proj_short_on_main": 0.004285009339933985
+    },
+    "dec_plan": {
+     "g_main": 0.49710649399262835,
+     "g_short": 0.0,
+     "norm_of_sum": 0.49710649399262835,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   }
+  },
+  "summary": {
+   "encoder": {
+    "cos_median": 0.028567619171130175,
+    "cos_frac_negative": 0.3333333333333333,
+    "short_over_main_median": 0.005757429057524884
+   },
+   "core_attn": {
+    "cos_median": 0.12356609338706259,
+    "cos_frac_negative": 0.4166666666666667,
+    "short_over_main_median": 0.030095001344908272
+   },
+   "core_own_ffn": {
+    "cos_median": 0.09685395352333911,
+    "cos_frac_negative": 0.3333333333333333,
+    "short_over_main_median": 0.03165728086839288
+   },
+   "core_reads_writes": {
+    "cos_median": 0.09513308382046645,
+    "cos_frac_negative": 0.3333333333333333,
+    "short_over_main_median": 0.044895456959531746
+   },
+   "core_shared": {
+    "cos_median": 0.0932667689428882,
+    "cos_frac_negative": 0.3333333333333333,
+    "short_over_main_median": 0.031663032435447366
+   },
+   "core_table": {
+    "cos_median": 0.0,
+    "cos_frac_negative": 0.25,
+    "short_over_main_median": 0.0397060479686802
+   },
+   "ncp_head": {
+    "cos_median": 0.7266102133355172,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.39295159421392045
+   },
+   "dec_plan": {
+    "cos_median": 0.0,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.0
+   }
+  }
+ },
+ "generation": {
+  "tinystories": {
+   "greedy": [
+    {
+     "prompt": "Once upon a time, there were two friends named Timmy and Sally. They loved to play together and have lots of fun. One day, they decided to have a race to see who could run the fastest. It was a very competitive race, and they both wanted to win.\n\nAs they were running,",
+     "continuation": " and said, \"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    {
+     "prompt": "Once upon a time, there was a panda who liked to explore. He wanted to find something exciting and fun. So he decided to go on a journey. He walked through a forest, across a river, and up a big hill. \n\nThe panda looked for something new and colorful. He found a",
+     "continuation": " big big big big big big big. She was a big big big big big big. She was a big big big big big big. She was a big big big big big big. She was a big big big big big big. She was a big big big big big big. She was a big big big big big big. She was a big big big big big big. She was a big big big big big big. She was a big big big big big big. She was a big big big big big big. She was a big big big big big big. She was a big big big big big big."
+    }
+   ],
+   "sample_T0.8": [
+    {
+     "prompt": "Once upon a time, there were two friends named Timmy and Sally. They loved to play together and have lots of fun. One day, they decided to have a race to see who could run the fastest. It was a very competitive race, and they both wanted to win.\n\nAs they were running,",
+     "continuation": " but waited. She jam and the they together N. repeat the fingers day, but she was a Bon in aomein.\"}\n\": canWe she saw a M ath.C99yeara the the pop, and the Several and catch the wor of the much of the most mythjson and compl. He was was cold andoy andists.\n\n\n\" tre, Lily and a later.\u00e2\u20ac\u2122, a rape I there was a big r crack. They felt main scared and it was so before. And tor jet and candidem. He return became the proceed in the not the local me to the"
+    },
+    {
+     "prompt": "Once upon a time, there was a panda who liked to explore. He wanted to find something exciting and fun. So he decided to go on a journey. He walked through a forest, across a river, and up a big hill. \n\nThe panda looked for something new and colorful. He found a",
+     "continuation": " huge's most neighborian. Theston and he're be two special to\u0153,\u00e2 t Power and rul herern in the crowd her synil and all, soress of the deep Jen and gave the source. Sheillyz thepping out of theong and Ir were. The code ofpp is very bad. In 1684, \".<eos><eos>\n selection is Underose's first. They got to the wor, and board to and they bad. \n\nTheu onlynt warhan City, was so Bmentsis ofarnass where they be join'ings day, \"pon,"
+    }
+   ]
+  },
+  "wikitext": {
+   "greedy": [
+    {
+     "prompt": "... Thirteen Years Later\n\"... Thirteen Years Later \" is the fifth episode of the third season of the American crime-thriller television series Millennium. It premiered on the Fox network on October 30, 1998. The episode was written by",
+     "continuation": " 100, and 1000, 1000, \"lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
+    },
+    {
+     "prompt": " Peter Criss, Ace Frehley, Gene Simmons and Paul Stanley \u2014 who each portray both themselves and a small cameo role. However, the band members insisted during filming that their roles be given an equal amount of dialogue, which led to Perry being asked to amend scenes",
+     "continuation": ". The code of the parent of the parent of is the parent of is the parent of of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is the parent of is"
+    }
+   ],
+   "sample_T0.8": [
+    {
+     "prompt": "... Thirteen Years Later\n\"... Thirteen Years Later \" is the fifth episode of the third season of the American crime-thriller television series Millennium. It premiered on the Fox network on October 30, 1998. The episode was written by",
+     "continuation": "l-loed to the gun of Katountateszeivil work.\n\n Allied 33, 2089, \"OK, a Cor and politead Fin Port both L {\"l asking, andgus. Theact chair high, the parent of per that inen way to H, in 2430 is had a-0. They stoods to the east of theest and 4192.6 the of near the. The Council and't explore the\u000bn near the man.\n\nWhen the em isumed arm. One day, the tonspr w a little te"
+    },
+    {
+     "prompt": " Peter Criss, Ace Frehley, Gene Simmons and Paul Stanley \u2014 who each portray both themselves and a small cameo role. However, the band members insisted during filming that their roles be given an equal amount of dialogue, which led to Perry being asked to amend scenes",
+     "continuation": " in the string, in- often was under the my country with autom by theont Hisifications. He was up the maximum with a fun of evorsents toiral. We undertic sero was a t legs. It H investig is d year cookie, p flney in theact in 72,1,, the the'sostn tied in 7990, \" gray,sembly, and next soon the within the Love to threeation and a occasion it was coaluning or the-odsil. \"hell of theelled in 13.P5, Tom, part of the cere of"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,8 @@
+PASS P5/P1 (trained weights ../runs/screens/S1/ckpt_last.pt): causality - editing token 601 changes nothing before it (first change at t=601)
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/run_m2_25M/code/test_p5.py", line 71, in <module>
+    run(m, ecfg, 8192, 1024, p=601, label=f"(trained weights {a.ckpt})", reach=dcfg.reach())
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/run_m2_25M/code/test_p5.py", line 27, in run
+    assert ch0.max().item() - p == reach and torch.equal(a0[0, p + reach + 1:], b0[0, p + reach + 1:]), ("P2", ch0.max().item() - p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('P2', 69)

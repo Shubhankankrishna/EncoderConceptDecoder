@@ -1,0 +1,4080 @@
+{
+ "ckpt": "../runs/tests/launch/ckpt_last.pt",
+ "step": 39,
+ "eval_R": "3",
+ "split": "test",
+ "time": "2026-09-29 22:12",
+ "lang": {
+  "tinystories": {
+   "intact": {
+    "nats": 8.328351374711886,
+    "bpb": 3.033029566672324,
+    "tokens": 3037,
+    "delta_vs_intact": 0.0
+   },
+   "core_off": {
+    "nats": 8.550660988434311,
+    "bpb": 3.1139905637578895,
+    "tokens": 3037,
+    "delta_vs_intact": 0.22230961372242497
+   },
+   "plan_swap": {
+    "nats": 8.328378385330918,
+    "bpb": 3.0330394034338215,
+    "tokens": 3037,
+    "delta_vs_intact": 2.7010619032097338e-05
+   },
+   "u_off": {
+    "nats": 8.420566914306882,
+    "bpb": 3.0666127388410103,
+    "tokens": 3037,
+    "delta_vs_intact": 0.09221553959499573
+   },
+   "c_off": {
+    "nats": 8.33439146361541,
+    "bpb": 3.035229253909986,
+    "tokens": 3037,
+    "delta_vs_intact": 0.006040088903523255
+   },
+   "shared_ffn_off": {
+    "nats": 8.327328829848534,
+    "bpb": 3.0326571749870728,
+    "tokens": 3037,
+    "delta_vs_intact": -0.0010225448633516265
+   },
+   "table_off": {
+    "nats": 8.328344943612118,
+    "bpb": 3.0330272245862533,
+    "tokens": 3037,
+    "delta_vs_intact": -6.431099768278159e-06
+   },
+   "engram_off": {
+    "nats": 8.328379028440896,
+    "bpb": 3.0330396376424282,
+    "tokens": 3037,
+    "delta_vs_intact": 2.7653729009813333e-05
+   },
+   "engram_read2_off": {
+    "nats": 8.328362950691472,
+    "bpb": 3.0330337824272515,
+    "tokens": 3037,
+    "delta_vs_intact": 1.15759795864534e-05
+   },
+   "F_off": {
+    "nats": 8.328750746007573,
+    "bpb": 3.033175010217319,
+    "tokens": 3037,
+    "delta_vs_intact": 0.0003993712956873452
+   },
+   "R1": {
+    "nats": 8.328257480655251,
+    "bpb": 3.032995372215691,
+    "tokens": 3037,
+    "delta_vs_intact": -9.389405663462469e-05
+   },
+   "R2a": {
+    "nats": 8.32831278811327,
+    "bpb": 3.0330155141559,
+    "tokens": 3037,
+    "delta_vs_intact": -3.858659861677438e-05
+   },
+   "R2b": {
+    "nats": 8.328296067253868,
+    "bpb": 3.033009424732116,
+    "tokens": 3037,
+    "delta_vs_intact": -5.530745801785031e-05
+   },
+   "R3": {
+    "nats": 8.328351374711886,
+    "bpb": 3.033029566672324,
+    "tokens": 3037,
+    "delta_vs_intact": 0.0
+   }
+  },
+  "wikitext": {
+   "intact": {
+    "nats": 8.495972833170415,
+    "bpb": 3.2933841161905932,
+    "tokens": 3069,
+    "delta_vs_intact": 0.0
+   },
+   "core_off": {
+    "nats": 8.72678778714565,
+    "bpb": 3.382857366414916,
+    "tokens": 3069,
+    "delta_vs_intact": 0.23081495397523533
+   },
+   "plan_swap": {
+    "nats": 8.496326673998045,
+    "bpb": 3.293521279265884,
+    "tokens": 3069,
+    "delta_vs_intact": 0.0003538408276302363
+   },
+   "u_off": {
+    "nats": 8.62166269550342,
+    "bpb": 3.342106611460066,
+    "tokens": 3069,
+    "delta_vs_intact": 0.12568986233300627
+   },
+   "c_off": {
+    "nats": 8.507359380091234,
+    "bpb": 3.2977980042177397,
+    "tokens": 3069,
+    "delta_vs_intact": 0.01138654692081964
+   },
+   "shared_ffn_off": {
+    "nats": 8.49563108402574,
+    "bpb": 3.2932516403426964,
+    "tokens": 3069,
+    "delta_vs_intact": -0.0003417491446739973
+   },
+   "table_off": {
+    "nats": 8.496035200798305,
+    "bpb": 3.2934082924160943,
+    "tokens": 3069,
+    "delta_vs_intact": 6.236762789058048e-05
+   },
+   "engram_off": {
+    "nats": 8.496021199902248,
+    "bpb": 3.2934028651001657,
+    "tokens": 3069,
+    "delta_vs_intact": 4.836673183383766e-05
+   },
+   "engram_read2_off": {
+    "nats": 8.495990016088303,
+    "bpb": 3.2933907769874153,
+    "tokens": 3069,
+    "delta_vs_intact": 1.7182917888547422e-05
+   },
+   "F_off": {
+    "nats": 8.495931466886608,
+    "bpb": 3.293368080938986,
+    "tokens": 3069,
+    "delta_vs_intact": -4.136628380635443e-05
+   },
+   "R1": {
+    "nats": 8.495371431044314,
+    "bpb": 3.2931509883018353,
+    "tokens": 3069,
+    "delta_vs_intact": -0.0006014021261009361
+   },
+   "R2a": {
+    "nats": 8.495861462406321,
+    "bpb": 3.293340944359342,
+    "tokens": 3069,
+    "delta_vs_intact": -0.00011137076409362123
+   },
+   "R2b": {
+    "nats": 8.49585318914956,
+    "bpb": 3.2933377373090202,
+    "tokens": 3069,
+    "delta_vs_intact": -0.00011964402085418158
+   },
+   "R3": {
+    "nats": 8.495972833170415,
+    "bpb": 3.2933841161905932,
+    "tokens": 3069,
+    "delta_vs_intact": 0.0
+   }
+  }
+ },
+ "seconds": {
+  "lang": 10.042810916900635,
+  "items": 78.66951990127563,
+  "audit": 18.036838054656982
+ },
+ "items": {
+  "test": {
+   "intact": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "core_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "plan_swap": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "u_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "c_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "shared_ffn_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "table_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "engram_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "engram_read2_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "F_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "R1": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "R2a": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "R2b": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   }
+  },
+  "ood": {
+   "intact": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "core_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "plan_swap": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "u_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "c_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "shared_ffn_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "table_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "engram_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "engram_read2_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "F_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "R1": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "R2a": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "R2b": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   }
+  }
+ },
+ "audit": {
+  "batches": {
+   "tinystories/1": {
+    "encoder": {
+     "g_main": 0.9170062447226236,
+     "g_short": 0.010381202671401328,
+     "norm_of_sum": 0.9177887191532401,
+     "cos": 0.06974594074180553,
+     "proj_short_on_main": 0.0007240467463482303
+    },
+    "core_attn": {
+     "g_main": 0.025655119513799417,
+     "g_short": 0.02008335047452453,
+     "norm_of_sum": 0.03158888096497784,
+     "cos": -0.06178541012838246,
+     "proj_short_on_main": -0.0012408580458205427
+    },
+    "core_own_ffn": {
+     "g_main": 0.009955647550714571,
+     "g_short": 0.008673567783278534,
+     "norm_of_sum": 0.013147733285293912,
+     "cos": -0.008585922462651236,
+     "proj_short_on_main": -7.447058046177925e-05
+    },
+    "core_reads_writes": {
+     "g_main": 0.0034384093278948817,
+     "g_short": 0.0037433114401461886,
+     "norm_of_sum": 0.006020999181766794,
+     "cos": 0.4046834736235293,
+     "proj_short_on_main": 0.0015148562764530555
+    },
+    "core_shared": {
+     "g_main": 0.029125597440702415,
+     "g_short": 0.02294481847326802,
+     "norm_of_sum": 0.037893000966806645,
+     "cos": 0.045725040268301057,
+     "proj_short_on_main": 0.0010491527486390382
+    },
+    "core_table": {
+     "g_main": 0.0011687395174467057,
+     "g_short": 0.001611719384514964,
+     "norm_of_sum": 0.001990877051468236,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.057132222581163156,
+     "g_short": 0.027936738438696023,
+     "norm_of_sum": 0.084983376509031,
+     "cos": 0.9954407756654209,
+     "proj_short_on_main": 0.02780936858097755
+    },
+    "dec_plan": {
+     "g_main": 0.05420919011523524,
+     "g_short": 0.0,
+     "norm_of_sum": 0.05420919011523524,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "tinystories/2a": {
+    "encoder": {
+     "g_main": 0.9170062447226236,
+     "g_short": 0.007763542453969956,
+     "norm_of_sum": 0.9179008162226522,
+     "cos": 0.11105034375098506,
+     "proj_short_on_main": 0.0008621440582387297
+    },
+    "core_attn": {
+     "g_main": 0.025655119513799417,
+     "g_short": 0.012933088684452523,
+     "norm_of_sum": 0.028857987238561818,
+     "cos": 0.011051067948907655,
+     "proj_short_on_main": 0.00014292444184113356
+    },
+    "core_own_ffn": {
+     "g_main": 0.009955647550714571,
+     "g_short": 0.005363609059742924,
+     "norm_of_sum": 0.011596073430623528,
+     "cos": 0.06166592259771104,
+     "proj_short_on_main": 0.0003307519011224888
+    },
+    "core_reads_writes": {
+     "g_main": 0.0034384093278948817,
+     "g_short": 0.002245678793623001,
+     "norm_of_sum": 0.004692605600590492,
+     "cos": 0.3337935228609875,
+     "proj_short_on_main": 0.0007495930357376341
+    },
+    "core_shared": {
+     "g_main": 0.029125597440702415,
+     "g_short": 0.014981840383339766,
+     "norm_of_sum": 0.03405423377981245,
+     "cos": 0.09961483245888907,
+     "proj_short_on_main": 0.0014924135197122092
+    },
+    "core_table": {
+     "g_main": 0.0011687395174467057,
+     "g_short": 0.0007518004503316239,
+     "norm_of_sum": 0.0013373778375185723,
+     "cos": -0.08113301828432004,
+     "proj_short_on_main": -6.099583968291569e-05
+    },
+    "ncp_head": {
+     "g_main": 0.057132222581163156,
+     "g_short": 0.02789561456818821,
+     "norm_of_sum": 0.08497608017852933,
+     "cos": 0.9972395446283717,
+     "proj_short_on_main": 0.027818609969108586
+    },
+    "dec_plan": {
+     "g_main": 0.054209190114327975,
+     "g_short": 0.0,
+     "norm_of_sum": 0.054209190114327975,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "tinystories/2b": {
+    "encoder": {
+     "g_main": 0.9170062448460632,
+     "g_short": 0.007979985568650151,
+     "norm_of_sum": 0.9179298530103976,
+     "cos": 0.11144776016646506,
+     "proj_short_on_main": 0.0008893515177867743
+    },
+    "core_attn": {
+     "g_main": 0.025655119513799417,
+     "g_short": 0.013091895946978281,
+     "norm_of_sum": 0.02886032936995367,
+     "cos": 0.004965720846495448,
+     "proj_short_on_main": 6.501070062405933e-05
+    },
+    "core_own_ffn": {
+     "g_main": 0.009955647550714571,
+     "g_short": 0.005402305426937829,
+     "norm_of_sum": 0.011574263702115388,
+     "cos": 0.05265335612866321,
+     "proj_short_on_main": 0.00028444951156036746
+    },
+    "core_reads_writes": {
+     "g_main": 0.00343840932793515,
+     "g_short": 0.0021541427817823675,
+     "norm_of_sum": 0.004620527134078019,
+     "cos": 0.32984992942854113,
+     "proj_short_on_main": 0.0007105438445499152
+    },
+    "core_shared": {
+     "g_main": 0.029125597440702415,
+     "g_short": 0.01512342897649558,
+     "norm_of_sum": 0.0340347563267275,
+     "cos": 0.09233825631834304,
+     "proj_short_on_main": 0.0013964710612439052
+    },
+    "core_table": {
+     "g_main": 0.0011687395174467057,
+     "g_short": 0.0007625370386446632,
+     "norm_of_sum": 0.0014209844280054856,
+     "cos": 0.040272313810470924,
+     "proj_short_on_main": 3.070913091240507e-05
+    },
+    "ncp_head": {
+     "g_main": 0.057132222581163156,
+     "g_short": 0.027897336230706143,
+     "norm_of_sum": 0.08497807820759115,
+     "cos": 0.9972543940008082,
+     "proj_short_on_main": 0.027820741136989645
+    },
+    "dec_plan": {
+     "g_main": 0.05420919011398864,
+     "g_short": 0.0,
+     "norm_of_sum": 0.05420919011398864,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "wikitext/1": {
+    "encoder": {
+     "g_main": 0.6381376664153793,
+     "g_short": 0.00926001273728593,
+     "norm_of_sum": 0.638452577891606,
+     "cos": 0.02676056548322626,
+     "proj_short_on_main": 0.0002478031772316494
+    },
+    "core_attn": {
+     "g_main": 0.025324921667198477,
+     "g_short": 0.018826641912658693,
+     "norm_of_sum": 0.02481917819960414,
+     "cos": -0.3982968269497268,
+     "proj_short_on_main": -0.007498591735930693
+    },
+    "core_own_ffn": {
+     "g_main": 0.009782055718467825,
+     "g_short": 0.008293793107615079,
+     "norm_of_sum": 0.010143119782860881,
+     "cos": -0.37959125083015316,
+     "proj_short_on_main": -0.0031482512998461105
+    },
+    "core_reads_writes": {
+     "g_main": 0.004230288024956027,
+     "g_short": 0.0031394986082077993,
+     "norm_of_sum": 0.0025566031964360126,
+     "cos": -0.7987197858497719,
+     "proj_short_on_main": -0.0025075796560233904
+    },
+    "core_shared": {
+     "g_main": 0.02615343104811298,
+     "g_short": 0.021126203349660002,
+     "norm_of_sum": 0.0257412635933014,
+     "cos": -0.42324575077842563,
+     "proj_short_on_main": -0.008941575797824538
+    },
+    "core_table": {
+     "g_main": 0.0011738717472133643,
+     "g_short": 0.0015117910780585789,
+     "norm_of_sum": 0.001914023809309403,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.043048298319831146,
+     "g_short": 0.020434978222633637,
+     "norm_of_sum": 0.06332797752160114,
+     "cos": 0.9888064884575625,
+     "proj_short_on_main": 0.020206239058029127
+    },
+    "dec_plan": {
+     "g_main": 0.05404000370142843,
+     "g_short": 0.0,
+     "norm_of_sum": 0.05404000370142843,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "wikitext/2a": {
+    "encoder": {
+     "g_main": 0.6381376664153793,
+     "g_short": 0.004796832533975895,
+     "norm_of_sum": 0.6385418455794718,
+     "cos": 0.08052781620375624,
+     "proj_short_on_main": 0.0003862784486562092
+    },
+    "core_attn": {
+     "g_main": 0.025324921667198477,
+     "g_short": 0.009964621061902972,
+     "norm_of_sum": 0.02336939641282607,
+     "cos": -0.38540546500841305,
+     "proj_short_on_main": -0.0038404194139953418
+    },
+    "core_own_ffn": {
+     "g_main": 0.009782055718467825,
+     "g_short": 0.004260570253610468,
+     "norm_of_sum": 0.009187667171195705,
+     "cos": -0.35304543466663807,
+     "proj_short_on_main": -0.0015041748771136558
+    },
+    "core_reads_writes": {
+     "g_main": 0.004230288024956027,
+     "g_short": 0.0015828564394758924,
+     "norm_of_sum": 0.00293300336342937,
+     "cos": -0.8810013938673904,
+     "proj_short_on_main": -0.0013944987294702358
+    },
+    "core_shared": {
+     "g_main": 0.02615343104811298,
+     "g_short": 0.01144201677097906,
+     "norm_of_sum": 0.024149492272864188,
+     "cos": -0.3871767378835286,
+     "proj_short_on_main": -0.004430082728196297
+    },
+    "core_table": {
+     "g_main": 0.0011738717472133643,
+     "g_short": 0.0005860734606774517,
+     "norm_of_sum": 0.0011899286526534433,
+     "cos": -0.22204785601982746,
+     "proj_short_on_main": -0.00013013635541354879
+    },
+    "ncp_head": {
+     "g_main": 0.043048298319831146,
+     "g_short": 0.020385647002069303,
+     "norm_of_sum": 0.06330964680819154,
+     "cos": 0.9910240285361688,
+     "proj_short_on_main": 0.02020266601630699
+    },
+    "dec_plan": {
+     "g_main": 0.05404000369885985,
+     "g_short": 0.0,
+     "norm_of_sum": 0.05404000369885985,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "wikitext/2b": {
+    "encoder": {
+     "g_main": 0.6381376675423128,
+     "g_short": 0.004938451922124019,
+     "norm_of_sum": 0.6385969123818035,
+     "cos": 0.08915772133665557,
+     "proj_short_on_main": 0.0004403011203072043
+    },
+    "core_attn": {
+     "g_main": 0.025324921667198477,
+     "g_short": 0.010035400898487862,
+     "norm_of_sum": 0.02339965681394948,
+     "cos": -0.3826878789453935,
+     "proj_short_on_main": -0.003840426284209016
+    },
+    "core_own_ffn": {
+     "g_main": 0.009782055718467825,
+     "g_short": 0.004267067466104761,
+     "norm_of_sum": 0.009229483896861623,
+     "cos": -0.3439462148591553,
+     "proj_short_on_main": -0.0014676417035153794
+    },
+    "core_reads_writes": {
+     "g_main": 0.004230288024297609,
+     "g_short": 0.0015041161412835072,
+     "norm_of_sum": 0.0029742855401562545,
+     "cos": -0.8888577790381712,
+     "proj_short_on_main": -0.0013369453327567223
+    },
+    "core_shared": {
+     "g_main": 0.02615343104811298,
+     "g_short": 0.011492132164444837,
+     "norm_of_sum": 0.024178704700298953,
+     "cos": -0.385051750204721,
+     "proj_short_on_main": -0.004425065603503453
+    },
+    "core_table": {
+     "g_main": 0.0011738717472133643,
+     "g_short": 0.0005902205179659037,
+     "norm_of_sum": 0.0012389784994964184,
+     "cos": -0.13803081209147783,
+     "proj_short_on_main": -8.146861740788637e-05
+    },
+    "ncp_head": {
+     "g_main": 0.043048298319831146,
+     "g_short": 0.02038576637768773,
+     "norm_of_sum": 0.06331041937091504,
+     "cos": 0.9910711866026657,
+     "proj_short_on_main": 0.020203745673739705
+    },
+    "dec_plan": {
+     "g_main": 0.054040003699914685,
+     "g_short": 0.0,
+     "norm_of_sum": 0.054040003699914685,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "probes/1": {
+    "encoder": {
+     "g_main": 0.8490351013707883,
+     "g_short": 0.009615409123303355,
+     "norm_of_sum": 0.8495343062550785,
+     "cos": 0.04626988744262418,
+     "proj_short_on_main": 0.00044490389785002796
+    },
+    "core_attn": {
+     "g_main": 0.020549045802713994,
+     "g_short": 0.01993863925608569,
+     "norm_of_sum": 0.02672218413734963,
+     "cos": -0.12903628184528812,
+     "proj_short_on_main": -0.002572807874659799
+    },
+    "core_own_ffn": {
+     "g_main": 0.008260326666239734,
+     "g_short": 0.0086543895286332,
+     "norm_of_sum": 0.011806701369629457,
+     "cos": -0.02611104728437454,
+     "proj_short_on_main": -0.00022597517419953737
+    },
+    "core_reads_writes": {
+     "g_main": 0.0026823174510031797,
+     "g_short": 0.0035793934372737018,
+     "norm_of_sum": 0.004936869452931687,
+     "cos": 0.22735986429761398,
+     "proj_short_on_main": 0.0008138104061663189
+    },
+    "core_shared": {
+     "g_main": 0.023301978498385244,
+     "g_short": 0.02260632840255434,
+     "norm_of_sum": 0.03245545640624068,
+     "cos": -0.0006375006820219764,
+     "proj_short_on_main": -1.4411549774641168e-05
+    },
+    "core_table": {
+     "g_main": 0.0009865084708817102,
+     "g_short": 0.0016055846831327472,
+     "norm_of_sum": 0.0018844365571257255,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.05746026225704455,
+     "g_short": 0.027760541832599493,
+     "norm_of_sum": 0.08514131812412479,
+     "cos": 0.9957553883912797,
+     "proj_short_on_main": 0.027642709114472475
+    },
+    "dec_plan": {
+     "g_main": 0.050450664132685466,
+     "g_short": 0.0,
+     "norm_of_sum": 0.050450664132685466,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "probes/2a": {
+    "encoder": {
+     "g_main": 0.8490351013707883,
+     "g_short": 0.006862136119261483,
+     "norm_of_sum": 0.8497552893671878,
+     "cos": 0.10095436641481478,
+     "proj_short_on_main": 0.000692762604172259
+    },
+    "core_attn": {
+     "g_main": 0.020549045802713994,
+     "g_short": 0.01252537031455352,
+     "norm_of_sum": 0.023166389247645736,
+     "cos": -0.0824964387460013,
+     "proj_short_on_main": -0.0010332984449255473
+    },
+    "core_own_ffn": {
+     "g_main": 0.008260326666239734,
+     "g_short": 0.005237162312488835,
+     "norm_of_sum": 0.009947541119344653,
+     "cos": 0.03805660529688354,
+     "proj_short_on_main": 0.00019930861900210146
+    },
+    "core_reads_writes": {
+     "g_main": 0.0026823174510031797,
+     "g_short": 0.002053496668899104,
+     "norm_of_sum": 0.003584996576850105,
+     "cos": 0.13076352517275086,
+     "proj_short_on_main": 0.000268522463355748
+    },
+    "core_shared": {
+     "g_main": 0.023301978498385244,
+     "g_short": 0.014432780531519557,
+     "norm_of_sum": 0.027980636322710195,
+     "cos": 0.04702273645600472,
+     "proj_short_on_main": 0.0006786688352609998
+    },
+    "core_table": {
+     "g_main": 0.0009865084708817102,
+     "g_short": 0.0007362040453425369,
+     "norm_of_sum": 0.0011634236983646714,
+     "cos": -0.11128114731762476,
+     "proj_short_on_main": -8.192563082559414e-05
+    },
+    "ncp_head": {
+     "g_main": 0.05746026225704455,
+     "g_short": 0.027715281124205376,
+     "norm_of_sum": 0.08513106012314628,
+     "cos": 0.9976214560038804,
+     "proj_short_on_main": 0.027649359108686627
+    },
+    "dec_plan": {
+     "g_main": 0.05045066412925905,
+     "g_short": 0.0,
+     "norm_of_sum": 0.05045066412925905,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "probes/2b": {
+    "encoder": {
+     "g_main": 0.8490351016969382,
+     "g_short": 0.007056773310688459,
+     "norm_of_sum": 0.8497896850442535,
+     "cos": 0.1028221219705592,
+     "proj_short_on_main": 0.0007255924060701955
+    },
+    "core_attn": {
+     "g_main": 0.020549045802713994,
+     "g_short": 0.012690984820099992,
+     "norm_of_sum": 0.02320154791768425,
+     "cos": -0.08630116699606402,
+     "proj_short_on_main": -0.0010952468003039629
+    },
+    "core_own_ffn": {
+     "g_main": 0.008260326666239734,
+     "g_short": 0.005277537813109772,
+     "norm_of_sum": 0.00993625129328651,
+     "cos": 0.030321563310638067,
+     "proj_short_on_main": 0.0001600231969244943
+    },
+    "core_reads_writes": {
+     "g_main": 0.0026823174509190296,
+     "g_short": 0.00197114333963198,
+     "norm_of_sum": 0.0035338789191290965,
+     "cos": 0.1331573113056805,
+     "proj_short_on_main": 0.0002624721473034943
+    },
+    "core_shared": {
+     "g_main": 0.023301978498385244,
+     "g_short": 0.014585464304340785,
+     "norm_of_sum": 0.02799788639265812,
+     "cos": 0.041432984658543906,
+     "proj_short_on_main": 0.0006043193187594914
+    },
+    "core_table": {
+     "g_main": 0.0009865084708817102,
+     "g_short": 0.0007481182577625762,
+     "norm_of_sum": 0.0012455032923045467,
+     "cos": 0.012464727116070462,
+     "proj_short_on_main": 9.325089933560576e-06
+    },
+    "ncp_head": {
+     "g_main": 0.05746026225704455,
+     "g_short": 0.027717324075049097,
+     "norm_of_sum": 0.08513345049536981,
+     "cos": 0.9976401453304272,
+     "proj_short_on_main": 0.027651915218402528
+    },
+    "dec_plan": {
+     "g_main": 0.05045066413288589,
+     "g_short": 0.0,
+     "norm_of_sum": 0.05045066413288589,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "synthetic/1": {
+    "encoder": {
+     "g_main": 1.4618570525236234,
+     "g_short": 0.011511646985696894,
+     "norm_of_sum": 1.4626785100367652,
+     "cos": 0.06744152970957512,
+     "proj_short_on_main": 0.000776363082192018
+    },
+    "core_attn": {
+     "g_main": 0.040926931518622936,
+     "g_short": 0.0190348275414512,
+     "norm_of_sum": 0.04966511056575074,
+     "cos": 0.2755227149458856,
+     "proj_short_on_main": 0.005244527362747351
+    },
+    "core_own_ffn": {
+     "g_main": 0.016083131264798673,
+     "g_short": 0.008157821998540475,
+     "norm_of_sum": 0.020003612864292735,
+     "cos": 0.2855390984785195,
+     "proj_short_on_main": 0.0023293771390114812
+    },
+    "core_reads_writes": {
+     "g_main": 0.003621195536973084,
+     "g_short": 0.0052670006412344665,
+     "norm_of_sum": 0.006439787071359543,
+     "cos": 0.016161847896192738,
+     "proj_short_on_main": 8.512446323278107e-05
+    },
+    "core_shared": {
+     "g_main": 0.049048218223652844,
+     "g_short": 0.0241270358042537,
+     "norm_of_sum": 0.06064961639566527,
+     "cos": 0.2917615916874889,
+     "proj_short_on_main": 0.007039342368950092
+    },
+    "core_table": {
+     "g_main": 0.0020537898989955133,
+     "g_short": 0.0016428570211369396,
+     "norm_of_sum": 0.0026300251217649885,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.058249502839407066,
+     "g_short": 0.028586594307985092,
+     "norm_of_sum": 0.08674580870350818,
+     "cos": 0.9952939993431581,
+     "proj_short_on_main": 0.02845206577639484
+    },
+    "dec_plan": {
+     "g_main": 0.05331203703757406,
+     "g_short": 0.0,
+     "norm_of_sum": 0.05331203703757406,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "synthetic/2a": {
+    "encoder": {
+     "g_main": 1.4618570525236234,
+     "g_short": 0.008386636754378243,
+     "norm_of_sum": 1.462451202800365,
+     "cos": 0.06799078990924312,
+     "proj_short_on_main": 0.0005702140576120678
+    },
+    "core_attn": {
+     "g_main": 0.040926931518622936,
+     "g_short": 0.011774461450883227,
+     "norm_of_sum": 0.04801817133621508,
+     "cos": 0.5105838266593885,
+     "proj_short_on_main": 0.006011849584445414
+    },
+    "core_own_ffn": {
+     "g_main": 0.016083131264798673,
+     "g_short": 0.0049108377508141465,
+     "norm_of_sum": 0.019045887190332598,
+     "cos": 0.5062086068574576,
+     "proj_short_on_main": 0.0024859083363426397
+    },
+    "core_reads_writes": {
+     "g_main": 0.003621195536973084,
+     "g_short": 0.0024275913953330074,
+     "norm_of_sum": 0.0046639057031482726,
+     "cos": 0.15617262243295144,
+     "proj_short_on_main": 0.00037912331440482345
+    },
+    "core_shared": {
+     "g_main": 0.049048218223652844,
+     "g_short": 0.015301141102713293,
+     "norm_of_sum": 0.05823454901634738,
+     "cos": 0.5006105056516419,
+     "proj_short_on_main": 0.007659911984476422
+    },
+    "core_table": {
+     "g_main": 0.0020537898989955133,
+     "g_short": 0.0007397801378636562,
+     "norm_of_sum": 0.0023489303693637674,
+     "cos": 0.24752190277345315,
+     "proj_short_on_main": 0.0001831117873580197
+    },
+    "ncp_head": {
+     "g_main": 0.058249502839407066,
+     "g_short": 0.028554062571769713,
+     "norm_of_sum": 0.08675216347545704,
+     "cos": 0.9973181881683059,
+     "proj_short_on_main": 0.028477485948921806
+    },
+    "dec_plan": {
+     "g_main": 0.05331203703035191,
+     "g_short": 0.0,
+     "norm_of_sum": 0.05331203703035191,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "synthetic/2b": {
+    "encoder": {
+     "g_main": 1.4618570537175786,
+     "g_short": 0.008479055840385453,
+     "norm_of_sum": 1.4624636527127581,
+     "cos": 0.0686556112284748,
+     "proj_short_on_main": 0.0005821347613620324
+    },
+    "core_attn": {
+     "g_main": 0.040926931518622936,
+     "g_short": 0.011797393892914992,
+     "norm_of_sum": 0.04795907989806241,
+     "cos": 0.5031584402068254,
+     "proj_short_on_main": 0.005935958309664635
+    },
+    "core_own_ffn": {
+     "g_main": 0.016083131264798673,
+     "g_short": 0.004909075911344618,
+     "norm_of_sum": 0.019026824051523363,
+     "cos": 0.5019035530231707,
+     "proj_short_on_main": 0.002463882641964324
+    },
+    "core_reads_writes": {
+     "g_main": 0.0036211955326181755,
+     "g_short": 0.002388175682555949,
+     "norm_of_sum": 0.004630697394078758,
+     "cos": 0.151879200588946,
+     "proj_short_on_main": 0.000362714213532558
+    },
+    "core_shared": {
+     "g_main": 0.049048218223652844,
+     "g_short": 0.015326968698402863,
+     "norm_of_sum": 0.058169531605065675,
+     "cos": 0.494207078845165,
+     "proj_short_on_main": 0.00757469642798896
+    },
+    "core_table": {
+     "g_main": 0.0020537898989955133,
+     "g_short": 0.0007383298118255524,
+     "norm_of_sum": 0.0022914830606920915,
+     "cos": 0.16081476522229496,
+     "proj_short_on_main": 0.00011873433534534742
+    },
+    "ncp_head": {
+     "g_main": 0.058249502839407066,
+     "g_short": 0.028552992142693225,
+     "norm_of_sum": 0.0867511464796635,
+     "cos": 0.9973209077507723,
+     "proj_short_on_main": 0.028476496042751476
+    },
+    "dec_plan": {
+     "g_main": 0.05331203703269817,
+     "g_short": 0.0,
+     "norm_of_sum": 0.05331203703269817,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   }
+  },
+  "summary": {
+   "encoder": {
+    "cos_median": 0.07513687847278089,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.008196898694039102
+   },
+   "core_attn": {
+    "cos_median": -0.07214092443719188,
+    "cos_frac_negative": 0.5833333333333334,
+    "short_over_main_median": 0.5072084076129999
+   },
+   "core_own_ffn": {
+    "cos_median": 0.0341890843037608,
+    "cos_frac_negative": 0.4166666666666667,
+    "short_over_main_median": 0.5406938339188205
+   },
+   "core_reads_writes": {
+    "cos_median": 0.14251825594731327,
+    "cos_frac_negative": 0.25,
+    "short_over_main_median": 0.7026248751125975
+   },
+   "core_shared": {
+    "cos_median": 0.04637388836215289,
+    "cos_frac_negative": 0.3333333333333333,
+    "short_over_main_median": 0.5168180570566401
+   },
+   "core_table": {
+    "cos_median": 0.0,
+    "cos_frac_negative": 0.3333333333333333,
+    "short_over_main_median": 0.6993581804467808
+   },
+   "ncp_head": {
+    "cos_median": 0.9964974665098257,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.48569501959314243
+   },
+   "dec_plan": {
+    "cos_median": 0.0,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.0
+   }
+  }
+ }
+}

@@ -1,0 +1,3 @@
+PASS P5/P1 (trained weights ../runs/main/ckpt_last.pt): causality - editing token 601 changes nothing before it (first change at t=601)
+PASS P5/P2 (trained weights ../runs/main/ckpt_last.pt): core OFF reach exactly 70 (bit-identical from t=672); core ON the edit reaches the row end (t=1023); plan first changes at t=603 = 4*floor(p/4)+3
+PASS P5/P3 (trained weights ../runs/main/ckpt_last.pt): two packed documents - editing document 0 (t=509) leaves document 1's logits, concepts and core states bit-identical

@@ -1,0 +1,29 @@
+2026-09-29 22:09:51 codebook k-means++ init from 985 complete chunks (2 micro-batches)
+2026-09-29 22:09:51 start: step 0/7600 (cosine over 7600) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 22:09:51 config: step 0, budget 0.02 h, milestone 0.006 h, micro_bs 2 x accum 2 x 1024, lr 0.0006 (scale 1.0), warmup 2, shortcut (('1', 0.5), ('2a', 0.25), ('2b', 0.25)), lam ncp/s/c 0.1/0.05/0.1, eval R 3, compile none
+2026-09-29 22:09:54 step 2 loss 15.1334 ntp 8.9856 ncp 2.708 ncp_s 2.707 scons 0.2871 vq 5.7130 gn 0.77 lr 5.99e-04 ang23 15.12 rho3 0.930 2624 tok/s
+2026-09-29 22:09:58 step 4 loss 15.2479 ntp 8.9235 ncp 2.701 ncp_s 2.704 scons 0.1564 vq 5.9034 gn 0.69 lr 5.94e-04 ang23 8.57 rho3 0.961 2423 tok/s
+2026-09-29 22:10:01 step 6 loss 15.0072 ntp 8.8547 ncp 2.713 ncp_s 2.713 scons 0.0291 vq 5.7426 gn 0.77 lr 5.83e-04 ang23 4.55 rho3 0.983 2468 tok/s
+2026-09-29 22:10:05 step 8 loss 14.9487 ntp 8.7738 ncp 2.720 ncp_s 2.719 scons 0.0113 vq 5.7658 gn 0.86 lr 5.66e-04 ang23 3.14 rho3 0.989 2415 tok/s
+2026-09-29 22:10:09 step 10 loss 15.0598 ntp 8.7741 ncp 2.701 ncp_s 2.700 scons 0.0162 vq 5.8791 gn 0.69 lr 5.40e-04 ang23 2.05 rho3 0.993 1964 tok/s
+2026-09-29 22:10:12 step 12 loss 14.7626 ntp 8.6436 ncp 2.684 ncp_s 2.684 scons 0.0115 vq 5.7152 gn 0.88 lr 5.10e-04 ang23 1.94 rho3 0.994 2448 tok/s
+2026-09-29 22:10:21 EVAL[milestone] step 13 val_lang 8.7039 (ts 8.643 wk 8.765) probes recall1=0.000 carry3=0.000 multi4=0.000 hop=0.000 bind=0.000 swap_recall1=0.000 codes_min=1.00 VE=-0.224 ncp=2.650 ncp_M1=2.651 angle23=2.15 rho3=0.993 G_share=0.804 (7s)
+2026-09-29 22:10:21 STOP (milestone) at step 13, 0.01 h
+2026-09-29 22:11:19 resumed from ../runs/tests/launch/ckpt_last.pt: step 13, elapsed 0.01 h, cursor 52, lr_scale 1.0, micro_bs 2 x accum 2, milestone_done True
+2026-09-29 22:11:19 start: step 13/7600 (cosine over 7600) [steps projected at the current speed; the schedule itself runs on training time]
+2026-09-29 22:11:19 config: step 13, budget 0.02 h, milestone 0.006 h, micro_bs 2 x accum 2 x 1024, lr 0.0006 (scale 1.0), warmup 2, shortcut (('1', 0.5), ('2a', 0.25), ('2b', 0.25)), lam ncp/s/c 0.1/0.05/0.1, eval R 3, compile none
+2026-09-29 22:11:20 step 14 loss 14.5860 ntp 8.5416 ncp 2.642 ncp_s 2.643 scons 0.0123 vq 5.6469 gn 0.94 lr 4.03e-04 ang23 1.67 rho3 0.995 2923 tok/s
+2026-09-29 22:11:24 step 16 loss 14.5320 ntp 8.5067 ncp 2.628 ncp_s 2.629 scons 0.0054 vq 5.6305 gn 0.95 lr 3.66e-04 ang23 1.26 rho3 0.997 2266 tok/s
+2026-09-29 22:11:28 step 18 loss 14.4114 ntp 8.4354 ncp 2.585 ncp_s 2.586 scons 0.0032 vq 5.5878 gn 1.05 lr 3.19e-04 ang23 1.19 rho3 0.997 2243 tok/s
+2026-09-29 22:11:31 step 20 loss 14.3441 ntp 8.4180 ncp 2.562 ncp_s 2.564 scons 0.0036 vq 5.5413 gn 1.03 lr 2.81e-04 ang23 1.36 rho3 0.996 2300 tok/s
+2026-09-29 22:11:35 step 22 loss 14.3647 ntp 8.4219 ncp 2.550 ncp_s 2.552 scons 0.0043 vq 5.5598 gn 0.96 lr 2.37e-04 ang23 1.06 rho3 0.998 2266 tok/s
+2026-09-29 22:11:38 step 24 loss 14.2639 ntp 8.3718 ncp 2.523 ncp_s 2.526 scons 0.0047 vq 5.5130 gn 1.03 lr 2.01e-04 ang23 0.99 rho3 0.998 2571 tok/s
+2026-09-29 22:11:41 step 26 loss 14.4134 ntp 8.4567 ncp 2.527 ncp_s 2.528 scons 0.0005 vq 5.5775 gn 0.90 lr 1.68e-04 ang23 1.12 rho3 0.998 2438 tok/s
+2026-09-29 22:11:45 step 28 loss 14.1446 ntp 8.3192 ncp 2.488 ncp_s 2.489 scons 0.0024 vq 5.4518 gn 1.07 lr 1.39e-04 ang23 1.14 rho3 0.998 2553 tok/s
+2026-09-29 22:11:48 step 30 loss 14.1993 ntp 8.3446 ncp 2.490 ncp_s 2.493 scons 0.0058 vq 5.4804 gn 1.01 lr 1.13e-04 ang23 0.99 rho3 0.998 2539 tok/s
+2026-09-29 22:11:51 step 32 loss 14.0440 ntp 8.2733 ncp 2.463 ncp_s 2.465 scons 0.0031 vq 5.4009 gn 1.10 lr 9.31e-05 ang23 1.06 rho3 0.998 2551 tok/s
+2026-09-29 22:11:54 step 34 loss 13.9628 ntp 8.2349 ncp 2.441 ncp_s 2.444 scons 0.0040 vq 5.3612 gn 1.17 lr 7.74e-05 ang23 1.18 rho3 0.997 2592 tok/s
+2026-09-29 22:11:58 step 36 loss 14.1571 ntp 8.3348 ncp 2.462 ncp_s 2.465 scons 0.0058 vq 5.4523 gn 1.00 lr 6.65e-05 ang23 0.96 rho3 0.998 2638 tok/s
+2026-09-29 22:12:01 step 38 loss 13.9055 ntp 8.1915 ncp 2.430 ncp_s 2.431 scons 0.0031 vq 5.3492 gn 1.23 lr 6.09e-05 ang23 1.05 rho3 0.998 2504 tok/s
+2026-09-29 22:12:08 EVAL[final] step 39 val_lang 8.4334 (ts 8.328 wk 8.539) probes recall1=0.000 carry3=0.000 multi4=0.000 hop=0.000 bind=0.000 swap_recall1=0.000 codes_min=0.88 VE=-0.965 ncp=2.433 ncp_M1=2.435 angle23=1.85 rho3=0.995 G_share=0.824 (6s)
+2026-09-29 22:12:08 STOP (time_budget) at step 39, 0.02 h

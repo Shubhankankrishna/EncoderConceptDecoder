@@ -1,0 +1,28 @@
+lang tinystories: intact=5.1317 core_off=5.3424 plan_swap=5.1338 u_off=5.5323 c_off=5.1357 shared_ffn_off=5.1289 table_off=5.1317 engram_off=5.1373 engram_read2_off=5.1339 F_off=5.1385 R1=5.1304 R2a=5.1312 R2b=5.1312 R3=5.1317
+lang wikitext: intact=6.7439 core_off=6.8919 plan_swap=6.7464 u_off=7.0309 c_off=6.7409 shared_ffn_off=6.7436 table_off=6.7438 engram_off=6.7446 engram_read2_off=6.7441 F_off=6.7415 R1=6.7444 R2a=6.7439 R2b=6.7438 R3=6.7439
+part lang done in 6s
+trunc tinystories: {'gain_beyond_70': 0.005825519561767578, 'swap_cost': 0.015825271606445312, 'rows': 2, 'rows_ctx_ge_512': 0, 'gain_beyond_70_ctx512': None, 'swap_cost_ctx512': None, 'curve': {'r72': 4.793027400970459, 'r128': 4.795528411865234, 'r256': 4.787201881408691, 'r512': 4.787201881408691, 'r1024': 4.787201881408691}, 'curve_ctx512': None}
+trunc wikitext: {'gain_beyond_70': -0.008749008178710938, 'swap_cost': 0.012570858001708984, 'rows': 2, 'rows_ctx_ge_512': 1, 'gain_beyond_70_ctx512': -0.004152774810791016, 'swap_cost_ctx512': 0.018852710723876953, 'curve': {'r72': 6.107460021972656, 'r128': 6.118006706237793, 'r256': 6.112209320068359, 'r512': 6.111929416656494, 'r1024': 6.116209030151367}, 'curve_ctx512': {'r72': 6.074151992797852, 'r128': 6.070323467254639, 'r256': 6.074598789215088, 'r512': 6.069744110107422, 'r1024': 6.078304767608643}}
+part trunc done in 2s
+items val: intact probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000 | synthetic macro 0.000
+items val: plan_swap probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000
+part items done in 14s
+probe G-E1: {'pos0': 0.3333, 'pos1': 0.3725, 'pos2': 0.4167, 'pos3': 0.3873}
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/run_v3_19M/code/final_eval.py:124: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/native/ReduceOps.cpp:1857.)
+  mu, sd = X[:n].mean(0), X[:n].std(0) + 1e-6
+probe u->answer lr_recall1: {'tok0': 1.0}
+probe u->answer lr_carry3: {'tok0': 0.0, 'tok1': 0.0, 'tok2': 0.0}
+probe u->answer lr_multi4: {'tok0': 0.0, 'tok1': 0.0, 'tok2': 0.0}
+probe u->answer lr_hop: {'tok0': 0.0, 'tok1': 0.0}
+probe u->answer lr_bind: {'tok0': 1.0, 'tok1': 0.0}
+probe lr_hop bridge by pass: {'pass1': 1.0, 'pass2': 1.0, 'pass3': 1.0}
+part probes done in 10s
+health: {'codes_used_frac_min': 0.7734375, 'codes_used_frac_mean': 0.873046875, 'perplexity_mean': 45.44139099121094, 'var_explained': 0.5031091843440152, 'ncp_ce': 4.016448352438801, 'ncp_ce_M1': 4.0152976356983014, 'code_entropy': 3.803422451019287, 'n_concepts': 14787, 'ncp_pairs': 13685}
+loop dynamics M3: {'sched': '3', 'state_norm': [22.56, 42.698, 62.281], 'step': [22.56, 20.182, 19.606], 'consecutive_step_angle_deg': [5.096, 0.686], 'turn_deg': [2.4, 1.004], 'rho': 0.9989286661148071, 'rel_step': [0.895, 0.869], 'grad': [0.0, 0.0, 0.0], 'grad_ratio_S1_over_SM': 1.078673318489434}
+part health done in 11s
+audit summary: {'encoder': {'cos_median': 0.029, 'cos_frac_negative': 0.333, 'short_over_main_median': 0.006}, 'core_attn': {'cos_median': 0.124, 'cos_frac_negative': 0.417, 'short_over_main_median': 0.03}, 'core_own_ffn': {'cos_median': 0.097, 'cos_frac_negative': 0.333, 'short_over_main_median': 0.032}, 'core_reads_writes': {'cos_median': 0.095, 'cos_frac_negative': 0.333, 'short_over_main_median': 0.045}, 'core_shared': {'cos_median': 0.093, 'cos_frac_negative': 0.333, 'short_over_main_median': 0.032}, 'core_table': {'cos_median': 0.0, 'cos_frac_negative': 0.25, 'short_over_main_median': 0.04}, 'ncp_head': {'cos_median': 0.727, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.393}, 'dec_plan': {'cos_median': 0.0, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.0}}
+part audit done in 37s
+gen tinystories: greedy[0] = ' and said, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+gen wikitext: greedy[0] = ' 100, and 1000, 1000, "lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll'
+part gen done in 43s
+ALL DONE in 123s -> ../runs/g3/fe_smoke.json

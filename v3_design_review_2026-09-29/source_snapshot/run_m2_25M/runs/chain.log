@@ -1,0 +1,31 @@
+2026-09-27 04:21:46 S1 finished at step 265; S2 start
+2026-09-27 06:06:37 S3 start
+2026-09-27 07:46:21 main total_steps 3971 computed; waiting up to 20 min for ../runs/GO_MAIN
+2026-09-27 07:49:22 main start, total_steps 3600
+2026-09-27 10:57:05 main start, total_steps 4050
+2026-09-27 11:59:28 swap: pause-aware trainer launched (pause.sh now live)
+2026-09-27 11:59:29 main start, total_steps 4050
+2026-09-27 12:03:41 pause requested
+2026-09-27 12:03:52 main paused (rc 4); run code/resume.sh to continue
+2026-09-27 12:47:46 resume requested
+2026-09-27 12:47:46 main start, total_steps 4050
+2026-09-27 12:51:41 battery guard started (pause at <= 15% on battery)
+2026-09-27 12:51:41 battery guard: 14% on battery -> safe pause
+2026-09-27 12:51:45 battery guard started (pause at <= 15% on battery)
+2026-09-27 12:51:49 battery guard started (pause at <= 15% on battery)
+2026-09-27 12:52:02 (the 12:51:41-12:51:49 battery guard lines above were DRY=1 tests with fake readings; no pause happened)
+2026-09-27 12:52:02 battery guard started (pause at <= 15% on battery)
+2026-09-27 22:12:11 cont armed: waits for the main chain to finish (kill switch: touch ../runs/NO_CONT)
+2026-09-27 22:14:15 cont armed: waits for the main chain to finish (kill switch: touch ../runs/NO_CONT)
+2026-09-27 23:10:18 caffeinate -ims -w 17830 added: keeps the Mac from idle sleep in the gap between chain3 ending and the continuation starting (D-041)
+2026-09-28 06:32:21 main done; final evals
+2026-09-28 07:52:30 cont cancelled (NO_CONT)
+2026-09-28 07:52:56 cont armed: waits for the main chain to finish (kill switch: touch ../runs/NO_CONT)
+2026-09-28 07:53:00 continuation re-armed with the user's schedule: lr 6e-4, warm-up 300 from 0.1x, cosine to 0.1x (chain4 pid 87964, keep-awake re-added)
+wrote ../runs/main/figs/curves.png
+2026-09-28 09:25:50 chain done
+2026-09-28 09:25:58 cont start (RESUME=0): run_job2.sh ../runs/cont --init_from ../runs/cont/init_from_main.pt --micro_bs 2 --accum 16 --total_steps 4050 --warmup 300 --lr 6e-4 --warmup_start_frac 0.1 --lr_min_frac 0.1 --hours 24 --eval_every_min 60 --keep 3
+2026-09-28 09:25:58 battery guard 2 started for runs/cont (pause at <= 15% on battery)
+2026-09-28 10:00:47 battery guard 2 started for runs/cont (pause at <= 7% on battery)
+2026-09-28 19:04:41 pause requested
+2026-09-28 19:05:03 cont paused (rc 4); run code/resume.sh to continue

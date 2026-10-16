@@ -1,0 +1,2479 @@
+{
+ "ckpt": "../runs/tests/launch/ckpt_last.pt",
+ "step": 13,
+ "eval_R": "3",
+ "split": "val",
+ "time": "2026-09-29 22:10",
+ "lang": {
+  "tinystories": {
+   "intact": {
+    "nats": 8.642333019392293,
+    "bpb": 3.1132173700107724,
+    "tokens": 3036,
+    "delta_vs_intact": 0.0
+   },
+   "core_off": {
+    "nats": 8.865063251399869,
+    "bpb": 3.193451217231956,
+    "tokens": 3036,
+    "delta_vs_intact": 0.22273023200757613
+   },
+   "plan_swap": {
+    "nats": 8.642495779808959,
+    "bpb": 3.1132760010025633,
+    "tokens": 3036,
+    "delta_vs_intact": 0.00016276041666607455
+   },
+   "u_off": {
+    "nats": 8.778676712779975,
+    "bpb": 3.1623322969169103,
+    "tokens": 3036,
+    "delta_vs_intact": 0.1363436933876816
+   },
+   "c_off": {
+    "nats": 8.653012804677207,
+    "bpb": 3.117064536393088,
+    "tokens": 3036,
+    "delta_vs_intact": 0.01067978528491409
+   },
+   "shared_ffn_off": {
+    "nats": 8.642735738842227,
+    "bpb": 3.113362441160422,
+    "tokens": 3036,
+    "delta_vs_intact": 0.0004027194499336417
+   },
+   "table_off": {
+    "nats": 8.642348459115613,
+    "bpb": 3.1132229318439855,
+    "tokens": 3036,
+    "delta_vs_intact": 1.5439723320298526e-05
+   },
+   "engram_off": {
+    "nats": 8.642349102437418,
+    "bpb": 3.113223163587037,
+    "tokens": 3036,
+    "delta_vs_intact": 1.6083045125014905e-05
+   },
+   "engram_read2_off": {
+    "nats": 8.642340095932148,
+    "bpb": 3.1132199191843286,
+    "tokens": 3036,
+    "delta_vs_intact": 7.076539855432884e-06
+   },
+   "F_off": {
+    "nats": 8.64267333662714,
+    "bpb": 3.1133399620845177,
+    "tokens": 3036,
+    "delta_vs_intact": 0.00034031723484773124
+   },
+   "R1": {
+    "nats": 8.64267333662714,
+    "bpb": 3.1133399620845177,
+    "tokens": 3036,
+    "delta_vs_intact": 0.00034031723484773124
+   },
+   "R2a": {
+    "nats": 8.642318866312582,
+    "bpb": 3.1132122716636603,
+    "tokens": 3036,
+    "delta_vs_intact": -1.4153079710865768e-05
+   },
+   "R2b": {
+    "nats": 8.642262897315547,
+    "bpb": 3.113192110018262,
+    "tokens": 3036,
+    "delta_vs_intact": -7.012207674605975e-05
+   },
+   "R3": {
+    "nats": 8.642333019392293,
+    "bpb": 3.1132173700107724,
+    "tokens": 3036,
+    "delta_vs_intact": 0.0
+   }
+  },
+  "wikitext": {
+   "intact": {
+    "nats": 8.764600326264274,
+    "bpb": 3.31643318765366,
+    "tokens": 3065,
+    "delta_vs_intact": 0.0
+   },
+   "core_off": {
+    "nats": 8.941684721655792,
+    "bpb": 3.3834400726261697,
+    "tokens": 3065,
+    "delta_vs_intact": 0.17708439539151755
+   },
+   "plan_swap": {
+    "nats": 8.764463957993474,
+    "bpb": 3.3163815873248157,
+    "tokens": 3065,
+    "delta_vs_intact": -0.00013636827079999136
+   },
+   "u_off": {
+    "nats": 8.886778012846655,
+    "bpb": 3.3626639476985125,
+    "tokens": 3065,
+    "delta_vs_intact": 0.12217768658238093
+   },
+   "c_off": {
+    "nats": 8.777397914967374,
+    "bpb": 3.321275661504945,
+    "tokens": 3065,
+    "delta_vs_intact": 0.01279758870309955
+   },
+   "shared_ffn_off": {
+    "nats": 8.766366741435563,
+    "bpb": 3.3171015806983126,
+    "tokens": 3065,
+    "delta_vs_intact": 0.0017664151712892817
+   },
+   "table_off": {
+    "nats": 8.764670422104405,
+    "bpb": 3.3164597111871776,
+    "tokens": 3065,
+    "delta_vs_intact": 7.009584013140113e-05
+   },
+   "engram_off": {
+    "nats": 8.764618168841762,
+    "bpb": 3.3164399390985553,
+    "tokens": 3065,
+    "delta_vs_intact": 1.7842577488380584e-05
+   },
+   "engram_read2_off": {
+    "nats": 8.764607973083198,
+    "bpb": 3.316436081130044,
+    "tokens": 3065,
+    "delta_vs_intact": 7.646818923845444e-06
+   },
+   "F_off": {
+    "nats": 8.765033646003262,
+    "bpb": 3.316597151315407,
+    "tokens": 3065,
+    "delta_vs_intact": 0.00043331973898830256
+   },
+   "R1": {
+    "nats": 8.764898552202284,
+    "bpb": 3.316546033232627,
+    "tokens": 3065,
+    "delta_vs_intact": 0.0002982259380104324
+   },
+   "R2a": {
+    "nats": 8.764561454934746,
+    "bpb": 3.316418479148709,
+    "tokens": 3065,
+    "delta_vs_intact": -3.887132952762329e-05
+   },
+   "R2b": {
+    "nats": 8.76452385807504,
+    "bpb": 3.316404252889822,
+    "tokens": 3065,
+    "delta_vs_intact": -7.646818923312537e-05
+   },
+   "R3": {
+    "nats": 8.764600326264274,
+    "bpb": 3.31643318765366,
+    "tokens": 3065,
+    "delta_vs_intact": 0.0
+   }
+  }
+ },
+ "seconds": {
+  "lang": 11.292856216430664,
+  "items": 27.258639097213745,
+  "audit": 14.347166061401367
+ },
+ "items": {
+  "val": {
+   "intact": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "core_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0833
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "plan_swap": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0833
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "u_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0833
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "c_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "shared_ffn_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "table_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "engram_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "engram_read2_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "F_off": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "R1": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "R2a": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   },
+   "R2b": {
+    "lr_recall1": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "lr_carry3": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_multi4": {
+     "n": 3,
+     "exact": 0.0,
+     "by_offset": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "lr_hop": {
+     "n": 3,
+     "exact": 0.0,
+     "exact_h4": 0.0,
+     "exact_h2": 0.0
+    },
+    "lr_bind": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "pointer_chase": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_updates": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "relational": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "arith_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_build": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "kv_retrieval": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 3,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.0
+   }
+  }
+ },
+ "audit": {
+  "batches": {
+   "tinystories/1": {
+    "encoder": {
+     "g_main": 0.8082171620318828,
+     "g_short": 0.0189542835410989,
+     "norm_of_sum": 0.8078271305332617,
+     "cos": -0.032298504859547494,
+     "proj_short_on_main": -0.0006121950190614239
+    },
+    "core_attn": {
+     "g_main": 0.04408632723699396,
+     "g_short": 0.030183726561154377,
+     "norm_of_sum": 0.05627183565039181,
+     "cos": 0.11717904694791798,
+     "proj_short_on_main": 0.0035369003117726276
+    },
+    "core_own_ffn": {
+     "g_main": 0.017537807669331763,
+     "g_short": 0.012241078049588173,
+     "norm_of_sum": 0.022370569858271305,
+     "cos": 0.10020349110477952,
+     "proj_short_on_main": 0.0012265987554548202
+    },
+    "core_reads_writes": {
+     "g_main": 0.003998692053548675,
+     "g_short": 0.006974714177087275,
+     "norm_of_sum": 0.00934613185429824,
+     "cos": 0.4072108489803695,
+     "proj_short_on_main": 0.0028401792814471286
+    },
+    "core_shared": {
+     "g_main": 0.04009089446181406,
+     "g_short": 0.02481998030301117,
+     "norm_of_sum": 0.05050412330494431,
+     "cos": 0.16449098815525334,
+     "proj_short_on_main": 0.004082663086036232
+    },
+    "core_table": {
+     "g_main": 0.0021052569590465776,
+     "g_short": 0.0024306867391643457,
+     "norm_of_sum": 0.0032156406651806507,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.041174193270226055,
+     "g_short": 0.019841941808515846,
+     "norm_of_sum": 0.06068514651102082,
+     "cos": 0.9753470508911332,
+     "proj_short_on_main": 0.01935277942688941
+    },
+    "dec_plan": {
+     "g_main": 0.09795949378058805,
+     "g_short": 0.0,
+     "norm_of_sum": 0.09795949378058805,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "tinystories/2a": {
+    "encoder": {
+     "g_main": 0.8082171620318828,
+     "g_short": 0.007093027904042267,
+     "norm_of_sum": 0.80800883332544,
+     "cos": -0.03375519834568103,
+     "proj_short_on_main": -0.00023942656377239695
+    },
+    "core_attn": {
+     "g_main": 0.04408632723699396,
+     "g_short": 0.015598239036087147,
+     "norm_of_sum": 0.04996334148860529,
+     "cos": 0.22498189588720297,
+     "proj_short_on_main": 0.003509321390840664
+    },
+    "core_own_ffn": {
+     "g_main": 0.017537807669331763,
+     "g_short": 0.006037176236499999,
+     "norm_of_sum": 0.019998927730505916,
+     "cos": 0.2641458760021335,
+     "proj_short_on_main": 0.0015946952055695557
+    },
+    "core_reads_writes": {
+     "g_main": 0.003998692053548675,
+     "g_short": 0.0028651513364959446,
+     "norm_of_sum": 0.00591659031576935,
+     "cos": 0.47165683454999646,
+     "proj_short_on_main": 0.001351368209878369
+    },
+    "core_shared": {
+     "g_main": 0.04009089446181406,
+     "g_short": 0.014061583195536543,
+     "norm_of_sum": 0.04593837679833091,
+     "cos": 0.27080368430606944,
+     "proj_short_on_main": 0.0038079285365276096
+    },
+    "core_table": {
+     "g_main": 0.0021052569590465776,
+     "g_short": 0.0008568699651139793,
+     "norm_of_sum": 0.002357168292513523,
+     "cos": 0.10807211021735619,
+     "proj_short_on_main": 9.260374531174012e-05
+    },
+    "ncp_head": {
+     "g_main": 0.041174193270226055,
+     "g_short": 0.01981205240103919,
+     "norm_of_sum": 0.060709768486214274,
+     "cos": 0.9793770356555056,
+     "proj_short_on_main": 0.019403469150781304
+    },
+    "dec_plan": {
+     "g_main": 0.09795949378044737,
+     "g_short": 0.0,
+     "norm_of_sum": 0.09795949378044737,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "tinystories/2b": {
+    "encoder": {
+     "g_main": 0.8082171637067095,
+     "g_short": 0.007012318613465286,
+     "norm_of_sum": 0.808113074124666,
+     "cos": -0.01918100237299063,
+     "proj_short_on_main": -0.00013450329996504402
+    },
+    "core_attn": {
+     "g_main": 0.04408632723699396,
+     "g_short": 0.01583174890791554,
+     "norm_of_sum": 0.049868399311070795,
+     "cos": 0.2096160177043594,
+     "proj_short_on_main": 0.0033185881593725966
+    },
+    "core_own_ffn": {
+     "g_main": 0.017537807669331763,
+     "g_short": 0.0060916619863707645,
+     "norm_of_sum": 0.019953741128162308,
+     "cos": 0.2502412296837904,
+     "proj_short_on_main": 0.0015243849862874217
+    },
+    "core_reads_writes": {
+     "g_main": 0.003998692049400255,
+     "g_short": 0.0027854033533580252,
+     "norm_of_sum": 0.00579875982176031,
+     "cos": 0.44342035881445635,
+     "proj_short_on_main": 0.0012351045543890053
+    },
+    "core_shared": {
+     "g_main": 0.04009089446181406,
+     "g_short": 0.014247600565515462,
+     "norm_of_sum": 0.04586226599506188,
+     "cos": 0.2565423570540033,
+     "proj_short_on_main": 0.0036551130314412873
+    },
+    "core_table": {
+     "g_main": 0.0021052569590465776,
+     "g_short": 0.0008666627364752389,
+     "norm_of_sum": 0.0023420799831573376,
+     "cos": 0.08279517045251342,
+     "proj_short_on_main": 7.175548899130912e-05
+    },
+    "ncp_head": {
+     "g_main": 0.041174193270226055,
+     "g_short": 0.019816674725636797,
+     "norm_of_sum": 0.06071471546740103,
+     "cos": 0.9794044377999614,
+     "proj_short_on_main": 0.01940853916872701
+    },
+    "dec_plan": {
+     "g_main": 0.09795949378107681,
+     "g_short": 0.0,
+     "norm_of_sum": 0.09795949378107681,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "wikitext/1": {
+    "encoder": {
+     "g_main": 0.6473922597485824,
+     "g_short": 0.04714045581941112,
+     "norm_of_sum": 0.6475005973976152,
+     "cos": -0.03410957375707064,
+     "proj_short_on_main": -0.0016079408547141334
+    },
+    "core_attn": {
+     "g_main": 0.047357495689133076,
+     "g_short": 0.031984609468810224,
+     "norm_of_sum": 0.05426187830652692,
+     "cos": -0.10609159186051957,
+     "proj_short_on_main": -0.0033932981335831245
+    },
+    "core_own_ffn": {
+     "g_main": 0.018244997035254017,
+     "g_short": 0.014020001516976624,
+     "norm_of_sum": 0.0219042166787932,
+     "cos": -0.09704191470677422,
+     "proj_short_on_main": -0.0013605277913992905
+    },
+    "core_reads_writes": {
+     "g_main": 0.004225170954767986,
+     "g_short": 0.007187911548237163,
+     "norm_of_sum": 0.008249766281018837,
+     "cos": -0.0240284964976446,
+     "proj_short_on_main": -0.00017271470746219584
+    },
+    "core_shared": {
+     "g_main": 0.038699189619425936,
+     "g_short": 0.025886722605975968,
+     "norm_of_sum": 0.04411327391396661,
+     "cos": -0.11068567308100319,
+     "proj_short_on_main": -0.0028652893155036705
+    },
+    "core_table": {
+     "g_main": 0.002556045371877628,
+     "g_short": 0.002600292093062663,
+     "norm_of_sum": 0.003646215423194474,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.028684221435991735,
+     "g_short": 0.013737539504478558,
+     "norm_of_sum": 0.041978326331443154,
+     "cos": 0.9525112798784046,
+     "proj_short_on_main": 0.013085161335791014
+    },
+    "dec_plan": {
+     "g_main": 0.09312590131451254,
+     "g_short": 0.0,
+     "norm_of_sum": 0.09312590131451254,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "wikitext/2a": {
+    "encoder": {
+     "g_main": 0.6473922597485824,
+     "g_short": 0.014272717610741179,
+     "norm_of_sum": 0.645382857656339,
+     "cos": -0.15159097794424586,
+     "proj_short_on_main": -0.002163615220534316
+    },
+    "core_attn": {
+     "g_main": 0.047357495689133076,
+     "g_short": 0.013146620232433246,
+     "norm_of_sum": 0.04743021751033393,
+     "cos": -0.13326604904090222,
+     "proj_short_on_main": -0.0017519981366175663
+    },
+    "core_own_ffn": {
+     "g_main": 0.018244997035254017,
+     "g_short": 0.00540212731991796,
+     "norm_of_sum": 0.01859296816128986,
+     "cos": -0.08301609679922203,
+     "proj_short_on_main": -0.0004484635245120312
+    },
+    "core_reads_writes": {
+     "g_main": 0.004225170954767986,
+     "g_short": 0.0026547567807851885,
+     "norm_of_sum": 0.005145956281055886,
+     "cos": 0.07047744050494865,
+     "proj_short_on_main": 0.00018710046307289716
+    },
+    "core_shared": {
+     "g_main": 0.038699189619425936,
+     "g_short": 0.011912744094705779,
+     "norm_of_sum": 0.03904765701661899,
+     "cos": -0.12453129893861958,
+     "proj_short_on_main": -0.0014835094960370806
+    },
+    "core_table": {
+     "g_main": 0.002556045371877628,
+     "g_short": 0.0007506714803306542,
+     "norm_of_sum": 0.002639886896521975,
+     "cos": -0.03332189286048438,
+     "proj_short_on_main": -2.5013794640999265e-05
+    },
+    "ncp_head": {
+     "g_main": 0.028684221435991735,
+     "g_short": 0.013702411659833248,
+     "norm_of_sum": 0.04198549854907058,
+     "cos": 0.9569454539289691,
+     "proj_short_on_main": 0.013112460545740726
+    },
+    "dec_plan": {
+     "g_main": 0.09312590130541164,
+     "g_short": 0.0,
+     "norm_of_sum": 0.09312590130541164,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "wikitext/2b": {
+    "encoder": {
+     "g_main": 0.6473922585056955,
+     "g_short": 0.014608976503201412,
+     "norm_of_sum": 0.6456285120414911,
+     "cos": -0.1318488062064838,
+     "proj_short_on_main": -0.0019261761118456783
+    },
+    "core_attn": {
+     "g_main": 0.047357495689133076,
+     "g_short": 0.013261584818209195,
+     "norm_of_sum": 0.047357769352241154,
+     "cos": -0.1399950536040928,
+     "proj_short_on_main": -0.0018565562775004194
+    },
+    "core_own_ffn": {
+     "g_main": 0.018244997035254017,
+     "g_short": 0.005420272975904038,
+     "norm_of_sum": 0.018590662094196953,
+     "cos": -0.08416461063306116,
+     "proj_short_on_main": -0.0004561951645418671
+    },
+    "core_reads_writes": {
+     "g_main": 0.004225170954968167,
+     "g_short": 0.0026121308302096994,
+     "norm_of_sum": 0.005061243976815109,
+     "cos": 0.04262567517730411,
+     "proj_short_on_main": 0.00011134384028914036
+    },
+    "core_shared": {
+     "g_main": 0.038699189619425936,
+     "g_short": 0.012015570940623938,
+     "norm_of_sum": 0.03901017995077464,
+     "cos": -0.1292569125669975,
+     "proj_short_on_main": -0.0015530956025147844
+    },
+    "core_table": {
+     "g_main": 0.002556045371877628,
+     "g_short": 0.0007529792658764206,
+     "norm_of_sum": 0.002648884426609358,
+     "cos": -0.02175903375287138,
+     "proj_short_on_main": -1.6384101261417346e-05
+    },
+    "ncp_head": {
+     "g_main": 0.028684221435991735,
+     "g_short": 0.013706146636404725,
+     "norm_of_sum": 0.04198963629276965,
+     "cos": 0.9569963921785775,
+     "proj_short_on_main": 0.013116732881709867
+    },
+    "dec_plan": {
+     "g_main": 0.09312590132089613,
+     "g_short": 0.0,
+     "norm_of_sum": 0.09312590132089613,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "probes/1": {
+    "encoder": {
+     "g_main": 0.7706799325914978,
+     "g_short": 0.01923595204880381,
+     "norm_of_sum": 0.7699834228173164,
+     "cos": -0.0486722456235024,
+     "proj_short_on_main": -0.0009362569829212932
+    },
+    "core_attn": {
+     "g_main": 0.04291589031941267,
+     "g_short": 0.03032192964080223,
+     "norm_of_sum": 0.05439448091753424,
+     "cos": 0.07591163363853089,
+     "proj_short_on_main": 0.0023017872141058893
+    },
+    "core_own_ffn": {
+     "g_main": 0.016724695217064288,
+     "g_short": 0.012556318593071358,
+     "norm_of_sum": 0.021305825708366023,
+     "cos": 0.03943236895798596,
+     "proj_short_on_main": 0.0004951253875160089
+    },
+    "core_reads_writes": {
+     "g_main": 0.004047523916172106,
+     "g_short": 0.007242897070379684,
+     "norm_of_sum": 0.009403475387019663,
+     "cos": 0.33400661284279826,
+     "proj_short_on_main": 0.0024191755176465445
+    },
+    "core_shared": {
+     "g_main": 0.04148502757435718,
+     "g_short": 0.0263680644851717,
+     "norm_of_sum": 0.051465859217439895,
+     "cos": 0.10625130383233033,
+     "proj_short_on_main": 0.0028016412310844577
+    },
+    "core_table": {
+     "g_main": 0.0020632322019486582,
+     "g_short": 0.002479197388216666,
+     "norm_of_sum": 0.003225421958271235,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.043016608840296906,
+     "g_short": 0.020355168023093784,
+     "norm_of_sum": 0.06306684539884261,
+     "cos": 0.9779838620960596,
+     "proj_short_on_main": 0.01990702583683947
+    },
+    "dec_plan": {
+     "g_main": 0.10277058197345366,
+     "g_short": 0.0,
+     "norm_of_sum": 0.10277058197345366,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "probes/2a": {
+    "encoder": {
+     "g_main": 0.7706799325914978,
+     "g_short": 0.007422545324526642,
+     "norm_of_sum": 0.7702452247976521,
+     "cos": -0.06336493093091551,
+     "proj_short_on_main": -0.0004703290718202204
+    },
+    "core_attn": {
+     "g_main": 0.04291589031941267,
+     "g_short": 0.015770808759617155,
+     "norm_of_sum": 0.048379178345819195,
+     "cos": 0.18472671834861293,
+     "proj_short_on_main": 0.0029132897478676358
+    },
+    "core_own_ffn": {
+     "g_main": 0.016724695217064288,
+     "g_short": 0.006198803045327584,
+     "norm_of_sum": 0.019001343951569383,
+     "cos": 0.20695091651582176,
+     "proj_short_on_main": 0.0012828479715316105
+    },
+    "core_reads_writes": {
+     "g_main": 0.004047523916172106,
+     "g_short": 0.003083051792989325,
+     "norm_of_sum": 0.00609457960639113,
+     "cos": 0.4510172948921291,
+     "proj_short_on_main": 0.0013905096796863736
+    },
+    "core_shared": {
+     "g_main": 0.04148502757435718,
+     "g_short": 0.014848524595391469,
+     "norm_of_sum": 0.047078362121083746,
+     "cos": 0.2231248367830936,
+     "proj_short_on_main": 0.0033130746268164725
+    },
+    "core_table": {
+     "g_main": 0.0020632322019486582,
+     "g_short": 0.0008840901289588991,
+     "norm_of_sum": 0.002328882266678694,
+     "cos": 0.1055736196160192,
+     "proj_short_on_main": 9.333659498098417e-05
+    },
+    "ncp_head": {
+     "g_main": 0.043016608840296906,
+     "g_short": 0.020286625983908974,
+     "norm_of_sum": 0.06305341476470926,
+     "cos": 0.9819137128830063,
+     "proj_short_on_main": 0.01991971624172893
+    },
+    "dec_plan": {
+     "g_main": 0.10277058196540889,
+     "g_short": 0.0,
+     "norm_of_sum": 0.10277058196540889,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "probes/2b": {
+    "encoder": {
+     "g_main": 0.7706799314874915,
+     "g_short": 0.007314840144172506,
+     "norm_of_sum": 0.7703387707784268,
+     "cos": -0.05137491289913608,
+     "proj_short_on_main": -0.00037579927527796645
+    },
+    "core_attn": {
+     "g_main": 0.04291589031941267,
+     "g_short": 0.0160141363870131,
+     "norm_of_sum": 0.04833145929218372,
+     "cos": 0.17293559404233827,
+     "proj_short_on_main": 0.0027694141891631352
+    },
+    "core_own_ffn": {
+     "g_main": 0.016724695217064288,
+     "g_short": 0.006254544882358305,
+     "norm_of_sum": 0.0189767806700948,
+     "cos": 0.19732948695712343,
+     "proj_short_on_main": 0.0012342061327860663
+    },
+    "core_reads_writes": {
+     "g_main": 0.004047523915698822,
+     "g_short": 0.0030147793551515405,
+     "norm_of_sum": 0.006016119394462739,
+     "cos": 0.4393543726413769,
+     "proj_short_on_main": 0.0013245564922347798
+    },
+    "core_shared": {
+     "g_main": 0.04148502757435718,
+     "g_short": 0.015057080020265108,
+     "norm_of_sum": 0.04703472990999297,
+     "cos": 0.21175494263314143,
+     "proj_short_on_main": 0.003188411115913858
+    },
+    "core_table": {
+     "g_main": 0.0020632322019486582,
+     "g_short": 0.0008954831636202392,
+     "norm_of_sum": 0.0023047966586852435,
+     "cos": 0.06854076488739501,
+     "proj_short_on_main": 6.137710097831549e-05
+    },
+    "ncp_head": {
+     "g_main": 0.043016608840296906,
+     "g_short": 0.02029199906081359,
+     "norm_of_sum": 0.06305917242905429,
+     "cos": 0.9819447472724805,
+     "proj_short_on_main": 0.01992562188942401
+    },
+    "dec_plan": {
+     "g_main": 0.1027705819703579,
+     "g_short": 0.0,
+     "norm_of_sum": 0.1027705819703579,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "synthetic/1": {
+    "encoder": {
+     "g_main": 1.4216592308116718,
+     "g_short": 0.0232369996597193,
+     "norm_of_sum": 1.4243116144163135,
+     "cos": 0.106078826817015,
+     "proj_short_on_main": 0.0024649536626504005
+    },
+    "core_attn": {
+     "g_main": 0.061197827136605674,
+     "g_short": 0.02955492384515711,
+     "norm_of_sum": 0.06379681571791405,
+     "cos": -0.15166549107853344,
+     "proj_short_on_main": -0.004482462038764411
+    },
+    "core_own_ffn": {
+     "g_main": 0.023609741860681495,
+     "g_short": 0.011682841066667188,
+     "norm_of_sum": 0.024069590484479188,
+     "cos": -0.20767134245084848,
+     "proj_short_on_main": -0.0024261912879546777
+    },
+    "core_reads_writes": {
+     "g_main": 0.009356218884855608,
+     "g_short": 0.007360023067140698,
+     "norm_of_sum": 0.0051593440979205065,
+     "cos": -0.8356565441591072,
+     "proj_short_on_main": -0.006150451441218108
+    },
+    "core_shared": {
+     "g_main": 0.058694653770885306,
+     "g_short": 0.026392521402056623,
+     "norm_of_sum": 0.06199001401341332,
+     "cos": -0.09646431735400401,
+     "proj_short_on_main": -0.002545936560300333
+    },
+    "core_table": {
+     "g_main": 0.0029736275530032504,
+     "g_short": 0.0024835411947852254,
+     "norm_of_sum": 0.0038743306118832117,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    },
+    "ncp_head": {
+     "g_main": 0.053615689873174076,
+     "g_short": 0.025964166829844742,
+     "norm_of_sum": 0.07937344806061586,
+     "cos": 0.9882157715279736,
+     "proj_short_on_main": 0.025658199155836045
+    },
+    "dec_plan": {
+     "g_main": 0.07272620404574447,
+     "g_short": 0.0,
+     "norm_of_sum": 0.07272620404574447,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "synthetic/2a": {
+    "encoder": {
+     "g_main": 1.4216592308116718,
+     "g_short": 0.010198975457106409,
+     "norm_of_sum": 1.4225282882429107,
+     "cos": 0.08164931512371056,
+     "proj_short_on_main": 0.0008327393610362711
+    },
+    "core_attn": {
+     "g_main": 0.061197827136605674,
+     "g_short": 0.01691754811640089,
+     "norm_of_sum": 0.06800458062423233,
+     "cos": 0.2865042297394801,
+     "proj_short_on_main": 0.004846949092170029
+    },
+    "core_own_ffn": {
+     "g_main": 0.023609741860681495,
+     "g_short": 0.0067026777196853874,
+     "norm_of_sum": 0.026226508489747363,
+     "cos": 0.27009403951542293,
+     "proj_short_on_main": 0.00181035330087985
+    },
+    "core_reads_writes": {
+     "g_main": 0.009356218884855608,
+     "g_short": 0.00202427631829402,
+     "norm_of_sum": 0.00819295230956449,
+     "cos": -0.6471122598906761,
+     "proj_short_on_main": -0.0013099340229744208
+    },
+    "core_shared": {
+     "g_main": 0.058694653770885306,
+     "g_short": 0.016726146302728558,
+     "norm_of_sum": 0.0657005208024725,
+     "cos": 0.3013704622898371,
+     "proj_short_on_main": 0.005040766443580756
+    },
+    "core_table": {
+     "g_main": 0.0029736275530032504,
+     "g_short": 0.000971148514285593,
+     "norm_of_sum": 0.0032259747662590032,
+     "cos": 0.10757594377550442,
+     "proj_short_on_main": 0.0001044722179704516
+    },
+    "ncp_head": {
+     "g_main": 0.053615689873174076,
+     "g_short": 0.025965000260618067,
+     "norm_of_sum": 0.07945617808465164,
+     "cos": 0.9928878817297678,
+     "proj_short_on_main": 0.025780334107877945
+    },
+    "dec_plan": {
+     "g_main": 0.0727262040443108,
+     "g_short": 0.0,
+     "norm_of_sum": 0.0727262040443108,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   },
+   "synthetic/2b": {
+    "encoder": {
+     "g_main": 1.421659226692573,
+     "g_short": 0.010391169658889952,
+     "norm_of_sum": 1.42258437536334,
+     "cos": 0.08540657433778212,
+     "proj_short_on_main": 0.0008874742039284907
+    },
+    "core_attn": {
+     "g_main": 0.061197827136605674,
+     "g_short": 0.017228499048307776,
+     "norm_of_sum": 0.0681582387427894,
+     "cos": 0.286220025657674,
+     "proj_short_on_main": 0.004931141439649863
+    },
+    "core_own_ffn": {
+     "g_main": 0.023609741860681495,
+     "g_short": 0.006801312279053294,
+     "norm_of_sum": 0.026280492783871335,
+     "cos": 0.27085578391965864,
+     "proj_short_on_main": 0.0018421747690253796
+    },
+    "core_reads_writes": {
+     "g_main": 0.009356218885879293,
+     "g_short": 0.0020116231862240598,
+     "norm_of_sum": 0.008218088074952787,
+     "cos": -0.6388674708094911,
+     "proj_short_on_main": -0.001285160617204695
+    },
+    "core_shared": {
+     "g_main": 0.058694653770885306,
+     "g_short": 0.016999180496511692,
+     "norm_of_sum": 0.06581727375897824,
+     "cos": 0.2996103265506027,
+     "proj_short_on_main": 0.005093130019652505
+    },
+    "core_table": {
+     "g_main": 0.0029736275530032504,
+     "g_short": 0.0009906256319428385,
+     "norm_of_sum": 0.0032067678542012264,
+     "cos": 0.07800387727429407,
+     "proj_short_on_main": 7.727264021883918e-05
+    },
+    "ncp_head": {
+     "g_main": 0.053615689873174076,
+     "g_short": 0.02596879950205589,
+     "norm_of_sum": 0.07946028677931502,
+     "cos": 0.9929062428799337,
+     "proj_short_on_main": 0.025784583145688607
+    },
+    "dec_plan": {
+     "g_main": 0.07272620404612767,
+     "g_short": 0.0,
+     "norm_of_sum": 0.07272620404612767,
+     "cos": 0.0,
+     "proj_short_on_main": 0.0
+    }
+   }
+  },
+  "summary": {
+   "encoder": {
+    "cos_median": -0.033932386051375836,
+    "cos_frac_negative": 0.75,
+    "short_over_main_median": 0.0129880751272402
+   },
+   "core_attn": {
+    "cos_median": 0.14505732049512812,
+    "cos_frac_negative": 0.3333333333333333,
+    "short_over_main_median": 0.36329485743182416
+   },
+   "core_own_ffn": {
+    "cos_median": 0.14876648903095147,
+    "cos_frac_negative": 0.3333333333333333,
+    "short_over_main_median": 0.3589911413514866
+   },
+   "core_reads_writes": {
+    "cos_median": 0.20224202667387345,
+    "cos_frac_negative": 0.3333333333333333,
+    "short_over_main_median": 0.7306837370931878
+   },
+   "core_shared": {
+    "cos_median": 0.18812296539419737,
+    "cos_frac_negative": 0.3333333333333333,
+    "short_over_main_median": 0.3566536813598937
+   },
+   "core_table": {
+    "cos_median": 0.034270382443697504,
+    "cos_frac_negative": 0.16666666666666666,
+    "short_over_main_median": 0.4200818258940966
+   },
+   "ncp_head": {
+    "cos_median": 0.9793907367277335,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.4800498347643166
+   },
+   "dec_plan": {
+    "cos_median": 0.0,
+    "cos_frac_negative": 0.0,
+    "short_over_main_median": 0.0
+   }
+  }
+ }
+}

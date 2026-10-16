@@ -1,0 +1,2331 @@
+{
+ "ckpt": "../runs/v3_48h/ckpt_best.pt",
+ "step": 15588,
+ "eval_R": "3",
+ "split": "test",
+ "time": "2026-10-02 05:22",
+ "lang": {
+  "tinystories": {
+   "intact": {
+    "nats": 1.7449882095505007,
+    "bpb": 0.6388948075034244,
+    "tokens": 257531,
+    "delta_vs_intact": 0.0
+   },
+   "core_off": {
+    "nats": 2.481144753265141,
+    "bpb": 0.9084247623276492,
+    "tokens": 257531,
+    "delta_vs_intact": 0.7361565437146402
+   },
+   "plan_swap": {
+    "nats": 3.095962138872359,
+    "bpb": 1.1335286530458946,
+    "tokens": 257531,
+    "delta_vs_intact": 1.3509739293218583
+   },
+   "u_off": {
+    "nats": 2.500303668690614,
+    "bpb": 0.9154394410032634,
+    "tokens": 257531,
+    "delta_vs_intact": 0.7553154591401134
+   },
+   "c_off": {
+    "nats": 1.7663851993637416,
+    "bpb": 0.6467289152716396,
+    "tokens": 257531,
+    "delta_vs_intact": 0.021396989813240896
+   },
+   "shared_ffn_off": {
+    "nats": 1.7542530263650298,
+    "bpb": 0.6422869469590817,
+    "tokens": 257531,
+    "delta_vs_intact": 0.009264816814529064
+   },
+   "table_off": {
+    "nats": 1.754040468520052,
+    "bpb": 0.6422091228782615,
+    "tokens": 257531,
+    "delta_vs_intact": 0.009052258969551197
+   },
+   "engram_off": {
+    "nats": 2.346547569758592,
+    "bpb": 0.8591445201023616,
+    "tokens": 257531,
+    "delta_vs_intact": 0.6015593602080913
+   },
+   "engram_read2_off": {
+    "nats": 1.7613372330509482,
+    "bpb": 0.6448806967862397,
+    "tokens": 257531,
+    "delta_vs_intact": 0.016349023500447535
+   },
+   "F_off": {
+    "nats": 1.9287854317174438,
+    "bpb": 0.7061887240086034,
+    "tokens": 257531,
+    "delta_vs_intact": 0.18379722216694305
+   },
+   "R1": {
+    "nats": 1.7527621466111118,
+    "bpb": 0.6417410892116329,
+    "tokens": 257531,
+    "delta_vs_intact": 0.007773937060611136
+   },
+   "R2a": {
+    "nats": 1.7457850417158516,
+    "bpb": 0.6391865527026803,
+    "tokens": 257531,
+    "delta_vs_intact": 0.0007968321653508692
+   },
+   "R2b": {
+    "nats": 1.7464008959722324,
+    "bpb": 0.6394120362242462,
+    "tokens": 257531,
+    "delta_vs_intact": 0.001412686421731646
+   },
+   "R3": {
+    "nats": 1.7449882095505007,
+    "bpb": 0.6388948075034244,
+    "tokens": 257531,
+    "delta_vs_intact": 0.0
+   }
+  },
+  "wikitext": {
+   "intact": {
+    "nats": 3.3000652704601987,
+    "bpb": 1.3186726008841179,
+    "tokens": 261523,
+    "delta_vs_intact": 0.0
+   },
+   "core_off": {
+    "nats": 3.893316016450991,
+    "bpb": 1.5557295800883588,
+    "tokens": 261523,
+    "delta_vs_intact": 0.5932507459907921
+   },
+   "plan_swap": {
+    "nats": 3.7227330686497937,
+    "bpb": 1.487566364815918,
+    "tokens": 261523,
+    "delta_vs_intact": 0.422667798189595
+   },
+   "u_off": {
+    "nats": 3.8229268396983724,
+    "bpb": 1.5276027791995017,
+    "tokens": 261523,
+    "delta_vs_intact": 0.5228615692381737
+   },
+   "c_off": {
+    "nats": 3.325311466540467,
+    "bpb": 1.328760724699607,
+    "tokens": 261523,
+    "delta_vs_intact": 0.025246196080268124
+   },
+   "shared_ffn_off": {
+    "nats": 3.3044487318634497,
+    "bpb": 1.3204241875879452,
+    "tokens": 261523,
+    "delta_vs_intact": 0.0043834614032509656
+   },
+   "table_off": {
+    "nats": 3.3081885812863496,
+    "bpb": 1.3219185934742634,
+    "tokens": 261523,
+    "delta_vs_intact": 0.00812331082615092
+   },
+   "engram_off": {
+    "nats": 4.178240525958759,
+    "bpb": 1.6695825233532795,
+    "tokens": 261523,
+    "delta_vs_intact": 0.8781752554985602
+   },
+   "engram_read2_off": {
+    "nats": 3.3307668640162627,
+    "bpb": 1.3309406461825721,
+    "tokens": 261523,
+    "delta_vs_intact": 0.030701593556063944
+   },
+   "F_off": {
+    "nats": 3.4471919168856564,
+    "bpb": 1.3774629161054166,
+    "tokens": 261523,
+    "delta_vs_intact": 0.1471266464254577
+   },
+   "R1": {
+    "nats": 3.3061516211946462,
+    "bpb": 1.3211046448878316,
+    "tokens": 261523,
+    "delta_vs_intact": 0.006086350734447521
+   },
+   "R2a": {
+    "nats": 3.301376516119041,
+    "bpb": 1.3191965613459977,
+    "tokens": 261523,
+    "delta_vs_intact": 0.0013112456588424415
+   },
+   "R2b": {
+    "nats": 3.3015196866348755,
+    "bpb": 1.319253770831572,
+    "tokens": 261523,
+    "delta_vs_intact": 0.001454416174676787
+   },
+   "R3": {
+    "nats": 3.3000652704601987,
+    "bpb": 1.3186726008841179,
+    "tokens": 261523,
+    "delta_vs_intact": 0.0
+   }
+  }
+ },
+ "seconds": {
+  "lang": 823.925577878952,
+  "items": 6419.573580026627,
+  "health": 10.6947500705719
+ },
+ "items": {
+  "test": {
+   "intact": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 1.0
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.966796875,
+     "by_offset": [
+      0.9922,
+      0.9922,
+      0.9824
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.830078125,
+     "by_offset": [
+      0.9873,
+      0.9819,
+      0.9824
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.169921875,
+     "exact_h2": 0.2839506172839506,
+     "exact_h3": 0.11875,
+     "exact_h4": 0.11578947368421053
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.060546875
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.47
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.12
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.77
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.935
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.445
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.875
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.73
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.71
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.975
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 1.0
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 1.0
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.995
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.9
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.99
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.68
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 1.0
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.695
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.61
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.88
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.98
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.97
+    },
+    "_macro_synthetic": 0.7966666666666665
+   },
+   "core_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.009765625
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.002,
+      0.0059,
+      0.0059
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0039,
+      0.0063,
+      0.0093
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.001953125,
+     "exact_h2": 0.006172839506172839,
+     "exact_h3": 0.0,
+     "exact_h4": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.046875
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.01
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.065
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.04
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.06
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.3
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.065
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.045
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "_macro_synthetic": 0.027857142857142855
+   },
+   "plan_swap": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.009765625
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0098,
+      0.0039,
+      0.002
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0073,
+      0.0054,
+      0.0044
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0,
+     "exact_h4": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.052734375
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.04
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.055
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.015
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.045
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.385
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.06
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.035
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.005
+    },
+    "_macro_synthetic": 0.030476190476190483
+   },
+   "u_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.013671875
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0234,
+      0.0,
+      0.0098
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0215,
+      0.0122,
+      0.0117
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0,
+     "exact_h4": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.046875
+    }
+   },
+   "c_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 1.0
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.962890625,
+     "by_offset": [
+      0.9922,
+      0.9883,
+      0.9805
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.779296875,
+     "by_offset": [
+      0.9863,
+      0.979,
+      0.9707
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.15625,
+     "exact_h2": 0.29012345679012347,
+     "exact_h3": 0.08125,
+     "exact_h4": 0.10526315789473684
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.0625
+    }
+   },
+   "shared_ffn_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.9921875
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.92578125,
+     "by_offset": [
+      0.9941,
+      0.9863,
+      0.9434
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.666015625,
+     "by_offset": [
+      0.981,
+      0.9688,
+      0.9453
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.162109375,
+     "exact_h2": 0.29012345679012347,
+     "exact_h3": 0.1,
+     "exact_h4": 0.10526315789473684
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.056640625
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.45
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.13
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.675
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.845
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.41
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.845
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.695
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.495
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.935
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.995
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.985
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.96
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.87
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.9
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.635
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.96
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.695
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.55
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.795
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.9
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.97
+    },
+    "_macro_synthetic": 0.7473809523809524
+   },
+   "table_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.998046875
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.943359375,
+     "by_offset": [
+      0.9883,
+      0.9883,
+      0.9668
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.759765625,
+     "by_offset": [
+      0.9834,
+      0.978,
+      0.9644
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.171875,
+     "exact_h2": 0.2839506172839506,
+     "exact_h3": 0.11875,
+     "exact_h4": 0.12105263157894737
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.052734375
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.465
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.11
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.77
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.915
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.42
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.86
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.715
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.64
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.955
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 1.0
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 1.0
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.98
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.84
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.99
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.66
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 1.0
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.62
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.575
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.845
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.965
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.965
+    },
+    "_macro_synthetic": 0.7757142857142857
+   },
+   "engram_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.2109375
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.0078125,
+     "by_offset": [
+      0.3164,
+      0.1992,
+      0.0508
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.1787,
+      0.1348,
+      0.0669
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h2": 0.0,
+     "exact_h3": 0.0,
+     "exact_h4": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.04296875
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.37
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.07
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.035
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.185
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.18
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.8
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.215
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.005
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.565
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.765
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.04
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.475
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.09
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.245
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.16
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.1
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.07
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.485
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.075
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.125
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.935
+    },
+    "_macro_synthetic": 0.28523809523809524
+   },
+   "engram_read2_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 1.0
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.96875,
+     "by_offset": [
+      0.9922,
+      0.9922,
+      0.9844
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.81640625,
+     "by_offset": [
+      0.9868,
+      0.9771,
+      0.98
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.173828125,
+     "exact_h2": 0.29012345679012347,
+     "exact_h3": 0.11875,
+     "exact_h4": 0.12105263157894737
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.052734375
+    }
+   },
+   "F_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.91796875
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.193359375,
+     "by_offset": [
+      0.9746,
+      0.7383,
+      0.3047
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.9438,
+      0.6465,
+      0.2705
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.03125,
+     "exact_h2": 0.04938271604938271,
+     "exact_h3": 0.025,
+     "exact_h4": 0.021052631578947368
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.0546875
+    }
+   },
+   "R1": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.998046875
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.9609375,
+     "by_offset": [
+      0.9844,
+      0.9922,
+      0.9844
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.763671875,
+     "by_offset": [
+      0.978,
+      0.9722,
+      0.9746
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.162109375,
+     "exact_h2": 0.2777777777777778,
+     "exact_h3": 0.11875,
+     "exact_h4": 0.1
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.064453125
+    }
+   },
+   "R2a": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 1.0
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.96875,
+     "by_offset": [
+      0.9902,
+      0.9922,
+      0.9863
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.822265625,
+     "by_offset": [
+      0.9858,
+      0.9785,
+      0.9824
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.15625,
+     "exact_h2": 0.25308641975308643,
+     "exact_h3": 0.1125,
+     "exact_h4": 0.11052631578947368
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.056640625
+    }
+   },
+   "R2b": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 1.0
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.96875,
+     "by_offset": [
+      0.9902,
+      0.9922,
+      0.9863
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.818359375,
+     "by_offset": [
+      0.9858,
+      0.978,
+      0.9824
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.158203125,
+     "exact_h2": 0.2654320987654321,
+     "exact_h3": 0.11875,
+     "exact_h4": 0.1
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.060546875
+    }
+   }
+  },
+  "ood": {
+   "intact": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.947265625
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.57421875,
+     "by_offset": [
+      0.9746,
+      0.8691,
+      0.6543
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.041015625,
+     "by_offset": [
+      0.8984,
+      0.7622,
+      0.5776
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.046875
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.01
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.345
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.275
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.46
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.335
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.12
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.03
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.995
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.73
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 1.0
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.065
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.555
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.925
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.955
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.885
+    },
+    "variable_binding_newnames": {
+     "n": 200,
+     "exact": 0.105
+    },
+    "_macro_synthetic": 0.35409090909090907
+   },
+   "core_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.005859375
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0117,
+      0.0078,
+      0.0039
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0063,
+      0.0049,
+      0.0049
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.060546875
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.055
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.015
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.025
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.025
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.03
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 200,
+     "exact": 0.07
+    },
+    "_macro_synthetic": 0.01
+   },
+   "plan_swap": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.013671875
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0137,
+      0.0039,
+      0.0059
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0073,
+      0.0054,
+      0.0049
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.0546875
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.04
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.015
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.035
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.035
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.03
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "variable_binding_newnames": {
+     "n": 200,
+     "exact": 0.05
+    },
+    "_macro_synthetic": 0.00931818181818182
+   },
+   "u_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.021484375
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0527,
+      0.0078,
+      0.0078
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0273,
+      0.0063,
+      0.0049
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.056640625
+    }
+   },
+   "c_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.9453125
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.572265625,
+     "by_offset": [
+      0.9707,
+      0.877,
+      0.6562
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.037109375,
+     "by_offset": [
+      0.8975,
+      0.7656,
+      0.5796
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.048828125
+    }
+   },
+   "shared_ffn_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.94921875
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.595703125,
+     "by_offset": [
+      0.9727,
+      0.8789,
+      0.6875
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.03125,
+     "by_offset": [
+      0.8857,
+      0.7563,
+      0.564
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.0546875
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.32
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.215
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.41
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.195
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.075
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.035
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.91
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.68
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.96
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.08
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.535
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.785
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.89
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.865
+    },
+    "variable_binding_newnames": {
+     "n": 200,
+     "exact": 0.105
+    },
+    "_macro_synthetic": 0.3209090909090909
+   },
+   "table_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.9296875
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.5390625,
+     "by_offset": [
+      0.9707,
+      0.8652,
+      0.6191
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.02734375,
+     "by_offset": [
+      0.8877,
+      0.7119,
+      0.5195
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.05078125
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.015
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.27
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.285
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.455
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.3
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.075
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.035
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.99
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.7
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.995
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.065
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.525
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.875
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.94
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.84
+    },
+    "variable_binding_newnames": {
+     "n": 200,
+     "exact": 0.095
+    },
+    "_macro_synthetic": 0.3390909090909091
+   },
+   "engram_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.111328125
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.1543,
+      0.0312,
+      0.0273
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.0381,
+      0.0054,
+      0.0088
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.0390625
+    },
+    "pointer_chase": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "graph_walk": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "state_machine": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "permutation": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "variable_binding": {
+     "n": 200,
+     "exact": 0.09
+    },
+    "kv_updates": {
+     "n": 200,
+     "exact": 0.215
+    },
+    "relational": {
+     "n": 200,
+     "exact": 0.11
+    },
+    "arith_transform": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "stack_ops": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "nested_scopes": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "brackets": {
+     "n": 200,
+     "exact": 0.0
+    },
+    "seq_transform": {
+     "n": 200,
+     "exact": 0.04
+    },
+    "py_exec": {
+     "n": 200,
+     "exact": 0.025
+    },
+    "json_build": {
+     "n": 200,
+     "exact": 0.205
+    },
+    "yaml_lookup": {
+     "n": 200,
+     "exact": 0.155
+    },
+    "sort_trace": {
+     "n": 200,
+     "exact": 0.13
+    },
+    "expr_eval": {
+     "n": 200,
+     "exact": 0.05
+    },
+    "kv_retrieval": {
+     "n": 200,
+     "exact": 0.48
+    },
+    "copy": {
+     "n": 200,
+     "exact": 0.22
+    },
+    "needle": {
+     "n": 200,
+     "exact": 0.065
+    },
+    "json_lookup": {
+     "n": 200,
+     "exact": 0.73
+    },
+    "variable_binding_newnames": {
+     "n": 200,
+     "exact": 0.08
+    },
+    "_macro_synthetic": 0.11795454545454542
+   },
+   "engram_read2_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.94921875
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.548828125,
+     "by_offset": [
+      0.9727,
+      0.8535,
+      0.6348
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.033203125,
+     "by_offset": [
+      0.8999,
+      0.7363,
+      0.5449
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.0546875
+    }
+   },
+   "F_off": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.876953125
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.06640625,
+     "by_offset": [
+      0.9297,
+      0.4727,
+      0.1621
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.0,
+     "by_offset": [
+      0.8145,
+      0.3179,
+      0.1138
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.048828125
+    }
+   },
+   "R1": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.94921875
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.568359375,
+     "by_offset": [
+      0.9707,
+      0.8691,
+      0.6562
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.03125,
+     "by_offset": [
+      0.8877,
+      0.7295,
+      0.541
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.048828125
+    }
+   },
+   "R2a": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.947265625
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.58203125,
+     "by_offset": [
+      0.9727,
+      0.8711,
+      0.6641
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.041015625,
+     "by_offset": [
+      0.8975,
+      0.7603,
+      0.5898
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.046875
+    }
+   },
+   "R2b": {
+    "lr_recall1": {
+     "n": 512,
+     "exact": 0.94921875
+    },
+    "lr_carry3": {
+     "n": 512,
+     "exact": 0.580078125,
+     "by_offset": [
+      0.9746,
+      0.8711,
+      0.6641
+     ]
+    },
+    "lr_multi4": {
+     "n": 512,
+     "exact": 0.037109375,
+     "by_offset": [
+      0.8989,
+      0.7559,
+      0.5684
+     ]
+    },
+    "lr_hop": {
+     "n": 512,
+     "exact": 0.0,
+     "exact_h5": 0.0,
+     "exact_h6": 0.0
+    },
+    "lr_bind": {
+     "n": 512,
+     "exact": 0.048828125
+    }
+   }
+  }
+ },
+ "health": {
+  "codebook": {
+   "codes_used_frac_min": 1.0,
+   "codes_used_frac_mean": 1.0,
+   "perplexity_mean": 114.82093048095703,
+   "var_explained": 0.6578914059145261,
+   "ncp_ce": 2.8147293494515324,
+   "ncp_ce_M1": 2.820195741696183,
+   "code_entropy": 4.742912292480469,
+   "n_concepts": 14976,
+   "ncp_pairs": 13834
+  },
+  "telemetry": {
+   "crc_mix_e0_L_G": [
+    0.069,
+    0.0578,
+    0.8732
+   ],
+   "engram_Wv_norm": 38.82927322387695,
+   "engram2_Wv_norm": 47.92097091674805,
+   "shared_w2_norm": 16.77654266357422,
+   "table_norm": 28.109092712402344,
+   "engram_alpha_mean": 0.7856112718582153,
+   "tau": {
+    "enc.layers.3.attn.log_tau": [
+     1.3716,
+     1.4444,
+     1.3069,
+     1.1837,
+     1.4039,
+     1.4294
+    ],
+    "enc.layers.7.attn.log_tau": [
+     1.7018,
+     0.9164,
+     0.9736,
+     1.754,
+     1.0344,
+     1.0739
+    ],
+    "core.log_tau": [
+     1.9913,
+     1.8021,
+     2.0619,
+     1.7305,
+     1.9134,
+     2.1009,
+     1.7361,
+     1.8309,
+     1.9446,
+     1.9855,
+     1.8461,
+     1.8312,
+     1.8982,
+     1.7808,
+     1.9539,
+     1.9457,
+     1.726,
+     1.905,
+     1.9523,
+     1.8032,
+     1.8039,
+     2.1935,
+     1.9772,
+     1.849,
+     1.7861,
+     1.86,
+     1.8574,
+     1.9599,
+     2.0445,
+     1.871,
+     1.824,
+     1.9705
+    ],
+    "core.layers.0.attn.log_tau": [
+     1.1095,
+     0.767,
+     0.7766,
+     0.8569,
+     1.0536,
+     0.9803
+    ],
+    "core.layers.1.attn.log_tau": [
+     1.0988,
+     0.9525,
+     1.1673,
+     1.562,
+     1.2658,
+     1.447
+    ],
+    "core.layers.2.attn.log_tau": [
+     1.3542,
+     1.7384,
+     1.3985,
+     2.2207,
+     1.5807,
+     0.8283
+    ],
+    "core.layers.3.attn.log_tau": [
+     2.1742,
+     1.599,
+     1.3549,
+     2.0858,
+     1.8344,
+     1.8759
+    ]
+   },
+   "mps_alloc_gib": 0.3861210346221924,
+   "mps_driver_gib": 2.744384765625,
+   "swap": "total = 3072.00M  used = 2432.00M  free = 640.00M  (encrypted)"
+  },
+  "loop_dynamics_lr_hop": {
+   "3": {
+    "sched": "3",
+    "state_norm": [
+     21.823829650878906,
+     48.9979133605957,
+     77.1776351928711
+    ],
+    "step": [
+     21.823829650878906,
+     28.651247024536133,
+     29.07663345336914
+    ],
+    "consecutive_step_angle_deg": [
+     28.20303726196289,
+     7.445966720581055
+    ],
+    "turn_deg": [
+     16.007606506347656,
+     6.66184139251709
+    ],
+    "rho": 0.9685266017913818,
+    "rel_step": [
+     1.3128423142444328,
+     1.3323341465964085
+    ],
+    "grad": [
+     0.00023206892365124077,
+     0.00021604285575449467,
+     0.00021262347581796348
+    ],
+    "grad_ratio_S1_over_SM": 1.0914548488047735
+   },
+   "2b": {
+    "sched": "2b",
+    "state_norm": [
+     21.31587028503418,
+     51.312618255615234
+    ],
+    "step": [
+     21.31587028503418,
+     31.330842971801758
+    ],
+    "consecutive_step_angle_deg": [
+     26.524085998535156
+    ],
+    "turn_deg": [
+     15.678919792175293
+    ],
+    "rho": 0.9734031558036804,
+    "rel_step": [
+     1.469836443591002
+    ],
+    "grad": [
+     0.00033506512409076095,
+     0.0003204277600161731
+    ],
+    "grad_ratio_S1_over_SM": 1.0456806990563146
+   },
+   "2a": {
+    "sched": "2a",
+    "state_norm": [
+     21.823829650878906,
+     72.13862609863281
+    ],
+    "step": [
+     21.823829650878906,
+     52.57868194580078
+    ],
+    "consecutive_step_angle_deg": [
+     31.406158447265625
+    ],
+    "turn_deg": [
+     22.237024307250977
+    ],
+    "rho": 0.9679752588272095,
+    "rel_step": [
+     2.4092326043098167
+    ],
+    "grad": [
+     0.00024677655892446637,
+     0.00022825965424999595
+    ],
+    "grad_ratio_S1_over_SM": 1.0811221095349168
+   }
+  }
+ }
+}

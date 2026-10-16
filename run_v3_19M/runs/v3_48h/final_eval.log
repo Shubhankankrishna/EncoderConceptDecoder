@@ -1,0 +1,40 @@
+lang tinystories: intact=1.7450 core_off=2.4811 plan_swap=3.0960 u_off=2.5003 c_off=1.7664 shared_ffn_off=1.7543 table_off=1.7540 engram_off=2.3465 engram_read2_off=1.7613 F_off=1.9288 R1=1.7528 R2a=1.7458 R2b=1.7464 R3=1.7450
+lang wikitext: intact=3.3001 core_off=3.8933 plan_swap=3.7227 u_off=3.8229 c_off=3.3253 shared_ffn_off=3.3044 table_off=3.3082 engram_off=4.1782 engram_read2_off=3.3308 F_off=3.4472 R1=3.3062 R2a=3.3014 R2b=3.3015 R3=3.3001
+part lang done in 1071s
+trunc tinystories: {'gain_beyond_70': 0.10639149207177345, 'swap_cost': 1.4457557503441016, 'rows': 256, 'rows_ctx_ge_512': 1, 'gain_beyond_70_ctx512': 0.007080078125, 'swap_cost_ctx512': 1.4967751502990723, 'curve': {'r72': 1.8694502383580507, 'r128': 1.797174885410811, 'r256': 1.767939900120246, 'r512': 1.763403474918004, 'r1024': 1.7630587462862772}, 'curve_ctx512': {'r72': 2.859403133392334, 'r128': 2.9331612586975098, 'r256': 2.873870372772217, 'r512': 2.9136829376220703, 'r1024': 2.852323055267334}}
+trunc wikitext: {'gain_beyond_70': 0.08976582145690903, 'swap_cost': 0.3895934238433836, 'rows': 256, 'rows_ctx_ge_512': 234, 'gain_beyond_70_ctx512': 0.09060548768084273, 'swap_cost_ctx512': 0.37190829230169964, 'curve': {'r72': 3.391725658416748, 'r128': 3.3470373344421387, 'r256': 3.324762958526611, 'r512': 3.3118081970214845, 'r1024': 3.301959836959839}, 'curve_ctx512': {'r72': 3.4335680777191095, 'r128': 3.390109719374241, 'r256': 3.367449768842795, 'r512': 3.3534842622585788, 'r1024': 3.342962590038267}}
+part trunc done in 264s
+items test: intact probes lr_recall1=1.000 lr_carry3=0.967 lr_multi4=0.830 lr_hop=0.170 lr_bind=0.061 | synthetic macro 0.797
+items test: plan_swap probes lr_recall1=0.010 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.053
+items ood: intact probes lr_recall1=0.947 lr_carry3=0.574 lr_multi4=0.041 lr_hop=0.000 lr_bind=0.047 | synthetic macro 0.354
+items ood: plan_swap probes lr_recall1=0.014 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.055
+part items done in 9600s
+probe G-E1: {'pos0': 0.5199, 'pos1': 0.5213, 'pos2': 0.5656, 'pos3': 0.6867}
+probe u->answer lr_recall1: {'tok0': 0.505}
+probe u->answer lr_carry3: {'tok0': 0.505, 'tok1': 0.107, 'tok2': 0.019}
+probe u->answer lr_multi4: {'tok0': 0.793, 'tok1': 0.193, 'tok2': 0.088}
+probe u->answer lr_hop: {'tok0': 0.204, 'tok1': 0.126}
+probe u->answer lr_bind: {'tok0': 0.282}
+probe lr_hop bridge by pass: {'pass1': 0.136, 'pass2': 0.136, 'pass3': 0.146}
+part probes done in 260s
+health: {'codes_used_frac_min': 1.0, 'codes_used_frac_mean': 1.0, 'perplexity_mean': 114.82093048095703, 'var_explained': 0.6578914059145261, 'ncp_ce': 2.8147293494515324, 'ncp_ce_M1': 2.820195741696183, 'code_entropy': 4.742912292480469, 'n_concepts': 14976, 'ncp_pairs': 13834}
+loop dynamics M3: {'sched': '3', 'state_norm': [21.824, 48.998, 77.178], 'step': [21.824, 28.651, 29.077], 'consecutive_step_angle_deg': [28.203, 7.446], 'turn_deg': [16.008, 6.662], 'rho': 0.9685266017913818, 'rel_step': [1.313, 1.332], 'grad': [0.0, 0.0, 0.0], 'grad_ratio_S1_over_SM': 1.0914548488047735}
+part health done in 11s
+audit summary: {'encoder': {'cos_median': 0.194, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.025}, 'core_attn': {'cos_median': 0.4, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.059}, 'core_own_ffn': {'cos_median': 0.333, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.082}, 'core_reads_writes': {'cos_median': 0.465, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.078}, 'core_shared': {'cos_median': 0.323, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.095}, 'core_table': {'cos_median': 0.024, 'cos_frac_negative': 0.083, 'short_over_main_median': 0.091}, 'ncp_head': {'cos_median': 0.518, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.239}, 'dec_plan': {'cos_median': 0.0, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.0}}
+part audit done in 34s
+gen tinystories: greedy[0] = ' wanted to go on the big slide.\n\nSo she asked her mummy and daddy if they could go. They said yes, so they all went to the park. Polly was so excited! She ran around the park, laughing and having fun.\n\nWhen it was time to go home, Polly was sad. She had been so excited to go on the slide and she was'
+gen wikitext: greedy[0] = ' in the 19th century, and is a popular figure in the 19th century.\nThe painting is a 19th-century painting by the artist and the first artist to be painted in a single manuscript. The painting is a 19th-century painting by the artist, and is a popular figure in the painting.\nThe painting is a 19th-c'
+part gen done in 86s
+ALL DONE in 11327s -> ../runs/v3_48h/eval_final.json
+lang tinystories: intact=1.7450 core_off=2.4811 plan_swap=3.0960 u_off=2.5003 c_off=1.7664 shared_ffn_off=1.7543 table_off=1.7540 engram_off=2.3465 engram_read2_off=1.7613 F_off=1.9288 R1=1.7528 R2a=1.7458 R2b=1.7464 R3=1.7450
+lang wikitext: intact=3.3001 core_off=3.8933 plan_swap=3.7227 u_off=3.8229 c_off=3.3253 shared_ffn_off=3.3044 table_off=3.3082 engram_off=4.1782 engram_read2_off=3.3308 F_off=3.4472 R1=3.3062 R2a=3.3014 R2b=3.3015 R3=3.3001
+part lang done in 824s
+items test: intact probes lr_recall1=1.000 lr_carry3=0.967 lr_multi4=0.830 lr_hop=0.170 lr_bind=0.061 | synthetic macro 0.797
+items test: plan_swap probes lr_recall1=0.010 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.053
+items ood: intact probes lr_recall1=0.947 lr_carry3=0.574 lr_multi4=0.041 lr_hop=0.000 lr_bind=0.047 | synthetic macro 0.354
+items ood: plan_swap probes lr_recall1=0.014 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.055
+part items done in 6420s
+health: {'codes_used_frac_min': 1.0, 'codes_used_frac_mean': 1.0, 'perplexity_mean': 114.82093048095703, 'var_explained': 0.6578914059145261, 'ncp_ce': 2.8147293494515324, 'ncp_ce_M1': 2.820195741696183, 'code_entropy': 4.742912292480469, 'n_concepts': 14976, 'ncp_pairs': 13834}
+loop dynamics M3: {'sched': '3', 'state_norm': [21.824, 48.998, 77.178], 'step': [21.824, 28.651, 29.077], 'consecutive_step_angle_deg': [28.203, 7.446], 'turn_deg': [16.008, 6.662], 'rho': 0.9685266017913818, 'rel_step': [1.313, 1.332], 'grad': [0.0, 0.0, 0.0], 'grad_ratio_S1_over_SM': 1.0914548488047735}
+part health done in 11s
+ALL DONE in 7254s -> ../runs/v3_48h/eval_best.json

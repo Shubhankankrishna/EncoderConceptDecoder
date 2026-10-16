@@ -1,0 +1,27 @@
+lang tinystories: intact=6.6684 core_off=6.7239 plan_swap=6.6685 u_off=6.6834 c_off=6.6788 shared_ffn_off=6.6710 table_off=6.6684 engram_off=6.6686 engram_read2_off=6.6685 F_off=6.6685 R1=6.6684 R2a=6.6684 R2b=6.6684 R3=6.6684
+lang wikitext: intact=7.3791 core_off=7.4073 plan_swap=7.3798 u_off=7.3839 c_off=7.3776 shared_ffn_off=7.3843 table_off=7.3791 engram_off=7.3791 engram_read2_off=7.3791 F_off=7.3791 R1=7.3793 R2a=7.3792 R2b=7.3792 R3=7.3791
+part lang done in 29s
+trunc tinystories: {'gain_beyond_70': -4.609425862334149e-06, 'swap_cost': -0.0002524058024091502, 'rows': 6, 'rows_ctx_ge_512': 0, 'gain_beyond_70_ctx512': None, 'swap_cost_ctx512': None, 'curve': {'r72': 6.4584886233011884, 'r128': 6.458487510681152, 'r256': 6.458493232727051, 'r512': 6.458493232727051, 'r1024': 6.458493232727051}, 'curve_ctx512': None}
+trunc wikitext: {'gain_beyond_70': -0.0001200040181474904, 'swap_cost': 0.0027345021565752248, 'rows': 6, 'rows_ctx_ge_512': 3, 'gain_beyond_70_ctx512': 8.265177408854166e-06, 'swap_cost_ctx512': 0.005915482838948567, 'curve': {'r72': 6.992061773935954, 'r128': 6.992297013600667, 'r256': 6.99245564142863, 'r512': 6.992101828257243, 'r1024': 6.992181777954102}, 'curve_ctx512': {'r72': 7.165133476257324, 'r128': 7.165117899576823, 'r256': 7.165115833282471, 'r512': 7.164965947469075, 'r1024': 7.165125211079915}}
+part trunc done in 6s
+items val: intact probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000 | synthetic macro 0.000
+items val: plan_swap probes lr_recall1=0.000 lr_carry3=0.000 lr_multi4=0.000 lr_hop=0.000 lr_bind=0.000
+part items done in 51s
+probe G-E1: {'pos0': 0.341, 'pos1': 0.3, 'pos2': 0.3115, 'pos3': 0.2885}
+probe u->answer lr_recall1: {'tok0': 0.0}
+probe u->answer lr_carry3: {'tok0': 0.0, 'tok1': 0.0, 'tok2': 0.0}
+probe u->answer lr_multi4: {'tok0': 0.0, 'tok1': 0.0, 'tok2': 0.0}
+probe u->answer lr_hop: {'tok0': 0.0, 'tok1': 0.0}
+probe u->answer lr_bind: {'tok0': 0.0}
+probe lr_hop bridge by pass: {'pass1': 0.0, 'pass2': 0.0, 'pass3': 0.0}
+part probes done in 24s
+health: {'codes_used_frac_min': 0.75, 'codes_used_frac_mean': 0.84375, 'perplexity_mean': 3.876066207885742, 'var_explained': 0.08861336527100572, 'ncp_ce': 1.799405374411993, 'ncp_ce_M1': 1.7987405840393222, 'code_entropy': 1.3368390798568726, 'n_concepts': 14787, 'ncp_pairs': 13685}
+loop dynamics M3: {'sched': '3', 'state_norm': [12.585, 24.855, 36.993], 'step': [12.585, 12.274, 12.139], 'consecutive_step_angle_deg': [2.112, 0.221], 'turn_deg': [1.043, 0.388], 'rho': 0.9998356103897095, 'rel_step': [0.975, 0.965], 'grad': [0.0, 0.0, 0.0], 'grad_ratio_S1_over_SM': 1.0076847382083105}
+part health done in 10s
+audit summary: {'encoder': {'cos_median': 0.053, 'cos_frac_negative': 0.083, 'short_over_main_median': 0.004}, 'core_attn': {'cos_median': 0.225, 'cos_frac_negative': 0.083, 'short_over_main_median': 0.221}, 'core_own_ffn': {'cos_median': 0.217, 'cos_frac_negative': 0.167, 'short_over_main_median': 0.24}, 'core_reads_writes': {'cos_median': 0.58, 'cos_frac_negative': 0.25, 'short_over_main_median': 0.162}, 'core_shared': {'cos_median': 0.151, 'cos_frac_negative': 0.167, 'short_over_main_median': 0.247}, 'core_table': {'cos_median': 0.0, 'cos_frac_negative': 0.25, 'short_over_main_median': 0.309}, 'ncp_head': {'cos_median': 0.999, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.5}, 'dec_plan': {'cos_median': 0.0, 'cos_frac_negative': 0.0, 'short_over_main_median': 0.0}}
+part audit done in 15s
+gen tinystories: greedy[0] = '................................................................................................................................'
+gen wikitext: greedy[0] = '..\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+part gen done in 62s
+ALL DONE in 198s -> ../runs/tests/fe_val.json
+nice -n 19 python final_eval.py --ckpt ../runs/tests/s105/ckpt_last.pt --out   329.61s user 78.17s system 204% cpu 3:19.19 total

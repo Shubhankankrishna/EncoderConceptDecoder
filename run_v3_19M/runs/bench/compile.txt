@@ -1,0 +1,18 @@
+W0930 00:06:54.705000 1677 site-packages/torch/_inductor/utils.py:1679] [0/0] Not enough SMs to use max_autotune_gemm mode
+V0930 00:06:56.316000 1677 site-packages/torch/_dynamo/guards.py:4514] [0/1] [__recompiles] Recompiling function forward in /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/run_v3_19M/code/model.py:146
+V0930 00:06:56.316000 1677 site-packages/torch/_dynamo/guards.py:4514] [0/1] [__recompiles]     triggered by the following guard failure(s):
+V0930 00:06:56.316000 1677 site-packages/torch/_dynamo/guards.py:4514] [0/1] [__recompiles]     - 0/0: tensor 'S' requires_grad mismatch. expected requires_grad=0
+V0930 00:06:57.773000 1677 site-packages/torch/_dynamo/guards.py:4514] [0/2] [__recompiles] Recompiling function forward in /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/run_v3_19M/code/model.py:146
+V0930 00:06:57.773000 1677 site-packages/torch/_dynamo/guards.py:4514] [0/2] [__recompiles]     triggered by the following guard failure(s):
+V0930 00:06:57.773000 1677 site-packages/torch/_dynamo/guards.py:4514] [0/2] [__recompiles]     - 0/1: tensor 'S' size mismatch at index 0. expected 2, actual 4
+V0930 00:06:57.773000 1677 site-packages/torch/_dynamo/guards.py:4514] [0/2] [__recompiles]     - 0/0: tensor 'S' requires_grad mismatch. expected requires_grad=0
+V0930 00:07:05.893000 1677 site-packages/torch/_dynamo/guards.py:4514] [0/3] [__recompiles] Recompiling function forward in /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/run_v3_19M/code/model.py:146
+V0930 00:07:05.893000 1677 site-packages/torch/_dynamo/guards.py:4514] [0/3] [__recompiles]     triggered by the following guard failure(s):
+V0930 00:07:05.893000 1677 site-packages/torch/_dynamo/guards.py:4514] [0/3] [__recompiles]     - 0/1: tensor 'S' requires_grad mismatch. expected requires_grad=1
+V0930 00:07:05.893000 1677 site-packages/torch/_dynamo/guards.py:4514] [0/3] [__recompiles]     - 0/2: tensor 'S' requires_grad mismatch. expected requires_grad=1
+V0930 00:07:05.893000 1677 site-packages/torch/_dynamo/guards.py:4514] [0/3] [__recompiles]     - 0/0: tensor 'S' size mismatch at index 0. expected 2, actual 4
+warm-up done (107s incl. any compile)
+interleaved A/B, 10 measured steps per config, alloc 1.74 GiB, driver 6.98 GiB
+  memo0      driver max 6.99 GiB  median 17.46 s/step ( 1877 tok/s)  IQR 16.12-19.06  paired time ratio vs memo0: 1.000  -> +0.0 % tok/s
+  compcore   driver max 6.98 GiB  median 14.38 s/step ( 2279 tok/s)  IQR 13.56-15.45  paired time ratio vs memo0: 0.847  -> +18.0 % tok/s
+swap before 3948.56 MB, after 3476.56 MB
