@@ -1,0 +1,166 @@
+{
+  "teacher": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S1_A_delayed_s902/checkpoint.pt",
+  "out": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8m1_dense_s911",
+  "core": "dense",
+  "k": 8,
+  "m": 1,
+  "p_cl": 0.25,
+  "variant": "detached",
+  "steps": 12000,
+  "seed": 911,
+  "batch": 64,
+  "context": 192,
+  "lr": 0.001,
+  "alpha": 0.1,
+  "eps": 0.05,
+  "lam_sel": 0.1,
+  "seconds": 43200,
+  "resume": false,
+  "no_distill": false,
+  "compiled": true,
+  "stage": "S2",
+  "device": "mps",
+  "precision": "float32",
+  "teacher_sha256": "1199b1c1e1c019c86c23badbf29270589713c03d1c0bd57ef8f1fb0f3a516bac",
+  "v9_s2_files_sha256": "f84cf4334f208993b5a45c48bfdf00f15521347e7d1979d14f750f275dbf10f0",
+  "frozen_implementation_sha256": "fcc93d876201367618a195d2d56feb6767800cb633ec7565ec161a74c3a42b58",
+  "data_sha256": "fe7ae55025b54dd84b0b8bb0fe34f593beefbc2533b9a34dc67163fc6b205300",
+  "metadata": {
+    "kind": "hncp",
+    "core": "dense",
+    "k": 8,
+    "code_parameters": 3208,
+    "core_parameters": 869504,
+    "active_parameters": 2451848
+  },
+  "trainable_parameters": 872712,
+  "created_utc": "2026-10-09T15:44:18Z",
+  "status": "completed",
+  "completed_steps": 12000,
+  "wall_s": 5493.435994457977,
+  "last": {
+    "step": 12000,
+    "planned_steps": 12000,
+    "loss": 1.3484222888946533,
+    "gradient_norm": 0.07094697654247284,
+    "elapsed_s": 5490.993975582998,
+    "lr": 0.00010000001594844138,
+    "selector_entropy": 2.0527844429016113,
+    "hypothesis_pair_distance": 0.04808889701962471,
+    "kdec_is_kstar": 0.11653272062540054,
+    "d_min": 0.5284006595611572,
+    "d_mean": 0.6074734926223755,
+    "text": 2.4101722240448,
+    "symbolic": 0.12459850311279297,
+    "ncp": 0.4664907455444336,
+    "distillation": 0.0,
+    "selector": 0.34387829899787903,
+    "delta": 0.0,
+    "rolled_positions": 26,
+    "spans": 14,
+    "win_share": [
+      0.17272129654884338,
+      0.14007358253002167,
+      0.19428770244121552,
+      0.18735219538211823,
+      0.07997594773769379,
+      0.0658453106880188,
+      0.12856920063495636,
+      0.031174752861261368
+    ]
+  },
+  "restarts": [
+    {
+      "step": 500,
+      "dead": []
+    },
+    {
+      "step": 1000,
+      "dead": []
+    },
+    {
+      "step": 1500,
+      "dead": []
+    },
+    {
+      "step": 2000,
+      "dead": []
+    },
+    {
+      "step": 2500,
+      "dead": [
+        3
+      ]
+    },
+    {
+      "step": 3000,
+      "dead": []
+    },
+    {
+      "step": 3500,
+      "dead": []
+    },
+    {
+      "step": 4000,
+      "dead": []
+    },
+    {
+      "step": 4500,
+      "dead": []
+    },
+    {
+      "step": 5000,
+      "dead": []
+    },
+    {
+      "step": 5500,
+      "dead": []
+    },
+    {
+      "step": 6000,
+      "dead": []
+    },
+    {
+      "step": 6500,
+      "dead": []
+    },
+    {
+      "step": 7000,
+      "dead": []
+    },
+    {
+      "step": 7500,
+      "dead": []
+    },
+    {
+      "step": 8000,
+      "dead": []
+    },
+    {
+      "step": 8500,
+      "dead": []
+    },
+    {
+      "step": 9000,
+      "dead": []
+    },
+    {
+      "step": 9500,
+      "dead": []
+    }
+  ],
+  "lifetime_symbolic_exposure": {
+    "graph": 288000,
+    "lookup": 48000,
+    "compose": 24000,
+    "pointer": 24000
+  },
+  "scored_targets_by_task": {
+    "text": 73194837,
+    "graph": 9980040,
+    "lookup": 192000,
+    "compose": 96000,
+    "pointer": 766280
+  },
+  "frozen_teacher_preserved": true
+}

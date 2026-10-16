@@ -1,0 +1,186 @@
+{
+  "checked_utc": "2026-10-10T21:32:36.748526+00:00",
+  "pipeline_status": "completed",
+  "scientific_status": "inconclusive_GRPO_policy_collapse",
+  "lock_sha256": "37c5203606f207ef8f2476a954b4d9d3918adda501192565b45db0d1a3f9f640",
+  "elapsed_minutes": 26.622909049999997,
+  "development_rates": {
+    "reference": {
+      "hard10": 0.33984375,
+      "standard": 0.83203125
+    },
+    "EI": {
+      "hard10": 0.330078125,
+      "standard": 0.8515625
+    },
+    "grpo": {
+      "hard10": 0.0,
+      "standard": 0.0
+    }
+  },
+  "paired_EI_minus_reference": {
+    "standard": {
+      "n": 512,
+      "delta_percentage_points": 1.953125,
+      "improved_items": 34,
+      "worsened_items": 24,
+      "unchanged_items": 454,
+      "paired_bootstrap_95_percent_interval": [
+        -0.9765625,
+        4.8828125
+      ],
+      "exact_discordant_pair_two_sided_p": 0.2370471147627195,
+      "exploratory": true
+    },
+    "hard10": {
+      "n": 512,
+      "delta_percentage_points": -0.9765625,
+      "improved_items": 28,
+      "worsened_items": 33,
+      "unchanged_items": 451,
+      "paired_bootstrap_95_percent_interval": [
+        -3.90625,
+        1.953125
+      ],
+      "exact_discordant_pair_two_sided_p": 0.6089207154048287,
+      "exploratory": true
+    }
+  },
+  "grpo_round_audit": [
+    {
+      "round": 0,
+      "groups": 512,
+      "group_size": 8,
+      "answers": 4096,
+      "accepted": 2120,
+      "verifier_flags_independently_rechecked": true,
+      "exact_fresh_prompt_draw_confirmed": true,
+      "finite_checkpoint": true,
+      "adapter_parameters": 24576,
+      "first_chunk_classifications": {
+        "hop/legal=True": 4091,
+        "malformed/legal=False": 5
+      },
+      "response_token_lengths": {
+        "20": 263,
+        "36": 184,
+        "12": 188,
+        "24": 198,
+        "52": 128,
+        "80": 1514,
+        "56": 155,
+        "28": 211,
+        "40": 151,
+        "44": 130,
+        "32": 186,
+        "60": 144,
+        "64": 95,
+        "16": 103,
+        "8": 78,
+        "48": 144,
+        "76": 48,
+        "72": 73,
+        "68": 98,
+        "4": 5
+      },
+      "fit": {
+        "examples": 2656,
+        "loss": -156.2886975668814,
+        "completed": true
+      },
+      "adapter_sha256": "162d209204403b3d22811cd74d50d507f954d22db4b69ad60af87b3cbfea045b"
+    },
+    {
+      "round": 1,
+      "groups": 512,
+      "group_size": 8,
+      "answers": 4096,
+      "accepted": 0,
+      "verifier_flags_independently_rechecked": true,
+      "exact_fresh_prompt_draw_confirmed": true,
+      "finite_checkpoint": true,
+      "adapter_parameters": 24576,
+      "first_chunk_classifications": {
+        "malformed/legal=False": 4096
+      },
+      "response_token_lengths": {
+        "4": 4096
+      },
+      "fit": {
+        "examples": 0,
+        "loss": null,
+        "completed": true
+      },
+      "adapter_sha256": "c937ad5938bac5a0244ac9d5ff7da1e75a088256547ffbf41c091b984f9dba3c"
+    }
+  ],
+  "grpo_adapter_max_change_after_round0": 0.08869724720716476,
+  "grpo_adapter_max_change_during_round1": 0.0,
+  "conclusion": "No clear held-out development advantage for the MCTS-trained greedy policy over the original model. GRPO collapsed after round 0, so beating this GRPO result does not establish a credible MCTS advantage.",
+  "diagnosis": "Completed files, group membership, rewards, fresh prompts and all checkpoint tensors verified. Collapse follows the first GRPO fit; round 1 has zero successes and no gradient-bearing groups. No operational crash or nonfinite checkpoint was found. The existing baseline uses an unregularized sequence-log-probability objective; the specific stability cause requires a separately documented experiment, not a silent learning-rate or algorithm change. Independent CPU evaluation also emits the malformed repeated DONE chunk [5,5,5,5], with finite logits; this is not specific to the MPS evaluator.",
+  "scope": "One seed, unequal training budgets, greedy development evaluation. No sealed test evaluation or test-time MCTS comparison.",
+  "original_Q6_QF": "intentionally held",
+  "automatic_scientific_retry": false,
+  "independent_cpu_collapse_check": {
+    "checked_utc": "2026-10-10T21:33:41.280067+00:00",
+    "device": "cpu",
+    "independent_greedy_successes": 0,
+    "n": 4,
+    "first_step_logits_finite": true,
+    "max_abs_first_step_logit": 44.83444595336914,
+    "responses": [
+      {
+        "tokens": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "classification": {
+          "kind": "malformed",
+          "legal": false,
+          "action": -1
+        }
+      },
+      {
+        "tokens": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "classification": {
+          "kind": "malformed",
+          "legal": false,
+          "action": -1
+        }
+      },
+      {
+        "tokens": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "classification": {
+          "kind": "malformed",
+          "legal": false,
+          "action": -1
+        }
+      },
+      {
+        "tokens": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "classification": {
+          "kind": "malformed",
+          "legal": false,
+          "action": -1
+        }
+      }
+    ]
+  }
+}

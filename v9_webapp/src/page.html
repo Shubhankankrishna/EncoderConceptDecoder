@@ -1,0 +1,266 @@
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"><i style="height:10px;background:var(--enc)"></i><i style="height:16px;background:var(--con)"></i><i style="height:12px;background:var(--dec)"></i></div>
+      <h1>V9 Atlas</h1><span class="ver" id="ver-pill">draft_v9.md · design</span>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="sections">
+      <button data-tab="overview" class="on">Overview</button>
+      <button data-tab="live"><span class="dot" id="nav-dot"></span>Live telemetry</button>
+      <button data-tab="arch">Architecture 2D</button>
+      <button data-tab="model3d">3D model</button>
+      <button data-tab="stages">Training stages</button>
+      <button data-tab="search">Concept search</button>
+      <button data-tab="continual">Continual learning</button>
+      <button data-tab="evidence">Evidence &amp; bets</button>
+    </nav>
+    <a class="live-pill" id="live-pill" href="#live" title="Live experiment telemetry"><span class="dot"></span><span id="live-pill-t">telemetry offline</span></a>
+    <button class="theme-btn" id="theme-btn" aria-label="toggle light or dark theme">◐ Theme</button>
+  </div>
+</header>
+
+<main>
+<!-- ================================================================ OVERVIEW -->
+<section class="tab on" id="tab-overview">
+  <div class="hero">
+    <div class="panel pad">
+      <div class="eyebrow">Encoder → concept → decoder · version 9</div>
+      <h2>Give every reasoning step a committed, searchable choice</h2>
+      <p class="lead">Every earlier version handed the decoder an <b>average</b> of the possible next concepts. You cannot branch a search over an average, and you cannot reinforce it.
+        V9 replaces it with <b>K discrete codes per concept step</b> (H-NCP). Each code commits to one possible next concept, and a small <b>selector</b> learns which code will win.
+        The code is the MCTS action. The selector is both the search prior and the RL policy.</p>
+      <p class="lead">With <b>K = 1</b> the objective is exactly V8's, so the main claim changes a single axis.</p>
+      <div class="status"><span class="pill untested" id="status-pill">design · telemetry offline</span><span class="chip"><i style="background:var(--enc)"></i>E3 encoder</span><span class="chip"><i style="background:var(--con)"></i>C4 concept core</span><span class="chip"><i style="background:var(--code)"></i>K codes</span><span class="chip"><i style="background:var(--dec)"></i>D3 decoder</span></div>
+      <div class="stat-row">
+        <div><b>2,448,640</b><span>parameters (V8-D shape)</span></div>
+        <div><b>k = 4</b><span>tokens per concept = 1 hop</span></div>
+        <div><b>K = 8</b><span>codes per step (K = 1 control)</span></div>
+        <div><b id="stat-q">58–93 h</b><span id="stat-q-l">planned mandatory queue (draft §14, depends on Q6)</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="fig-head"><h3>Why an average cannot be a step</h3>
+        <div class="controls"><button class="btn primary" id="mm-train">Train H-NCP</button><button class="btn" id="mm-reset">Reset</button></div></div>
+      <div class="fig free" id="fig-modes"></div>
+      <div class="figcap">Illustration with synthetic points. At one GraphNav hop, three colours lead to three different next concepts. Squared-error NCP converges to their weighted <b>mean</b> (✕), which encodes no legal hop. Winner-take-all training moves each code onto one mode, and the selector bars learn how often each code wins.</div>
+    </div>
+  </div>
+
+  <div class="panel pad ov-live" id="ov-live" hidden></div>
+
+  <div class="sh"><div><div class="eyebrow">Six stages, each behind a gate</div><h2>The pipeline</h2>
+    <p>Your proposed sequence, kept stage for stage. A failed gate stops that branch, and the failure is reported as a result. Click a stage for its objective, arms and gates.</p></div></div>
+  <div class="pipeline" id="pipeline"></div>
+
+  <div class="sh"><div><div class="eyebrow">The question asked</div><h2>Can the decoder leave the search loop?</h2></div></div>
+  <div class="grid g3">
+    <div class="panel pad answer"><h3>Why it might work</h3><ul>
+      <li>One concept is exactly one hop: <code>[COL, TO, NODE, SEP]</code> is one 4-token chunk.</li>
+      <li>The transition is an in-context lookup over edge-concepts that the core already attends to.</li>
+      <li>NCP already makes self-feedback 18× less harmful on graph data than no NCP (+.048 vs +.891 nats).</li>
+      <li>A decoder-free child costs about 5 block-positions against 28 for a token child.</li></ul></div>
+    <div class="panel pad answer"><h3>How it could fail, each with a gate</h3><ul>
+      <li>Rolled-forward concepts drift over N steps (<b>G2.3a</b>).</li>
+      <li>Predicted hops decode to illegal moves (<b>G2.3b</b>).</li>
+      <li>The value head is too inaccurate to replace the verifier (<b>R5</b>, AUROC ≥ .80).</li>
+      <li>On the M2, kernel launches dominate, so the cheaper nodes don't save real time (<b>§9.3</b>).</li></ul></div>
+    <div class="panel pad answer"><h3>What V9 measures</h3><ul>
+      <li>A curve, not a yes/no: decode and re-ground every <b>R ∈ {1, 2, 4, ∞}</b> steps. R = ∞ is your exact proposal.</li>
+      <li>Main competitor: token-level tree search over the same hops, same weights, equal wall-clock.</li>
+      <li>Latent steering record so far: <b>0 wins in 4</b> against a simpler search.</li>
+      <li>Pre-registered confidence that R = ∞ wins on hard14: <b>~25%</b>.</li></ul></div>
+  </div>
+</section>
+
+<!-- ================================================================ LIVE -->
+<section class="tab" id="tab-live">
+  <div class="sh"><div><div class="eyebrow">development diagnostics · not the pre-registered sealed results</div><h2>Live experiment telemetry</h2>
+    <p>Read from the running queue's own files: step logs, 2k-update dev checks, driver status, tests and system load. Training loss and dev success here decide nothing. The register's sealed evaluations do.</p></div>
+    <div class="controls"><span class="chip" id="lv-conn"><i style="background:var(--frozen)"></i>connecting…</span>
+      <label>Server <input id="lv-url" class="inp" size="22" placeholder="same origin"></label>
+      <button class="btn" id="lv-refresh">Refresh</button><label><input type="checkbox" id="lv-auto" checked> auto</label></div></div>
+  <div class="kpis" id="lv-kpis"></div>
+  <div class="sh" id="lv-q3-head" hidden><div><div class="eyebrow">Q3 · S2 H-NCP module · development diagnostics</div><h2>What Q3 is doing now</h2>
+    <p>Dense tier first (Q3a): for each seed, V8-repro, K1 and K8 are trained and measured, then the V8 replay and the register decide promotion. The recurrent tier (Q3b) runs after Q2.</p></div></div>
+  <div class="panel" id="lv-q3" hidden>
+    <div class="fig-head"><h3>Q3 pipeline</h3><span class="muted" id="lv-q3-sub"></span></div><div class="pad" id="lv-q3-board"></div>
+    <div class="fig-head" style="border-top:1px solid var(--line)"><h3>Measured so far</h3><span class="muted">greedy suites of the measurement step · point estimates</span></div>
+    <div class="pad tbl-wrap" id="lv-q3-table"></div>
+    <div class="figcap" style="margin-top:0">The register's gates (G2.1 to G2.3) are decided by <code>register_s2</code> on paired items over both seeds, not by this table. One seed per arm is no claim about K8 versus K1.</div>
+    <div class="fig-head" style="border-top:1px solid var(--line)"><h3>S2 training curves</h3><div class="controls"><span class="seg" id="lv-q3-metric"></span><label>smooth <input type="range" id="lv-q3-smooth" min="0" max="12" value="3"></label></div></div>
+    <div class="pad" style="padding-bottom:4px"><div class="legend" id="lv-q3-legend"></div></div><div class="fig free chart" id="lv-q3-curves"></div>
+    <div class="figcap">Each run trains 12,000 updates against a frozen teacher. K = 1 is the V8 objective; K = 8 adds the committed codes. Text loss is flat in every arm, so the curves open on symbolic loss. The grey dashed line is where the seed-911 teacher (S1 A_delayed s902) ended; seed 912 trains against the V8 seed-811 teacher, which has no log here, so the line applies to seed 911 only. Development diagnostics: the gates come from the measurement step, not from these curves.</div>
+    <div id="lv-q3-k8-wrap" hidden>
+      <div class="fig-head" style="border-top:1px solid var(--line)"><h3>K8 hypothesis diagnostics</h3><div class="controls"><span class="seg" id="lv-q3-k8-metric"></span></div></div>
+      <div class="fig free chart" id="lv-q3-k8"></div><div class="figcap" id="lv-q3-k8-cap"></div>
+    </div>
+  </div>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="panel"><div class="fig-head"><h3>Queue</h3><span class="muted" id="lv-q-sub"></span></div><div class="pad" id="lv-queue"></div></div>
+    <div class="panel"><div class="fig-head"><h3>Timeline</h3><span class="muted">measured (solid) vs planned (hatched)</span></div><div class="fig" id="lv-gantt"></div></div>
+  </div>
+  <details class="fold" id="lv-q1" style="margin-top:14px"><summary><h3>Q1 · S1 foundation</h3><span class="muted" id="lv-q1-sub"></span><span class="fold-hint">show / hide</span></summary>
+  <div class="panel" style="margin-top:14px"><div class="fig-head"><h3>Training curves</h3>
+    <div class="controls"><span class="seg" id="lv-metric"></span><span class="seg" id="lv-from"><button data-f="0">from 0</button><button data-f="2000" class="on">from 2k</button><button data-f="6000">from 6k</button></span><label>smooth <input type="range" id="lv-smooth" min="0" max="12" value="3"></label><label><input type="checkbox" id="lv-logy"> log y</label></div></div>
+    <div class="pad" style="padding-bottom:4px"><div class="legend" id="lv-legend"></div></div><div class="fig free chart" id="lv-curves"></div>
+    <div class="figcap">Hover for values at one update. Click a legend entry to hide a run. Solid lines are hierarchy arms, the dashed line is the flat Transformer; text loss is the smaller-is-better axis for H4, symbolic loss tracks the reasoning task.</div></div>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="panel"><div class="fig-head"><h3>Runs at a matched update</h3><div class="controls"><span class="seg" id="lv-step-mode"><button data-m="latest" class="on">flat's latest</button><button data-m="pick">pick</button></span><label id="lv-step-wrap" hidden>step <input type="range" id="lv-step" min="1000" max="24000" step="100" value="12000"><span class="mono" id="lv-step-v"></span></label></div></div>
+      <div class="pad tbl-wrap" id="lv-matched"></div></div>
+    <div class="panel"><div class="fig-head"><h3>Dev success at each check</h3><span class="seg" id="lv-suite"></span></div><div class="fig free chart" id="lv-dev"></div>
+      <div class="figcap">Dev checks run every 2k updates up to 12k, then at 18k and 24k, on 128 dev items per suite. Markers are point estimates; the G1 gate (≥ 80% standard, ≥ 95% lookup) is applied to the 2,048-item dev eval after training.</div></div>
+  </div>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="panel"><div class="fig-head"><h3>Throughput</h3><span class="muted" id="lv-speed-sub"></span></div><div class="fig free chart" id="lv-speed"></div></div>
+    <div class="panel"><div class="fig-head"><h3>Gate G1 · competence</h3><span class="muted">dev point estimates, 2,048 items</span></div><div class="pad" id="lv-g1"></div></div>
+  </div>
+  </details>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="panel"><div class="fig-head"><h3>Tests and locks</h3><span class="muted" id="lv-tests-sub"></span></div><div class="pad tbl-wrap" id="lv-tests"></div></div>
+    <div class="panel"><div class="fig-head"><h3>System</h3></div><div class="pad" id="lv-sys"></div><div class="fig-head" style="border-top:1px solid var(--line)"><h3>Recent queue events</h3></div><div class="pad ev-feed" id="lv-events"></div></div>
+  </div>
+</section>
+
+<!-- ================================================================ ARCHITECTURE 2D -->
+<section class="tab" id="tab-arch">
+  <div class="sh"><div><div class="eyebrow">§5.1 · §6.2 · §6.3 · one design per tested variant</div><h2>How each architecture variant works</h2>
+    <p>Every arm the queue trains or tests has its own 2D design here and its own 3D scene in the next tab. Pick one from the gallery or the menu. Solid boxes train in that arm, dashed grey ones are frozen, faded ones do not exist in it. Click any block to inspect it.</p></div>
+    <div class="controls">
+      <label>Variant <select id="arch-variant" class="sel"></select></label>
+      <label id="arch-kseg" hidden>K <span class="seg" id="arch-k"><button data-k="1">1</button><button data-k="4">4</button><button data-k="8" class="on">8</button></span></label>
+      <label><input type="checkbox" id="arch-flow" checked> animate flow</label>
+      <label><input type="checkbox" id="g-full" checked> show full-column arms</label>
+    </div>
+  </div>
+  <div class="panel pad"><div id="arch-gallery" class="gallery"></div></div>
+  <div class="panel pad arch-head" id="arch-head"></div>
+  <div class="split">
+    <div class="panel"><div class="fig" id="fig-arch"></div>
+      <div class="figcap" id="arch-cap"></div></div>
+    <aside class="panel pad inspector" id="arch-insp"></aside>
+  </div>
+
+  <div class="sh"><div><div class="eyebrow">§4.2 · exact indexing</div><h2>One concept is one step, and the plan lands one chunk later</h2>
+    <p>The plan from chunk <i>j</i> is first exposed at logit position 4<i>j</i>+3, so it steers the tokens of chunk <i>j</i>+1. The <b>last prompt chunk</b> therefore picks hop 1. In general, the action for hop <i>h</i> is the code chosen at chunk <i>h</i>−1.</p></div>
+    <div class="controls"><label>Highlight chunk <span class="seg" id="idx-j"></span></label></div></div>
+  <div class="panel"><div class="fig" id="fig-index"></div>
+    <div class="figcap">Edges are <code>[NODE, COL, NODE′, SEP]</code>, hops are <code>[COL, TO, NODE, SEP]</code>, and the terminator is <code>[DONE, SEP, SEP, SEP]</code>. With 3 colours, the colour is the only free choice in a hop.</div></div>
+</section>
+
+<!-- ================================================================ 3D -->
+<section class="tab" id="tab-model3d">
+  <div class="sh"><div><div class="eyebrow">Drag to orbit · scroll to zoom · click a part</div><h2>V9 in three dimensions</h2>
+    <p>The <b>model</b> view lays four chunks out along the sequence. The encoder and decoder sit on two planes, with the concept core and the K hypothesis codes rising above each chunk. The <b>search tree</b> view shows decoder-free MCTS with re-grounding.</p></div>
+    <div class="controls">
+      <label>Variant <select id="v3-variant" class="sel"></select></label>
+      <span class="seg" id="v3-scene"><button data-s="model" class="on">Model</button><button data-s="tree">Search tree</button></span>
+      <span class="seg" id="v3-k"><button data-k="1">K 1</button><button data-k="4">K 4</button><button data-k="8" class="on">K 8</button></span>
+      <span class="seg" id="v3-r" hidden><button data-r="1">R 1</button><button data-r="2" class="on">R 2</button><button data-r="4">R 4</button><button data-r="0">R ∞</button></span>
+      <span class="seg" id="v3-view"><button data-v="all" class="on">Whole</button><button data-v="enc">Encoder</button><button data-v="con">Concepts</button><button data-v="dec">Decoder</button></span>
+      <label><input type="checkbox" id="v3-flow" checked> flow</label>
+      <label><input type="checkbox" id="v3-labels" checked> labels</label>
+      <label>explode <input type="range" id="v3-explode" min="0" max="1" step="0.01" value="0"></label>
+    </div>
+  </div>
+  <div class="split">
+    <div class="panel" style="padding:0"><div class="stage3d" id="stage3d"><canvas id="cv3d"></canvas><div class="labels3d" id="labels3d"></div><div class="hud" id="hud3d">loading 3D…</div></div></div>
+    <aside class="panel pad inspector" id="v3-insp"></aside>
+  </div>
+</section>
+
+<!-- ================================================================ STAGES -->
+<section class="tab" id="tab-stages">
+  <div class="sh"><div><div class="eyebrow">§5 – §10</div><h2>What trains, what stays frozen, and what must pass</h2>
+    <p>Each column is a stage, each row a part of the model. Teal cells train, hatched cells are frozen, and dashed cells don't exist yet. Click a column to open that stage.</p></div></div>
+  <div class="panel pad tbl-wrap"><table class="matrix" id="matrix"></table></div>
+  <div class="sh"><div class="stage-tabs" id="stage-tabs"></div></div>
+  <div class="grid g2" id="stage-detail"></div>
+</section>
+
+<!-- ================================================================ SEARCH -->
+<section class="tab" id="tab-search">
+  <div class="sh"><div><div class="eyebrow">§9 · decoder-free concept MCTS</div><h2>Search over codes, decode only every R steps</h2>
+    <p>This is a toy PUCT search on a 3-way tree, four hops deep, with a hidden correct path. Small teal nodes are decoder-free concept children (5 block-positions each). Blue squares were re-grounded: decoded, re-encoded and replaced with true concepts (+24). The meters compare spend with a token-level search on the same budget.</p></div>
+    <div class="controls">
+      <label>R <span class="seg" id="s-r"><button data-r="1">1</button><button data-r="2" class="on">2</button><button data-r="4">4</button><button data-r="0">∞</button></span></label>
+      <button class="btn" id="s-step">Expand 1</button><button class="btn primary" id="s-run">Run 30</button><button class="btn" id="s-reset">Reset</button>
+    </div></div>
+  <div class="split">
+    <div class="panel"><div class="fig" id="fig-tree"></div><div class="pad" style="padding-top:0"><div class="meter" id="s-meter"></div></div>
+      <div class="figcap">Toy simulation for intuition only. Priors and values are synthetic, and the costs use the §9.3 block-position counts for the dense V8-D core. Real comparisons use measured wall-clock.</div></div>
+    <aside class="panel pad inspector">
+      <div class="cat"><i style="background:var(--con)"></i>Cost model §9.3 · §11.1</div>
+      <h3>Block-positions per child</h3>
+      <div class="fig free" id="fig-cost"></div>
+      <p style="margin-top:10px">Advantage per decoder-free child = <code>(k·(E+D) + C) / (C + 1)</code>, with equal-width blocks.</p>
+      <div class="controls" style="margin:8px 0">
+        <label>E <input type="range" id="c-e" min="1" max="24" value="3"><span id="c-e-v" class="mono">3</span></label>
+        <label>D <input type="range" id="c-d" min="1" max="24" value="3"><span id="c-d-v" class="mono">3</span></label>
+        <label>C <input type="range" id="c-c" min="1" max="16" value="4"><span id="c-c-v" class="mono">4</span></label>
+      </div>
+      <div class="ratio-out" id="c-ratio">5.6×</div>
+      <p class="muted" style="font-size:12.5px;margin-top:6px">E3/C4/D3 gives 5.6×. NCP-ArchPreview's 16/8/16 gives ≈15×. At d = 128 on an M2, wall-clock may be launch-bound, so V9 measures nodes per second at frontier sizes 1, 16 and 64 before comparing anything.</p>
+      <div class="src">draft_v9.md §9.3, §11.1</div>
+    </aside>
+  </div>
+  <div class="sh"><div><h2>Search loop and competitors</h2></div></div>
+  <div class="grid g2">
+    <div class="panel"><div class="fig" id="fig-loop"></div></div>
+    <div class="panel pad"><h3>Competitors, at equal wall-clock and equal verifier calls</h3>
+      <table class="data"><thead><tr><th>#</th><th>Method</th><th>Role</th></tr></thead><tbody>
+        <tr><td>1</td><td>Token tree search over the same hops: same weights in code-free mode, same PUCT, same value-head training</td><td>Primary</td></tr>
+        <tr><td>2</td><td>Verifier best-of-N token sampling (T = 1)</td><td>Strongest simple baseline</td></tr>
+        <tr><td>3</td><td>AB-MCTS-A over complete answers (GEN / CONT)</td><td>Answer-level family</td></tr>
+        <tr><td>4</td><td>Greedy decoding · symbolic BFS solver</td><td>References only</td></tr>
+      </tbody></table>
+      <p class="muted" style="font-size:12.5px;margin-top:10px">Budgets of 1, 2, 4, 8, 16 and 32 × one greedy answer's wall-clock. Paired item-level intervals on sealed hard10 and hard14.</p>
+      <h3 style="margin-top:14px">Search signal versus gate procedure</h3>
+      <p style="font-size:13.5px;color:var(--ink2)">The 73-candidate nearest-chunk decode (≈876 block-positions) is the ground truth for gate G2.3(b). Search never uses it. Search reads two cheap heads on u⁽⁰⁾: value V_ψ and terminal τ_ψ. Iteration 0 has neither head, so it runs at R = 1 with every node decoded.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ CONTINUAL -->
+<section class="tab" id="tab-continual">
+  <div class="sh"><div><div class="eyebrow">§10 · Local Support Learning</div><h2>A local gate protects old skills only where inputs separate</h2>
+    <p>LSL opens a phase's adapter where Φpos (this phase's inputs) is denser than Φneg (generic inputs). Where the new and old inputs overlap, the newest update wins by design. V8's bind phase sat in exactly that overlap. V9 measures separability first (gate G6.0) and keeps bind as a pre-registered negative control.</p></div>
+    <div class="controls"><span class="seg" id="lsl-sc"><button data-sc="sep" class="on">P2 colour-count (separable)</button><button data-sc="bind">P3 bind (overlapping)</button></span></div></div>
+  <div class="split">
+    <div class="panel"><div class="fig" id="fig-lsl"></div>
+      <div class="figcap">Synthetic 2-D illustration of a JL-projected input space. The shaded region is where the gate opens (Φpos &gt; Φneg). The hit rate is computed live: the share of old-task points (navigation and text) that fall inside the open region.</div></div>
+    <aside class="panel pad inspector" id="lsl-insp"></aside>
+  </div>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="panel pad tbl-wrap"><h3>Phases</h3><table class="data"><thead><tr><th>Phase</th><th>Data</th><th>Role</th></tr></thead><tbody>
+      <tr><td>P1</td><td>V8's domain-shifted text</td><td>Repeats V8 phase 1, where retention held</td></tr>
+      <tr><td>P2</td><td>Colour-count (new grammar) or shifted-layout navigation, whichever passes G6.0</td><td>Positive test of LSL</td></tr>
+      <tr><td>P3</td><td>Bind (same edge-list grammar as navigation)</td><td>Negative control: LSL − always-open within ±5 points</td></tr></tbody></table>
+      <p class="muted" style="font-size:12.5px;margin-top:10px">Colour-count: header <code>[GNAV, COL c*, DONE, SEP]</code>, 8–40 colour tokens, answer <code>[NODE0+count, DONE, SEP, SEP]</code>. It needs a new content-hash split and a sealed set of 2,048 items.</p></div>
+    <div class="panel pad tbl-wrap"><h3>Arms</h3><table class="data"><thead><tr><th>Arm</th><th>Adapter · gate</th><th>Purpose</th></tr></thead><tbody>
+      <tr><td>LSL-v8</td><td>rank 4 q,v · 4/8 comps · JL 32</td><td>Reproduce V8</td></tr>
+      <tr><td>LSL-scaled</td><td>rank 16 q,k,v,o + FFN · 16/32 · JL 64</td><td>Closer to the paper</td></tr>
+      <tr><td>Always-open</td><td>same as scaled, no gate</td><td>Does gating help at all?</td></tr>
+      <tr><td>VQ / selector-only</td><td>Q, PQ heads, selector</td><td>NCP paper's “+VQ” route</td></tr>
+      <tr><td>Full fine-tune</td><td>all weights</td><td>Forgetting reference</td></tr>
+      <tr><td>Replay 10%</td><td>all weights + old data</td><td>Ceiling only</td></tr></tbody></table></div>
+  </div>
+</section>
+
+<!-- ================================================================ EVIDENCE -->
+<section class="tab" id="tab-evidence">
+  <div class="sh"><div><div class="eyebrow">§12 · frozen 6 October 2026</div><h2>Pre-registered bets, least confident first</h2>
+    <p>The confidence of each prediction is fixed before any number exists. Any amendment made after a result is seen is logged with its timestamp and the result that prompted it.</p></div></div>
+  <div class="grid g2">
+    <div class="panel pad"><h3>Lowest confidence (L) and other predictions (H)</h3><div id="conf"></div></div>
+    <div style="display:grid;gap:14px;align-content:start;grid-template-columns:minmax(0,1fr)">
+      <div class="panel pad"><h3>Kill rules</h3><div class="gate-list" id="kills"></div></div>
+      <div class="panel"><div class="fig-head"><h3>Planned compute (draft §14)</h3><span class="seg" id="q-mode"><button data-m="must" class="on">mandatory ~58 h</button><button data-m="full">mandatory ~93 h</button></span></div><div class="fig" id="fig-queue"></div>
+        <div class="figcap">Planned hours from the draft's §14 table, drawn in block order. The low case assumes S5 search batches across items (Q6 ≈ 3.1 h); the high case assumes it does not (≈ 38 h). Actual execution order is register I13: Q1 → Q3a → Q2 → Q3b → Q4 → Q5 → Q6 → QF, one job at a time on the GPU. Measured and projected times are on the Live telemetry tab. Kill rules can end Q4–Q6 early.</div></div>
+    </div>
+  </div>
+  <div class="sh"><div><div class="eyebrow">§2.1</div><h2>What eight versions established</h2></div></div>
+  <div class="panel pad" id="evlist"></div>
+</section>
+</main>
+<footer>V9 Atlas is built from <code>draft_v9.md</code> (6 October 2026). The design pages state what the draft specifies; toy simulations are labelled as such. The Live telemetry tab shows <b>development diagnostics</b> from the running queue (training loss and the 2k-update dev checks). They are not the pre-registered sealed results and decide no hypothesis. Other measured numbers come from V1–V8 artifacts or papers cited in the draft's Appendix A.</footer>
+<div class="tip" id="tip"></div>

@@ -1,0 +1,163 @@
+{
+  "status": "completed",
+  "verified_utc": "2026-10-10T07:47:29.516820+00:00",
+  "completed_utc": "2026-10-10T07:45:08Z",
+  "notified_utc": "2026-10-10T07:47:29.533580+00:00",
+  "trainings": 4,
+  "steps_per_training": 6000,
+  "measurements": 4,
+  "seeds": [
+    921,
+    922
+  ],
+  "result_lock": "1a81ba3d6363da9cd75ea6d772a3655a25ed548eb591a4c250c43e4259c8fe94",
+  "decision": {
+    "status": {
+      "dec": "fail",
+      "joint": "fail"
+    },
+    "replaces_S2": null,
+    "H11_descriptive": {
+      "dec_keeps": [
+        true,
+        true
+      ],
+      "joint_drop": [
+        0.09140562248995976,
+        0.04176706827309229
+      ],
+      "joint_loses_20pct": [
+        false,
+        false
+      ]
+    },
+    "note": "S2 model goes forward if no arm passes; S3 then reported as a negative"
+  },
+  "forward": [
+    {
+      "seed": 921,
+      "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/checkpoint.pt",
+      "stage": "S2",
+      "s2_source": {
+        "name": "S2_K8_dense_s911",
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/checkpoint.pt",
+        "measure": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/measure.json",
+        "teacher": "S1_A_delayed_s902",
+        "teacher_sha256": "1199b1c1e1c019c86c23badbf29270589713c03d1c0bd57ef8f1fb0f3a516bac",
+        "seed": 911,
+        "core": "dense",
+        "k": 8,
+        "m": 2,
+        "p_cl": 0.25
+      },
+      "flag": "seed-dependent G2.2(d): both S3 seeds start from the passing seed's K8 model"
+    },
+    {
+      "seed": 922,
+      "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/checkpoint.pt",
+      "stage": "S2",
+      "s2_source": {
+        "name": "S2_K8_dense_s911",
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/checkpoint.pt",
+        "measure": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/measure.json",
+        "teacher": "S1_A_delayed_s902",
+        "teacher_sha256": "1199b1c1e1c019c86c23badbf29270589713c03d1c0bd57ef8f1fb0f3a516bac",
+        "seed": 911,
+        "core": "dense",
+        "k": 8,
+        "m": 2,
+        "p_cl": 0.25
+      },
+      "flag": "seed-dependent G2.2(d): both S3 seeds start from the passing seed's K8 model"
+    }
+  ],
+  "artifacts_sha256": {
+    "v9_tiny/runs/S3_s921_lambda/lambda.json": "d158fa07c28195b27bcb600a857952379af1f4eea6a8719b07ff5ebb1e32fa6f",
+    "v9_tiny/runs/S3_s921_dec/checkpoint.pt": "d65fa1757d0180dd3405a29a9ad7e7922c50d220ca8ce99d5620c401a11e75db",
+    "v9_tiny/runs/S3_s921_dec/train_summary.json": "30c61e4f15cf4813c8ca94891a1594fedd3c35c5868d2ce675def3a270792bad",
+    "v9_tiny/runs/S3_s921_dec/measure.json": "020b32125abc6be292ebb2a908b9980eea9a6327810c21b23e4cad4d38034ba3",
+    "v9_tiny/runs/S3_s921_joint/checkpoint.pt": "a123e2b7a12bd5848ab342a996bead799fc0663b1cd1108b56574de7b63cc430",
+    "v9_tiny/runs/S3_s921_joint/train_summary.json": "2a7e48a190390d637b9b00ef19667f4d385cccb79f71af0542d709f5907e6ac5",
+    "v9_tiny/runs/S3_s921_joint/measure.json": "71f668e1797a9701fe8d1d567108ee2a2c8576b9a135542a83f65820b508b306",
+    "v9_tiny/runs/S3_s922_lambda/lambda.json": "d158fa07c28195b27bcb600a857952379af1f4eea6a8719b07ff5ebb1e32fa6f",
+    "v9_tiny/runs/S3_s922_dec/checkpoint.pt": "31a89eadf7f7f7d18bbd4ac2e3972957c0be40e0240aaa4d8927690fe0c4dc20",
+    "v9_tiny/runs/S3_s922_dec/train_summary.json": "3d4326bb7d27e9eb81820e4f496a893555760cf747e2d195ffc1b169dea4d0b5",
+    "v9_tiny/runs/S3_s922_dec/measure.json": "7d8010b9a7da6fcb65b6cba8d457df72458bab91cba95235e182167af6085149",
+    "v9_tiny/runs/S3_s922_joint/checkpoint.pt": "8585679f3c417d93953ac24a8303bcbcbc25bd72e42e1a78ce7196fae1c510b6",
+    "v9_tiny/runs/S3_s922_joint/train_summary.json": "9264d7ebd0dd9f831d292154f336e192988ccdb0c5ed32853448b2765da49084",
+    "v9_tiny/runs/S3_s922_joint/measure.json": "37d61a30b973c9d4458718bceb45de53857e847e192a4577aba1b7ca7c953b43",
+    "v9_tiny/runs/S3_s921_G3.json": "fce3eb8cec627e6ee6cfb14f1aa0c92f27804b676159ee6543365e27b2ed245e",
+    "v9_tiny/runs/S3_s922_G3.json": "df7f3da12713bc853be812f59df3166cdab9a9a36a0dab2b0577e157b2ef0a23",
+    "v9_tiny/runs/S3_DECISION.json": "7711c2180226cdd80c9545628d2916849530e25ebbc0b19216c7997ee2400b71",
+    "v9_tiny/runs/Q4_RESULT.json": "76ae9535910aa14c3fa6e90b5a6db790b3b3fe140d01f87f95021d776a1a2c1c"
+  },
+  "greedy": {
+    "921_dec": {
+      "standard": {
+        "rate": 0.8603515625,
+        "n": 2048
+      },
+      "hard10": {
+        "rate": 0.314453125,
+        "n": 512
+      },
+      "hard14": {
+        "rate": 0.04296875,
+        "n": 256
+      }
+    },
+    "921_joint": {
+      "standard": {
+        "rate": 0.88818359375,
+        "n": 2048
+      },
+      "hard10": {
+        "rate": 0.34375,
+        "n": 512
+      },
+      "hard14": {
+        "rate": 0.0390625,
+        "n": 256
+      }
+    },
+    "922_dec": {
+      "standard": {
+        "rate": 0.849609375,
+        "n": 2048
+      },
+      "hard10": {
+        "rate": 0.322265625,
+        "n": 512
+      },
+      "hard14": {
+        "rate": 0.03515625,
+        "n": 256
+      }
+    },
+    "922_joint": {
+      "standard": {
+        "rate": 0.84375,
+        "n": 2048
+      },
+      "hard10": {
+        "rate": 0.333984375,
+        "n": 512
+      },
+      "hard14": {
+        "rate": 0.046875,
+        "n": 256
+      }
+    }
+  },
+  "q5_preflight": {
+    "stage": "Q5",
+    "event": "preflight_passed",
+    "lock": "b3af516d5cc6dbb102d1a1153071d5164ba878833eb8bb7743c01bae15e091f7",
+    "utc": "2026-10-10T07:45:33Z",
+    "block": "Q5"
+  },
+  "q5_driver_pid": 20052,
+  "q5_child_pid": 29128,
+  "q5_stage": "S4_pilot",
+  "notification": "Q4 complete. Both decoder-only and joint variants failed promotion, so the original S2 model continues. Q5 passed preflight and started its pilot; Q6 and final analysis remain. Monitoring continues."
+}

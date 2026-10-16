@@ -1,0 +1,419 @@
+{
+  "status": "passed",
+  "block": "Q3",
+  "lock_sha256": "73c0f04f2144df2fc32676e6ebf2eb808724d901bc9cf49e8f8d9f83399c1147",
+  "identity": {
+    "block": "Q3",
+    "frozen_implementation_sha256": "fcc93d876201367618a195d2d56feb6767800cb633ec7565ec161a74c3a42b58",
+    "files_sha256": "e8332bcb39833dac539c2bb7eb56d2931110069403a49fe2c08de4b81e7a7da2",
+    "data_manifest_sha256": "fe7ae55025b54dd84b0b8bb0fe34f593beefbc2533b9a34dc67163fc6b205300",
+    "exclusion_list_sha256": "0d9fa4cbbca46262a5382e374391292920f06e8619acfae4d7fa4940fb6f97ff",
+    "lock_sha256": "73c0f04f2144df2fc32676e6ebf2eb808724d901bc9cf49e8f8d9f83399c1147"
+  },
+  "items": [
+    "1",
+    "3",
+    "4",
+    "5 (S2 paths)",
+    "8",
+    "9 (driver-enforced teacher SHA; drift measured)",
+    "13"
+  ],
+  "tests": [
+    {
+      "name": "[items 1,3,4] K1/dense: no code parameters instantiated",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] K1/dense: trainable set equals V8 REFIT",
+      "passed": true,
+      "v8": 869504,
+      "v9": 869504
+    },
+    {
+      "name": "[items 1,3,4] K1/dense/u=0: same trainable names",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] K1/dense/u=0 (delta=1.00): loss, gradients, AdamW step within 1e-6 relative",
+      "passed": true,
+      "loss_rel": 0.0,
+      "grad_rel": 0.0,
+      "update_rel": 0.0,
+      "loss": 1.2186692953109741
+    },
+    {
+      "name": "[items 1,3,4] K1/dense: frozen foundation untouched",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] K1/dense: no code parameters instantiated",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] K1/dense: trainable set equals V8 REFIT",
+      "passed": true,
+      "v8": 869504,
+      "v9": 869504
+    },
+    {
+      "name": "[items 1,3,4] K1/dense/u=6000: same trainable names",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] K1/dense/u=6000 (delta=0.00): loss, gradients, AdamW step within 1e-6 relative",
+      "passed": true,
+      "loss_rel": 0.0,
+      "grad_rel": 0.0,
+      "update_rel": 0.0,
+      "loss": 1.2186692953109741
+    },
+    {
+      "name": "[items 1,3,4] K1/dense: frozen foundation untouched",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] K1/recurrent: no code parameters instantiated",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] K1/recurrent: trainable set equals V8 REFIT",
+      "passed": true,
+      "v8": 476288,
+      "v9": 476288
+    },
+    {
+      "name": "[items 1,3,4] K1/recurrent/u=0: same trainable names",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] K1/recurrent/u=0 (delta=1.00): loss, gradients, AdamW step within 1e-6 relative",
+      "passed": true,
+      "loss_rel": 0.0,
+      "grad_rel": 1.2757799083829013e-07,
+      "update_rel": 6.420471265755623e-09,
+      "loss": 2.2657856941223145
+    },
+    {
+      "name": "[items 1,3,4] K1/recurrent: frozen foundation untouched",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] K1/recurrent: no code parameters instantiated",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] K1/recurrent: trainable set equals V8 REFIT",
+      "passed": true,
+      "v8": 476288,
+      "v9": 476288
+    },
+    {
+      "name": "[items 1,3,4] K1/recurrent/u=6000: same trainable names",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] K1/recurrent/u=6000 (delta=0.00): loss, gradients, AdamW step within 1e-6 relative",
+      "passed": true,
+      "loss_rel": 0.0,
+      "grad_rel": 0.0,
+      "update_rel": 0.0,
+      "loss": 1.4725682735443115
+    },
+    {
+      "name": "[items 1,3,4] K1/recurrent: frozen foundation untouched",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] dense: zero code equals the plain block",
+      "passed": true,
+      "relative_error": 0.0
+    },
+    {
+      "name": "[items 1,3,4] dense: all K codes in one call equal one at a time",
+      "passed": true,
+      "relative_error": 0.0
+    },
+    {
+      "name": "[items 1,3,4] dense: keys/values unperturbed (slow reference)",
+      "passed": true,
+      "relative_error": 1.0381365456169078e-07,
+      "scale": 36.74562072753906
+    },
+    {
+      "name": "[items 1,3,4] dense: codes change the output",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] dense: code-free readout equals V8 core forward",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] dense: stream before B_H independent of codes",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] dense: code-free outputs and selector independent of code embeddings",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] dense: V9 adds 3,208 parameters at K = 8",
+      "passed": true,
+      "n": 3208
+    },
+    {
+      "name": "[items 1,3,4] dense: initial code write RMS ratio to the B_H stream recorded (\u00a76.2)",
+      "passed": true,
+      "write_rms": 0.08984606713056564,
+      "ratio": 0.04416482150554657
+    },
+    {
+      "name": "[items 1,3,4] recurrent: zero code equals the plain block",
+      "passed": true,
+      "relative_error": 0.0
+    },
+    {
+      "name": "[items 1,3,4] recurrent: all K codes in one call equal one at a time",
+      "passed": true,
+      "relative_error": 0.0
+    },
+    {
+      "name": "[items 1,3,4] recurrent: keys/values unperturbed (slow reference)",
+      "passed": true,
+      "relative_error": 5.56769812476432e-08,
+      "scale": 8.564350128173828
+    },
+    {
+      "name": "[items 1,3,4] recurrent: codes change the output",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] recurrent: code-free readout equals V8 core forward",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] recurrent: stream before B_H independent of codes",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] recurrent: code-free outputs and selector independent of code embeddings",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] recurrent: V9 adds 3,208 parameters at K = 8",
+      "passed": true,
+      "n": 3208
+    },
+    {
+      "name": "[items 1,3,4] recurrent: initial code write RMS ratio to the B_H stream recorded (\u00a76.2)",
+      "passed": true,
+      "write_rms": 0.07995708286762238,
+      "ratio": 0.03998219221830368
+    },
+    {
+      "name": "[items 1,3,4] dense: code at chunk j cannot reach positions <= 4j+2",
+      "passed": true,
+      "worst": 0.0
+    },
+    {
+      "name": "[items 1,3,4] dense: code at chunk j reaches positions 4j+3..4j+6",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] dense: tokens of chunk j+1 and later cannot change plans or selector at chunks <= j",
+      "passed": true,
+      "error": 1.430511474609375e-06
+    },
+    {
+      "name": "[items 1,3,4] recurrent: code at chunk j cannot reach positions <= 4j+2",
+      "passed": true,
+      "worst": 0.0
+    },
+    {
+      "name": "[items 1,3,4] recurrent: code at chunk j reaches positions 4j+3..4j+6",
+      "passed": true
+    },
+    {
+      "name": "[items 1,3,4] recurrent: tokens of chunk j+1 and later cannot change plans or selector at chunks <= j",
+      "passed": true,
+      "error": 9.5367431640625e-07
+    },
+    {
+      "name": "items 1, 3, 4 executed",
+      "passed": true,
+      "records": 44
+    },
+    {
+      "name": "engine K=1 equals frozen generate on standard",
+      "passed": true,
+      "n": 24
+    },
+    {
+      "name": "engine K=1 equals frozen generate on lookup",
+      "passed": true,
+      "n": 16
+    },
+    {
+      "name": "engine K=1 equals frozen generate on hard14",
+      "passed": true,
+      "n": 4
+    },
+    {
+      "name": "item 8: forced STOP verifies exactly when cur == goal after >= 1 hop (all prefixes of 400 graph items)",
+      "passed": true,
+      "prefixes": 2662
+    },
+    {
+      "name": "closed loop dense K=8: subset rollout equals sequential reference",
+      "passed": true,
+      "error": 1.7881393432617188e-06,
+      "rolled": 139,
+      "spans": 64
+    },
+    {
+      "name": "closed loop dense K=8: spans start at scored chunks and stay in-document",
+      "passed": true
+    },
+    {
+      "name": "closed loop recurrent K=8: subset rollout equals sequential reference",
+      "passed": true,
+      "error": 9.5367431640625e-07,
+      "rolled": 139,
+      "spans": 64
+    },
+    {
+      "name": "closed loop recurrent K=8: spans start at scored chunks and stay in-document",
+      "passed": true
+    },
+    {
+      "name": "closed loop dense K=1: subset rollout equals sequential reference",
+      "passed": true,
+      "error": 2.384185791015625e-06,
+      "rolled": 139,
+      "spans": 64
+    },
+    {
+      "name": "closed loop dense K=1: spans start at scored chunks and stay in-document",
+      "passed": true
+    },
+    {
+      "name": "restart rule: dead = win share < 1/(10K); split from the top code; Adam state zeroed",
+      "passed": true,
+      "dead": [
+        2,
+        3,
+        7
+      ],
+      "expect": [
+        2,
+        3,
+        7
+      ]
+    },
+    {
+      "name": "item 5: selector decoding invariant to the hidden demonstration",
+      "passed": true
+    },
+    {
+      "name": "item 5: mutant feeding k* into the inference plan is caught",
+      "passed": true
+    },
+    {
+      "name": "item 5: imagined transitions invariant to the hidden demonstration",
+      "passed": true
+    },
+    {
+      "name": "item 5: mutant decoder-free transition reading the true next chunk is caught",
+      "passed": true
+    },
+    {
+      "name": "compile parity S2 dense K=1 p_cl=0.0",
+      "passed": true,
+      "output_rel": 5.13348084041354e-07,
+      "worst_grad": {
+        "p": "core.blocks.3.n1.weight",
+        "max_abs": 6.51925802230835e-09,
+        "rel": 5.230375563769485e-07
+      },
+      "objective_loss": [
+        1.288054347038269,
+        1.288054347038269
+      ]
+    },
+    {
+      "name": "compile parity S2 dense K=1 p_cl=0.25",
+      "passed": true,
+      "output_rel": 5.13348084041354e-07,
+      "worst_grad": {
+        "p": "core.blocks.3.n1.weight",
+        "max_abs": 6.51925802230835e-09,
+        "rel": 5.345146405488777e-07
+      },
+      "objective_loss": [
+        1.3076733350753784,
+        1.3076733350753784
+      ]
+    },
+    {
+      "name": "compile parity S2 dense K=8 p_cl=0.25",
+      "passed": true,
+      "output_rel": 5.320574700817815e-07,
+      "worst_grad": {
+        "p": "core.blocks.3.n1.weight",
+        "max_abs": 1.1175870895385742e-08,
+        "rel": 4.914729743177304e-07
+      },
+      "objective_loss": [
+        1.310010313987732,
+        1.3099632263183594
+      ]
+    },
+    {
+      "name": "compile parity S2 recurrent K=1 p_cl=0.25",
+      "passed": true,
+      "output_rel": 4.279651761862624e-07,
+      "worst_grad": {
+        "p": "core.fL.w12.weight",
+        "max_abs": 4.0745362639427185e-10,
+        "rel": 7.415017080347752e-07
+      },
+      "objective_loss": [
+        2.304922103881836,
+        2.304922103881836
+      ]
+    },
+    {
+      "name": "compile parity S2 recurrent K=8 p_cl=0.25",
+      "passed": true,
+      "output_rel": 6.111033030720137e-07,
+      "worst_grad": {
+        "p": "core.fL.w12.weight",
+        "max_abs": 6.402842700481415e-10,
+        "rel": 4.949791900799028e-07
+      },
+      "objective_loss": [
+        2.3089356422424316,
+        2.3089358806610107
+      ]
+    },
+    {
+      "name": "item 13: no file under any other project runs/ changed; V9 runs/ only by the live Q1 queue",
+      "passed": true,
+      "changed": []
+    },
+    {
+      "name": "item 13: V9 runs/ changes come only from the running production queue (any block: status, driver, launch, queue log, stage folders)",
+      "passed": true,
+      "sample": [
+        "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/status_QF.json"
+      ]
+    },
+    {
+      "name": "lock identity unchanged during session",
+      "passed": true
+    }
+  ],
+  "seconds": 78.93227314949036,
+  "temp_dir": "/var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_q3_contracts_74l4pe6d",
+  "torch": "2.10.0"
+}

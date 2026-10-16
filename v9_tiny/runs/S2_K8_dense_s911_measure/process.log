@@ -1,0 +1,39 @@
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/measure_s2.py", line 550, in <module>
+    r = measure(a.source, a.out, a.teacher, a.quick); print(json.dumps(dict(seconds=r['seconds'], standard=r['greedy']['standard']['rate'])))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/measure_s2.py", line 506, in measure
+    dsel = self_states(eng, items); dgold = gold_states(eng, items); dwrong = wrong_states(eng, items, dsel)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/measure_s2.py", line 166, in self_states
+    g = eng.greedy([it.prompt for it in chunk], max_new=max(len(it.response) for it in chunk), record_states=True,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/hgen.py", line 214, in greedy
+    chunk = self.decode_chunk(xa, da, la, ca)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/hgen.py", line 127, in decode_chunk
+    H = self.hs.heads(c, cd, need_codes=need)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/hncp.py", line 121, in heads
+    uk, ak = finish(block_codes(blk, x, cd, self.codes.deltas(e)))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/hncp.py", line 62, in block_codes
+    g, u = block.w12(block.n2(y)).chunk(2, -1)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: MPS backend out of memory (MPS allocated: 2.20 GiB, other allocations: 17.88 GiB, max allowed: 20.13 GiB). Tried to allocate 47.46 MiB on private pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).
+{"seconds": 3841.7391250133514, "standard": 0.84765625}

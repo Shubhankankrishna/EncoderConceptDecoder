@@ -1,0 +1,57 @@
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q3.py", line 116, in <module>
+    Q3().execute()
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py", line 127, in execute
+    self.main()
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q3.py", line 79, in main
+    dense, rep_d, reg_d = self.tier('dense', teachers)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q3.py", line 57, in tier
+    runs[(arm, core, seed)] = self.arm(arm, core, k, m, p, seed, teachers[i])
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q3.py", line 33, in arm
+    self.once(name + '_measure', CODE / 'measure_s2.py', ['--source', ck, '--teacher', teacher['checkpoint'], '--out', meas] + (['--quick'] if SMOKE else []), meas)
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py", line 120, in once
+    self.run(name, script, args); return read_json(out)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py", line 95, in run
+    raise RuntimeError(f'{name} exited {rc}; see {folder}/process.log')
+RuntimeError: S2_V8repro_dense_s911_measure exited 1; see /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_V8repro_dense_s911_measure/process.log
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q3.py", line 116, in <module>
+    Q3().execute()
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py", line 127, in execute
+    self.main()
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q3.py", line 79, in main
+    dense, rep_d, reg_d = self.tier('dense', teachers)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q3.py", line 57, in tier
+    runs[(arm, core, seed)] = self.arm(arm, core, k, m, p, seed, teachers[i])
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q3.py", line 33, in arm
+    self.once(name + '_measure', CODE / 'measure_s2.py', ['--source', ck, '--teacher', teacher['checkpoint'], '--out', meas] + (['--quick'] if SMOKE else []), meas)
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py", line 120, in once
+    self.run(name, script, args); return read_json(out)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py", line 95, in run
+    raise RuntimeError(f'{name} exited {rc}; see {folder}/process.log')
+RuntimeError: S2_K8_dense_s911_measure exited 1; see /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911_measure/process.log
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q3.py", line 116, in <module>
+    Q3().execute()
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py", line 127, in execute
+    self.main()
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q3.py", line 87, in main
+    rec, rep_r, reg_r = self.tier('recurrent', teachers)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q3.py", line 57, in tier
+    runs[(arm, core, seed)] = self.arm(arm, core, k, m, p, seed, teachers[i])
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q3.py", line 33, in arm
+    self.once(name + '_measure', CODE / 'measure_s2.py', ['--source', ck, '--teacher', teacher['checkpoint'], '--out', meas] + (['--quick'] if SMOKE else []), meas)
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py", line 120, in once
+    self.run(name, script, args); return read_json(out)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py", line 95, in run
+    raise RuntimeError(f'{name} exited {rc}; see {folder}/process.log')
+RuntimeError: S2_K1_rec_s911_measure exited 1; see /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K1_rec_s911_measure/process.log

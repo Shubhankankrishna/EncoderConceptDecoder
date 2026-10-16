@@ -1,0 +1,103 @@
+{
+  "status": "passed",
+  "block": "Q4",
+  "lock_sha256": "eb79db3e4dfe048ad47c63a47ff2221c172d417830bcc0dea81b64d0a5eb5836",
+  "identity": {
+    "block": "Q4",
+    "frozen_implementation_sha256": "fcc93d876201367618a195d2d56feb6767800cb633ec7565ec161a74c3a42b58",
+    "files_sha256": "e932b5aa4afe7e78c138afc2f38d11fc51ca0bd6203f72265c9dfdbc5a34c234",
+    "data_manifest_sha256": "fe7ae55025b54dd84b0b8bb0fe34f593beefbc2533b9a34dc67163fc6b205300",
+    "exclusion_list_sha256": "0d9fa4cbbca46262a5382e374391292920f06e8619acfae4d7fa4940fb6f97ff",
+    "lock_sha256": "eb79db3e4dfe048ad47c63a47ff2221c172d417830bcc0dea81b64d0a5eb5836"
+  },
+  "items": [
+    "2",
+    "S3 ownership/distillation/data order",
+    "13"
+  ],
+  "tests": [
+    {
+      "name": "item 2: lambda = 0 reproduces the teacher logits exactly",
+      "passed": true,
+      "max_abs": 0.0
+    },
+    {
+      "name": "lambda = 1 equals the student code-free path; lambda = .6 differs from the teacher",
+      "passed": true,
+      "lam1": 0.0,
+      "lam06": 1.601379156112671
+    },
+    {
+      "name": "S3 ownership dec: only owned parameters change; owned ones do",
+      "passed": true,
+      "bad": [],
+      "missing": []
+    },
+    {
+      "name": "S3 ownership enc: only owned parameters change; owned ones do",
+      "passed": true,
+      "bad": [],
+      "missing": []
+    },
+    {
+      "name": "S3 ownership joint: only owned parameters change; owned ones do",
+      "passed": true,
+      "bad": [],
+      "missing": []
+    },
+    {
+      "name": "S3a-dec keeps the tied embedding, codebook, PQ heads, core, codes frozen",
+      "passed": true
+    },
+    {
+      "name": "same data order across arms at one seed",
+      "passed": true
+    },
+    {
+      "name": "S3b records constant delta = .1 and the S2 teacher SHA",
+      "passed": true
+    },
+    {
+      "name": "S3b distillation targets are computed from the teacher's own encoder (invariant to the student encoder)",
+      "passed": true
+    },
+    {
+      "name": "mutant reading the adapted student encoder for teacher targets is detectable",
+      "passed": true
+    },
+    {
+      "name": "G3 against itself: G2.1(b) ratio 1, paired differences 0",
+      "passed": true
+    },
+    {
+      "name": "G3 fails when dev standard success collapses",
+      "passed": true
+    },
+    {
+      "name": "G3 on V9-K1 (no codes) reports authority as not applicable",
+      "passed": true
+    },
+    {
+      "name": "seed rule: a split arm is seed-dependent; S3a-dec preferred",
+      "passed": true
+    },
+    {
+      "name": "item 13: no file under any other project runs/ changed",
+      "passed": true,
+      "changed": []
+    },
+    {
+      "name": "item 13: V9 runs/ changes come only from the running production queue (any block: status, driver, launch, queue log, stage folders)",
+      "passed": true,
+      "sample": [
+        "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/status_Q3.json"
+      ]
+    },
+    {
+      "name": "lock identity unchanged during session",
+      "passed": true
+    }
+  ],
+  "seconds": 29.684650897979736,
+  "temp_dir": "/var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_q4_contracts_2r4_jah6"
+}

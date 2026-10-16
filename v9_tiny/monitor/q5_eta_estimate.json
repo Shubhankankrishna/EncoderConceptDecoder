@@ -1,0 +1,114 @@
+{
+  "estimated_at_local": "2026-10-10T14:00:16.030840+05:30",
+  "status": "running_iteration2_grounded_rollout_fallback",
+  "current_stage": "Q5 S4_s921_EI iteration2 search",
+  "current_seed": 921,
+  "initial_search_started_local": "2026-10-10T13:34:11+05:30",
+  "initial_search_pilot_hours": 3.544865727777748,
+  "initial_search_pilot_finish_local": "2026-10-10T17:06:52.516620+05:30",
+  "initial_search_scope": "Search only; fit, validation and later rounds excluded. Production frontier and memory pressure differ from mini-pilot.",
+  "q5_remaining_planning_hours": [
+    48,
+    96
+  ],
+  "q5_planning_finish_local": [
+    "2026-10-12T14:00:16.030840+05:30",
+    "2026-10-14T14:00:16.030840+05:30"
+  ],
+  "protocol": {
+    "seeds": [
+      921,
+      922
+    ],
+    "expert_iteration_rounds_per_seed": 5,
+    "baselines_per_seed": [
+      "rft",
+      "grpo",
+      "reinforce"
+    ],
+    "greedy_evaluation_per_arm": true,
+    "gradcuit_pilot_per_seed": true,
+    "rh_allowed": false
+  },
+  "evidence": {
+    "initial_search": "Completed production iteration0: 512 problems, 11260.25 search seconds and 32.23 learning/validation seconds.",
+    "later_search": "Iteration1 completed 512 fresh problems in 11710.34 search seconds plus 41.10 learning/validation seconds; iteration2 remains registered grounded/rollout fallback. Later G4 results can change this.",
+    "baselines": "Three baselines per seed match actual EI verifier calls; no full production baseline timing yet."
+  },
+  "assumptions": [
+    "Continuous AC power and awake Mac",
+    "Single production MPS job",
+    "Original full protocol retained",
+    "No new failures or sustained external memory contention"
+  ],
+  "uncertainty": "48-96 hours is a broad scheduling allowance, not a calibrated bound; Q5 can take longer. Refine after the first complete iteration and first baseline round.",
+  "Q6_QF_excluded": true,
+  "clarified_at_utc": "2026-10-10T08:34:35.659931+00:00",
+  "confidence": "Initial production search/fit/validation measured. Whole Q5 ETA remains uncalibrated until later rounds and baseline throughput are observed.",
+  "planning_allowance_interpretation": "48-96 hours was a broad scheduling allowance, not a measured forecast or validated completion-date bound. Do not present Oct12-14 as an established completion window.",
+  "known_remaining_work": {
+    "expert_iteration_rounds_total": 10,
+    "expert_iteration_seeds": 2,
+    "baseline_training_jobs_total": 6,
+    "baseline_matched_rounds_total": 30,
+    "greedy_evaluations_and_gradcuit_pilots": "Also required; reference 921 greedy already complete."
+  },
+  "illustrative_search_hours": 41.21,
+  "illustrative_search_caveat": "About 41 hours follows from scaling the imagined mini-pilot by a single-step grounded/imagined throughput ratio. This is not a production-round benchmark. G4 fallback, trajectory lengths, memory pressure, fitting and validation change actual time.",
+  "earliest_refinement": "First completed production iteration provides actual initial search/fit/validation costs and G4 policy; first baseline round provides baseline throughput.",
+  "invalidated_at_utc": "2026-10-10T10:29:29.351383+00:00",
+  "failure_utc": "2026-10-10T09:56:45Z",
+  "production_rounds_completed": 2,
+  "recovery_note": "I23 exact parity, Q5/Q6 contracts, full isolated CPU smoke, full 64-problem MPS frontier and physical hashes passed. Production restarted 11:26 UTC with worker recycling. Historical pilot finish dates are not current forecasts.",
+  "recovered_at_utc": "2026-10-10T11:27:27.931774+00:00",
+  "production_search_restarted_utc": "2026-10-10T11:26:22Z",
+  "updated_utc": "2026-10-10T19:24:33.881355+00:00",
+  "first_iteration_completed_utc": "2026-10-10T14:34:35.980619+00:00",
+  "measured_first_iteration": {
+    "search_hours": 3.127847328703598,
+    "learning_and_validation_seconds": 32.230801832978614,
+    "problems": 512
+  },
+  "next_iteration_problems": 512,
+  "next_iteration_problem_count_reason": "Registered I16 fallback: complete G4 inconclusive and imagined_d1 G4 fails, so value_leaves false. Full n4096 setting remains unchanged.",
+  "current_progress": {
+    "completed_iterations_this_arm": 2,
+    "iterations_this_arm": 5,
+    "remaining_EI_iterations_all_seeds": 8,
+    "remaining_baseline_training_jobs": 6,
+    "remaining_baseline_rounds": 30
+  },
+  "second_iteration_completed_utc": "2026-10-10T17:50:27.836247+00:00",
+  "measured_second_iteration": {
+    "search_hours": 3.2528719763311122,
+    "learning_and_validation_seconds": 41.102472624974325,
+    "problems": 512
+  },
+  "first_seed_EI_forecast": {
+    "estimated_at_utc": "2026-10-10T19:24:33.881355+00:00",
+    "completed_rounds": 2,
+    "current_round": 3,
+    "current_round_problems_done": 235,
+    "current_round_problems_total": 512,
+    "measured_round_hours": [
+      3.136800329212759,
+      3.26428932983805
+    ],
+    "current_round_finish_local_window": [
+      "2026-10-11T02:00:00+05:30",
+      "2026-10-11T03:00:00+05:30"
+    ],
+    "five_rounds_and_first_greedy_finish_local_window": [
+      "2026-10-11T09:00:00+05:30",
+      "2026-10-11T11:00:00+05:30"
+    ],
+    "assumptions": [
+      "Continued 512-problem grounded/rollout fallback",
+      "Continuous power and current throughput",
+      "No new failures or resource contention"
+    ],
+    "scope": "First seed MCTS expert-iteration training and its greedy development evaluation only. Excludes baseline comparisons, second seed, Q6 and QF.",
+    "confidence": "Conditional estimate from two measured production rounds; not a completion guarantee."
+  },
+  "whole_Q5_forecast": "Uncalibrated: six baseline training jobs and second-seed EI remain. Baselines run between the two EI seeds, so both-seed MCTS completion cannot yet be dated from EI throughput alone."
+}

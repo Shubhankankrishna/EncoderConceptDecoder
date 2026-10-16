@@ -1,0 +1,5 @@
+{
+  "error": "RuntimeError('S6_pilot exited 1; see /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S6_pilot/process.log')",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py\", line 127, in execute\n    self.main()\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q2.py\", line 39, in main\n    self.once('S6_pilot', CODE / 's6_pilot.py', ['--out', pilot], pilot)\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py\", line 120, in once\n    self.run(name, script, args); return read_json(out)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py\", line 95, in run\n    raise RuntimeError(f'{name} exited {rc}; see {folder}/process.log')\nRuntimeError: S6_pilot exited 1; see /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S6_pilot/process.log\n",
+  "stage": "S6_pilot"
+}

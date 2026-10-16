@@ -1,0 +1,77 @@
+<section class="chap stage-pre" id="glossary" data-num="10" data-chip="Glossary">
+  <div class="chap-head">
+    <div class="stage-tag">A–Z</div>
+    <div class="eyebrow">Chapter 10 · reference</div>
+    <h2>Glossary</h2>
+    <p class="q">Every term in this guide, in plain words, in alphabetical order.</p>
+  </div>
+  <dl class="gloss">
+    <dt>α (alpha)</dt><dd>The weight that says how much the next-concept task counts in the total loss. In S1 it is 0 at first, then ramps to 0.1.</dd>
+    <dt>Adapter</dt><dd>A small trainable add-on attached to a frozen matrix, so new learning does not change the original numbers. See LoRA.</dd>
+    <dt>Attention</dt><dd>The step where each position looks at earlier positions and takes a weighted blend of what it finds.</dd>
+    <dt>AUROC</dt><dd>A score from 0.5 (no better than guessing) to 1 (perfect) for how well a judge separates right answers from wrong ones.</dd>
+    <dt>Baseline, control</dt><dd>The same setup with one thing switched off or replaced, so a difference can be traced to that one thing.</dd>
+    <dt>Best of m</dt><dd>In S2 training, draw m codes using the selector's odds and let the closest one steer the writer.</dd>
+    <dt>Block</dt><dd>One round of "look back, then think" (attention, then feed-forward), with each result added to the vector it came from.</dd>
+    <dt>Checkpoint</dt><dd>A saved copy of all of a model's parameters.</dd>
+    <dt>Chunk</dt><dd>A group of four tokens. On GraphNav, exactly one road of the puzzle or one hop of the answer.</dd>
+    <dt>Closed loop</dt><dd>Training in which the concept core sometimes reads its own earlier guesses instead of real concepts.</dd>
+    <dt>Code</dt><dd>One of K learnable vectors that nudge the last concept block toward a different guess. Also called a hypothesis code.</dd>
+    <dt>Codebook, stickers</dt><dd>A fixed set of reusable vectors. A guess is built as a weighted blend of them.</dd>
+    <dt>Concept</dt><dd>The summary vector of one chunk: the average of its four token vectors, rescaled.</dd>
+    <dt>Concept stack, concept core</dt><dd>The blocks that read only concepts, not tokens. They reason one step at a time.</dd>
+    <dt>Continual learning</dt><dd>Learning tasks one after another without forgetting earlier ones.</dd>
+    <dt>Dead code</dt><dd>A code that almost never wins, and so never learns. S2 restarts such codes.</dd>
+    <dt>Decoder</dt><dd>The blocks that write tokens. Also called the writer.</dd>
+    <dt>Development set</dt><dd>Puzzles used while building, to make decisions. Compare sealed test set.</dd>
+    <dt>Distillation</dt><dd>Training a model to match another model's outputs. In S2, a temporary pull of the plain path toward the teacher.</dd>
+    <dt>ECE</dt><dd>Expected calibration error: how far a model's stated odds are from how often it is actually right.</dd>
+    <dt>Embedding</dt><dd>A vector of numbers that stands for a token.</dd>
+    <dt>Encoder</dt><dd>The blocks that read the real tokens and give each a richer vector.</dd>
+    <dt>Expert iteration</dt><dd>Search finds good choices, then the quick instincts are trained to copy them, and the loop repeats.</dd>
+    <dt>Frozen</dt><dd>Used, but never changed during training.</dd>
+    <dt>G(R)</dt><dd>One search for the whole puzzle that decodes and re-reads every R steps.</dd>
+    <dt>Gate (pre-registered)</dt><dd>A pass or fail rule written down before the run, with a pass zone, a partial band and a fail zone.</dd>
+    <dt>Gate (LSL)</dt><dd>A switch that turns an adapter on only for inputs that look like the data it was trained on.</dd>
+    <dt>Gradient, gradient descent</dt><dd>The slope of the loss with respect to a parameter, and the habit of stepping a little downhill along it, over and over.</dd>
+    <dt>GradCuit</dt><dd>A test-time method that nudges one code vector to make a rejected answer less likely.</dd>
+    <dt>GraphNav</dt><dd>The exam: find a route through a map of one-way roads in three colours.</dd>
+    <dt>GRPO</dt><dd>A standard policy-gradient method for improving a model from reward, here used as a baseline.</dd>
+    <dt>H-NCP</dt><dd>Hypothesis-conditioned next-concept prediction: S2's idea of K committed guesses with a selector.</dd>
+    <dt>hard10, hard14, long18</dt><dd>Harder puzzle suites on 10, 14 and 18 towns. The larger two are bigger than any training puzzle.</dd>
+    <dt>IMAG</dt><dd>A search that imagines the whole route and decodes only the final winner.</dd>
+    <dt>K</dt><dd>The number of codes (hypotheses). K = 1 means no codes, which is the older method.</dd>
+    <dt>Learning rate</dt><dd>The size of each downhill step in training.</dd>
+    <dt>LoRA</dt><dd>A way to add a small, low-rank correction to a frozen matrix. Rank is how thick the correction is.</dd>
+    <dt>Loss</dt><dd>A score of how wrong the model is. Usually the surprise at the true answer. Lower is better.</dd>
+    <dt>LSL</dt><dd>Local Support Learning: an adapter per new task, each with a gate that opens only for familiar inputs.</dd>
+    <dt>MCTS</dt><dd>Monte Carlo tree search: try branches, remember how each did, and favour the promising ones.</dd>
+    <dt>McNemar test</dt><dd>A test for two arms on the same puzzles, using only the puzzles where exactly one of them succeeded.</dd>
+    <dt>Mode</dt><dd>One of several distinct possible answers. A fork has two modes.</dd>
+    <dt>NCP</dt><dd>Next-concept prediction: guessing the concept of the next chunk before it is written.</dd>
+    <dt>Nats</dt><dd>The unit of loss when the natural logarithm is used.</dd>
+    <dt>Parameter</dt><dd>One adjustable number inside the model.</dd>
+    <dt>Port</dt><dd>A second, plain vector sent alongside the guess to the decoder, scaled by a learned knob.</dd>
+    <dt>PrefixLM</dt><dd>Letting each prompt position look at the whole prompt, in both directions.</dd>
+    <dt>Pre-registration</dt><dd>Writing down predictions and pass or fail rules before seeing results.</dd>
+    <dt>Product quantization</dt><dd>Describing a vector by choosing from a small menu separately for each slice of it.</dd>
+    <dt>PUCT</dt><dd>The rule that picks which branch a search tries next, from its average result, the prior, and how rarely it was tried.</dd>
+    <dt>Receding horizon, RH(H)</dt><dd>Search up to H steps ahead, commit one step, then search again from the new real position.</dd>
+    <dt>REINFORCE</dt><dd>The simplest policy-gradient method.</dd>
+    <dt>RFT</dt><dd>Rejection-sampling fine-tuning: sample answers, keep the verified ones, train on them.</dd>
+    <dt>Sealed test set</dt><dd>Puzzles locked away and used once at the end.</dd>
+    <dt>Seed</dt><dd>The dice roll that sets the starting parameters and the data order.</dd>
+    <dt>Selector</dt><dd>A small layer that predicts the odds that each code is the right one.</dd>
+    <dt>Separability</dt><dd>How well the inputs of a new task can be told apart from the inputs of old tasks. It limits how much a gate can protect.</dd>
+    <dt>Teacher, student</dt><dd>In S2, the frozen S1 model and the new trainable concept core that learns from it.</dd>
+    <dt>Token</dt><dd>A small piece of text treated as one unit, with an ID number.</dd>
+    <dt>Value judge, stop judge</dt><dd>Two tiny linear layers: one predicts whether an answer will be right, one predicts whether stopping is legal here.</dd>
+    <dt>Vector</dt><dd>A list of numbers. Think of it as a point on a map with many directions.</dd>
+    <dt>Verifier</dt><dd>A small ordinary program that checks an answer exactly.</dd>
+    <dt>Winner-take-all</dt><dd>Training rule where only the closest of several guesses gets the full lesson, so the guesses specialise.</dd>
+  </dl>
+  <footer class="foot">
+    <p><b>Where the numbers come from.</b> The S1 results are from the project's final S1 results file, produced after all six runs finished. The S2 numbers are development diagnostics read from the run files while the experiment is still running. The V8 continual-learning numbers are from V8's saved decision files. Everything about S3 to S6 is the design in <span class="mono">draft_v9.md</span> and the implementation declarations in the pre-registration file. Nothing on this page is a result for S3 to S6.</p>
+    <p>Built from the V9 files of 8 October 2026. This is a teaching page: the design document and the run files are the record.</p>
+  </footer>
+</section>

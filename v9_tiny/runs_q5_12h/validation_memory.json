@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "lock_sha256": "2ada5051b73f50f0aee2a0db59102e8e8f5f672b63ec173dc1b4908a6bc467a5",
+  "tests": [
+    {
+      "name": "token baselines: rank-16 q/v LoRA on the three decoder blocks = 24,576 parameters",
+      "passed": true
+    },
+    {
+      "name": "LoRA at initialisation (B = 0) leaves the model unchanged",
+      "passed": true
+    },
+    {
+      "name": "S4 primary trainable parameters: selector 1,032 + two heads 129 each = 1,290",
+      "passed": true
+    },
+    {
+      "name": "undefined AUROC with < 30 items per class",
+      "passed": true
+    },
+    {
+      "name": "perfect separation: AUROC 1 and Brier below base rate -> pass",
+      "passed": true
+    },
+    {
+      "name": "constant scores: AUROC .5 -> fail",
+      "passed": true
+    },
+    {
+      "name": "constant labels: undefined, cannot pass",
+      "passed": true
+    },
+    {
+      "name": "leaf policy: flagged V used; tau fail -> STOP only at grounded nodes",
+      "passed": true
+    },
+    {
+      "name": "leaf policy: an imagined-depth failure -> verified grounded completion",
+      "passed": true
+    },
+    {
+      "name": "Complete groups use the original standardized within-group advantages",
+      "passed": true
+    },
+    {
+      "name": "Constant-reward groups have no learning signal",
+      "passed": true
+    },
+    {
+      "name": "Incomplete groups are rejected",
+      "passed": true
+    },
+    {
+      "name": "Gradient accumulation preserves the original GRPO objective and Adam updates",
+      "passed": true,
+      "maximum_parameter_difference": 1.5133991837501526e-07,
+      "loss_difference": 4.3213367462158203e-07
+    },
+    {
+      "name": "Optimizer checkpoint and resume reproduce uninterrupted fitting",
+      "passed": true,
+      "maximum_parameter_difference": 0.0
+    },
+    {
+      "name": "Expired fitting deadline takes no optimizer step and saves a usable boundary",
+      "passed": true
+    },
+    {
+      "name": "Reduced training exposure is a predetermined prefix, independent of outcomes",
+      "passed": true
+    },
+    {
+      "name": "Isolated CPU smoke samples, fits and saves one complete GRPO round",
+      "passed": true
+    },
+    {
+      "name": "Checkpoint contains adapter, generator and framework RNG state",
+      "passed": true
+    },
+    {
+      "name": "A completed round is reused without rewriting its outputs",
+      "passed": true
+    },
+    {
+      "name": "Second round resumes the prior adapter and completes the two-round workflow",
+      "passed": true
+    },
+    {
+      "name": "Saved adapter reloads and evaluates on development suites",
+      "passed": true
+    },
+    {
+      "name": "Sampling interruption resumes without duplicate groups and yields the same adapter/RNG",
+      "passed": true
+    },
+    {
+      "name": "Supervisor reuses saved memory handoffs sequentially",
+      "passed": true
+    },
+    {
+      "name": "Deterministic worker failures are not blindly retried",
+      "passed": true
+    },
+    {
+      "name": "An expired stage deadline launches no worker",
+      "passed": true
+    },
+    {
+      "name": "Production code, actual data hashes and protocol are unchanged during validation",
+      "passed": true
+    },
+    {
+      "name": "Previously completed scientific outputs remain unchanged",
+      "passed": true,
+      "files": 145
+    }
+  ],
+  "temporary_runs": "/var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_q5_12h_cpu_t7imvygt",
+  "device": "cpu",
+  "seconds": 23.320148944854736,
+  "finished_utc": "2026-10-10T21:05:49.942867+00:00"
+}

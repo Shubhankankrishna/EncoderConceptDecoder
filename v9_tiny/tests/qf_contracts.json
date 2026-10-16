@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "block": "QF",
+  "lock_sha256": "0ff61e6abbcfdba0b7c7cb0c32b53a38fe10371f8124491d2380f38896af8588",
+  "identity": {
+    "block": "QF",
+    "frozen_implementation_sha256": "fcc93d876201367618a195d2d56feb6767800cb633ec7565ec161a74c3a42b58",
+    "files_sha256": "6de1afb651fe88ad46734f69dd32d2d27b679c7b4af68d45e76b7c23b9b0db3b",
+    "data_manifest_sha256": "fe7ae55025b54dd84b0b8bb0fe34f593beefbc2533b9a34dc67163fc6b205300",
+    "exclusion_list_sha256": "0d9fa4cbbca46262a5382e374391292920f06e8619acfae4d7fa4940fb6f97ff",
+    "lock_sha256": "0ff61e6abbcfdba0b7c7cb0c32b53a38fe10371f8124491d2380f38896af8588"
+  },
+  "tests": [
+    {
+      "name": "difference test detects a ~5-point gain",
+      "passed": true,
+      "p": 9.999000099990002e-05
+    },
+    {
+      "name": "identical arms: p = 1",
+      "passed": true
+    },
+    {
+      "name": "non-inferiority (margin 2 points) passes for a better arm",
+      "passed": true
+    },
+    {
+      "name": "non-inferiority fails for an arm ~5 points worse",
+      "passed": true
+    },
+    {
+      "name": "bound claim (< +2 points) holds for identical arms",
+      "passed": true
+    },
+    {
+      "name": "bound claim fails when the gain is ~5 points",
+      "passed": true
+    },
+    {
+      "name": "TOST equivalence within +-5 points for identical arms",
+      "passed": true
+    },
+    {
+      "name": "missing runs are reported as missing",
+      "passed": true
+    },
+    {
+      "name": "Holm within a stage family",
+      "passed": true
+    },
+    {
+      "name": "item 13: no runs/ file changed",
+      "passed": true
+    },
+    {
+      "name": "lock identity unchanged during session",
+      "passed": true
+    }
+  ],
+  "seconds": 1.0233039855957031
+}

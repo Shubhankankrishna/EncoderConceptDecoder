@@ -1,0 +1,87 @@
+<section class="chap stage-pre" id="basics" data-num="1" data-chip="Basics">
+  <div class="chap-head">
+    <div class="stage-tag">B</div>
+    <div class="eyebrow">Chapter 1 · the basics</div>
+    <h2>Five ideas you need first</h2>
+    <p class="q">Tokens, guessing, surprise, walking downhill, and blocks. If you know these, every later chapter is readable. If you already know them, skip to the next chapter.</p>
+  </div>
+
+  <h3 id="basics-tokens">1. A computer only understands numbers</h3>
+  <div class="measure">
+    <p>A computer cannot read the letter "c". It can only do arithmetic. So the first step of any language model is to turn text into numbers.</p>
+    <p>The usual way is to cut the text into pieces called <b>tokens</b> and give each piece an ID number from a fixed list called the <b>vocabulary</b>. Our models use a vocabulary of 2,048 pieces. Common words get a piece of their own. Rare words are cut into smaller pieces.</p>
+  </div>
+  <figure class="fig" data-viz="tokens" data-title="Text to tokens" data-tag="try it">
+    <figcaption>Type anything. Each chip is one token with a made-up ID. A real tokenizer learns where to cut from data. This toy simply cuts long words in half to show the idea.</figcaption>
+  </figure>
+  <div class="measure">
+    <p>After this step the model never sees letters again. Each ID is swapped for a list of 128 numbers called a <b>vector</b>. Picture a vector as the coordinates of a point on a map with 128 directions. Pieces that behave alike end up close together. The model's whole job is to move and mix these points until the last one lands near the right next piece.</p>
+  </div>
+
+  <h3 id="basics-guess">2. A language model is a guessing machine</h3>
+  <div class="measure">
+    <p>A language model has one job. Given the tokens so far, it gives every token in the vocabulary a probability of coming next. The probabilities add up to 1. To write, it picks one token from that list, adds it to the text, and repeats.</p>
+  </div>
+  <figure class="fig" data-viz="nextTok" data-title="Guess the next token" data-tag="try it">
+    <figcaption>Pick a situation, then draw guesses. The more often you draw, the closer the tallies get to the probabilities. Slide <b>boldness</b> down to make the model stick to its favourite, or up to make it adventurous.</figcaption>
+  </figure>
+  <div class="callout pause"><span class="tag">Pause and think</span>
+    <p>Look at the "fork" situation: left and right are almost equally likely, and both are fine. If the model always picks its favourite, it hides the other good answer. Remember this picture. It comes back in the S2 chapter as the main reason S2 exists.</p>
+  </div>
+
+  <h3 id="basics-loss">3. Learning means being less surprised</h3>
+  <div class="measure">
+    <p>To train a model we need a score for how wrong it is. The standard score is its <b>surprise</b> at the real answer. Take the probability the model gave to the token that actually came next, and compute minus its natural logarithm. That number is the <b>loss</b>.</p>
+    <p>If the model was sure and right (probability 1), the loss is 0. If it gave the true token only 1 chance in 100, the loss is 4.6. A model that knows nothing guesses evenly over 2,048 tokens, which gives a loss of 7.6. When you read about a text loss falling from about 7.7 to about 2.9, that is a model going from clueless to usefully surprised-less.</p>
+  </div>
+  <figure class="fig" data-viz="loss" data-title="Loss is surprise" data-tag="try it">
+    <figcaption>Drag the probability the model gave to the true token. Low probability means high surprise. The curve is steep near zero, so a confident wrong answer is punished hard.</figcaption>
+  </figure>
+
+  <h3 id="basics-downhill">4. How the guessing improves: walking downhill</h3>
+  <div class="measure">
+    <p>The model is a large pile of numbers called <b>parameters</b> (or weights). Our main model has about 2.4 million. Training adjusts them so that the loss goes down.</p>
+    <p>For each parameter, calculus tells us whether raising it would raise or lower the loss. That slope is the <b>gradient</b>. We nudge every parameter a small step in the direction that lowers the loss, then repeat millions of times. This is <b>gradient descent</b>.</p>
+    <div class="callout analogy"><span class="tag">Analogy</span>
+      <p>You are on a foggy hillside and want the valley. You cannot see it, but you can feel the slope under your feet, so you step downhill. The size of your step is the <b>learning rate</b>.</p>
+    </div>
+  </div>
+  <figure class="fig" data-viz="descent" data-title="Walking downhill" data-tag="try it">
+    <figcaption>Click the curve to drop the ball anywhere, then press Step or Run. A small learning rate is slow and safe. A large one overshoots and bounces. Some starting points settle in a small dip instead of the deepest valley.</figcaption>
+  </figure>
+  <div class="callout idea"><span class="tag">Idea</span>
+    <p>Where you start changes where you end up. A training run starts from random numbers, and the dice roll that sets them is called the <b>seed</b>. The same recipe with a different seed can behave very differently. You will see a striking real example in S1, and it is the reason every comparison in this project uses at least two seeds.</p>
+  </div>
+
+  <h3 id="basics-blocks">5. Inside the guesser: attention and blocks</h3>
+  <div class="measure">
+    <p>Between the vectors that go in and the probabilities that come out sits a stack of layers called <b>blocks</b>. Each block does two things.</p>
+    <ol class="steps">
+      <li><b>Attention: look back.</b><p>Every position looks at the earlier positions and decides which ones matter for it. It collects a weighted blend of what it finds. It is only allowed to look backwards, because looking ahead would be cheating on a guessing task. This is called <b>causal</b> attention.</p></li>
+      <li><b>Feed-forward: think.</b><p>Each position then thinks on its own about what it gathered, using a small network.</p></li>
+    </ol>
+    <p>Both steps <em>add</em> their result to the vector instead of replacing it. This means nothing is lost along the way. A model with ten blocks does "look, then think" ten times.</p>
+  </div>
+  <figure class="fig" data-viz="attention" data-title="Who looks at whom" data-tag="click a word">
+    <figcaption>Click a word. The arcs show which earlier words it pays attention to, and the grey words are in its future, so it cannot see them. The weights here are set by hand to show the idea. In a real model they are computed from the vectors.</figcaption>
+  </figure>
+  <figure class="fig" data-viz="block" data-title="One block, step by step" data-tag="step through">
+    <figcaption>One block as a pipeline. The same shape is repeated for every block in every model in this guide.</figcaption>
+  </figure>
+  <div class="callout term"><span class="tag">Small on purpose</span>
+    <p>Chat assistants have dozens of blocks and vectors with thousands of numbers. Ours has 10 blocks and vectors of 128. It trains in hours on a laptop, which lets us run many careful experiments. The price is that some things that work at large scale may not show up here. The project says so openly wherever it matters.</p>
+  </div>
+
+  <h3 id="basics-words">Words you will see in every chapter</h3>
+  <dl class="gloss">
+    <dt>Parameter</dt><dd>One adjustable number inside the model. Training changes them.</dd>
+    <dt>Trainable and frozen</dt><dd>A trainable part is adjusted during training. A frozen part is locked: it is used, but never changed. Several experiments freeze most of the model and train only a small piece.</dd>
+    <dt>Checkpoint</dt><dd>A saved copy of all parameters at some moment.</dd>
+    <dt>Seed</dt><dd>The dice roll that sets the starting parameters and the data order. Same recipe, different seed, can mean a very different result.</dd>
+    <dt>Control (baseline)</dt><dd>The same setup with the one thing under test switched off. Without it, a result cannot be explained.</dd>
+    <dt>Development set</dt><dd>Practice puzzles used while building, to make decisions. Looking at them is fine.</dd>
+    <dt>Sealed test set</dt><dd>Puzzles locked away and opened once at the end. If you peek early, you start tuning to them without noticing.</dd>
+    <dt>Verifier</dt><dd>A small ordinary program that checks whether an answer is correct. It is not a model, so it cannot be fooled by fluent nonsense.</dd>
+  </dl>
+  <div class="pager"><a class="next" href="#world"><small>Next chapter</small>The exam every model takes: GraphNav</a></div>
+</section>

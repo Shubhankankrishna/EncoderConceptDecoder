@@ -1,0 +1,106 @@
+<section class="chap stage-s6" id="s6" data-num="8" data-chip="S6">
+  <div class="chap-head">
+    <div class="stage-tag">S6</div>
+    <div class="eyebrow">Experiment 6 of 6 · queue block Q2 · <span class="chip design">designed, not run</span></div>
+    <h2>Learning new skills without forgetting the old ones</h2>
+    <p class="q">Can the model learn new tasks one after another by adding small adapters that switch on only for the inputs they were made for, and does that protect what it already knew?</p>
+  </div>
+
+  <div class="breath"><h4>In one breath</h4>
+    <ul>
+      <li>When a network learns something new, it tends to overwrite what it knew. This is called catastrophic forgetting.</li>
+      <li>A method called <b>LSL</b> (Local Support Learning) gives each new task its own small adapter plus a gate that opens the adapter only for inputs that look like that task.</li>
+      <li>S6 adds three tasks in a row and compares six ways of learning. It also tests whether the gate helps at all, which an earlier try (V8) never did.</li>
+    </ul>
+  </div>
+
+  <h3 id="s6-forget">The problem: new learning overwrites old learning</h3>
+  <div class="measure">
+    <p>Learn Spanish intensely for a month and your French gets rusty. Networks do something worse. They store everything in one shared set of numbers, so training on a new task moves numbers that an old task needed. The old skill can vanish almost completely.</p>
+    <p>This is not a hypothetical for this project. V8 tried a version of LSL and got a mixed picture.</p>
+  </div>
+  <figure class="fig" data-viz="v8history" data-title="What happened in V8" data-tag="real saved numbers">
+    <figcaption>These numbers are from V8's saved decision files. They are reported again here because S6 is designed around them.</figcaption>
+  </figure>
+  <div class="callout care"><span class="tag">What this does and does not show</span>
+    <ul>
+      <li>It is evidence against that tiny setup on that sequence of tasks.</li>
+      <li>It is not a measurement of what gating is worth, because the control that leaves the adapter always on was never run.</li>
+      <li>It does not refute the LSL method. The paper's smallest model was about 600 times bigger than ours, and the paper says retention improves with scale.</li>
+      <li>It does not confirm why phase 2 failed. Bind shares its road-list format with navigation, which makes overlap likely, but nobody measured it on old-task inputs.</li>
+    </ul>
+  </div>
+
+  <h3 id="s6-lora">Step 1: a thin add-on instead of rewriting the weights</h3>
+  <div class="measure">
+    <p>Instead of changing a big weight matrix, we leave it frozen and add a small correction to it. The correction is built from two thin matrices, B and A, multiplied together. The thinner they are, the fewer numbers there are to learn. The thickness is called the <b>rank</b> r. This trick is called <b>LoRA</b>.</p>
+  </div>
+  <figure class="fig" data-viz="lora" data-title="A frozen matrix plus a low-rank add-on" data-tag="slide the rank">
+    <figcaption>Blue-violet and orange cells are positive and negative numbers. Slide the rank and watch the change B·A become richer.</figcaption>
+  </figure>
+
+  <h3 id="s6-gate">Step 2: a gate that opens only for familiar inputs</h3>
+  <div class="measure">
+    <p>An adapter that is always on still changes the answer for every input, including old tasks. LSL adds a <b>gate</b> in front of each adapter. The gate asks one question: does this input look like the data this adapter was trained on, or like everything else? It answers using two density models, one fitted to the new task's inputs and one fitted to generic inputs, and it opens the adapter only when the first is higher. A smoothing rule then stops the gate from flickering from one token to the next.</p>
+  </div>
+  <figure class="fig" data-viz="gmmGate" data-title="Where does the gate open?" data-tag="slide the overlap">
+    <figcaption>Slide the new task's inputs toward the old task's. When the two overlap, the gate opens on old inputs, the adapter fires there, and the old skill is overwritten.</figcaption>
+  </figure>
+  <div class="callout idea"><span class="tag">The theory in one line</span>
+    <p>Nothing in the training of the new task controls where the gate opens outside that task. And wherever the supports overlap, the newest update wins by design. So whether LSL protects anything depends on whether old and new inputs can be told apart <em>at each matrix</em>. S6 measures that separability first, then judges LSL.</p>
+  </div>
+
+  <h3 id="s6-phases">Three tasks in a row</h3>
+  <figure class="fig" data-viz="phases" data-title="The three phases" data-tag="design">
+    <figcaption>Each phase adds a new bank to the same frozen S1 model. The S1 model used is the one S2 also teaches from (seed 902, or V8's seed 811).</figcaption>
+  </figure>
+  <div class="callout care"><span class="tag">A stated limit</span>
+    <p>Choosing the second task and checking the gates uses inputs from old tasks, taken from a separate calibration set. So the claim is "no replay of old data while the adapter learns", not "no access to old data at all".</p>
+  </div>
+
+  <h3 id="s6-arms">Six ways to learn</h3>
+  <div class="measure">
+    <p>The comparison is built so that each arm answers one question. The mandatory ones run on three phases and two seeds, 18 phase-runs in all, at roughly 20 minutes each.</p>
+  </div>
+  <figure class="fig" data-viz="freezeMap" data-variants="S6_LSL_scaled,S6_always_open,S6_VQ_only,S6_full_ft,S6_LSL_v8" data-title="What learns in each continual-learning arm" data-tag="pick an arm">
+    <figcaption>In the adapter arms the whole S1 model stays frozen and only adapters (and gates) learn. In the VQ-only arm the codebook and sticker heads learn instead.</figcaption>
+  </figure>
+  <figure class="fig fig3" data-scene="model" data-variants="S6_LSL_scaled,S6_always_open,S6_VQ_only,S6_full_ft,S6_LSL_v8" data-title="The S6 arms in 3D" data-tag="drag to rotate">
+    <figcaption>Purple bars are adapters and the gold diamonds are the gates. LSL-v8 puts rank-4 adapters on the attention matrices only. LSL-scaled puts rank-16 adapters on attention and feed-forward matrices and gives each its own gate.</figcaption>
+  </figure>
+  <div class="arms">
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span></div><h4>LSL-scaled</h4><p>Rank 16 on query, key, value, output and feed-forward matrices. Gates built from 16 and 32 density components after a 64-dimensional projection, with smoothing. Closer to the paper's regime.</p></div>
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span></div><h4>Always-open LoRA</h4><p>Exactly the same adapters, no gate. The only way to tell whether gating helps at all.</p></div>
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span></div><h4>VQ-only</h4><p>Adapt only the codebook and sticker heads, which are frozen everywhere else in V9. Expected to forget least and learn least.</p></div>
+    <div class="arm"><div class="chips"><span class="chip full">full column</span></div><h4>LSL-v8</h4><p>V8's setup reproduced on this model: rank 4, query and value only, ten gated blocks, no smoothing.</p></div>
+    <div class="arm"><div class="chips"><span class="chip full">full column</span></div><h4>Full fine-tune</h4><p>Everything learns. A reference for how bad forgetting can get.</p></div>
+    <div class="arm"><div class="chips"><span class="chip full">full column</span></div><h4>Replay (10% old data)</h4><p>Everything learns, with a tenth of the data replayed from old tasks. A ceiling only, because it keeps old data.</p></div>
+  </div>
+
+  <h3 id="s6-credit">How LSL earns credit</h3>
+  <div class="measure">
+    <p>A method that learns nothing forgets nothing. So LSL is credited with retention on a phase only if all four conditions hold. Click a card to flip it and see the verdict change.</p>
+  </div>
+  <figure class="fig" data-viz="credit" data-title="Four conditions, all required" data-tag="try it">
+    <figcaption>The thresholds are fixed in advance. There is also a same-weight test after every phase: the same checkpoint run with its newest adapter forced open and with the fitted gate, within 5 points of each other. That isolates what the gate itself costs, which is what V8's phase 3 lost 33 points on.</figcaption>
+  </figure>
+
+  <h3 id="s6-gatetelemetry">What gets measured</h3>
+  <div class="measure">
+    <ul class="m">
+      <li><b>Install:</b> how well the new skill works.</li>
+      <li><b>Retain:</b> every earlier suite, compared with the model before the phase.</li>
+      <li><b>Function change:</b> how much the model's outputs on old inputs moved overall.</li>
+      <li><b>Gate behaviour,</b> on old and new inputs, by token type, and jointly: in how many positions all gates are open at once. V8 only measured current-phase data, which hid its phase 3 problem.</li>
+    </ul>
+  </div>
+  <div class="callout idea"><span class="tag">Predictions written in advance</span>
+    <ul>
+      <li><b>H12, about 65%:</b> on the bind phase, LSL retains about as much as always-open, within ±5 points. That would confirm the overlap explanation.</li>
+      <li><b>L4, about 35%:</b> LSL-scaled earns credit on the second phase. Low because the model is far below the paper's size.</li>
+      <li><b>H13, about 60%:</b> VQ-only retains best and installs least.</li>
+    </ul>
+    <p>If neither candidate second phase passes the separability check, that is reported as a result: at this size, the representation does not separate puzzle types well enough for local gating. An optional second study, S6-H, repeats this on the S2 or S3 model so the continual learning of the full system with codes is also tested.</p>
+  </div>
+  <div class="pager"><a href="#s5"><small>Previous</small>S5: search without writing words</a><a class="next" href="#status"><small>Next chapter</small>Where everything stands</a></div>
+</section>

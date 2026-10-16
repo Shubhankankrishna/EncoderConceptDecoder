@@ -1,0 +1,114 @@
+<section class="chap stage-s5" id="s5" data-num="7" data-chip="S5">
+  <div class="chap-head">
+    <div class="stage-tag">S5</div>
+    <div class="eyebrow">Experiment 5 of 6 · queue block Q6 · <span class="chip design">designed, not run</span></div>
+    <h2>Planning ahead without writing words</h2>
+    <p class="q">If checking a concept costs a fraction of writing words, can the model plan several steps ahead by searching over concepts, and does that beat the best ordinary search at the same cost?</p>
+  </div>
+
+  <div class="breath"><h4>In one breath</h4>
+    <ul>
+      <li>A search tries many possible futures and keeps looking at the promising ones. Writing out words for every future is expensive.</li>
+      <li>S5 searches over concepts instead. The decoder only writes words for the one step the model commits to, and then the search starts again from the new real position.</li>
+      <li>The idea is compared with a search over tokens and with simply sampling many answers, under the same time and checker budget. The design's own confidence that the new idea wins is about 25%.</li>
+    </ul>
+  </div>
+
+  <h3 id="s5-search">What a search is, in plain words</h3>
+  <div class="measure">
+    <p>Suppose you must pick one of four doors, and you can peek behind each one but peeking costs time. A sensible plan is to peek at the most promising door, see what is there, and then decide whether to peek again at the same door or try another. Tree search, specifically <b>Monte Carlo tree search</b> (MCTS), does exactly that, thousands of times, and then chooses the door it peeked at most.</p>
+    <p>Each peek (a <b>simulation</b>) does four things: select a branch to try, expand it, evaluate how good it looks, and back that result up into the average for the branch. The branch is chosen by a score that adds two things: how well the branch has done so far (Q), and an exploration bonus that is larger for branches the model's prior likes (P) and branches tried rarely (small visit count N). This rule is called <b>PUCT</b>.</p>
+  </div>
+  <figure class="fig" data-viz="puct" data-title="PUCT on four candidate codes" data-tag="try it">
+    <figcaption>This is the real PUCT rule with exploration constant 1.5 on a toy problem. The prior is deliberately misleading: it likes code 1, but code 2 is actually the best. Search corrects the prior by trying.</figcaption>
+  </figure>
+  <details class="deep"><summary>Show the formula</summary><div>
+    <pre class="eq">score(a) = Q(a) + c * P(a) * sqrt(N_total) / (1 + N(a))        c = 1.5
+Q(a) = average result of the tries of branch a
+P(a) = the selector's prior for code a (and the STOP judge for STOP)
+N(a) = how many times branch a has been tried</pre>
+    <p>At the very first simulation every score is zero, and ties go to the lowest-numbered action. With a tiny budget this makes the search pick code 1 by rule. The project notes it as a property of the formula, not a malfunction.</p>
+  </div></details>
+
+  <h3 id="s5-cost">Why concepts make a search cheaper</h3>
+  <div class="measure">
+    <p>In a token tree, every branch must be written out: four tokens through the encoder and the decoder, one after another. That is about 28 units of work per try. In a concept tree a try is just one code plus one step of the concept stack: about 5 units. The decoder never runs inside the lookahead. This is the "decoder removed from the search" part of the original proposal. The decoder still runs once to commit to each real step.</p>
+  </div>
+  <figure class="fig" data-viz="costCalc" data-title="Counting the work" data-tag="slide it">
+    <figcaption>Block-positions, from the design's cost table for the dense core. This is arithmetic, not a stopwatch.</figcaption>
+  </figure>
+
+  <h3 id="s5-rh">Plan, commit one step, replan</h3>
+  <div class="measure">
+    <p>A GPS does not plan the whole trip once and then go blind. It plans a few turns ahead, you drive one stretch, and it plans again from where you really are. S5's main method works the same way and is called <b>receding horizon</b>, written <b>RH(H)</b> where H is how many steps it imagines ahead.</p>
+    <ol class="steps">
+      <li><b>Search from a real position.</b><p>The root is the prompt plus every step already written and re-read.</p></li>
+      <li><b>Imagine up to H steps, with no decoder.</b><p>Each try follows a code, takes one cheap step in concept space, and asks the judges how good it looks.</p></li>
+      <li><b>Commit to the most-visited code.</b><p>Write its four tokens with the decoder and read them back in.</p></li>
+      <li><b>Search again from the new real position.</b><p>Stop when the best action is STOP, and send the answer to the checker.</p></li>
+    </ol>
+    <p>RH(1) imagines just one step, and it is where S5 begins. There are two other shapes, both treated as experiments on the side. <b>G(R)</b> runs a single search for the whole puzzle and re-grounds, meaning writes and re-reads, every R steps. <b>IMAG</b> imagines the entire path and decodes only the winner at the very end.</p>
+  </div>
+  <figure class="fig" data-viz="rhTimeline" data-title="How often does the decoder run?" data-tag="slide R">
+    <figcaption>The four search shapes across eight hops. Fewer decodes means less work, and also less checking of the imagination against reality.</figcaption>
+  </figure>
+  <figure class="fig fig3" data-scene="tree" data-title="The search shapes in 3D" data-tag="drag to rotate">
+    <figcaption>Choose a shape, including best of N and the answer loop. Teal balls are imagined steps. Blue cubes are decoded and re-read positions. Violet cubes are token-tree children. Gold is the most-visited path. The panel below counts the work drawn. The tree outcomes are synthetic.</figcaption>
+  </figure>
+
+  <h3 id="s5-depth">How far ahead can we trust the imagination?</h3>
+  <div class="measure">
+    <p>An imagined step is never perfect, and errors add up. If each imagined step is 95% right, then twenty in a row are right only about 36% of the time. So the lookahead depth has to be limited, and the limit is not guessed. Gate G2.3 from S2 measures it, and S5 may look ahead only as deep as the gate allows. That is why receding horizon re-reads the real position after every committed step.</p>
+  </div>
+  <figure class="fig" data-viz="compound" data-title="Errors compound" data-tag="slide it">
+    <figcaption>A simplified model with independent errors, to build intuition. The real agreement rates come from G2.3.</figcaption>
+  </figure>
+
+  <div class="callout idea"><span class="tag">The direct answer to the original question</span>
+    <p><b>Can the decoder be removed while searching over concepts?</b> On this exam, in principle yes: one concept is exactly one hop, the rule for the next step is a lookup over roads the concept stack already attends to, and in an earlier version (V5), training on NCP made a model's own fed-back guesses about 18 times less harmful on graph data. What could stop it is a list, and each item has its own gate:</p>
+    <ul>
+      <li>Codes that do not write distinct legal roads (G2.4).</li>
+      <li>Imagined and executed positions that lead to different decisions (G2.3).</li>
+      <li>Judges trained on real positions that do not transfer to imagined ones (G4).</li>
+      <li>Wall-clock time dominated by launch overhead instead of arithmetic. This is measured first, before any comparison.</li>
+    </ul>
+    <p>The answer will be a table over H and R, not a yes or no.</p>
+  </div>
+
+  <h3 id="s5-rivals">The rivals, and the add-on loop</h3>
+  <div class="measure">
+    <p>The new idea has to beat the best ordinary alternatives, not a weak one. Under one shared wall-clock cap and one cap on checker calls, the primary matrix has five methods:</p>
+  </div>
+  <div class="tablewrap"><table class="t">
+    <thead><tr><th>Method</th><th>What it does</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td><b>RH(1)</b></td><td>The receding horizon with one imagined step, decoder-free.</td><td>The idea under test.</td></tr>
+      <tr><td><b>RH(H*)</b></td><td>The deepest horizon above 1 that gate G2.3 allows, if any.</td><td>The idea under test, deeper.</td></tr>
+      <tr><td><b>G(1)</b></td><td>One tree, every child written out and re-read.</td><td>Mechanism control: what does skipping the decoder cost?</td></tr>
+      <tr><td><b>Token tree</b></td><td>The same tree over tokens: three colours plus STOP at every node, each child decoded.</td><td>The primary competitor.</td></tr>
+      <tr><td><b>Best of N</b></td><td>Sample whole answers at random, check each, stop at the first right one.</td><td>The strongest simple baseline.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="measure">
+    <p>Budgets are 1×, 4× and 16× the wall-clock time of one greedy answer. Puzzles are the sealed hard10 set (512) and the hard14 set (256). On top of the best inner method, an <b>answer loop</b> (called AB-MCTS-A) keeps going after a failed answer. It chooses between a fresh attempt and a refinement of the failed one. It is reported as an add-on.</p>
+  </div>
+  <figure class="fig" data-viz="answerLoop" data-title="The answer loop" data-tag="step through">
+    <figcaption>The loop runs twice on the same puzzles: once refining with GradCuit and once with a random direction of the same size. The difference measures what the reward adds. That is prediction H14.</figcaption>
+  </figure>
+
+  <h3 id="s5-compare">Three questions, kept apart</h3>
+  <div class="gates">
+    <div class="gate"><div class="id">Mechanism</div><h4>Does removing the decoder from the lookahead hurt or help?</h4><p>Decoder-free RH(1) against the same search with every child written out, at equal node count (which isolates how good the imagined steps are) and at equal wall-clock (which adds the cost advantage). Run on sealed hard10 at 16×.</p></div>
+    <div class="gate"><div class="id">Practical</div><h4>Does it beat the best token search?</h4><p>Against the token tree and best of N, each using the strongest decoder S4 produced, under the same time cap and checker-call cap. Every result names which cap was binding.</p></div>
+    <div class="gate"><div class="id">Feedback efficiency</div><h4>Is it cheaper per checker call?</h4><p>The same methods at a fixed number of checker calls, with runtime reported, analysed separately.</p></div>
+  </div>
+  <div class="callout idea"><span class="tag">Predictions written in advance</span>
+    <ul>
+      <li><b>L1, about 25%:</b> decoder-free RH(1) beats the token tree on sealed hard10 at 16×. Low because the work saving may not become a time saving at this tiny width, and every earlier comparison of latent steering against a simpler search went the other way.</li>
+      <li><b>L2, about 35%:</b> G2.3 passes at every depth up to 4.</li>
+      <li><b>H16, about 40%:</b> decoder-free RH(1) is at least as good as grounded RH(1). At 512 puzzles a tie is expected to read as inconclusive.</li>
+    </ul>
+    <p>The planned runtime is between about 3 and 38 hours depending on whether the search can run many puzzles at once. It is fixed only after a speed test.</p>
+  </div>
+  <div class="pager"><a href="#s4"><small>Previous</small>S4: learning from a checker</a><a class="next" href="#s6"><small>Next chapter</small>S6: learning new skills without forgetting</a></div>
+</section>

@@ -1,0 +1,260 @@
+{
+  "checked_utc": "2026-10-11T00:15:50.753215+00:00",
+  "action": "Verified completed reduced artifacts and intentional original holds; no restart",
+  "status": {
+    "status": "completed",
+    "stage": "report",
+    "driver_pid": 48230,
+    "child_pid": null,
+    "updated_utc": "2026-10-10T21:26:47.548753+00:00",
+    "deadline_utc": "2026-10-11T09:00:10.168592+00:00",
+    "report": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs_q5_12h/REPORT.md",
+    "scientific_status": "inconclusive_GRPO_policy_collapse",
+    "assessment": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs_q5_12h/ASSESSMENT.md",
+    "completion_notified_utc": "2026-10-10T21:34:30.113957+00:00"
+  },
+  "active_reduced_processes": [],
+  "original_queue": {
+    "Q5": "stopped_by_user",
+    "Q6": "stopped_by_user",
+    "QF": "stopped_by_user"
+  },
+  "code_data_preflight": "passed",
+  "lock_sha256": "37c5203606f207ef8f2476a954b4d9d3918adda501192565b45db0d1a3f9f640",
+  "actual_data_files": 52,
+  "preserved_files": 168,
+  "assessment": {
+    "checked_utc": "2026-10-10T21:32:36.748526+00:00",
+    "pipeline_status": "completed",
+    "scientific_status": "inconclusive_GRPO_policy_collapse",
+    "lock_sha256": "37c5203606f207ef8f2476a954b4d9d3918adda501192565b45db0d1a3f9f640",
+    "elapsed_minutes": 26.622909049999997,
+    "development_rates": {
+      "reference": {
+        "hard10": 0.33984375,
+        "standard": 0.83203125
+      },
+      "EI": {
+        "hard10": 0.330078125,
+        "standard": 0.8515625
+      },
+      "grpo": {
+        "hard10": 0.0,
+        "standard": 0.0
+      }
+    },
+    "paired_EI_minus_reference": {
+      "standard": {
+        "n": 512,
+        "delta_percentage_points": 1.953125,
+        "improved_items": 34,
+        "worsened_items": 24,
+        "unchanged_items": 454,
+        "paired_bootstrap_95_percent_interval": [
+          -0.9765625,
+          4.8828125
+        ],
+        "exact_discordant_pair_two_sided_p": 0.2370471147627195,
+        "exploratory": true
+      },
+      "hard10": {
+        "n": 512,
+        "delta_percentage_points": -0.9765625,
+        "improved_items": 28,
+        "worsened_items": 33,
+        "unchanged_items": 451,
+        "paired_bootstrap_95_percent_interval": [
+          -3.90625,
+          1.953125
+        ],
+        "exact_discordant_pair_two_sided_p": 0.6089207154048287,
+        "exploratory": true
+      }
+    },
+    "grpo_round_audit": [
+      {
+        "round": 0,
+        "groups": 512,
+        "group_size": 8,
+        "answers": 4096,
+        "accepted": 2120,
+        "verifier_flags_independently_rechecked": true,
+        "exact_fresh_prompt_draw_confirmed": true,
+        "finite_checkpoint": true,
+        "adapter_parameters": 24576,
+        "first_chunk_classifications": {
+          "hop/legal=True": 4091,
+          "malformed/legal=False": 5
+        },
+        "response_token_lengths": {
+          "20": 263,
+          "36": 184,
+          "12": 188,
+          "24": 198,
+          "52": 128,
+          "80": 1514,
+          "56": 155,
+          "28": 211,
+          "40": 151,
+          "44": 130,
+          "32": 186,
+          "60": 144,
+          "64": 95,
+          "16": 103,
+          "8": 78,
+          "48": 144,
+          "76": 48,
+          "72": 73,
+          "68": 98,
+          "4": 5
+        },
+        "fit": {
+          "examples": 2656,
+          "loss": -156.2886975668814,
+          "completed": true
+        },
+        "adapter_sha256": "162d209204403b3d22811cd74d50d507f954d22db4b69ad60af87b3cbfea045b"
+      },
+      {
+        "round": 1,
+        "groups": 512,
+        "group_size": 8,
+        "answers": 4096,
+        "accepted": 0,
+        "verifier_flags_independently_rechecked": true,
+        "exact_fresh_prompt_draw_confirmed": true,
+        "finite_checkpoint": true,
+        "adapter_parameters": 24576,
+        "first_chunk_classifications": {
+          "malformed/legal=False": 4096
+        },
+        "response_token_lengths": {
+          "4": 4096
+        },
+        "fit": {
+          "examples": 0,
+          "loss": null,
+          "completed": true
+        },
+        "adapter_sha256": "c937ad5938bac5a0244ac9d5ff7da1e75a088256547ffbf41c091b984f9dba3c"
+      }
+    ],
+    "grpo_adapter_max_change_after_round0": 0.08869724720716476,
+    "grpo_adapter_max_change_during_round1": 0.0,
+    "conclusion": "No clear held-out development advantage for the MCTS-trained greedy policy over the original model. GRPO collapsed after round 0, so beating this GRPO result does not establish a credible MCTS advantage.",
+    "diagnosis": "Completed files, group membership, rewards, fresh prompts and all checkpoint tensors verified. Collapse follows the first GRPO fit; round 1 has zero successes and no gradient-bearing groups. No operational crash or nonfinite checkpoint was found. The existing baseline uses an unregularized sequence-log-probability objective; the specific stability cause requires a separately documented experiment, not a silent learning-rate or algorithm change. Independent CPU evaluation also emits the malformed repeated DONE chunk [5,5,5,5], with finite logits; this is not specific to the MPS evaluator.",
+    "scope": "One seed, unequal training budgets, greedy development evaluation. No sealed test evaluation or test-time MCTS comparison.",
+    "original_Q6_QF": "intentionally held",
+    "automatic_scientific_retry": false,
+    "independent_cpu_collapse_check": {
+      "checked_utc": "2026-10-10T21:33:41.280067+00:00",
+      "device": "cpu",
+      "independent_greedy_successes": 0,
+      "n": 4,
+      "first_step_logits_finite": true,
+      "max_abs_first_step_logit": 44.83444595336914,
+      "responses": [
+        {
+          "tokens": [
+            5,
+            5,
+            5,
+            5
+          ],
+          "classification": {
+            "kind": "malformed",
+            "legal": false,
+            "action": -1
+          }
+        },
+        {
+          "tokens": [
+            5,
+            5,
+            5,
+            5
+          ],
+          "classification": {
+            "kind": "malformed",
+            "legal": false,
+            "action": -1
+          }
+        },
+        {
+          "tokens": [
+            5,
+            5,
+            5,
+            5
+          ],
+          "classification": {
+            "kind": "malformed",
+            "legal": false,
+            "action": -1
+          }
+        },
+        {
+          "tokens": [
+            5,
+            5,
+            5,
+            5
+          ],
+          "classification": {
+            "kind": "malformed",
+            "legal": false,
+            "action": -1
+          }
+        }
+      ]
+    }
+  },
+  "watchdog": {
+    "pid": 33229,
+    "ppid": 1,
+    "command": "/opt/anaconda3/bin/python3 -S -B /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/python_startup.py /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/watch.py --loop --act",
+    "interval_s": 900,
+    "acting": true,
+    "last_check_utc": "2026-10-11T00:12:16Z",
+    "heartbeat_age_seconds": 214.8,
+    "recent_intervals_seconds": [
+      901.0,
+      901.0
+    ]
+  },
+  "power": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=22544483)\t80%; AC attached; not charging present: true",
+  "swap": "total = 3072.00M  used = 2098.19M  free = 973.81M  (encrypted)",
+  "disk_free_gb": 57.6,
+  "notification": "suppressed: unchanged completion/collapse already reported; power non-actionable while completed and held",
+  "automation_heartbeat_utc": "2026-10-11T00:15:19.733Z",
+  "active_original_stage_processes": [],
+  "rounds": [
+    {
+      "round": 0,
+      "groups": 512,
+      "answers": 4096,
+      "accepted": 2120,
+      "loss": -156.2886975668814,
+      "fit_examples": 2656,
+      "checkpoint_audit": "unchanged hashes preserve prior independent finite model/optimizer/RNG/group audit"
+    },
+    {
+      "round": 1,
+      "groups": 512,
+      "answers": 4096,
+      "accepted": 0,
+      "loss": null,
+      "fit_examples": 0,
+      "checkpoint_audit": "unchanged hashes preserve prior independent finite model/optimizer/RNG/group audit"
+    }
+  ],
+  "resources": {
+    "power": "Now drawing from 'Battery Power'\n -InternalBattery-0 (id=22544483)\t100%; discharging; 11:22 remaining present: true",
+    "swap": "vm.swapusage: total = 3072.00M  used = 1706.06M  free = 1365.94M  (encrypted)",
+    "disk_free_gb": 60.8
+  },
+  "scientific_status": "inconclusive_GRPO_policy_collapse",
+  "overall_workflow_complete": false,
+  "monitor_schedule": "remain active; revised downstream scope pending",
+  "operational_failure": false
+}

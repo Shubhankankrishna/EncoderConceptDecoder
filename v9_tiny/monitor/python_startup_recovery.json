@@ -1,0 +1,101 @@
+{
+  "status": "completed",
+  "event": "python_startup_stall",
+  "detected_utc": "2026-10-09T20:49:21.400784+00:00",
+  "driver_pid": 7342,
+  "blocked_child_pid": 19322,
+  "stage": "finished",
+  "diagnosis": "Native sample: interpreter initialization blocked in os.listdir/open. Audited site.main probe blocks while scanning unrelated HERMES-NEXUS/src from global editable .pth. Skipping unrelated editable .pth paths lets site, NumPy, and Torch initialize.",
+  "action": "Operationally stop stalled Q3 driver and its uninitialized child; validate scoped launcher on CPU before resuming with launch_block. Global environment and scientific files remain unchanged.",
+  "completed_stages": [
+    "q3_contracts",
+    "q3_smoke"
+  ],
+  "pid": 19604,
+  "resumed": {
+    "Q3": {
+      "block": "Q3",
+      "pid": 20013,
+      "stage": "S2_K4_dense_s911",
+      "heartbeat": "2026-10-09T21:17:08Z",
+      "child_pid": 20019
+    },
+    "Q4": {
+      "block": "Q4",
+      "pid": 20031,
+      "stage": "waiting_for_Q3",
+      "heartbeat": "2026-10-09T21:33:11Z",
+      "child_pid": null
+    },
+    "Q5": {
+      "block": "Q5",
+      "pid": 20052,
+      "stage": "waiting_for_Q4",
+      "heartbeat": "2026-10-09T21:32:26Z",
+      "child_pid": null
+    },
+    "Q6": {
+      "block": "Q6",
+      "pid": 20128,
+      "stage": "waiting_for_Q5",
+      "heartbeat": "2026-10-09T21:32:28Z",
+      "child_pid": null
+    },
+    "QF": {
+      "block": "QF",
+      "pid": 20341,
+      "stage": "waiting_for_Q6",
+      "heartbeat": "2026-10-09T21:32:58Z",
+      "child_pid": null
+    }
+  },
+  "child_pid": null,
+  "validation_dir": "/var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_python_startup_validation_aua17as3",
+  "updated_utc": "2026-10-09T21:33:15.853542+00:00",
+  "log": "/var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_python_startup_validation_aua17as3/q3_smoke.log",
+  "completed_work_preserved": true,
+  "operationally_stopped": [
+    "Q4",
+    "Q5",
+    "Q6",
+    "QF"
+  ],
+  "prior_coordinator_failure": "Traceback (most recent call last):\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/recover_python_startup.py\", line 189, in main\n    stop_waiter(state, block)\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/recover_python_startup.py\", line 120, in stop_waiter\n    assert pid not in processes(), block + ' failed to stop'\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: QF failed to stop\n",
+  "completion_pid": 20334,
+  "qf_cleanup": {
+    "old_pid": 87480,
+    "reason": "Already stopped dependency-only driver remained blocked in native open for over 12 minutes after SIGTERM, with no child or scientific stage. SIGKILL used only for this stopped process.",
+    "utc": "2026-10-09T21:31:58.335063+00:00"
+  },
+  "watchdog_pid": 20374,
+  "completed_utc": "2026-10-09T21:33:15.853542+00:00",
+  "confirmed_progress": {
+    "step": 2200,
+    "planned_steps": 12000,
+    "loss": 1.3283261060714722,
+    "gradient_norm": 0.06654372066259384,
+    "elapsed_s": 952.0328316669911,
+    "lr": 0.0009377601445485045,
+    "selector_entropy": 1.3491853475570679,
+    "hypothesis_pair_distance": 0.05827463045716286,
+    "kdec_is_kstar": 0.5319273471832275,
+    "d_min": 0.5438618063926697,
+    "d_mean": 0.6156424283981323,
+    "text": 2.4069089889526367,
+    "symbolic": 0.06162164732813835,
+    "ncp": 0.4768292307853699,
+    "distillation": 0.018677659332752228,
+    "selector": 0.35474786162376404,
+    "delta": 0.58375,
+    "rolled_positions": 40,
+    "spans": 15,
+    "win_share": [
+      0.31190159916877747,
+      0.21004724502563477,
+      0.23927761614322662,
+      0.23877353966236115
+    ]
+  },
+  "confirmed_heartbeat": "2026-10-09T21:33:12Z",
+  "completion_note": "Full CPU contracts and smoke passed with isolated validation outputs; protected artifacts unchanged. Q3-Q6 resumed by guarded supervisor. Stopped QF driver native-open stall was cleaned up after verifying no child or scientific stage; QF and watchdog restored with validated scoped launcher. K4 training progressed through 2000 steps with finite loss. The old coordinator also hit a duplicate-event record-writing error; source corrected, previous failure retained below. No scientific source/lock/settings/global environment changed."
+}

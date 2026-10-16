@@ -1,0 +1,151 @@
+<section class="chap stage-s2" id="s2" data-num="4" data-chip="S2">
+  <div class="chap-head">
+    <div class="stage-tag">S2</div>
+    <div class="eyebrow">Experiment 2 of 6 · queue block Q3 · <span class="chip run">first half running</span></div>
+    <h2>Several sharp guesses instead of one blur</h2>
+    <p class="q">When a step has several valid next moves, can the model keep a few distinct, committed guesses instead of averaging them into mush, and can it learn which one to try?</p>
+  </div>
+
+  <div class="breath"><h4>In one breath</h4>
+    <ul>
+      <li>S1's guess of the next concept is an average. When two moves are equally good, the average points at neither.</li>
+      <li>S2 gives the model K "what if" codes. Each code commits to one possible next concept, and a selector learns the odds that each one is right.</li>
+      <li>We compare K = 8 against K = 1 on two seeds. The first half (dense core) is running now. The second half (recurrent core) is queued after S6's first experiment.</li>
+    </ul>
+  </div>
+
+  <h3 id="s2-blur">The problem: the average of two good answers can be bad</h3>
+  <div class="measure">
+    <p>Go back to the fork from the basics chapter. A friend asks which way to turn. Half your sources say left and half say right. If you answer with the average, "walk straight ahead", you walk into the wall.</p>
+    <p>S1's guess of the next concept is trained with squared distance. Mathematically, the best single guess under squared distance is the <b>average</b> of everything that could happen. On GraphNav the true next concept depends on which colour the walk takes, and often several colours are equally fine. The average of those concepts is the concept of no real road.</p>
+    <p>Watch it happen. Three real options are marked. One guess is trained by gradient descent on examples from them.</p>
+  </div>
+  <figure class="fig" data-viz="meanModes" data-title="One guess versus several" data-tag="try it">
+    <figcaption>With K = 1 the guess lands on the red cross, the average, which is not an option. Raise K to 3 and the guesses spread out, one per option. The slider labelled "what losers learn" shows why the winner-take-all rule matters.</figcaption>
+  </figure>
+  <div class="callout analogy"><span class="tag">Analogy</span>
+    <p>A group of art students is asked to paint "a face". If each student is graded on how close their painting is to every reference photo, all of them paint the same blurry average face. If each reference photo is assigned only to the closest student, the students specialise and paint distinct, sharp faces.</p>
+  </div>
+
+  <h3 id="s2-needs">Four requirements, four design choices</h3>
+  <div class="measure">
+    <p>Before the details, here is the logic of the design in a table. Each row is something that would have to be true for search over concepts to work, and the choice S2 makes to get it.</p>
+  </div>
+  <div class="tablewrap"><table class="t">
+    <thead><tr><th>What has to be true</th><th>Why</th><th>What S2 does</th></tr></thead>
+    <tbody>
+      <tr><td><b>A choice must be one option, not an average.</b></td><td>Search needs distinct branches to explore.</td><td>K codes, trained winner-take-all so each commits to one option.</td></tr>
+      <tr><td><b>A choice must be a single index.</b></td><td>Search needs to name an action. Independent per-slice picks can build combinations that never occur.</td><td>One code number k from 1 to K, with a continuous guess attached to it.</td></tr>
+      <tr><td><b>Train it the way it will be used.</b></td><td>An earlier version trained on codes picked using the answer, but used codes picked without it, and lost badly.</td><td>The writer is trained on the best of m codes drawn from the selector's own odds, never from all K.</td></tr>
+      <tr><td><b>A model that will read its own guesses must practise on them.</b></td><td>Search feeds predictions back in.</td><td>Closed-loop spans: part of the training reads its own guesses.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s2-hyp">Step 1: give the last concept block K codes</h3>
+  <div class="measure">
+    <p>We do not build a new network. We reuse the last concept block and run it K times, each time with a different learnable <b>code</b> added to its input. A code is just a short vector of numbers, like a dial setting. Each setting nudges the block toward a different answer.</p>
+    <p>This is cheap. The block's keys and values come from the plain input, so one pass over the sequence serves all K codes. At K = 8 the extra cost is about 29% more block-work, and only 3,208 new parameters.</p>
+  </div>
+  <figure class="fig" data-viz="hncpFlow" data-title="One block, K codes" data-tag="step through">
+    <figcaption>Four codes are drawn, but S2 uses eight. The grey box is frozen: the sticker heads come from S1 and do not change, so every difference between hypotheses comes from the codes alone.</figcaption>
+  </figure>
+  <div class="callout term"><span class="tag">Safety net</span>
+    <p>With K = 1 there are no codes at all, and with the closed loop off the training is <em>exactly</em> V8's. A test checks that the loss, every gradient and one optimiser step match V8 to one part in a million. That is how S2 is "nested" in V8: K = 1 is the old method, so any difference is caused by K.</p>
+  </div>
+
+  <h3 id="s2-wta">Step 2: winner-take-all training</h3>
+  <div class="measure">
+    <p>For each position we compare every hypothesis with the true next concept. The closest hypothesis gets a full lesson. The others get a lesson of only 5% strength. The 5% keeps losers from being abandoned, so they can still move toward a mode later. Without it, a code that loses early may never win again.</p>
+  </div>
+
+  <h3 id="s2-sel">Step 3: a selector learns the odds</h3>
+  <div class="measure">
+    <p>Having K guesses is no use if you cannot tell which to try. A small linear layer, the <b>selector</b>, reads the plain row and predicts how likely each code is to be the winner. Its training target is a soft version of "who won": codes that nearly tied share the credit, so near-ties do not become noise.</p>
+    <p>Now the writer, the frozen decoder, needs a plan to follow during training. Which code's guess should we hand it? There are three options, and the choice matters.</p>
+  </div>
+  <figure class="fig" data-viz="selector" data-title="Whose guess steers the writer?" data-tag="try it">
+    <figcaption>The three rows show, for six codes in one example, how close each is to the truth, what the selector predicts, and which code receives the decoder's lesson under each rule. Press Draw one to simulate a single step.</figcaption>
+  </figure>
+  <div class="measure">
+    <p>The main arm uses <b>m = 2</b>: draw two codes using the selector's odds and let the closer one steer the writer. It is a middle road. It sends the lesson to a code that already explains the truth well, as winner-take-all does, but it still only offers codes the selector would actually offer at test time.</p>
+  </div>
+
+  <h3 id="s2-teacher">Step 4: a frozen teacher and a trainable student</h3>
+  <div class="measure">
+    <p>S2 does not retrain the whole model. It takes a finished S1 model, the <b>teacher</b>, and freezes the encoder, the decoder, the codebook and the sticker heads. Only a fresh copy of the concept stack, the new codes and the selector are trainable. Look at which parts are grey (frozen) in the 3D scene below.</p>
+    <p>The teacher also supplies a safety rope: for the first 10% of updates the plain no-code path is pulled hard toward the teacher's outputs, and the pull fades to zero by 30%. This keeps the model from drifting before the codes have settled.</p>
+    <div class="callout care"><span class="tag">Which teacher?</span>
+      <p>Seed 911 learns from S1's seed-902 model. Seed 912 learns from V8's seed-811 model, because S1's other seed failed the competence gate. So the two S2 seeds really are different teachers, and arms should be compared within a seed.</p>
+    </div>
+  </div>
+  <figure class="fig fig3" data-scene="model" data-variants="S2_V8repro,S2_K1_dense,S2_K8_dense,S2_K1_rec,S2_K8_rec" data-k="1" data-title="The S2 arms in 3D" data-tag="drag to rotate">
+    <figcaption>Pick an arm. In every S2 arm the encoder, decoder, codebook and heads are frozen (grey). Raise K, up to 16 as in the exploratory sweep, to see more hypotheses and selector bars above each chunk. The recurrent arm replaces the four concept blocks with a smaller core that is revisited several times.</figcaption>
+  </figure>
+
+  <h3 id="s2-loop">Step 5: practise on your own handwriting</h3>
+  <div class="measure">
+    <p>When search runs, the concept stack will read its own guesses instead of real concepts. If it has only ever read real ones, that is like a driver who has only practised on a simulator and is then put on a real road. So, in 25% of training sequences, a short run of 1 to 4 chunks gets its input replaced by the model's own committed guess. The grading target stays the real concept.</p>
+  </div>
+  <figure class="fig" data-viz="closedLoop" data-title="Closed-loop spans" data-tag="try it">
+    <figcaption>Blue inputs are real concepts. Amber inputs are the model's own earlier guess, handed over with no gradient.</figcaption>
+  </figure>
+
+  <h3 id="s2-dead">Step 6: when a hypothesis never wins</h3>
+  <div class="measure">
+    <p>Winner-take-all training has a known failure: a code that never wins never learns, so it is wasted. The project handles this with the 5% loser lesson, a restart rule, and logging. The rule: every 500 updates, any code whose share of wins fell below one in ten K is restarted as a noisy copy of the most-winning code.</p>
+  </div>
+  <figure class="fig" data-viz="deadCodes" data-title="The restart rule" data-tag="illustration">
+    <figcaption>A schematic of the rule, not data from a run.</figcaption>
+  </figure>
+
+  <h3 id="s2-gates">How we decide: four gates in plain words</h3>
+  <div class="measure">
+    <p>All thresholds were written down before the first S2 run. Each gate asks one question. They are judged on the development puzzles, never the sealed ones, with 95% bootstrap intervals. Each gate is judged per seed, and passing needs both seeds to pass.</p>
+  </div>
+  <div class="gates">
+    <div class="gate"><div class="id">G2.1</div><h4>Authority: does the code steer the writer?</h4><p>(a) If we pick the best code using the answer, is the loss on the puzzle tokens at least 0.05 nats lower than K = 1? (b) If we swap the chosen code for each other code at the last prompt chunk, does the first road change in at least 30% of cases, and is the new road legal in at least 90% of those?</p><span class="rule">pass: ≥ 0.05 nats and ≥ 30% / ≥ 90% · fail: no gain, or &lt; 15% / &lt; 70%</span></div>
+    <div class="gate"><div class="id">G2.2</div><h4>Calibration: can the odds be used without peeking?</h4><p>Four checks: the loss with one drawn code and with the top code stays close to K = 1; the selector's top two choices cover the right next move almost as often as the best possible selector could; its stated odds match how often codes win; and greedy puzzle success is not worse than K = 1 by more than 2 points.</p><span class="rule">pass: ≤ +0.05 / +0.02 nats, coverage ≥ 90% of the ceiling, error ≤ 0.05, ≥ K/2 live codes, success within 2 points</span></div>
+    <div class="gate"><div class="id">G2.3</div><h4>Imagined versus executed</h4><p>Take N steps by following codes in the model's head, then take the same steps by actually writing each one. Do the two end up making the same next decision, and are the written steps legal?</p><span class="rule">pass at every N up to H: agreement ≥ 90%, legal ≥ 95%. The largest passing H is the lookahead depth S5 may use.</span></div>
+    <div class="gate"><div class="id">G2.4</div><h4>Execution consistency: what does each code write?</h4><p>For a given state, decode every code. Do they write at least two distinct legal roads when two roads make progress? Is there always some code that makes progress? Is a code's guess closest to the road it actually writes?</p><span class="rule">pass: branching ≥ 80% and coverage ≥ 95%. The guess-matches-road check (≥ 90%) is needed only for the imagine-everything variant.</span></div>
+  </div>
+  <figure class="fig" data-viz="codesDecode" data-title="What the codes write" data-tag="illustration">
+    <figcaption>G2.4 asks this question on real states. This figure uses made-up outcomes to show the three shapes the answer can take.</figcaption>
+  </figure>
+  <div class="callout idea"><span class="tag">What a failure would mean</span>
+    <ul>
+      <li><b>G2.1 fails on both seeds:</b> the code does not steer the writer. The concept branches of S4 and S5 stop, and the project reports evidence against concept-level control at this scale.</li>
+      <li><b>G2.2 fails but G2.1 passes:</b> codes work if you look at the answer, but the selector cannot be trusted alone. Search can still use it as a prior, but plain greedy results carry no claim.</li>
+      <li><b>G2.4 fails:</b> the codes write the same thing. Decoder-free search is dropped, and only the grounded control remains.</li>
+      <li><b>G2.3 fails at depth H:</b> search may look only as deep as the passing depth.</li>
+    </ul>
+  </div>
+
+  <h3 id="s2-arms">The variants</h3>
+  <div class="measure">
+    <p>Every arm trains for 12,000 updates on two seeds (911 and 912) with the same data order inside a seed. The first block is the <b>dense tier</b>, run first. Only the dense model is promoted to S3 to S5.</p>
+  </div>
+  <div class="arms">
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span><span class="chip">dense tier</span></div><h4>S2 V8repro</h4><p>K = 1, closed loop off. Reproduces V8's recipe at the matched 12,000-update budget. Controls for the closed loop.</p><dl class="kv"><dt>learning</dt><dd>869,504</dd><dt>closed loop</dt><dd>off</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span><span class="chip">dense tier</span></div><h4>S2 K1</h4><p>K = 1, closed loop on. The control that differs from K = 8 in exactly one thing: the number of codes.</p><dl class="kv"><dt>learning</dt><dd>869,504</dd><dt>closed loop</dt><dd>on, p = 0.25</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span><span class="chip">dense tier</span></div><h4>S2 K8</h4><p>The main claim: eight codes, best of two, closed loop on.</p><dl class="kv"><dt>learning</dt><dd>869,504 + 3,208</dd><dt>m, K</dt><dd>2, 8</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span><span class="chip">recurrent tier</span></div><h4>S2 K1 rec and K8 rec</h4><p>The same two comparisons with a smaller recurrent core (476,288 trainable, 2,055,424 active in all). Runs after S6's first experiment. Tests the "separate recurrent module" in the project's original idea.</p><dl class="kv"><dt>seeds</dt><dd>911, 912</dd><dt>queue</dt><dd>Q3b</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span></div><h4>V8-schedule replays</h4><p>K = 1, 6,000 updates, V8's own teacher and seed. Checks that the new code reproduces V8's saved numbers. An implementation check, not a gate.</p><dl class="kv"><dt>seed</dt><dd>811</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip full">full column</span></div><h4>Exploratory arms</h4><p>m = 1 and m = K (who steers the writer), K8 with the closed loop off, undetached feedback, snapped feedback, and K = 4 and K = 16. One seed each. They can suggest the next experiment but never decide a question.</p><dl class="kv"><dt>seeds</dt><dd>1 each</dd></dl></div>
+  </div>
+
+  <h3 id="s2-now">Where S2 stands right now</h3>
+  <div class="measure">
+    <p>This is the live state of the experiment, read from the run files. Everything here is a <b>development diagnostic</b>: a check made while the experiment runs. It decides nothing. The gates are run by a separate program after both seeds finish.</p>
+  </div>
+  <figure class="fig" data-viz="s2status" data-title="S2 so far" data-tag="development diagnostics">
+    <figcaption>Greedy decoding on development puzzles. Table: every measured arm and seed. Chart: training curves, smoothed over 600 updates. Dashed lines are seed 912.</figcaption>
+  </figure>
+  <div class="callout care"><span class="tag">How to read this</span>
+    <ul>
+      <li>One seed pair is not enough to conclude anything. The pre-registered rule needs both seeds to agree.</li>
+      <li>Training loss is not the gate. A model can lower its training loss and still fail to steer the writer.</li>
+      <li>Hard14 results are counts of a few puzzles out of 256, so they are too coarse to compare.</li>
+    </ul>
+  </div>
+  <div class="pager"><a href="#s1"><small>Previous</small>S1: reading in chunks</a><a class="next" href="#s3"><small>Next chapter</small>S3: letting the writer adapt</a></div>
+</section>

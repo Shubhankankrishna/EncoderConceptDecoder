@@ -1,0 +1,425 @@
+{
+  "procedure": {
+    "declared_utc": "2026-10-06T22:13:17Z",
+    "declared_before": "any V9 training run or any V9 evaluation",
+    "draft": "draft_v9.md sha256 f8c83c4427b1cd507f994ae7ba45b99ad19a1fdf028328c53c1d8d595930e3d9 (sections 5.2, 5.3, 12.2 H3-H5, 13.2)",
+    "checkpoints": {
+      "confirmatory": [
+        "S1_A_delayed_s901",
+        "S1_A_delayed_s902",
+        "S1_A_alpha0_s901",
+        "S1_A_alpha0_s902",
+        "S1_A_flat_s901",
+        "S1_A_flat_s902"
+      ],
+      "historical_reported_per_seed_only": [
+        "v8_tiny_12h A_delayed_ncp (seed 811)",
+        "v8_tiny_12h A_alpha0 (seed 811)",
+        "v8_tiny_12h A_flat (seed 811)"
+      ]
+    },
+    "when": "once, after all six confirmatory runs completed their 24,000 updates and their development evaluations; each checkpoint is evaluated once",
+    "symbolic": {
+      "split": "v9test (fresh sealed manifests, spec/FRESH_SEALED.json)",
+      "suites_and_n": {
+        "standard": 2048,
+        "lookup": 2048,
+        "compose": 512,
+        "pointer": 512,
+        "hard10": 512,
+        "hard14": 512,
+        "long18": 512
+      },
+      "not_evaluated": "bind and shifted (S6 phase data, draft 4.1)",
+      "decoding": "frozen evaluate.symbolic_eval, greedy, frozen eager fixed-size decoding for dense/flat models (V8 fast path), strict verifier"
+    },
+    "text": {
+      "split": "V8 test split, families edu and ts, 256 documents each, frozen fixed_text seed 88200 (identical documents across arms)",
+      "caveat": "No fresh text documents exist. V8 evaluated these documents; no V9 model trains on them."
+    },
+    "tests": {
+      "H3": "hierarchy (A_delayed) vs A_flat, success on v9test standard. Per seed: McNemar exact and paired item bootstrap (10,000). Pooled: per-item difference averaged over the two seeds, bootstrap interval over items; p from a two-sided sign-flip randomization test (10,000) on the same per-item differences. Supported iff the point estimate is positive on both seeds, the pooled interval excludes 0 above, and the Holm-adjusted p < .05.",
+      "H4": "A_flat vs A_delayed text NLL on the 512 documents of both families pooled (sum of numerators over sum of targets); per family reported. Per seed: paired document bootstrap (10,000). Pooled: per-document numerators averaged over seeds. p from a sign-flip randomization test on document differences. Supported iff on both seeds flat is lower by >= .02 nats in point estimate with the per-seed interval excluding 0, and the Holm-adjusted p < .05.",
+      "H5": "A_delayed vs A_alpha0, success on v9test standard, same procedure and decision rule as H3.",
+      "family": "Holm correction over {H3, H4, H5} (draft 13.2, S1 stage).",
+      "secondary_not_in_family": "A_alpha0 vs A_flat on standard; A_delayed vs A_alpha0 on hard10; all suites and per-family text reported per seed with intervals."
+    }
+  },
+  "H3": {
+    "per_seed": {
+      "901": {
+        "rate_a": 0.16845703125,
+        "rate_b": 0.13720703125,
+        "mcnemar": {
+          "gains": 283,
+          "losses": 219,
+          "discordant": 502,
+          "p": 0.0048766727796275425
+        },
+        "bootstrap": {
+          "delta": 0.03125,
+          "interval": [
+            0.009765625,
+            0.052734375
+          ],
+          "n": 2048,
+          "resamples": 10000
+        }
+      },
+      "902": {
+        "rate_a": 0.83154296875,
+        "rate_b": 0.0,
+        "mcnemar": {
+          "gains": 1703,
+          "losses": 0,
+          "discordant": 1703,
+          "p": 0.0
+        },
+        "bootstrap": {
+          "delta": 0.83154296875,
+          "interval": [
+            0.81494140625,
+            0.84765625
+          ],
+          "n": 2048,
+          "resamples": 10000
+        }
+      }
+    },
+    "pooled": {
+      "delta": 0.431396484375,
+      "interval": [
+        0.41796875,
+        0.44482421875
+      ],
+      "n": 2048,
+      "resamples": 10000
+    },
+    "p": 9.999000099990002e-05,
+    "sign_agrees": true,
+    "holm_p": 0.00029997000299970003,
+    "supported": true
+  },
+  "H4": {
+    "per_seed": {
+      "901": {
+        "pooled_families": {
+          "delta": -0.07690900135592228,
+          "interval": [
+            -0.08264754631187474,
+            -0.07131798424967091
+          ],
+          "p": 9.999000099990002e-05,
+          "documents": 512,
+          "resamples": 10000
+        },
+        "by_family": {
+          "edu": {
+            "delta": -0.07790308591309694,
+            "interval": [
+              -0.08651331258979925,
+              -0.06912782690347383
+            ],
+            "p": 9.999000099990002e-05,
+            "documents": 256,
+            "resamples": 10000
+          },
+          "ts": {
+            "delta": -0.07588175680081961,
+            "interval": [
+              -0.08337146560612815,
+              -0.06834101886249805
+            ],
+            "p": 9.999000099990002e-05,
+            "documents": 256,
+            "resamples": 10000
+          }
+        }
+      },
+      "902": {
+        "pooled_families": {
+          "delta": -0.03516597567527038,
+          "interval": [
+            -0.04114918665300383,
+            -0.02914738686489053
+          ],
+          "p": 9.999000099990002e-05,
+          "documents": 512,
+          "resamples": 10000
+        },
+        "by_family": {
+          "edu": {
+            "delta": -0.03722271671758506,
+            "interval": [
+              -0.046058804473977075,
+              -0.028328245479868997
+            ],
+            "p": 9.999000099990002e-05,
+            "documents": 256,
+            "resamples": 10000
+          },
+          "ts": {
+            "delta": -0.033040627261269474,
+            "interval": [
+              -0.041202065189617484,
+              -0.024804109852005235
+            ],
+            "p": 9.999000099990002e-05,
+            "documents": 256,
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "pooled": {
+      "delta": -0.05603748851559633,
+      "interval": [
+        -0.06025966273547505,
+        -0.051816253280173225
+      ],
+      "p": 9.999000099990002e-05,
+      "documents": 512,
+      "resamples": 10000
+    },
+    "p": 9.999000099990002e-05,
+    "holm_p": 0.00029997000299970003,
+    "supported": true
+  },
+  "H5": {
+    "per_seed": {
+      "901": {
+        "rate_a": 0.16845703125,
+        "rate_b": 0.74267578125,
+        "mcnemar": {
+          "gains": 55,
+          "losses": 1231,
+          "discordant": 1286,
+          "p": 3.90937458272856e-290
+        },
+        "bootstrap": {
+          "delta": -0.57421875,
+          "interval": [
+            -0.59765625,
+            -0.55078125
+          ],
+          "n": 2048,
+          "resamples": 10000
+        }
+      },
+      "902": {
+        "rate_a": 0.83154296875,
+        "rate_b": 0.82177734375,
+        "mcnemar": {
+          "gains": 121,
+          "losses": 101,
+          "discordant": 222,
+          "p": 0.20213432065995857
+        },
+        "bootstrap": {
+          "delta": 0.009765625,
+          "interval": [
+            -0.00439453125,
+            0.0244140625
+          ],
+          "n": 2048,
+          "resamples": 10000
+        }
+      }
+    },
+    "pooled": {
+      "delta": -0.2822265625,
+      "interval": [
+        -0.2958984375,
+        -0.268310546875
+      ],
+      "n": 2048,
+      "resamples": 10000
+    },
+    "p": 9.999000099990002e-05,
+    "sign_agrees": false,
+    "holm_p": 0.00029997000299970003,
+    "supported": false
+  },
+  "holm": {
+    "H3": 0.00029997000299970003,
+    "H4": 0.00029997000299970003,
+    "H5": 0.00029997000299970003
+  },
+  "table": {
+    "A_delayed_s901": {
+      "standard": 0.16845703125,
+      "lookup": 0.28369140625,
+      "compose": 0.23828125,
+      "pointer": 0.28515625,
+      "hard10": 0.087890625,
+      "hard14": 0.0,
+      "long18": 0.0,
+      "nll_edu": 2.932672338793178,
+      "nll_ts": 1.9282502312969658
+    },
+    "A_delayed_s902": {
+      "standard": 0.83154296875,
+      "lookup": 1.0,
+      "compose": 0.228515625,
+      "pointer": 1.0,
+      "hard10": 0.341796875,
+      "hard14": 0.033203125,
+      "long18": 0.0234375,
+      "nll_edu": 2.9023888356555445,
+      "nll_ts": 1.895102933647822
+    },
+    "A_alpha0_s901": {
+      "standard": 0.74267578125,
+      "lookup": 1.0,
+      "compose": 0.232421875,
+      "pointer": 1.0,
+      "hard10": 0.263671875,
+      "hard14": 0.0,
+      "long18": 0.0,
+      "nll_edu": 2.9223588788227595,
+      "nll_ts": 1.9035291233732088
+    },
+    "A_alpha0_s902": {
+      "standard": 0.82177734375,
+      "lookup": 1.0,
+      "compose": 0.23046875,
+      "pointer": 1.0,
+      "hard10": 0.3515625,
+      "hard14": 0.015625,
+      "long18": 0.0,
+      "nll_edu": 2.9081542413680372,
+      "nll_ts": 1.902744514282211
+    },
+    "A_flat_s901": {
+      "standard": 0.13720703125,
+      "lookup": 1.0,
+      "compose": 0.228515625,
+      "pointer": 1.0,
+      "hard10": 0.025390625,
+      "hard14": 0.0,
+      "long18": 0.0,
+      "nll_edu": 2.8547692528800814,
+      "nll_ts": 1.8523684744961462
+    },
+    "A_flat_s902": {
+      "standard": 0.0,
+      "lookup": 0.201171875,
+      "compose": 0.1484375,
+      "pointer": 0.00390625,
+      "hard10": 0.0,
+      "hard14": 0.0,
+      "long18": 0.0,
+      "nll_edu": 2.8651661189379594,
+      "nll_ts": 1.8620623063865525
+    },
+    "A_delayed_s811_historical": {
+      "standard": 0.8056640625,
+      "lookup": 0.99951171875,
+      "compose": 0.236328125,
+      "pointer": 1.0,
+      "hard10": 0.298828125,
+      "hard14": 0.0,
+      "long18": 0.0,
+      "nll_edu": 2.9134249062702424,
+      "nll_ts": 1.9031417198166618
+    },
+    "A_alpha0_s811_historical": {
+      "standard": 0.75732421875,
+      "lookup": 1.0,
+      "compose": 0.205078125,
+      "pointer": 0.998046875,
+      "hard10": 0.3125,
+      "hard14": 0.013671875,
+      "long18": 0.0,
+      "nll_edu": 2.9116085528018636,
+      "nll_ts": 1.8932354753509846
+    },
+    "A_flat_s811_historical": {
+      "standard": 0.74072265625,
+      "lookup": 1.0,
+      "compose": 0.150390625,
+      "pointer": 0.998046875,
+      "hard10": 0.287109375,
+      "hard14": 0.0,
+      "long18": 0.0,
+      "nll_edu": 2.8621898655967404,
+      "nll_ts": 1.8468225060321533
+    }
+  },
+  "secondary_not_in_family": {
+    "alpha0_vs_flat": {
+      "per_seed": {
+        "901": {
+          "rate_a": 0.74267578125,
+          "rate_b": 0.13720703125,
+          "mcnemar": {
+            "gains": 1249,
+            "losses": 9,
+            "discordant": 1258,
+            "p": 0.0
+          },
+          "bootstrap": {
+            "delta": 0.60546875,
+            "interval": [
+              0.583984375,
+              0.6259887695312498
+            ],
+            "n": 2048,
+            "resamples": 10000
+          }
+        },
+        "902": {
+          "rate_a": 0.82177734375,
+          "rate_b": 0.0,
+          "mcnemar": {
+            "gains": 1683,
+            "losses": 0,
+            "discordant": 1683,
+            "p": 0.0
+          },
+          "bootstrap": {
+            "delta": 0.82177734375,
+            "interval": [
+              0.8046875,
+              0.83837890625
+            ],
+            "n": 2048,
+            "resamples": 10000
+          }
+        }
+      },
+      "pooled": {
+        "delta": 0.713623046875,
+        "interval": [
+          0.698974609375,
+          0.728515625
+        ],
+        "n": 2048,
+        "resamples": 10000
+      },
+      "p": 9.999000099990002e-05,
+      "sign_agrees": true
+    },
+    "hard10_delayed_vs_alpha0": {
+      "901": {
+        "delta": -0.17578125,
+        "interval": [
+          -0.212890625,
+          -0.138671875
+        ],
+        "n": 512,
+        "resamples": 10000
+      },
+      "902": {
+        "delta": -0.009765625,
+        "interval": [
+          -0.029296875,
+          0.009765625
+        ],
+        "n": 512,
+        "resamples": 10000
+      }
+    }
+  },
+  "note": "Seed 811 rows are historical/development evidence (draft \u00a75.2) and are not used in any test."
+}

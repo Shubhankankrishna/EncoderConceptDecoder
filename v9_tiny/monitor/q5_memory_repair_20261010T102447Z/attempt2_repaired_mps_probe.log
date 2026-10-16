@@ -1,0 +1,15 @@
+{"label": "start", "elapsed_s": 0.030958583985920995, "pid": 32045, "tensor_gb": 0.013286912, "driver_gb": 0.025575424}
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/python_startup.py", line 59, in <module>
+    main()
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/python_startup.py", line 55, in main
+    runpy.run_path(script, run_name='__main__')
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/q5_memory_probe.py", line 51, in <module>
+    ps, stats = train_s4.solve_in_workers(eng, ps, search.cfg, 64, max_steps=2)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/train_s4.py", line 217, in solve_in_workers
+    raise RuntimeError(f'S4 search worker exited {rc}; frontier offset {i}')
+RuntimeError: S4 search worker exited -15; frontier offset 0

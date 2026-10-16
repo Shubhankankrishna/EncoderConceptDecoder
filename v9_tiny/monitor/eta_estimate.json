@@ -1,0 +1,59 @@
+{
+  "estimated_at_local": "2026-10-09T22:52:20.141234+05:30",
+  "status": "provisional",
+  "current_stage": "S2_K8m1_dense_s911_measure",
+  "last_verified_step": 12000,
+  "planned_steps": 12000,
+  "q3_remaining_planning_hours": [
+    6,
+    10
+  ],
+  "q3_finish_local_window": [
+    "2026-10-10T05:00:00+05:30",
+    "2026-10-10T09:00:00+05:30"
+  ],
+  "q4_planning_hours": [
+    8,
+    16
+  ],
+  "q5_planning_hours": [
+    24,
+    96
+  ],
+  "q6_qf_combined_planning_hours": [
+    6,
+    24
+  ],
+  "whole_experiment_planning_days": [
+    3,
+    7
+  ],
+  "whole_experiment_finish_local_dates": [
+    "2026-10-12",
+    "2026-10-16"
+  ],
+  "evidence": {
+    "q3": "Recurrent replay and register complete. First contingency K8m1 finished12000 updates in5493s and full evaluation started17:16:16UTC. Remaining: finish this evaluation, then K8mK and K4, each12000 updates and full evaluation. Comparable dense K8 production training+measurement took2.5\u20133.6h per arm; current contingency training took1.53h. K4 not measured.6\u201310h planning allowance retains previous5\u20139AMIST window on10Oct with variability buffer.",
+    "q4": "Four6000-step dec/joint refits, four full measurements and two lambda-transplant curves.8\u201316h is an extrapolated planning allowance, not measured S3 production throughput.",
+    "q5": "Production pilot and first EI iteration not yet started;24\u201396h remains a broad planning allowance. Baselines match actual verifier calls.",
+    "q6_qf": "6\u201324h broad allowance for fixed sealed procedures, token-value fitting, budgeted cells, held-out arm evaluations and final analysis."
+  },
+  "assumptions": [
+    "Current Mac remains powered and available continuously",
+    "One production MPS stage at a time",
+    "No scientific shortcuts; all registered steps,seeds,mandatoryarms and evaluations retained",
+    "No new failure or sustained external resource contention"
+  ],
+  "largest_uncertainty": "Q5 actual production search throughput, chosen sizing, leaf policy and verifier-call baseline work; refine once production pilot and first complete iteration exist.",
+  "previous_estimate": {
+    "estimated_at_local": "2026-10-09T07:31:35.603882+05:30",
+    "whole_experiment_finish_local_dates": [
+      "2026-10-12",
+      "2026-10-16"
+    ],
+    "whole_experiment_planning_days": [
+      3,
+      7
+    ]
+  }
+}

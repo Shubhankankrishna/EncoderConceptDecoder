@@ -1,0 +1,68 @@
+{
+ "checked_utc": "2026-10-16T09:01:10Z",
+ "checked_local": "16 Oct 14:31",
+ "level": "INFO",
+ "summary": "[INFO] Q5 stopped_by_user \u00b7 S4_s921_EI",
+ "active_block": "Q5",
+ "blocks": {
+  "Q2": {
+   "status": "completed",
+   "stage": "finished",
+   "driver_alive": false,
+   "updated_utc": "2026-10-09T05:40:46Z"
+  },
+  "Q3": {
+   "status": "completed",
+   "stage": "finished",
+   "driver_alive": false,
+   "updated_utc": "2026-10-09T23:14:32Z"
+  },
+  "Q4": {
+   "status": "completed",
+   "stage": "finished",
+   "driver_alive": false,
+   "updated_utc": "2026-10-10T07:45:08Z"
+  },
+  "Q5": {
+   "status": "stopped_by_user",
+   "stage": "S4_s921_EI",
+   "driver_alive": false,
+   "updated_utc": "2026-10-10T21:08:49Z",
+   "child_alive": false
+  },
+  "Q6": {
+   "status": "stopped_by_user",
+   "stage": "waiting_for_Q5",
+   "driver_alive": false,
+   "updated_utc": "2026-10-10T21:09:30Z",
+   "child_alive": false
+  },
+  "QF": {
+   "status": "stopped_by_user",
+   "stage": "waiting_for_Q6",
+   "driver_alive": false,
+   "updated_utc": "2026-10-10T21:09:10Z",
+   "child_alive": false
+  }
+ },
+ "events": [
+  "INFO: Q5: was stopped on purpose (SIGTERM/SIGINT). Not resuming it.",
+  "INFO: Q6: was stopped on purpose (SIGTERM/SIGINT). Not resuming it.",
+  "INFO: QF: was stopped on purpose (SIGTERM/SIGINT). Not resuming it."
+ ],
+ "swap": {
+  "total_mb": 3072.0,
+  "used_mb": 1495.31
+ },
+ "disk_free_gb": 51.8,
+ "project_processes": 0,
+ "next_check_local": "16 Oct 14:46",
+ "interval_s": 900,
+ "acting": true,
+ "attempts": {
+  "QF:waiting_for_Q6": {
+   "n": 1,
+   "t": 1791459755.929245
+  }
+ }
+}

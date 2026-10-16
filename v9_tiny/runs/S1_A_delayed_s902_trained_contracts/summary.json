@@ -1,0 +1,929 @@
+{
+  "status": "passed",
+  "source": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S1_A_delayed_s902/checkpoint.pt",
+  "device": "mps",
+  "implementation_sha256": "fcc93d876201367618a195d2d56feb6767800cb633ec7565ec161a74c3a42b58",
+  "checks": [
+    {
+      "name": "content-disjoint TinyStories train/dev",
+      "passed": true
+    },
+    {
+      "name": "content-disjoint TinyStories train/test",
+      "passed": true
+    },
+    {
+      "name": "content-disjoint TinyStories dev/test",
+      "passed": true
+    },
+    {
+      "name": "external TinyStories corpus integrity",
+      "passed": true
+    },
+    {
+      "name": "text array integrity base_dev",
+      "passed": true
+    },
+    {
+      "name": "text array integrity base_test",
+      "passed": true
+    },
+    {
+      "name": "text array integrity base_train",
+      "passed": true
+    },
+    {
+      "name": "text array integrity continual_dev",
+      "passed": true
+    },
+    {
+      "name": "text array integrity continual_test",
+      "passed": true
+    },
+    {
+      "name": "text array integrity continual_train",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity dev_standard",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity dev_hard10",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity dev_hard14",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity dev_long18",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity dev_lookup",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity dev_compose",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity dev_pointer",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity dev_bind",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity dev_shifted",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity test_standard",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity test_hard10",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity test_hard14",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity test_long18",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity test_lookup",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity test_compose",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity test_pointer",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity test_bind",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity test_shifted",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity v9test_standard",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity v9test_hard10",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity v9test_hard14",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity v9test_long18",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity v9test_lookup",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity v9test_compose",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity v9test_pointer",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity v9test_bind",
+      "passed": true
+    },
+    {
+      "name": "symbolic array integrity v9test_shifted",
+      "passed": true
+    },
+    {
+      "name": "TinyStories ID integrity dev",
+      "passed": true
+    },
+    {
+      "name": "TinyStories content integrity dev",
+      "passed": true
+    },
+    {
+      "name": "TinyStories ID integrity test",
+      "passed": true
+    },
+    {
+      "name": "TinyStories content integrity test",
+      "passed": true
+    },
+    {
+      "name": "TinyStories ID integrity train",
+      "passed": true
+    },
+    {
+      "name": "TinyStories content integrity train",
+      "passed": true
+    },
+    {
+      "name": "consistent Q optimizer MEM",
+      "passed": true
+    },
+    {
+      "name": "consistent Q optimizer SIMPLE",
+      "passed": true
+    },
+    {
+      "name": "consistent Q optimizer A",
+      "passed": true
+    },
+    {
+      "name": "consistent Q optimizer HARD",
+      "passed": true
+    },
+    {
+      "name": "actual_version/14/dynamic/prefill/False",
+      "passed": true,
+      "error": 7.62939453125e-06
+    },
+    {
+      "name": "actual_version/14/dynamic/step172/False",
+      "passed": true,
+      "error": 6.0498714447021484e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.59546947479248
+    },
+    {
+      "name": "actual_version/14/dynamic/step173/False",
+      "passed": true,
+      "error": 6.198883056640625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 2.9658823013305664
+    },
+    {
+      "name": "actual_version/14/dynamic/step174/False",
+      "passed": true,
+      "error": 7.62939453125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.772212028503418
+    },
+    {
+      "name": "actual_version/14/dynamic/step175/False",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 11.201705932617188
+    },
+    {
+      "name": "actual_version/14/dynamic/step176/False",
+      "passed": true,
+      "error": 4.76837158203125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.04594898223877
+    },
+    {
+      "name": "actual_version/14/dynamic/step177/False",
+      "passed": true,
+      "error": 6.67572021484375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 11.858757019042969
+    },
+    {
+      "name": "actual_version/14/dynamic/step178/False",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 14.169977188110352
+    },
+    {
+      "name": "actual_version/14/dynamic/step179/False",
+      "passed": true,
+      "error": 1.049041748046875e-05,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.2844409942626953
+    },
+    {
+      "name": "actual_version/14/static/prefill/False",
+      "passed": true,
+      "error": 7.62939453125e-06
+    },
+    {
+      "name": "actual_version/14/static/step172/False",
+      "passed": true,
+      "error": 5.811452865600586e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.59546947479248
+    },
+    {
+      "name": "actual_version/14/static/step173/False",
+      "passed": true,
+      "error": 6.198883056640625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 2.9658823013305664
+    },
+    {
+      "name": "actual_version/14/static/step174/False",
+      "passed": true,
+      "error": 7.62939453125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.772212028503418
+    },
+    {
+      "name": "actual_version/14/static/step175/False",
+      "passed": true,
+      "error": 5.245208740234375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 11.201705932617188
+    },
+    {
+      "name": "actual_version/14/static/step176/False",
+      "passed": true,
+      "error": 4.76837158203125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.04594898223877
+    },
+    {
+      "name": "actual_version/14/static/step177/False",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 11.858757019042969
+    },
+    {
+      "name": "actual_version/14/static/step178/False",
+      "passed": true,
+      "error": 5.245208740234375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 14.169977188110352
+    },
+    {
+      "name": "actual_version/14/static/step179/False",
+      "passed": true,
+      "error": 8.58306884765625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.2844409942626953
+    },
+    {
+      "name": "actual_version/18/dynamic/prefill/False",
+      "passed": true,
+      "error": 5.7220458984375e-06
+    },
+    {
+      "name": "actual_version/18/dynamic/step220/False",
+      "passed": true,
+      "error": 4.76837158203125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.68624496459961
+    },
+    {
+      "name": "actual_version/18/dynamic/step221/False",
+      "passed": true,
+      "error": 5.245208740234375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.5184001922607422
+    },
+    {
+      "name": "actual_version/18/dynamic/step222/False",
+      "passed": true,
+      "error": 9.298324584960938e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.33962631225586
+    },
+    {
+      "name": "actual_version/18/dynamic/step223/False",
+      "passed": true,
+      "error": 8.58306884765625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 5.0280303955078125
+    },
+    {
+      "name": "actual_version/18/dynamic/step224/False",
+      "passed": true,
+      "error": 4.76837158203125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 14.895885467529297
+    },
+    {
+      "name": "actual_version/18/dynamic/step225/False",
+      "passed": true,
+      "error": 5.9604644775390625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 9.072510719299316
+    },
+    {
+      "name": "actual_version/18/dynamic/step226/False",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.481775283813477
+    },
+    {
+      "name": "actual_version/18/dynamic/step227/False",
+      "passed": true,
+      "error": 1.049041748046875e-05,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.4420156478881836
+    },
+    {
+      "name": "actual_version/18/static/prefill/False",
+      "passed": true,
+      "error": 5.7220458984375e-06
+    },
+    {
+      "name": "actual_version/18/static/step220/False",
+      "passed": true,
+      "error": 3.814697265625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.68624496459961
+    },
+    {
+      "name": "actual_version/18/static/step221/False",
+      "passed": true,
+      "error": 4.5299530029296875e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.5184001922607422
+    },
+    {
+      "name": "actual_version/18/static/step222/False",
+      "passed": true,
+      "error": 8.58306884765625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.33962631225586
+    },
+    {
+      "name": "actual_version/18/static/step223/False",
+      "passed": true,
+      "error": 7.3909759521484375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 5.0280303955078125
+    },
+    {
+      "name": "actual_version/18/static/step224/False",
+      "passed": true,
+      "error": 3.814697265625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 14.895885467529297
+    },
+    {
+      "name": "actual_version/18/static/step225/False",
+      "passed": true,
+      "error": 7.62939453125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 9.072510719299316
+    },
+    {
+      "name": "actual_version/18/static/step226/False",
+      "passed": true,
+      "error": 4.76837158203125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.481775283813477
+    },
+    {
+      "name": "actual_version/18/static/step227/False",
+      "passed": true,
+      "error": 9.5367431640625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.4420156478881836
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/prefill/False",
+      "passed": true,
+      "error": 7.62939453125e-06
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step172/False",
+      "passed": true,
+      "error": 4.410743713378906e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.618462562561035
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step173/False",
+      "passed": true,
+      "error": 6.198883056640625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 3.0541486740112305
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step174/False",
+      "passed": true,
+      "error": 9.655952453613281e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.818990707397461
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step175/False",
+      "passed": true,
+      "error": 6.67572021484375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 11.21125602722168
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step176/False",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.089003562927246
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step177/False",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 11.83570671081543
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step178/False",
+      "passed": true,
+      "error": 7.62939453125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 14.121891975402832
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step179/False",
+      "passed": true,
+      "error": 7.62939453125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.2864513397216797
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/prefill/False",
+      "passed": true,
+      "error": 7.62939453125e-06
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step172/False",
+      "passed": true,
+      "error": 3.948807716369629e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.618462562561035
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step173/False",
+      "passed": true,
+      "error": 6.198883056640625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 3.0541486740112305
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step174/False",
+      "passed": true,
+      "error": 8.58306884765625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.818990707397461
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step175/False",
+      "passed": true,
+      "error": 7.152557373046875e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 11.21125602722168
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step176/False",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.089003562927246
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step177/False",
+      "passed": true,
+      "error": 6.198883056640625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 11.83570671081543
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step178/False",
+      "passed": true,
+      "error": 7.152557373046875e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 14.121891975402832
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step179/False",
+      "passed": true,
+      "error": 9.5367431640625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.2864513397216797
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/prefill/True",
+      "passed": true,
+      "error": 6.67572021484375e-06
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step172/True",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.619661331176758
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step173/True",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 3.0541276931762695
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step174/True",
+      "passed": true,
+      "error": 9.5367431640625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.81610107421875
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step175/True",
+      "passed": true,
+      "error": 6.198883056640625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 11.212327003479004
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step176/True",
+      "passed": true,
+      "error": 6.198883056640625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.089170455932617
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step177/True",
+      "passed": true,
+      "error": 4.76837158203125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 11.83104133605957
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step178/True",
+      "passed": true,
+      "error": 5.245208740234375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 14.12076187133789
+    },
+    {
+      "name": "nonzero-gate-fixture/14/dynamic/step179/True",
+      "passed": true,
+      "error": 8.58306884765625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.2862253189086914
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/prefill/True",
+      "passed": true,
+      "error": 6.67572021484375e-06
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step172/True",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.619661331176758
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step173/True",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 3.0541276931762695
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step174/True",
+      "passed": true,
+      "error": 9.5367431640625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.81610107421875
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step175/True",
+      "passed": true,
+      "error": 6.67572021484375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 11.212327003479004
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step176/True",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.089170455932617
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step177/True",
+      "passed": true,
+      "error": 5.245208740234375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 11.83104133605957
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step178/True",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 14.12076187133789
+    },
+    {
+      "name": "nonzero-gate-fixture/14/static/step179/True",
+      "passed": true,
+      "error": 8.58306884765625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.2862253189086914
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/prefill/False",
+      "passed": true,
+      "error": 8.58306884765625e-06
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step220/False",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.648406982421875
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step221/False",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.480290412902832
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step222/False",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.451179504394531
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step223/False",
+      "passed": true,
+      "error": 9.059906005859375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 5.060572624206543
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step224/False",
+      "passed": true,
+      "error": 4.76837158203125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 14.88840389251709
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step225/False",
+      "passed": true,
+      "error": 6.67572021484375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 9.047152519226074
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step226/False",
+      "passed": true,
+      "error": 7.62939453125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.552294731140137
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step227/False",
+      "passed": true,
+      "error": 6.67572021484375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.4480695724487305
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/prefill/False",
+      "passed": true,
+      "error": 8.58306884765625e-06
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step220/False",
+      "passed": true,
+      "error": 4.76837158203125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.648406982421875
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step221/False",
+      "passed": true,
+      "error": 4.76837158203125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.480290412902832
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step222/False",
+      "passed": true,
+      "error": 5.7220458984375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.451179504394531
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step223/False",
+      "passed": true,
+      "error": 8.106231689453125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 5.060572624206543
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step224/False",
+      "passed": true,
+      "error": 4.76837158203125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 14.88840389251709
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step225/False",
+      "passed": true,
+      "error": 6.9141387939453125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 9.047152519226074
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step226/False",
+      "passed": true,
+      "error": 8.58306884765625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.552294731140137
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step227/False",
+      "passed": true,
+      "error": 6.67572021484375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.4480695724487305
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/prefill/True",
+      "passed": true,
+      "error": 6.67572021484375e-06
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step220/True",
+      "passed": true,
+      "error": 3.814697265625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.648417472839355
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step221/True",
+      "passed": true,
+      "error": 6.67572021484375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.4789838790893555
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step222/True",
+      "passed": true,
+      "error": 8.58306884765625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.451272964477539
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step223/True",
+      "passed": true,
+      "error": 7.62939453125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 5.04991340637207
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step224/True",
+      "passed": true,
+      "error": 4.0531158447265625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 14.887600898742676
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step225/True",
+      "passed": true,
+      "error": 6.9141387939453125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 9.046340942382812
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step226/True",
+      "passed": true,
+      "error": 6.9141387939453125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.553288459777832
+    },
+    {
+      "name": "nonzero-gate-fixture/18/dynamic/step227/True",
+      "passed": true,
+      "error": 7.62939453125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.4480361938476562
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/prefill/True",
+      "passed": true,
+      "error": 6.67572021484375e-06
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step220/True",
+      "passed": true,
+      "error": 3.814697265625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.648417472839355
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step221/True",
+      "passed": true,
+      "error": 7.152557373046875e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.4789838790893555
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step222/True",
+      "passed": true,
+      "error": 9.5367431640625e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 13.451272964477539
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step223/True",
+      "passed": true,
+      "error": 6.67572021484375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 5.04991340637207
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step224/True",
+      "passed": true,
+      "error": 3.5762786865234375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 14.887600898742676
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step225/True",
+      "passed": true,
+      "error": 5.602836608886719e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 9.046340942382812
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step226/True",
+      "passed": true,
+      "error": 6.67572021484375e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 12.553288459777832
+    },
+    {
+      "name": "nonzero-gate-fixture/18/static/step227/True",
+      "passed": true,
+      "error": 7.62939453125e-06,
+      "argmax_agreement": true,
+      "minimum_reference_margin": 1.4480361938476562
+    }
+  ],
+  "scope": "Execution/content contracts; synthetic bank is explicitly a fixture, not trained quality evidence"
+}

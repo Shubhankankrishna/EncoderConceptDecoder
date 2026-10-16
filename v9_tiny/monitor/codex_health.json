@@ -1,0 +1,928 @@
+{
+  "checked_utc": "2026-10-10T20:45:47.834818+00:00",
+  "blocks": {
+    "Q1": {
+      "status": "completed",
+      "stage": "finished",
+      "updated_utc": "2026-10-07T16:15:10Z",
+      "driver_alive": false,
+      "child_alive": false,
+      "driver": null,
+      "child": null,
+      "live": {}
+    },
+    "Q2": {
+      "status": "completed",
+      "stage": "finished",
+      "updated_utc": "2026-10-09T05:40:46Z",
+      "driver_alive": false,
+      "child_alive": false,
+      "driver": null,
+      "child": null,
+      "live": {}
+    },
+    "Q3": {
+      "status": "completed",
+      "stage": "finished",
+      "updated_utc": "2026-10-09T23:14:32Z",
+      "driver_alive": false,
+      "child_alive": false,
+      "driver": null,
+      "child": null,
+      "live": {}
+    },
+    "Q4": {
+      "status": "completed",
+      "stage": "finished",
+      "updated_utc": "2026-10-10T07:45:08Z",
+      "driver_alive": false,
+      "child_alive": false,
+      "driver": null,
+      "child": null,
+      "live": {}
+    },
+    "Q5": {
+      "status": "running",
+      "stage": "S4_s921_EI",
+      "updated_utc": "2026-10-10T20:44:53Z",
+      "driver_alive": true,
+      "child_alive": true,
+      "driver": {
+        "ppid": 1,
+        "state": "Ss",
+        "cpu": "0.0",
+        "elapsed": "09:19:26",
+        "command": "/opt/anaconda3/bin/python3 -S -B /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/python_startup.py /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q5.py"
+      },
+      "child": {
+        "ppid": 33203,
+        "state": "S",
+        "cpu": "0.0",
+        "elapsed": "09:19:25",
+        "command": "/opt/anaconda3/bin/python3 -S -B /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/python_startup.py /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/train_s4.py --source /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/checkpoint.pt --out /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S4_s921_EI --seed 921 --H 1 --budget 32 --iterations 4 --n0 512 --n 4096 --rh-allowed 0"
+      },
+      "live": {}
+    },
+    "Q6": {
+      "status": "waiting",
+      "stage": "waiting_for_Q5",
+      "updated_utc": "2026-10-10T20:45:30Z",
+      "driver_alive": true,
+      "child_alive": false,
+      "driver": {
+        "ppid": 1,
+        "state": "Ss",
+        "cpu": "0.0",
+        "elapsed": "09:19:21",
+        "command": "/opt/anaconda3/bin/python3 -S -B /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/python_startup.py /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q6.py"
+      },
+      "child": null,
+      "live": {}
+    },
+    "QF": {
+      "status": "waiting",
+      "stage": "waiting_for_Q6",
+      "updated_utc": "2026-10-10T20:45:10Z",
+      "driver_alive": true,
+      "child_alive": false,
+      "driver": {
+        "ppid": 1,
+        "state": "Ss",
+        "cpu": "0.0",
+        "elapsed": "23:13:49",
+        "command": "/opt/anaconda3/bin/python3 -S -B /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/python_startup.py /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_qf.py"
+      },
+      "child": null,
+      "live": {}
+    }
+  },
+  "pending_locks": {
+    "Q5": {
+      "inputs": {
+        "code": true,
+        "frozen": true,
+        "manifest": true,
+        "exclusions": true,
+        "lock_identity": true
+      },
+      "tests_current": {
+        "contracts": true,
+        "smoke": true
+      },
+      "lock_sha256": "ba3ed4dc3e140fa1a14d661080dd6f0058319b986364087a094f4eff9a00e630"
+    },
+    "Q6": {
+      "inputs": {
+        "code": true,
+        "frozen": true,
+        "manifest": true,
+        "exclusions": true,
+        "lock_identity": true
+      },
+      "tests_current": {
+        "contracts": true,
+        "smoke": true
+      },
+      "lock_sha256": "2ab4fa5df3778153c41e28debcb7c6107548d667c155d093047b13e3050fa4a6"
+    },
+    "QF": {
+      "inputs": {
+        "code": true,
+        "frozen": true,
+        "manifest": true,
+        "exclusions": true,
+        "lock_identity": true
+      },
+      "tests_current": {
+        "contracts": true,
+        "smoke": true
+      },
+      "lock_sha256": "0ff61e6abbcfdba0b7c7cb0c32b53a38fe10371f8124491d2380f38896af8588"
+    }
+  },
+  "completed_locks": {
+    "Q2": {
+      "inputs": {
+        "code": false,
+        "frozen": true,
+        "manifest": true,
+        "exclusions": true,
+        "lock_identity": true
+      },
+      "tests_current": {
+        "contracts": true,
+        "smoke": true
+      },
+      "lock_sha256": "50778d30c4099599a74bd6c92e502156d47f306a36eb53d5e6c00a51e6ca39fd"
+    },
+    "Q3": {
+      "inputs": {
+        "code": true,
+        "frozen": true,
+        "manifest": true,
+        "exclusions": true,
+        "lock_identity": true
+      },
+      "tests_current": {
+        "contracts": true,
+        "smoke": true
+      },
+      "lock_sha256": "482413ece891f17eab5017143c58fc17852c15a7736907f69546e5d9145895cb"
+    },
+    "Q4": {
+      "inputs": {
+        "code": true,
+        "frozen": true,
+        "manifest": true,
+        "exclusions": true,
+        "lock_identity": true
+      },
+      "tests_current": {
+        "contracts": true,
+        "smoke": true
+      },
+      "lock_sha256": "1a81ba3d6363da9cd75ea6d772a3655a25ed548eb591a4c250c43e4259c8fe94"
+    }
+  },
+  "watchdog_alive": true,
+  "watchdog_acting": true,
+  "watchdog_snapshot": {
+    "checked_utc": "2026-10-10T20:42:04Z",
+    "checked_local": "11 Oct 02:12",
+    "level": "OK",
+    "summary": "[OK] Q5 running \u00b7 S4_s921_EI",
+    "active_block": "Q5",
+    "blocks": {
+      "Q2": {
+        "status": "completed",
+        "stage": "finished",
+        "driver_alive": false,
+        "updated_utc": "2026-10-09T05:40:46Z"
+      },
+      "Q3": {
+        "status": "completed",
+        "stage": "finished",
+        "driver_alive": false,
+        "updated_utc": "2026-10-09T23:14:32Z"
+      },
+      "Q4": {
+        "status": "completed",
+        "stage": "finished",
+        "driver_alive": false,
+        "updated_utc": "2026-10-10T07:45:08Z"
+      },
+      "Q5": {
+        "status": "running",
+        "stage": "S4_s921_EI",
+        "driver_alive": true,
+        "updated_utc": "2026-10-10T20:41:53Z",
+        "child_alive": true
+      },
+      "Q6": {
+        "status": "waiting",
+        "stage": "waiting_for_Q5",
+        "driver_alive": true,
+        "updated_utc": "2026-10-10T20:41:30Z",
+        "child_alive": false
+      },
+      "QF": {
+        "status": "waiting",
+        "stage": "waiting_for_Q6",
+        "driver_alive": true,
+        "updated_utc": "2026-10-10T20:41:10Z",
+        "child_alive": false
+      }
+    },
+    "events": [],
+    "swap": {
+      "total_mb": 4096.0,
+      "used_mb": 2945.62
+    },
+    "disk_free_gb": 56.9,
+    "project_processes": 5,
+    "next_check_local": "11 Oct 02:27",
+    "interval_s": 900,
+    "acting": true,
+    "attempts": {
+      "QF:waiting_for_Q6": {
+        "n": 1,
+        "t": 1791459755.929245
+      }
+    }
+  },
+  "q4_validation": {
+    "status": "completed",
+    "pid": 97315,
+    "started_utc": "2026-10-08T23:32:35.026651+00:00",
+    "device": "cpu",
+    "backup": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/q4_validation_20261008T233235Z",
+    "completed_stages": [
+      "contracts",
+      "smoke"
+    ],
+    "updated_utc": "2026-10-09T00:10:16.928061+00:00",
+    "stage": "finished",
+    "child_pid": null,
+    "log": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/q4_validation_20261008T233235Z/smoke.log",
+    "lock_sha256": "f0be9c2bb519e6354e499da8f02da986ab7dcbbd893474a25e4311339265772c",
+    "checks": {
+      "code": true,
+      "frozen": true,
+      "manifest": true,
+      "exclusions": true
+    },
+    "completed_utc": "2026-10-09T00:10:16.928040+00:00",
+    "production_preflight_verified_utc": "2026-10-09T00:15:29.766986+00:00",
+    "notification_sent_utc": "2026-10-09T00:15:29.766986+00:00"
+  },
+  "validation_process": null,
+  "validation_child": null,
+  "i22_validation": {
+    "status": "completed",
+    "pid": 6167,
+    "started_utc": "2026-10-09T07:12:08.074696+00:00",
+    "stage": "finished",
+    "completed_stages": [
+      "q3_contracts",
+      "q3_smoke",
+      "q4_contracts",
+      "q4_smoke",
+      "q5_contracts",
+      "q6_contracts",
+      "q56_smoke"
+    ],
+    "resumed": {
+      "Q3": {
+        "pid": 7342,
+        "child_pid": 7347,
+        "lock_sha256": "482413ece891f17eab5017143c58fc17852c15a7736907f69546e5d9145895cb",
+        "utc": "2026-10-09T07:52:11.258540+00:00",
+        "stage": "S2_K1_rec_s911_measure",
+        "heartbeat": "2026-10-09T07:53:09Z",
+        "confirmed_utc": "2026-10-09T07:53:11.468601+00:00"
+      },
+      "Q4": {
+        "pid": 7949,
+        "child_pid": null,
+        "lock_sha256": "1a81ba3d6363da9cd75ea6d772a3655a25ed548eb591a4c250c43e4259c8fe94",
+        "utc": "2026-10-09T08:20:03.704362+00:00",
+        "stage": "waiting_for_Q3",
+        "heartbeat": "2026-10-09T08:20:03Z"
+      },
+      "Q5": {
+        "pid": 9049,
+        "child_pid": null,
+        "lock_sha256": "b3af516d5cc6dbb102d1a1153071d5164ba878833eb8bb7743c01bae15e091f7",
+        "utc": "2026-10-09T09:39:19.286760+00:00",
+        "stage": "waiting_for_Q4",
+        "heartbeat": "2026-10-09T09:39:19Z"
+      },
+      "Q6": {
+        "pid": 9059,
+        "child_pid": null,
+        "lock_sha256": "b0ef2a9fb36dae3abfdb953a2777ec9c87922c2626b2da41b03baba17b09e839",
+        "utc": "2026-10-09T09:39:20.709823+00:00",
+        "stage": "waiting_for_Q5",
+        "heartbeat": "2026-10-09T09:39:20Z"
+      }
+    },
+    "device": "cpu",
+    "helper_sha256": "bc4379b4ca320afc3eceff6b9088ae88d72144020ffe0e0389deacdc69a6f905",
+    "operationally_stopped": [
+      "Q3",
+      "Q4",
+      "Q5",
+      "Q6"
+    ],
+    "updated_utc": "2026-10-09T09:39:20.710970+00:00",
+    "backup": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/i22_validation_20261009T072329Z",
+    "scratch_probe_peak_driver_gb": 8.014,
+    "code_sha256": "fdc8caff0766a80a287b4b22249500a98b63685dc9812a8b01d02e4cb1ac2502",
+    "completed_work_count": 93,
+    "child_pid": null,
+    "log": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/i22_validation_20261009T072329Z/q56_smoke.log",
+    "completed_work_preserved": true,
+    "completed_utc": "2026-10-09T09:39:20.710962+00:00"
+  },
+  "i22_validation_process": null,
+  "i22_validation_child": null,
+  "i22_probe": {
+    "status": "completed",
+    "pid": 6036,
+    "batch": 16,
+    "scratch": "/var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_i22_memory_probe_ut87mh6b",
+    "started_utc": "2026-10-09T07:05:38.650124+00:00",
+    "events": [
+      {
+        "stage": "start",
+        "elapsed_s": 0.01,
+        "driver_gb": 0.0,
+        "tensor_gb": 0.0
+      },
+      {
+        "stage": "nll_suite:start",
+        "elapsed_s": 0.56,
+        "driver_gb": 0.034,
+        "tensor_gb": 0.021,
+        "detail": ""
+      },
+      {
+        "stage": "nll_suite:done",
+        "elapsed_s": 8.79,
+        "driver_gb": 1.436,
+        "tensor_gb": 0.021,
+        "detail": ""
+      },
+      {
+        "stage": "greedy_suite:start",
+        "elapsed_s": 8.79,
+        "driver_gb": 1.436,
+        "tensor_gb": 0.021,
+        "detail": "standard"
+      },
+      {
+        "stage": "greedy_suite:done",
+        "elapsed_s": 280.65,
+        "driver_gb": 1.517,
+        "tensor_gb": 0.021,
+        "detail": "standard"
+      },
+      {
+        "stage": "greedy_suite:start",
+        "elapsed_s": 280.65,
+        "driver_gb": 1.517,
+        "tensor_gb": 0.021,
+        "detail": "hard10"
+      },
+      {
+        "stage": "greedy_suite:done",
+        "elapsed_s": 366.36,
+        "driver_gb": 1.517,
+        "tensor_gb": 0.021,
+        "detail": "hard10"
+      },
+      {
+        "stage": "greedy_suite:start",
+        "elapsed_s": 366.36,
+        "driver_gb": 1.517,
+        "tensor_gb": 0.021,
+        "detail": "hard14"
+      },
+      {
+        "stage": "greedy_suite:done",
+        "elapsed_s": 592.39,
+        "driver_gb": 2.259,
+        "tensor_gb": 0.021,
+        "detail": "hard14"
+      },
+      {
+        "stage": "self_states:start",
+        "elapsed_s": 592.83,
+        "driver_gb": 2.259,
+        "tensor_gb": 0.021,
+        "detail": ""
+      },
+      {
+        "stage": "self_states:done",
+        "elapsed_s": 647.49,
+        "driver_gb": 3.364,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "gold_states:start",
+        "elapsed_s": 647.5,
+        "driver_gb": 3.364,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "gold_states:done",
+        "elapsed_s": 647.5,
+        "driver_gb": 3.364,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "wrong_states:start",
+        "elapsed_s": 647.5,
+        "driver_gb": 3.364,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "wrong_states:done",
+        "elapsed_s": 647.5,
+        "driver_gb": 3.364,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:start",
+        "elapsed_s": 648.59,
+        "driver_gb": 3.59,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:done",
+        "elapsed_s": 653.33,
+        "driver_gb": 3.6,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:start",
+        "elapsed_s": 654.71,
+        "driver_gb": 5.436,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:done",
+        "elapsed_s": 660.93,
+        "driver_gb": 5.225,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "g23:start",
+        "elapsed_s": 660.94,
+        "driver_gb": 5.225,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "g23:done",
+        "elapsed_s": 691.42,
+        "driver_gb": 5.25,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:start",
+        "elapsed_s": 692.49,
+        "driver_gb": 5.686,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:done",
+        "elapsed_s": 698.28,
+        "driver_gb": 5.544,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "g23:start",
+        "elapsed_s": 699.71,
+        "driver_gb": 5.544,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "g23:done",
+        "elapsed_s": 731.04,
+        "driver_gb": 5.546,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:start",
+        "elapsed_s": 732.19,
+        "driver_gb": 6.417,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:done",
+        "elapsed_s": 738.24,
+        "driver_gb": 6.136,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "g23:start",
+        "elapsed_s": 738.24,
+        "driver_gb": 6.136,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "g23:done",
+        "elapsed_s": 769.14,
+        "driver_gb": 6.161,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "self_states:start",
+        "elapsed_s": 769.43,
+        "driver_gb": 6.161,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "self_states:done",
+        "elapsed_s": 792.88,
+        "driver_gb": 6.296,
+        "tensor_gb": 0.411,
+        "detail": ""
+      },
+      {
+        "stage": "gold_states:start",
+        "elapsed_s": 792.89,
+        "driver_gb": 6.296,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "gold_states:done",
+        "elapsed_s": 792.9,
+        "driver_gb": 6.296,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "wrong_states:start",
+        "elapsed_s": 792.9,
+        "driver_gb": 6.296,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "wrong_states:done",
+        "elapsed_s": 792.9,
+        "driver_gb": 6.296,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:start",
+        "elapsed_s": 793.66,
+        "driver_gb": 6.369,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:done",
+        "elapsed_s": 798.52,
+        "driver_gb": 6.369,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:start",
+        "elapsed_s": 799.65,
+        "driver_gb": 6.908,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:done",
+        "elapsed_s": 804.98,
+        "driver_gb": 6.72,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "g23:start",
+        "elapsed_s": 805.04,
+        "driver_gb": 6.72,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "g23:done",
+        "elapsed_s": 832.26,
+        "driver_gb": 6.723,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:start",
+        "elapsed_s": 833.13,
+        "driver_gb": 6.823,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:done",
+        "elapsed_s": 838.32,
+        "driver_gb": 6.721,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "g23:start",
+        "elapsed_s": 838.32,
+        "driver_gb": 6.721,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "g23:done",
+        "elapsed_s": 865.37,
+        "driver_gb": 6.723,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:start",
+        "elapsed_s": 866.37,
+        "driver_gb": 7.152,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:done",
+        "elapsed_s": 871.61,
+        "driver_gb": 6.945,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "g23:start",
+        "elapsed_s": 871.62,
+        "driver_gb": 6.945,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "g23:done",
+        "elapsed_s": 900.28,
+        "driver_gb": 6.947,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "self_states:start",
+        "elapsed_s": 900.38,
+        "driver_gb": 6.947,
+        "tensor_gb": 0.212,
+        "detail": ""
+      },
+      {
+        "stage": "self_states:done",
+        "elapsed_s": 910.84,
+        "driver_gb": 7.047,
+        "tensor_gb": 0.22,
+        "detail": ""
+      },
+      {
+        "stage": "gold_states:start",
+        "elapsed_s": 910.84,
+        "driver_gb": 7.047,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "gold_states:done",
+        "elapsed_s": 910.84,
+        "driver_gb": 7.047,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "wrong_states:start",
+        "elapsed_s": 910.85,
+        "driver_gb": 7.047,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "wrong_states:done",
+        "elapsed_s": 910.85,
+        "driver_gb": 7.047,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:start",
+        "elapsed_s": 911.17,
+        "driver_gb": 7.256,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:done",
+        "elapsed_s": 912.72,
+        "driver_gb": 7.254,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:start",
+        "elapsed_s": 913.11,
+        "driver_gb": 7.542,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:done",
+        "elapsed_s": 914.86,
+        "driver_gb": 7.553,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:start",
+        "elapsed_s": 915.3,
+        "driver_gb": 7.74,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:done",
+        "elapsed_s": 917.26,
+        "driver_gb": 7.697,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:start",
+        "elapsed_s": 917.68,
+        "driver_gb": 7.997,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "decode_codes:done",
+        "elapsed_s": 919.67,
+        "driver_gb": 8.014,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "drift_suite:start",
+        "elapsed_s": 919.67,
+        "driver_gb": 8.014,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "drift_suite:done",
+        "elapsed_s": 948.62,
+        "driver_gb": 7.965,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "engaged_depth:start",
+        "elapsed_s": 948.62,
+        "driver_gb": 7.965,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "engaged_depth:done",
+        "elapsed_s": 948.82,
+        "driver_gb": 7.97,
+        "tensor_gb": 0.029,
+        "detail": ""
+      },
+      {
+        "stage": "finished",
+        "elapsed_s": 953.17,
+        "driver_gb": 7.957,
+        "tensor_gb": 0.0
+      }
+    ],
+    "purpose": "scratch validation only; never copied to production results",
+    "updated_utc": "2026-10-09T07:21:31.821282+00:00",
+    "seconds": 952.9273960590363,
+    "determinism": true,
+    "output": "/var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_i22_memory_probe_ut87mh6b/measure.json"
+  },
+  "i22_probe_process": null,
+  "q5_memory_recovery": {
+    "status": "completed",
+    "stage": "finished",
+    "failed_utc": "2026-10-10T09:56:45Z",
+    "checked_utc": "2026-10-10T10:01:18.376106+00:00",
+    "watchdog_operational_stop_pid": 20374,
+    "reason": "Found reentrant child.wait in SIGTERM handler while stopping GPU probe; fix cleanup and test signal handling before production.",
+    "scientific_settings_preserved": true,
+    "validation_dir": "/var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_q5_memory_o5fo6_xy",
+    "q6_operational_stop_pid": 20128,
+    "updated_utc": "2026-10-10T11:27:27.931781+00:00",
+    "pid": 32104,
+    "started_validation_utc": "2026-10-10T10:28:47.473639+00:00",
+    "completed_stages": [
+      "exact_cpu_parity",
+      "q5_contracts",
+      "q6_contracts",
+      "q56_smoke",
+      "repaired_mps_probe",
+      "physical_input_hashes",
+      "restore_watchdog"
+    ],
+    "resumed": {
+      "Q5": {
+        "block": "Q5",
+        "pid": 33203,
+        "stage": "S4_s921_EI",
+        "heartbeat": "2026-10-10T11:26:24Z",
+        "child_pid": 33207
+      },
+      "Q6": {
+        "block": "Q6",
+        "pid": 33225,
+        "stage": "waiting_for_Q5",
+        "heartbeat": "2026-10-10T11:26:26Z",
+        "child_pid": null
+      }
+    },
+    "child_pid": null,
+    "backup": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/monitor/q5_memory_repair_20261010T102847Z",
+    "protected_completed_count": 139,
+    "repaired_source_sha256": "239d9e5c8eee3f18fb76796e2cfa74fe9c9faf018fe748d689f096f31b9f8ae4",
+    "repaired_train_s4_sha256": "20429ec9e57b93e05cf1ff3b5537fd6d9e507597c4304049b6a8b359779c2268",
+    "probe_pid": null,
+    "probe_log": "/var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_q5_memory_o5fo6_xy/repaired_mps_probe.log",
+    "log": "/var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_q5_memory_o5fo6_xy/restore_watchdog.log",
+    "mps_full_frontier": {
+      "label": "workers_complete",
+      "elapsed_s": 1879.7898307919968,
+      "pid": 32116,
+      "problems": 64,
+      "stats": {
+        "expansions": 3865,
+        "imagined": 0,
+        "grounded": 3865,
+        "replayed_chunks": 0,
+        "rollouts": 3623,
+        "rollout_chunks": 31979,
+        "verifier_calls": 4483
+      },
+      "all_done": true,
+      "verifier_calls": 4483,
+      "tensor_gb": 0.013286912,
+      "driver_gb": 0.042336256
+    },
+    "mps_peak_boundary_bytes": 4626776064,
+    "mps_worker_handoffs": 11,
+    "completed_work_preserved": true,
+    "new_locks": {
+      "Q5": "ba3ed4dc3e140fa1a14d661080dd6f0058319b986364087a094f4eff9a00e630",
+      "Q6": "2ab4fa5df3778153c41e28debcb7c6107548d667c155d093047b13e3050fa4a6"
+    },
+    "watchdog_pid": 33229,
+    "completed_utc": "2026-10-10T11:27:27.931774+00:00",
+    "confirmed_child_cpu": {
+      "33207": "0:01.30",
+      "33216": "0:42.52"
+    },
+    "confirmed_heartbeat": "2026-10-10T11:27:24Z"
+  },
+  "q5_memory_recovery_process": null,
+  "q5_memory_validation_child": null,
+  "q5_memory_probe_process": null,
+  "disk_free_gb": 56.9,
+  "swap": "total = 4096.00M  used = 2897.62M  free = 1198.38M  (encrypted)",
+  "power": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=22544483)\t80%; AC attached; not charging present: true",
+  "current_training_log_samples": 3896,
+  "current_training_nonfinite_values": [],
+  "action": "No repair needed. Iteration2 advanced from 392 to 448/512. Correct single-worker ancestry and active CPU, fresh dependency drivers, watchdog cadence 900 seconds. Physical pending inputs and 145 protected artifacts match. Twelve-hour plan remains proposal; production settings unchanged.",
+  "notification": "Suppressed unchanged healthy progress and AC power state."
+}

@@ -1,0 +1,55 @@
+{
+  "k8_promoted": true,
+  "models": [
+    {
+      "seed": 911,
+      "s3_seed": 921,
+      "source": {
+        "name": "S2_K8_dense_s911",
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/checkpoint.pt",
+        "measure": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/measure.json",
+        "teacher": "S1_A_delayed_s902",
+        "teacher_sha256": "1199b1c1e1c019c86c23badbf29270589713c03d1c0bd57ef8f1fb0f3a516bac",
+        "seed": 911,
+        "core": "dense",
+        "k": 8,
+        "m": 2,
+        "p_cl": 0.25
+      },
+      "flag": "seed-dependent G2.2(d): both S3 seeds start from the passing seed's K8 model"
+    },
+    {
+      "seed": 912,
+      "s3_seed": 922,
+      "source": {
+        "name": "S2_K8_dense_s911",
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/checkpoint.pt",
+        "measure": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/measure.json",
+        "teacher": "S1_A_delayed_s902",
+        "teacher_sha256": "1199b1c1e1c019c86c23badbf29270589713c03d1c0bd57ef8f1fb0f3a516bac",
+        "seed": 911,
+        "core": "dense",
+        "k": 8,
+        "m": 2,
+        "p_cl": 0.25
+      },
+      "flag": "seed-dependent G2.2(d): both S3 seeds start from the passing seed's K8 model"
+    }
+  ],
+  "consequences": {
+    "concept_branches_run": true,
+    "promoted_k8": false,
+    "prior_not_deployable": true,
+    "decoder_free_search": true,
+    "decoder_free_flag": true,
+    "H_star": 0,
+    "RH1_allowed": false,
+    "RH1_exploratory": false,
+    "IMAG": "not run",
+    "L3_confirmatory": false
+  },
+  "g22d_per_seed": [
+    "pass",
+    "fail"
+  ]
+}

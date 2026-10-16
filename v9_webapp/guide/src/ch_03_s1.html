@@ -1,0 +1,129 @@
+<section class="chap stage-s1" id="s1" data-num="3" data-chip="S1">
+  <div class="chap-head">
+    <div class="stage-tag">S1</div>
+    <div class="eyebrow">Experiment 1 of 6 · queue block Q1 · <span class="chip done">finished</span></div>
+    <h2>Teaching a tiny model to read in chunks</h2>
+    <p class="q">If a model keeps one summary note per four tokens and is trained to guess the next note, does it solve the exam better than a plain model of the same size?</p>
+  </div>
+
+  <div class="breath"><h4>In one breath</h4>
+    <ul>
+      <li>We build three small models from scratch: a plain one, a chunk-reader that also guesses the next concept, and the same chunk-reader without the guessing.</li>
+      <li>Each is trained twice from different random starts (seeds 901 and 902), for 24,000 updates.</li>
+      <li>Finished on 7 October 2026. The models turned out to be much less steady than hoped, and the guessing task did not reliably help.</li>
+    </ul>
+  </div>
+
+  <h3 id="s1-plain">Step 0: the plain model, our control</h3>
+  <div class="measure">
+    <p>Before building anything new, we need something to compare against. The control is an ordinary model of the kind that powers chat assistants: ten blocks stacked on top of each other, every block looking back over all earlier tokens. We call it <b class="mono">A_flat</b>. It has 2,450,048 parameters.</p>
+    <p>"Flat" means it has no idea that groups of four tokens matter. To it, a road in the puzzle is just four unrelated tokens in a row.</p>
+  </div>
+
+  <h3 id="s1-hier">Step 1: the same ten blocks, rearranged into three jobs</h3>
+  <div class="measure">
+    <p>The new model has the same number of blocks, ten, but splits them into three jobs. The split is the whole idea. Step through it below.</p>
+  </div>
+  <figure class="fig" data-viz="ecdFlow" data-title="The S1 model, one step at a time" data-tag="step through">
+    <figcaption>The left tower reads, the right tower writes. The encoder, the concept stack and the decoder are the "encoder, concept, decoder" of the project's name. Total: 3 + 4 + 3 = 10 blocks and 2,448,640 parameters, within 0.1% of the plain model.</figcaption>
+  </figure>
+  <ol class="steps">
+    <li><b>Encoder, 3 blocks.</b><p>Reads the real tokens and gives each one a vector that knows its context. This is ordinary language-model work.</p></li>
+    <li><b>Pooling.</b><p>Averages the four vectors of each chunk into one, then rescales it. The result is a <b>concept</b>: a summary note for the chunk.</p></li>
+    <li><b>Concept stack, 4 blocks.</b><p>Reads only the concepts, never the tokens. With four times fewer positions, each block is cheap. Reasoning here is reasoning about steps.</p></li>
+    <li><b>Guess head.</b><p>Turns the concept stack's output into a guess of the <em>next</em> concept. More in the next step.</p></li>
+    <li><b>Decoder, 3 blocks.</b><p>Writes the answer tokens. It still reads the real tokens, and also receives the guess as a hint, one chunk late.</p></li>
+  </ol>
+
+  <figure class="fig fig3" data-scene="model" data-variants="A_flat,A_alpha0,A_delayed,A_const_hncp" data-title="The S1 arms in 3D" data-tag="drag to rotate">
+    <figcaption>Choose an arm. The encoder is on the back plane, the decoder on the front plane, and the concept stack rises above the chunks. The flat arm has only one plane and nothing above it: the dashed box shows where the concept stack would be. <b>Grey translucent</b> parts are frozen in that arm. <b>Faded or missing</b> parts do not exist in it.</figcaption>
+  </figure>
+
+  <h3 id="s1-ncp">Step 2: guessing the next concept (NCP)</h3>
+  <div class="measure">
+    <p><b>NCP</b> stands for next-concept prediction. A language model guesses the next token. Here we also ask the model to guess the next concept, which is the summary note of the chunk it has not written yet. We know the true answer, because once the chunk exists we can pool it. The loss is how far the guess is from the truth.</p>
+    <p>How does a model produce a vector as a guess? It does not invent numbers freely. It owns a fixed set of <b>stickers</b>: a codebook of reusable vectors. For each slice of the concept, the model gives every sticker a weight, and the guess is the weighted average of the stickers. Our concept has 128 numbers, cut into 8 slices of 16. Each slice has its own 32 stickers.</p>
+    <div class="callout term"><span class="tag">Jargon</span>
+      <p>The sticker idea is called <dfn title="Product quantization: describe a vector by choosing from a small menu separately for each slice of it.">product quantization</dfn>, and "soft" means the weights are probabilities, not a single hard pick. The codebook is trained with a small extra loss, the VQ loss, that keeps the stickers close to real concepts and keeps all of them in use.</p>
+    </div>
+  </div>
+  <figure class="fig" data-viz="ncp" data-title="A guess is a blend of stickers" data-tag="click the picture">
+    <figcaption>The picture shows one slice in 2-D. Move the blue belief and the sureness slider. When the model is unsure, the guess lands between stickers. Remember this: <b>the guess is an average</b>. In S2 that turns out to be a problem.</figcaption>
+  </figure>
+
+  <h3 id="s1-hint">Step 3: how the guess helps the writer</h3>
+  <div class="measure">
+    <p>The decoder's input for each token is the token's own vector plus the hint. The hint from chunk j is added at the last token of that chunk, so it arrives just in time to steer the first token of chunk j + 1. There is also a second, smaller channel called the <b>port</b>, a plain vector sent through the same gap and scaled by a learned knob that starts at 0.1.</p>
+  </div>
+  <details class="deep"><summary>Show the equations</summary><div>
+    <pre class="eq">H_t   = Encoder(embed(x))_t                 token vectors, 128 numbers each
+C_j   = RMS( mean( H_4j ... H_4j+3 ) )       concept of chunk j
+U_j   = ConceptStack(C_0 ... C_j)_j          only looks at concepts up to j
+pi_j,s = softmax( W_s U_j + b_s )            s = 1..8 slices, 32 stickers each
+c^_j  = concat_s  sum_n pi_j,s,n * Q_s,n     the guess (soft product quantization)
+A_j   = W_A RMS(U_j)                         the port
+D_t   = H_t + shift(c^)_t + gamma * shift(A)_t     decoder input
+L     = L_token + alpha(u) * L_NCP + L_VQ
+L_NCP = mean || c^_j - stopgrad(C_j+1) ||^2   squared distance to the true next concept</pre>
+    <p>The stopgrad means the target is treated as a fixed number, so the model cannot cheat by moving the target toward its guess.</p>
+  </div></details>
+
+  <h3 id="s1-sched">Step 4: do not turn the guessing on right away</h3>
+  <div class="measure">
+    <p>An earlier version (V6) switched the guessing task on at full strength from the very first update. On a small set of development puzzles that model scored 0%, while the same model without the task scored 79.7%. V8 then tried a delay: the guessing task counts for nothing for the first 6,000 updates, ramps up to a small weight of 0.1 by update 8,000, and stays there. That is the <b>delayed</b> schedule, and it is the one our main arm uses. The weight is called α (alpha).</p>
+    <div class="callout care"><span class="tag">An idea, not a fact</span>
+      <p>Why would a delay help? One explanation: early on the writer cannot yet look up legal roads by itself, so it leans on the hint, and the hint is a blurry average. It follows the blur and writes illegal moves. Later the writer is strong enough to ignore blur. This explanation fits five earlier observations, but it has never been tested directly. Treat it as a guess.</p>
+    </div>
+  </div>
+  <figure class="fig" data-viz="alpha" data-title="Switching the guessing task on" data-tag="real run data">
+    <figcaption>Top: the weight α over training. Bottom: the NCP loss that was logged during the real S1 runs. The orange line (A_delayed) only starts to fall after the weight turns on. The blue line (A_alpha0) computes the same number but is never trained on it, so it stays near 0.95. The buttons also show the weight for the other arms. There is no run yet for the constant-weight arms.</figcaption>
+  </figure>
+
+  <h3 id="s1-arms">The variants: what we train, and why each exists</h3>
+  <div class="measure">
+    <p>Every arm exists to answer one question by changing one switch. Pick a question and watch which cell of the table changes. This is what "one thing at a time" looks like in practice.</p>
+  </div>
+  <figure class="fig" data-viz="armsMatrix" data-title="Which switch does each comparison test?" data-tag="pick a question">
+    <figcaption>The first three rows are the <b>mandatory</b> arms that were run (two seeds each). The rest are the <b>full column</b>: optional experiments that are not in the mandatory queue. Seed 811 comes from the earlier V8 project and is reported separately.</figcaption>
+  </figure>
+  <figure class="fig" data-viz="maskDemo" data-title="The one change in A_delayed_prefixlm" data-tag="flip it">
+    <figcaption>Rows are the tokens that look, and columns are the tokens they may look at. Flip between the usual backwards-only rule and PrefixLM.</figcaption>
+  </figure>
+  <div class="arms">
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span><span class="chip done">finished</span></div><h4>A_delayed</h4><p>The anchor. Chunk hierarchy with delayed next-concept guessing. It is also the teacher that S2 learns from.</p><dl class="kv"><dt>params</dt><dd>2,448,640</dd><dt>seeds</dt><dd>901, 902</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span><span class="chip done">finished</span></div><h4>A_alpha0</h4><p>The same network, but the guessing task never counts. Any difference from A_delayed comes from that task alone.</p><dl class="kv"><dt>params</dt><dd>2,448,640</dd><dt>seeds</dt><dd>901, 902</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span><span class="chip done">finished</span></div><h4>A_flat</h4><p>The plain ten-block model. Tells us whether the chunk hierarchy helps at all.</p><dl class="kv"><dt>params</dt><dd>2,450,048</dd><dt>seeds</dt><dd>901, 902</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip full">full column</span></div><h4>A_delayed_prefixlm</h4><p>Lets every prompt chunk look at the whole prompt, in both directions. Text stays one-directional.</p><dl class="kv"><dt>params</dt><dd>2,448,640</dd><dt>seeds</dt><dd>2 new</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip full">full column</span></div><h4>A_const</h4><p>Guessing at full strength from update 0. Recreates the old V6 setting, so we can study why it failed.</p><dl class="kv"><dt>seeds</dt><dd>1 new</dd><dt>kind</dt><dd>exploratory</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip full">full column</span></div><h4>A_const_hncp</h4><p>A_const with four hypothesis codes inside S1. The only experiment that tests the S2 idea in the early-training regime.</p><dl class="kv"><dt>extra params</dt><dd>2,628</dd><dt>seeds</dt><dd>1 new</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip full">full column</span></div><h4>A_delayed ×4 and A_alpha0 ×4</h4><p>Four times longer training (96,000 updates). The big NCP study saw it start to pay off late, so this checks whether a longer budget changes our picture.</p><dl class="kv"><dt>seeds</dt><dd>1 new each</dd><dt>kind</dt><dd>exploratory</dd></dl></div>
+  </div>
+
+  <h3 id="s1-gate">The first gate: is a model good enough to be a teacher?</h3>
+  <div class="measure">
+    <p>S2 will learn from an S1 model, so that model has to be competent. <b>Gate G1</b> sets the bar on the development puzzles: at least 80% on standard and at least 95% on lookup. Seed 901 of A_delayed scored 19.3% and 27.2%, so it failed. Seed 902 scored 84.2% and 100%, so it passed. As planned, S2 uses seed 902 as one teacher and V8's older seed 811 as the other.</p>
+  </div>
+
+  <h3 id="s1-results">What happened</h3>
+  <div class="measure">
+    <p>All six runs finished their 24,000 updates, and each was then scored exactly once on fresh sealed puzzles that no model had ever trained on. The next figure shows the result for each arm and seed. Switch between metrics with the buttons.</p>
+  </div>
+  <figure class="fig" data-viz="s1results" data-title="Sealed results, per arm and seed" data-tag="sealed test">
+    <figcaption>Standard puzzles: 2,048 per arm and seed. Other suites: 512. Text: 256 documents per type. Source: the S1 results file, produced after all six runs finished.</figcaption>
+  </figure>
+  <div class="measure">
+    <p>Three predictions were written down before any run. Here is how each came out.</p>
+  </div>
+  <figure class="fig" data-viz="s1tests" data-title="The three pre-registered S1 tests" data-tag="decisions">
+    <figcaption>Intervals are 95% bootstrap intervals over puzzles. All three p-values are corrected for testing three things at once (Holm correction).</figcaption>
+  </figure>
+  <div class="callout result"><span class="tag">What we take away</span>
+    <ul>
+      <li><b>The dice matter a lot.</b> The same recipe gave 16.8% on one seed and 83.2% on the other. Plain and no-NCP models also varied. We do not yet know why seed 901 of A_delayed stalled. Any experiment with one seed here would have been misleading.</li>
+      <li><b>The next-concept task did not show a reliable benefit</b> in S1. It did not clearly hurt on the one seed where both arms worked.</li>
+      <li><b>The chunk model gives up a little on text.</b> The plain model reads text best, but it failed badly on both new seeds in the puzzles. Neither is a clear winner.</li>
+      <li>S1 delivers what the later experiments need: one working teacher (seed 902) and a historical one (seed 811).</li>
+    </ul>
+  </div>
+  <div class="pager"><a href="#world"><small>Previous</small>GraphNav: the exam</a><a class="next" href="#s2"><small>Next chapter</small>S2: several sharp guesses instead of one blur</a></div>
+</section>

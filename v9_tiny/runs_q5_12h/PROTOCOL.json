@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "status": "active_amendment",
+  "activated_utc": "2026-10-10T21:00:10.168592+00:00",
+  "activated_epoch": 1791666010.168592,
+  "deadline_utc": "2026-10-11T09:00:10.168592+00:00",
+  "deadline_epoch": 1791709210.168592,
+  "training_deadline_epoch": 1791698410.168592,
+  "evaluation_deadline_epoch": 1791707410.168592,
+  "seed": 921,
+  "seeds": [
+    921
+  ],
+  "source": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/checkpoint.pt",
+  "original_ei": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S4_s921_EI",
+  "reference": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S4_s921_reference_greedy.json",
+  "finish_ei_iteration": 2,
+  "target_ei_rounds": 3,
+  "grpo_rounds": 2,
+  "exposure_candidates": [
+    512,
+    256,
+    128
+  ],
+  "group": 8,
+  "sampling_problem_batch": 4,
+  "optimizer_batch": 64,
+  "gradient_microbatch": 8,
+  "epochs": 2,
+  "learning_rate": 0.001,
+  "lora_rank": 16,
+  "temperature": 1.0,
+  "hop_limit": 20,
+  "calibration_problems": 16,
+  "reserve_fraction": 0.25,
+  "evaluation_items_per_suite": 512,
+  "evaluation_suites": [
+    "standard",
+    "hard10"
+  ],
+  "sealed_evaluation": false,
+  "removed": [
+    "seed922",
+    "rft",
+    "reinforce",
+    "GradCuit pilot"
+  ],
+  "interpretation": "Exploratory single-seed comparison with unequal training budgets. No equal-compute MCTS superiority claim.",
+  "boundary_policy": "Finish current MCTS round, freeze its verified heads, then hold original Q5/Q6/QF. Do not resume full queue automatically."
+}

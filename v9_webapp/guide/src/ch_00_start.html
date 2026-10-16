@@ -1,0 +1,58 @@
+<header class="hero stage-pre" id="home">
+  <div class="eyebrow">A visual guide · written 8 October 2026</div>
+  <h1>The V9 experiments, from zero</h1>
+  <p class="sub">Six experiments, S1 to S6, that all ask one question: can a small language model think in whole steps instead of single words, and can we search over those steps? This page assumes you have never trained a neural network.</p>
+  <ul class="meta">
+    <li><b>S1</b> finished</li>
+    <li><b>S2</b> running</li>
+    <li><b>S3 to S6</b> designed, not run yet</li>
+    <li>about an hour to read, with play time</li>
+  </ul>
+</header>
+
+<section class="chap stage-pre" id="start" data-num="0" data-chip="Start">
+  <div class="chap-head">
+    <div class="stage-tag">0</div>
+    <div class="eyebrow">Start here</div>
+    <h2>The big idea in sixty seconds</h2>
+    <p class="q">A language model writes text one small piece at a time. V9 asks what happens if it also keeps a short summary note for every four pieces and learns to guess the next note before it writes the words.</p>
+  </div>
+
+  <div class="measure">
+    <p>Here is the whole project in plain words. A normal language model reads a piece of text and guesses the next small piece, called a <dfn title="A small chunk of text that the model treats as one unit: a short word, part of a longer word, or a punctuation mark.">token</dfn>. It does this over and over, and that is how it writes.</p>
+    <p>V9 adds one more habit. After every four tokens the model writes a short summary note and keeps it. We call that note a <b>concept</b>. The model is also trained to guess the <em>next</em> concept before it has written the words that belong to it. That is a bit like glancing at the next chapter title before you read the chapter.</p>
+    <p>If this works, two useful things become possible:</p>
+    <ul class="m">
+      <li><b>Cheap what-if thinking.</b> Looking at a summary note costs far less than writing out the words. A model could try several different next ideas and only write words for the best one.</li>
+      <li><b>Planning ahead.</b> With cheap what-ifs, the model can plan a few steps ahead the way a chess engine does, and then write.</li>
+    </ul>
+    <p>Whether any of this really works is the open question. The six experiments below are the way we find out, one claim at a time.</p>
+  </div>
+
+  <figure class="fig" data-viz="overview" data-title="The six experiments" data-tag="click a card">
+    <figcaption>S1 to S5 build on each other, left to right. S6 starts from the S1 model and does not wait for S2 to S5. The real run order on the single laptop GPU is written under the cards. Status as of 8 October 2026.</figcaption>
+  </figure>
+
+  <h3 id="start-why">Why six experiments and not one big one?</h3>
+  <div class="measure">
+    <p>The earlier versions of this project (V1 to V8) kept changing many things at once. When a result came out good or bad, nobody could say which change caused it. V9 follows a simple rule: <b>each experiment changes one thing and measures it against a control</b>. A control is the same setup with that one thing switched off.</p>
+    <div class="callout idea"><span class="tag">Idea</span>
+      <p>Think of a taste test. To learn whether adding salt helps a soup, you cook two pots that differ only in salt. If you also change the onions, the stock and the pot, you learn nothing about salt.</p>
+    </div>
+    <p>Every experiment also writes down, <em>before it runs</em>, what would count as success. This is called <dfn title="Writing down your prediction and your pass/fail rules before you see any results, so you cannot quietly move the goalposts afterwards.">pre-registration</dfn>. The pass or fail rules are called <b>gates</b>, and you will meet them in each chapter.</p>
+  </div>
+
+  <h3 id="start-how">How to read this page</h3>
+  <div class="measure">
+    <ul class="m">
+      <li>Read it top to bottom. Each chapter starts from zero and only uses ideas explained earlier.</li>
+      <li>Every framed figure with buttons is interactive. Slide, click and press play.</li>
+      <li>The 3D scenes rotate when you drag them. Scroll or pinch to zoom, and click a part to read what it does.</li>
+      <li>Boxes marked <b>Pause and think</b> are good places to stop for a second.</li>
+      <li>Words with a dotted underline have a hover definition. All of them are collected in the glossary at the end.</li>
+    </ul>
+    <div class="callout care"><span class="tag">Read this about the numbers</span>
+      <p>Only the S1 results on this page are final, sealed test results. The S2 numbers are <b>development diagnostics</b>: checks made while the experiment is still running, which decide nothing. S3 to S6 have not been run, so those chapters describe the design and the questions, never results.</p>
+    </div>
+  </div>
+</section>

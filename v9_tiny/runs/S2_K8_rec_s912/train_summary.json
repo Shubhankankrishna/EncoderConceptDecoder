@@ -1,0 +1,164 @@
+{
+  "teacher": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/runs/A_delayed_ncp/checkpoint.pt",
+  "out": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_rec_s912",
+  "core": "recurrent",
+  "k": 8,
+  "m": 2,
+  "p_cl": 0.25,
+  "variant": "detached",
+  "steps": 12000,
+  "seed": 912,
+  "batch": 64,
+  "context": 192,
+  "lr": 0.001,
+  "alpha": 0.1,
+  "eps": 0.05,
+  "lam_sel": 0.1,
+  "seconds": 43200,
+  "resume": false,
+  "no_distill": false,
+  "compiled": true,
+  "stage": "S2",
+  "device": "mps",
+  "precision": "float32",
+  "teacher_sha256": "d22a4ff4a00b7b3dc82b07aa3f96a1659b2153acaaa75ca0bb548654066ee0ce",
+  "v9_s2_files_sha256": "f84cf4334f208993b5a45c48bfdf00f15521347e7d1979d14f750f275dbf10f0",
+  "frozen_implementation_sha256": "fcc93d876201367618a195d2d56feb6767800cb633ec7565ec161a74c3a42b58",
+  "data_sha256": "fe7ae55025b54dd84b0b8bb0fe34f593beefbc2533b9a34dc67163fc6b205300",
+  "metadata": {
+    "kind": "hncp",
+    "core": "recurrent",
+    "k": 8,
+    "code_parameters": 3208,
+    "core_parameters": 476288,
+    "active_parameters": 2058632
+  },
+  "trainable_parameters": 479496,
+  "created_utc": "2026-10-09T12:40:38Z",
+  "status": "completed",
+  "completed_steps": 12000,
+  "wall_s": 6371.136452832987,
+  "last": {
+    "step": 12000,
+    "planned_steps": 12000,
+    "loss": 1.3243353366851807,
+    "gradient_norm": 0.12581486999988556,
+    "elapsed_s": 6368.651092874992,
+    "lr": 0.00010000001594844138,
+    "selector_entropy": 2.0178825855255127,
+    "hypothesis_pair_distance": 0.09223715215921402,
+    "kdec_is_kstar": 0.29357266426086426,
+    "d_min": 0.5072181224822998,
+    "d_mean": 0.626850426197052,
+    "text": 2.3865840435028076,
+    "symbolic": 0.08663235604763031,
+    "ncp": 0.4709332585334778,
+    "distillation": 0.0,
+    "selector": 0.406339168548584,
+    "delta": 0.0,
+    "rolled_positions": 36,
+    "spans": 14,
+    "win_share": [
+      0.13198322057724,
+      0.16901162266731262,
+      0.09477262198925018,
+      0.1316225379705429,
+      0.1890123337507248,
+      0.061761751770973206,
+      0.07501436024904251,
+      0.14682155847549438
+    ]
+  },
+  "restarts": [
+    {
+      "step": 500,
+      "dead": []
+    },
+    {
+      "step": 1000,
+      "dead": []
+    },
+    {
+      "step": 1500,
+      "dead": []
+    },
+    {
+      "step": 2000,
+      "dead": []
+    },
+    {
+      "step": 2500,
+      "dead": []
+    },
+    {
+      "step": 3000,
+      "dead": []
+    },
+    {
+      "step": 3500,
+      "dead": []
+    },
+    {
+      "step": 4000,
+      "dead": []
+    },
+    {
+      "step": 4500,
+      "dead": []
+    },
+    {
+      "step": 5000,
+      "dead": []
+    },
+    {
+      "step": 5500,
+      "dead": []
+    },
+    {
+      "step": 6000,
+      "dead": []
+    },
+    {
+      "step": 6500,
+      "dead": []
+    },
+    {
+      "step": 7000,
+      "dead": []
+    },
+    {
+      "step": 7500,
+      "dead": []
+    },
+    {
+      "step": 8000,
+      "dead": []
+    },
+    {
+      "step": 8500,
+      "dead": []
+    },
+    {
+      "step": 9000,
+      "dead": []
+    },
+    {
+      "step": 9500,
+      "dead": []
+    }
+  ],
+  "lifetime_symbolic_exposure": {
+    "graph": 288000,
+    "lookup": 48000,
+    "compose": 24000,
+    "pointer": 24000
+  },
+  "scored_targets_by_task": {
+    "text": 73195720,
+    "graph": 9971436,
+    "lookup": 192000,
+    "compose": 96000,
+    "pointer": 765776
+  },
+  "frozen_teacher_preserved": true
+}

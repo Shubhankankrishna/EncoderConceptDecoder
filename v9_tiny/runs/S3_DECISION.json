@@ -1,0 +1,63 @@
+{
+  "decision": {
+    "status": {
+      "dec": "fail",
+      "joint": "fail"
+    },
+    "replaces_S2": null,
+    "H11_descriptive": {
+      "dec_keeps": [
+        true,
+        true
+      ],
+      "joint_drop": [
+        0.09140562248995976,
+        0.04176706827309229
+      ],
+      "joint_loses_20pct": [
+        false,
+        false
+      ]
+    },
+    "note": "S2 model goes forward if no arm passes; S3 then reported as a negative"
+  },
+  "forward": [
+    {
+      "seed": 921,
+      "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/checkpoint.pt",
+      "stage": "S2",
+      "s2_source": {
+        "name": "S2_K8_dense_s911",
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/checkpoint.pt",
+        "measure": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/measure.json",
+        "teacher": "S1_A_delayed_s902",
+        "teacher_sha256": "1199b1c1e1c019c86c23badbf29270589713c03d1c0bd57ef8f1fb0f3a516bac",
+        "seed": 911,
+        "core": "dense",
+        "k": 8,
+        "m": 2,
+        "p_cl": 0.25
+      },
+      "flag": "seed-dependent G2.2(d): both S3 seeds start from the passing seed's K8 model"
+    },
+    {
+      "seed": 922,
+      "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/checkpoint.pt",
+      "stage": "S2",
+      "s2_source": {
+        "name": "S2_K8_dense_s911",
+        "checkpoint": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/checkpoint.pt",
+        "measure": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_dense_s911/measure.json",
+        "teacher": "S1_A_delayed_s902",
+        "teacher_sha256": "1199b1c1e1c019c86c23badbf29270589713c03d1c0bd57ef8f1fb0f3a516bac",
+        "seed": 911,
+        "core": "dense",
+        "k": 8,
+        "m": 2,
+        "p_cl": 0.25
+      },
+      "flag": "seed-dependent G2.2(d): both S3 seeds start from the passing seed's K8 model"
+    }
+  ],
+  "lookahead_depth": 1
+}

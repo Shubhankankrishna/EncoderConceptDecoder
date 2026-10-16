@@ -1,0 +1,860 @@
+{
+  "per_seed": [
+    {
+      "G2.1a": {
+        "measure": {
+          "point": -0.09473326106054858,
+          "interval": [
+            -0.09539937648012253,
+            -0.09407440714093913
+          ],
+          "n": 2048
+        },
+        "zone": "pass"
+      },
+      "G2.1b": {
+        "sensitivity": {
+          "point": 0.97265625,
+          "interval": [
+            0.9684709821428572,
+            0.9767020089285715
+          ],
+          "n": 1024
+        },
+        "legal_among_changed": {
+          "point": 1.0,
+          "interval": [
+            1.0,
+            1.0
+          ],
+          "n": 1024
+        },
+        "distinct_legal_first_hops": 3.0,
+        "zone": "pass"
+      },
+      "G2.1": {
+        "zone": "pass"
+      },
+      "G2.2a": {
+        "sample": {
+          "graph": {
+            "point": 0.07059534031825683,
+            "interval": [
+              0.06720845122626791,
+              0.07406594182230106
+            ],
+            "n": 2048
+          },
+          "text": {
+            "point": 0.02525681142252237,
+            "interval": [
+              0.023495354475805183,
+              0.027033592060146057
+            ],
+            "n": 512
+          }
+        },
+        "argmax": {
+          "graph": {
+            "point": 0.06794604518023872,
+            "interval": [
+              0.06494860414287801,
+              0.07093474748783603
+            ],
+            "n": 2048
+          },
+          "text": {
+            "point": 0.028480450367115728,
+            "interval": [
+              0.02649406863714853,
+              0.030462829941258318
+            ],
+            "n": 512
+          }
+        },
+        "zone": "fail",
+        "consequence_if_partial": "single-sample in +.05..+.10: decoder plans use selector-argmax only; argmax +.02..+.05: proceed flagged"
+      },
+      "G2.2b": {
+        "ratio": {
+          "point": 0.7440386711022852,
+          "interval": [
+            0.7155004887667911,
+            0.7722105728940879
+          ],
+          "n": 1024
+        },
+        "coverage": 0.7275390625,
+        "ceiling": 0.9778242593522173,
+        "zone": "partial"
+      },
+      "G2.2c": {
+        "ece": 0.10918202818674425,
+        "ece_interval": [
+          0.1042993405821058,
+          0.11403081436051146
+        ],
+        "live_codes": 8,
+        "kstar_logloss": 1.8064520831367532,
+        "zone": "fail"
+      },
+      "G2.2d": {
+        "measure": {
+          "point": -0.02587890625,
+          "interval": [
+            -0.0478515625,
+            -0.00341796875
+          ],
+          "n": 2048
+        },
+        "hard10": {
+          "point": -0.01171875,
+          "interval": [
+            -0.05078125,
+            0.029296875
+          ],
+          "n": 512
+        },
+        "zone": "fail"
+      },
+      "G2.2": {
+        "zone": "fail",
+        "not_promoted": true
+      },
+      "G2.4_branching": {
+        "measure": {
+          "point": 0.7598152424942263,
+          "interval": [
+            0.7182448036951501,
+            0.8013856812933026
+          ],
+          "n": 433
+        },
+        "duplicate_rate": 0.7176513671875,
+        "zone": "partial"
+      },
+      "G2.4_coverage": {
+        "measure": {
+          "point": 0.863588667366212,
+          "interval": [
+            0.8415529905561385,
+            0.8845750262329486
+          ],
+          "n": 953
+        },
+        "zone": "partial"
+      },
+      "G2.4_stop": {
+        "stop_coverage": 0.7887323943661971,
+        "stop_states": 71,
+        "false_stop_per_code": 0.0,
+        "false_stop_argmax": 0.0,
+        "zone": "reported"
+      },
+      "G2.4_pred_exec": {
+        "measure": {
+          "point": 0.17236328125,
+          "interval": [
+            0.154296875,
+            0.1900634765625
+          ],
+          "n": 1024
+        },
+        "zone": "fail"
+      },
+      "G2.4_port": {
+        "change_rate": 0.185302734375,
+        "zone": "reported"
+      },
+      "G2.4_semantics": {
+        "nmi_pooled": 0.10311382466108722,
+        "modal_colour_share_per_code": {
+          "0": 0.7421875,
+          "1": 0.4072265625,
+          "2": 0.712890625,
+          "3": 0.435546875,
+          "4": 0.6083984375,
+          "5": 0.451171875,
+          "6": 0.443359375,
+          "7": 0.4169921875
+        },
+        "v4_reference_nmi": 0.02
+      },
+      "G2.4_later_hops": {
+        "sensitivity": {
+          "point": 0.5383649553571429,
+          "interval": [
+            0.5129743303571428,
+            0.5641775948660714
+          ],
+          "n": 1024
+        },
+        "zone": "reported"
+      },
+      "G2.3_detail": {
+        "argmax": {
+          "1": {
+            "agreement": {
+              "point": 0.634765625,
+              "interval": [
+                0.60546875,
+                0.6640625
+              ],
+              "n": 1024
+            },
+            "legality": {
+              "point": 1.0,
+              "interval": [
+                1.0,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.3405138967500534
+          },
+          "2": {
+            "agreement": {
+              "point": 0.6137295081967213,
+              "interval": [
+                0.5829918032786885,
+                0.6444672131147541
+              ],
+              "n": 976
+            },
+            "legality": {
+              "point": 1.0,
+              "interval": [
+                1.0,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.44765565477428026
+          },
+          "3": {
+            "agreement": {
+              "point": 0.510752688172043,
+              "interval": [
+                0.478494623655914,
+                0.543010752688172
+              ],
+              "n": 930
+            },
+            "legality": {
+              "point": 0.9990234375,
+              "interval": [
+                0.9970703125,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.5146224948111922
+          },
+          "4": {
+            "agreement": {
+              "point": 0.4629418472063854,
+              "interval": [
+                0.4298745724059293,
+                0.4960091220068415
+              ],
+              "n": 877
+            },
+            "legality": {
+              "point": 0.9990234375,
+              "interval": [
+                0.9970703125,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.5659736682137009
+          }
+        },
+        "uniform": {
+          "1": {
+            "agreement": {
+              "point": 0.458984375,
+              "interval": [
+                0.427734375,
+                0.4892578125
+              ],
+              "n": 1024
+            },
+            "legality": {
+              "point": 1.0,
+              "interval": [
+                1.0,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.4122395776284975
+          },
+          "2": {
+            "agreement": {
+              "point": 0.32684426229508196,
+              "interval": [
+                0.29713114754098363,
+                0.35655737704918034
+              ],
+              "n": 976
+            },
+            "legality": {
+              "point": 0.9970703125,
+              "interval": [
+                0.9931640625,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.5889779046774493
+          },
+          "3": {
+            "agreement": {
+              "point": 0.18823529411764706,
+              "interval": [
+                0.16363636363636364,
+                0.21390374331550802
+              ],
+              "n": 935
+            },
+            "legality": {
+              "point": 0.9970703125,
+              "interval": [
+                0.9931640625,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.9027790482068667
+          },
+          "4": {
+            "agreement": {
+              "point": 0.29337899543379,
+              "interval": [
+                0.2636986301369863,
+                0.3242009132420091
+              ],
+              "n": 876
+            },
+            "legality": {
+              "point": 0.9951171875,
+              "interval": [
+                0.990234375,
+                0.9990234375
+              ],
+              "n": 1024
+            },
+            "distance": 0.9533157184705487
+          }
+        }
+      },
+      "G2.3_H": {
+        "1": "fail",
+        "2": "fail",
+        "4": "fail"
+      }
+    },
+    {
+      "G2.1a": {
+        "measure": {
+          "point": -0.08112048322375594,
+          "interval": [
+            -0.0819164603052156,
+            -0.08032558056569762
+          ],
+          "n": 2048
+        },
+        "zone": "pass"
+      },
+      "G2.1b": {
+        "sensitivity": {
+          "point": 0.8500279017857143,
+          "interval": [
+            0.8390066964285714,
+            0.8611886160714286
+          ],
+          "n": 1024
+        },
+        "legal_among_changed": {
+          "point": 0.9998358772361726,
+          "interval": [
+            0.9995031426215808,
+            1.0
+          ],
+          "n": 1024
+        },
+        "distinct_legal_first_hops": 2.9052734375,
+        "zone": "pass"
+      },
+      "G2.1": {
+        "zone": "pass"
+      },
+      "G2.2a": {
+        "sample": {
+          "graph": {
+            "point": 0.053912507049828334,
+            "interval": [
+              0.05059862006570998,
+              0.05714426619335828
+            ],
+            "n": 2048
+          },
+          "text": {
+            "point": 0.02603926514804778,
+            "interval": [
+              0.024121193749413808,
+              0.028039869685655756
+            ],
+            "n": 512
+          }
+        },
+        "argmax": {
+          "graph": {
+            "point": 0.0828638795833058,
+            "interval": [
+              0.07861907710894432,
+              0.08721162129897005
+            ],
+            "n": 2048
+          },
+          "text": {
+            "point": 0.030492386738494155,
+            "interval": [
+              0.0282903789907265,
+              0.03267666616482266
+            ],
+            "n": 512
+          }
+        },
+        "zone": "fail",
+        "consequence_if_partial": "single-sample in +.05..+.10: decoder plans use selector-argmax only; argmax +.02..+.05: proceed flagged"
+      },
+      "G2.2b": {
+        "ratio": {
+          "point": 0.6980980283228152,
+          "interval": [
+            0.6690312296577864,
+            0.7269709721908607
+          ],
+          "n": 1024
+        },
+        "coverage": 0.6826171875,
+        "ceiling": 0.9778242593522173,
+        "zone": "fail"
+      },
+      "G2.2c": {
+        "ece": 0.14616550273912612,
+        "ece_interval": [
+          0.1404920141015276,
+          0.1518513722154156
+        ],
+        "live_codes": 8,
+        "kstar_logloss": 1.878897966975309,
+        "zone": "fail"
+      },
+      "G2.2d": {
+        "measure": {
+          "point": -0.07470703125,
+          "interval": [
+            -0.09423828125,
+            -0.0546875
+          ],
+          "n": 2048
+        },
+        "hard10": {
+          "point": -0.046875,
+          "interval": [
+            -0.087890625,
+            -0.005859375
+          ],
+          "n": 512
+        },
+        "zone": "fail"
+      },
+      "G2.2": {
+        "zone": "fail",
+        "not_promoted": true
+      },
+      "G2.4_branching": {
+        "measure": {
+          "point": 0.6521739130434783,
+          "interval": [
+            0.606280193236715,
+            0.6980676328502415
+          ],
+          "n": 414
+        },
+        "duplicate_rate": 0.7315673828125,
+        "zone": "partial"
+      },
+      "G2.4_coverage": {
+        "measure": {
+          "point": 0.828125,
+          "interval": [
+            0.8041666666666667,
+            0.8520833333333333
+          ],
+          "n": 960
+        },
+        "zone": "partial"
+      },
+      "G2.4_stop": {
+        "stop_coverage": 0.625,
+        "stop_states": 64,
+        "false_stop_per_code": 0.0,
+        "false_stop_argmax": 0.0,
+        "zone": "reported"
+      },
+      "G2.4_pred_exec": {
+        "measure": {
+          "point": 0.15278456277479238,
+          "interval": [
+            0.13654127992183684,
+            0.16937354988399073
+          ],
+          "n": 1024
+        },
+        "zone": "fail"
+      },
+      "G2.4_port": {
+        "change_rate": 0.1563720703125,
+        "zone": "reported"
+      },
+      "G2.4_semantics": {
+        "nmi_pooled": 0.04869722129238871,
+        "modal_colour_share_per_code": {
+          "0": 0.5361328125,
+          "1": 0.53515625,
+          "2": 0.458455522971652,
+          "3": 0.58984375,
+          "4": 0.6236559139784946,
+          "5": 0.39453125,
+          "6": 0.447265625,
+          "7": 0.48046875
+        },
+        "v4_reference_nmi": 0.02
+      },
+      "G2.4_later_hops": {
+        "sensitivity": {
+          "point": 0.4153180803571428,
+          "interval": [
+            0.3902064732142857,
+            0.4402901785714285
+          ],
+          "n": 1024
+        },
+        "zone": "reported"
+      },
+      "G2.3_detail": {
+        "argmax": {
+          "1": {
+            "agreement": {
+              "point": 0.3671875,
+              "interval": [
+                0.3369140625,
+                0.396484375
+              ],
+              "n": 1024
+            },
+            "legality": {
+              "point": 1.0,
+              "interval": [
+                1.0,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.38095929298287956
+          },
+          "2": {
+            "agreement": {
+              "point": 0.2855691056910569,
+              "interval": [
+                0.258130081300813,
+                0.31402439024390244
+              ],
+              "n": 984
+            },
+            "legality": {
+              "point": 1.0,
+              "interval": [
+                1.0,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.4752422613892122
+          },
+          "3": {
+            "agreement": {
+              "point": 0.2715654952076677,
+              "interval": [
+                0.24387646432374868,
+                0.3003194888178914
+              ],
+              "n": 939
+            },
+            "legality": {
+              "point": 1.0,
+              "interval": [
+                1.0,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.6195075010255096
+          },
+          "4": {
+            "agreement": {
+              "point": 0.2348993288590604,
+              "interval": [
+                0.20693512304250558,
+                0.26286353467561524
+              ],
+              "n": 894
+            },
+            "legality": {
+              "point": 1.0,
+              "interval": [
+                1.0,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.7621853567688959
+          }
+        },
+        "uniform": {
+          "1": {
+            "agreement": {
+              "point": 0.37890625,
+              "interval": [
+                0.3486328125,
+                0.408203125
+              ],
+              "n": 1024
+            },
+            "legality": {
+              "point": 0.9990234375,
+              "interval": [
+                0.9970703125,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.42084462270577205
+          },
+          "2": {
+            "agreement": {
+              "point": 0.2877406281661601,
+              "interval": [
+                0.25937183383991896,
+                0.3171225937183384
+              ],
+              "n": 987
+            },
+            "legality": {
+              "point": 0.9990234375,
+              "interval": [
+                0.9970703125,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.5223313142196275
+          },
+          "3": {
+            "agreement": {
+              "point": 0.28253968253968254,
+              "interval": [
+                0.25502645502645505,
+                0.3111111111111111
+              ],
+              "n": 945
+            },
+            "legality": {
+              "point": 0.9990234375,
+              "interval": [
+                0.9970703125,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.5671498018637067
+          },
+          "4": {
+            "agreement": {
+              "point": 0.23542354235423543,
+              "interval": [
+                0.20902090209020902,
+                0.264026402640264
+              ],
+              "n": 909
+            },
+            "legality": {
+              "point": 0.9990234375,
+              "interval": [
+                0.9970703125,
+                1.0
+              ],
+              "n": 1024
+            },
+            "distance": 0.6219359246897511
+          }
+        }
+      },
+      "G2.3_H": {
+        "1": "fail",
+        "2": "fail",
+        "4": "fail"
+      }
+    }
+  ],
+  "combined": {
+    "G2.1a": {
+      "zone": "pass",
+      "seeds": [
+        "pass",
+        "pass"
+      ]
+    },
+    "G2.1b": {
+      "zone": "pass",
+      "seeds": [
+        "pass",
+        "pass"
+      ]
+    },
+    "G2.1": {
+      "zone": "pass",
+      "seeds": [
+        "pass",
+        "pass"
+      ]
+    },
+    "G2.2a": {
+      "zone": "fail",
+      "seeds": [
+        "fail",
+        "fail"
+      ]
+    },
+    "G2.2b": {
+      "zone": "partial",
+      "seeds": [
+        "partial",
+        "fail"
+      ],
+      "seed_dependent": false
+    },
+    "G2.2c": {
+      "zone": "fail",
+      "seeds": [
+        "fail",
+        "fail"
+      ]
+    },
+    "G2.2d": {
+      "zone": "fail",
+      "seeds": [
+        "fail",
+        "fail"
+      ]
+    },
+    "G2.2": {
+      "zone": "fail",
+      "seeds": [
+        "fail",
+        "fail"
+      ]
+    },
+    "G2.4_branching": {
+      "zone": "partial",
+      "seeds": [
+        "partial",
+        "partial"
+      ],
+      "seed_dependent": false
+    },
+    "G2.4_coverage": {
+      "zone": "partial",
+      "seeds": [
+        "partial",
+        "partial"
+      ],
+      "seed_dependent": false
+    },
+    "G2.4_stop": {
+      "zone": "reported",
+      "seeds": [
+        "reported",
+        "reported"
+      ]
+    },
+    "G2.4_pred_exec": {
+      "zone": "fail",
+      "seeds": [
+        "fail",
+        "fail"
+      ]
+    },
+    "G2.4_port": {
+      "zone": "reported",
+      "seeds": [
+        "reported",
+        "reported"
+      ]
+    },
+    "G2.4_later_hops": {
+      "zone": "reported",
+      "seeds": [
+        "reported",
+        "reported"
+      ]
+    },
+    "G2.3_H1": {
+      "zone": "fail",
+      "seeds": [
+        "fail",
+        "fail"
+      ]
+    },
+    "G2.3_H2": {
+      "zone": "fail",
+      "seeds": [
+        "fail",
+        "fail"
+      ]
+    },
+    "G2.3_H4": {
+      "zone": "fail",
+      "seeds": [
+        "fail",
+        "fail"
+      ]
+    }
+  },
+  "consequences": {
+    "concept_branches_run": true,
+    "promoted_k8": false,
+    "prior_not_deployable": true,
+    "decoder_free_search": true,
+    "decoder_free_flag": true,
+    "H_star": 0,
+    "RH1_allowed": false,
+    "RH1_exploratory": false,
+    "IMAG": "not run",
+    "L3_confirmatory": false
+  },
+  "inputs": [
+    [
+      "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_rec_s911/measure.json",
+      "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K1_rec_s911/measure.json"
+    ],
+    [
+      "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K8_rec_s912/measure.json",
+      "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S2_K1_rec_s912/measure.json"
+    ]
+  ]
+}

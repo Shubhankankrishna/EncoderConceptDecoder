@@ -1,0 +1,23 @@
+failed 893
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/q4_smoke.py", line 40, in main
+    raise AssertionError('driver failed: ' + r.stderr[-3000:] + fail)
+AssertionError: driver failed: Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q4.py", line 53, in <module>
+    Q4().execute()
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py", line 127, in execute
+    self.main()
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q4.py", line 38, in main
+    out = self.train(name, CODE / 'train_s3.py', ['--source', ck, '--teacher', teacher, '--out', RUNS / name, '--arm', arm, '--steps', STEPS, '--seed', s3seed, '--compiled'], STEPS)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py", line 111, in train
+    self.run(name, script, args)
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py", line 95, in run
+    raise RuntimeError(f'{name} exited {rc}; see {folder}/process.log')
+RuntimeError: S3_s921_dec exited -9; see /var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_q4_smoke_24kao3l4/runs/S3_s921_dec/process.log
+{
+  "error": "RuntimeError('S3_s921_dec exited -9; see /var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_q4_smoke_24kao3l4/runs/S3_s921_dec/process.log')",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py\", line 127, in execute\n    self.main()\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/drive_q4.py\", line 38, in main\n    out = self.train(name, CODE / 'train_s3.py', ['--source', ck, '--teacher', teacher, '--out', RUNS / name, '--arm', arm, '--steps', STEPS, '--seed', s3seed, '--compiled'], STEPS)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py\", line 111, in train\n    self.run(name, script, args)\n  File \"/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/queue_base.py\", line 95, in run\n    raise RuntimeError(f'{name} exited {rc}; see {folder}/process.log')\nRuntimeError: S3_s921_dec exited -9; see /var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_q4_smoke_24kao3l4/runs/S3_s921_dec/process.log\n",
+  "stage": "S3_s921_dec"
+}
+

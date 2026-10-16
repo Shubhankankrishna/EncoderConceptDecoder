@@ -1,0 +1,121 @@
+{
+  "status": "passed",
+  "block": "Q5",
+  "lock_sha256": "b3af516d5cc6dbb102d1a1153071d5164ba878833eb8bb7743c01bae15e091f7",
+  "identity": {
+    "block": "Q5",
+    "frozen_implementation_sha256": "fcc93d876201367618a195d2d56feb6767800cb633ec7565ec161a74c3a42b58",
+    "files_sha256": "79325d3ccd364917edc80a72134fc805465dafd2e9bb38e3b7aeb0814fdafdb2",
+    "data_manifest_sha256": "fe7ae55025b54dd84b0b8bb0fe34f593beefbc2533b9a34dc67163fc6b205300",
+    "exclusion_list_sha256": "0d9fa4cbbca46262a5382e374391292920f06e8619acfae4d7fa4940fb6f97ff",
+    "lock_sha256": "b3af516d5cc6dbb102d1a1153071d5164ba878833eb8bb7743c01bae15e091f7"
+  },
+  "items": [
+    "6",
+    "12",
+    "13",
+    "15 (CPU)",
+    "S4 labels",
+    "I15/I16"
+  ],
+  "tests": [
+    {
+      "name": "item 6: R_grad = o - 1 gives a nonzero gradient and one step lowers the rejected answer's log-probability",
+      "passed": true,
+      "grad": 0.009911268949508667,
+      "before": -4.9368743896484375,
+      "after": -4.937192440032959
+    },
+    {
+      "name": "item 6: the mutant R = o is caught as an exact no-op",
+      "passed": true
+    },
+    {
+      "name": "GradCuit stops at acceptance or 10 updates; weights stay frozen; bound RMS(delta) <= .5 RMS(e_k)",
+      "passed": true
+    },
+    {
+      "name": "random-direction kernel: same nominal step norm, no reward gradient",
+      "passed": true
+    },
+    {
+      "name": "item 12: every verify() call is counted (grounded/rollout)",
+      "passed": true,
+      "explicit": 72,
+      "counted": 132
+    },
+    {
+      "name": "item 12: every verify() call is counted (imagined/value)",
+      "passed": true,
+      "explicit": 39,
+      "counted": 39
+    },
+    {
+      "name": "S4 problems: fresh, unique, disjoint from every evaluation hash",
+      "passed": true
+    },
+    {
+      "name": "tau labels = the verifier STOP rule on grounded states, never the demonstration",
+      "passed": true
+    },
+    {
+      "name": "G4 held-out split disjoint by problem",
+      "passed": true
+    },
+    {
+      "name": "undefined AUROC with < 30 items per class",
+      "passed": true
+    },
+    {
+      "name": "perfect separation: AUROC 1 and Brier below base rate -> pass",
+      "passed": true
+    },
+    {
+      "name": "constant scores: AUROC .5 -> fail",
+      "passed": true
+    },
+    {
+      "name": "constant labels: undefined, cannot pass",
+      "passed": true
+    },
+    {
+      "name": "leaf policy: flagged V used; tau fail -> STOP only at grounded nodes",
+      "passed": true
+    },
+    {
+      "name": "leaf policy: an imagined-depth failure -> verified grounded completion",
+      "passed": true
+    },
+    {
+      "name": "token baselines: rank-16 q/v LoRA on the three decoder blocks = 24,576 parameters",
+      "passed": true
+    },
+    {
+      "name": "LoRA at initialisation (B = 0) leaves the model unchanged",
+      "passed": true
+    },
+    {
+      "name": "S4 primary trainable parameters: selector 1,032 + two heads 129 each = 1,290",
+      "passed": true
+    },
+    {
+      "name": "I15: search results are independent of batching (per-problem noise generators)",
+      "passed": true
+    },
+    {
+      "name": "item 15: a fixed seed reproduces the same trajectories on CPU",
+      "passed": true
+    },
+    {
+      "name": "item 13: no file under any other project runs/ changed",
+      "passed": true,
+      "changed": []
+    },
+    {
+      "name": "lock identity unchanged during session",
+      "passed": true
+    }
+  ],
+  "seconds": 128.11482405662537,
+  "temp_dir": "/var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_q5_contracts_x1q2aa01"
+}

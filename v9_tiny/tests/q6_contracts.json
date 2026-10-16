@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "block": "Q6",
+  "lock_sha256": "2ab4fa5df3778153c41e28debcb7c6107548d667c155d093047b13e3050fa4a6",
+  "identity": {
+    "block": "Q6",
+    "frozen_implementation_sha256": "fcc93d876201367618a195d2d56feb6767800cb633ec7565ec161a74c3a42b58",
+    "files_sha256": "b56f12a2fbbb340d442d2c4e8dac7b416624f46f3053a1ea168c83f3cb7f08f2",
+    "data_manifest_sha256": "fe7ae55025b54dd84b0b8bb0fe34f593beefbc2533b9a34dc67163fc6b205300",
+    "exclusion_list_sha256": "0d9fa4cbbca46262a5382e374391292920f06e8619acfae4d7fa4940fb6f97ff",
+    "lock_sha256": "2ab4fa5df3778153c41e28debcb7c6107548d667c155d093047b13e3050fa4a6"
+  },
+  "items": [
+    "7",
+    "12",
+    "13",
+    "15 (CPU)",
+    "I17"
+  ],
+  "tests": [
+    {
+      "name": "item 7: decoding under a stored plan record equals decoding directly under the same plan",
+      "passed": true
+    },
+    {
+      "name": "item 7: replayed nodes carry their records as immutable overrides at the right chunks",
+      "passed": true
+    },
+    {
+      "name": "item 7: later decodes apply the stored records (same records -> identical logits; altered records -> different logits)",
+      "passed": true,
+      "max_dlogit": 0.19016003608703613
+    },
+    {
+      "name": "item 7: re-grounding: imagined nodes below a re-grounded node are computed from its grounded context",
+      "passed": true,
+      "imagined": 43
+    },
+    {
+      "name": "item 15: with N(s) = 0 the literal PUCT scores all tie, so the first simulation takes action 0 (lower index)",
+      "passed": true
+    },
+    {
+      "name": "item 15: after one visit, the prior steers selection (highest-prior unvisited action)",
+      "passed": true
+    },
+    {
+      "name": "item 15: exact ties -> lowest index",
+      "passed": true
+    },
+    {
+      "name": "item 15: fixed-seed search reproduces the same trajectories on CPU",
+      "passed": true
+    },
+    {
+      "name": "item 15: execution ties -> higher prior -> lower index",
+      "passed": true
+    },
+    {
+      "name": "token tree: 4 actions (3 colours + STOP), prior is a distribution",
+      "passed": true
+    },
+    {
+      "name": "token tree: each child forces its colour as the hop's first token",
+      "passed": true
+    },
+    {
+      "name": "item 12: best-of-N counts one verifier call per sample",
+      "passed": true
+    },
+    {
+      "name": "budget: the 2x hard stop bounds wall-clock (+ one step); unfinished items are failures",
+      "passed": true,
+      "wall": 1.6253484159824438
+    },
+    {
+      "name": "item 13: no file under any other project runs/ changed",
+      "passed": true,
+      "changed": []
+    },
+    {
+      "name": "lock identity unchanged during session",
+      "passed": true
+    }
+  ],
+  "seconds": 16.952232837677002,
+  "temp_dir": "/var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_q6_contracts_m04qkdo8"
+}

@@ -1,0 +1,93 @@
+<section class="chap stage-s4" id="s4" data-num="6" data-chip="S4">
+  <div class="chap-head">
+    <div class="stage-tag">S4</div>
+    <div class="eyebrow">Experiment 4 of 6 · queue block Q5 · <span class="chip design">designed, not run</span></div>
+    <h2>Learning from a right-or-wrong checker</h2>
+    <p class="q">Can the model get better at choosing among its guesses by playing puzzles and learning from which choices the checker approves?</p>
+  </div>
+
+  <div class="breath"><h4>In one breath</h4>
+    <ul>
+      <li>Post-training means learning from feedback after the main training. Here the only feedback is the verifier saying right or wrong.</li>
+      <li>The main method is <b>expert iteration</b>: search finds good choices with the verifier's help, and then the quick instincts (the selector and two tiny judges) are trained to reproduce them. Repeat four times.</li>
+      <li>It is compared, with the same puzzles and the same budget, against three standard methods. The result is reported either way.</li>
+    </ul>
+  </div>
+
+  <h3 id="s4-sft">Why there is no separate fine-tuning step</h3>
+  <div class="measure">
+    <p>Many pipelines first fine-tune on worked examples and then use reinforcement learning. Here, the training data already contains verified worked examples: the puzzle answers are trained response-only from the very start. A separate fine-tuning stage would only repeat that. What is new in S4 is learning from a checker on puzzles the examples do not teach well, mostly the hard ones.</p>
+  </div>
+
+  <h3 id="s4-three">Three meanings of "reinforcement learning with the code"</h3>
+  <div class="measure">
+    <p>The phrase can mean three different things. The project gives each one a role and a record to be measured against.</p>
+  </div>
+  <div class="tablewrap"><table class="t">
+    <thead><tr><th>Meaning</th><th>What gets updated</th><th>Role in V9</th><th>What earlier versions found</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nudge the code at test time</b> (GradCuit)</td><td>Nothing persistent. A temporary offset on one code.</td><td>A refine step inside search (S5), always beside a random-direction version.</td><td>Beat a random nudge, but had a lower score than simply re-sampling with the verifier in all 4 earlier comparisons.</td></tr>
+      <tr><td><b>Policy gradient on the selector</b> (REINFORCE)</td><td>The selector.</td><td>A secondary baseline.</td><td>An earlier attempt did not beat the zero-cost default.</td></tr>
+      <tr><td><b>Expert iteration</b></td><td>The selector and two tiny judges, from search results.</td><td><b>The primary method.</b></td><td>Never tried in this project.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s4-loop">The primary method: expert iteration</h3>
+  <div class="measure">
+    <p>Imagine a chess player who spends a long time analysing a position, makes the move that analysis points to, and keeps notes. After many games they train their <em>instinct</em> to suggest what the analysis would have concluded, so next time the instinct is better and the analysis starts from a better place. That is expert iteration. The famous AlphaZero uses the same idea.</p>
+  </div>
+  <figure class="fig" data-viz="eiLoop" data-title="The expert iteration loop" data-tag="step through">
+    <figcaption>Everything else in the model stays frozen. Only the selector and two tiny judges are trained.</figcaption>
+  </figure>
+
+  <h3 id="s4-targets">What each trained part learns to predict</h3>
+  <div class="measure">
+    <p>After a search, we know how often each code was visited. A code that looked promising was tried many times. We train the selector so that its odds match those visit shares. In plain terms, we copy the slow search into the quick instinct.</p>
+  </div>
+  <figure class="fig" data-viz="visitsTarget" data-title="Copying search into the selector" data-tag="try it">
+    <figcaption>The orange bars are the selector's odds and the dashed lines are the target taken from the search. The loss is cross-entropy, whose slope is just the gap between them.</figcaption>
+  </figure>
+  <div class="measure">
+    <p>The two tiny judges are single linear layers (129 numbers each). The <b>value judge</b> predicts whether the answer will be correct, from the current position. The <b>stop judge</b> predicts whether stopping is legal here. They let the search score a branch without paying for a full rollout. They are only trusted if they pass their own gate, checked on held-out positions: the value judge needs an AUROC of at least 0.80 on complete answers and 0.70 on intermediate and imagined ones, and the stop judge needs 90% recall with at most 2% false positives on imagined states. If a judge fails, search falls back to verified completions, which cost more.</p>
+  </div>
+
+  <h3 id="s4-fair">Is it a fair fight?</h3>
+  <div class="measure">
+    <p>Three standard methods start from the same promoted checkpoint, with the same puzzles, the same number of verifier calls and the same time cap. <b>Token RFT</b> samples complete answers, keeps the verified ones and fine-tunes on them. <b>Token GRPO</b> is a popular policy-gradient method on the same adapter. <b>Selector REINFORCE</b> is policy gradient on the selector. The first two use a small trainable adapter (LoRA) on the decoder instead of the codes.</p>
+    <p>The capacity is not equal, and the project says so openly.</p>
+  </div>
+  <figure class="fig" data-viz="paramsBar" data-title="How many numbers each method can change" data-tag="disclosed up front">
+    <figcaption>Source: the design's parameter accounting. Rank 16 on the query and value matrices of three decoder blocks gives 3 × 2 × 16 × 256 = 24,576.</figcaption>
+  </figure>
+
+  <h3 id="s4-grad">GradCuit and the sign of the reward</h3>
+  <div class="measure">
+    <p>GradCuit is a test-time method. When an answer fails, it nudges one code vector, up to ten times, to make the rejected answer less likely, and then writes again. One detail is easy to get wrong. If the reward were simply 1 for correct and 0 for wrong, a wrong answer would multiply the whole gradient by zero and the method would do nothing at all. So the reward is set to <b>o − 1</b>: 0 when accepted, −1 when rejected.</p>
+  </div>
+  <figure class="fig" data-viz="gradReward" data-title="Why the reward is o − 1" data-tag="try it">
+    <figcaption>A mechanism picture with toy numbers.</figcaption>
+  </figure>
+
+  <h3 id="s4-arms">The variants</h3>
+  <figure class="fig" data-viz="freezeMap" data-variants="S4_EI,S4_RFT,S4_GRPO,S4_REINFORCE" data-title="What learns in each S4 method" data-tag="pick a method">
+    <figcaption>The primary method trains the selector and the two judges and nothing else. The token baselines train an adapter on the decoder and run in code-free mode, which means their plan is the model's one default guess.</figcaption>
+  </figure>
+  <figure class="fig fig3" data-scene="model" data-variants="S4_EI,S4_RFT,S4_GRPO,S4_REINFORCE" data-title="The S4 methods in 3D" data-tag="drag to rotate">
+    <figcaption>The purple add-ons on the decoder in the RFT and GRPO views are the adapters. The orange value and stop heads appear in the expert iteration view.</figcaption>
+  </figure>
+  <div class="arms">
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span><span class="chip">primary</span></div><h4>S4 expert iteration</h4><p>Four rounds of search, play, verify and learn. Trains 1,290 numbers. Each promoted S2 or S3 seed gets its own run.</p><dl class="kv"><dt>puzzles</dt><dd>512, then 4 × 4,096</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span></div><h4>Token RFT</h4><p>Sample full answers at random, keep the correct ones, fine-tune an adapter on them.</p><dl class="kv"><dt>trainable</dt><dd>24,576</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span></div><h4>Token GRPO</h4><p>The standard policy-gradient method, on the same adapter. Another project found it struggles with sparse, compositional rewards. It is included because it is the standard.</p><dl class="kv"><dt>trainable</dt><dd>24,576</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span></div><h4>Selector REINFORCE</h4><p>Policy gradient on the selector's 1,032 numbers with the verifier's reward.</p><dl class="kv"><dt>trainable</dt><dd>1,032</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip full">full column</span></div><h4>S4-exec and S1-anchor baselines</h4><p>An exploratory arm that trains the code vectors to match what actually got written, and the same three baselines started from the S1 model, labelled whole-pipeline comparisons.</p><dl class="kv"><dt>kind</dt><dd>exploratory</dd></dl></div>
+  </div>
+  <div class="callout idea"><span class="tag">Predictions written in advance</span>
+    <ul>
+      <li><b>L3, about 35% confidence:</b> after equal verifier calls, expert iteration beats token RFT on greedy sealed hard10 success. Never tried here, and it trains far fewer numbers.</li>
+      <li><b>H14, about 30% confidence:</b> the reward-guided nudge does <em>not</em> beat the random-direction nudge by 2 points or more.</li>
+    </ul>
+    <p>If S2 fails its authority gate, the concept version of S4 does not run at all. Only the token methods continue.</p>
+  </div>
+  <div class="pager"><a href="#s3"><small>Previous</small>S3: letting the writer adapt</a><a class="next" href="#s5"><small>Next chapter</small>S5: search without writing words</a></div>
+</section>

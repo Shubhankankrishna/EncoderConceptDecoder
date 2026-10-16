@@ -1,0 +1,163 @@
+{
+  "status": "passed",
+  "block": "Q2",
+  "lock_sha256": "50778d30c4099599a74bd6c92e502156d47f306a36eb53d5e6c00a51e6ca39fd",
+  "identity": {
+    "block": "Q2",
+    "frozen_implementation_sha256": "fcc93d876201367618a195d2d56feb6767800cb633ec7565ec161a74c3a42b58",
+    "files_sha256": "b99781bb9352949d40caa7684b9b685d93a7caaa11cef373f1e389363598121e",
+    "data_manifest_sha256": "fe7ae55025b54dd84b0b8bb0fe34f593beefbc2533b9a34dc67163fc6b205300",
+    "exclusion_list_sha256": "0d9fa4cbbca46262a5382e374391292920f06e8619acfae4d7fa4940fb6f97ff",
+    "lock_sha256": "50778d30c4099599a74bd6c92e502156d47f306a36eb53d5e6c00a51e6ca39fd"
+  },
+  "items": [
+    "11 (colour-count)",
+    "13",
+    "14"
+  ],
+  "tests": [
+    {
+      "name": "colour-count test manifest hash",
+      "passed": true
+    },
+    {
+      "name": "colour-count dev manifest hash",
+      "passed": true
+    },
+    {
+      "name": "colour-count calibration manifest hash",
+      "passed": true
+    },
+    {
+      "name": "colour-count dev: every item accepted, an off-by-one count rejected; chunk-aligned",
+      "passed": true,
+      "n": 512
+    },
+    {
+      "name": "colour-count calibration: every item accepted, an off-by-one count rejected; chunk-aligned",
+      "passed": true,
+      "n": 512
+    },
+    {
+      "name": "colour-count test: every item accepted, an off-by-one count rejected; chunk-aligned",
+      "passed": true,
+      "n": 2048
+    },
+    {
+      "name": "colour-count dev / calibration / test disjoint by content hash",
+      "passed": true
+    },
+    {
+      "name": "colour-count parser and header reject every V8 task format; V8 prompts dispatch to the frozen verifier",
+      "passed": true,
+      "n": 576
+    },
+    {
+      "name": "frozen V8 verifier never accepts a colour-count item",
+      "passed": true
+    },
+    {
+      "name": "colour-count mixer excludes every evaluation item; loss on the 4 response tokens only",
+      "passed": true
+    },
+    {
+      "name": "calibration split disjoint from every V8/V9 evaluation set",
+      "passed": true
+    },
+    {
+      "name": "item 14: bank forced open equals plain merged LoRA",
+      "passed": true,
+      "rel": 2.879282419598894e-06
+    },
+    {
+      "name": "item 14: bank closed everywhere reproduces the pre-phase model exactly",
+      "passed": true,
+      "max_abs": 0.0
+    },
+    {
+      "name": "item 14: q/k/v gate reads the block input n1(x)",
+      "passed": true
+    },
+    {
+      "name": "item 14: o, w12, w3 gates read their own matrix inputs (distinct tensors)",
+      "passed": true
+    },
+    {
+      "name": "item 14: gate decisions in document 2 independent of document 1 (smoothing resets)",
+      "passed": true
+    },
+    {
+      "name": "item 14: fitted, smoothed gates are causal (future tokens do not change earlier logits)",
+      "passed": true
+    },
+    {
+      "name": "S6 engine equals frozen generate on standard",
+      "passed": true,
+      "n": 48,
+      "rate": 0.7291666666666666
+    },
+    {
+      "name": "S6 engine equals frozen generate on lookup",
+      "passed": true,
+      "n": 32,
+      "rate": 1.0
+    },
+    {
+      "name": "S6 engine equals frozen generate on compose",
+      "passed": true,
+      "n": 32,
+      "rate": 0.25
+    },
+    {
+      "name": "S6 engine equals frozen generate on pointer",
+      "passed": true,
+      "n": 32,
+      "rate": 1.0
+    },
+    {
+      "name": "S6 engine equals frozen generate on hard10",
+      "passed": true,
+      "n": 16,
+      "rate": 0.375
+    },
+    {
+      "name": "S6 engine equals frozen generate on bind",
+      "passed": true,
+      "n": 32,
+      "rate": 0.0
+    },
+    {
+      "name": "S6 engine equals frozen generate on shifted",
+      "passed": true,
+      "n": 32,
+      "rate": 0.0
+    },
+    {
+      "name": "converted model with no banks: identical decisions",
+      "passed": true,
+      "rate": 0.7291666666666666
+    },
+    {
+      "name": "item 13: no file under any other project runs/ changed",
+      "passed": true,
+      "changed": []
+    },
+    {
+      "name": "item 13: V9 runs/ changes come only from the running production queue (any block: status, driver, launch, queue log, stage folders)",
+      "passed": true,
+      "sample": [
+        "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/status_Q4.json",
+        "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/status_Q6.json",
+        "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/status_QF.json",
+        "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/status_Q5.json",
+        "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/status_Q3.json"
+      ]
+    },
+    {
+      "name": "lock identity unchanged during session",
+      "passed": true
+    }
+  ],
+  "seconds": 61.23998808860779,
+  "temp_dir": "/var/folders/rs/jjwg4txj5fx9zxd5xf01bx9h0000gn/T/v9_q2_contracts_lva7b06r"
+}

@@ -1,0 +1,50 @@
+{
+  "status": "completed",
+  "G1": {
+    "rule": "dev point estimates: standard >= .80 and lookup >= .95 (register G1)",
+    "seeds": {
+      "901": {
+        "standard": 0.193359375,
+        "standard_successes": 396,
+        "standard_n": 2048,
+        "lookup": 0.27197265625,
+        "lookup_n": 2048,
+        "passed": false
+      },
+      "902": {
+        "standard": 0.84228515625,
+        "standard_successes": 1725,
+        "standard_n": 2048,
+        "lookup": 1.0,
+        "lookup_n": 2048,
+        "passed": true
+      }
+    },
+    "final": true
+  },
+  "teachers": {
+    "teachers": [
+      "S1_A_delayed_s902",
+      "A_delayed_ncp_s811"
+    ],
+    "flag": "independent teachers (one new seed failed G1; second teacher is seed 811)",
+    "checkpoints": {
+      "S1_A_delayed_s902": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/runs/S1_A_delayed_s902/checkpoint.pt",
+      "A_delayed_ncp_s811": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/runs/A_delayed_ncp/checkpoint.pt"
+    },
+    "sha256": {
+      "S1_A_delayed_s902": "1199b1c1e1c019c86c23badbf29270589713c03d1c0bd57ef8f1fb0f3a516bac",
+      "A_delayed_ncp_s811": "d22a4ff4a00b7b3dc82b07aa3f96a1659b2153acaaa75ca0bb548654066ee0ce"
+    }
+  },
+  "H3": true,
+  "H4": true,
+  "H5": false,
+  "holm": {
+    "H3": 0.00029997000299970003,
+    "H4": 0.00029997000299970003,
+    "H5": 0.00029997000299970003
+  },
+  "elapsed_s": 63626.16921591759,
+  "lock": "cf157cc1af170341ddfa2be5516262c3d416b10638795dbec25a344498dff59c"
+}

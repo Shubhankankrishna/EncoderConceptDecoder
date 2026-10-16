@@ -1,0 +1,68 @@
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/s6.py:151: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  last = dict(step=index + 1, planned_steps=args.steps, loss=float(loss), gradient_norm=float(norm), elapsed_s=time.monotonic() - begin); log(**last); atomic_json(out / 'live.json', last)
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/s6_pilot.py", line 45, in <module>
+    main()
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/s6_pilot.py", line 31, in main
+    _, out[f'eval_{name}_{n}_s'] = timed(lambda: s6.symbolic(m, f'dev_{name}', n))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/s6_pilot.py", line 17, in timed
+    sync(); t = time.time(); r = f(); sync(); return r, time.time() - t
+                                 ^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/s6_pilot.py", line 31, in <lambda>
+    _, out[f'eval_{name}_{n}_s'] = timed(lambda: s6.symbolic(m, f'dev_{name}', n))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/s6.py", line 77, in symbolic
+    j = idx[i:i + batch]; ok, _, _ = greedy(s, [r[:P] for r in a['x'][j]], a['x'].shape[1] - P); out[j] = ok
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/s6.py", line 54, in greedy
+    tok = last_logits(s, x[:, :pos + 1], docs[:, :pos + 1], torch.full((B,), pos - 1, device=DEVICE)).argmax(-1)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/s6.py", line 38, in last_logits
+    h = f.encode(x, docs); c = f.pool(h); cd, _ = chunk_info(docs); chat, a, _ = s.plans(c, cd)
+        ^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/frozen/code/model.py", line 136, in encode
+    h = block(h, docs)
+        ^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/lsl.py", line 110, in forward
+    att = F.scaled_dot_product_attention(q, k, v, attn_mask=mask[:, None]).transpose(1, 2).reshape(b, t, D)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: MPS backend out of memory (MPS allocated: 12.22 GiB, other allocations: 7.91 GiB, max allowed: 20.13 GiB). Tried to allocate 20.88 MiB on private pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v9_tiny/code/s6.py:151: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  last = dict(step=index + 1, planned_steps=args.steps, loss=float(loss), gradient_norm=float(norm), elapsed_s=time.monotonic() - begin); log(**last); atomic_json(out / 'live.json', last)
+{
+ "phi_neg_fit_s": 110.40418291091919,
+ "lsl_phase_total_s_200": 392.4891891479492,
+ "lsl_train_s_per_update": 1.3719841866650677,
+ "vq_phase_total_s_200": 76.9438841342926,
+ "vq_train_s_per_update": 0.3829785381250258,
+ "phi_pos_fit_s": 116.24986982345581,
+ "eval_standard_1024_s": 402.87671303749084,
+ "eval_lookup_512_s": 8.693371772766113,
+ "eval_compose_512_s": 9.126267194747925,
+ "eval_pointer_512_s": 135.68776082992554,
+ "eval_hard10_512_s": 186.69941306114197,
+ "eval_text_256_s": 2.114365339279175,
+ "eval_colourcount_512_s": 9.052657842636108,
+ "g60_s": 84.3840901851654,
+ "estimate": {
+  "per_lsl_phase_s": 4502.000254900951,
+  "per_other_phase_s": 1544.656037031149,
+  "q2_total_h": 12.713522872111483,
+  "note": "measured on mps while Q1 trains on the same GPU"
+ }
+}

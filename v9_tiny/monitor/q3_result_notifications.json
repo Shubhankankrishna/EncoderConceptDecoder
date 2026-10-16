@@ -1,0 +1,126 @@
+{
+  "S2_K8_rec_s911_measure_completed": {
+    "notified_utc": "2026-10-09T11:16:26.361082+00:00",
+    "completed_utc": "2026-10-09T11:14:02Z",
+    "message": "First-seed recurrent K8 evaluation completed: standard 76.71% vs matched dense K8 84.77%, Hard10 29.10% vs 33.98%, Hard14 3.91% vs 5.08%. Second recurrent seed 912 is training; results remain preliminary until both seeds complete.",
+    "comparison": {
+      "S2_K8_dense_s911": {
+        "rates": {
+          "standard": 0.84765625,
+          "hard10": 0.33984375,
+          "hard14": 0.05078125
+        },
+        "suite_sizes": {
+          "standard": 2048,
+          "hard10": 512,
+          "hard14": 256
+        },
+        "teacher_sha256": "1199b1c1e1c019c86c23badbf29270589713c03d1c0bd57ef8f1fb0f3a516bac",
+        "checkpoint_sha256": "3a42a0a6399d8382658f8dac23fa184d75cdd4534704d91db8b40064fbef22f5",
+        "measurement_sha256": "3bb1c4cb48ea8c46cb9ce46461da4de0e90ee910f783dd60c6fa4aa3b0699558",
+        "determinism": true
+      },
+      "S2_K8_rec_s911": {
+        "rates": {
+          "standard": 0.76708984375,
+          "hard10": 0.291015625,
+          "hard14": 0.0390625
+        },
+        "suite_sizes": {
+          "standard": 2048,
+          "hard10": 512,
+          "hard14": 256
+        },
+        "teacher_sha256": "1199b1c1e1c019c86c23badbf29270589713c03d1c0bd57ef8f1fb0f3a516bac",
+        "checkpoint_sha256": "7f360635db43247511c82e52be6011d90bdeb4b8acff12cd78b07c22b252abb3",
+        "measurement_sha256": "3af947fcf4db868f1c3352054b163757c8431a86b9d412401084058195eba665",
+        "determinism": true
+      }
+    },
+    "next_stage": "S2_K1_rec_s912",
+    "confirmed_training_step": 200
+  },
+  "S2_K1_rec_s912_measure_completed": {
+    "notified_utc": "2026-10-09T12:43:05.815768+00:00",
+    "completed_utc": "2026-10-09T12:40:36Z",
+    "message": "Seed912 recurrent K1 evaluation completed: Standard 86.38% vs matched dense K1 81.59%, Hard10 35.74% vs 29.88%, Hard14 0% for both. Recurrent K8 seed912 has started; recurrence conclusion remains preliminary.",
+    "comparison": {
+      "S2_K1_dense_s912": {
+        "rates": {
+          "standard": 0.81591796875,
+          "hard10": 0.298828125,
+          "hard14": 0.0
+        },
+        "suite_sizes": {
+          "standard": 2048,
+          "hard10": 512,
+          "hard14": 256
+        },
+        "teacher_sha256": "d22a4ff4a00b7b3dc82b07aa3f96a1659b2153acaaa75ca0bb548654066ee0ce",
+        "checkpoint_sha256": "8cc6b25679b2712606c95f7bd271674ed1778969213ef35fd560c66f8ec10d51",
+        "measurement_sha256": "5721a5c419fa5cfba5acf800378f4d469d216180e77976ba4ddac9697fb9200b",
+        "determinism": true
+      },
+      "S2_K1_rec_s912": {
+        "rates": {
+          "standard": 0.86376953125,
+          "hard10": 0.357421875,
+          "hard14": 0.0
+        },
+        "suite_sizes": {
+          "standard": 2048,
+          "hard10": 512,
+          "hard14": 256
+        },
+        "teacher_sha256": "d22a4ff4a00b7b3dc82b07aa3f96a1659b2153acaaa75ca0bb548654066ee0ce",
+        "checkpoint_sha256": "cc7737d68e1c23c7518a3d5ee106ae4017acebcda6fc600fdd97477db30b02ac",
+        "measurement_sha256": "06226995b3c12a747b7a0e45a50c2c6f04c7901ad15833ac9a04611038309e7c",
+        "determinism": true
+      }
+    },
+    "next_stage": "S2_K8_rec_s912",
+    "notification_context": "User asked what comes next; include result update in response."
+  },
+  "S2_K8_rec_s912_measure_completed": {
+    "notified_utc": "2026-10-09T15:23:28.299699+00:00",
+    "completed_utc": "2026-10-09T15:17:01Z",
+    "message": "Seed912 recurrent K8 evaluation completed: compare verified rates in record. Q3 automatically advanced to recurrent replay training;1200/6000 steps confirmed. Swap fell from about8GB to3.2GB; memory headroom improved. Q4 remains waiting for Q3 completion.",
+    "comparison": {
+      "S2_K8_dense_s912": {
+        "rates": {
+          "standard": 0.71533203125,
+          "hard10": 0.26953125,
+          "hard14": 0.0
+        },
+        "suite_sizes": {
+          "standard": 2048,
+          "hard10": 512,
+          "hard14": 256
+        },
+        "teacher_sha256": "d22a4ff4a00b7b3dc82b07aa3f96a1659b2153acaaa75ca0bb548654066ee0ce",
+        "checkpoint_sha256": "8ab5938d117c61afdc12fe52a6a2afe8dcf59e104fc40c0177718402fe0b4fc2",
+        "measurement_sha256": "f26a346cec7b24d4849a1da2cb5bd52e8c79c1c8287b11469024f1666b093c4f",
+        "determinism": true
+      },
+      "S2_K8_rec_s912": {
+        "rates": {
+          "standard": 0.7890625,
+          "hard10": 0.310546875,
+          "hard14": 0.0
+        },
+        "suite_sizes": {
+          "standard": 2048,
+          "hard10": 512,
+          "hard14": 256
+        },
+        "teacher_sha256": "d22a4ff4a00b7b3dc82b07aa3f96a1659b2153acaaa75ca0bb548654066ee0ce",
+        "checkpoint_sha256": "8baa1740697668b6cc8d63ab353b9485b40bacbb5ef2e4162a9c7232c5526537",
+        "measurement_sha256": "23ec30b74d279b812404af95cc9b650bf5ab40d0f4db880436323ed521157e49",
+        "determinism": true
+      }
+    },
+    "next_stage": "S2_replay_recurrent",
+    "confirmed_training_step": 1200,
+    "notification_context": "User asked current status; include completed evaluation and recovered memory headroom in response."
+  }
+}

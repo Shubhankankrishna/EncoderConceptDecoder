@@ -1,0 +1,75 @@
+<section class="chap stage-s3" id="s3" data-num="5" data-chip="S3">
+  <div class="chap-head">
+    <div class="stage-tag">S3</div>
+    <div class="eyebrow">Experiment 3 of 6 · queue block Q4 · <span class="chip design">designed, not run</span></div>
+    <h2>Letting the writer adapt without breaking anything</h2>
+    <p class="q">After S2 the writer has only ever seen blurry hints, but it will now be handed sharp, committed ones. Can we retrain gently so it gets used to them without erasing what S2 built?</p>
+  </div>
+
+  <div class="breath"><h4>In one breath</h4>
+    <ul>
+      <li>The decoder (the writer) learned from averaged hints in S1 and was frozen in S2. Now it is handed committed guesses it never practised on.</li>
+      <li>S3 tries three ways of continuing training, from the most cautious (only the writer learns) to the boldest (everything learns).</li>
+      <li>An arm replaces the S2 model only if it passes a gate against it. If none passes, S2 goes forward unchanged and S3 is reported as a negative result.</li>
+    </ul>
+  </div>
+
+  <h3 id="s3-why">The mismatch S3 is about</h3>
+  <div class="measure">
+    <p>Think of a translator who learned a language from textbooks (blurry, averaged examples) and is now handed real, sharp phrases. They probably cope, but a little practice on the real thing would help. That is the hope of S3, and the project's original idea calls it "continue training until the refitted module is stable".</p>
+    <p>There is also a danger. In another research project (called ETA), training a base model together with a concept module made the concept module collapse, while keeping the base frozen did not. That is a reason to try the cautious version first and to keep a frozen control. It is not proof that careful joint training must fail, and S3 is built to find out.</p>
+    <div class="callout care"><span class="tag">Not run yet</span>
+      <p>S3 starts only after S2's dense tier finishes and a model is promoted. Nothing on this page about S3 is a result. It is the plan and its reasons.</p>
+    </div>
+  </div>
+
+  <h3 id="s3-coords">Why the order of the three arms matters</h3>
+  <div class="measure">
+    <p>The concept core reads concepts and predicts concepts, and those concepts are made by the encoder. If you train the encoder, every concept moves, even if the core itself is frozen. The core then reads a map that has shifted under its feet.</p>
+  </div>
+  <figure class="fig" data-viz="coordDrift" data-title="Moving the encoder moves the map" data-tag="slide it">
+    <figcaption>Illustration. The concept core was trained against the coordinates on the left. After the encoder trains, every concept shifts, and the core still expects the old places.</figcaption>
+  </figure>
+  <div class="measure">
+    <p>For that reason the cautious arm changes the decoder only. The concept coordinates stay put. A separate, optional arm changes the encoder too, and measures how far the concepts drift.</p>
+  </div>
+
+  <h3 id="s3-lambda">A check before any training: the transplant test</h3>
+  <div class="measure">
+    <p>Before S3 trains anything, it asks how well the S2 student can stand in for the original teacher. The decoder is given a mixture of the two plans, from all teacher to all student, and we watch how the results change. With all teacher (λ = 0) the output must match the teacher exactly. A test enforces it.</p>
+  </div>
+  <figure class="fig" data-viz="lambdaMix" data-title="Mixing teacher and student plans" data-tag="slide it">
+    <figcaption>λ is the share of the student. The mixture is computed on the plan vectors, then passed through the same frozen heads as always.</figcaption>
+  </figure>
+
+  <h3 id="s3-arms">The three arms</h3>
+  <div class="measure">
+    <p>Every arm starts from the promoted S2 model and trains for 6,000 updates on the same mixture as S1, with the same data order inside a seed and the closed-loop practice still switched on. Two seeds, one for each promoted S2 seed. Pick an arm to see what learns.</p>
+  </div>
+  <figure class="fig" data-viz="freezeMap" data-variants="S2_K8_dense,S3a_dec,S3b,S3a_enc" data-title="What learns in each arm" data-tag="pick an arm">
+    <figcaption>Learns means its parameters change. Frozen means it is used but locked. The first button is the S2 model for reference.</figcaption>
+  </figure>
+  <figure class="fig fig3" data-scene="model" data-variants="S3a_dec,S3b,S3a_enc,S2_K8_dense" data-title="The S3 arms in 3D" data-tag="drag to rotate">
+    <figcaption>The same picture in 3D. Coloured parts learn, and grey translucent parts are frozen. Compare the decoder (front plane) and the encoder (back plane) across the three arms.</figcaption>
+  </figure>
+  <div class="arms">
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span></div><h4>S3a-dec</h4><p>Only the decoder blocks, their final norm and a small scale knob learn. The tied embedding stays frozen, because changing it would also move the encoder's input. Everything that defines the concept coordinates stays put.</p><dl class="kv"><dt>prediction</dt><dd>keeps code authority</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip mand">mandatory</span></div><h4>S3b</h4><p>Joint training: everything learns, with the winner-take-all and selector terms still on, plus a gentle pull (weight 0.1) of the code-free path toward the original teacher.</p><dl class="kv"><dt>prediction</dt><dd>loses ≥ 20% of authority</dd></dl></div>
+    <div class="arm"><div class="chips"><span class="chip full">full column</span></div><h4>S3a-enc</h4><p>The encoder, its norm and the embedding learn together with the decoder. The core, codes and selector stay frozen. Drift in the concepts is measured.</p><dl class="kv"><dt>queue</dt><dd>optional</dd></dl></div>
+  </div>
+
+  <h3 id="s3-gate">Gate G3: when does an arm replace the S2 model?</h3>
+  <div class="measure">
+    <p>An arm replaces S2 downstream only if, on development data and on both seeds, it passes all of these against the S2 model of the same seed.</p>
+  </div>
+  <div class="gates">
+    <div class="gate"><div class="id">G3 · authority</div><h4>The codes still steer</h4><p>The first-road swap sensitivity stays at least 30% and at least 0.8 times what S2 had.</p></div>
+    <div class="gate"><div class="id">G3 · calibration</div><h4>The odds still hold</h4><p>All of G2.2 still passes.</p></div>
+    <div class="gate"><div class="id">G3 · imagining</div><h4>Imagined still matches executed</h4><p>G2.3 and G2.4 at the depth S5 will use are no worse than S2's. A model can keep its swap rate and its loss while damaging transitions, so these are re-checked.</p></div>
+    <div class="gate"><div class="id">G3 · no harm</div><h4>Puzzles and text still fine</h4><p>Standard success is within 2 points of S2 (lower bound), and text loss is no more than 0.01 nats worse (upper bound). Drift of the code-free path is reported, not gated.</p></div>
+  </div>
+  <div class="callout idea"><span class="tag">The prediction, written in advance</span>
+    <p>The design predicts that S3a-dec passes and S3b loses at least 20% of its swap sensitivity, with about 50% confidence. If more than one arm passes, the preference order is S3a-dec, then S3b. If none passes, the S2 model goes forward and S3 is a reported negative.</p>
+  </div>
+  <div class="pager"><a href="#s2"><small>Previous</small>S2: several sharp guesses</a><a class="next" href="#s4"><small>Next chapter</small>S4: learning from a checker</a></div>
+</section>

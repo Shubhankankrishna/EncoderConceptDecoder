@@ -1,0 +1,58 @@
+<section class="chap stage-st" id="status" data-num="9" data-chip="Status">
+  <div class="chap-head">
+    <div class="stage-tag">Q</div>
+    <div class="eyebrow">Chapter 9 · where everything stands</div>
+    <h2>The queue, and how results become decisions</h2>
+    <p class="q">What has run, what is running, what is waiting, and the rules that turn a number into a decision.</p>
+  </div>
+
+  <h3 id="status-queue">The queue</h3>
+  <div class="measure">
+    <p>All experiments share one laptop GPU, so they run one after another. The order was chosen by the project owner: finish S1, then the dense half of S2, then S6's first experiment, then the recurrent half of S2, then S3, S4, S5 and the final analysis. S2 and S6 do not run at the same time, because sharing the GPU would save no time and would spoil the speed measurements.</p>
+  </div>
+  <figure class="fig" data-viz="queue" data-title="The queue" data-tag="live from the run files">
+    <figcaption>"Mandatory" arms are the ones the plan requires. The optional "full column" arms are listed inside each chapter.</figcaption>
+  </figure>
+
+  <h3 id="status-read">How a result becomes a decision</h3>
+  <div class="measure">
+    <p>A number from a run is never the decision. Three habits stand between a number and a conclusion.</p>
+    <ol class="steps">
+      <li><b>Zones, not points.</b><p>Every gate has a pass zone, a partial band and a fail zone, and the whole 95% interval must sit in a zone for it to count. The slider figure below shows how it works.</p></li>
+      <li><b>Paired comparisons.</b><p>Two arms are compared on the same puzzles, one by one. For each puzzle we ask whether arm A solved it and B did not, or the reverse. In S1, on seed 902, delayed beat no-NCP on 121 puzzles and lost on 101: a gap that is too small to rule out luck.</p></li>
+      <li><b>At least two seeds.</b><p>A gate passes only if both seeds pass. One pass and one fail is "seed-dependent", and counts as inconclusive. S1 showed how much one seed can mislead.</p></li>
+    </ol>
+  </div>
+  <figure class="fig" data-viz="zones" data-title="Interval and zones" data-tag="try it">
+    <figcaption>The pass and fail lines are those of the swap-sensitivity row of gate G2.1. Slide the estimate and the uncertainty and watch the verdict change.</figcaption>
+  </figure>
+
+  <h3 id="status-table">Everything in one table</h3>
+  <div class="tablewrap"><table class="t">
+    <thead><tr><th>Stage</th><th>Status on 8 October 2026</th><th>What exists</th><th>What is still open</th></tr></thead>
+    <tbody>
+      <tr><td><b>S1</b></td><td><span class="chip done">finished</span></td><td>Six trained models and the sealed results. Hierarchy over flat: supported. Flat has lower text loss: supported. NCP over no NCP: not supported.</td><td>Optional arms (PrefixLM, constant-weight NCP, K = 4 in S1, long training) are not scheduled.</td></tr>
+      <tr><td><b>S2</b></td><td><span class="chip run">first half running</span></td><td>Trained and measured cells with development diagnostics. No gate has been run.</td><td>The gates on both seeds, the V8 replay, the promotion decision, and the whole recurrent tier.</td></tr>
+      <tr><td><b>S3 to S5</b></td><td><span class="chip design">designed</span></td><td>Code and contract tests are written. No training has run.</td><td>Everything. All three wait for the S2 promotion decision.</td></tr>
+      <tr><td><b>S6</b></td><td><span class="chip design">designed</span></td><td>Code and contract tests are written. No phase has run.</td><td>Everything. Starts with the timing pilot.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="status-limits">What V9 cannot answer</h3>
+  <div class="measure">
+    <p>The design lists its own limits. In plain words:</p>
+    <ul class="m">
+      <li>Searching over steps in ordinary text. Text has no clean step boundaries, so this is future work.</li>
+      <li>Anything above the small model (2.45 million parameters), unless the optional larger sizes are run. The big NCP study started at 3 billion.</li>
+      <li>Whether a cheaper search becomes a faster search on other hardware or at other widths.</li>
+      <li>Whether the judges stay reliable on imagined positions deeper than four steps.</li>
+      <li>Whether the recurrent core behaves differently in S3 to S5, because only the dense model is promoted there.</li>
+      <li>Whether any of this works over many phases of continual learning, since only three are run.</li>
+      <li>Whether skills carry over to bigger puzzles. For every earlier model, hard14 and long18 stayed near zero.</li>
+    </ul>
+  </div>
+  <div class="callout idea"><span class="tag">What to watch next</span>
+    <p>The next milestone is the end of S2's dense tier: the last cell finishes training, then its measurement, then the V8 replay, and then a program applies the pre-registered gates to both seeds and writes the promotion decision. Whatever it says, S3 to S5 run, are limited, or stop exactly as the rules say.</p>
+  </div>
+  <div class="pager"><a href="#s6"><small>Previous</small>S6: continual learning</a><a class="next" href="#glossary"><small>Next</small>Glossary</a></div>
+</section>

@@ -1,0 +1,63 @@
+<section class="chap stage-world" id="world" data-num="2" data-chip="The exam">
+  <div class="chap-head">
+    <div class="stage-tag">E</div>
+    <div class="eyebrow">Chapter 2 · the exam every model takes</div>
+    <h2>GraphNav: a tiny world of one-way roads</h2>
+    <p class="q">All six experiments use the same exam. Learn it once here and you can follow every later chapter.</p>
+  </div>
+
+  <h3 id="world-roads">A tiny world of one-way roads</h3>
+  <div class="measure">
+    <p>The exam is called <b>GraphNav</b>, short for graph navigation. Picture ten towns. From every town exactly three one-way roads leave: one blue, one orange and one green. Each road leads to some other town. You get a start town and a goal town, and you must write down which roads to take to get there.</p>
+    <p>This looks like a children's game, and that is deliberate. A small ordinary program can check an answer exactly, new puzzles can be made forever, and every step of an answer is a clean, separate decision. Play one below.</p>
+  </div>
+  <figure class="fig" data-viz="graphnav" data-title="Solve a puzzle, see what the model sees" data-tag="try it">
+    <figcaption>Pick a road from the town you are standing in. The right-hand panel shows the same puzzle exactly as the model receives it, and what you have written so far. Hard mode puts the goal at least four hops away.</figcaption>
+  </figure>
+
+  <h3 id="world-tokens">How the puzzle is written for the model</h3>
+  <div class="measure">
+    <p>The model cannot see a picture. It gets a flat list of tokens, laid out like this.</p>
+    <ol class="steps">
+      <li><b>The instruction.</b><p>Four tokens: a marker meaning "navigate", the goal town, the start town, and a separator.</p></li>
+      <li><b>The map.</b><p>All 30 roads, in shuffled order. Each road is four tokens: from-town, colour, to-town, separator.</p></li>
+      <li><b>The answer, written by the model.</b><p>One group of four tokens per hop: colour, a filler word meaning "to", the town, and a separator. After the last hop the model writes four more tokens that mean DONE.</p></li>
+    </ol>
+    <p>The filler tokens exist for one reason: they make every group exactly four tokens long. That regularity is what the rest of the project builds on.</p>
+    <div class="callout term"><span class="tag">The verifier</span>
+      <p>A small program, not a model, checks the answer. Every hop must be a real road out of the town you are in. DONE is only legal when you stand on the goal after at least one hop. If anything is off, the answer fails, and the program says why (illegal move, wrong goal, missing DONE, and so on).</p>
+    </div>
+  </div>
+
+  <h3 id="world-chunk">Four tokens, one step</h3>
+  <div class="measure">
+    <p>Every road in the puzzle and every hop in the answer is exactly four tokens. So if you cut the text into groups of four, each group is exactly one road or exactly one hop.</p>
+    <p>This is the most important fact in the guide. It means a group of four tokens, which we call a <b>chunk</b>, is a natural unit of meaning on this exam: <b>one chunk is one reasoning step</b>. Later we will summarise each chunk into a single vector called a concept, and a concept will then stand for one step of a plan.</p>
+  </div>
+  <figure class="fig" data-viz="chunks" data-title="From tokens to concepts" data-tag="slide it">
+    <figcaption>Slide to squeeze each group of four tokens into one concept. A concept is just a vector: here, the average of the four token vectors.</figcaption>
+  </figure>
+  <div class="callout care"><span class="tag">Where this stops being true</span>
+    <p>In ordinary English, four tokens are not a thought. The project claims things only for this exam. Searching over steps in real text is listed as future work, because nobody has a clean way yet to cut text into steps.</p>
+  </div>
+
+  <h3 id="world-suites">The other exams, and the text</h3>
+  <div class="measure">
+    <p>GraphNav comes in several difficulty levels, and the models also see ordinary text. Here is every suite you will meet in the results.</p>
+  </div>
+  <div class="tablewrap"><table class="t">
+    <thead><tr><th>Suite</th><th>What it asks</th><th class="n">Puzzles</th><th>Used for</th></tr></thead>
+    <tbody>
+      <tr><td><b>standard</b></td><td>10 towns. A route made of 2 to 4 runs, each run 2 to 4 hops of one colour.</td><td class="n">2,048</td><td>The main score in S1 to S5.</td></tr>
+      <tr><td><b>hard10</b></td><td>10 towns. The goal is at least 4 hops away and you must find the shortest route.</td><td class="n">512</td><td>Where search is expected to matter.</td></tr>
+      <tr><td><b>hard14, long18</b></td><td>The same kind of puzzle on 14 or 18 towns, bigger than any training puzzle.</td><td class="n">512 each</td><td>Does skill carry to bigger maps? So far, for every model: no.</td></tr>
+      <tr><td><b>lookup</b></td><td>From town X, take colour c. Where do you land?</td><td class="n">2,048</td><td>A sanity check. A working model scores near 100%.</td></tr>
+      <tr><td><b>compose, pointer</b></td><td>Two roads in a row, or follow one colour N times.</td><td class="n">512 each</td><td>Simple skills a working model should have.</td></tr>
+      <tr><td><b>bind, shifted</b></td><td>New skills with the same kind of map: follow four given colours, or read a map written in a different layout.</td><td class="n">phase data</td><td>Only S6 uses them, as the "new things to learn".</td></tr>
+    </tbody>
+  </table></div>
+  <div class="measure">
+    <p><b>The text.</b> Half of every training batch is ordinary text: a web-education subset and TinyStories, a collection of very simple children's stories. A batch has 64 rows of 192 tokens: 32 text rows, 24 graph puzzles and 8 rows of the simpler suites. Text keeps the model honest as a language model. It is scored by the average surprise per token, called text loss, measured in <dfn title="Nats: the unit of loss when the logarithm is the natural one. Lower is better.">nats</dfn>.</p>
+  </div>
+  <div class="pager"><a href="#basics"><small>Previous</small>Five ideas you need first</a><a class="next" href="#s1"><small>Next chapter</small>S1: teaching a tiny model to read in chunks</a></div>
+</section>
