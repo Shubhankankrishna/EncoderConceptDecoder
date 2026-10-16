@@ -1,0 +1,92 @@
+{
+  "protocol": "V8 single-seed12h pilot",
+  "created_utc": "2026-10-05T18:48:06Z",
+  "implementation_sha256": "ea636b24be1862c8c2449a6e333ece53549ee70ba5bb18ad8d199ee50760e40c",
+  "design_sha256": "7bdd08cbbfa012087e8fd33fdcd254958488e7609fe1c920bfa3c23af7f45729",
+  "data_manifest_sha256": "d4eb788c02ff61ca2dc0f6a0fdb5ec16293d96aeafd8f6a2288f9b410dc35684",
+  "pre_registration_sha256": "44d9a35db006d9d9f86435617504e478e7798c970eb47ee3d7bf4e5cf54d37e9",
+  "training_seed": 811,
+  "foundation_steps": 24000,
+  "effective_batch": 64,
+  "context": 192,
+  "graph_rows_per_update": 24,
+  "graph_examples_per_completed_foundation": 576000,
+  "arm_order": [
+    "alpha0",
+    "delayed_ncp",
+    "flat"
+  ],
+  "deadline_hours": 12,
+  "final_testing_reserve_s": 5400,
+  "checks": {
+    "contracts.json": {
+      "sha256": "a26622fad0e22528822e7be682478e02c0097ba10fbd06294303a723f650cdb5",
+      "status": "passed"
+    },
+    "bridge_contracts.json": {
+      "sha256": "23a479d75560e9a4cc2e47d6097265e9a1f40eb308092aa5a7ccac2692c6d184",
+      "status": "passed"
+    },
+    "stage_contracts.json": {
+      "sha256": "b1afae23303087186d3319f1f04e528d750c297a8d5802091c7b8550a294d1d7",
+      "status": "passed"
+    },
+    "gmm_contracts.json": {
+      "sha256": "20b0e4804329b7b27051b64064fe90072085192b445f94bfdf2c4b1279a77b84",
+      "status": "passed"
+    },
+    "short_static_cache.json": {
+      "sha256": "6224e8bb2955c91686e7fcb18c4ee1598599f599f4773a5f95f5e1a9c7f97e52",
+      "status": "passed"
+    },
+    "search_smoke.json": {
+      "sha256": "8b47b31c91c7aa12ab21ea92f54cb1fd8638d06bd2c0b4c88b688855fe7d585e",
+      "status": "passed"
+    },
+    "algebraic_zero.json": {
+      "sha256": "b3c95e473474fda038407685077676c2ec041ea24060e5c969aed85b289ca43a",
+      "status": "passed"
+    },
+    "hard_smoke": {
+      "status": "passed",
+      "steps": 2
+    },
+    "cl_smoke": {
+      "status": "passed",
+      "steps": 3
+    }
+  },
+  "end_to_end_throughput": {
+    "step": 100,
+    "planned_steps": 100,
+    "loss": 11.109832763671875,
+    "gradient_norm": 0.879619836807251,
+    "elapsed_s": 26.15472170797875,
+    "slots_per_s": 46981.95659352562,
+    "scored_targets_per_s": 26850.295248439525,
+    "memory_bytes": {
+      "allocated": 51524864,
+      "driver": 2604859392
+    },
+    "scored_targets": 702262,
+    "exposure": {
+      "graph": 2400,
+      "lookup": 400,
+      "compose": 200,
+      "pointer": 200
+    },
+    "unique_symbols": 3200,
+    "unique_documents": 3623,
+    "source_targets": {
+      "edu": 304978,
+      "ts": 304968
+    },
+    "lr": 0.0002005482556828138,
+    "text": 5.627405166625977,
+    "symbolic": 1.0392893552780151,
+    "ncp": 1.0885789394378662,
+    "vq": 7.776484966278076,
+    "distillation": 0.0,
+    "alpha": 0.0
+  }
+}

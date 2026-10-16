@@ -1,0 +1,4 @@
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny/code/checks.py:40: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  zero=torch.zeros(1,48,DZ,device=device);noise=ball(torch.randn_like(zero));a=f(x,docs,zero);b=f(x,docs,noise);check('Z zero anchor within FP32 tolerance',float((a-f(x,docs)).abs().max())<2e-5,error=float((a-f(x,docs)).abs().max()))
+{"status": "passed", "device": "mps", "source": null, "fast": false, "contracts": 300, "implementation_sha256": "959fec3da3c3a8a26af1ef8dab66763826cdbc7c07575969490a5d60246eb23b"}

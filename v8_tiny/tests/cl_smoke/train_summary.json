@@ -1,0 +1,90 @@
+{
+  "out": "v8_tiny/tests/cl_smoke",
+  "stage": "CL",
+  "source": "v8_tiny/tests/density_smoke/checkpoint.pt",
+  "flat": false,
+  "core": "dense",
+  "kind": "gated",
+  "mode": "bind",
+  "steps": 3,
+  "batch": 64,
+  "context": 192,
+  "seed": 811,
+  "seconds": 43200,
+  "alpha": 0.1,
+  "lr": 0.0003,
+  "beta": 0.25,
+  "constant_alpha": false,
+  "compiled": true,
+  "resume": false,
+  "no_distill": false,
+  "always_open": false,
+  "fixed": false,
+  "learning_check": false,
+  "device": "mps",
+  "precision": "float32",
+  "implementation_sha256": "f077825c111f8b82666a8e9e3e3cc26a9f270768f2bc14507899966e10298258",
+  "data_sha256": "d4eb788c02ff61ca2dc0f6a0fdb5ec16293d96aeafd8f6a2288f9b410dc35684",
+  "active_parameters": 2469120,
+  "resident_parameters": 2469120,
+  "buffer_scalars": 49337,
+  "trainable_parameters": 20480,
+  "metadata": {
+    "gate_buffers": true,
+    "flat": false,
+    "depth": 4,
+    "core": null,
+    "adapter": null,
+    "phases": 1,
+    "rho": [
+      1.0
+    ],
+    "forces": [
+      true
+    ]
+  },
+  "created_utc": "2026-10-05T18:40:56Z",
+  "status": "completed",
+  "completed_steps": 3,
+  "wall_s": 2.28131804196164,
+  "last": {
+    "step": 3,
+    "planned_steps": 3,
+    "loss": 2.8843472003936768,
+    "gradient_norm": 0.3279220163822174,
+    "elapsed_s": 2.185797874990385,
+    "slots_per_s": 16865.237367916354,
+    "scored_targets": 768,
+    "exposure": {
+      "bind": 192
+    },
+    "unique_symbols": 192,
+    "unique_documents": 0,
+    "source_targets": {
+      "edu": 0,
+      "ts": 0
+    },
+    "lr": 0.000165,
+    "text": 0.0,
+    "symbolic": 2.8843472003936768,
+    "ncp": 0.0,
+    "vq": 0.0,
+    "distillation": 0.0,
+    "alpha": 0.0
+  },
+  "input_slots": 36864,
+  "nonpadding_tokens": 25344,
+  "scored_targets_by_task": {
+    "bind": 768
+  },
+  "symbolic_exposure": {
+    "bind": 192
+  },
+  "unique_symbols": 192,
+  "unique_documents": 0,
+  "source_targets": {
+    "edu": 0,
+    "ts": 0
+  },
+  "frozen_weights_preserved": true
+}
