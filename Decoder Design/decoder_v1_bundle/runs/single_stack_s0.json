@@ -1,0 +1,128 @@
+{
+ "args": {
+  "test": false,
+  "arm": "stack",
+  "nextlat": false,
+  "steps": 500,
+  "bs": 16,
+  "lr": 0.001,
+  "seed": 0,
+  "n_dec": 2,
+  "window": 8,
+  "alpha": 0.1,
+  "lam_h": 1.0,
+  "lam_kl": 1.0,
+  "value_weight": 2.0,
+  "eval_every": 100,
+  "threads": 1,
+  "T": 128,
+  "task": "single",
+  "out": "runs/single_stack_s0.json"
+ },
+ "decoder_params": 455044,
+ "reach": 83,
+ "log": [
+  {
+   "step": 100,
+   "ntp": 3.0404,
+   "ncp": 3.609,
+   "nl_h": 0.0,
+   "nl_kl": 0.0,
+   "gn": 6.91,
+   "loss": 2.9604,
+   "filler": 3.5904,
+   "value_acc": 0.832,
+   "value_acc_core_off": 0.0,
+   "loss_core_off": 3.6926,
+   "sec": 116
+  },
+  {
+   "step": 200,
+   "ntp": 1.304,
+   "ncp": 2.913,
+   "nl_h": 0.0,
+   "nl_kl": 0.0,
+   "gn": 0.52,
+   "loss": 1.2883,
+   "filler": 1.5017,
+   "value_acc": 1.0,
+   "value_acc_core_off": 0.0,
+   "loss_core_off": 2.7181,
+   "sec": 232
+  },
+  {
+   "step": 300,
+   "ntp": 1.1246,
+   "ncp": 2.637,
+   "nl_h": 0.0,
+   "nl_kl": 0.0,
+   "gn": 0.7,
+   "loss": 1.092,
+   "filler": 1.224,
+   "value_acc": 0.998,
+   "value_acc_core_off": 0.0,
+   "loss_core_off": 2.6532,
+   "sec": 345
+  },
+  {
+   "step": 400,
+   "ntp": 1.0133,
+   "ncp": 2.494,
+   "nl_h": 0.0,
+   "nl_kl": 0.0,
+   "gn": 0.81,
+   "loss": 1.0249,
+   "filler": 1.1483,
+   "value_acc": 1.0,
+   "value_acc_core_off": 0.0,
+   "loss_core_off": 2.517,
+   "sec": 457
+  },
+  {
+   "step": 500,
+   "ntp": 0.9921,
+   "ncp": 2.373,
+   "nl_h": 0.0,
+   "nl_kl": 0.0,
+   "gn": 0.5,
+   "loss": 1.0035,
+   "filler": 1.1181,
+   "value_acc": 1.0,
+   "value_acc_core_off": 0.0,
+   "loss_core_off": 2.5146,
+   "sec": 570
+  }
+ ],
+ "final": {
+  "intact": {
+   "loss": 1.0035,
+   "filler": 1.1181,
+   "value_acc": 1.0
+  },
+  "core_off": {
+   "loss": 2.5146,
+   "filler": 2.3533,
+   "value_acc": 0.0
+  },
+  "u_off": {
+   "loss": 1.2237,
+   "filler": 1.1588,
+   "value_acc": 0.0332
+  },
+  "c_off": {
+   "loss": 1.0356,
+   "filler": 1.1591,
+   "value_acc": 0.9863
+  },
+  "R1": {
+   "loss": 1.0042,
+   "filler": 1.1178,
+   "value_acc": 1.0
+  },
+  "R8": {
+   "loss": 1.004,
+   "filler": 1.1199,
+   "value_acc": 1.0
+  }
+ }
+}

@@ -1,0 +1,175 @@
+{
+ "args": {
+  "test": false,
+  "arm": "stack",
+  "nextlat": false,
+  "steps": 1000,
+  "bs": 16,
+  "lr": 0.001,
+  "seed": 0,
+  "n_dec": 2,
+  "window": 8,
+  "alpha": 0.1,
+  "lam_h": 1.0,
+  "lam_kl": 1.0,
+  "value_weight": 2.0,
+  "eval_every": 250,
+  "threads": 1,
+  "T": 128,
+  "task": "multi",
+  "n_facts": 1,
+  "out": "runs/carry_stack_s0.json"
+ },
+ "decoder_params": 455044,
+ "reach": 83,
+ "log": [
+  {
+   "step": 250,
+   "ntp": 1.2601,
+   "ncp": 2.436,
+   "nl_h": 0.0,
+   "nl_kl": 0.0,
+   "gn": 5.75,
+   "loss": 1.2514,
+   "filler": 1.1384,
+   "value_acc": 0.4922,
+   "exact": 0.0469,
+   "by_offset": [
+    0.445,
+    0.594,
+    0.438
+   ],
+   "value_acc_core_off": 0.0,
+   "loss_core_off": 2.7904,
+   "sec": 288
+  },
+  {
+   "step": 500,
+   "ntp": 1.0734,
+   "ncp": 2.781,
+   "nl_h": 0.0,
+   "nl_kl": 0.0,
+   "gn": 4.4,
+   "loss": 1.0723,
+   "filler": 1.0306,
+   "value_acc": 0.8984,
+   "exact": 0.7188,
+   "by_offset": [
+    0.906,
+    0.898,
+    0.891
+   ],
+   "value_acc_core_off": 0.0,
+   "loss_core_off": 2.9843,
+   "sec": 571
+  },
+  {
+   "step": 750,
+   "ntp": 1.0393,
+   "ncp": 2.823,
+   "nl_h": 0.0,
+   "nl_kl": 0.0,
+   "gn": 2.33,
+   "loss": 1.0352,
+   "filler": 0.9992,
+   "value_acc": 0.9766,
+   "exact": 0.9297,
+   "by_offset": [
+    0.945,
+    0.992,
+    0.992
+   ],
+   "value_acc_core_off": 0.0104,
+   "loss_core_off": 2.623,
+   "sec": 855
+  },
+  {
+   "step": 1000,
+   "ntp": 1.0418,
+   "ncp": 2.791,
+   "nl_h": 0.0,
+   "nl_kl": 0.0,
+   "gn": 1.35,
+   "loss": 1.0135,
+   "filler": 0.9867,
+   "value_acc": 0.9896,
+   "exact": 0.9688,
+   "by_offset": [
+    0.977,
+    0.992,
+    1.0
+   ],
+   "value_acc_core_off": 0.0052,
+   "loss_core_off": 2.6737,
+   "sec": 1138
+  }
+ ],
+ "final": {
+  "intact": {
+   "loss": 1.0135,
+   "filler": 0.9867,
+   "value_acc": 0.9896,
+   "exact": 0.9688,
+   "by_offset": [
+    0.977,
+    0.992,
+    1.0
+   ]
+  },
+  "core_off": {
+   "loss": 2.6737,
+   "filler": 2.3778,
+   "value_acc": 0.0052,
+   "exact": 0.0,
+   "by_offset": [
+    0.0,
+    0.008,
+    0.008
+   ]
+  },
+  "u_off": {
+   "loss": 1.5505,
+   "filler": 1.0495,
+   "value_acc": 0.0208,
+   "exact": 0.0,
+   "by_offset": [
+    0.0,
+    0.039,
+    0.023
+   ]
+  },
+  "c_off": {
+   "loss": 1.0398,
+   "filler": 1.0169,
+   "value_acc": 0.9896,
+   "exact": 0.9688,
+   "by_offset": [
+    0.977,
+    0.992,
+    1.0
+   ]
+  },
+  "R1": {
+   "loss": 1.0135,
+   "filler": 0.9869,
+   "value_acc": 0.9896,
+   "exact": 0.9688,
+   "by_offset": [
+    0.984,
+    0.984,
+    1.0
+   ]
+  },
+  "R8": {
+   "loss": 1.0138,
+   "filler": 0.9867,
+   "value_acc": 0.9922,
+   "exact": 0.9766,
+   "by_offset": [
+    0.984,
+    0.992,
+    1.0
+   ]
+  }
+ }
+}

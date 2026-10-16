@@ -1,0 +1,57 @@
+HRM THINKER Decoder v1 — end-to-end test results (2026-09-26)
+Pipeline: frozen encoder v1.0 (hrm_encoder.py) -> concept core v2 stand-in (concept_core_v2.py, K = 1) -> decoder (hrm_decoder.py).
+Bench: CPU (2 cores), d = 128, 2 decoder layers, window 8, AdamW lr 1e-3, batch 16, loss = NTP + 2*answer-CE + 0.1*NCP + VQ.
+Every answer lies beyond the token path's reach (confined 70, stack 83), so it can only come through the concept core.
+
+1. Exact unit tests (float64, bit-identical comparisons) — all PASS
+   D1 reach over tok: confined = w-1 = 7 at depth 1, 2, 6; stack = 10 per layer
+   D2 confinement: chunk j's plan changes only its own 4 positions (confined); 34 positions in a 3-layer stack
+   D3 target-aligned plan index; null plan exactly at the first 3 tokens of each document; no cross-document plan
+   D4 (rejected read arm) floored gate cannot close
+   D5 init read gate 0.881, write scale 1; NTP at init 9.16 nats (ln V 9.01); NextLat never updates the head
+   Pipeline: causality end to end; core OFF -> reach exactly 70 (confined) / 93 (3-layer stack), bit-identical beyond;
+   core ON -> an edit reaches the row end; the plan first changes at the end of the edited token's chunk;
+   no leakage across documents; NTP reaches the encoder's FULL layers only through the plan; codebook <- VQ only.
+
+2. Training runs (exact = all 3 value tokens right; single task: value accuracy)
+run                          metric    @100  @250  @500  @750  @1000 @1500     loss  filler  final coreOff   uOff   cOff reach
+carry_confinedNL_s0          exact       -  0.01 0.72 0.93 0.98   -          1.0368  0.9973  0.984   0.000  0.000  0.953    70
+carry_confinedNL_s1          exact       -  0.00 0.60 0.88 0.95   -          1.0317  1.0010  0.953   0.000  0.000  0.938    70
+carry_confined_s0            exact       -  0.11 0.68 0.91 0.97   -          1.0174  0.9882  0.969   0.000  0.000  0.961    70
+carry_confined_s1            exact       -  0.04 0.67 0.86 0.98   -          1.0174  0.9913  0.984   0.000  0.000  0.984    70
+carry_confinedreadNL_s0      exact       -  0.02 0.64 0.98 1.00   -          1.0325  0.9956  1.000   0.000  0.000  0.984    70
+carry_confinedread_s0        exact       -  0.00 0.52 0.96 1.00   -          1.0250  0.9863  1.000   0.000  0.000  0.805    70
+carry_confinedread_s1        exact       -  0.00 0.00 0.00 0.00   -          1.0813  0.9762  0.000   0.000  0.000  0.000    70
+carry_stack_s0               exact       -  0.05 0.72 0.93 0.97   -          1.0135  0.9867  0.969   0.000  0.000  0.969    83
+carry_stack_s1               exact       -  0.02 0.73 0.92 0.98   -          1.0157  0.9889  0.984   0.000  0.000  0.984    83
+multi4_confinedread_s0       exact       -  0.00 0.00 0.00 0.00 0.00         1.4098  0.9847  0.000   0.000  0.000  0.000    70
+multi4_stack_s0              exact       -  0.00 0.00 0.00 0.00 0.00         1.4109  0.9860  0.000   0.000  0.000  0.000    83
+single_confinedread_s0       value_acc 0.06   -  1.00   -    -    -          1.0076  1.1161  1.000   0.000  0.023  0.998    70
+single_stack_s0              value_acc 0.83   -  1.00   -    -    -          1.0035  1.1181  1.000   0.000  0.033  0.986    83
+
+   Arms: confined = proposed (D0 = tok + P, keys/values from tok only) | stack = NCP-style control (plan added, SWA
+   stack reads everything) | confinedread = rejected arm (plan as a separate read-only stream with a floored gate) |
+   NL = + NextLat (d = 1, lambda_h = lambda_KL = 1).  Tasks: single = 1-token value, 4 facts (T = 128);
+   carry = 3-token value, 1 fact, ~117 tokens away (T = 128); multi4 = 3-token values, 4 facts (T = 144).
+   coreOff / uOff / cOff: evaluation with the null plan everywhere / without W_u u / without W_c c_pred.
+
+3. Readings
+   - Proposed confined decoder = NCP-style stack in quality: carry exact 0.969 / 0.984 vs 0.969 / 0.984 (2 seeds each);
+     loss +0.004 / +0.002 nats (tie band 0.02); filler loss equal. Slightly slower early (exact at 500: 0.68 / 0.67 vs
+     0.72 / 0.73), equal by 1,000.
+   - Core off -> 0 exact in every arm: the concept core is the only long-range route.
+   - u carries the value (uOff -> 0); c_pred is barely used on these tasks (cOff 0.96 / 0.98).
+   - Rejected: plan as a separate read stream (learned in 1 of 2 seeds; the other stayed at chance for 1,000 steps).
+   - NextLat on the proposed decoder: no speed-up (exact at 500: 0.72 / 0.60 vs 0.68 / 0.67), final 0.984 / 0.953,
+     loss +0.019 / +0.014 nats, filler +0.01. Neutral-to-slightly-negative here; these tasks have no planning component.
+   - The core-off filler loss is NOT a skill measure: the null plan is off-distribution everywhere except document starts.
+   - multi4 (4 facts x 3-token values): both arms at chance after 1,500 steps. Probes on the checkpoint:
+     fact concept -> key 0.945, -> first value token 0.393; query concept -> key 1.000; core output at the query ->
+     value tokens at chance (0.022 / 0.040 / 0.027). Bottleneck = core retrieval + concept identity capacity (encoder G-E1),
+     upstream of the decoder. A first layout (value in the chunk after the key) was also at chance at 750 steps.
+   - R1 = R8 = intact on these tasks: one retrieval, no depth needed. They do not test the loop.
+   Caveats: CPU, d = 128, 1-2 seeds, synthetic tasks, stand-in core. Mechanics and routing are verified; language quality is not.
+
+4. M2 cost (d = 512, 4 layers, w = 8): 13.12M params (3.15M per layer, plan 0.53M), ~102 MFLOP per training token
+   (25 of it the tied head), reach 70 at any depth (8 layers: 25.7M, ~177 MFLOP, reach still 70).
+   NextLat (optional): +2.63M training-only params, ~+49 MFLOP per token.
