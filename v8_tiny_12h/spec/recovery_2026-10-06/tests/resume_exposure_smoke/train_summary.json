@@ -1,0 +1,114 @@
+{
+  "out": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/tests/resume_exposure_smoke",
+  "stage": "HARD",
+  "source": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/tests/production_smoke/checkpoint.pt",
+  "flat": false,
+  "core": "dense",
+  "kind": "gated",
+  "mode": "foundation",
+  "steps": 2,
+  "batch": 64,
+  "context": 192,
+  "seed": 811,
+  "seconds": 60.0,
+  "alpha": 0.0,
+  "lr": 0.0005,
+  "beta": 0.25,
+  "constant_alpha": true,
+  "compiled": true,
+  "resume": false,
+  "no_distill": false,
+  "always_open": false,
+  "fixed": false,
+  "learning_check": false,
+  "development_curves": false,
+  "device": "mps",
+  "precision": "float32",
+  "implementation_sha256": "7f2b9d1d81aa5b8df3035d1310d838606ae0eee82b237372855f950cac05a980",
+  "data_sha256": "daa0e8dc997bb179fb7995c2f1243bb34ee0120a35c822668d440f2de47d41c4",
+  "active_parameters": 2448640,
+  "resident_parameters": 2448640,
+  "buffer_scalars": 257,
+  "trainable_parameters": 2448640,
+  "metadata": {
+    "gate_buffers": false,
+    "flat": false,
+    "depth": 4,
+    "core": null,
+    "adapter": null,
+    "phases": 0,
+    "rho": [],
+    "forces": []
+  },
+  "created_utc": "2026-10-06T03:03:03Z",
+  "status": "completed",
+  "completed_steps": 2,
+  "wall_s": 2.027102082967758,
+  "last": {
+    "step": 2,
+    "planned_steps": 2,
+    "loss": 9.765674591064453,
+    "gradient_norm": 0.9791426658630371,
+    "elapsed_s": 1.9281301249866374,
+    "slots_per_s": 12746.027709188103,
+    "scored_targets_per_s": 7281.6662205810935,
+    "memory_bytes": {
+      "allocated": 51585280,
+      "driver": 2495823872
+    },
+    "scored_targets": 14040,
+    "exposure": {
+      "graph": 48,
+      "lookup": 8,
+      "compose": 4,
+      "pointer": 4
+    },
+    "lifetime_exposure": {
+      "graph": 2448,
+      "lookup": 408,
+      "compose": 204,
+      "pointer": 204
+    },
+    "unique_symbols": 3264,
+    "unique_documents": 3693,
+    "source_targets": {
+      "edu": 311116,
+      "ts": 310991
+    },
+    "lr": 0.0005,
+    "text": 5.441999435424805,
+    "symbolic": 1.037805438041687,
+    "ncp": 1.0669457912445068,
+    "vq": 6.525771617889404,
+    "distillation": 0.0,
+    "alpha": 0.0
+  },
+  "input_slots": 24576,
+  "nonpadding_tokens": 22049,
+  "scored_targets_by_task": {
+    "text": 12204,
+    "graph": 1672,
+    "lookup": 32,
+    "compose": 16,
+    "pointer": 116
+  },
+  "symbolic_exposure": {
+    "graph": 48,
+    "lookup": 8,
+    "compose": 4,
+    "pointer": 4
+  },
+  "lifetime_symbolic_exposure": {
+    "graph": 2448,
+    "lookup": 408,
+    "compose": 204,
+    "pointer": 204
+  },
+  "unique_symbols": 3264,
+  "unique_documents": 3693,
+  "source_targets": {
+    "edu": 311116,
+    "ts": 310991
+  },
+  "frozen_weights_preserved": true
+}

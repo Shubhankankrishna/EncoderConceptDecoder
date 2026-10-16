@@ -1,0 +1,258 @@
+{
+  "protocol": "V8 fresh model splits of local previously deduplicated historical corpus; NOT new independent external corpus",
+  "split_seed": 88008,
+  "continual_domains": [
+    "wikipedia.org",
+    "britannica.com",
+    "sciencedaily.com",
+    "phys.org",
+    "scientificamerican.com",
+    "newscientist.com",
+    "nps.gov",
+    "mathforum.org"
+  ],
+  "text": {
+    "base_dev": {
+      "documents": 1500,
+      "tokens": 2998837,
+      "sha256": "cc4fb1ae46c49cce761058578ed0c44999a31810cedbef872bd68d9944d4d846"
+    },
+    "base_test": {
+      "documents": 1500,
+      "tokens": 2822957,
+      "sha256": "1298f58a77e3466f874ad16992406545df75337ccb9922cf1bbc3fe33ed37850"
+    },
+    "base_train": {
+      "documents": 26299,
+      "tokens": 52082796,
+      "sha256": "7a1679afc6d8457bca5561a84b4337df699374e7564ef0a4d84afd666deaf675"
+    },
+    "continual_dev": {
+      "documents": 69,
+      "tokens": 287595,
+      "sha256": "70b03b4970b82c663bb9c5ce242cd0905c0da6c2d8777559e01a8d60cf18d815"
+    },
+    "continual_test": {
+      "documents": 69,
+      "tokens": 252672,
+      "sha256": "1982d79e9c41a079917124ccb688969fc0444e404a25add04f2734109a51eb6b"
+    },
+    "continual_train": {
+      "documents": 561,
+      "tokens": 2114177,
+      "sha256": "f61e602f79228a96866706d4cb10d0ca4f5342c099e6662c0c9e99a57b5303f7"
+    }
+  },
+  "tokenizer_sha256": "959ef096fcf832a929571b849ea9763a59e4a1fc6ac1b7388951ce8254d0a899",
+  "source_manifest_sha256": "b0adbcb498b087806592349ba3c76f6d91826b5e5070a347aaf023a12ca625ba",
+  "legacy_model_exposure": "V6/V7 bridge may have seen these documents; bridge is a historical diagnostic only",
+  "tiny_stories": {
+    "tokens": 133553935,
+    "sha256": "89f840405dc7f3cc289cc12da800e1c1495534f2d956c34f329533233cad1f86",
+    "split_policy": "exact-token-content-groups-v1",
+    "original_documents": 529875,
+    "unique_documents": 509625,
+    "duplicates_removed": 20250,
+    "partitions": {
+      "dev": {
+        "documents": 1500,
+        "ids_sha256": "72869f77b566e1632607568ac8298c9469ec0582214ee2e991b23e0cf98c47b3",
+        "content_hashes_sha256": "c1411a7b1fbd23325eaf8cf1454559ab1b0100c2ba12c73bb24be22583837c91"
+      },
+      "test": {
+        "documents": 1500,
+        "ids_sha256": "697848a74f1b1cbddf1cf932d7c4e361889f4eaf43a6e932aa17bfd505cc42e8",
+        "content_hashes_sha256": "796e401a51faf1bd29f4926df17db7a20b0ba1c1a5f6d1a0639a6410b25e6fdb"
+      },
+      "train": {
+        "documents": 506625,
+        "ids_sha256": "1d0db7d654d018bcbae538562f2ed563cf7cb30a81881be1fd8a665c79365155",
+        "content_hashes_sha256": "2df2c2bb9ad81cfd3d3f66411e9cc533022f377bc14b0ab5d94464584863b25a"
+      }
+    },
+    "seed": 88889,
+    "near_duplicate_policy": "Exact token duplicates grouped here; no new near-duplicate guarantee"
+  },
+  "symbolic": {
+    "dev_standard": {
+      "n": 2048,
+      "nodes": 10,
+      "task": "graph",
+      "hard": false,
+      "context": 192,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "a90890ede87e55918308f39b46c167c20f512bd799523cd8a5e0074f323722ff"
+    },
+    "dev_hard10": {
+      "n": 512,
+      "nodes": 10,
+      "task": "graph",
+      "hard": true,
+      "context": 192,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "e29e0ad5dbbbc0761404a13cb4b0f1a06af94f4a3d8fef93b691ac480907ff0b"
+    },
+    "dev_hard14": {
+      "n": 512,
+      "nodes": 14,
+      "task": "graph",
+      "hard": true,
+      "context": 384,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "c1763815fb54d7157072838a9ae168f325685541d9ec5a0c52d941f462a9073f"
+    },
+    "dev_long18": {
+      "n": 512,
+      "nodes": 18,
+      "task": "graph",
+      "hard": true,
+      "context": 384,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "56d880918283f22e6fdfdec8c382ae4d6cb8512c11408c86732fe9917d9f1914"
+    },
+    "dev_lookup": {
+      "n": 2048,
+      "nodes": 10,
+      "task": "lookup",
+      "hard": false,
+      "context": 192,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "8f92779ee01f0686f41c4ec8c6ef5f2199d93288521088a8beb87bf1566934c0"
+    },
+    "dev_compose": {
+      "n": 512,
+      "nodes": 10,
+      "task": "compose",
+      "hard": false,
+      "context": 192,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "114312782fe2673ec4262ff94e2dd33e21e56cf06a06a7171400a82063f83d17"
+    },
+    "dev_pointer": {
+      "n": 512,
+      "nodes": 10,
+      "task": "pointer",
+      "hard": false,
+      "context": 192,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "e4ea8750ef091a24b06b04254c7a281c63e25c8f973d34813b8f97c779156ff0"
+    },
+    "dev_bind": {
+      "n": 512,
+      "nodes": 10,
+      "task": "bind",
+      "hard": false,
+      "context": 192,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "d25c2c904f846f2cc2ac563107cca7ee557693c07d416377c6497d0c9736b5b8"
+    },
+    "dev_shifted": {
+      "n": 512,
+      "nodes": 10,
+      "task": "graph",
+      "hard": false,
+      "context": 192,
+      "layout": "shifted",
+      "label_style": "ordered",
+      "sha256": "6f59388041028d610439eb2b93ae34ea26de0a1e2508dd98c6e66451be6a465e"
+    },
+    "test_standard": {
+      "n": 2048,
+      "nodes": 10,
+      "task": "graph",
+      "hard": false,
+      "context": 192,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "35f94a2500f9896b45f6165a34834fe9d956862aa7331cf56ab100b2358729c4"
+    },
+    "test_hard10": {
+      "n": 512,
+      "nodes": 10,
+      "task": "graph",
+      "hard": true,
+      "context": 192,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "f24eee67cabcf18f8d55e93f6df4d8f034fd61901602f916d511be6da6a1ac93"
+    },
+    "test_hard14": {
+      "n": 512,
+      "nodes": 14,
+      "task": "graph",
+      "hard": true,
+      "context": 384,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "d0885e7d41c9a7ec521f09330efd3250f58fb8b83d1c91d6fdf2dcf957fce73c"
+    },
+    "test_long18": {
+      "n": 512,
+      "nodes": 18,
+      "task": "graph",
+      "hard": true,
+      "context": 384,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "f57b7dc1848f67a2e06c57150a9215660b4d9f928ac81f52b15db149ae671a52"
+    },
+    "test_lookup": {
+      "n": 2048,
+      "nodes": 10,
+      "task": "lookup",
+      "hard": false,
+      "context": 192,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "0e858fc122df1a18d6919f326fa923f48faa869a79b05245fe1771ca49f40f80"
+    },
+    "test_compose": {
+      "n": 512,
+      "nodes": 10,
+      "task": "compose",
+      "hard": false,
+      "context": 192,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "2557182abbfa6f870e6681c1c28cdccc87d11300659545945b26a4ded10376a7"
+    },
+    "test_pointer": {
+      "n": 512,
+      "nodes": 10,
+      "task": "pointer",
+      "hard": false,
+      "context": 192,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "e6bee9054ba2c81ce823ff800666e3d89dddc70c199ad6f91003c83c05514b75"
+    },
+    "test_bind": {
+      "n": 512,
+      "nodes": 10,
+      "task": "bind",
+      "hard": false,
+      "context": 192,
+      "layout": "shuffle",
+      "label_style": "random",
+      "sha256": "c2f37a9d5c9c9a1e75ee1dfcaaf574a6cf715a083f802417ebbef8f6bc01e1f5"
+    },
+    "test_shifted": {
+      "n": 512,
+      "nodes": 10,
+      "task": "graph",
+      "hard": false,
+      "context": 192,
+      "layout": "shifted",
+      "label_style": "ordered",
+      "sha256": "91ea1b2b5aa8346d1baee7317b07e2d346fc09b533afe1ec13f43289eb2d471a"
+    }
+  }
+}

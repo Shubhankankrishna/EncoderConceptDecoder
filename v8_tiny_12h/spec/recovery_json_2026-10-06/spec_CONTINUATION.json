@@ -1,0 +1,19 @@
+{
+  "original_start_epoch": 1791255828.0,
+  "original_deadline_epoch": 1791299028.0,
+  "completed_checkpoint_sha256": "720bb818dab7039d81943e9c40f88686afe73204ed7d59d8b3ebdc0981292b9c",
+  "original_implementation_sha256": "7f2b9d1d81aa5b8df3035d1310d838606ae0eee82b237372855f950cac05a980",
+  "unchanged_training_files_sha256": {
+    "code/model.py": "f8330079fa14cde1191592600c7cf2acf5b081e405dd5dce3518833fbf5e35c4",
+    "code/train.py": "56ed6457ad305d37c8916d19ba71b88b9a581d0373f7e337d9f29f418907badf",
+    "code/data.py": "620179347c9b69bd41c9ee9fc81c757368120f0b75efd566479445209e19eaea",
+    "code/runtime.py": "1427ebbe53032fa618db886eeae5b1f9c3d8815ca100dd35a6053b39ca993fb6"
+  },
+  "authorized_utc": "2026-10-06T05:07:28.448122+00:00",
+  "change": "Eager fixed-size decoding replaces compiled decoding; numerical tolerance unchanged; preserve completed alpha-zero and original twelve-hour budget",
+  "prior_failure": "v8_tiny_12h/spec/recovery_2026-10-06/runs_failure.json",
+  "diagnostic_evidence": [
+    "tests/recovery_mps.json",
+    "tests/recovery_cpu.json"
+  ]
+}

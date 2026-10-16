@@ -1,0 +1,2771 @@
+{
+  "observed_utc": "2026-10-06T14:09:20Z",
+  "automation_id": "v8-continued-experiment-watch",
+  "status": "completed_extended_pilot",
+  "stage": "finished",
+  "driver_pid": 50576,
+  "child_pid": null,
+  "matching_processes_alive": true,
+  "original_start_utc": "2026-10-06T03:03:48Z",
+  "deadline_utc": "2026-10-06T15:03:48Z",
+  "remaining_s_at_observation": 5079.421615,
+  "policy": "diagnostic thresholds; no competence-based stopping",
+  "recovery": "Native Python boolean exports; both completed foundations reused; original budget retained",
+  "completed_alpha_zero_updates": 24000,
+  "completed_alpha_zero_graph_examples": 576000,
+  "last_user_visible_development_step": 24000,
+  "completed_summary_paths": [
+    "v8_tiny_12h/runs/A_alpha0/train_summary.json",
+    "v8_tiny_12h/runs/A_alpha0_trained_contracts_recovery2/summary.json",
+    "v8_tiny_12h/runs/A_alpha0_dev/summary.json",
+    "v8_tiny_12h/runs/A_delayed_ncp/train_summary.json",
+    "v8_tiny_12h/runs/A_delayed_ncp_trained_contracts_recovery2/summary.json",
+    "v8_tiny_12h/runs/A_delayed_ncp_dev/summary.json",
+    "v8_tiny_12h/runs/A_alpha0_trained_contracts_recovery3/summary.json",
+    "v8_tiny_12h/runs/A_delayed_ncp_trained_contracts_recovery3/summary.json",
+    "v8_tiny_12h/runs/A_flat/train_summary.json",
+    "v8_tiny_12h/runs/A_flat_dev/summary.json",
+    "v8_tiny_12h/runs/A_flat_trained_contracts_recovery3/summary.json",
+    "v8_tiny_12h/runs/B_refit_dense/train_summary.json",
+    "v8_tiny_12h/runs/B_refit_dense/decision.json",
+    "v8_tiny_12h/runs/B_refit_dense_dev/summary.json",
+    "v8_tiny_12h/runs/B_refit_dense_trained_contracts_recovery3/summary.json",
+    "v8_tiny_12h/runs/B_refit_recurrent/train_summary.json",
+    "v8_tiny_12h/runs/B_refit_recurrent/decision.json",
+    "v8_tiny_12h/runs/B_refit_recurrent_dev/summary.json",
+    "v8_tiny_12h/runs/B_refit_recurrent_trained_contracts_recovery3/summary.json",
+    "v8_tiny_12h/runs/C_exploration/train_summary.json",
+    "v8_tiny_12h/runs/C_exploration/decision.json",
+    "v8_tiny_12h/runs/C_exploration/coverage.json",
+    "v8_tiny_12h/runs/C_exploration_dev/summary.json",
+    "v8_tiny_12h/runs/C_exploration_trained_contracts_recovery3/summary.json",
+    "v8_tiny_12h/runs/E_search/summary.json",
+    "v8_tiny_12h/runs/D_negative_support/summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase1_positive/summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase1_trained_contracts_recovery3/summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase1/train_summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase1/decision.json",
+    "v8_tiny_12h/runs/D_lsl_phase1_dev/summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase2/train_summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase2/decision.json",
+    "v8_tiny_12h/runs/D_lsl_phase2_trained_contracts_recovery3/summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase2_positive/summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase2_dev/summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase3/train_summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase3/decision.json",
+    "v8_tiny_12h/runs/D_lsl_phase3_positive/summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase3_trained_contracts_recovery3/summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase3_dev/summary.json",
+    "v8_tiny_12h/runs/D_lsl_summary.json",
+    "v8_tiny_12h/runs/D_always_open_summary.json",
+    "v8_tiny_12h/runs/A_alpha0_sealed_test/summary.json",
+    "v8_tiny_12h/runs/A_delayed_ncp_sealed_test/summary.json",
+    "v8_tiny_12h/runs/A_flat_sealed_test/summary.json",
+    "v8_tiny_12h/runs/B_refit_dense_sealed_test/summary.json",
+    "v8_tiny_12h/runs/B_refit_recurrent_sealed_test/summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase2_sealed_test/summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase1_sealed_test/summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase3_sealed_test/summary.json",
+    "v8_tiny_12h/runs/C_exploration_sealed_test/summary.json",
+    "v8_tiny_12h/runs/D_lsl_phase1_continual_text_test.json",
+    "v8_tiny_12h/runs/D_lsl_phase2_continual_text_test.json",
+    "v8_tiny_12h/runs/D_lsl_phase3_continual_text_test.json"
+  ],
+  "notification": "Concise final result summary sent; deleting completed experiment heartbeat.",
+  "current_step": null,
+  "planned_steps": 2000,
+  "current_graph_exposure": null,
+  "current_loss": 0.2726942300796509,
+  "current_gradient_norm": 0.46781080961227417,
+  "completed_alpha_zero_development": {
+    "standard": {
+      "n": 2048,
+      "successes": 1582,
+      "rate": 0.7724609375,
+      "interval": [
+        0.7538034501177114,
+        0.7900982218182023
+      ]
+    },
+    "lookup": {
+      "n": 2048,
+      "successes": 2048,
+      "rate": 1.0,
+      "interval": [
+        0.9981277993949387,
+        1.0
+      ]
+    },
+    "compose": {
+      "n": 512,
+      "successes": 102,
+      "rate": 0.19921875,
+      "interval": [
+        0.16691827849863472,
+        0.23599904283466194
+      ]
+    },
+    "pointer": {
+      "n": 512,
+      "successes": 511,
+      "rate": 0.998046875,
+      "interval": [
+        0.9890207217875779,
+        0.9996551422384565
+      ]
+    },
+    "hard10": {
+      "n": 512,
+      "successes": 146,
+      "rate": 0.28515625,
+      "interval": [
+        0.2477617322820618,
+        0.3257506400988644
+      ]
+    }
+  },
+  "last_user_visible_completed_foundations": [
+    "A_alpha0",
+    "A_delayed_ncp",
+    "A_flat"
+  ],
+  "current_alpha": 0.0,
+  "last_user_visible_ncp_development_step": 24000,
+  "ncp_development": {
+    "standard": {
+      "n": 2048,
+      "successes": 1648,
+      "rate": 0.8046875,
+      "interval": [
+        0.7869539990948126,
+        0.821280128661478
+      ]
+    },
+    "lookup": {
+      "n": 2048,
+      "successes": 2047,
+      "rate": 0.99951171875,
+      "interval": [
+        0.9972392640467791,
+        0.9999138011690629
+      ]
+    },
+    "compose": {
+      "n": 512,
+      "successes": 130,
+      "rate": 0.25390625,
+      "interval": [
+        0.21813441226903243,
+        0.29334339609457394
+      ]
+    },
+    "pointer": {
+      "n": 512,
+      "successes": 512,
+      "rate": 1.0,
+      "interval": [
+        0.9925530242771171,
+        0.9999999999999999
+      ]
+    },
+    "hard10": {
+      "n": 512,
+      "successes": 147,
+      "rate": 0.287109375,
+      "interval": [
+        0.24962121454230693,
+        0.32776831808970175
+      ]
+    }
+  },
+  "last_heartbeat_outcome": "Completed_extended_pilot at19:31:48 IST, elapsed10h58m. All three foundations24k updates576kGraphNav and146.39M scored text targets. Nine sealed endpoints complete. NCP highest foundation standard80.4%; Transformer best text loss. Refits retained strong point estimates but development preservation unconfirmed; recurrent2.055M. Z zero preserves greedy and dev8drawsrescues22/353. Search partial58/128: Grad/AB19 vsretry33,combined34,controls19; no established advantage. Continual branch learns bind25.8% sealed but old standard/hard0, shifted2/512, failed promotion. Full always-open/flat CL and no-teacher controls skipped. Previous authorized recoveries/provenance preserved. Closing temporary heartbeat.",
+  "last_notified_ncp_development_step": 18000,
+  "completed_delayed_ncp_updates": 24000,
+  "completed_delayed_ncp_graph_examples": 576000,
+  "ncp_development_scope": "Finalized full development evaluation after export repair",
+  "last_finite_checkpoint": "v8_tiny_12h/runs/A_delayed_ncp/checkpoint.pt",
+  "automation_status": "ACTIVE",
+  "ncp_competence_diagnostic": true,
+  "previous_failure": "runs/failure_before_json_recovery.json",
+  "observed_at_utc": "2026-10-06T14:09:20Z",
+  "driver_alive": true,
+  "child_alive": true,
+  "remaining_hours": 1.410950448611111,
+  "flat_development_observations": [
+    {
+      "path": "v8_tiny_12h/runs/A_flat/development_step_12000.json",
+      "step": 12000,
+      "diagnostic_only": true,
+      "symbolic": {
+        "standard": {
+          "n": 128,
+          "successes": 12,
+          "rate": 0.09375,
+          "interval": [
+            0.054443804399147026,
+            0.15672997257307855
+          ],
+          "first_legal_rate": 0.9921875
+        },
+        "lookup": {
+          "n": 128,
+          "successes": 128,
+          "rate": 1.0,
+          "interval": [
+            0.9708630437264916,
+            1.0
+          ],
+          "first_legal_rate": 0.0
+        },
+        "compose": {
+          "n": 128,
+          "successes": 22,
+          "rate": 0.171875,
+          "interval": [
+            0.11633115948147267,
+            0.24653996807301726
+          ],
+          "first_legal_rate": 0.0
+        },
+        "hard10": {
+          "n": 128,
+          "successes": 5,
+          "rate": 0.0390625,
+          "interval": [
+            0.016798610797803704,
+            0.08818702076683686
+          ],
+          "first_legal_rate": 1.0
+        }
+      }
+    },
+    {
+      "path": "v8_tiny_12h/runs/A_flat/development_step_2000.json",
+      "step": 2000,
+      "diagnostic_only": true,
+      "symbolic": {
+        "standard": {
+          "n": 128,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.029136956273508416
+          ],
+          "first_legal_rate": 0.1015625
+        },
+        "lookup": {
+          "n": 128,
+          "successes": 11,
+          "rate": 0.0859375,
+          "interval": [
+            0.04866313137138619,
+            0.14734091054261295
+          ],
+          "first_legal_rate": 0.0
+        },
+        "compose": {
+          "n": 128,
+          "successes": 11,
+          "rate": 0.0859375,
+          "interval": [
+            0.04866313137138619,
+            0.14734091054261295
+          ],
+          "first_legal_rate": 0.0
+        },
+        "hard10": {
+          "n": 128,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.029136956273508416
+          ],
+          "first_legal_rate": 0.171875
+        }
+      }
+    },
+    {
+      "path": "v8_tiny_12h/runs/A_flat/development_step_4000.json",
+      "step": 4000,
+      "diagnostic_only": true,
+      "symbolic": {
+        "standard": {
+          "n": 128,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.029136956273508416
+          ],
+          "first_legal_rate": 0.109375
+        },
+        "lookup": {
+          "n": 128,
+          "successes": 19,
+          "rate": 0.1484375,
+          "interval": [
+            0.09713463115350009,
+            0.22022729122631057
+          ],
+          "first_legal_rate": 0.0
+        },
+        "compose": {
+          "n": 128,
+          "successes": 16,
+          "rate": 0.125,
+          "interval": [
+            0.07842644638761664,
+            0.19342627081751468
+          ],
+          "first_legal_rate": 0.0
+        },
+        "hard10": {
+          "n": 128,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.029136956273508416
+          ],
+          "first_legal_rate": 0.1328125
+        }
+      }
+    },
+    {
+      "path": "v8_tiny_12h/runs/A_flat/development_step_6000.json",
+      "step": 6000,
+      "diagnostic_only": true,
+      "symbolic": {
+        "standard": {
+          "n": 128,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.029136956273508416
+          ],
+          "first_legal_rate": 0.1796875
+        },
+        "lookup": {
+          "n": 128,
+          "successes": 17,
+          "rate": 0.1328125,
+          "interval": [
+            0.08460228531840389,
+            0.20242016694495388
+          ],
+          "first_legal_rate": 0.0
+        },
+        "compose": {
+          "n": 128,
+          "successes": 25,
+          "rate": 0.1953125,
+          "interval": [
+            0.1359396128283779,
+            0.2724407199007913
+          ],
+          "first_legal_rate": 0.0
+        },
+        "hard10": {
+          "n": 128,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.029136956273508416
+          ],
+          "first_legal_rate": 0.2421875
+        }
+      }
+    },
+    {
+      "path": "v8_tiny_12h/runs/A_flat/development_step_8000.json",
+      "step": 8000,
+      "diagnostic_only": true,
+      "symbolic": {
+        "standard": {
+          "n": 128,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.029136956273508416
+          ],
+          "first_legal_rate": 0.2265625
+        },
+        "lookup": {
+          "n": 128,
+          "successes": 20,
+          "rate": 0.15625,
+          "interval": [
+            0.10348354800906658,
+            0.22904810942897047
+          ],
+          "first_legal_rate": 0.0
+        },
+        "compose": {
+          "n": 128,
+          "successes": 23,
+          "rate": 0.1796875,
+          "interval": [
+            0.12282459974516051,
+            0.25521626286755583
+          ],
+          "first_legal_rate": 0.0
+        },
+        "hard10": {
+          "n": 128,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.029136956273508416
+          ],
+          "first_legal_rate": 0.203125
+        }
+      }
+    }
+  ],
+  "last_user_visible_flat_development_step": 18000,
+  "flat_latest_development": {
+    "step": 18000,
+    "symbolic": {
+      "standard": {
+        "n": 128,
+        "successes": 98,
+        "rate": 0.765625,
+        "interval": [
+          0.6851645688917714,
+          0.8306064230879273
+        ]
+      },
+      "lookup": {
+        "n": 128,
+        "successes": 128,
+        "rate": 1.0,
+        "interval": [
+          0.9708630437264916,
+          1.0
+        ]
+      },
+      "compose": {
+        "n": 128,
+        "successes": 17,
+        "rate": 0.1328125,
+        "interval": [
+          0.08460228531840389,
+          0.20242016694495388
+        ]
+      },
+      "hard10": {
+        "n": 128,
+        "successes": 40,
+        "rate": 0.3125,
+        "interval": [
+          0.23865530278536204,
+          0.39727105581720357
+        ]
+      }
+    }
+  },
+  "completed_flat_updates": 24000,
+  "completed_flat_graph_examples": 576000,
+  "flat_completed_development": {
+    "status": "completed",
+    "symbolic": {
+      "standard": {
+        "n": 2048,
+        "successes": 1509,
+        "rate": 0.73681640625,
+        "interval": [
+          0.7173139211184905,
+          0.7554321557433701
+        ]
+      },
+      "lookup": {
+        "n": 2048,
+        "successes": 2046,
+        "rate": 0.9990234375,
+        "interval": [
+          0.9964461805612286,
+          0.9997321504755168
+        ]
+      },
+      "compose": {
+        "n": 512,
+        "successes": 81,
+        "rate": 0.158203125,
+        "interval": [
+          0.12915371515338725,
+          0.19234324090717714
+        ]
+      },
+      "pointer": {
+        "n": 512,
+        "successes": 512,
+        "rate": 1.0,
+        "interval": [
+          0.9925530242771171,
+          0.9999999999999999
+        ]
+      },
+      "hard10": {
+        "n": 512,
+        "successes": 136,
+        "rate": 0.265625,
+        "interval": [
+          0.22921654233512775,
+          0.30552422753497355
+        ]
+      }
+    },
+    "text": {
+      "edu": {
+        "nll": 2.7604623706304214,
+        "interval": [
+          2.711412374527134,
+          2.809995377127993
+        ]
+      },
+      "ts": {
+        "nll": 1.8405509194403982,
+        "interval": [
+          1.7977504542541978,
+          1.8834089262820093
+        ]
+      }
+    }
+  },
+  "current_slots_per_s": 42725.830155527576,
+  "scored_targets_per_second": 7706.551077022032,
+  "dense_refit_result": {
+    "completed_updates": 6000,
+    "additional_graph_exposure": 144000,
+    "symbolic": {
+      "standard": {
+        "n": 2048,
+        "successes": 1648,
+        "rate": 0.8046875,
+        "interval": [
+          0.7869539990948126,
+          0.821280128661478
+        ]
+      },
+      "lookup": {
+        "n": 2048,
+        "successes": 2048,
+        "rate": 1.0,
+        "interval": [
+          0.9981277993949387,
+          1.0
+        ]
+      },
+      "compose": {
+        "n": 512,
+        "successes": 134,
+        "rate": 0.26171875,
+        "interval": [
+          0.225518645748377,
+          0.30146780361955927
+        ]
+      },
+      "pointer": {
+        "n": 512,
+        "successes": 512,
+        "rate": 1.0,
+        "interval": [
+          0.9925530242771171,
+          0.9999999999999999
+        ]
+      },
+      "hard10": {
+        "n": 512,
+        "successes": 151,
+        "rate": 0.294921875,
+        "interval": [
+          0.2570678911721477,
+          0.335830282464191
+        ]
+      }
+    },
+    "text": {
+      "edu": {
+        "nll": 2.808804695265815,
+        "interval": [
+          2.759046650065072,
+          2.859085969173648
+        ]
+      },
+      "ts": {
+        "nll": 1.8969364560681505,
+        "interval": [
+          1.8529039496577784,
+          1.9402679306539778
+        ]
+      }
+    },
+    "retention": {
+      "symbolic": {
+        "compose": {
+          "delta": 0.0078125,
+          "interval": [
+            -0.056703669057122486,
+            0.0721179329803464
+          ],
+          "gains": 34,
+          "losses": 30,
+          "n": 512,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        },
+        "hard10": {
+          "delta": 0.0078125,
+          "interval": [
+            -0.05580017433775993,
+            0.07121325009109364
+          ],
+          "gains": 33,
+          "losses": 29,
+          "n": 512,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        },
+        "standard": {
+          "delta": 0.0,
+          "interval": [
+            -0.032127283427752104,
+            0.032127283427752104
+          ],
+          "gains": 132,
+          "losses": 132,
+          "n": 2048,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        },
+        "lookup": {
+          "delta": 0.00048828125,
+          "interval": [
+            -0.0030841716135777577,
+            0.004185843590543787
+          ],
+          "gains": 1,
+          "losses": 0,
+          "n": 2048,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        },
+        "pointer": {
+          "delta": 0.0,
+          "interval": [
+            -0.012283189659923177,
+            0.012283189659923177
+          ],
+          "gains": 0,
+          "losses": 0,
+          "n": 512,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        }
+      },
+      "text": {
+        "edu": {
+          "delta": -0.004984233145111094,
+          "interval": [
+            -0.00647781016377731,
+            -0.003613581995122424
+          ]
+        },
+        "ts": {
+          "delta": -0.010585754546927006,
+          "interval": [
+            -0.0125162715745479,
+            -0.00864320068947502
+          ]
+        }
+      },
+      "pass": false
+    },
+    "research_only": true
+  },
+  "recurrent_refit_result": {
+    "completed_updates": 6000,
+    "additional_graph_exposure": 144000,
+    "active_parameters": 2055424,
+    "symbolic": {
+      "standard": {
+        "n": 2048,
+        "successes": 1662,
+        "rate": 0.8115234375,
+        "interval": [
+          0.7940080107648976,
+          0.8278723954987458
+        ]
+      },
+      "lookup": {
+        "n": 2048,
+        "successes": 2048,
+        "rate": 1.0,
+        "interval": [
+          0.9981277993949387,
+          1.0
+        ]
+      },
+      "compose": {
+        "n": 512,
+        "successes": 136,
+        "rate": 0.265625,
+        "interval": [
+          0.22921654233512775,
+          0.30552422753497355
+        ]
+      },
+      "pointer": {
+        "n": 512,
+        "successes": 512,
+        "rate": 1.0,
+        "interval": [
+          0.9925530242771171,
+          0.9999999999999999
+        ]
+      },
+      "hard10": {
+        "n": 512,
+        "successes": 159,
+        "rate": 0.310546875,
+        "interval": [
+          0.2720022030446931,
+          0.3519132526003054
+        ]
+      }
+    },
+    "text": {
+      "edu": {
+        "nll": 2.819101752294921,
+        "interval": [
+          2.7688374108295597,
+          2.8690102710850804
+        ]
+      },
+      "ts": {
+        "nll": 1.9207581682672685,
+        "interval": [
+          1.8773931462585098,
+          1.9634939389173705
+        ]
+      }
+    },
+    "retention": {
+      "symbolic": {
+        "compose": {
+          "delta": 0.01171875,
+          "interval": [
+            -0.053696187046891566,
+            0.07681914900226901
+          ],
+          "gains": 36,
+          "losses": 30,
+          "n": 512,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        },
+        "hard10": {
+          "delta": 0.0234375,
+          "interval": [
+            -0.04616027690958686,
+            0.09241924624057535
+          ],
+          "gains": 44,
+          "losses": 32,
+          "n": 512,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        },
+        "standard": {
+          "delta": 0.0068359375,
+          "interval": [
+            -0.02890908911608933,
+            0.04253855712317952
+          ],
+          "gains": 174,
+          "losses": 160,
+          "n": 2048,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        },
+        "lookup": {
+          "delta": 0.00048828125,
+          "interval": [
+            -0.0030841716135777577,
+            0.004185843590543787
+          ],
+          "gains": 1,
+          "losses": 0,
+          "n": 2048,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        },
+        "pointer": {
+          "delta": 0.0,
+          "interval": [
+            -0.012283189659923177,
+            0.012283189659923177
+          ],
+          "gains": 0,
+          "losses": 0,
+          "n": 512,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        }
+      },
+      "text": {
+        "edu": {
+          "delta": 0.005312823883994788,
+          "interval": [
+            0.0033069231333193744,
+            0.007273179088645187
+          ]
+        },
+        "ts": {
+          "delta": 0.013235957652190988,
+          "interval": [
+            0.010524469045966848,
+            0.015959407772797873
+          ]
+        }
+      },
+      "pass": false
+    },
+    "research_only": true
+  },
+  "selected_refit_lineage": {
+    "selected": "B_refit_recurrent",
+    "source": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/runs/B_refit_recurrent/checkpoint.pt",
+    "research_only": true
+  },
+  "exploration_result": {
+    "completed_updates": 6000,
+    "additional_graph_exposure": 144000,
+    "active_parameters": 2063872,
+    "symbolic": {
+      "standard": {
+        "n": 2048,
+        "successes": 1662,
+        "rate": 0.8115234375,
+        "interval": [
+          0.7940080107648976,
+          0.8278723954987458
+        ]
+      },
+      "lookup": {
+        "n": 2048,
+        "successes": 2048,
+        "rate": 1.0,
+        "interval": [
+          0.9981277993949387,
+          1.0
+        ]
+      },
+      "compose": {
+        "n": 512,
+        "successes": 136,
+        "rate": 0.265625,
+        "interval": [
+          0.22921654233512775,
+          0.30552422753497355
+        ]
+      },
+      "pointer": {
+        "n": 512,
+        "successes": 512,
+        "rate": 1.0,
+        "interval": [
+          0.9925530242771171,
+          0.9999999999999999
+        ]
+      },
+      "hard10": {
+        "n": 512,
+        "successes": 159,
+        "rate": 0.310546875,
+        "interval": [
+          0.2720022030446931,
+          0.3519132526003054
+        ]
+      }
+    },
+    "text": {
+      "edu": {
+        "nll": 2.819101752294921,
+        "interval": [
+          2.7688374108295597,
+          2.8690102710850804
+        ]
+      },
+      "ts": {
+        "nll": 1.9207581682672685,
+        "interval": [
+          1.8773931462585098,
+          1.9634939389173705
+        ]
+      }
+    },
+    "decision": {
+      "retention": {
+        "symbolic": {
+          "compose": {
+            "delta": 0.0,
+            "interval": [
+              -0.012283189659923177,
+              0.012283189659923177
+            ],
+            "gains": 0,
+            "losses": 0,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "hard10": {
+            "delta": 0.0,
+            "interval": [
+              -0.012283189659923177,
+              0.012283189659923177
+            ],
+            "gains": 0,
+            "losses": 0,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "standard": {
+            "delta": 0.0,
+            "interval": [
+              -0.003085044323438204,
+              0.003085044323438204
+            ],
+            "gains": 0,
+            "losses": 0,
+            "n": 2048,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "lookup": {
+            "delta": 0.0,
+            "interval": [
+              -0.003085044323438204,
+              0.003085044323438204
+            ],
+            "gains": 0,
+            "losses": 0,
+            "n": 2048,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "pointer": {
+            "delta": 0.0,
+            "interval": [
+              -0.012283189659923177,
+              0.012283189659923177
+            ],
+            "gains": 0,
+            "losses": 0,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          }
+        },
+        "text": {
+          "edu": {
+            "delta": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ]
+          },
+          "ts": {
+            "delta": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "pass": true
+      },
+      "coverage_pass": true,
+      "research_only": false
+    },
+    "coverage": {
+      "draws": 8,
+      "prior_only_rate": 0.353515625,
+      "prior_only_interval": [
+        0.31333738403843076,
+        0.3958755971303825
+      ],
+      "union_rate": 0.353515625,
+      "baseline_failures": 353,
+      "rescued_problems": 22,
+      "conditional_rescue": 0.06232294617563739,
+      "conditional_interval": [
+        0.04151396796640683,
+        0.09255525980438739
+      ]
+    }
+  },
+  "search_result": {
+    "status": "partial_time_budget",
+    "paired_test_problems": 58,
+    "comparisons": {
+      "gradcuit_kl": {
+        "n": 58,
+        "successes": 19,
+        "rate": 0.3275862068965517,
+        "interval": [
+          0.22083291084926074,
+          0.455759453215292
+        ],
+        "paired_vs_retry": {
+          "delta": -0.24137931034482762,
+          "interval": [
+            -0.43744092009791613,
+            0.004529487262916937
+          ],
+          "gains": 0,
+          "losses": 14,
+          "n": 58,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        }
+      },
+      "combined": {
+        "n": 58,
+        "successes": 34,
+        "rate": 0.5862068965517241,
+        "interval": [
+          0.45798408170855665,
+          0.7037197362591668
+        ],
+        "paired_vs_retry": {
+          "delta": 0.01724137931034475,
+          "interval": [
+            -0.10539633091563484,
+            0.14099289054263
+          ],
+          "gains": 1,
+          "losses": 0,
+          "n": 58,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        }
+      },
+      "ab_prior": {
+        "n": 58,
+        "successes": 19,
+        "rate": 0.3275862068965517,
+        "interval": [
+          0.22083291084926074,
+          0.455759453215292
+        ],
+        "paired_vs_retry": {
+          "delta": -0.24137931034482762,
+          "interval": [
+            -0.43744092009791613,
+            0.004529487262916937
+          ],
+          "gains": 0,
+          "losses": 14,
+          "n": 58,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        }
+      },
+      "ab_hybrid_randomdir": {
+        "n": 58,
+        "successes": 19,
+        "rate": 0.3275862068965517,
+        "interval": [
+          0.22083291084926074,
+          0.455759453215292
+        ],
+        "paired_vs_retry": {
+          "delta": -0.24137931034482762,
+          "interval": [
+            -0.43744092009791613,
+            0.004529487262916937
+          ],
+          "gains": 0,
+          "losses": 14,
+          "n": 58,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        }
+      },
+      "retry": {
+        "n": 58,
+        "successes": 33,
+        "rate": 0.5689655172413793,
+        "interval": [
+          0.44118104569962746,
+          0.6881820086745516
+        ],
+        "paired_vs_retry": null
+      },
+      "flat_retry": {
+        "n": 58,
+        "successes": 31,
+        "rate": 0.5344827586206896,
+        "interval": [
+          0.408001750439952,
+          0.6566797767471373
+        ],
+        "paired_vs_retry": {
+          "delta": -0.034482758620689724,
+          "interval": [
+            -0.22313344052632197,
+            0.16258056223921666
+          ],
+          "gains": 2,
+          "losses": 4,
+          "n": 58,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        }
+      },
+      "ab_hybrid": {
+        "n": 58,
+        "successes": 19,
+        "rate": 0.3275862068965517,
+        "interval": [
+          0.22083291084926074,
+          0.455759453215292
+        ],
+        "paired_vs_retry": {
+          "delta": -0.24137931034482762,
+          "interval": [
+            -0.43744092009791613,
+            0.004529487262916937
+          ],
+          "gains": 0,
+          "losses": 14,
+          "n": 58,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        }
+      },
+      "hybrid_random": {
+        "n": 58,
+        "successes": 19,
+        "rate": 0.3275862068965517,
+        "interval": [
+          0.22083291084926074,
+          0.455759453215292
+        ],
+        "paired_vs_retry": {
+          "delta": -0.24137931034482762,
+          "interval": [
+            -0.43744092009791613,
+            0.004529487262916937
+          ],
+          "gains": 0,
+          "losses": 14,
+          "n": 58,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        }
+      },
+      "latent": {
+        "n": 58,
+        "successes": 19,
+        "rate": 0.3275862068965517,
+        "interval": [
+          0.22083291084926074,
+          0.455759453215292
+        ],
+        "paired_vs_retry": {
+          "delta": -0.24137931034482762,
+          "interval": [
+            -0.43744092009791613,
+            0.004529487262916937
+          ],
+          "gains": 0,
+          "losses": 14,
+          "n": 58,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        }
+      }
+    },
+    "wall_s": 1740.876769541006,
+    "limitations": [
+      "one training seed pilot",
+      "binary-only and 1x/2x/4x curves deferred unless separately budgeted",
+      "same-kernel nonadaptive allocation and equal-norm direction control included; no quality-adaptivity claim from binary-only success"
+    ]
+  },
+  "negative_support_fit": {
+    "input_slots": 1007616,
+    "nonpadding_input_tokens": 903870,
+    "symbolic_header_tokens": 325376,
+    "symbolic_answer_tokens": 75400,
+    "group_count": 8,
+    "groups_converged": 4,
+    "groups_reaching_iteration_cap": [
+      1,
+      2,
+      4,
+      5
+    ],
+    "scope": "Finite support-fit estimates; some EM fits reached 50-iteration cap. Downstream gated retention/new-skill evaluations pending."
+  },
+  "ignored_summary_paths": [
+    "v8_tiny_12h/runs/A_alpha0_trained_contracts/summary.json"
+  ],
+  "ignored_summary_reason": "Original compiled-decoder parity failure, superseded by archived authorized eager-decoding recovery and passing recovery audits; not a new failure.",
+  "continual_completed_phase_results": {
+    "1": {
+      "mode": "text",
+      "evidence_qualified": false,
+      "new_skill": {
+        "nll": 2.903880526656937,
+        "n": null,
+        "successes": null,
+        "rate": null,
+        "interval": [
+          2.8307152433407863,
+          2.973100971438582
+        ]
+      },
+      "change": {
+        "nll_delta": -0.013094942539400911,
+        "interval": [
+          -0.018744404799677986,
+          -0.00775569763166565
+        ],
+        "installation_interval": [
+          0.001277343957765183,
+          0.005271817384314877
+        ]
+      },
+      "symbolic": {
+        "standard": {
+          "n": 2048,
+          "successes": 1670,
+          "rate": 0.8154296875,
+          "interval": [
+            0.798042633171645,
+            0.8316356465247712
+          ],
+          "reasons": {
+            "accepted": 1670,
+            "missing_terminator": 350,
+            "wrong_goal": 18,
+            "illegal_transition": 8,
+            "malformed_walk": 2
+          }
+        },
+        "lookup": {
+          "n": 2048,
+          "successes": 2048,
+          "rate": 1.0,
+          "interval": [
+            0.9981277993949387,
+            1.0
+          ],
+          "reasons": {
+            "accepted": 2048
+          }
+        },
+        "compose": {
+          "n": 512,
+          "successes": 135,
+          "rate": 0.263671875,
+          "interval": [
+            0.22736711813482202,
+            0.3034964914841968
+          ],
+          "reasons": {
+            "wrong_lookup": 377,
+            "accepted": 135
+          }
+        },
+        "pointer": {
+          "n": 512,
+          "successes": 512,
+          "rate": 1.0,
+          "interval": [
+            0.9925530242771171,
+            0.9999999999999999
+          ],
+          "reasons": {
+            "accepted": 512
+          }
+        },
+        "hard10": {
+          "n": 512,
+          "successes": 157,
+          "rate": 0.306640625,
+          "interval": [
+            0.26826359920760706,
+            0.3478975359352265
+          ],
+          "reasons": {
+            "accepted": 157,
+            "wrong_goal": 22,
+            "missing_terminator": 327,
+            "illegal_transition": 5,
+            "malformed_walk": 1
+          }
+        }
+      },
+      "adjacent_retention": {
+        "symbolic": {
+          "compose": {
+            "delta": -0.001953125,
+            "interval": [
+              -0.029246062372535672,
+              0.025451234938422506
+            ],
+            "gains": 4,
+            "losses": 5,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "hard10": {
+            "delta": -0.00390625,
+            "interval": [
+              -0.026986893236721005,
+              0.019416748756206498
+            ],
+            "gains": 2,
+            "losses": 4,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "standard": {
+            "delta": 0.00390625,
+            "interval": [
+              -0.007691114354805368,
+              0.015443796281243073
+            ],
+            "gains": 19,
+            "losses": 11,
+            "n": 2048,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "lookup": {
+            "delta": 0.0,
+            "interval": [
+              -0.003085044323438204,
+              0.003085044323438204
+            ],
+            "gains": 0,
+            "losses": 0,
+            "n": 2048,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "pointer": {
+            "delta": 0.0,
+            "interval": [
+              -0.012283189659923177,
+              0.012283189659923177
+            ],
+            "gains": 0,
+            "losses": 0,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          }
+        },
+        "text": {
+          "edu": {
+            "delta": 0.0013776702252670248,
+            "interval": [
+              -0.00031569297399068635,
+              0.003025563463025898
+            ]
+          },
+          "ts": {
+            "delta": 0.007085399114408197,
+            "interval": [
+              0.005877060682159012,
+              0.008387737153028752
+            ]
+          }
+        },
+        "pass": false
+      },
+      "cumulative_retention": {
+        "symbolic": {
+          "compose": {
+            "delta": -0.001953125,
+            "interval": [
+              -0.029246062372535672,
+              0.025451234938422506
+            ],
+            "gains": 4,
+            "losses": 5,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "hard10": {
+            "delta": -0.00390625,
+            "interval": [
+              -0.026986893236721005,
+              0.019416748756206498
+            ],
+            "gains": 2,
+            "losses": 4,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "standard": {
+            "delta": 0.00390625,
+            "interval": [
+              -0.007691114354805368,
+              0.015443796281243073
+            ],
+            "gains": 19,
+            "losses": 11,
+            "n": 2048,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "lookup": {
+            "delta": 0.0,
+            "interval": [
+              -0.003085044323438204,
+              0.003085044323438204
+            ],
+            "gains": 0,
+            "losses": 0,
+            "n": 2048,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "pointer": {
+            "delta": 0.0,
+            "interval": [
+              -0.012283189659923177,
+              0.012283189659923177
+            ],
+            "gains": 0,
+            "losses": 0,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          }
+        },
+        "text": {
+          "edu": {
+            "delta": 0.0013776702252670248,
+            "interval": [
+              -0.00031569297399068635,
+              0.003025563463025898
+            ]
+          },
+          "ts": {
+            "delta": 0.007085399114408197,
+            "interval": [
+              0.005877060682159012,
+              0.008387737153028752
+            ]
+          }
+        },
+        "pass": false
+      },
+      "old_task_retention": {}
+    },
+    "2": {
+      "mode": "bind",
+      "evidence_qualified": false,
+      "new_skill": {
+        "nll": null,
+        "n": 512,
+        "successes": 129,
+        "rate": 0.251953125,
+        "interval": [
+          0.21629080364256667,
+          0.2913098444699571
+        ]
+      },
+      "change": {
+        "delta": 0.251953125,
+        "interval": [
+          0.2013941216169769,
+          0.297653607900514
+        ],
+        "gains": 129,
+        "losses": 0,
+        "n": 512,
+        "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance",
+        "installation": {
+          "delta": 0.00390625,
+          "interval": [
+            -0.03280647735848343,
+            0.040531944328384736
+          ],
+          "gains": 17,
+          "losses": 15,
+          "n": 512,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        }
+      },
+      "symbolic": {
+        "standard": {
+          "n": 2048,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.0018722006050613785
+          ],
+          "reasons": {
+            "malformed_walk": 2048
+          }
+        },
+        "lookup": {
+          "n": 2048,
+          "successes": 1458,
+          "rate": 0.7119140625,
+          "interval": [
+            0.6919180419066103,
+            0.7311165918213226
+          ],
+          "reasons": {
+            "accepted": 1458,
+            "wrong_lookup": 590
+          }
+        },
+        "compose": {
+          "n": 512,
+          "successes": 126,
+          "rate": 0.24609375,
+          "interval": [
+            0.21076597685786014,
+            0.28520319050141624
+          ],
+          "reasons": {
+            "wrong_lookup": 386,
+            "accepted": 126
+          }
+        },
+        "pointer": {
+          "n": 512,
+          "successes": 416,
+          "rate": 0.8125,
+          "interval": [
+            0.776410178392972,
+            0.8439354617802264
+          ],
+          "reasons": {
+            "accepted": 416,
+            "malformed_walk": 70,
+            "too_many_hops": 15,
+            "illegal_transition": 5,
+            "wrong_hop_count": 4,
+            "wrong_colour": 2
+          }
+        },
+        "hard10": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ],
+          "reasons": {
+            "malformed_walk": 512
+          }
+        }
+      },
+      "adjacent_retention": {
+        "symbolic": {
+          "compose": {
+            "delta": -0.017578125,
+            "interval": [
+              -0.07930081231733607,
+              0.044626449746650074
+            ],
+            "gains": 25,
+            "losses": 34,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "hard10": {
+            "delta": -0.306640625,
+            "interval": [
+              -0.36903279042584824,
+              -0.23656888161784895
+            ],
+            "gains": 0,
+            "losses": 157,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "standard": {
+            "delta": -0.8154296875,
+            "interval": [
+              -0.8396973038035924,
+              -0.7862084134827116
+            ],
+            "gains": 0,
+            "losses": 1670,
+            "n": 2048,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "lookup": {
+            "delta": -0.2880859375,
+            "interval": [
+              -0.31808383050211664,
+              -0.25625604715816463
+            ],
+            "gains": 0,
+            "losses": 590,
+            "n": 2048,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "pointer": {
+            "delta": -0.1875,
+            "interval": [
+              -0.24230049117294483,
+              -0.1278840838576567
+            ],
+            "gains": 0,
+            "losses": 96,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          }
+        },
+        "text": {
+          "edu": {
+            "delta": 0.0005991603878743312,
+            "interval": [
+              0.000365600312135332,
+              0.0008384844492462051
+            ]
+          },
+          "ts": {
+            "delta": 0.0003642288156231466,
+            "interval": [
+              0.00011558216995115598,
+              0.000604835723678514
+            ]
+          }
+        },
+        "pass": false
+      },
+      "cumulative_retention": {
+        "symbolic": {
+          "compose": {
+            "delta": -0.01953125,
+            "interval": [
+              -0.07973191292473507,
+              0.04121072762244784
+            ],
+            "gains": 23,
+            "losses": 33,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "hard10": {
+            "delta": -0.310546875,
+            "interval": [
+              -0.37309882553417695,
+              -0.24022201835181325
+            ],
+            "gains": 0,
+            "losses": 159,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "standard": {
+            "delta": -0.8115234375,
+            "interval": [
+              -0.8360045850732742,
+              -0.7821119648272971
+            ],
+            "gains": 0,
+            "losses": 1662,
+            "n": 2048,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "lookup": {
+            "delta": -0.2880859375,
+            "interval": [
+              -0.31808383050211664,
+              -0.25625604715816463
+            ],
+            "gains": 0,
+            "losses": 590,
+            "n": 2048,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          },
+          "pointer": {
+            "delta": -0.1875,
+            "interval": [
+              -0.24230049117294483,
+              -0.1278840838576567
+            ],
+            "gains": 0,
+            "losses": 96,
+            "n": 512,
+            "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+          }
+        },
+        "text": {
+          "edu": {
+            "delta": 0.001976830613141356,
+            "interval": [
+              0.00024261927283126728,
+              0.0036619915939209327
+            ]
+          },
+          "ts": {
+            "delta": 0.007449627930031344,
+            "interval": [
+              0.0062674167998207535,
+              0.008738996607410981
+            ]
+          }
+        },
+        "pass": false
+      },
+      "old_task_retention": {
+        "text": {
+          "nll_delta": 0.0003740146047639392,
+          "interval": [
+            -7.179069500710622e-05,
+            0.0008630078606368137
+          ]
+        }
+      }
+    },
+    "3": {
+      "mode": "shifted",
+      "evidence_qualified": false,
+      "new_skill": {
+        "n": 512,
+        "successes": 1,
+        "rate": 0.001953125,
+        "interval": [
+          0.00034485776154337486,
+          0.010979278212421853
+        ]
+      },
+      "same_weights_new_adapter_forced_open": {
+        "n": 512,
+        "successes": 171,
+        "rate": 0.333984375,
+        "interval": [
+          0.29450183733367963,
+          0.37593954132430873
+        ]
+      },
+      "installation_delta": {
+        "delta": -0.33203125,
+        "interval": [
+          -0.38076064787153463,
+          -0.27725503965177556
+        ],
+        "gains": 0,
+        "losses": 170,
+        "n": 512,
+        "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+      },
+      "adjacent_retention_pass": false,
+      "cumulative_retention_pass": false,
+      "symbolic": {
+        "standard": {
+          "n": 2048,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.0018722006050613785
+          ]
+        },
+        "lookup": {
+          "n": 2048,
+          "successes": 905,
+          "rate": 0.44189453125,
+          "interval": [
+            0.4205151573580086,
+            0.46349147532949353
+          ]
+        },
+        "compose": {
+          "n": 512,
+          "successes": 111,
+          "rate": 0.216796875,
+          "interval": [
+            0.18328405527165026,
+            0.2545277083213888
+          ]
+        },
+        "pointer": {
+          "n": 512,
+          "successes": 7,
+          "rate": 0.013671875,
+          "interval": [
+            0.006638096992250363,
+            0.0279490004882098
+          ]
+        },
+        "hard10": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        }
+      },
+      "old_task_retention": {
+        "text": {
+          "nll_delta": 0.004566393861162421,
+          "interval": [
+            0.003243160537215779,
+            0.0059181411995930765
+          ]
+        },
+        "bind": {
+          "delta": -0.076171875,
+          "interval": [
+            -0.13571317747753506,
+            -0.01540127782297103
+          ],
+          "gains": 32,
+          "losses": 71,
+          "n": 512,
+          "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+        }
+      }
+    }
+  },
+  "last_user_visible_continual_phase": 3,
+  "current_shifted_exposure": 96000,
+  "sealed_results_so_far": {
+    "D_lsl_phase2_sealed_test": {
+      "status": "completed",
+      "active_parameters": 2096640,
+      "symbolic": {
+        "standard": {
+          "n": 2048,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.0018722006050613785
+          ]
+        },
+        "lookup": {
+          "n": 2048,
+          "successes": 1487,
+          "rate": 0.72607421875,
+          "interval": [
+            0.7063496163354032,
+            0.7449523085863318
+          ]
+        },
+        "compose": {
+          "n": 512,
+          "successes": 128,
+          "rate": 0.25,
+          "interval": [
+            0.21444818972233134,
+            0.28927529813911007
+          ]
+        },
+        "pointer": {
+          "n": 512,
+          "successes": 399,
+          "rate": 0.779296875,
+          "interval": [
+            0.7413678902658999,
+            0.8130660256388961
+          ]
+        },
+        "hard10": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "hard14": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "long18": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "bind": {
+          "n": 512,
+          "successes": 132,
+          "rate": 0.2578125,
+          "interval": [
+            0.2218245837223504,
+            0.2974075451434209
+          ]
+        },
+        "shifted": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        }
+      },
+      "text": {
+        "edu": {
+          "nll": 2.917828520534616,
+          "interval": [
+            2.8677810011673843,
+            2.9705715657621834
+          ]
+        },
+        "ts": {
+          "nll": 1.9236240242436198,
+          "interval": [
+            1.8798055715694402,
+            1.9673764451154692
+          ]
+        }
+      }
+    },
+    "A_delayed_ncp_sealed_test": {
+      "status": "completed",
+      "active_parameters": 2448640,
+      "symbolic": {
+        "standard": {
+          "n": 2048,
+          "successes": 1646,
+          "rate": 0.8037109375,
+          "interval": [
+            0.7859469507325959,
+            0.8203377086655016
+          ]
+        },
+        "lookup": {
+          "n": 2048,
+          "successes": 2047,
+          "rate": 0.99951171875,
+          "interval": [
+            0.9972392640467791,
+            0.9999138011690629
+          ]
+        },
+        "compose": {
+          "n": 512,
+          "successes": 133,
+          "rate": 0.259765625,
+          "interval": [
+            0.22367113196759586,
+            0.299438157149258
+          ]
+        },
+        "pointer": {
+          "n": 512,
+          "successes": 511,
+          "rate": 0.998046875,
+          "interval": [
+            0.9890207217875779,
+            0.9996551422384565
+          ]
+        },
+        "hard10": {
+          "n": 512,
+          "successes": 161,
+          "rate": 0.314453125,
+          "interval": [
+            0.2757440988618599,
+            0.35592567728530355
+          ]
+        },
+        "hard14": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "long18": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "bind": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "shifted": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        }
+      },
+      "text": {
+        "edu": {
+          "nll": 2.9134249062702424,
+          "interval": [
+            2.8632179630259897,
+            2.966548056715614
+          ]
+        },
+        "ts": {
+          "nll": 1.9031417198166618,
+          "interval": [
+            1.8588860370589315,
+            1.9473135466585327
+          ]
+        }
+      }
+    },
+    "A_flat_sealed_test": {
+      "status": "completed",
+      "active_parameters": 2450048,
+      "symbolic": {
+        "standard": {
+          "n": 2048,
+          "successes": 1510,
+          "rate": 0.7373046875,
+          "interval": [
+            0.7178126407846765,
+            0.7559081702562807
+          ]
+        },
+        "lookup": {
+          "n": 2048,
+          "successes": 2048,
+          "rate": 1.0,
+          "interval": [
+            0.9981277993949387,
+            1.0
+          ]
+        },
+        "compose": {
+          "n": 512,
+          "successes": 76,
+          "rate": 0.1484375,
+          "interval": [
+            0.12026303896932153,
+            0.1818481158358304
+          ]
+        },
+        "pointer": {
+          "n": 512,
+          "successes": 509,
+          "rate": 0.994140625,
+          "interval": [
+            0.9829162193160559,
+            0.998005324207814
+          ]
+        },
+        "hard10": {
+          "n": 512,
+          "successes": 147,
+          "rate": 0.287109375,
+          "interval": [
+            0.24962121454230693,
+            0.32776831808970175
+          ]
+        },
+        "hard14": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "long18": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "bind": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "shifted": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        }
+      },
+      "text": {
+        "edu": {
+          "nll": 2.8621898655967404,
+          "interval": [
+            2.81082394756243,
+            2.916714648573203
+          ]
+        },
+        "ts": {
+          "nll": 1.8468225060321533,
+          "interval": [
+            1.8030054646007967,
+            1.889800888607972
+          ]
+        }
+      }
+    },
+    "D_lsl_phase1_sealed_test": {
+      "status": "completed",
+      "active_parameters": 2080256,
+      "symbolic": {
+        "standard": {
+          "n": 2048,
+          "successes": 1659,
+          "rate": 0.81005859375,
+          "interval": [
+            0.792495739719343,
+            0.8264604640070105
+          ]
+        },
+        "lookup": {
+          "n": 2048,
+          "successes": 2048,
+          "rate": 1.0,
+          "interval": [
+            0.9981277993949387,
+            1.0
+          ]
+        },
+        "compose": {
+          "n": 512,
+          "successes": 131,
+          "rate": 0.255859375,
+          "interval": [
+            0.2199790080840174,
+            0.2953759605306715
+          ]
+        },
+        "pointer": {
+          "n": 512,
+          "successes": 511,
+          "rate": 0.998046875,
+          "interval": [
+            0.9890207217875779,
+            0.9996551422384565
+          ]
+        },
+        "hard10": {
+          "n": 512,
+          "successes": 146,
+          "rate": 0.28515625,
+          "interval": [
+            0.2477617322820618,
+            0.3257506400988644
+          ]
+        },
+        "hard14": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "long18": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "bind": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "shifted": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        }
+      },
+      "text": {
+        "edu": {
+          "nll": 2.916619987061177,
+          "interval": [
+            2.86715725807251,
+            2.968219773253514
+          ]
+        },
+        "ts": {
+          "nll": 1.9233648308810203,
+          "interval": [
+            1.879392411486077,
+            1.9670761841365278
+          ]
+        }
+      }
+    },
+    "D_lsl_phase3_sealed_test": {
+      "status": "completed",
+      "active_parameters": 2113024,
+      "symbolic": {
+        "standard": {
+          "n": 2048,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.0018722006050613785
+          ]
+        },
+        "lookup": {
+          "n": 2048,
+          "successes": 918,
+          "rate": 0.4482421875,
+          "interval": [
+            0.4268206276690133,
+            0.46985754934674495
+          ]
+        },
+        "compose": {
+          "n": 512,
+          "successes": 115,
+          "rate": 0.224609375,
+          "interval": [
+            0.19058845141550823,
+            0.26273195318186077
+          ]
+        },
+        "pointer": {
+          "n": 512,
+          "successes": 3,
+          "rate": 0.005859375,
+          "interval": [
+            0.0019946757921860923,
+            0.017083780683944113
+          ]
+        },
+        "hard10": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "hard14": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "long18": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "bind": {
+          "n": 512,
+          "successes": 101,
+          "rate": 0.197265625,
+          "interval": [
+            0.16510605271370543,
+            0.23393410836850875
+          ]
+        },
+        "shifted": {
+          "n": 512,
+          "successes": 2,
+          "rate": 0.00390625,
+          "interval": [
+            0.0010718890803936704,
+            0.014129407144654047
+          ]
+        }
+      },
+      "text": {
+        "edu": {
+          "nll": 2.922788380199412,
+          "interval": [
+            2.8722110184755314,
+            2.9765446811480323
+          ]
+        },
+        "ts": {
+          "nll": 1.9271913815961685,
+          "interval": [
+            1.8831870488342375,
+            1.9711870961073608
+          ]
+        }
+      }
+    },
+    "B_refit_dense_sealed_test": {
+      "status": "completed",
+      "active_parameters": 2448640,
+      "symbolic": {
+        "standard": {
+          "n": 2048,
+          "successes": 1654,
+          "rate": 0.8076171875,
+          "interval": [
+            0.7899761378748931,
+            0.8241063949559773
+          ]
+        },
+        "lookup": {
+          "n": 2048,
+          "successes": 2047,
+          "rate": 0.99951171875,
+          "interval": [
+            0.9972392640467791,
+            0.9999138011690629
+          ]
+        },
+        "compose": {
+          "n": 512,
+          "successes": 131,
+          "rate": 0.255859375,
+          "interval": [
+            0.2199790080840174,
+            0.2953759605306715
+          ]
+        },
+        "pointer": {
+          "n": 512,
+          "successes": 511,
+          "rate": 0.998046875,
+          "interval": [
+            0.9890207217875779,
+            0.9996551422384565
+          ]
+        },
+        "hard10": {
+          "n": 512,
+          "successes": 141,
+          "rate": 0.275390625,
+          "interval": [
+            0.23847771208650909,
+            0.3156488590390047
+          ]
+        },
+        "hard14": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "long18": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "bind": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "shifted": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        }
+      },
+      "text": {
+        "edu": {
+          "nll": 2.906136637654827,
+          "interval": [
+            2.8562446108810877,
+            2.95890573673355
+          ]
+        },
+        "ts": {
+          "nll": 1.8932759470233758,
+          "interval": [
+            1.849230102546328,
+            1.9373288107396744
+          ]
+        }
+      }
+    },
+    "B_refit_recurrent_sealed_test": {
+      "status": "completed",
+      "active_parameters": 2055424,
+      "symbolic": {
+        "standard": {
+          "n": 2048,
+          "successes": 1657,
+          "rate": 0.80908203125,
+          "interval": [
+            0.7914877721193345,
+            0.8255189632488258
+          ]
+        },
+        "lookup": {
+          "n": 2048,
+          "successes": 2048,
+          "rate": 1.0,
+          "interval": [
+            0.9981277993949387,
+            1.0
+          ]
+        },
+        "compose": {
+          "n": 512,
+          "successes": 130,
+          "rate": 0.25390625,
+          "interval": [
+            0.21813441226903243,
+            0.29334339609457394
+          ]
+        },
+        "pointer": {
+          "n": 512,
+          "successes": 511,
+          "rate": 0.998046875,
+          "interval": [
+            0.9890207217875779,
+            0.9996551422384565
+          ]
+        },
+        "hard10": {
+          "n": 512,
+          "successes": 149,
+          "rate": 0.291015625,
+          "interval": [
+            0.25334281371732637,
+            0.33180103941684724
+          ]
+        },
+        "hard14": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "long18": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "bind": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "shifted": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        }
+      },
+      "text": {
+        "edu": {
+          "nll": 2.914250880505451,
+          "interval": [
+            2.8648854846664635,
+            2.96653552071879
+          ]
+        },
+        "ts": {
+          "nll": 1.9164497547628454,
+          "interval": [
+            1.8724104375520698,
+            1.9603083044315486
+          ]
+        }
+      }
+    },
+    "A_alpha0_sealed_test": {
+      "status": "completed",
+      "active_parameters": 2448640,
+      "symbolic": {
+        "standard": {
+          "n": 2048,
+          "successes": 1567,
+          "rate": 0.76513671875,
+          "interval": [
+            0.7462913359320973,
+            0.7829893233173673
+          ]
+        },
+        "lookup": {
+          "n": 2048,
+          "successes": 2045,
+          "rate": 0.99853515625,
+          "interval": [
+            0.9957018982022999,
+            0.9995016986553488
+          ]
+        },
+        "compose": {
+          "n": 512,
+          "successes": 114,
+          "rate": 0.22265625,
+          "interval": [
+            0.1887606484754098,
+            0.2606825958708767
+          ]
+        },
+        "pointer": {
+          "n": 512,
+          "successes": 512,
+          "rate": 1.0,
+          "interval": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "hard10": {
+          "n": 512,
+          "successes": 155,
+          "rate": 0.302734375,
+          "interval": [
+            0.2645283218401122,
+            0.3438784928005564
+          ]
+        },
+        "hard14": {
+          "n": 512,
+          "successes": 5,
+          "rate": 0.009765625,
+          "interval": [
+            0.004178301706740295,
+            0.02265447527155489
+          ]
+        },
+        "long18": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "bind": {
+          "n": 512,
+          "successes": 9,
+          "rate": 0.017578125,
+          "interval": [
+            0.009274933048931773,
+            0.033066484933693366
+          ]
+        },
+        "shifted": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        }
+      },
+      "text": {
+        "edu": {
+          "nll": 2.9116085528018636,
+          "interval": [
+            2.862538230158073,
+            2.9631028078373247
+          ]
+        },
+        "ts": {
+          "nll": 1.8932354753509846,
+          "interval": [
+            1.84907509600131,
+            1.9370244531659566
+          ]
+        }
+      }
+    },
+    "C_exploration_sealed_test": {
+      "status": "completed",
+      "active_parameters": 2063872,
+      "symbolic": {
+        "standard": {
+          "n": 2048,
+          "successes": 1657,
+          "rate": 0.80908203125,
+          "interval": [
+            0.7914877721193345,
+            0.8255189632488258
+          ]
+        },
+        "lookup": {
+          "n": 2048,
+          "successes": 2048,
+          "rate": 1.0,
+          "interval": [
+            0.9981277993949387,
+            1.0
+          ]
+        },
+        "compose": {
+          "n": 512,
+          "successes": 130,
+          "rate": 0.25390625,
+          "interval": [
+            0.21813441226903243,
+            0.29334339609457394
+          ]
+        },
+        "pointer": {
+          "n": 512,
+          "successes": 511,
+          "rate": 0.998046875,
+          "interval": [
+            0.9890207217875779,
+            0.9996551422384565
+          ]
+        },
+        "hard10": {
+          "n": 512,
+          "successes": 149,
+          "rate": 0.291015625,
+          "interval": [
+            0.25334281371732637,
+            0.33180103941684724
+          ]
+        },
+        "hard14": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "long18": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "bind": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        },
+        "shifted": {
+          "n": 512,
+          "successes": 0,
+          "rate": 0.0,
+          "interval": [
+            0.0,
+            0.007446975722882739
+          ]
+        }
+      },
+      "text": {
+        "edu": {
+          "nll": 2.914250880505451,
+          "interval": [
+            2.8648854846664635,
+            2.96653552071879
+          ]
+        },
+        "ts": {
+          "nll": 1.9164497547628454,
+          "interval": [
+            1.8724104375520698,
+            1.9603083044315486
+          ]
+        }
+      }
+    }
+  },
+  "matching_process_status": "Driver exited normally after completed_extended_pilot; no matching child remains.",
+  "completed_utc": "2026-10-06T14:01:48Z",
+  "training_seed_count": 1,
+  "sealed_endpoint_count": 9,
+  "skipped_stages": [
+    {
+      "stage": "D_always_open_phase1",
+      "reason": "Final-test reserve; no score-based stop"
+    },
+    {
+      "stage": "D_flat_lsl",
+      "reason": "No full-trajectory time allocation remains"
+    },
+    {
+      "stage": "B_no_teacher_control",
+      "reason": "Complete update budget will not fit; foundation exposure never silently reduced"
+    }
+  ],
+  "report": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/REPORT.md"
+}

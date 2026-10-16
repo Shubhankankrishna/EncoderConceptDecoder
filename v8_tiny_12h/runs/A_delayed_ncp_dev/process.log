@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/code/evaluate.py", line 94, in <module>
+    ap=argparse.ArgumentParser();ap.add_argument('--source',required=True);ap.add_argument('--out',required=True);ap.add_argument('--split',default='dev');ap.add_argument('--names',default='standard,lookup,compose,hard10');ap.add_argument('--n',type=int,default=512);ap.add_argument('--fast',action='store_true');a=ap.parse_args();torch.set_num_threads(4);s,ck=load_system(a.source);out=evaluate(s,a.split,a.names.split(','),a.n,a.fast);out['source']=a.source;out['implementation_sha256']=implementation_hash();atomic_json(a.out,out);print(json.dumps({k:v for k,v in out.items() if k not in ('symbolic','text')}))
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/code/runtime.py", line 17, in atomic_json
+    with open(tmp,'w') as f:json.dump(obj,f,indent=2,allow_nan=False);f.flush();os.fsync(f.fileno())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+                 ^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/opt/anaconda3/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/opt/anaconda3/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool_ is not JSON serializable
+{"status": "completed", "split": "dev", "active_parameters": 2448640, "metadata": {"gate_buffers": false, "flat": false, "depth": 4, "core": null, "adapter": null, "phases": 0, "rho": [], "forces": []}, "concept_interface": {"applicable": true, "forecast_mse": 0.5867031812667847, "persistence_mse": 1.2001858949661255, "vq_segment_sse": 5.836380958557129, "codes_used_per_segment": [30, 32, 32, 32, 32, 32, 32, 32], "token_nll": 1.5095975399017334, "ports_disabled_nll": 2.032583236694336, "port_ablation_delta": 0.5229856967926025, "scope": "32 fixed development rows, diagnostic only; no gate fitting"}, "competence_pass": true, "source": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/runs/A_delayed_ncp/checkpoint.pt", "implementation_sha256": "fcc93d876201367618a195d2d56feb6767800cb633ec7565ec161a74c3a42b58"}

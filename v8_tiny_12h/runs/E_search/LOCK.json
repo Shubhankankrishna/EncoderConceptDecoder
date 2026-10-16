@@ -1,0 +1,147 @@
+{
+  "budget_s": 4.0,
+  "request_budget_cap_s": 4.0,
+  "calibration_zero_plus_15_retry_s": [
+    11.090112500009127,
+    7.36975958297262,
+    12.020633625041228,
+    11.408900291949976,
+    12.037835208990145,
+    10.312456333020236,
+    11.886173958017025,
+    9.08980670798337
+  ],
+  "retry": {
+    "kind": "retry",
+    "temperature": 0.8,
+    "top_k": 32,
+    "successes": 3
+  },
+  "flat_retry": {
+    "kind": "flat_retry",
+    "temperature": 0.6,
+    "top_k": 32,
+    "successes": 2
+  },
+  "gradient": {
+    "lr": 0.01,
+    "kl": 0.0,
+    "successes": 2
+  },
+  "tuning": [
+    {
+      "kind": "retry",
+      "temperature": 0.6,
+      "top_k": 32,
+      "successes": 2
+    },
+    {
+      "kind": "retry",
+      "temperature": 0.6,
+      "top_k": 128,
+      "successes": 2
+    },
+    {
+      "kind": "retry",
+      "temperature": 0.8,
+      "top_k": 32,
+      "successes": 3
+    },
+    {
+      "kind": "retry",
+      "temperature": 0.8,
+      "top_k": 128,
+      "successes": 3
+    },
+    {
+      "kind": "retry",
+      "temperature": 1.0,
+      "top_k": 32,
+      "successes": 3
+    },
+    {
+      "kind": "retry",
+      "temperature": 1.0,
+      "top_k": 128,
+      "successes": 3
+    }
+  ],
+  "flat_tuning": [
+    {
+      "kind": "flat_retry",
+      "temperature": 0.6,
+      "top_k": 32,
+      "successes": 2
+    },
+    {
+      "kind": "flat_retry",
+      "temperature": 0.6,
+      "top_k": 128,
+      "successes": 2
+    },
+    {
+      "kind": "flat_retry",
+      "temperature": 0.8,
+      "top_k": 32,
+      "successes": 2
+    },
+    {
+      "kind": "flat_retry",
+      "temperature": 0.8,
+      "top_k": 128,
+      "successes": 2
+    },
+    {
+      "kind": "flat_retry",
+      "temperature": 1.0,
+      "top_k": 32,
+      "successes": 2
+    },
+    {
+      "kind": "flat_retry",
+      "temperature": 1.0,
+      "top_k": 128,
+      "successes": 2
+    }
+  ],
+  "gradient_tuning": [
+    {
+      "lr": 0.01,
+      "kl": 0.0,
+      "successes": 2
+    },
+    {
+      "lr": 0.01,
+      "kl": 0.05,
+      "successes": 2
+    },
+    {
+      "lr": 0.03,
+      "kl": 0.0,
+      "successes": 2
+    },
+    {
+      "lr": 0.03,
+      "kl": 0.05,
+      "successes": 2
+    },
+    {
+      "lr": 0.1,
+      "kl": 0.0,
+      "successes": 2
+    },
+    {
+      "lr": 0.1,
+      "kl": 0.05,
+      "successes": 2
+    }
+  ],
+  "tuning_problems_per_setting": 4,
+  "candidate_limit": 64,
+  "depth": 16,
+  "feedback": [
+    "graded"
+  ],
+  "training_seeds": 1,
+  "search_rng_repeats_are_not_training_seeds": true
+}

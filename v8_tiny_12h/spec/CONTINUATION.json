@@ -1,0 +1,49 @@
+{
+  "original_start_epoch": 1791255828.0,
+  "original_deadline_epoch": 1791299028.0,
+  "completed_checkpoint_sha256": "720bb818dab7039d81943e9c40f88686afe73204ed7d59d8b3ebdc0981292b9c",
+  "original_implementation_sha256": "7f2b9d1d81aa5b8df3035d1310d838606ae0eee82b237372855f950cac05a980",
+  "unchanged_training_files_sha256": {
+    "code/model.py": "f8330079fa14cde1191592600c7cf2acf5b081e405dd5dce3518833fbf5e35c4",
+    "code/train.py": "56ed6457ad305d37c8916d19ba71b88b9a581d0373f7e337d9f29f418907badf",
+    "code/data.py": "620179347c9b69bd41c9ee9fc81c757368120f0b75efd566479445209e19eaea",
+    "code/runtime.py": "1427ebbe53032fa618db886eeae5b1f9c3d8815ca100dd35a6053b39ca993fb6"
+  },
+  "authorized_utc": "2026-10-06T05:07:28.448122+00:00",
+  "change": "Eager fixed-size decoding replaces compiled decoding; numerical tolerance unchanged; preserve completed alpha-zero and original twelve-hour budget",
+  "prior_failure": "v8_tiny_12h/spec/recovery_2026-10-06/runs_failure.json",
+  "diagnostic_evidence": [
+    "tests/recovery_mps.json",
+    "tests/recovery_cpu.json"
+  ],
+  "completed_foundations": {
+    "A_alpha0": {
+      "checkpoint_sha256": "720bb818dab7039d81943e9c40f88686afe73204ed7d59d8b3ebdc0981292b9c",
+      "summary_sha256": "bd71946deb506d9d0164e190f34bf5b93514aa9e6e5632bb629de48399407fea",
+      "training_implementation_sha256": "7f2b9d1d81aa5b8df3035d1310d838606ae0eee82b237372855f950cac05a980",
+      "alpha": 0.0,
+      "flat": false
+    },
+    "A_delayed_ncp": {
+      "checkpoint_sha256": "d22a4ff4a00b7b3dc82b07aa3f96a1659b2153acaaa75ca0bb548654066ee0ce",
+      "summary_sha256": "60b0d6fa5963eb143c5c3a384dd54bebb08b264e55a33570ac4110a81615ceea",
+      "training_implementation_sha256": "7d08f429f63d355db4c2e167024744ab93d3e8ffb69845a0acbfdfc622f35492",
+      "alpha": 0.1,
+      "flat": false
+    }
+  },
+  "audit_suffix": "_recovery3",
+  "serialization_recovery": {
+    "authorized_utc": "2026-10-06T07:28:06.026367+00:00",
+    "archive": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/spec/recovery_json_2026-10-06",
+    "prior_error": "TypeError: Object of type bool_ is not JSON serializable",
+    "change": "Native Python boolean evaluation flags; reuse both completed foundations; original budget retained"
+  },
+  "reusable_development": {
+    "A_alpha0_dev": {
+      "summary_sha256": "ee41807a34368d77fa77c42ce8365861a62dd4e26cf38d94a0395df063b986b8",
+      "checkpoint_sha256": "720bb818dab7039d81943e9c40f88686afe73204ed7d59d8b3ebdc0981292b9c",
+      "evaluation_implementation_sha256": "7d08f429f63d355db4c2e167024744ab93d3e8ffb69845a0acbfdfc622f35492"
+    }
+  }
+}

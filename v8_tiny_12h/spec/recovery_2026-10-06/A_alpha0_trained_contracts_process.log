@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/code/revision_checks.py", line 54, in <module>
+    try:j=run(args.source);atomic_json(args.out,j);print(json.dumps({k:v for k,v in j.items() if k!='checks'}))
+          ^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/code/revision_checks.py", line 49, in run
+    check(f'{label}/{nodes}/{kind}/step{pos}/{nonzero}',torch.allclose(inc,full,atol=4e-4,rtol=1e-5),error=error,argmax_agreement=bool((inc.argmax(-1)==full.argmax(-1)).all()),minimum_reference_margin=margin)
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/code/revision_checks.py", line 13, in check
+    if not value:raise AssertionError(name+' '+str(details))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: actual_version/18/static/step221/False {'error': 0.00045490264892578125, 'argmax_agreement': True, 'minimum_reference_margin': 0.4228343963623047}

@@ -1,0 +1,110 @@
+{
+  "out": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/runs/D_lsl_phase2",
+  "stage": "CL",
+  "source": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/runs/D_lsl_phase1_positive/checkpoint.pt",
+  "flat": false,
+  "core": "dense",
+  "kind": "gated",
+  "mode": "bind",
+  "steps": 2000,
+  "batch": 64,
+  "context": 192,
+  "seed": 811,
+  "seconds": 2741.557693004608,
+  "alpha": 0.0,
+  "lr": 0.0003,
+  "beta": 0.25,
+  "constant_alpha": true,
+  "compiled": true,
+  "resume": false,
+  "no_distill": false,
+  "always_open": false,
+  "fixed": false,
+  "learning_check": false,
+  "development_curves": false,
+  "device": "mps",
+  "precision": "float32",
+  "implementation_sha256": "fcc93d876201367618a195d2d56feb6767800cb633ec7565ec161a74c3a42b58",
+  "data_sha256": "daa0e8dc997bb179fb7995c2f1243bb34ee0120a35c822668d440f2de47d41c4",
+  "active_parameters": 2096640,
+  "resident_parameters": 2966144,
+  "buffer_scalars": 41601,
+  "trainable_parameters": 16384,
+  "metadata": {
+    "gate_buffers": true,
+    "flat": false,
+    "depth": 4,
+    "core": "recurrent",
+    "adapter": "gated",
+    "phases": 2,
+    "rho": [
+      1.0,
+      1.0
+    ],
+    "forces": [
+      null,
+      true
+    ]
+  },
+  "created_utc": "2026-10-06T12:47:08Z",
+  "status": "completed",
+  "completed_steps": 2000,
+  "wall_s": 529.5162132079713,
+  "last": {
+    "step": 2000,
+    "planned_steps": 2000,
+    "loss": 0.5145619511604309,
+    "gradient_norm": 0.325069397687912,
+    "elapsed_s": 529.0512544169906,
+    "slots_per_s": 46452.96612533793,
+    "scored_targets_per_s": 967.7701276112068,
+    "memory_bytes": {
+      "allocated": 18808064,
+      "driver": 2468921344
+    },
+    "scored_targets": 512000,
+    "exposure": {
+      "bind": 128000
+    },
+    "lifetime_exposure": {
+      "bind": 128000
+    },
+    "unique_symbols": 128000,
+    "unique_documents": 0,
+    "source_targets": {
+      "edu": 0,
+      "ts": 0
+    },
+    "lr": 3.0000184542422522e-05,
+    "text": 0.0,
+    "symbolic": 0.5145619511604309,
+    "ncp": 0.0,
+    "vq": 0.0,
+    "distillation": 0.0,
+    "alpha": 0.0,
+    "bind_node_ce": 2.0582199096679688,
+    "bind_node_accuracy": 0.265625,
+    "bind_node_targets": 64.0,
+    "bind_format_ce": 9.365766345581505e-06,
+    "bind_format_accuracy": 1.0,
+    "bind_format_targets": 192.0
+  },
+  "input_slots": 24576000,
+  "nonpadding_tokens": 16896000,
+  "scored_targets_by_task": {
+    "bind": 512000
+  },
+  "symbolic_exposure": {
+    "bind": 128000
+  },
+  "lifetime_symbolic_exposure": {
+    "bind": 128000
+  },
+  "unique_symbols": 128000,
+  "unique_documents": 0,
+  "source_targets": {
+    "edu": 0,
+    "ts": 0
+  },
+  "frozen_weights_preserved": true
+}

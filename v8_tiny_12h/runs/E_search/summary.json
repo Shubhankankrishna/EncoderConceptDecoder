@@ -1,0 +1,329 @@
+{
+  "lock": {
+    "budget_s": 4.0,
+    "request_budget_cap_s": 4.0,
+    "calibration_zero_plus_15_retry_s": [
+      11.090112500009127,
+      7.36975958297262,
+      12.020633625041228,
+      11.408900291949976,
+      12.037835208990145,
+      10.312456333020236,
+      11.886173958017025,
+      9.08980670798337
+    ],
+    "retry": {
+      "kind": "retry",
+      "temperature": 0.8,
+      "top_k": 32,
+      "successes": 3
+    },
+    "flat_retry": {
+      "kind": "flat_retry",
+      "temperature": 0.6,
+      "top_k": 32,
+      "successes": 2
+    },
+    "gradient": {
+      "lr": 0.01,
+      "kl": 0.0,
+      "successes": 2
+    },
+    "tuning": [
+      {
+        "kind": "retry",
+        "temperature": 0.6,
+        "top_k": 32,
+        "successes": 2
+      },
+      {
+        "kind": "retry",
+        "temperature": 0.6,
+        "top_k": 128,
+        "successes": 2
+      },
+      {
+        "kind": "retry",
+        "temperature": 0.8,
+        "top_k": 32,
+        "successes": 3
+      },
+      {
+        "kind": "retry",
+        "temperature": 0.8,
+        "top_k": 128,
+        "successes": 3
+      },
+      {
+        "kind": "retry",
+        "temperature": 1.0,
+        "top_k": 32,
+        "successes": 3
+      },
+      {
+        "kind": "retry",
+        "temperature": 1.0,
+        "top_k": 128,
+        "successes": 3
+      }
+    ],
+    "flat_tuning": [
+      {
+        "kind": "flat_retry",
+        "temperature": 0.6,
+        "top_k": 32,
+        "successes": 2
+      },
+      {
+        "kind": "flat_retry",
+        "temperature": 0.6,
+        "top_k": 128,
+        "successes": 2
+      },
+      {
+        "kind": "flat_retry",
+        "temperature": 0.8,
+        "top_k": 32,
+        "successes": 2
+      },
+      {
+        "kind": "flat_retry",
+        "temperature": 0.8,
+        "top_k": 128,
+        "successes": 2
+      },
+      {
+        "kind": "flat_retry",
+        "temperature": 1.0,
+        "top_k": 32,
+        "successes": 2
+      },
+      {
+        "kind": "flat_retry",
+        "temperature": 1.0,
+        "top_k": 128,
+        "successes": 2
+      }
+    ],
+    "gradient_tuning": [
+      {
+        "lr": 0.01,
+        "kl": 0.0,
+        "successes": 2
+      },
+      {
+        "lr": 0.01,
+        "kl": 0.05,
+        "successes": 2
+      },
+      {
+        "lr": 0.03,
+        "kl": 0.0,
+        "successes": 2
+      },
+      {
+        "lr": 0.03,
+        "kl": 0.05,
+        "successes": 2
+      },
+      {
+        "lr": 0.1,
+        "kl": 0.0,
+        "successes": 2
+      },
+      {
+        "lr": 0.1,
+        "kl": 0.05,
+        "successes": 2
+      }
+    ],
+    "tuning_problems_per_setting": 4,
+    "candidate_limit": 64,
+    "depth": 16,
+    "feedback": [
+      "graded"
+    ],
+    "training_seeds": 1,
+    "search_rng_repeats_are_not_training_seeds": true
+  },
+  "status": "partial_time_budget",
+  "paired_test_problems": 58,
+  "comparisons": {
+    "gradcuit_kl": {
+      "n": 58,
+      "successes": 19,
+      "rate": 0.3275862068965517,
+      "interval": [
+        0.22083291084926074,
+        0.455759453215292
+      ],
+      "paired_vs_retry": {
+        "delta": -0.24137931034482762,
+        "interval": [
+          -0.43744092009791613,
+          0.004529487262916937
+        ],
+        "gains": 0,
+        "losses": 14,
+        "n": 58,
+        "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+      }
+    },
+    "combined": {
+      "n": 58,
+      "successes": 34,
+      "rate": 0.5862068965517241,
+      "interval": [
+        0.45798408170855665,
+        0.7037197362591668
+      ],
+      "paired_vs_retry": {
+        "delta": 0.01724137931034475,
+        "interval": [
+          -0.10539633091563484,
+          0.14099289054263
+        ],
+        "gains": 1,
+        "losses": 0,
+        "n": 58,
+        "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+      }
+    },
+    "ab_prior": {
+      "n": 58,
+      "successes": 19,
+      "rate": 0.3275862068965517,
+      "interval": [
+        0.22083291084926074,
+        0.455759453215292
+      ],
+      "paired_vs_retry": {
+        "delta": -0.24137931034482762,
+        "interval": [
+          -0.43744092009791613,
+          0.004529487262916937
+        ],
+        "gains": 0,
+        "losses": 14,
+        "n": 58,
+        "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+      }
+    },
+    "ab_hybrid_randomdir": {
+      "n": 58,
+      "successes": 19,
+      "rate": 0.3275862068965517,
+      "interval": [
+        0.22083291084926074,
+        0.455759453215292
+      ],
+      "paired_vs_retry": {
+        "delta": -0.24137931034482762,
+        "interval": [
+          -0.43744092009791613,
+          0.004529487262916937
+        ],
+        "gains": 0,
+        "losses": 14,
+        "n": 58,
+        "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+      }
+    },
+    "retry": {
+      "n": 58,
+      "successes": 33,
+      "rate": 0.5689655172413793,
+      "interval": [
+        0.44118104569962746,
+        0.6881820086745516
+      ],
+      "paired_vs_retry": null
+    },
+    "flat_retry": {
+      "n": 58,
+      "successes": 31,
+      "rate": 0.5344827586206896,
+      "interval": [
+        0.408001750439952,
+        0.6566797767471373
+      ],
+      "paired_vs_retry": {
+        "delta": -0.034482758620689724,
+        "interval": [
+          -0.22313344052632197,
+          0.16258056223921666
+        ],
+        "gains": 2,
+        "losses": 4,
+        "n": 58,
+        "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+      }
+    },
+    "ab_hybrid": {
+      "n": 58,
+      "successes": 19,
+      "rate": 0.3275862068965517,
+      "interval": [
+        0.22083291084926074,
+        0.455759453215292
+      ],
+      "paired_vs_retry": {
+        "delta": -0.24137931034482762,
+        "interval": [
+          -0.43744092009791613,
+          0.004529487262916937
+        ],
+        "gains": 0,
+        "losses": 14,
+        "n": 58,
+        "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+      }
+    },
+    "hybrid_random": {
+      "n": 58,
+      "successes": 19,
+      "rate": 0.3275862068965517,
+      "interval": [
+        0.22083291084926074,
+        0.455759453215292
+      ],
+      "paired_vs_retry": {
+        "delta": -0.24137931034482762,
+        "interval": [
+          -0.43744092009791613,
+          0.004529487262916937
+        ],
+        "gains": 0,
+        "losses": 14,
+        "n": 58,
+        "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+      }
+    },
+    "latent": {
+      "n": 58,
+      "successes": 19,
+      "rate": 0.3275862068965517,
+      "interval": [
+        0.22083291084926074,
+        0.455759453215292
+      ],
+      "paired_vs_retry": {
+        "delta": -0.24137931034482762,
+        "interval": [
+          -0.43744092009791613,
+          0.004529487262916937
+        ],
+        "gains": 0,
+        "losses": 14,
+        "n": 58,
+        "method": "Bonferroni exact binomial bounds for gain/loss probabilities; valid at zero discordance"
+      }
+    }
+  },
+  "wall_s": 1740.876769541006,
+  "limitations": [
+    "one training seed pilot",
+    "binary-only and 1x/2x/4x curves deferred unless separately budgeted",
+    "same-kernel nonadaptive allocation and equal-norm direction control included; no quality-adaptivity claim from binary-only success"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "implementation_sha256": "7d08f429f63d355db4c2e167024744ab93d3e8ffb69845a0acbfdfc622f35492",
+  "data_manifest_sha256": "daa0e8dc997bb179fb7995c2f1243bb34ee0120a35c822668d440f2de47d41c4",
+  "protocol_sha256": "bb612ab56c7160ad7d5fadc47c1833ba9af05af1336231b2b11c76a7d125c444",
+  "design_sha256": "7bdd08cbbfa012087e8fd33fdcd254958488e7609fe1c920bfa3c23af7f45729",
+  "training_seed": 811,
+  "foundation_updates_per_arm": 24000,
+  "batch": 64,
+  "context": 192,
+  "graph_examples_per_arm": 576000,
+  "policy": "User-authorized continuation; no early score-based stops; eager decoding and compiled-safe training",
+  "preflight": {
+    "contracts.json": {
+      "sha256": "861601f6caec47a6c22c892f983fb42da93064c72d416052a75761802d55f024",
+      "status": "passed"
+    },
+    "revision_contracts.json": {
+      "sha256": "f007ca6e9314f00531ea806cfc0342cbcfeaf980e9a153d0f4b5cd71126b0f61",
+      "status": "passed"
+    },
+    "stage_contracts.json": {
+      "sha256": "63537c28798f3c35b23c300e7780b9b0f83779a5c43d5bf815e349a9cd798b6e",
+      "status": "passed"
+    },
+    "throughput.json": {
+      "sha256": "71121e34d77c57b1cc1881f2293ca9f292cf40183e310d61644009b3b92b294f",
+      "status": "passed"
+    },
+    "recovery_resume_contracts.json": {
+      "sha256": "aeaa4b36e37ab22b2c81cf0fe7b19325fc9989f0e454e96c2f586b8c59186c53",
+      "status": "passed"
+    }
+  },
+  "continuation": {
+    "original_start_epoch": 1791255828.0,
+    "original_deadline_epoch": 1791299028.0,
+    "completed_checkpoint_sha256": "720bb818dab7039d81943e9c40f88686afe73204ed7d59d8b3ebdc0981292b9c",
+    "original_implementation_sha256": "7f2b9d1d81aa5b8df3035d1310d838606ae0eee82b237372855f950cac05a980",
+    "unchanged_training_files_sha256": {
+      "code/model.py": "f8330079fa14cde1191592600c7cf2acf5b081e405dd5dce3518833fbf5e35c4",
+      "code/train.py": "56ed6457ad305d37c8916d19ba71b88b9a581d0373f7e337d9f29f418907badf",
+      "code/data.py": "620179347c9b69bd41c9ee9fc81c757368120f0b75efd566479445209e19eaea",
+      "code/runtime.py": "1427ebbe53032fa618db886eeae5b1f9c3d8815ca100dd35a6053b39ca993fb6"
+    },
+    "authorized_utc": "2026-10-06T05:07:28.448122+00:00",
+    "change": "Eager fixed-size decoding replaces compiled decoding; numerical tolerance unchanged; preserve completed alpha-zero and original twelve-hour budget",
+    "prior_failure": "v8_tiny_12h/spec/recovery_2026-10-06/runs_failure.json",
+    "diagnostic_evidence": [
+      "tests/recovery_mps.json",
+      "tests/recovery_cpu.json"
+    ]
+  },
+  "old_lock_snapshot": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/spec/recovery_2026-10-06/spec_LOCK.json",
+  "locked_utc": "2026-10-06T05:14:17.865378+00:00"
+}

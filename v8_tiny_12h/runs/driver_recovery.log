@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/code/drive_12h.py", line 230, in <module>
+    try:q.main()
+        ^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/code/drive_12h.py", line 157, in main
+    self.audit(name+'_trained_contracts',source);e=self.eval(name+'_dev',source)
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/code/drive_12h.py", line 87, in eval
+    ok=self.run(name,'evaluate.py',['--source',source,'--out',out,'--n',n,'--names',names,'--split',split,'--fast'],estimated=60,required=False,reserve=reserve)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/code/drive_12h.py", line 66, in run
+    if rc!=0:raise RuntimeError(f'{name} exited {rc}; inspect {folder}/process.log')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: A_delayed_ncp_dev exited 1; inspect /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/runs/A_delayed_ncp_dev/process.log

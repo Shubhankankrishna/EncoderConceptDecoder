@@ -1,0 +1,94 @@
+{
+  "out": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/runs/D_lsl_phase1",
+  "stage": "CL",
+  "source": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v8_tiny_12h/runs/D_negative_support/checkpoint.pt",
+  "flat": false,
+  "core": "dense",
+  "kind": "gated",
+  "mode": "text",
+  "steps": 2000,
+  "batch": 64,
+  "context": 192,
+  "seed": 811,
+  "seconds": 3464.4375989437103,
+  "alpha": 0.0,
+  "lr": 0.0003,
+  "beta": 0.25,
+  "constant_alpha": true,
+  "compiled": true,
+  "resume": false,
+  "no_distill": false,
+  "always_open": false,
+  "fixed": false,
+  "learning_check": false,
+  "development_curves": false,
+  "device": "mps",
+  "precision": "float32",
+  "implementation_sha256": "fcc93d876201367618a195d2d56feb6767800cb633ec7565ec161a74c3a42b58",
+  "data_sha256": "daa0e8dc997bb179fb7995c2f1243bb34ee0120a35c822668d440f2de47d41c4",
+  "active_parameters": 2080256,
+  "resident_parameters": 2949760,
+  "buffer_scalars": 39521,
+  "trainable_parameters": 16384,
+  "metadata": {
+    "gate_buffers": true,
+    "flat": false,
+    "depth": 4,
+    "core": "recurrent",
+    "adapter": "gated",
+    "phases": 1,
+    "rho": [
+      1.0
+    ],
+    "forces": [
+      true
+    ]
+  },
+  "created_utc": "2026-10-06T12:35:04Z",
+  "status": "completed",
+  "completed_steps": 2000,
+  "wall_s": 498.00040087499656,
+  "last": {
+    "step": 2000,
+    "planned_steps": 2000,
+    "loss": 2.7779622077941895,
+    "gradient_norm": 0.07995294034481049,
+    "elapsed_s": 497.8296195830335,
+    "slots_per_s": 49366.287246194974,
+    "scored_targets_per_s": 49107.10218583622,
+    "memory_bytes": {
+      "allocated": 18852864,
+      "driver": 2460532736
+    },
+    "scored_targets": 24446970,
+    "exposure": {},
+    "lifetime_exposure": {},
+    "unique_symbols": 0,
+    "unique_documents": 561,
+    "source_targets": {
+      "edu": 24446970,
+      "ts": 0
+    },
+    "lr": 3.0000184542422522e-05,
+    "text": 2.7779622077941895,
+    "symbolic": 0.0,
+    "ncp": 0.0,
+    "vq": 0.0,
+    "distillation": 0.0,
+    "alpha": 0.0
+  },
+  "input_slots": 24576000,
+  "nonpadding_tokens": 24575391,
+  "scored_targets_by_task": {
+    "text": 24446970
+  },
+  "symbolic_exposure": {},
+  "lifetime_symbolic_exposure": {},
+  "unique_symbols": 0,
+  "unique_documents": 561,
+  "source_targets": {
+    "edu": 24446970,
+    "ts": 0
+  },
+  "frozen_weights_preserved": true
+}
