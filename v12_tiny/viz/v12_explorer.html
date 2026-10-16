@@ -1,0 +1,649 @@
+<title>V12 Architecture Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one working screen — 3D stage left, reading panel right; stacks to stage-over-panel under 900px. */
+:root{
+  --bg:#eef1f6; --panel:#ffffff; --fg:#141a26; --muted:#566074; --line:#d5dbe6; --accent:#2a55c9;
+  --g-E:#3b6fd6; --g-C:#d9822b; --g-D:#1f9d8f; --g-aux:#8a5cd6; --g-post:#c4417a; --g-mem:#3d9a4a; --g-io:#8a93a6; --g-route:#9aa3b5;
+  --s-measured:#2f9e57; --s-failed:#d0453a; --s-paper:#2a6fd6; --s-untested:#8b93a3; --s-notrun:#b08a1e; --s-design:#7c6bb8; --s-inherited:#4b9aa8;
+  --stage:#e4e9f1;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif; --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c111b; --panel:#131a27; --fg:#e7ebf3; --muted:#9aa4b8; --line:#253047; --accent:#86a8ff;
+  --g-E:#5b8cf0; --g-C:#f0a04b; --g-D:#3cc2b2; --g-aux:#a885f0; --g-post:#e46a9e; --g-mem:#5cbf69; --g-io:#7d879b; --g-route:#5c6880;
+  --s-measured:#4cc277; --s-failed:#f0675b; --s-paper:#6fa0ff; --s-untested:#8e97a8; --s-notrun:#d9b13e; --s-design:#a596e0; --s-inherited:#6cc0cf;
+  --stage:#0f1622; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c111b; --panel:#131a27; --fg:#e7ebf3; --muted:#9aa4b8; --line:#253047; --accent:#86a8ff;
+  --g-E:#5b8cf0; --g-C:#f0a04b; --g-D:#3cc2b2; --g-aux:#a885f0; --g-post:#e46a9e; --g-mem:#5cbf69; --g-io:#7d879b; --g-route:#5c6880;
+  --s-measured:#4cc277; --s-failed:#f0675b; --s-paper:#6fa0ff; --s-untested:#8e97a8; --s-notrun:#d9b13e; --s-design:#a596e0; --s-inherited:#6cc0cf;
+  --stage:#0f1622; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 var(--f-body);padding-inline:16px;padding-block:12px;display:flex;flex-direction:column;gap:10px;min-height:100%}
+header{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px}
+h1{font:800 22px/1.1 var(--f-display);letter-spacing:-.01em;margin:0}
+h1 small{font:500 13px var(--f-mono);color:var(--muted);letter-spacing:0;margin-left:6px}
+.tabs{display:flex;flex-wrap:wrap;gap:4px}
+.tabs button{font:600 13px var(--f-mono);border:1px solid var(--line);background:var(--panel);color:var(--fg);padding:5px 10px;border-radius:6px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--panel)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main{flex:1;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:12px;min-height:0}
+#stage{position:relative;background:var(--stage);border:1px solid var(--line);border-radius:10px;overflow:hidden;min-height:440px}
+#c{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+#labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.lbl{position:absolute;transform:translate(-50%,-100%);font:600 11.5px var(--f-mono);white-space:nowrap;padding:2px 6px;border-radius:4px;background:color-mix(in srgb,var(--panel) 82%,transparent);color:var(--fg);border-left:3px solid var(--k,var(--muted))}
+.lbl.dim{opacity:.35}.lbl.below{transform:translate(-50%,0)}.lbl.plane{border-left:none;background:transparent;color:var(--muted);font-weight:400;letter-spacing:.06em;text-transform:uppercase}.lbl.ghost{border-left-style:dashed;color:var(--muted)}
+.lbl .tag{font-size:10px;margin-left:5px;color:var(--panel);background:var(--accent);padding:0 4px;border-radius:3px}
+#hud{position:absolute;left:10px;right:10px;bottom:10px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font:12px var(--f-mono);color:var(--muted)}
+#hud label{display:flex;align-items:center;gap:6px}
+#hud input[type=range]{width:130px;accent-color:var(--accent)}
+#hud button,.navbtn{font:600 12px var(--f-mono);border:1px solid var(--line);background:var(--panel);color:var(--fg);padding:4px 9px;border-radius:6px;cursor:pointer}
+#backend{position:absolute;top:8px;left:10px;font:11px var(--f-mono);color:var(--muted)}
+#legend{display:flex;flex-wrap:wrap;gap:3px 12px;font:11px var(--f-mono);color:var(--muted)}
+.opts{display:flex;flex-wrap:wrap;gap:4px 14px;font:12.5px var(--f-mono)}.opts label{display:flex;align-items:center;gap:5px;cursor:pointer}
+.nums{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:3px}.nums b{font-weight:600}
+#legend span::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;background:var(--k);vertical-align:-1px}
+aside{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;display:flex;flex-direction:column;gap:14px;min-width:0}
+aside h2{font:700 17px/1.25 var(--f-display);margin:0;text-wrap:balance}
+aside h3{font:600 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+aside p{margin:0}
+.meta{font:12px var(--f-mono);color:var(--muted)}
+.chip{display:inline-block;font:600 11px var(--f-mono);padding:1px 7px;border-radius:999px;border:1px solid var(--k);color:var(--k)}
+.card{border-top:1px solid var(--line);padding-top:10px;display:flex;flex-direction:column;gap:6px}
+.steps{display:flex;align-items:center;gap:8px}
+.steps .count{font:12px var(--f-mono);color:var(--muted);flex:1;text-align:center}
+.parts{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.parts li{border-left:3px solid var(--k,var(--line));padding-left:8px}
+.parts b{font-weight:600}
+table.scale{width:100%;border-collapse:collapse;font:12px var(--f-mono);font-variant-numeric:tabular-nums}
+table.scale td{padding:3px 0;border-bottom:1px solid var(--line);vertical-align:top}
+table.scale td:last-child{text-align:right;padding-left:8px}
+.ill{color:var(--muted);font-size:11px}
+#scaleRange{width:100%;accent-color:var(--accent)}
+.anchors{display:flex;flex-wrap:wrap;gap:4px}
+.anchors button{font:11px var(--f-mono);border:1px solid var(--line);background:transparent;color:var(--fg);padding:2px 6px;border-radius:4px;cursor:pointer}
+.fact{font-size:12.5px;border-left:3px solid var(--accent);padding-left:8px}
+@media (max-width:900px){main{grid-template-columns:minmax(0,1fr)}#stage{min-height:56vh}aside{overflow:visible}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+
+<header>
+  <h1>V12 Architecture Explorer <small>Encoder · Concept · Decoder, V9 → V12</small></h1>
+  <nav class="tabs" id="tabs" aria-label="Version"></nav>
+</header>
+<main>
+  <section id="stage" aria-label="3D architecture view">
+    <canvas id="c"></canvas>
+    <div id="labels"></div>
+    <div id="backend">Starting renderer…</div>
+    <div id="hud">
+      <label for="explode">Explode <input id="explode" type="range" min="0" max="1" step="0.01" value="0.18"></label>
+      <button id="explodeBtn" type="button">Explode</button>
+      <button id="resetCam" type="button">Reset view</button>
+      <button id="tour" type="button">Auto tour</button>
+    </div>
+  </section>
+  <aside id="panel" aria-live="polite">
+    <div class="opts">
+      <label for="diff"><input id="diff" type="checkbox"> Changes vs previous version</label>
+      <label for="showTrain"><input id="showTrain" type="checkbox" checked> Training-only parts</label>
+      <label for="trains"><input id="trains" type="checkbox"> What trains what</label>
+    </div>
+    <div id="legend"></div>
+    <div id="vcard"></div>
+    <div id="stepcard" class="card"></div>
+    <div id="trainsCard" class="card" hidden></div>
+    <div id="sel" class="card"></div>
+    <div id="scalecard" class="card"></div>
+  </aside>
+</main>
+
+<script type="module">
+import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.170.0/three.webgpu.min.js';
+import { STATUS, COMPONENTS, PARTS, PARTS_VERSIONS, VERSIONS, STEPS, ANCHORS, V12_NUMBERS, PRINCIPLES, TRAINS, STEPS_BY_VERSION } from './arch_spec.js';
+const SS = () => STEPS_BY_VERSION[state.v] || null;
+const partsFor = id => (PARTS_VERSIONS[id] || []).includes(state.v) ? PARTS[id] : null;
+
+const $ = id => document.getElementById(id);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc = s => String(s ?? '').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+
+// ---------- scale schedule (V12 schedule, illustrative except vendor facts) ----------
+const LOGN = [6.033, 8, 9, 9.949, 11.872, 12.447, 13];
+const SCHED = {
+  d:      [128, 768, 2048, 4096, 6144, 7168, 8192],
+  L:      [6, 12, 24, 40, 78, 92, 110],
+  experts:[1, 1, 1, 1, 256, 896, 2048],
+  active: [1, 1, 1, 1, 9, 16, 24],
+  kbar:   [4, 4, 4, 6, 8, 8, 8],
+  cbS:    [4, 8, 16, 32, 32, 32, 64],
+  cbN:    [32, 64, 128, 128, 128, 128, 256],
+};
+function interp(arr, lg, round = true) {
+  if (lg <= LOGN[0]) return arr[0];
+  for (let i = 0; i < LOGN.length - 1; i++) if (lg <= LOGN[i + 1]) {
+    const t = (lg - LOGN[i]) / (LOGN[i + 1] - LOGN[i]);
+    const v = Math.exp(Math.log(arr[i]) * (1 - t) + Math.log(arr[i + 1]) * t);
+    return round ? Math.round(v) : v;
+  }
+  return arr[arr.length - 1];
+}
+function schedule(lg) {
+  const N = 10 ** lg;
+  const d = Math.round(interp(SCHED.d, lg) / 64) * 64 || 128;
+  const L = Math.max(6, Math.round(interp(SCHED.L, lg)));
+  const LE = Math.max(2, Math.round(L * 0.4)), LC = Math.max(2, Math.round(L * 0.2)), LD = Math.max(2, L - LE - LC);
+  const E = lg < 10.5 ? 1 : Math.round(interp(SCHED.experts, lg));
+  const k = E > 1 ? Math.round(interp(SCHED.active, lg)) : 1;
+  const kbar = interp(SCHED.kbar, lg, false);
+  const S = Math.round(interp(SCHED.cbS, lg)), Nw = Math.round(interp(SCHED.cbN, lg) / 32) * 32 || 32;
+  const r = 16, nz = 8;
+  const mcParams = 33393 + 1088 * d;                // exact fit to meta.MetaController (n_z 8, rank 16): 172,657 at d = 128
+  const perRow = 2 * d * r * 2 * 2e6;               // A_t, B_t per token, bf16, 2M-token batch
+  const anchor = ANCHORS.reduce((a, b) => Math.abs(Math.log10(b.n) - lg) < Math.abs(Math.log10(a.n) - lg) ? b : a);
+  return { N, d, L, LE, LC, LD, E, k, kbar, S, Nw, nz, mcParams, perRow, cShare: (LC / L) / kbar, anchor: Math.abs(Math.log10(anchor.n) - lg) < 0.06 ? anchor : null };
+}
+const fmtN = n => n >= 1e12 ? (n / 1e12).toFixed(n >= 1e13 ? 0 : 1) + 'T' : n >= 1e9 ? (n / 1e9).toFixed(1) + 'B' : n >= 1e6 ? (n / 1e6).toFixed(n < 1e7 ? 2 : 0) + 'M' : n.toLocaleString();
+const fmtB = b => b >= 1e12 ? (b / 1e12).toFixed(1) + ' TB' : b >= 1e9 ? (b / 1e9).toFixed(1) + ' GB' : (b / 1e6).toFixed(0) + ' MB';
+
+// ---------- state ----------
+const state = { v: 'v12', step: -1, explode: 0.18, diff: false, train: true, sel: null, lg: Math.log10(1.08e6) };
+try { const s = JSON.parse(localStorage.getItem('v12x') || '{}'); if (s.v && VERSIONS.some(x => x.id === s.v)) state.v = s.v; } catch (e) {}
+const save = () => { try { localStorage.setItem('v12x', JSON.stringify({ v: state.v })); } catch (e) {} };
+
+// ---------- renderer ----------
+const canvas = $('c');
+let renderer, scene, cam;
+try {
+  renderer = new THREE.WebGPURenderer({ canvas, antialias: true, alpha: false });
+  await renderer.init();
+  $('backend').textContent = (renderer.backend?.isWebGPUBackend ? 'WebGPU' : 'WebGL2 fallback') + ' · three r' + THREE.REVISION;
+} catch (e) {
+  $('backend').textContent = 'The 3D view could not start in this browser (' + e.message + '). The panel still works.';
+}
+scene = new THREE.Scene();
+cam = new THREE.PerspectiveCamera(40, 1, 0.1, 400);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x445066, 1.6));
+const sun = new THREE.DirectionalLight(0xffffff, 1.6); sun.position.set(6, 14, 9); scene.add(sun);
+const world = new THREE.Group(); scene.add(world);
+
+function applyTheme() {
+  if (!renderer) return;
+  renderer.setClearColor(new THREE.Color(css('--stage')), 1);
+  requestRebuild();
+}
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+new MutationObserver(applyTheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+// ---------- geometry from spec ----------
+const LANE = { trunk: [0, 0], concept: [3.6, 0], train: [3.6, -3.0], side: [-3.9, -1.6], post: [-4.2, 2.6] };
+const YS = 0.92;
+let items = [];        // {id, group, meshes[], base:Vector3, lane, comp, ghost, label el}
+let routes = [];
+let planes = [];
+let zeroMark = null;
+
+function versionIndex(id) { return VERSIONS.findIndex(v => v.id === id); }
+function compOf(v, id) { return { ...COMPONENTS[id], ...(v.has[id] || {}), id }; }
+
+function scaleGeom(c) {
+  // V12 only: blocks and widths follow the scale schedule
+  if (state.v !== 'v12') return { blocks: c.blocks || 1, wmul: 1, xBlocks: null };
+  const s = schedule(state.lg), wmul = 0.8 + 0.2 * Math.log2(s.d / 128) / 6;
+  const n = c.id === 'enc' ? s.LE : c.id === 'core' ? s.LC : c.id === 'dec' ? s.LD : (c.blocks || 1);
+  return { blocks: Math.min(n, 8), wmul: ['enc', 'core', 'dec', 'emb', 'head', 'tokens', 'pool'].includes(c.id) ? wmul : 1, xBlocks: n > 8 ? n : null, s };
+}
+
+function makeBox(w, h, d, color, opts = {}) {
+  const geo = new THREE.BoxGeometry(w, h, d);
+  const mat = new THREE.MeshStandardMaterial({ color, roughness: 0.55, metalness: 0.05, transparent: !!opts.transparent, opacity: opts.opacity ?? 1 });
+  const m = new THREE.Mesh(geo, mat);
+  const edges = new THREE.LineSegments(new THREE.EdgesGeometry(geo), new THREE.LineBasicMaterial({ color: opts.edge || color, transparent: true, opacity: opts.edgeOpacity ?? 0.9 }));
+  m.add(edges); m.userData.edges = edges;
+  return m;
+}
+
+function disposeTree(o) {
+  o.traverse(n => { n.geometry?.dispose?.(); const m = n.material; if (m) (Array.isArray(m) ? m : [m]).forEach(x => x.dispose?.()); });
+}
+let pending = false;
+function requestRebuild() { if (pending) return; pending = true; requestAnimationFrame(() => { pending = false; rebuild(); }); }
+function rebuild() {
+  closeSub(); disposeTree(world); world.clear(); items = []; routes = [];
+  $('labels').innerHTML = '';
+  const v = VERSIONS[versionIndex(state.v)];
+  const prev = VERSIONS[versionIndex(state.v) - 1];
+  const ids = Object.keys(v.has);
+  const ghostIds = state.diff && prev ? Object.keys(prev.has).filter(id => !(id in v.has)) : [];
+  const newIds = state.diff && prev ? ids.filter(id => !(id in prev.has)) : [];
+  const sig = (ver, id) => { const c = compOf(ver, id); return (c.status || '') + '|' + (c.text || ''); };
+  const changed = state.diff && prev ? ids.filter(id => id in prev.has && sig(prev, id) !== sig(v, id)) : [];
+  const step = SS() && state.step >= 0 ? SS()[state.step] : null;
+
+  const build = (id, ghost) => {
+    const c = ghost ? compOf(prev, id) : compOf(v, id);
+    const train = c.lane === 'train';
+    if (train && !state.train) return;
+    const [lx, lz] = LANE[c.lane];
+    const g = new THREE.Group();
+    const col = new THREE.Color(css('--g-' + c.group) || '#888');
+    const st = c.status;
+    const edgeCol = new THREE.Color(st ? css('--s-' + st) : css('--line'));
+    const sg = scaleGeom(c);
+    const w = (c.w || 2) * sg.wmul, h = c.h || 0.5, depth = c.lane === 'trunk' ? 2.2 : 1.5;
+    const nb = sg.blocks;
+    const meshes = [];
+    const dim = step && step.show && !step.show.includes(id);
+    const opacity = ghost ? 0.18 : dim ? 0.12 : train ? 0.6 : 1;
+    for (let b = 0; b < nb; b++) {
+      const m = makeBox(w, h / nb * 0.86, depth, col, { transparent: ghost || dim || train, opacity, edge: edgeCol, edgeOpacity: ghost ? 0.5 : dim ? 0.2 : 1 });
+      m.userData.slab = b; m.userData.nb = nb; m.userData.h = h; m.userData.id = id;
+      if (ghost) { m.material.wireframe = true; }
+      g.add(m); meshes.push(m);
+    }
+    // the control point: where the metacontroller writes e ← e + U e (V12: between C block 1 and C block 2)
+    let ctrlPlate = null;
+    if (!ghost && state.v === 'v12' && id === 'core') {
+      ctrlPlate = makeBox(w * 1.12, 0.05, depth * 1.12, new THREE.Color(css('--g-post')), { transparent: true, opacity: dim ? 0.15 : 0.95, edge: new THREE.Color(css('--g-post')) });
+      ctrlPlate.userData.id = id; g.add(ctrlPlate);
+      const pl = document.createElement('div'); pl.className = 'lbl' + (dim ? ' dim' : ''); pl.style.setProperty('--k', 'var(--g-post)');
+      pl.textContent = 'control point: e ← e + U e'; $('labels').appendChild(pl); ctrlPlate.userData.el = pl;
+    }
+    // experts behind the trunk FFNs at scale
+    if (!ghost && state.v === 'v12' && sg.s && sg.s.E > 1 && ['enc', 'core', 'dec'].includes(id)) {
+      const n = Math.min(sg.s.E, 24), geo = new THREE.BoxGeometry(w / n * 0.8, h * 0.8, 0.25);
+      const inst = new THREE.InstancedMesh(geo, new THREE.MeshStandardMaterial({ color: col, transparent: true, opacity: 0.45 }), n);
+      const mtx = new THREE.Matrix4();
+      for (let i = 0; i < n; i++) { mtx.makeTranslation(-w / 2 + (i + 0.5) * w / n, 0, -depth / 2 - 0.35); inst.setMatrixAt(i, mtx); }
+      g.add(inst); g.userData.experts = inst;
+    }
+    const base = new THREE.Vector3(lx + (c.x || 0), (c.level || 0) * YS, lz);
+    g.position.copy(base);
+    world.add(g);
+    const el = document.createElement('div');
+    el.className = 'lbl' + (ghost ? ' ghost' : '') + (dim ? ' dim' : '');
+    el.style.setProperty('--k', ghost ? 'var(--s-failed)' : st ? `var(--s-${st})` : `var(--g-${c.group})`);
+    let txt = (ghost ? 'removed: ' : '') + c.label + (sg.xBlocks ? ` ×${sg.xBlocks}` : '');
+    if (!ghost && sg.s && sg.s.E > 1 && ['enc', 'core', 'dec'].includes(id)) txt += ` · ${sg.s.E} experts`;
+    el.innerHTML = esc(txt) + (newIds.includes(id) ? '<span class="tag">new</span>' : changed.includes(id) ? '<span class="tag">changed</span>' : '');
+    $('labels').appendChild(el);
+    items.push({ id, c, g, meshes, base, el, ghost, h, col, ctrlPlate });
+  };
+  ids.forEach(id => build(id, false));
+  ghostIds.forEach(id => build(id, true));
+  planes = [['Deployed at inference', 0], ['Training-only losses', -6.2], ['Post-training on the frozen base', 5.6]].map(([t, z]) => {
+    const o = new THREE.Object3D(); o.position.set(0, -0.6, z); world.add(o);
+    const el = document.createElement('div'); el.className = 'lbl plane'; el.textContent = t; $('labels').appendChild(el);
+    return { o, el };
+  });
+  buildRoutes(v);
+  if (state.trains && state.v === 'v12' && find('ncp_head') && find('dec')) {
+    const o = new THREE.Object3D(); world.add(o);
+    const el = document.createElement('div'); el.className = 'lbl'; el.style.setProperty('--k', 'var(--s-failed)');
+    el.textContent = 'NCP gradient into D = 0 (verified)'; $('labels').appendChild(el);
+    zeroMark = { o, el };
+  } else zeroMark = null;
+  if (state.trains && state.v === 'v12') items.forEach(i => { if (['enc', 'core', 'dec', 'pool', 'emb'].includes(i.id) && state.step < 0) i.el.title = 'frozen during metacontroller training'; });
+  layout();
+  renderPanel();
+  if (!rebuild.done) { rebuild.done = true; frameAll(); orbit.r = goal.r; orbit.target.copy(goal.target); }
+}
+
+function find(id) { return items.find(i => i.id === id && !i.ghost); }
+function buildRoutes(v) {
+  const has = id => find(id);
+  const pairs = [];
+  const chain = ['tokens', 'emb', 'enc', 'enc_twostream', 'enc3', 'dec', 'head'].filter(has);
+  for (let i = 0; i < chain.length - 1; i++) pairs.push([chain[i], chain[i + 1], 'main']);
+  const cchain = ['pool', 'codes_selector', 'core', 'visit2', 'forecast_to_dec', 'port_a', 'reader'].filter(has);
+  const encTop = ['enc3', 'enc_twostream', 'enc'].find(has);
+  if (encTop && cchain.length) pairs.push([encTop, cchain[0], 'main']);
+  for (let i = 0; i < cchain.length - 1; i++) pairs.push([cchain[i], cchain[i + 1], 'main']);
+  if (cchain.length && has('dec')) pairs.push([cchain[cchain.length - 1], 'dec', 'xattn']);
+  [['core', 'ncp_head', 'train'], ['core', 'bridge', 'train'], ['forecast_to_dec', 'probe', 'train'], ['dec', 'nextlat', 'train'],
+   ['metacontroller', 'core', 'post'], ['policy', 'metacontroller', 'post'], ['mcts', 'core', 'post'], ['codes_selector', 'mcts', 'post'],
+   ['rbf', 'core', 'mem'], ['rbf', 'lora_gate', 'mem'], ['lora_gate', 'dec', 'mem'], ['engram', 'enc', 'mem'], ['lsl', 'enc', 'mem']]
+    .forEach(p => { if (has(p[0]) && has(p[1])) pairs.push(p); });
+  const colors = state.trains && state.v === 'v12'
+    ? { main: css('--g-D'), xattn: css('--g-D'), train: css('--g-C'), post: css('--g-post'), mem: css('--g-mem') }
+    : { main: css('--g-route'), xattn: css('--g-D'), train: css('--g-aux'), post: css('--g-post'), mem: css('--g-mem') };
+  const byTarget = state.trains && state.v === 'v12' ? { nextlat: '--g-aux', ncp_head: '--g-C', bridge: '--g-C', probe: '--g-C' } : {};
+  for (const [a, b, kind] of pairs) {
+    const mat = new THREE.LineBasicMaterial({ color: new THREE.Color(byTarget[b] ? css(byTarget[b]) : colors[kind]), transparent: true, opacity: 0.9 });
+    const line = new THREE.LineSegments(new THREE.BufferGeometry(), mat);
+    world.add(line);
+    routes.push({ a: find(a), b: find(b), kind, line, bObj: (b === 'core' && kind === 'post') ? find('core')?.ctrlPlate : null });
+  }
+}
+
+// ---------- layout (explode) ----------
+const sub = { id: null, t: 0, target: 0, group: null };
+const smooth = x => { x = Math.min(1, Math.max(0, x)); return x * x * (3 - 2 * x); };
+const ZPUSH = { train: -3.2, post: 3.0 };            // z = when a part exists: deployed / training-only / post-training
+function layout() {
+  const maxL = Math.max(1, ...items.map(i => i.c.level || 0));
+  for (const it of items) {
+    const e = smooth((state.explode - 0.3 * (it.c.level || 0) / maxL) / 0.7);   // unfold bottom-up
+    const p = it.base.clone();
+    p.y *= 1 + 0.55 * e;
+    p.x *= 1 + 0.45 * e;
+    p.z = it.base.z + (ZPUSH[it.c.lane] || 0) * e;
+    it.g.position.copy(p); it.e = e;
+    const nb = it.meshes.length, hh = it.c.h || 0.5;
+    it.meshes.forEach((m, b) => { m.position.y = (b - (nb - 1) / 2) * (hh / nb) * (1 + 1.6 * it.e); });
+    if (it.ctrlPlate) { const k = Math.floor(nb / 2); it.ctrlPlate.position.y = nb > 1 ? (it.meshes[k - 1].position.y + it.meshes[k].position.y) / 2 : 0; it.g.updateMatrixWorld(true); }
+    if (it.g.userData.experts) it.g.userData.experts.position.z = -0.4 * it.e;
+  }
+  for (const r of routes) {
+    if (!r.a || !r.b) continue;
+    const a = r.a.g.position.clone(), b = r.bObj ? r.bObj.getWorldPosition(new THREE.Vector3()) : r.b.g.position.clone();
+    const pts = [];
+    const dashed = r.kind === 'train';
+    const segs = dashed ? 14 : 1;
+    for (let s = 0; s < segs; s++) {
+      const t0 = s / segs, t1 = dashed ? (s + 0.55) / segs : 1;
+      pts.push(a.clone().lerp(b, t0), a.clone().lerp(b, t1));
+    }
+    if (r.kind === 'xattn') { // fan from released u into the decoder width
+      pts.length = 0;
+      const w = (r.b.c.w || 3.8) * 0.4;
+      for (const dx of [-w, 0, w]) pts.push(a.clone(), b.clone().add(new THREE.Vector3(dx, 0, 0)));
+    }
+    r.line.geometry.dispose();
+    r.line.geometry = new THREE.BufferGeometry().setFromPoints(pts);
+  }
+  if (sub.group) layoutSub();
+  if (zeroMark) { const a = find('ncp_head').g.position, b = find('dec').g.position; zeroMark.o.position.copy(a).lerp(b, 0.5); }
+}
+
+// ---------- sub-explode: clicked component fans into labelled plates ----------
+function openSub(it) {
+  closeSub();
+  const parts = partsFor(it.id); if (!parts) return;
+  const g = new THREE.Group(); const col = it.col;
+  parts.forEach((p, i) => {
+    const m = makeBox(1.7, 0.16, 1.1, col, { transparent: true, opacity: 0.85, edge: new THREE.Color(css('--accent')) });
+    m.userData.part = i; g.add(m);
+    const el = document.createElement('div'); el.className = 'lbl'; el.style.setProperty('--k', 'var(--accent)'); el.textContent = p.label;
+    $('labels').appendChild(el); m.userData.el = el;
+  });
+  world.add(g);
+  sub.id = it.id; sub.group = g; sub.it = it; sub.t = reduce ? 1 : 0; sub.target = 1;
+  layoutSub();
+}
+function closeSub() {
+  if (!sub.group) return;
+  sub.group.children.forEach(m => m.userData.el?.remove());
+  world.remove(sub.group); sub.group = null; sub.id = null;
+}
+function layoutSub() {
+  const it = sub.it, n = sub.group.children.length, t = easeOut(sub.t);
+  const dir = it.g.position.x >= 0 ? 1 : -1;
+  const o = it.g.position.clone().add(new THREE.Vector3(dir * (1.6 + 1.4 * t), 0, 1.6 * t));
+  sub.group.children.forEach((m, i) => {
+    m.position.copy(o).add(new THREE.Vector3(0, (i - (n - 1) / 2) * 0.55 * t, 0));
+    m.scale.setScalar(0.3 + 0.7 * t);
+  });
+}
+const easeOut = x => 1 - (1 - x) ** 3;
+
+// ---------- camera: orbit with tweened targets ----------
+const orbit = { theta: 0.62, phi: 1.0, r: 30, target: new THREE.Vector3(0, 5, 0) };
+const goal = { theta: 0.62, phi: 1.0, r: 30, target: new THREE.Vector3(0, 5, 0) };
+function frameAll() {
+  const box = new THREE.Box3(); items.forEach(i => box.expandByObject(i.g));
+  if (box.isEmpty()) return;
+  box.max.y += 0.8;
+  const c = box.getCenter(new THREE.Vector3()), s = box.getSize(new THREE.Vector3());
+  goal.target.copy(c); goal.r = Math.max(16, Math.max(s.y, s.x * 0.9) * 2.1); goal.theta = 0.62; goal.phi = 1.0;
+}
+function frameIds(ids) {
+  const box = new THREE.Box3(); items.filter(i => ids.includes(i.id) && !i.ghost).forEach(i => box.expandByObject(i.g));
+  if (box.isEmpty()) return frameAll();
+  goal.target.copy(box.getCenter(new THREE.Vector3()));
+  goal.r = Math.max(11, box.getSize(new THREE.Vector3()).length() * 1.7);
+}
+let drag = null; const pointers = new Map();
+canvas.addEventListener('pointerdown', e => { canvas.setPointerCapture(e.pointerId); pointers.set(e.pointerId, [e.clientX, e.clientY]); drag = { x: e.clientX, y: e.clientY, moved: 0 }; canvas.style.cursor = 'grabbing'; });
+canvas.addEventListener('pointermove', e => {
+  if (!pointers.has(e.pointerId)) { hover(e); return; }
+  const prevP = pointers.get(e.pointerId); pointers.set(e.pointerId, [e.clientX, e.clientY]);
+  if (pointers.size === 2) {
+    const [p1, p2] = [...pointers.values()];
+    const d = Math.hypot(p1[0] - p2[0], p1[1] - p2[1]);
+    if (drag.pinch) goal.r = Math.min(160, Math.max(6, goal.r * drag.pinch / d));
+    drag.pinch = d; drag.moved += 10; return;
+  }
+  const dx = e.clientX - prevP[0], dy = e.clientY - prevP[1];
+  drag.moved += Math.abs(dx) + Math.abs(dy);
+  goal.theta -= dx * 0.006; goal.phi = Math.min(2.9, Math.max(0.25, goal.phi - dy * 0.006));
+});
+const up = e => {
+  pointers.delete(e.pointerId); canvas.style.cursor = 'grab';
+  if (drag && drag.moved < 6 && pointers.size === 0) click(e);
+  if (pointers.size === 0) drag = null;
+};
+canvas.addEventListener('pointerup', up); canvas.addEventListener('pointercancel', up);
+canvas.addEventListener('wheel', e => { e.preventDefault(); goal.r = Math.min(160, Math.max(6, goal.r * (1 + Math.sign(e.deltaY) * 0.08))); }, { passive: false });
+
+// ---------- picking ----------
+const ray = new THREE.Raycaster(); const ndc = new THREE.Vector2();
+function pick(e) {
+  const r = canvas.getBoundingClientRect();
+  ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+  ray.setFromCamera(ndc, cam);
+  const meshes = items.filter(i => !i.ghost).flatMap(i => i.meshes);
+  const hit = ray.intersectObjects(meshes, false)[0];
+  return hit ? items.find(i => i.meshes.includes(hit.object)) : null;
+}
+let hovered = null;
+function hover(e) {
+  const it = pick(e);
+  const focus = SS() && state.step >= 0 ? SS()[state.step].focus : [];
+  if (hovered && hovered !== it) hovered.meshes.forEach(m => focus.includes(hovered.id) ? m.material.emissive?.set(css('--accent')).multiplyScalar(0.35) : m.material.emissive?.setHex(0x000000));
+  hovered = it;
+  if (it) it.meshes.forEach(m => m.material.emissive?.set(css('--accent')).multiplyScalar(0.25));
+  canvas.style.cursor = it ? 'pointer' : 'grab';
+}
+function click(e) {
+  const it = pick(e);
+  if (!it) { state.sel = null; closeSub(); renderPanel(); return; }
+  state.sel = it.id; openSub(it); renderPanel();
+}
+
+// ---------- panel ----------
+const chip = s => s ? `<span class="chip" style="--k:var(--s-${s})" title="${esc(STATUS[s].hint)}">${esc(STATUS[s].label)}</span>` : '';
+function renderPanel() {
+  const vi = versionIndex(state.v), v = VERSIONS[vi];
+  $('vcard').innerHTML = `<h3>${esc(v.name)} · ${esc(v.date)}</h3><h2>${esc(v.title)}</h2>
+    <p class="meta">Design source: ${esc(v.designSource)}</p>`;
+  if (state.v === 'v12') {
+    const s = state.step;
+    const st = s >= 0 ? STEPS[s] : null;
+    $('stepcard').innerHTML = `<h3>First principles, step by step</h3>
+      <div class="steps"><button class="navbtn" id="prevS" type="button" ${s < 0 ? 'disabled' : ''}>Back</button>
+      <span class="count">${s < 0 ? 'Overview' : `Step ${s + 1} of ${STEPS.length}`}</span>
+      <button class="navbtn" id="nextS" type="button" ${s >= STEPS.length - 1 ? 'disabled' : ''}>${s < 0 ? 'Start' : 'Next'}</button></div>
+      ${st ? `<h2>${esc(st.title)}</h2><p>${esc(st.text)}</p><p>${chip(st.status)}</p>`
+           : `<p>${esc(v.idea)}</p><h3 style="margin-top:6px">Measured at matched step 8k</h3><ul class="nums">
+              <li><b>Concept usage.</b> ${esc(V12_NUMBERS.usage8k)}</li>
+              <li><b>Information.</b> ${esc(V12_NUMBERS.info8k)}</li>
+              <li><b>Cost of NCP.</b> ${esc(V12_NUMBERS.cost8k)}</li>
+              <li><b>Base competence.</b> ${V12_NUMBERS.competence} of episodes complete a pretraining task (paper ≈ 0.8)</li>
+              <li><b>Metacontroller.</b> ${esc(V12_NUMBERS.meta)}</li>
+              <li><b>Internal RL.</b> ${esc(V12_NUMBERS.rl)}</li></ul>`}`;
+    $('prevS').onclick = () => setStep(s - 1); $('nextS').onclick = () => setStep(s + 1);
+  } else {
+    const L = SS(), s = state.step, st = L && s >= 0 ? L[s] : null;
+    const chain = L ? `<h3>Step by step</h3><div class="steps"><button class="navbtn" id="prevS" type="button" ${s < 0 ? 'disabled' : ''}>Back</button>
+      <span class="count">${s < 0 ? 'Overview' : `Step ${s + 1} of ${L.length}`}</span>
+      <button class="navbtn" id="nextS" type="button" ${s >= L.length - 1 ? 'disabled' : ''}>${s < 0 ? 'Start' : 'Next'}</button></div>
+      ${st ? `<h2>${esc(st.title)}</h2><p>${esc(st.text)}</p><p>${chip(st.status)}</p>` : ''}` : '';
+    if (st) {
+      $('stepcard').innerHTML = chain;
+      $('prevS').onclick = () => setStep(s - 1); $('nextS').onclick = () => setStep(s + 1);
+      return finishPanel();
+    }
+    $('stepcard').innerHTML = chain + `<h3>The idea</h3><p>${esc(v.idea)}</p>
+      <h3 style="margin-top:6px">What went wrong, read from first principles</h3><p>${esc(v.wrong)}</p>
+      <h3 style="margin-top:6px">What was measured</h3><p class="meta">${esc(v.measured)}</p>
+      <div class="steps"><button class="navbtn" id="prevV" type="button" ${vi === 0 ? 'disabled' : ''}>← ${esc(VERSIONS[vi - 1]?.name || '')}</button>
+      <span class="count">Version ${vi + 1} of ${VERSIONS.length}</span>
+      <button class="navbtn" id="nextV" type="button">${esc(VERSIONS[vi + 1].name)} →</button></div>`;
+    const go = d => { state.v = VERSIONS[vi + d].id; state.diff = true; $('diff').checked = true; state.step = -1; state.sel = null; save(); rebuild(); frameAll(); };
+    $('prevV').onclick = () => go(-1); $('nextV').onclick = () => go(1);
+    if (L) { $('prevS').onclick = () => setStep(s - 1); $('nextS').onclick = () => setStep(s + 1); }
+  }
+  finishPanel();
+}
+function finishPanel() {
+  const it = state.sel && find(state.sel);
+  if (it) {
+    const parts = partsFor(it.id);
+    const fp = PRINCIPLES[state.v]?.[it.id];
+    $('sel').innerHTML = `<h3>Selected component</h3><h2>${esc(it.c.label)}</h2><p>${chip(it.c.status)}</p><p>${esc(it.c.text)}</p>
+      ${fp ? `<ul class="parts fp"><li style="--k:var(--g-E)"><b>Why it exists.</b> ${esc(fp.why)}</li><li style="--k:var(--s-measured)"><b>Evidence.</b> ${esc(fp.evidence)}</li><li style="--k:var(--s-failed)"><b>What would show it wrong.</b> ${esc(fp.falsifier)}</li></ul>` : ''}
+      ${parts ? `<button class="navbtn" id="subBtn" type="button">Explode this component</button><ul class="parts">${parts.map(p => `<li style="--k:var(--accent)"><b>${esc(p.label)}.</b> ${esc(p.text)}</li>`).join('')}</ul>` : ''}`;
+  } else {
+    $('sel').innerHTML = `<h3>Selected component</h3><p class="meta">Click any block in the 3D view to open it. Blocks with parts fan out into their pieces; click empty space to close. Drag to orbit, scroll or pinch to zoom.</p>`;
+  }
+  if ($('subBtn')) $('subBtn').onclick = () => { const s = find(state.sel); if (s) openSub(s); };
+  $('trainsCard').hidden = !(state.trains && state.v === 'v12');
+  $('trainsCard').innerHTML = `<h3>What trains what (§2.9)</h3><ul class="parts">${TRAINS.map(t => `<li style="--k:var(${t.color})"><b>${esc(t.loss)}.</b> ${esc(t.reaches)}</li>`).join('')}</ul>
+    <p class="meta">Route colours follow the loss: green = NTP, amber = NCP, violet = NextLat (training-only), pink = metacontroller on the frozen base.</p>`;
+  renderScale();
+  renderLegend();
+  [...$('tabs').children].forEach(b => b.setAttribute('aria-pressed', b.dataset.v === state.v));
+}
+function renderLegend() {
+  const groups = [['E', 'Encoder (token rate)'], ['C', 'Concept (segment rate)'], ['D', 'Decoder (token rate)'], ['aux', 'Training-only'], ['post', 'Post-training'], ['mem', 'Memory / continual'], ['io', 'Input / output']];
+  $('legend').innerHTML = groups.map(([g, l]) => `<span style="--k:var(--g-${g})">${l}</span>`).join('') +
+    '<span style="--k:transparent">Outline = evidence status</span>';
+}
+function renderScale() {
+  // The shell (slider + anchors) is built once; drags only update the readout, so the range input is never replaced.
+  if (!$('scaleRange')) {
+    $('scalecard').innerHTML = `<h3>Scale the V12 design</h3>
+      <label for="scaleRange" class="meta">Total parameters: <b id="scaleN" style="color:var(--fg)"></b></label>
+      <input id="scaleRange" type="range" min="6.033" max="13" step="0.001" value="${state.lg}">
+      <div class="anchors">${ANCHORS.map(a => `<button type="button" data-n="${Math.log10(a.n)}">${esc(a.name)}</button>`).join('')}</div>
+      <div id="scaleBody"></div>`;
+    $('scaleRange').oninput = e => { state.lg = +e.target.value; updateScale(); if (state.v === 'v12') requestRebuild(); };
+    $('scalecard').querySelectorAll('.anchors button').forEach(b => b.onclick = () => {
+      state.lg = +b.dataset.n; $('scaleRange').value = state.lg; updateScale();
+      if (state.v === 'v12') { rebuild(); frameAll(); }
+    });
+  }
+  updateScale();
+}
+function updateScale() {
+  const s = schedule(state.lg), isV12 = state.v === 'v12';
+  $('scaleN').textContent = fmtN(s.N);
+  $('scaleBody').innerHTML = `${s.anchor?.fact ? `<p class="fact">${esc(s.anchor.fact)}</p>` : ''}
+    <table class="scale"><tbody>
+      <tr><td>Width d · layers E / C / D</td><td>${s.d.toLocaleString()} · ${s.LE} / ${s.LC} / ${s.LD}</td></tr>
+      <tr><td>Dense-equivalent 12·L·d² (gap to total = expert multiplier)</td><td>${fmtN(12 * s.L * s.d * s.d)}</td></tr>
+      <tr><td>Experts per FFN (active)</td><td>${s.E > 1 ? `${s.E} (${s.k})` : 'dense'}</td></tr>
+      <tr><td>Mean segment length k̄</td><td>${s.kbar.toFixed(1)}</td></tr>
+      <tr><td>C's share of layer compute (L_C / L ÷ k̄)</td><td>${(100 * s.cShare).toFixed(1)}%</td></tr>
+      <tr><td>NCP codebook S × N</td><td>${s.S} × ${s.Nw}</td></tr>
+      <tr><td>Metacontroller (post-training)</td><td>≈ ${fmtN(Math.round(s.mcParams))} · ${(100 * s.mcParams / s.N).toPrecision(2)}% of the model</td></tr>
+      <tr><td>Per-row controllers A_t, B_t (bf16, 2M-token batch)</td><td>${fmtB(s.perRow)}</td></tr>
+      <tr><td>Emitted only at switches (÷ ${Math.round(s.kbar * 4)} tokens per switch = k̄ × ~4 segments, illustrative)</td><td>${fmtB(s.perRow / (s.kbar * 4))}</td></tr>
+    </tbody></table>
+    <p class="ill">${s.anchor?.measured ? 'Measured configuration. ' : 'Width, depth, k̄, codebook and expert counts are the V12 schedule (illustrative), interpolated between anchors; only the boxed vendor figures are facts. The metacontroller keeps the paper\'s rank 16 and n_z = 8, so its only scale-dependent term is the hypernetwork\'s 2·d·r output. The measured switch-emission saving was 13.9× on a 64-episode batch with an untrained switch (a lower bound). ' }${isV12 ? 'The 3D view reshapes with the slider.' : 'Switch to V12 to see the geometry follow the slider.'}</p>
+    <p class="ill">Order of bets at scale: the metacontroller first, on an open frozen 1–8B model, without pretraining; the ECD + NCP trunk second, as a compute-efficiency bet.</p>`;
+}
+
+function setStep(s) {
+  const L = SS(); if (!L) return;
+  state.step = Math.max(-1, Math.min(L.length - 1, s));
+  const fc = state.step >= 0 ? L[state.step].focus : [];
+  if (fc.length && fc.every(id => compOf(VERSIONS[versionIndex(state.v)], id).lane === 'train') && !state.train) { state.train = true; $('showTrain').checked = true; }
+  state.sel = null; closeSub(); rebuild();
+  const ids = fc.filter(id => find(id));
+  if (ids.length) frameIds(ids); else frameAll();
+  const st = L[state.step];
+  if (st) items.forEach(i => { if (st.focus.includes(i.id)) i.meshes.forEach(m => m.material.emissive?.set(css('--accent')).multiplyScalar(0.35)); });
+}
+
+// ---------- tabs and controls ----------
+$('tabs').innerHTML = VERSIONS.map(v => `<button type="button" data-v="${v.id}">${esc(v.name)}</button>`).join('');
+$('tabs').onclick = e => { const b = e.target.closest('button'); if (!b) return; state.v = b.dataset.v; state.step = -1; state.sel = null; closeSub(); save(); rebuild(); frameAll(); };
+$('explode').oninput = e => { state.explode = +e.target.value; layout(); };
+let anim = null;
+$('explodeBtn').onclick = () => {
+  const to = state.explode > 0.5 ? 0.0 : 1.0;
+  $('explodeBtn').textContent = to > 0.5 ? 'Assemble' : 'Explode';
+  if (reduce) { state.explode = to; $('explode').value = to; layout(); return; }
+  anim = { from: state.explode, to, t0: performance.now(), dur: 1100 };
+};
+$('diff').onchange = e => { state.diff = e.target.checked; rebuild(); };
+$('showTrain').onchange = e => { state.train = e.target.checked; rebuild(); };
+$('trains').onchange = e => { state.trains = e.target.checked; rebuild(); };
+addEventListener('keydown', e => {
+  if (e.target.closest && e.target.closest('input')) return;
+  if (e.key === 'Escape') { state.sel = null; closeSub(); renderPanel(); }
+  if (SS() && e.key === 'ArrowRight') setStep(state.step + 1);
+  if (SS() && e.key === 'ArrowLeft') setStep(state.step - 1);
+});
+$('resetCam').onclick = () => frameAll();
+let tour = null;
+$('tour').onclick = () => {
+  if (tour) { clearInterval(tour); tour = null; $('tour').textContent = 'Auto tour'; return; }
+  if (state.v !== 'v12') { state.v = 'v12'; save(); }
+  $('tour').textContent = 'Stop tour'; setStep(0);
+  tour = setInterval(() => { if (state.step >= STEPS.length - 1) { clearInterval(tour); tour = null; $('tour').textContent = 'Auto tour'; setStep(-1); } else setStep(state.step + 1); }, 7000);
+};
+
+// ---------- loop ----------
+const tmp = new THREE.Vector3();
+function resize() {
+  const r = $('stage').getBoundingClientRect();
+  if (renderer) renderer.setSize(r.width, r.height, false);
+  cam.aspect = r.width / Math.max(1, r.height); cam.updateProjectionMatrix();
+}
+new ResizeObserver(resize).observe($('stage'));
+function frame(now) {
+  if (anim) {
+    const t = Math.min(1, (now - anim.t0) / anim.dur), k = t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2;
+    state.explode = anim.from + (anim.to - anim.from) * k; $('explode').value = state.explode; layout();
+    if (t >= 1) anim = null;
+  }
+  if (sub.group && sub.t < sub.target) { sub.t = Math.min(1, sub.t + 0.05); layoutSub(); }
+  const a = reduce ? 1 : 0.12;
+  orbit.theta += (goal.theta - orbit.theta) * a; orbit.phi += (goal.phi - orbit.phi) * a; orbit.r += (goal.r - orbit.r) * a;
+  orbit.target.lerp(goal.target, a);
+  cam.position.set(
+    orbit.target.x + orbit.r * Math.sin(orbit.phi) * Math.sin(orbit.theta),
+    orbit.target.y + orbit.r * Math.cos(orbit.phi),
+    orbit.target.z + orbit.r * Math.sin(orbit.phi) * Math.cos(orbit.theta));
+  cam.lookAt(orbit.target);
+  // labels
+  const r = $('stage').getBoundingClientRect();
+  const place = (el, obj, dy) => {
+    obj.getWorldPosition(tmp); tmp.y += dy; tmp.project(cam);
+    if (tmp.z > 1 || Math.abs(tmp.x) > 1.1 || Math.abs(tmp.y) > 1.1) { el.style.display = 'none'; return; }
+    el.style.display = ''; el.style.left = ((tmp.x + 1) / 2 * r.width) + 'px'; el.style.top = ((1 - tmp.y) / 2 * r.height) + 'px';
+  };
+  for (const it of items) {
+    const half = (it.c.h || 0.5) / 2 * (1 + 1.6 * state.explode);
+    const below = ['side', 'post'].includes(it.c.lane);
+    it.el.classList.toggle('below', below);
+    place(it.el, it.g, below ? -half - 0.1 : half + 0.12);
+    if (it.ctrlPlate) place(it.ctrlPlate.userData.el, it.ctrlPlate, 0.06);
+  }
+  if (sub.group) sub.group.children.forEach(m => place(m.userData.el, m, 0.12));
+  if (zeroMark) place(zeroMark.el, zeroMark.o, 0);
+  for (const pl of planes) { if (state.explode > 0.45) place(pl.el, pl.o, 0); else pl.el.style.display = 'none'; }
+  if (renderer) renderer.render(scene, cam);
+  requestAnimationFrame(frame);
+}
+if (renderer) renderer.setClearColor(new THREE.Color(css('--stage')), 1);
+rebuild();
+requestAnimationFrame(frame);
+</script>

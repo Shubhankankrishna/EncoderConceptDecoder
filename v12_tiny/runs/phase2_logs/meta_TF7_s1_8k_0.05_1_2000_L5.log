@@ -1,0 +1,34 @@
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v12_tiny/meta.py:211: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  hist.append(dict(step=step, t=round(time.time() - t0, 1), nll=float(nll), kl=float(kl), **sw))
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v12_tiny/meta.py", line 225, in <module>
+    main(a[1], float(a[2]), int(a[3]), int(a[4]) if len(a) > 4 else 2000, a[5] if len(a) > 5 and a[5] != '-' else None)
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v12_tiny/meta.py", line 212, in main
+    ev = evaluate_mc(model, mc, dm, device, alpha=alpha)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v12_tiny/meta.py", line 182, in evaluate_mc
+    nll, kl, info = step_loss(model, mc, b, alpha, sample=False)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v12_tiny/meta.py", line 137, in step_loss
+    out = model(b['ids'], ctrl=c)
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v12_tiny/model.py", line 94, in forward
+    x = ctrl(x)
+        ^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v12_tiny/meta.py", line 107, in __call__
+    u = torch.einsum('bjrd,bjd->bjr', Bm, ed)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/functional.py", line 373, in einsum
+    return _VF.einsum(equation, operands)  # type: ignore[attr-defined]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: MPS backend out of memory (MPS allocated: 2.05 GiB, other allocations: 4.49 GiB, max allowed: 6.51 GiB). Tried to allocate 456.00 KiB on private pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).

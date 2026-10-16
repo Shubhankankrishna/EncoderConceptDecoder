@@ -1,0 +1,17 @@
+{'arm': 'ECDe', 'seed': 1, 'steps': 12000, 'vocab': 1090, 'mix': (('pinpad', 0.6), ('text', 0.25), ('math', 0.15)), 'batch': {'pinpad': 128, 'text': 32, 'math': 128, 'newmath': 128}, 'params_model': 1075712, 'params_aux': 66048, 'lam': {'ncp': 0.1, 'nl_h': 1.0, 'nl_kl': 1.0, 'obs': 0.1}, 'cfg': {'model': 'ECD', 'ncp': 'enc'}, 'sudoku': 'excluded (fixed-layout period confound)'}
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v12_tiny/train.py:102: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  rec.update(step=step, family=b['family'], t=round(time.time() - t0, 1), ntp=float(l_ntp), act=float(l_act), gn=float(gn),
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v12_tiny/train.py", line 110, in <module>
+    main(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]))
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v12_tiny/train.py", line 83, in main
+    l_ntp, l_act, _ = ntp(out, b)
+                      ^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v12_tiny/losses.py", line 26, in ntp
+    lp = F.cross_entropy(out['logits'].flatten(0, 1).float(), b['targets'].flatten(), reduction='none').view_as(b['weights'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/functional.py", line 3504, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: MPS backend out of memory (MPS allocated: 4.05 GiB, other allocations: 2.95 GiB, max allowed: 7.10 GiB). Tried to allocate 102.19 MiB on private pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).

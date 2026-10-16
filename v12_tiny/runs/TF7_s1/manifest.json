@@ -1,0 +1,39 @@
+{
+ "arm": "TF7",
+ "seed": 1,
+ "steps": 12000,
+ "vocab": 1090,
+ "mix": [
+  [
+   "pinpad",
+   0.6
+  ],
+  [
+   "text",
+   0.25
+  ],
+  [
+   "math",
+   0.15
+  ]
+ ],
+ "batch": {
+  "pinpad": 128,
+  "text": 32,
+  "math": 128,
+  "newmath": 128
+ },
+ "params_model": 1058944,
+ "params_aux": 0,
+ "lam": {
+  "ncp": 0.1,
+  "nl_h": 1.0,
+  "nl_kl": 1.0,
+  "obs": 0.1
+ },
+ "cfg": {
+  "model": "TF",
+  "layers": 7
+ },
+ "sudoku": "excluded (fixed-layout period confound)"
+}

@@ -1,0 +1,4 @@
+{'arm': 'ECD', 'seed': 1, 'steps': 12000, 'vocab': 1090, 'mix': (('pinpad', 0.6), ('text', 0.25), ('math', 0.15)), 'batch': {'pinpad': 128, 'text': 32, 'math': 128, 'newmath': 128}, 'params_model': 1075712, 'params_aux': 0, 'lam': {'ncp': 0.1, 'nl_h': 1.0, 'nl_kl': 1.0, 'obs': 0.1}, 'cfg': {'model': 'ECD'}, 'sudoku': 'excluded (fixed-layout period confound)'}
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v12_tiny/train.py:102: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  rec.update(step=step, family=b['family'], t=round(time.time() - t0, 1), ntp=float(l_ntp), act=float(l_act), gn=float(gn),
