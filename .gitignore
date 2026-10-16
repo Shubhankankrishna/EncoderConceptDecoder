@@ -37,6 +37,18 @@ node_modules/
 *.pdf
 /tmp/
 
+# Outputs of running services; retain their generators and archival evidence.
+/v9_tiny/monitor/state.json
+/v9_tiny/monitor/status.json
+/v9_tiny/monitor/watch.log*
+/v9_tiny/monitor/alerts.log*
+/v9_tiny/monitor/ALERT.txt
+/v9_tiny/monitor/watch.pid
+/v9_tiny/monitor/STOP
+/v13_tiny/telemetry/*
+!/v13_tiny/telemetry/index.html
+/v14_tiny/observatory/runtime/
+
 # Generated exact paths for bulky text and raw datasets (do not edit by hand).
 # BEGIN CATALOG EXCLUSIONS
 /.DS_Store
@@ -1284,6 +1296,9 @@ node_modules/
 /v9_tiny/monitor/python_startup_recovery.lock
 /v9_tiny/monitor/q4_validation.lock
 /v9_tiny/monitor/q5_memory_recovery.lock
+/v9_tiny/monitor/state.json
+/v9_tiny/monitor/status.json
+/v9_tiny/monitor/watch.log
 /v9_tiny/monitor/watch.pid
 /v9_tiny/runs/S1_A_alpha0_s901/checkpoint.pt
 /v9_tiny/runs/S1_A_alpha0_s902/checkpoint.pt

@@ -2,7 +2,7 @@
 
 [Project home](../README.md) · [Chronology](../EXPERIMENTS.md) · [Machine-readable validation](../experiments/validation.json)
 
-The organized repository was checked in a separate fresh clone of organization commit `4e9405ddb6c52956f6160e1066bed6075ccba33b`. Tests altered only disposable clone fixtures; no experiment or training process was started.
+The organized repository was checked in a separate fresh clone of organization commit `506ff8ae4cbf4b5dc9f2931a7e5f6445a10ad8c7`. Tests altered only disposable clone fixtures; no experiment or training process was started.
 
 | Check | Result |
 | --- | --- |
@@ -26,6 +26,8 @@ The validation record and refreshed inventories are added after the tested organ
 
 The running V13 telemetry generator rewrote its generated dashboard HTML during setup. That output stays local, its exception is documented, and the generator source is preserved. A separate comparison against the initial full source/document baseline found no other changes. The nested V10-10M ignore file was deliberately adjusted to retain small run evidence; no model/trainer source was edited.
 
-GitHub authentication and publication are deferred at the user's request. No remote repository or remote backup has been created. The repository currently uses Git's detected local author identity. Before the first public push, associate it with the account's verified no-reply identity; if updating the unpublished import metadata, update archival tags and the import index together and rerun checks.
+The initial local phase deferred GitHub publication. GitHub CLI is now authenticated, and all unpublished author, committer, and tagger identities use the account's GitHub no-reply address. File trees and original commit dates were preserved; archival tags and the import index were remapped together. Current publishing configuration is documented in the [GitHub guide](GITHUB.md). Heavy artifacts remain local; this repository is not their remote backup.
 
 Pattern scanning and syntax checks are bounded validation. They do not certify arbitrary private text, scientific correctness, runtime behavior, or reproducibility without the separately stored artifacts. No training was rerun.
+
+During GitHub setup, the V9 watchdog runtime outputs were also moved outside current Git tracking. Their earlier imported snapshots remain in the archival history; the running service and its files were not modified.

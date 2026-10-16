@@ -22,6 +22,7 @@ Research into language models that encode observed tokens into shorter concept s
 | Deep historical project review, dated 13 October | [Repository review](repo_review_2026-10-13/README.md) |
 | Third-party source and paper provenance | [Third-party notices](THIRD_PARTY_NOTICES.md) |
 | Clean-clone checks and import limitations | [Validation record](docs/VALIDATION.md) |
+| GitHub repository, authentication, and daily use | [GitHub guide](docs/GITHUB.md) |
 
 ## Repository checks
 

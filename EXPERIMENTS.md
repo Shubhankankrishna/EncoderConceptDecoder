@@ -1,6 +1,6 @@
 # Experiment chronology
 
-Inventory captured 2026-10-16T09:11:24.049000+00:00. These are present-day imports of preserved snapshots, not reconstructed historical Git commits.
+Inventory captured 2026-10-16T13:57:17.605508+00:00. These are present-day imports of preserved snapshots, not reconstructed historical Git commits.
 
 Read the saved configuration and evidence together. Versions use different datasets, budgets, tokenizers, and seeds; this is not a cross-version leaderboard.
 
