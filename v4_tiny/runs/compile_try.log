@@ -1,0 +1,29 @@
+eager 557 real tok/s
+Error while loading conda entry point: conda-libmamba-solver (dlopen(/opt/anaconda3/lib/python3.12/site-packages/libmambapy/bindings.cpython-312-darwin.so, 0x0002): Library not loaded: @rpath/libarchive.20.dylib
+  Referenced from: <496442DC-0EDE-3705-A2B5-401A4FC0D733> /opt/anaconda3/lib/libmamba.2.0.0.dylib
+  Reason: tried: '/opt/anaconda3/lib/libarchive.20.dylib' (no such file), '/opt/anaconda3/lib/python3.12/site-packages/libmambapy/../../../libarchive.20.dylib' (no such file), '/opt/anaconda3/lib/python3.12/site-packages/libmambapy/../../../libarchive.20.dylib' (no such file), '/opt/anaconda3/bin/../lib/libarchive.20.dylib' (no such file), '/opt/anaconda3/bin/../lib/libarchive.20.dylib' (no such file), '/usr/local/lib/libarchive.20.dylib' (no such file), '/usr/lib/libarchive.20.dylib' (no such file, not in dyld cache))
+W1001 14:17:51.234000 92282 site-packages/torch/_dynamo/variables/tensor.py:1079] [31/0] Graph break from `Tensor.item()`, consider setting:
+W1001 14:17:51.234000 92282 site-packages/torch/_dynamo/variables/tensor.py:1079] [31/0]     torch._dynamo.config.capture_scalar_outputs = True
+W1001 14:17:51.234000 92282 site-packages/torch/_dynamo/variables/tensor.py:1079] [31/0] or:
+W1001 14:17:51.234000 92282 site-packages/torch/_dynamo/variables/tensor.py:1079] [31/0]     env TORCHDYNAMO_CAPTURE_SCALAR_OUTPUTS=1
+W1001 14:17:51.234000 92282 site-packages/torch/_dynamo/variables/tensor.py:1079] [31/0] to include these operations in the captured graph.
+W1001 14:17:51.234000 92282 site-packages/torch/_dynamo/variables/tensor.py:1079] [31/0] 
+W1001 14:17:51.234000 92282 site-packages/torch/_dynamo/variables/tensor.py:1079] [31/0] Graph break: from user code at:
+W1001 14:17:51.234000 92282 site-packages/torch/_dynamo/variables/tensor.py:1079] [31/0]   File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v4_tiny/code/model_v4.py", line 475, in torch_dynamo_resume_in_loss_terms_at_463
+W1001 14:17:51.234000 92282 site-packages/torch/_dynamo/variables/tensor.py:1079] [31/0]     return loss, {kk: float(v.detach()) for kk, v in terms.items()}, aux
+W1001 14:17:51.234000 92282 site-packages/torch/_dynamo/variables/tensor.py:1079] [31/0] 
+W1001 14:17:51.234000 92282 site-packages/torch/_dynamo/variables/tensor.py:1079] [31/0] 
+W1001 14:24:01.443000 92282 site-packages/torch/_dynamo/convert_frame.py:1676] [10/8] torch._dynamo hit config.recompile_limit (8)
+W1001 14:24:01.443000 92282 site-packages/torch/_dynamo/convert_frame.py:1676] [10/8]    function: 'memo_shift_mask' (/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v4_tiny/code/speed_v3.py:36)
+W1001 14:24:01.443000 92282 site-packages/torch/_dynamo/convert_frame.py:1676] [10/8]    last reason: 10/7: i == 2                                                   # m = memo.get(k)  # sers/shubhankankrishna/Desktop/EncoderConceptDecoder/v4_tiny/code/speed_v3.py:42 in memo_shift_mask
+W1001 14:24:01.443000 92282 site-packages/torch/_dynamo/convert_frame.py:1676] [10/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1001 14:24:01.443000 92282 site-packages/torch/_dynamo/convert_frame.py:1676] [10/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/compile/programming_model.recompilation.html
+W1001 14:24:04.461000 92282 site-packages/torch/_dynamo/convert_frame.py:1676] [16/8] torch._dynamo hit config.recompile_limit (8)
+W1001 14:24:04.461000 92282 site-packages/torch/_dynamo/convert_frame.py:1676] [16/8]    function: 'block_mask' (/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v4_tiny/code/speed_v3.py:51)
+W1001 14:24:04.461000 92282 site-packages/torch/_dynamo/convert_frame.py:1676] [16/8]    last reason: 16/7: len(G['_speed']._tls.memo) != 4
+W1001 14:24:04.461000 92282 site-packages/torch/_dynamo/convert_frame.py:1676] [16/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1001 14:24:04.461000 92282 site-packages/torch/_dynamo/convert_frame.py:1676] [16/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/compile/programming_model.recompilation.html
+compiled 570 real tok/s (incl. nothing of compile; compile+3 warm steps took 678s)
+loss eager    [15.31861, 23.61038, 20.92352, 22.53515]
+loss compiled [15.31861, 23.61038, 20.92352, 22.53516]
+speedup 1.02 max |dloss| first 3 steps 3.814697265625e-06

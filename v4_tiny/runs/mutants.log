@@ -1,0 +1,14 @@
+KILLED   | plan index off by one (future chunk) | test_causality: AssertionError (4, 100, 'future token changed a past logit') ; test_decoder: AssertionError (4, 'D2', [39, 40, 41, 42])
+KILLED   | pooler ignores the pad mask | test_pool_init: AssertionError (4, tensor(1.5401, grad_fn=<MaxBackward1>)) ; test_empty_and_pads: AssertionError (6, 'pad embedding leaked into a nonempty concept')
+KILLED   | head trains the coarse codebook (no detach) | test_codebook_isolation: AssertionError NCP must not train the codebooks
+KILLED   | fine NCP in the plan's frame q - cbar | test_frames: AssertionError fine CE must not depend on a coarse row no target uses
+KILLED   | decoder Engram read mixes the previous position | test_decoder: AssertionError (4, 'D1 e is position-wise', [100, 101])
+KILLED   | S layers looped too | test_reach_L: AssertionError (2, tensor(60), tensor(122))
+KILLED   | fine restart from residuals of the OLD E0 | test_restart: AssertionError (19, 37)
+KILLED   | core attention not causal | test_causality: AssertionError (4, 100, 'future token changed a past logit')
+KILLED   | VQ sends gradient into the encoder | test_codebook_isolation: AssertionError ['enc.shared_gain', 'enc.embed.weight', 'enc.layers.0.read_attn.V.0.weight', 'enc.layers.0
+KILLED   | shared-FFN branch dead (gain held at 0) | test_alive: AssertionError ('dead at step 1', 'enc.shared.w2.weight')
+KILLED   | decoder reads a FUTURE Engram row | test_causality: AssertionError (4, 100, 'future token changed a past logit')
+KILLED   | gated conv: gate held at 1 (= content-blind conv) | test_pool_selects: AssertionError {'attn': [0.9750796721246748, 0.9744684312458285, 0.9747978520683968, 0.9754361398579181, 
+KILLED   | pooler crosses chunk boundaries (softmax over the row) | test_causality: AssertionError (4, 100, 'future token changed a past logit') ; test_pool_init: AssertionError (4, tensor(2.3359, grad_fn=<MaxBackward1>))
+MUTANTS KILLED 13/13

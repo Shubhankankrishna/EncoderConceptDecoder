@@ -1,0 +1,37 @@
+vs_pilot_pin_v4: v4 on pinpad, compute 1,212,032 params, 2.81 MFLOP/token
+22:46:12 vs_pilot_pin_v4 EVAL step 74 real 0.13M {"heldin": {"ntp_header": 3.8339991447253103, "ntp_action": 3.1458701558632427, "ntp_position": 4.236640995642533, "ntp_end": 4.120768626530965, "ntp_all": 3.7372014102591886, "act_opt": 0.41815181518151817, "act_chance": 0.3110561056105611, "act_opt_b1": 0.375, "act_chance_b1": 0.3446180555555556, "act_opt_b0": 0.42094539527302366, "act_chance_b0": 0.302159739201304, "act_opt_b2": 0.4375, "act_ch
+22:47:40 vs_pilot_pin_v4 EVAL step 147 real 0.25M {"heldin": {"ntp_header": 3.49185298039363, "ntp_action": 2.450583197968234, "ntp_position": 4.032325185643565, "ntp_end": 3.8860483169555664, "ntp_all": 3.3208435594732433, "act_opt": 0.4409240924092409, "act_chance": 0.3110561056105611, "act_opt_b1": 0.3715277777777778, "act_chance_b1": 0.3446180555555556, "act_opt_b0": 0.44580277098614507, "act_chance_b0": 0.302159739201304, "act_opt_b2": 0.468
+Traceback (most recent call last):
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v4_tiny/code/run_vs.py", line 381, in <module>
+    main()
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v4_tiny/code/run_vs.py", line 370, in main
+    res = final_eval(m, a, S)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v4_tiny/code/run_vs.py", line 280, in final_eval
+    res["interventions"] = {nm: {s: pin_metrics(m, S["sets"][s], a.T, **kw) for s in ("heldin", "heldout")}
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v4_tiny/code/run_vs.py", line 202, in pin_metrics
+    assert not kw.get("plan_swap") or len(t) % chunk != 1, "plan_swap needs >= 2 rows in every chunk"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: plan_swap needs >= 2 rows in every chunk
+      204.77 real       195.26 user        49.35 sys
+          1021313024  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+             1722559  page reclaims
+                  58  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                1834  voluntary context switches
+             1821332  involuntary context switches
+        974714163862  instructions retired
+        360688935833  cycles elapsed
+           757614680  peak memory footprint

@@ -1,0 +1,74 @@
+2026-10-01 13:53:08 start pilot_k6 --k 6 --pool attnffn --seed 0 --real_tokens 6e6 --eval_every_tokens 1e6
+2026-10-01 14:11:52 end pilot_k6 exit 0
+2026-10-01 14:24:36 start k6_attnffn_s0 --k 6 --pool attnffn --seed 0 --real_tokens 5e6 --eval_every_tokens 1e6
+2026-10-01 14:24:36 start k4_attnffn_s0 --k 4 --pool attnffn --seed 0 --real_tokens 5e6 --eval_every_tokens 1e6
+2026-10-01 15:07:00 start k6_gconv_p07 --k 6 --pool gconv --seed 0 --p_syn 0.7 --real_tokens 8e6 --eval_every_tokens 1e6
+2026-10-01 15:45:54 end k6_attnffn_s0 exit 0
+2026-10-01 15:50:29 end k4_attnffn_s0 exit 0
+2026-10-01 15:51:06 start k6_linear_p07 --k 6 --pool linear --seed 0 --p_syn 0.7 --real_tokens 8e6 --eval_every_tokens 1e6
+2026-10-01 15:51:06 start k6_attnffn_p07 --k 6 --pool attnffn --seed 0 --p_syn 0.7 --real_tokens 8e6 --eval_every_tokens 1e6
+2026-10-01 17:42:26 end k6_linear_p07 exit 0
+2026-10-01 17:43:03 end k6_gconv_p07 exit 0
+2026-10-01 17:43:06 end k6_attnffn_p07 exit 0
+2026-10-01 22:44:33 start vs_pilot_pin_v4 --arch v4 --data pinpad --seed 0 --real_tokens 2.5e5 --eval_every_tokens 1.25e5
+2026-10-01 22:44:33 start vs_pilot_pin_llm --arch llm --data pinpad --seed 0 --real_tokens 2.5e5 --eval_every_tokens 1.25e5
+2026-10-01 22:47:57 end vs_pilot_pin_v4 exit 0
+2026-10-01 22:48:15 end vs_pilot_pin_llm exit 0
+2026-10-01 22:48:23 start vs_pilot_text_v4 --arch v4 --data text --seed 0 --real_tokens 3e5 --eval_every_tokens 1.5e5
+2026-10-01 22:48:23 start vs_pilot_text_llm --arch llm --data text --seed 0 --real_tokens 3e5 --eval_every_tokens 1.5e5
+2026-10-01 23:01:51 end vs_pilot_text_llm exit 0
+2026-10-01 23:02:32 end vs_pilot_text_v4 exit 0
+2026-10-01 23:19:37 start vs_pin_llm_s0 --arch llm --data pinpad --seed 0 --real_tokens 3e6 --eval_every_tokens 5e5
+2026-10-01 23:19:37 start vs_pin_v4_s0 --arch v4 --data pinpad --seed 0 --real_tokens 3e6 --eval_every_tokens 5e5
+2026-10-01 23:54:22 end vs_pin_v4_s0 exit 0
+2026-10-01 23:56:50 end vs_pin_llm_s0 exit 0
+2026-10-01 23:57:07 queue: phase 1 (pinpad s0 6M)
+2026-10-01 23:57:07 start vs_pin_llm_s0_6M --arch llm --data pinpad --seed 0 --real_tokens 6e6 --eval_every_tokens 5e5
+2026-10-01 23:57:07 start vs_pin_v4_s0_6M --arch v4 --data pinpad --seed 0 --real_tokens 6e6 --eval_every_tokens 5e5
+2026-10-02 00:58:33 end vs_pin_v4_s0_6M exit 0
+2026-10-02 01:02:48 end vs_pin_llm_s0_6M exit 0
+2026-10-02 01:02:48 queue: phase 2 (text s0 5M)
+2026-10-02 01:02:48 start vs_text_v4_s0 --arch v4 --data text --seed 0 --real_tokens 5e6 --eval_every_tokens 1e6
+2026-10-02 01:02:48 start vs_text_llm_s0 --arch llm --data text --seed 0 --real_tokens 5e6 --eval_every_tokens 1e6
+2026-10-02 02:03:38 end vs_text_v4_s0 exit 0
+2026-10-02 02:03:44 sched: launch vs_pin_v4_s1_6M
+2026-10-02 02:03:44 start vs_pin_v4_s1_6M --arch v4 --data pinpad --seed 1 --real_tokens 6e6 --eval_every_tokens 5e5
+2026-10-02 02:09:51 end vs_text_llm_s0 exit 0
+2026-10-02 02:09:51 queue: phases 1-2 done
+2026-10-02 02:10:05 sched: launch vs_pin_llm_s1_6M
+2026-10-02 02:10:05 start vs_pin_llm_s1_6M --arch llm --data pinpad --seed 1 --real_tokens 6e6 --eval_every_tokens 5e5
+2026-10-02 02:55:22 end vs_pin_v4_s1_6M exit 0
+2026-10-02 02:55:32 sched: launch vs_text_v4_s1
+2026-10-02 02:55:32 start vs_text_v4_s1 --arch v4 --data text --seed 1 --real_tokens 5e6 --eval_every_tokens 1e6
+2026-10-02 03:07:34 end vs_pin_llm_s1_6M exit 0
+2026-10-02 03:07:54 sched: launch vs_text_llm_s1
+2026-10-02 03:07:54 start vs_text_llm_s1 --arch llm --data text --seed 1 --real_tokens 5e6 --eval_every_tokens 1e6
+2026-10-02 03:56:17 end vs_text_v4_s1 exit 0
+2026-10-02 03:56:22 sched: launch vs_pin_v4_s2_6M
+2026-10-02 03:56:22 start vs_pin_v4_s2_6M --arch v4 --data pinpad --seed 2 --real_tokens 6e6 --eval_every_tokens 5e5
+2026-10-02 04:12:17 end vs_text_llm_s1 exit 0
+2026-10-02 04:12:44 sched: launch vs_pin_llm_s2_6M
+2026-10-02 04:12:44 start vs_pin_llm_s2_6M --arch llm --data pinpad --seed 2 --real_tokens 6e6 --eval_every_tokens 5e5
+2026-10-02 04:47:36 end vs_pin_v4_s2_6M exit 0
+2026-10-02 04:47:40 sched: analyse vs_pin_v4_s0_6M
+2026-10-02 04:53:29 sched: analysed vs_pin_v4_s0_6M exit 0
+2026-10-02 04:53:31 sched: analyse vs_pin_llm_s0_6M
+2026-10-02 04:56:33 sched: analysed vs_pin_llm_s0_6M exit 0
+2026-10-02 04:56:51 sched: analyse vs_text_v4_s0
+2026-10-02 04:57:40 sched: analysed vs_text_v4_s0 exit 0
+2026-10-02 04:57:42 sched: analyse vs_text_llm_s0
+2026-10-02 04:58:27 sched: analysed vs_text_llm_s0 exit 0
+2026-10-02 04:58:32 sched: analyse vs_pin_v4_s1_6M
+2026-10-02 05:03:57 sched: analysed vs_pin_v4_s1_6M exit 0
+2026-10-02 05:04:23 sched: analyse vs_pin_llm_s1_6M
+2026-10-02 05:07:46 sched: analysed vs_pin_llm_s1_6M exit 0
+2026-10-02 05:08:13 sched: analyse vs_text_v4_s1
+2026-10-02 05:08:54 sched: analysed vs_text_v4_s1 exit 0
+2026-10-02 05:09:03 sched: analyse vs_text_llm_s1
+2026-10-02 05:09:27 end vs_pin_llm_s2_6M exit 0
+2026-10-02 05:09:42 sched: analysed vs_text_llm_s1 exit 0
+2026-10-02 05:09:54 sched: analyse vs_pin_v4_s2_6M
+2026-10-02 05:10:14 sched: analyse vs_pin_llm_s2_6M
+2026-10-02 05:14:23 sched: analysed vs_pin_llm_s2_6M exit 0
+2026-10-02 05:14:56 sched: analysed vs_pin_v4_s2_6M exit 0
+2026-10-02 05:14:56 sched: all jobs launched/analysed

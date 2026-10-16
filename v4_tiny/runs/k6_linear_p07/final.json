@@ -1,0 +1,117 @@
+{
+ "val_ntp": 2.9773311559454365,
+ "probes": {
+  "lr_recall1": 0.010416666666666666,
+  "lr_carry3": 0.0,
+  "lr_multi4": 0.0
+ },
+ "interventions": {
+  "core_off": {
+   "val_ntp": 3.482327409717729,
+   "probes": {
+    "lr_recall1": 0.015625,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "plan_swap": {
+   "val_ntp": 3.196732796576755,
+   "probes": {
+    "lr_recall1": 0.010416666666666666,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "c_off": {
+   "val_ntp": 2.9950938081324816,
+   "probes": {
+    "lr_recall1": 0.020833333333333332,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "M1": {
+   "val_ntp": 2.9750300061544603,
+   "probes": {
+    "lr_recall1": 0.010416666666666666,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "loop_off": {
+   "val_ntp": 3.050022684305241,
+   "probes": {
+    "lr_recall1": 0.015625,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "dec_reads_off": {
+   "val_ntp": 2.968437458928138,
+   "probes": {
+    "lr_recall1": 0.015625,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  }
+ },
+ "codebook": {
+  "ve_coarse": 0.35259801149368286,
+  "ve": 0.8369703888893127,
+  "coarse_ppl": 22.77989466612433,
+  "coarse_ppl_frac": 0.3559358541581927,
+  "ce_coarse": 1.06876549603967,
+  "ce_fine": 2.9351441339689828,
+  "ln_K": 4.1588830833596715
+ },
+ "pool": null,
+ "step": 3500,
+ "real_tokens": 4999377,
+ "wall": 6674.132336139679,
+ "params": {
+  "encoder": 636727,
+  "core": 306409,
+  "decoder": 307722,
+  "compute": 1250858,
+  "pooler": 24576,
+  "engram_table": 392928,
+  "embedding": 524288,
+  "codebooks": 20480,
+  "parts": {
+   "enc_layers": 566056,
+   "enc_shared": 18440,
+   "engram_reads": 27396,
+   "router_pooler_norm": 24835,
+   "core_layers": 253088,
+   "core_shared": 49152,
+   "head": 4169,
+   "dec_layers_norm": 272072,
+   "plan": 8640,
+   "dec_engram": 27010
+  }
+ },
+ "args": {
+  "name": "k6_linear_p07",
+  "k": 6,
+  "pool": "linear",
+  "enc_loop": 2,
+  "M": 2,
+  "seed": 0,
+  "T": 480,
+  "B": 4,
+  "p_syn": 0.7,
+  "real_tokens": 8000000.0,
+  "max_steps": 0,
+  "lr": 0.002,
+  "warmup": 400,
+  "wd": 0.1,
+  "clip": 1.0,
+  "threads": 2,
+  "eval_every_tokens": 1000000.0,
+  "n_probe": 128,
+  "n_probe_final": 192,
+  "restart_every": 200,
+  "block": 60,
+  "over": ""
+ }
+}

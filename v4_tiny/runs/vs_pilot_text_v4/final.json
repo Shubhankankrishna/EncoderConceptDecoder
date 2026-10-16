@@ -1,0 +1,82 @@
+{
+ "val_ntp": 6.98437199859471,
+ "probes": {
+  "lr_recall1": 0.0,
+  "lr_carry3": 0.0,
+  "lr_multi4": 0.0
+ },
+ "probe_row_ntp": {
+  "val_pool": 7.008677891546002,
+  "train_pool": 7.099564601081137
+ },
+ "interventions": {
+  "core_off": {
+   "val_ntp": 6.9993593579393805,
+   "probes": {
+    "lr_recall1": 0.0,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "plan_swap": {
+   "val_ntp": 6.990948472505864,
+   "probes": {
+    "lr_recall1": 0.0,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "M1": {
+   "val_ntp": 6.984307784318384,
+   "probes": {
+    "lr_recall1": 0.0,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  },
+  "loop_off": {
+   "val_ntp": 6.984471676844064,
+   "probes": {
+    "lr_recall1": 0.0,
+    "lr_carry3": 0.0,
+    "lr_multi4": 0.0
+   }
+  }
+ },
+ "step": 206,
+ "real_tokens": 300438,
+ "wall": 843.7022428512573,
+ "params": {
+  "encoder": 624911,
+  "core": 306409,
+  "decoder": 280712,
+  "compute": 1212032,
+  "pooler": 12760,
+  "engram_table": 392928,
+  "embedding": 524288,
+  "codebooks": 20480
+ },
+ "args": {
+  "name": "vs_pilot_text_v4",
+  "arch": "v4",
+  "data": "text",
+  "seed": 0,
+  "T": 480,
+  "B": 4,
+  "p_syn": 0.5,
+  "real_tokens": 300000.0,
+  "max_steps": 0,
+  "lr": 0.002,
+  "warmup": 400,
+  "wd": 0.1,
+  "clip": 1.0,
+  "threads": 2,
+  "eval_every_tokens": 150000.0,
+  "n_probe": 128,
+  "n_probe_final": 192,
+  "restart_every": 200,
+  "block": 60,
+  "over": ""
+ },
+ "flops_per_token": 3848874.6666666665
+}

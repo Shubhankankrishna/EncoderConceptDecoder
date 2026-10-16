@@ -1,0 +1,17 @@
+block-local attention ON (block 60) for every test
+PASS 1 end-to-end causality, k = 4/6/8 | perturbing token p never changes a logit at t < p; it reaches beyond 70 through the core
+PASS 2 document isolation, k = 4/6/8 | editing document 0 leaves every logit of document 1 bit-identical
+PASS 3 reach(L) = 63 with enc_loop = 1 and 2 | looping the F layers leaves the decoder-visible stream's reach unchanged; G reaches the row end
+PASS 4 pooler init = masked mean of the real tokens, k = 4/6/8 (gated conv: same direction, so the same c_hat) | exact to 1e-12; v3's linear pool equals it on full chunks and differs on partial ones (it averages pads in)
+PASS 5 every new branch is alive (gated conv too: W_g, b_g, w, W_O, FFN W2 > 0 at step 1) | step 1: shared W2 (enc, core), pooler q/b/p/FFN W2, decoder read W_V, read-2 W_V > 0; pooler W_K, pooler gain g, encoder shared gains = 0 by construction at step 1 and > 0 at step 2
+PASS 6 codebook gradient isolation | CE_coarse + CE_fine: zero gradient on E0 and PQ, nonzero on head/core/encoder; VQ terms: gradient ONLY on E0 and PQ; VQ_coarse never touches PQ
+PASS 7 §6.2 frames | fine CE depends on E0 only through the TRUE next coarse code; the plan's c_pred depends on all of E0 via cbar
+PASS 8 decoder D1/D2/D3 at k = 4/6/8 with both Engram reads | tok reach exactly 7; e is position-wise; a token id reaches logits through the reads at exactly p..p+2; u_j / c_pred_j change exactly positions kj+k-1 .. kj+2k-2 (shift one chunk, repeat k); null at the first k-1 tokens; no cross-document leak
+PASS 9 empty chunk and pad masking, k = 4/6/8 (rows packed as the data are) | row-end all-PAD chunk: finite loss and gradients, nonempty = 0, excluded from VQ/NCP; a partial chunk is nonempty but never a target; changing the PAD embedding changes no nonempty concept
+PASS 10 restart order | dead coarse rows reseeded first; all 56 dead fine codes are residuals against the UPDATED E0
+PASS 11 bit-identity with v3's encoder | v4 encoder with enc_loop = 1, linear pool, shared W2 = 0 == v3 encoder bit for bit (tok, c_hat, G); enc_loop = 2 changes c_hat but leaves tok bit-identical (F layers write only G)
+PASS 12 all 13 switch-offs run, are finite and change the output | core_off, plan_swap, u_off, c_off, M1, loop_off, engram_off, enc_shared_off, core_shared_off, pool_ffn_off, dec_read0_off, dec_read2_off, dec_reads_off
+PASS 13 the pooler selects by content (toy) | best head's weight on the marked token per slot [0.975, 0.974, 0.975, 0.975, 0.976, 0.976]; gated conv [0.381, 0.385, 0.382, 0.387, 0.386, 0.389]; relative error attention 0.001, gated conv 0.164, v3 linear pool / plain conv 0.341 (400 steps each); gated conv given 1,000 steps at lr 1e-2: error 0.0041, gate share 0.869
+PASS 14 block-local window attention (block 60) == full-mask SDPA, k = 4/6/8 | float64, max abs diff < 1e-10
+PASS 15 decoder bypass == v3's decoder, k = 4/6/8 | with both read W_V = 0, the v4 decoder equals v3's decoder (k-chunk plan) bit for bit; any W_V != 0 changes it
+ALL 15 TESTS PASS

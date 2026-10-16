@@ -1,0 +1,41 @@
+k4_attnffn_s0: compute 1,257,211 params (pooler 31,057), k=4 pool=attnffn loop=2
+14:28:12 k4_attnffn_s0 step 200 real 0.29M ntp 6.163 cec 3.67 cef 4.43 vqc 9.02 vqf 2.99 gn 1.06 1363 real tok/s
+14:31:36 k4_attnffn_s0 step 400 real 0.58M ntp 4.463 cec 3.44 cef 4.52 vqc 8.42 vqf 2.65 gn 0.81 1398 real tok/s
+14:35:39 k4_attnffn_s0 step 600 real 0.88M ntp 3.917 cec 2.77 cef 4.69 vqc 5.89 vqf 2.02 gn 0.67 1335 real tok/s
+14:37:42 k4_attnffn_s0 EVAL step 681 real 1.00M val 3.101 probes {'lr_recall1': 0.0078125, 'lr_carry3': 0.0, 'lr_multi4': 0.0} swap 0.015625 ppl0 27.8 VE 0.707
+14:39:55 k4_attnffn_s0 step 800 real 1.18M ntp 3.671 cec 2.45 cef 4.70 vqc 4.88 vqf 1.67 gn 0.83 1281 real tok/s
+14:43:33 k4_attnffn_s0 step 1000 real 1.47M ntp 3.429 cec 2.28 cef 4.32 vqc 5.06 vqf 1.62 gn 0.80 1295 real tok/s
+14:47:18 k4_attnffn_s0 step 1200 real 1.77M ntp 3.480 cec 2.02 cef 4.38 vqc 4.42 vqf 1.45 gn 0.69 1298 real tok/s
+14:51:05 k4_attnffn_s0 EVAL step 1357 real 2.00M val 2.859 probes {'lr_recall1': 0.0078125, 'lr_carry3': 0.0, 'lr_multi4': 0.0} swap 0.0078125 ppl0 37.2 VE 0.807
+14:51:55 k4_attnffn_s0 step 1400 real 2.06M ntp 3.301 cec 1.94 cef 4.30 vqc 4.16 vqf 1.34 gn 0.64 1260 real tok/s
+14:55:40 k4_attnffn_s0 step 1600 real 2.36M ntp 3.214 cec 1.72 cef 4.03 vqc 4.19 vqf 1.32 gn 0.66 1267 real tok/s
+15:00:16 k4_attnffn_s0 step 1800 real 2.65M ntp 3.145 cec 1.76 cef 3.78 vqc 4.50 vqf 1.42 gn 0.79 1242 real tok/s
+15:03:43 k4_attnffn_s0 step 2000 real 2.95M ntp 3.011 cec 1.66 cef 3.83 vqc 4.13 vqf 1.25 gn 1.12 1258 real tok/s
+15:04:53 k4_attnffn_s0 EVAL step 2035 real 3.00M val 2.827 probes {'lr_recall1': 0.0078125, 'lr_carry3': 0.0, 'lr_multi4': 0.0} swap 0.0 ppl0 37.3 VE 0.817
+15:08:07 k4_attnffn_s0 step 2200 real 3.25M ntp 2.920 cec 1.63 cef 3.76 vqc 4.11 vqf 1.22 gn 0.92 1244 real tok/s
+15:14:04 k4_attnffn_s0 step 2400 real 3.54M ntp 2.853 cec 1.56 cef 3.74 vqc 3.98 vqf 1.17 gn 0.70 1195 real tok/s
+15:19:44 k4_attnffn_s0 step 2600 real 3.84M ntp 2.884 cec 1.51 cef 3.54 vqc 4.09 vqf 1.19 gn 0.83 1161 real tok/s
+15:23:49 k4_attnffn_s0 EVAL step 2711 real 4.00M val 2.752 probes {'lr_recall1': 0.0078125, 'lr_carry3': 0.0, 'lr_multi4': 0.0} swap 0.0234375 ppl0 39.5 VE 0.842
+15:26:16 k4_attnffn_s0 step 2800 real 4.14M ntp 2.813 cec 1.49 cef 3.57 vqc 3.95 vqf 1.14 gn 0.82 1118 real tok/s
+15:32:00 k4_attnffn_s0 step 3000 real 4.43M ntp 2.735 cec 1.44 cef 3.50 vqc 3.88 vqf 1.12 gn 0.81 1095 real tok/s
+15:37:25 k4_attnffn_s0 step 3200 real 4.72M ntp 2.858 cec 1.44 cef 3.43 vqc 3.92 vqf 1.12 gn 1.39 1081 real tok/s
+15:43:55 k4_attnffn_s0 EVAL step 3390 real 5.00M val 2.777 probes {'lr_recall1': 0.0, 'lr_carry3': 0.0, 'lr_multi4': 0.0} swap 0.015625 ppl0 39.7 VE 0.846
+15:50:28 k4_attnffn_s0 FINAL val 2.777 probes {'lr_recall1': 0.0, 'lr_carry3': 0.0, 'lr_multi4': 0.0} core_off {'lr_recall1': 0.0, 'lr_carry3': 0.0, 'lr_multi4': 0.0} swap {'lr_recall1': 0.005208333333333333, 'lr_carry3': 0.0, 'lr_multi4': 0.0}
+     5152.82 real      5165.80 user      1394.90 sys
+          1757151232  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+            48729360  page reclaims
+                1305  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                1721  voluntary context switches
+            44296819  involuntary context switches
+      25468506298491  instructions retired
+      11393341007575  cycles elapsed
+          1844366912  peak memory footprint
