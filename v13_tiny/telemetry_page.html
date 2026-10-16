@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V13 Run Telemetry</title>
+<style>
+:root{
+  --bg:#f4f4f1;--surface:#ffffff;--surface-2:#f8f8f6;--text:#1b1b1d;--muted:#6a6a72;--border:#e2e2dd;--grid:#ececE7;
+  --accent:#2563c9;--ok:#1e8a4c;--ok-bg:#e7f5ec;--warn:#b26a00;--warn-bg:#fff4e0;--crit:#c42b1c;--crit-bg:#fdecea;
+  --run:#2563c9;--run-bg:#e8effc;--plan:#9a9aa3;--plan-bg:#efeff0;
+  --c-grid:#2f6fd6;--c-prog:#d9822b;--c-state:#2e9e5b;--c-plan:#b23fbf;--c-text:#6f6f78;
+  --c-a:#2f6fd6;--c-b:#d9822b;--c-c:#2e9e5b;--c-d:#b23fbf;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 1px 8px rgba(0,0,0,.03);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121214;--surface:#1b1b1e;--surface-2:#202024;--text:#ececef;--muted:#9b9ba5;--border:#2d2d33;--grid:#26262b;
+    --accent:#6ea0ff;--ok:#4cc27e;--ok-bg:#15291e;--warn:#e8a84a;--warn-bg:#2d2312;--crit:#ff6b5a;--crit-bg:#341a17;
+    --run:#6ea0ff;--run-bg:#1a2438;--plan:#6d6d77;--plan-bg:#232328;
+    --c-grid:#6ea0ff;--c-prog:#f0a052;--c-state:#4cc27e;--c-plan:#d27ce0;--c-text:#a3a3ad;
+    --c-a:#6ea0ff;--c-b:#f0a052;--c-c:#4cc27e;--c-d:#d27ce0;--shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121214;--surface:#1b1b1e;--surface-2:#202024;--text:#ececef;--muted:#9b9ba5;--border:#2d2d33;--grid:#26262b;
+  --accent:#6ea0ff;--ok:#4cc27e;--ok-bg:#15291e;--warn:#e8a84a;--warn-bg:#2d2312;--crit:#ff6b5a;--crit-bg:#341a17;
+  --run:#6ea0ff;--run-bg:#1a2438;--plan:#6d6d77;--plan-bg:#232328;
+  --c-grid:#6ea0ff;--c-prog:#f0a052;--c-state:#4cc27e;--c-plan:#d27ce0;--c-text:#a3a3ad;
+  --c-a:#6ea0ff;--c-b:#f0a052;--c-c:#4cc27e;--c-d:#d27ce0;--shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:110px}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:1240px;margin:0 auto;padding:0 16px 40px}
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.top-in{max-width:1240px;margin:0 auto;padding:10px 16px 8px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.brand{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-right:auto}
+.brand h1{font-size:17px;margin:0;letter-spacing:-.01em}.brand .run{color:var(--muted);font-size:13px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-weight:600;font-size:12.5px;border:1px solid transparent}
+.pill::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.pill.ok{color:var(--ok);background:var(--ok-bg)}.pill.warn{color:var(--warn);background:var(--warn-bg)}.pill.critical{color:var(--crit);background:var(--crit-bg)}
+.meta{color:var(--muted);font-size:12.5px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+button.ctl{font:inherit;font-size:12.5px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:3px 9px;cursor:pointer}
+button.ctl:hover{border-color:var(--muted)}button.ctl[aria-pressed="true"]{background:var(--run-bg);border-color:var(--accent);color:var(--accent)}
+nav.sec{max-width:1240px;margin:0 auto;padding:0 16px 8px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.sec a{color:var(--muted);text-decoration:none;font-size:13px;padding:3px 10px;border-radius:7px;white-space:nowrap}
+nav.sec a:hover{color:var(--text);background:var(--surface)}
+.stale{display:none;margin:12px 0 0;padding:10px 14px;border-radius:10px;background:var(--crit-bg);color:var(--crit);font-weight:600}
+section.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin:14px 0;box-shadow:var(--shadow)}
+section.card>h2{font-size:15px;margin:0 0 12px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+section.card>h2 small{font-weight:400;color:var(--muted);font-size:12.5px}
+h3{font-size:13px;margin:16px 0 8px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:600}
+.alerts{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.alerts li{padding:8px 12px;border-radius:8px;display:flex;gap:10px;align-items:flex-start}
+.alerts li b{font-size:11px;letter-spacing:.05em;padding:2px 6px;border-radius:5px;flex:none;margin-top:1px}
+.alerts .critical{background:var(--crit-bg)}.alerts .critical b{background:var(--crit);color:var(--surface)}
+.alerts .warn{background:var(--warn-bg)}.alerts .warn b{background:var(--warn);color:var(--surface)}
+.alerts .clear{background:var(--ok-bg);color:var(--ok);font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));gap:10px}
+.kpi{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;min-width:0;border-left-width:3px}
+.kpi.s-ok{border-left-color:var(--ok)}.kpi.s-warn{border-left-color:var(--warn)}.kpi.s-critical{border-left-color:var(--crit)}.kpi.s-run{border-left-color:var(--run)}
+.k-l{color:var(--muted);font-size:12px}.k-v{font-size:19px;font-weight:650;letter-spacing:-.01em;margin-top:1px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.k-s{color:var(--muted);font-size:12px;margin-top:2px;overflow-wrap:anywhere}
+.bar{height:6px;border-radius:4px;background:var(--grid);overflow:hidden;margin-top:7px;position:relative}.bar>i{display:block;height:100%;background:var(--accent);border-radius:4px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+.charts{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px 16px}
+.chart-box{min-width:0}.chart-box .ct{font-size:12.5px;font-weight:600;margin:0 0 4px;display:flex;justify-content:space-between;gap:8px}
+.chart-box .ct small{font-weight:400;color:var(--muted)}
+.chart{position:relative}.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart .gl{stroke:var(--grid);stroke-width:1}.chart .ax{fill:var(--muted);font-size:10.5px;font-variant-numeric:tabular-nums}
+.chart .ref{stroke:var(--muted);stroke-dasharray:3 3;stroke-width:1}.chart .ref-t{font-size:10px}.chart .cross{stroke:var(--muted);stroke-width:1}
+.chart .empty{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12.5px;border:1px dashed var(--border);border-radius:8px}
+.legend{display:flex;flex-wrap:wrap;gap:2px 4px;margin-top:2px}
+.legend .lg{font:inherit;font-size:11.5px;color:var(--muted);background:none;border:0;padding:2px 5px;border-radius:5px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+.legend .lg:hover{background:var(--surface-2);color:var(--text)}.legend .lg.off{opacity:.4;text-decoration:line-through}
+.legend i,.tip i,.dot{display:inline-block;width:9px;height:9px;border-radius:2px;flex:none}
+.tip{position:absolute;z-index:5;pointer-events:none;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px 8px;font-size:12px;box-shadow:0 4px 16px rgba(0,0,0,.12);white-space:nowrap;font-variant-numeric:tabular-nums}
+.tip div{display:flex;align-items:center;gap:6px}.tip-h{color:var(--muted);margin-bottom:2px}
+table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--border);vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:12px;white-space:nowrap}td.num,th.num{text-align:right}
+.tbl{overflow-x:auto}
+.b{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.b.ok,.b.pass,.b.built,.b.done{color:var(--ok);background:var(--ok-bg)}.b.running,.b.building{color:var(--run);background:var(--run-bg)}
+.b.pending,.b.waiting,.b.planned{color:var(--muted);background:var(--plan-bg)}.b.fail,.b.failed{color:var(--crit);background:var(--crit-bg)}
+.share{position:relative;height:8px;background:var(--grid);border-radius:4px;min-width:90px}.share>i{position:absolute;inset:0 auto 0 0;border-radius:4px}
+.share>u{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--text);opacity:.55}
+.muted{color:var(--muted)}.small{font-size:12px}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+pre.log{margin:0;padding:10px 12px;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;overflow-x:auto;font-size:11.5px;line-height:1.5}
+.gantt{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr) auto;row-gap:7px;column-gap:12px;align-items:center;position:relative}
+.g-label{font-size:12.5px;font-weight:600;line-height:1.2}.g-label small{display:block;font-weight:400;color:var(--muted);font-size:11.5px}
+.g-time{font-size:11.5px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.g-track{position:relative;height:18px;background:var(--surface-2);border-radius:5px}
+.g-scale{position:relative;height:16px}.g-head{height:30px}.g-scale span{position:absolute;transform:translateX(-50%);font-size:10.5px;color:var(--muted);white-space:nowrap}
+.g-bar{position:absolute;top:2px;bottom:2px;border-radius:4px;overflow:hidden;min-width:3px}
+.g-bar.st-done{background:var(--ok)}.g-bar.st-running{background:var(--run-bg);outline:1.5px solid var(--run)}.g-bar.st-planned{background:var(--plan-bg);outline:1px dashed var(--plan)}
+.g-bar.st-failed{background:var(--crit)}.g-fill{height:100%;background:var(--run)}
+.g-over{grid-column:2;position:relative;pointer-events:none;align-self:stretch}
+.g-line{position:absolute;top:0;bottom:0;width:0;border-left:2px solid var(--crit)}.g-line.now{border-left-color:var(--text)}
+.g-line span{position:absolute;top:0;left:4px;font-size:10.5px;white-space:nowrap;color:var(--muted);background:var(--surface);padding:0 3px;border-radius:3px}
+.g-line.now span{color:var(--text);font-weight:600}.g-line span.r{left:auto;right:4px}
+.summary{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-size:13px}.summary b{font-variant-numeric:tabular-nums}
+.heat td.c{text-align:center;font-size:12px;min-width:40px}
+.empty-state{color:var(--muted);padding:6px 0 2px}
+footer{color:var(--muted);font-size:12px;margin:18px 0 0;line-height:1.7}
+@media (max-width:640px){
+  .gantt{grid-template-columns:minmax(92px,110px) minmax(0,1fr)}.g-time{display:none}
+  .charts{grid-template-columns:1fr}.k-v{font-size:16px}section.card{padding:14px 12px}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.kpi{padding:8px 10px}.k-s{font-size:11.5px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brand"><h1>V13 run telemetry</h1><span class="run" id="runName"></span><span class="pill" id="status"></span></div>
+    <div class="meta">
+      <span id="updated"></span>
+      <button class="ctl" id="pauseBtn" type="button" aria-pressed="false">Pause refresh</button>
+      <button class="ctl" id="xBtn" type="button">x: step</button>
+      <button class="ctl" id="themeBtn" type="button">Theme: auto</button>
+    </div>
+  </div>
+  <nav class="sec" aria-label="Sections">
+    <a href="#overview">Overview</a><a href="#training">Training</a><a href="#machine">Machine</a>
+    <a href="#pipeline">Pipeline</a><a href="#continual">Continual</a><a href="#results">Results</a>
+  </nav>
+</header>
+<main id="app"><div class="stale" id="stale"></div></main>
+<script>
+'use strict';
+const D = /*__DATA__*/null;
+
+// ---------------------------------------------------------------- state kept across reloads (per tab)
+const store = (() => { try { return JSON.parse(sessionStorage.getItem('v13tel') || '{}'); } catch (e) { return {}; } })();
+store.hidden = store.hidden || {};
+const save = () => { try { sessionStorage.setItem('v13tel', JSON.stringify(store)); } catch (e) { /* storage unavailable */ } };
+
+// ---------------------------------------------------------------- helpers
+const $ = (s, r = document) => r.querySelector(s);
+function el(tag, attrs, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null || v === false) continue;
+    if (k === 'class') e.className = v; else if (k === 'style') e.style.cssText = v;
+    else if (k.startsWith('on')) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v === true ? '' : v);
+  }
+  for (const k of kids.flat(Infinity)) { if (k == null || k === false) continue; e.append(k instanceof Node ? k : document.createTextNode(String(k))); }
+  return e;
+}
+const NS = 'http://www.w3.org/2000/svg';
+function sv(tag, attrs) {
+  const e = document.createElementNS(NS, tag); let style = '';
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null) continue;
+    if (k === 'stroke' || k === 'fill') style += `${k}:${v};`; else e.setAttribute(k, v);
+  }
+  if (style) e.setAttribute('style', style);
+  return e;
+}
+const fmt = {
+  n: (v, d = 0) => v == null ? '—' : Number(v).toLocaleString(undefined, {maximumFractionDigits: d, minimumFractionDigits: d}),
+  pc: (v, d = 1) => v == null ? '—' : (100 * v).toFixed(d) + '%',
+  hm: t => t ? new Date(t * 1000).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit', hour12: false}) : '—',
+  dhm: t => t ? new Date(t * 1000).toLocaleString([], {weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false}) : '—',
+  dur: s => { if (s == null || !isFinite(s)) return '—'; const neg = s < 0; s = Math.abs(s); const h = Math.floor(s / 3600), m = Math.round((s % 3600) / 60);
+              return (neg ? '−' : '') + (h ? `${h} h ${String(m).padStart(2, '0')} min` : `${m} min`); },
+  ago: s => s < 90 ? `${Math.round(s)} s ago` : s < 5400 ? `${Math.round(s / 60)} min ago` : `${(s / 3600).toFixed(1)} h ago`,
+  sig: v => { if (v == null || !isFinite(v)) return '—'; const a = Math.abs(v);
+              return a === 0 ? '0' : a >= 1e6 ? (v / 1e6).toFixed(a >= 1e7 ? 0 : 1) + 'M' : a >= 1e4 ? (v / 1e3).toFixed(0) + 'k' : a >= 100 ? v.toFixed(0)
+                   : a >= 10 ? v.toFixed(1) : a >= 1 ? v.toFixed(2) : a >= 0.01 ? v.toFixed(3) : v.toExponential(1); },
+};
+const FAMS = ['grid', 'prog', 'state', 'plan', 'text'];
+const FC = {grid: 'var(--c-grid)', prog: 'var(--c-prog)', state: 'var(--c-state)', plan: 'var(--c-plan)', text: 'var(--c-text)'};
+const PAL = ['var(--c-a)', 'var(--c-b)', 'var(--c-c)', 'var(--c-d)', 'var(--c-text)'];
+const now = () => Date.now() / 1000;
+
+// ---------------------------------------------------------------- ticks
+function niceStep(range, n) { const raw = range / Math.max(1, n); const p = Math.pow(10, Math.floor(Math.log10(raw))); const f = raw / p;
+  return (f < 1.5 ? 1 : f < 3 ? 2 : f < 7 ? 5 : 10) * p; }
+function ticksLin(a, b, n) { const st = niceStep(b - a, n); const out = []; for (let v = Math.ceil(a / st) * st; v <= b + st * 1e-9; v += st) out.push(+v.toPrecision(12)); return out; }
+function ticksLog(a, b) { const out = []; for (let e = Math.floor(Math.log10(a)); e <= Math.ceil(Math.log10(b)); e++)
+  for (const m of [1, 2, 5]) { const v = m * Math.pow(10, e); if (v >= a * 0.999 && v <= b * 1.001) out.push(+v.toPrecision(6)); }
+  return out.length >= 2 ? out : [a, b]; }
+function ticksTime(a, b, n) {
+  const steps = [300, 600, 900, 1800, 3600, 7200, 10800, 21600, 43200]; const st = steps.find(s => (b - a) / s <= n) || 86400;
+  const off = -new Date(a * 1000).getTimezoneOffset() * 60; const out = [];
+  for (let t = Math.ceil((a + off) / st) * st - off; t <= b; t += st) out.push(t);
+  return out;
+}
+
+// ---------------------------------------------------------------- charts
+const charts = [];
+function chart(host, cfg) { const c = {host, cfg}; charts.push(c); safeDraw(c); return host; }
+function safeDraw(c) { try { drawChart(c); } catch (e) { console.error(e); c.host.replaceChildren(el('div', {class: 'empty', style: 'height:60px;color:var(--crit)'}, `chart failed: ${e.message}`)); } }
+function drawChart(c) {
+  const {host, cfg} = c;
+  host.innerHTML = ''; host.classList.add('chart');
+  const W = Math.max(240, Math.floor(host.clientWidth || 460)), H = cfg.height || 170, P = {l: 46, r: 12, t: 10, b: 24};
+  const hid = store.hidden[cfg.id] || {};
+  const series = cfg.series.map(s => ({...s, pts: (s.pts || []).filter(p => p && p[0] != null && p[1] != null && isFinite(p[1]) && (!cfg.ylog || p[1] > 0))
+                                                        .sort((u, v) => u[0] - v[0])}));
+  const legend = cfg.series.length > 1 || cfg.legend ? el('div', {class: 'legend'}, series.filter(s => !s.nolegend).map(s => el('button', {
+      class: 'lg' + (hid[s.name] ? ' off' : ''), type: 'button', title: 'show / hide',
+      onclick: () => { const v = !hid[s.name]; for (const z of series) if ((z.group || z.name) === (s.group || s.name)) hid[z.name] = v;
+                       store.hidden[cfg.id] = hid; save(); drawChart(c); }}, el('i', {style: `background:${s.color}`}), s.name))) : null;
+  const vis = series.filter(s => !hid[s.name] && s.pts.length);
+  if (!vis.length) { host.append(el('div', {class: 'empty', style: `height:${H}px`}, cfg.empty || 'no data yet'), legend); return; }
+  let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+  for (const s of vis) for (const [x, y] of s.pts) { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
+  if (cfg.xmin != null) x0 = Math.min(x0, cfg.xmin); if (cfg.xmax != null) x1 = Math.max(x1, cfg.xmax);
+  for (const r of cfg.refY || []) if (cfg.refInRange !== false) { y0 = Math.min(y0, r.y); y1 = Math.max(y1, r.y); }
+  if (cfg.ymin != null) y0 = Math.min(y0, cfg.ymin); if (cfg.ymax != null) y1 = Math.max(y1, cfg.ymax);
+  if (x1 === x0) { x0 -= 0.5; x1 += 0.5; }
+  let yt;
+  if (cfg.ylog) { yt = ticksLog(y0, y1); y0 = Math.min(y0, yt[0]); y1 = Math.max(y1, yt[yt.length - 1]); }
+  else { if (y1 === y0) { const d = Math.abs(y0) * 0.1 || 1; y0 -= d; y1 += d; }
+         const pad = (y1 - y0) * 0.07; if (cfg.ymin == null) y0 -= pad; if (cfg.ymax == null) y1 += pad; yt = ticksLin(y0, y1, 4); }
+  const X = x => P.l + (x - x0) / (x1 - x0) * (W - P.l - P.r);
+  const L = Math.log10;
+  const Y = cfg.ylog ? y => P.t + (1 - (L(y) - L(y0)) / (L(y1) - L(y0))) * (H - P.t - P.b) : y => P.t + (1 - (y - y0) / (y1 - y0)) * (H - P.t - P.b);
+  const svg = sv('svg', {viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': cfg.title || 'chart'});
+  for (const t of yt) { const yy = Y(t); if (yy < P.t - 0.5 || yy > H - P.b + 0.5) continue;
+    svg.append(sv('line', {x1: P.l, x2: W - P.r, y1: yy, y2: yy, class: 'gl'}));
+    const tx = sv('text', {x: P.l - 6, y: yy + 3.5, class: 'ax', 'text-anchor': 'end'}); tx.textContent = (cfg.yfmt || fmt.sig)(t); svg.append(tx); }
+  const xt = cfg.xticks || (cfg.xtime ? ticksTime(x0, x1, Math.max(2, Math.floor(W / 95))) : ticksLin(x0, x1, Math.max(2, Math.floor(W / 110))));
+  for (const t of xt) { if (t < x0 || t > x1) continue; const xx = X(t);
+    svg.append(sv('line', {x1: xx, x2: xx, y1: H - P.b, y2: H - P.b + 4, class: 'gl'}));
+    const tx = sv('text', {x: xx, y: H - 7, class: 'ax', 'text-anchor': 'middle'}); tx.textContent = (cfg.xfmt || fmt.sig)(t); svg.append(tx); }
+  svg.append(sv('line', {x1: P.l, x2: W - P.r, y1: H - P.b, y2: H - P.b, class: 'gl'}));
+  for (const r of cfg.refY || []) { const yy = Y(r.y); if (yy < P.t - 1 || yy > H - P.b + 1) continue;
+    svg.append(sv('line', {x1: P.l, x2: W - P.r, y1: yy, y2: yy, class: 'ref'}));
+    const tx = sv('text', {x: W - P.r - 2, y: yy - 4, class: 'ax ref-t', 'text-anchor': 'end'}); tx.textContent = r.label; svg.append(tx); }
+  for (const r of cfg.refX || []) { if (r.x < x0 || r.x > x1) continue; const xx = X(r.x), flip = xx > W - P.r - 70;
+    svg.append(sv('line', {x1: xx, x2: xx, y1: P.t, y2: H - P.b, class: 'ref'}));
+    const tx = sv('text', {x: flip ? xx - 3 : xx + 3, y: P.t + 9, class: 'ax ref-t', 'text-anchor': flip ? 'end' : 'start'}); tx.textContent = r.label; svg.append(tx); }
+  for (const s of vis) {
+    if (s.line !== false && s.pts.length > 1) {
+      const d = s.pts.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ',' + Y(p[1]).toFixed(1)).join('');
+      svg.append(sv('path', {d, fill: 'none', stroke: s.color, 'stroke-width': s.width || 1.8, 'stroke-dasharray': s.dash || null,
+                             'stroke-linejoin': 'round', 'stroke-linecap': 'round', opacity: s.opacity || null}));
+    }
+    if (s.dots || s.pts.length === 1) for (const p of s.pts)
+      svg.append(sv('circle', {cx: X(p[0]).toFixed(1), cy: Y(p[1]).toFixed(1), r: s.r || 2.2, fill: s.color, opacity: s.dotOpacity || 0.5}));
+  }
+  const cross = sv('line', {y1: P.t, y2: H - P.b, class: 'cross', visibility: 'hidden'}); svg.append(cross);
+  const marks = vis.map(s => { const m = sv('circle', {r: 3.6, fill: s.color, stroke: 'var(--surface)', 'stroke-width': 1.5, visibility: 'hidden'}); svg.append(m); return m; });
+  const ov = sv('rect', {x: P.l, y: P.t, width: W - P.l - P.r, height: H - P.t - P.b, fill: 'transparent'}); svg.append(ov);
+  const tip = el('div', {class: 'tip', hidden: true});
+  const near = (pts, x) => { let lo = 0, hi = pts.length - 1; while (hi - lo > 1) { const m = (lo + hi) >> 1; if (pts[m][0] < x) lo = m; else hi = m; }
+                             return Math.abs(pts[lo][0] - x) <= Math.abs(pts[hi][0] - x) ? pts[lo] : pts[hi]; };
+  const xf = cfg.xfmt || fmt.sig, vf = cfg.vfmt || fmt.sig;
+  ov.addEventListener('pointermove', ev => {
+    const r = svg.getBoundingClientRect(); const px = (ev.clientX - r.left) * W / r.width;
+    const x = x0 + (px - P.l) / (W - P.l - P.r) * (x1 - x0);
+    let bx = null, bd = Infinity; const rows = [];
+    vis.forEach((s, i) => { const p = near(s.pts, x); const dd = Math.abs(p[0] - x); if (dd < bd) { bd = dd; bx = p[0]; }
+      marks[i].setAttribute('cx', X(p[0])); marks[i].setAttribute('cy', Y(p[1])); marks[i].setAttribute('visibility', 'visible'); rows.push([s, p]); });
+    cross.setAttribute('x1', X(bx)); cross.setAttribute('x2', X(bx)); cross.setAttribute('visibility', 'visible');
+    tip.replaceChildren(el('div', {class: 'tip-h'}, `${cfg.xname || ''} ${xf(bx)}`.trim()),
+      ...rows.map(([s, p]) => el('div', {}, el('i', {style: `background:${s.color}`}), `${s.name}: ${vf(p[1])}`,
+                                 p[0] !== bx ? el('span', {class: 'muted'}, ` (at ${xf(p[0])})`) : null)));
+    tip.hidden = false;
+    const left = (ev.clientX - r.left) + 14; tip.style.left = Math.max(0, Math.min(left, r.width - tip.offsetWidth - 2)) + 'px'; tip.style.top = '4px';
+  });
+  ov.addEventListener('pointerleave', () => { tip.hidden = true; cross.setAttribute('visibility', 'hidden'); marks.forEach(m => m.setAttribute('visibility', 'hidden')); });
+  host.append(svg, tip); if (legend) host.append(legend);
+}
+function chartBox(title, sub, cfg) { const host = el('div'); const box = el('div', {class: 'chart-box'}, el('div', {class: 'ct'}, title, sub ? el('small', {}, sub) : null), host);
+  queueMicrotask(() => chart(host, cfg)); return box; }
+let rz; window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => charts.forEach(safeDraw), 150); });
+
+// ---------------------------------------------------------------- building blocks
+const card = (id, title, sub, ...kids) => el('section', {class: 'card', id}, el('h2', {}, title, sub ? el('small', {}, sub) : null), ...kids);
+const kpi = (label, value, sub, state, extra) => el('div', {class: 'kpi' + (state ? ' s-' + state : '')}, el('div', {class: 'k-l'}, label), el('div', {class: 'k-v'}, value),
+                                                      sub ? el('div', {class: 'k-s'}, sub) : null, extra || null);
+const pbar = (pct, color) => el('div', {class: 'bar'}, el('i', {style: `width:${Math.max(0, Math.min(100, pct || 0))}%;${color ? 'background:' + color : ''}`}));
+const badge = s => el('span', {class: 'b ' + String(s).split(' ')[0].replace(/[()]/g, '')}, s);
+const table = (head, rows, numCols = []) => el('div', {class: 'tbl'}, el('table', {},
+  el('thead', {}, el('tr', {}, head.map((h, i) => el('th', {class: numCols.includes(i) ? 'num' : null}, h)))),
+  el('tbody', {}, rows.map(r => el('tr', {}, r.map((v, i) => el('td', {class: numCols.includes(i) ? 'num' : null}, v)))))));
+const dot = c => el('i', {class: 'dot', style: `background:${c};margin-right:6px`});
+const xmode = () => store.x === 'hours' ? 'hours' : 'step';
+const xOf = r => xmode() === 'hours' ? r.h : r.step;
+const xName = () => xmode() === 'hours' ? 'training h' : 'step';
+const xFmt = () => xmode() === 'hours' ? (v => v.toFixed(v < 10 ? 2 : 1)) : (v => fmt.n(v));
+
+// ---------------------------------------------------------------- sections
+function overview() {
+  const A = D.alerts, b = D.base, m = D.machine, pl = D.plan, last = b.last || {};
+  const alerts = el('ul', {class: 'alerts'}, A.length ? A.map(a => el('li', {class: a.level}, el('b', {}, a.level === 'critical' ? 'CRITICAL' : 'WARNING'), el('span', {}, a.text)))
+                                                      : el('li', {class: 'clear'}, 'All clear: no alerts.'));
+  const ganttRows = [], segs = pl.segments, t0 = pl.t0, t1 = Math.max(pl.t1, pl.predicted_end) + 1200;
+  const pos = t => ((t - t0) / (t1 - t0) * 100);
+  const at = (r, c) => `grid-row:${r};grid-column:${c}`;                 // explicit cells: the overlay below spans column 2
+  ganttRows.push(el('div', {class: 'g-head', style: at(1, 2)}));      // row 1 holds the marker labels; the time scale is the last row
+  const narrow = window.innerWidth < 640;
+  ganttRows.push(el('div', {class: 'g-scale', style: at(segs.length + 2, 2)}, ticksTime(t0, t1, narrow ? 4 : 10).map(t => el('span', {style: `left:${pos(t)}%`}, fmt.hm(t)))));
+  const stateTxt = {done: 'done', running: 'in progress', planned: 'estimated', failed: 'failed'};
+  segs.forEach((s, i) => {
+    const row = i + 2;
+    const bar = el('div', {class: `g-bar st-${s.state}`, style: `left:${pos(s.start)}%;width:${Math.max(0.5, pos(s.end) - pos(s.start))}%`,
+                           title: `${s.name}: ${fmt.dhm(s.start)} → ${fmt.dhm(s.end)} (${fmt.dur(s.end - s.start)})`},
+                   s.state === 'running' && s.pct != null ? el('div', {class: 'g-fill', style: `width:${s.pct}%`}) : null);
+    ganttRows.push(el('div', {class: 'g-label', style: at(row, 1)}, s.name, el('small', {}, (stateTxt[s.state] || s.state) + (s.pct != null && s.state === 'running' ? ` · ${s.pct}%` : ''))),
+                   el('div', {class: 'g-track', style: at(row, 2)}, bar), el('div', {class: 'g-time', style: at(row, 3)}, `${fmt.hm(s.start)} – ${fmt.hm(s.end)}`));
+  });
+  const over = el('div', {class: 'g-over', style: `grid-row:1 / span ${segs.length + 1}`},
+    el('div', {class: 'g-line now', style: `left:${pos(now())}%`}, el('span', {class: pos(now()) > 75 ? 'r' : null}, (narrow ? '' : 'now ') + fmt.hm(now()))),
+    pl.markers.map(mk => el('div', {class: 'g-line', style: `left:${pos(mk.t)}%`}, el('span', {class: pos(mk.t) > 75 ? 'r' : null, style: mk.label.startsWith('24') ? null : 'top:15px'},
+      narrow ? (mk.label.startsWith('24') ? 'deadline' : 'CL ' + fmt.hm(mk.t)) : mk.label))));
+  const gantt = el('div', {class: 'gantt'}, ganttRows, over);
+  const slackState = pl.slack_s < 0 ? 'critical' : pl.slack_s < 3600 ? 'warn' : 'ok';
+  const summary = el('div', {class: 'summary'},
+    el('span', {}, 'Predicted finish ', el('b', {}, fmt.dhm(pl.predicted_end)), ` (24-h deadline ${fmt.dhm(pl.t1)})`),
+    el('span', {}, 'Slack ', el('b', {style: `color:var(--${slackState === 'ok' ? 'ok' : slackState === 'warn' ? 'warn' : 'crit'})`}, fmt.dur(pl.slack_s))),
+    el('span', {}, 'Continual ends ≈ ', el('b', {}, fmt.dhm(pl.cl_end)), ` (deadline 04:00, slack ${fmt.dur(pl.cl_slack_s)})`));
+  const power = m.power === 'AC' ? kpi('Power', 'AC', `battery ${m.battery_pct ?? '—'}% · ${m.battery_state || ''}`, 'ok')
+             : kpi('Power', m.power === 'battery' ? `Battery ${m.battery_pct}%` : 'unknown', m.battery_remaining || '', 'critical', pbar(m.battery_pct, 'var(--crit)'));
+  const ks = el('div', {class: 'kpis'},
+    b.last ? kpi('Base training', b.done ? 'finished' : `${b.pct}%`, `step ${fmt.n(last.step)} · ${last.h.toFixed(2)} of ${b.hours} h`, b.done ? 'ok' : 'run', pbar(b.pct)) : kpi('Base training', '—', 'no log yet'),
+    kpi('Training ends ≈', b.done ? fmt.dhm(b.done_at) : fmt.dhm(b.eta), b.wall_ratio ? `wall/training time ${b.wall_ratio.toFixed(3)}` : ''),
+    kpi('Throughput', b.last ? `${fmt.n(b.tok_s_recent)} tok/s` : '—', b.last ? `${b.s_step_recent} s/step · ${fmt.pc(b.tok_s_recent / D.bench_tok_s, 0)} of the launch benchmark` : '',
+        b.last && !b.done ? (b.s_step_recent > 4.5 ? 'warn' : 'ok') : null),
+    kpi('Tokens', b.last ? `${(last.tokens / 1e6).toFixed(1)} M` : '—', b.last ? `projected ${(b.tokens_projected / 1e6).toFixed(0)} M at the end` : ''),
+    power,
+    kpi('GPU', m.gpu_util != null ? `${m.gpu_util}%` : '—', `${m.gpu_inuse_gb ?? '—'} GB in use (driver ${last.mem_gb ?? '—'} GB)`, m.gpu_util != null && m.gpu_util < 60 && !b.done ? 'warn' : null),
+    kpi('Memory', `${m.mem_free_pct ?? '—'}% free`, `swap ${m.swap_gb ?? '—'} GB · compressor ${m.compressor_gb ?? '—'} GB`,
+        (m.mem_free_pct ?? 100) < 10 || (m.swap_gb ?? 0) > 6 ? 'critical' : (m.mem_free_pct ?? 100) < 15 || (m.swap_gb ?? 0) > 4 ? 'warn' : 'ok'),
+    kpi('Pipeline', D.post.all_done ? 'all done' : D.post.armed ? 'armed' : 'not running',
+        (D.post.steps.find(s => s.state === 'running') || {}).name || `panels ${D.panels.list.filter(p => p.state === 'built').length}/4 built`,
+        D.post.armed || D.post.all_done ? 'ok' : 'critical'));
+  return card('overview', 'Overview', `updated ${D.generated_str}`, alerts, el('h3', {}, '24-hour plan'), gantt, summary, el('h3', {}, 'Now'), ks);
+}
+
+function training() {
+  const b = D.base; if (!b.last) return card('training', 'Base training', '', el('p', {class: 'empty-state'}, 'No training log yet.'));
+  const S = b.series, last = b.last, X = r => xOf(r);
+  const smooth = store.smooth !== false;
+  const byFam = (key, id) => {                 // one series per family: each logged point is one single-family batch
+    const hid = store.hidden[id] || {}; for (const f of FAMS) { if (hid[f]) hid[f + ' (raw)'] = true; else delete hid[f + ' (raw)']; } store.hidden[id] = hid;
+    return FAMS.flatMap(f => {
+      const pts = S.filter(r => r.fam === f && r[key] != null).map(r => [X(r), r[key]]);
+      const med = pts.map((p, i) => { const w = pts.slice(Math.max(0, i - 2), i + 1).map(q => q[1]).sort((u, v) => u - v); return [p[0], w[w.length >> 1]]; });
+      return smooth ? [{name: f, group: f, color: FC[f], pts: med, dots: false}, {name: f + ' (raw)', group: f, color: FC[f], pts, line: false, dots: true, nolegend: true}]
+                    : [{name: f, group: f, color: FC[f], pts, dots: true, dotOpacity: 0.7}]; }); };
+  const stageX = [0.1, 0.3].map((fr, i) => { const r = S.find(r => r.h / b.hours >= fr); return r ? {x: X(r), label: `curriculum ${i + 2}`} : null; }).filter(Boolean);
+  const famSeries = byFam('ntp', 'loss');
+  const smoothBtn = el('button', {class: 'ctl', type: 'button', 'aria-pressed': String(smooth), onclick: () => { store.smooth = !smooth; save(); render(); }}, smooth ? 'Smoothed (median of 3 samples)' : 'Raw samples');
+  const lossCfg = {id: 'loss', series: famSeries, ylog: true, xname: xName(), xfmt: xFmt(), height: 230, title: 'loss by family', refX: stageX};
+  const ncpAcc = {id: 'ncpacc_f', series: byFam('ncp_acc', 'ncpacc_f'), xname: xName(), xfmt: xFmt(), ymin: 0, ymax: 1, height: 200, title: 'NCP accuracy by family', refX: stageX};
+  const ncpCE = {id: 'ncp_f', series: byFam('ncp', 'ncp_f'), ylog: true, xname: xName(), xfmt: xFmt(), height: 200, title: 'NCP loss by family', refX: stageX};
+  const never = FAMS.filter(f => !(b.by_family[f] || {}).n);
+  const lr = (k, name, color) => ({name, color, pts: S.map(r => [X(r), r[k]])});
+  const warm = (k, name, color) => ({name, color, pts: S.filter(r => r.step > 3).map(r => [X(r), r[k]])});   // without compile warm-up
+  const tauS = (last.tau || []).map((_, i) => ({name: `F${i + 1}`, color: PAL[i % PAL.length], pts: S.filter(r => r.tau).map(r => [X(r), r.tau[i]])}));
+  const betaN = ['token x', 'sg L_enc', 'G_enc'];
+  const betaS = (last.beta || []).map((_, i) => ({name: betaN[i] || `β${i}`, color: PAL[i % PAL.length], pts: S.filter(r => r.beta).map(r => [X(r), r.beta[i]])}));
+  const common = {xname: xName(), xfmt: xFmt()};
+  const sigs = el('div', {class: 'charts'},
+    chartBox('Throughput', 'tokens/s per 50-step window', {id: 'toks', ...common, series: [warm('tok_s', 'tok/s', 'var(--c-a)')], refY: [{y: D.bench_tok_s, label: 'launch benchmark'}], ymin: 0}),
+    chartBox('Seconds per step', 'excluding the compile warm-up', {id: 'sstep', ...common, series: [warm('s_step', 's/step', 'var(--c-b)')], refY: [{y: 2.5, label: 'alone at launch'}], ymin: 0}),
+    chartBox('Codebook usage perplexity', 'per segment, of 32', {id: 'ppl', ...common, series: [lr('ppl', 'perplexity', 'var(--c-a)')], refY: [{y: 32, label: 'all 32 codes'}]}),
+    chartBox('Gradient norm', 'before clipping at 1.0', {id: 'gn', ...common, series: [lr('gn', 'grad norm', 'var(--c-b)')], refY: [{y: 1, label: 'clip'}], ymin: 0}),
+    chartBox('Learning rate', 'warmup 200, cosine to 10% on training time', {id: 'lr', ...common, series: [lr('lr', 'lr', 'var(--c-c)')], ymin: 0, yfmt: v => v.toExponential(0)}),
+    chartBox('NCP weight λ', 'ramp 0 → 0.1 over the first 10%', {id: 'lam', ...common, series: [lr('lam', 'λ', 'var(--c-d)')], ymin: 0}),
+    chartBox('Full-attention temperatures τ', 'mean per F layer', {id: 'tau', ...common, series: tauS}),
+    chartBox('Pool source weights β', 'softmax over the three sources', {id: 'beta', ...common, series: betaS, ymin: 0}),
+    chartBox('GPU memory (driver)', 'GB, from the training process', {id: 'gmem', ...common, series: [lr('mem_gb', 'GB', 'var(--c-text)')], ymin: 0}));
+  const shareRows = FAMS.map(f => { const v = b.by_family[f] || {}; const sh = (b.family_share || {})[f] || 0, tg = (b.target_share || {})[f] || 0;
+    return [el('span', {style: 'white-space:nowrap'}, dot(FC[f]), f), v.n ? fmt.sig(v.med3) : el('span', {class: 'muted'}, 'never logged'), v.n ? fmt.n(v.n) : '0',
+            v.n ? fmt.n(v.step) : '—', v.n ? fmt.sig(v.ncp_acc) : '—',
+            el('div', {style: 'display:flex;align-items:center;gap:8px'}, el('div', {class: 'share', style: 'flex:1'}, el('i', {style: `width:${100 * sh / 0.3}%;background:${FC[f]}`}),
+               el('u', {style: `left:${100 * tg / 0.3}%`, title: `target ${fmt.pc(tg)}`})), el('span', {class: 'small', style: 'white-space:nowrap'}, `${fmt.pc(sh)} / ${fmt.pc(tg, 1)}`))]; });
+  const cur = b.curriculum, tiers = ['rungs 0–1 (prerequisite)', 'rungs 2–5 (working)', 'rungs 6–7 (train-side challenge)'];
+  const curBox = el('div', {}, el('div', {class: 'small muted'}, `Stage ${cur.stage + 1} of 3 at fraction ${cur.frac.toFixed(3)} of the budget`),
+    tiers.map((t, i) => el('div', {style: 'margin-top:8px'}, el('div', {class: 'small', style: 'display:flex;justify-content:space-between'}, el('span', {}, t), el('b', {}, fmt.pc(cur.mix[i], 0))),
+                           pbar(100 * cur.mix[i], PAL[i]))),
+    el('div', {class: 'small muted', style: 'margin-top:8px'}, cur.next_frac != null ? `Next change at fraction ${cur.next_frac} ≈ ${fmt.dhm(cur.next_eta)}` : 'Final stage (until the end of the run)'));
+  const ks = el('div', {class: 'kpis'},
+    kpi('Step', fmt.n(last.step), `B ${b.B} × ${b.T} · ${fmt.n(b.params)} params`),
+    kpi('Learning rate', last.lr.toExponential(2), `NCP λ ${last.lam.toFixed(3)}`),
+    kpi('NCP', `acc ${last.ncp_acc.toFixed(2)}`, `last logged batch (${last.fam}) · CE ${last.ncp.toFixed(2)} · code ppl ${last.ppl.toFixed(1)}/32`),
+    kpi('Health', `${last.skipped || 0} skipped`, `gn ${last.gn.toFixed(2)} · ${b.nonfinite_events} non-finite events · ${b.restarts} restarts`, (last.skipped || b.restarts) ? 'warn' : 'ok'),
+    kpi('Checkpoint', b.last_ckpt ? fmt.ago(now() - b.last_ckpt) : '—', 'latest.pt every 30 min (resume point)', b.last_ckpt && now() - b.last_ckpt > 2400 && !b.done ? 'warn' : null),
+    kpi('Snapshots', `${b.snaps.length} of 10`, b.snaps.length ? `last ${b.snaps[b.snaps.length - 1].name} at ${fmt.hm(b.snaps[b.snaps.length - 1].t)}` : 'every 10% of the budget'),
+    kpi('Log', fmt.ago(b.age_s), 'one line per 50 steps', b.age_s > 900 && !b.done ? 'critical' : null),
+    kpi('Average rate', b.tok_s_overall ? `${fmt.n(b.tok_s_overall)} tok/s` : '—', 'since launch, wall clock'),
+    (() => { const tr = D.procs.find(p => p.role === 'base training'); if (!tr || !tr.workers) return kpi('Data workers', '—', 'not running');
+             const sat = tr.workers_cpu > 85 * tr.workers; return kpi('Data workers', `${tr.workers} × ${Math.round(tr.workers_cpu / tr.workers)}%`,
+             `${tr.workers_cpu}% CPU in total, busiest ${tr.workers_max}%; ${sat ? 'saturated: training may wait on data' : 'not limiting'}`, sat ? 'warn' : 'ok'); })());
+  return card('training', 'Base training', `${b.dir} · seed ${b.seed} · started ${b.started}`, ks,
+    el('div', {class: 'grid2', style: 'margin-top:14px'},
+      el('div', {}, el('h3', {style: 'margin-top:0'}, 'Families'),
+         table(['family', 'loss (median of last 3)', 'samples', 'last at step', 'NCP acc', 'token share / target'], shareRows, [1, 2, 3, 4]),
+         el('p', {class: 'small muted'}, 'One family is logged per 50 steps (that step\'s batch)' + (never.length ? `; a family that has not landed on a logged step yet (${never.join(', ')}) has no loss here although it receives its share of tokens` : '') +
+            '. Reasoning loss is the per-example normalised answer loss; text is per token.')),
+      el('div', {}, el('h3', {style: 'margin-top:0'}, 'Curriculum'), curBox)),
+    el('h3', {}, 'Loss by family'),
+    el('div', {style: 'display:flex;gap:8px;margin-bottom:6px'}, smoothBtn),
+    chartBox('', 'log scale; click a family in the legend to hide it; dashed lines mark curriculum stage changes', lossCfg),
+    el('h3', {}, 'Next-concept prediction (NCP) by family'),
+    el('div', {class: 'grid2'}, chartBox('NCP accuracy', 'next-group PQ codes, mean of 4 segments', ncpAcc), chartBox('NCP loss', 'cross-entropy summed over 4 segments (log)', ncpCE)),
+    el('p', {class: 'small muted'}, 'Each point is one batch (8 rows of one family) logged every 50 steps. Families differ a lot in how predictable the next concept is (prog is the hardest), ' +
+       'so one line through all of them zig-zags; read each family on its own. The targets come from an EMA codebook that keeps moving, so these are not fixed-benchmark numbers. ' +
+       'High NCP accuracy alone does not show that the concept layers look ahead: the pre-registered test (an MLP probe on u_g against the same probe on its input p_g, ≥ 5 points) is under Results → mechanism diagnostics.'),
+    el('h3', {}, 'Signals'), sigs,
+    el('h3', {}, 'train.out'), el('pre', {class: 'log'}, (b.out_tail || []).join('\n') || '—'));
+}
+
+function machine() {
+  const m = D.machine, H = D.history, t = r => r.t;
+  const hs = (k, name, color) => ({name, color, pts: H.map(r => [t(r), r[k]])});
+  const tc = {xtime: true, xfmt: fmt.hm, xname: ''};
+  const sleepState = m.idle_sleep_blocked ? 'ok' : 'critical';
+  const ks = el('div', {class: 'kpis'},
+    kpi('Power source', m.power === 'AC' ? 'AC power' : m.power === 'battery' ? 'BATTERY' : 'unknown', `${m.battery_pct ?? '—'}% · ${m.battery_state || '—'} · ${m.battery_remaining || ''}`, m.power === 'AC' ? 'ok' : 'critical', pbar(m.battery_pct, m.power === 'AC' ? 'var(--ok)' : 'var(--crit)')),
+    kpi('Sleep protection', m.idle_sleep_blocked ? 'idle sleep blocked' : 'NOT blocked', `system sleep ${m.system_sleep_blocked ? 'blocked' : 'not blocked (needs AC)'} · caffeinate ${m.caffeinate_pids.length}×`, sleepState),
+    kpi('Lid', m.lid_closed == null ? '—' : m.lid_closed ? 'CLOSED' : 'open', 'closing it sleeps the Mac', m.lid_closed ? 'critical' : 'ok'),
+    kpi('Last sleep', fmt.dhm(m.last_sleep), `woke ${fmt.dhm(m.last_wake)}`, D.base.start_ts && m.last_sleep > D.base.start_ts ? 'critical' : 'ok'),
+    kpi('GPU', m.gpu_util != null ? `${m.gpu_util}% busy` : '—', `renderer ${m.gpu_renderer ?? '—'}% · ${m.gpu_inuse_gb ?? '—'} of ${m.gpu_alloc_gb ?? '—'} GB`),
+    kpi('CPU', m.cpu_busy != null ? `${m.cpu_busy}% busy` : '—', `load ${m.load1 ?? '—'} on 4 P + 4 E cores`),
+    kpi('Memory', `${m.mem_used_gb ?? '—'} GB used`, `wired ${m.wired_gb ?? '—'} · compressor ${m.compressor_gb ?? '—'} · unused ${m.unused_gb ?? '—'} GB · ${m.mem_free_pct ?? '—'}% free`),
+    kpi('Swap', `${m.swap_gb ?? '—'} GB`, 'keep under ~4 GB', (m.swap_gb ?? 0) > 6 ? 'critical' : (m.swap_gb ?? 0) > 4 ? 'warn' : 'ok'),
+    kpi('Disk', `${m.disk_free_gb ?? '—'} GB free`, 'checkpoints ~94 MB, snapshots ~31 MB', (m.disk_free_gb ?? 99) < 5 ? 'critical' : null),
+    kpi('Thermal', m.thermal_warning ? 'WARNING' : 'normal', 'pmset (fanless Air throttles silently)', m.thermal_warning ? 'warn' : 'ok'));
+  const hist = el('div', {class: 'charts'},
+    chartBox('GPU utilisation', '%', {id: 'h_gpu', ...tc, series: [hs('gpu_util', 'GPU %', 'var(--c-a)')], ymin: 0, ymax: 100}),
+    chartBox('CPU busy', '%', {id: 'h_cpu', ...tc, series: [hs('cpu_busy', 'CPU %', 'var(--c-b)')], ymin: 0, ymax: 100}),
+    chartBox('Memory free and swap', '', {id: 'h_mem', ...tc, series: [hs('mem_free_pct', 'free %', 'var(--c-c)'), {...hs('swap_gb', 'swap GB ×10', 'var(--c-d)'), pts: H.map(r => [t(r), r.swap_gb == null ? null : r.swap_gb * 10])}], ymin: 0}),
+    chartBox('Battery', '%; the green line marks minutes on AC power', {id: 'h_bat', ...tc, ymin: 0, ymax: 105, series: [hs('battery_pct', 'battery %', 'var(--c-text)'),
+      {name: 'on AC', color: 'var(--ok)', line: false, dots: true, r: 2, dotOpacity: 0.9, pts: H.map(r => [t(r), r.power === 'AC' ? 102 : null])}]}),
+    chartBox('GPU memory in use', 'GB', {id: 'h_gmem', ...tc, series: [hs('gpu_inuse_gb', 'in use', 'var(--c-a)'), hs('wired_gb', 'wired (all)', 'var(--c-text)')], ymin: 0}),
+    chartBox('Training throughput (sampled each minute)', 'tokens/s', {id: 'h_tok', ...tc, series: [hs('tok_s', 'tok/s', 'var(--c-c)')], ymin: 0}));
+  const procs = table(['process', 'pid', 'CPU (with workers)', 'memory', 'workers', 'running for'],
+    D.procs.map(p => [el('span', {}, el('b', {}, p.role), p.args ? el('div', {class: 'small muted mono'}, p.args) : null), p.pid, `${p.cpu}%`, `${fmt.n(p.rss_mb)} MB`, p.workers || '—', p.etime]), [1, 2, 3, 4]);
+  const guards = el('p', {class: 'small muted'}, 'Sleep guards: ', D.guards.length ? D.guards.map(g => `${g.pid}: ${g.what}`).join(' · ') : 'none');
+  return card('machine', 'Machine', 'MacBook Air M2, 16 GB · sampled every minute', ks, el('h3', {}, 'History'), hist, el('h3', {}, 'Run processes'), procs, guards);
+}
+
+function pipeline() {
+  const P = D.panels.list, F = D.preflight, post = D.post;
+  const panels = table(['panel', 'state', 'items', 'build time', 'finished'], P.map(p => [p.name, badge(p.state), p.items ? fmt.n(p.items) : '—',
+    p.seconds ? fmt.dur(p.seconds) + (p.state === 'building' ? ' so far' : '') : '—', fmt.hm(p.at)]), [2, 3]);
+  const checks = table(['check', 'state', 'scope'], F.map(c => [c.name, badge(c.state), el('span', {class: 'small muted'}, c.detail)]));
+  const steps = table(['step', 'state', 'started', 'ended', 'took'], post.steps.map(s => [el('span', {class: 'mono'}, s.name), badge(s.state), fmt.hm(s.start), fmt.hm(s.end),
+                       s.start ? fmt.dur((s.end || now()) - s.start) + (s.end ? '' : ' so far') : '—']), [4]);
+  const notes = post.notes.length ? el('ul', {class: 'small'}, post.notes.map(n => el('li', {}, `${fmt.dhm(n.t)} ${n.msg}`))) : null;
+  const bud = post.budget ? el('p', {class: 'small'}, `Continual budget: ${post.budget.steps} steps per phase (seq ${post.budget.t_seq.toFixed(2)} s/step, v13 ${post.budget.t_v13.toFixed(2)} s/step from the probe).`)
+                          : el('p', {class: 'small muted'}, 'Continual budget: computed by cl_budget.py after the probe and the final evaluation (40–100 steps per phase, so that the continual stage ends by 04:00).');
+  return card('pipeline', 'Panels, pre-flight checks and the post-base pipeline', post.armed ? 'post_base.sh is armed' : post.all_done ? 'finished' : 'post_base.sh is NOT running',
+    el('div', {class: 'grid2'}, el('div', {}, el('h3', {style: 'margin-top:0'}, 'Evaluation panels'), panels, el('p', {class: 'small muted'}, D.panels.builder_running ? 'Builder running at background priority.' : 'Builder not running.')),
+                                el('div', {}, el('h3', {style: 'margin-top:0'}, 'Pre-flight checks'), checks)),
+    el('h3', {}, 'Post-base pipeline (starts when the base run writes DONE)'), steps, bud, notes);
+}
+
+function continual() {
+  const C = D.continual, M = C.methods, names = Object.keys(M);
+  const pr = C.probe;
+  const probe = Object.keys(pr).length ? table(['probe', 'phase', 's/batch', 'wake / sleep / gates (s)', 'GPU memory'], Object.entries(pr).flatMap(([m, rs]) => rs.map(r => [m, r.phase,
+      ((r.s_train || (r.s_wake + r.s_sleep)) / r.steps).toFixed(2), r.s_wake != null ? `${r.s_wake} / ${r.s_sleep} / ${r.s_gates}` : `train ${r.s_train}`, r.mps_driver_gb != null ? `${r.mps_driver_gb} GB` : '—'])), [2])
+    : el('p', {class: 'empty-state'}, `The B = 8 MPS probe runs first after training (≈ ${fmt.dhm(D.base.eta)}).`);
+  if (!names.length) return card('continual', 'Continual learning', 'S1–S6, seq · v13 · replay', el('h3', {style: 'margin-top:0'}, 'Probe'), probe,
+    el('p', {class: 'empty-state'}, `No phase finished yet. The three methods run after the final evaluation; predicted to end ≈ ${fmt.dhm(D.plan.cl_end)}.`));
+  const rows = names.flatMap(m => M[m].map(r => [m, r.phase, r.steps, `${fmt.sig(r.online_first)} → ${fmt.sig(r.online_last)}`,
+    r.gate_open_pos != null ? `${r.gate_open_pos.toFixed(2)} / ${r.gate_open_neg.toFixed(2)}` : '—', r.bank_writes != null ? fmt.n(r.bank_writes) : '—', fmt.dur(r.seconds)]));
+  const ph = ['S1', 'S2', 'S3', 'S4', 'S5', 'S6'];
+  const series = names.map((m, i) => ({name: m, color: PAL[i], dots: true, pts: M[m].map(r => [ph.indexOf(r.phase) + 1, r.online_last])}));
+  const gates = M.v13 ? [{name: 'own phase (pos)', color: 'var(--c-c)', dots: true, pts: M.v13.map(r => [ph.indexOf(r.phase) + 1, r.gate_open_pos])},
+                         {name: 'other data (neg)', color: 'var(--c-d)', dots: true, pts: M.v13.map(r => [ph.indexOf(r.phase) + 1, r.gate_open_neg])}] : [];
+  return card('continual', 'Continual learning', 'S1–S6, seq · v13 · replay, same incoming rows',
+    el('h3', {style: 'margin-top:0'}, 'Probe'), probe,
+    el('div', {class: 'charts', style: 'margin-top:12px'},
+      chartBox('Online loss at the end of each phase', 'loss on incoming rows before their update', {id: 'cl_on', series, xname: 'phase', xfmt: v => 'S' + Math.round(v), xmin: 1, xmax: 6, xticks: [1, 2, 3, 4, 5, 6]}),
+      gates.length ? chartBox('v13 gate openness', 'fraction of inputs where the phase adapter acts', {id: 'cl_gate', series: gates, xname: 'phase', xfmt: v => 'S' + Math.round(v), xmin: 1, xmax: 6, xticks: [1, 2, 3, 4, 5, 6], ymin: 0, ymax: 1}) : null),
+    el('h3', {}, 'Phases'), table(['method', 'phase', 'steps', 'online loss first → last', 'gate open pos / neg', 'bank writes', 'time'], rows, [2, 5]));
+}
+
+function results() {
+  const R = D.results;
+  if (!R.base && !R.diag && !R.cl) return card('results', 'Results', 'single seed; pre-registered readings in REPORT.md',
+    el('p', {class: 'empty-state'}, `Nothing yet. The base test lands about an hour after training ends (≈ ${fmt.dhm(D.base.eta + 4300)}); the continual matrix ≈ ${fmt.dhm(D.plan.cl_end + 3600)}.`));
+  const parts = [];
+  if (R.base) {
+    const ev = R.base;
+    parts.push(el('div', {class: 'kpis'}, kpi('Reasoning', ev.reasoning != null ? ev.reasoning.toFixed(4) : '—', 'mean over 4 families of 0.75 ID + 0.25 challenge (above floor)', 'run'),
+      kpi('Text NLL', ev.text_nll != null ? ev.text_nll.toFixed(3) : '—', 'nats/token, 512 held-out stories'),
+      kpi('Checkpoint', `step ${fmt.n(ev.step)}`, `${ev.tokens ? (ev.tokens / 1e6).toFixed(1) + ' M tokens' : ''}`)));
+    if (ev.family_scores) parts.push(el('h3', {}, 'Families'), table(['family', 'ID area', 'challenge area', 'score'], Object.entries(ev.family_scores).map(([k, v]) => [k, v.id_area.toFixed(4), v.challenge_area.toFixed(4), v.score.toFixed(4)]), [1, 2, 3]));
+    if (ev.ladders) {
+      const nr = Math.max(...Object.values(ev.ladders).map(s => s.acc.length));
+      const cell = (a, f, i) => { const v = a == null ? null : a; const above = v == null ? 0 : Math.max(0, (v - f) / (1 - f + 1e-9));
+        return el('td', {class: 'c', title: `rung ${i}: ${v == null ? '—' : v.toFixed(3)} (floor ${f.toFixed(2)})`, style: `background:color-mix(in srgb,var(--ok) ${Math.round(70 * above)}%,transparent)${i >= 8 ? ';border-left:2px solid var(--border)' : ''}`}, v == null ? '—' : v.toFixed(2)); };
+      parts.push(el('h3', {}, 'Ladders (exact success per rung; 8–9 are test-only)'), el('div', {class: 'tbl'}, el('table', {class: 'heat'},
+        el('thead', {}, el('tr', {}, el('th', {}, 'task'), [...Array(nr).keys()].map(i => el('th', {class: 'num'}, i)), el('th', {class: 'num'}, 'ID area'), el('th', {class: 'num'}, 'L50'))),
+        el('tbody', {}, Object.entries(ev.ladders).map(([t, s]) => el('tr', {}, el('td', {}, t), s.acc.map((a, i) => cell(a, s.floor[i] || 0, i)),
+          el('td', {class: 'num'}, s.id_area.toFixed(3)), el('td', {class: 'num'}, s.L50 == null ? '—' : typeof s.L50 === 'number' ? s.L50.toFixed(2) : String(s.L50))))))));
+    }
+    if (ev.challenge) parts.push(el('h3', {}, 'Challenge panels'), table(['panel', 'trained rungs', 'above floor (all rungs)', '95% CI'], Object.entries(ev.challenge).map(([k, v]) => [k, v.trained_rungs.toFixed(3), v.above_floor.toFixed(3), `[${v.ci.join(', ')}]`]), [1, 2]));
+    if (ev.interventions) { const iv = ev.interventions, tasks = Object.keys(iv.normal).filter(k => k !== 'text_nll');
+      parts.push(el('h3', {}, 'Concept-path interventions (dev panels, teacher-forced exact)'), table(['read', ...tasks, 'text NLL'], Object.entries(iv).map(([n, v]) => [n, ...tasks.map(t => v[t] ? v[t].exact.toFixed(3) : '—'), v.text_nll.toFixed(3)]), [...tasks.keys()].map(i => i + 1).concat([tasks.length + 1]))); }
+    if (ev.newparam_curve && ev.newparam_curve.length) { const c = ev.newparam_curve;
+      parts.push(el('div', {class: 'charts'}, chartBox('New-parameter curve over snapshots', 'teacher-forced exact, trained rungs', {id: 'np', xname: '% of budget', xfmt: v => v.toFixed(0) + '%', ymin: 0, series: [
+        {name: 'grid1 new-param', color: 'var(--c-a)', dots: true, pts: c.map(r => [r.pct, r.grid1_newparam])}, {name: 'grid1 ID', color: 'var(--c-a)', dash: '4 3', pts: c.map(r => [r.pct, r.grid1_id_dev])},
+        {name: 'grid2 new-param', color: 'var(--c-b)', dots: true, pts: c.map(r => [r.pct, r.grid2_newparam])}, {name: 'grid2 ID', color: 'var(--c-b)', dash: '4 3', pts: c.map(r => [r.pct, r.grid2_id_dev])}]}))); }
+  }
+  if (R.diag) {
+    const g = R.diag;
+    if (g.probes) parts.push(el('h3', {}, 'Mechanism diagnostics: probe on u_g vs its input p_g (next-group codes)'), table(['family', 'groups', 'probe u', 'probe p', 'u − p', '≥ 5 pt', 'NCP head'],
+      Object.entries(g.probes).map(([f, v]) => [f, fmt.n(v.groups), v.probe_u.toFixed(3), v.probe_p.toFixed(3), (v.u_minus_p >= 0 ? '+' : '') + v.u_minus_p.toFixed(3), badge(v.passes_5pt ? 'pass' : 'fail'), v.ncp_head.toFixed(3)]), [1, 2, 3, 4, 6]));
+    if (g.e2_loop_inference) { const L = g.e2_loop_inference, tasks = Object.keys(L['R=2'] || {});
+      parts.push(el('h3', {}, 'E2 loops at inference'), table(['loops', ...tasks], Object.entries(L).map(([k, v]) => [k, ...tasks.map(t => v[t].exact.toFixed(3))]), tasks.map((_, i) => i + 1))); }
+  }
+  if (R.cl) {
+    parts.push(el('h3', {}, 'Continual matrix metrics'), table(['method', 'final average', 'backward transfer', 'forgetting', 'S0 before return (S5)'],
+      Object.entries(R.cl).map(([m, v]) => [m, v.final_average.toFixed(3), (v.backward_transfer >= 0 ? '+' : '') + v.backward_transfer.toFixed(3), v.forgetting.toFixed(3), v.retention_before_return.toFixed(3)]), [1, 2, 3, 4]));
+    if (R.cl_paired) parts.push(el('h3', {}, 'Paired differences (same items for every method; 95% bootstrap)'), table(['pair', 'final average', '95% CI', 'S0 before return', '95% CI'], Object.entries(R.cl_paired).map(([k, v]) => [k, (v.final_average >= 0 ? '+' : '') + v.final_average.toFixed(4), `[${v.final_average_ci.join(', ')}]`,
+      (v.s0_before_return >= 0 ? '+' : '') + v.s0_before_return.toFixed(4), `[${v.s0_before_return_ci.join(', ')}]`]), [1, 3]));
+  }
+  return card('results', 'Results', 'single seed: exploratory; pre-registered readings in REPORT.md', ...parts);
+}
+
+// ---------------------------------------------------------------- page
+function render() {
+  charts.length = 0;
+  const app = $('#app'); const stale = $('#stale'); app.replaceChildren(stale);
+  if (!D) { app.append(el('p', {}, 'No telemetry data in this file (template).')); return; }
+  $('#runName').textContent = D.name;
+  const worst = D.alerts.some(a => a.level === 'critical') ? 'critical' : D.alerts.some(a => a.level === 'warn') ? 'warn' : 'ok';
+  const pill = $('#status'); pill.className = 'pill ' + worst; pill.textContent = {critical: `${D.alerts.filter(a => a.level === 'critical').length} critical`, warn: 'warnings', ok: 'healthy'}[worst];
+  document.title = `${worst === 'critical' ? '⚠ ' : ''}V13 · ${D.base.last ? D.base.pct + '%' : ''} · telemetry`;
+  const safe = (id, fn) => { try { return fn(); } catch (e) { console.error(e);
+    return card(id, id[0].toUpperCase() + id.slice(1), '', el('p', {class: 'empty-state', style: 'color:var(--crit)'}, `This section failed to render: ${e.message}`)); } };
+  app.append(safe('overview', overview), safe('training', training), safe('machine', machine), safe('pipeline', pipeline),
+             safe('continual', continual), safe('results', results),
+    el('footer', {}, 'Files: telemetry/status.json (latest snapshot) · telemetry/alerts.log · telemetry/system.jsonl · runs/post/status.log · REPORT.md. ',
+       'Terminal summary: python3 telemetry.py. The page is regenerated every minute by telemetry.py --loop and reloads itself.'));
+}
+function tick() {
+  if (!D) return;
+  const age = now() - D.generated, every = D.every || 60;
+  const stale = $('#stale');
+  if (age > 3 * every) { stale.style.display = 'block'; stale.textContent = `Telemetry is stale: last update ${fmt.ago(age)}. The telemetry loop may have stopped, or the Mac slept.`; }
+  else stale.style.display = 'none';
+  const left = Math.max(0, Math.round(every - age + 8));
+  $('#updated').textContent = store.paused ? `updated ${fmt.hm(D.generated)} · refresh paused` : `updated ${fmt.hm(D.generated)} · refresh in ${left} s`;
+  if (!store.paused && age > every + 8 && now() - window.__loadedAt > (age > 3 * every ? 60 : 20)) { store.y = window.scrollY; save(); location.reload(); }
+}
+function controls() {
+  const pb = $('#pauseBtn'), xb = $('#xBtn'), tb = $('#themeBtn');
+  const setP = () => { pb.setAttribute('aria-pressed', String(!!store.paused)); pb.textContent = store.paused ? 'Resume refresh' : 'Pause refresh'; };
+  pb.onclick = () => { store.paused = !store.paused; save(); setP(); tick(); }; setP();
+  xb.textContent = `x: ${xmode() === 'hours' ? 'training hours' : 'step'}`; xb.onclick = () => { store.x = xmode() === 'hours' ? 'step' : 'hours'; save(); xb.textContent = `x: ${xmode() === 'hours' ? 'training hours' : 'step'}`; render(); };
+  const themes = ['auto', 'light', 'dark'];
+  const setT = () => { const t = store.theme || 'auto'; if (t === 'auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme', t); tb.textContent = `Theme: ${t}`; };
+  tb.onclick = () => { store.theme = themes[(themes.indexOf(store.theme || 'auto') + 1) % 3]; save(); setT(); }; setT();
+}
+window.__loadedAt = now();
+controls(); render();
+requestAnimationFrame(() => { if (store.y != null) { window.scrollTo(0, store.y); delete store.y; save(); } });
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>

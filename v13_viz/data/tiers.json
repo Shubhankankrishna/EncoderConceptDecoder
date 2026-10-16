@@ -1,0 +1,688 @@
+{
+ "source": "v13_design/accounting.py count() and long_context_memory(), run by extract.py",
+ "tiers": [
+  {
+   "tier": {
+    "name": "tiny (M2, \u00a712)",
+    "d": 128,
+    "vocab": 1090,
+    "heads": 4,
+    "head_dim": 32,
+    "e1_blocks": 1,
+    "e2_layers_M": 3,
+    "e2_layers_F": 1,
+    "e2_loops": 2,
+    "e3_blocks": 1,
+    "n_c": 2,
+    "n_d": 3,
+    "k": 4,
+    "w_e": 16,
+    "w_d": 16,
+    "w_c": 16,
+    "t_train_min": 1024,
+    "n_branch": 2,
+    "ffn": "dense",
+    "ffn_hidden": 256,
+    "moe_experts": 0,
+    "moe_active": 0,
+    "moe_shared": 0,
+    "moe_latent": 0,
+    "moe_expert_hidden": 0,
+    "global_kind": "full",
+    "mla_q_rank": 1536,
+    "mla_kv_rank": 512,
+    "mla_rope": 64,
+    "global_nope": true,
+    "entry_dim": 512,
+    "indexer_dim": 128,
+    "concept_kv_groups": 8,
+    "pq_segments": 4,
+    "pq_words": 32,
+    "engram_slots": 131056,
+    "engram_dim": 8,
+    "tied": true,
+    "mtp": false,
+    "notes": []
+   },
+   "rows": {
+    "E1 attention + residual ops": {
+     "stored": 425984,
+     "active": 425984,
+     "flops": 851968
+    },
+    "E1 FFN": {
+     "stored": 393216,
+     "active": 393216,
+     "flops": 786432
+    },
+    "E2 attention + residual ops (looped)": {
+     "stored": 676864,
+     "active": 676864,
+     "flops": 2707456
+    },
+    "E2 FFN (looped)": {
+     "stored": 393216,
+     "active": 393216,
+     "flops": 1572864
+    },
+    "E3 attention + residual ops": {
+     "stored": 475136,
+     "active": 475136,
+     "flops": 950272
+    },
+    "E3 FFN": {
+     "stored": 393216,
+     "active": 393216,
+     "flops": 786432
+    },
+    "encoder exit reads": {
+     "stored": 16896,
+     "active": 16896,
+     "flops": 33792
+    },
+    "Engram projections": {
+     "stored": 82432,
+     "active": 82432,
+     "flops": 164864
+    },
+    "Engram table": {
+     "stored": 1048448,
+     "active": 0,
+     "flops": 0
+    },
+    "pooling": {
+     "stored": 114688,
+     "active": 114688,
+     "flops": 57344.0
+    },
+    "concept module attention": {
+     "stored": 327680,
+     "active": 327680,
+     "flops": 163840.0
+    },
+    "concept module FFN": {
+     "stored": 196608,
+     "active": 196608,
+     "flops": 98304.0
+    },
+    "NCP head": {
+     "stored": 65536,
+     "active": 65536,
+     "flops": 32768.0
+    },
+    "decoder attention": {
+     "stored": 491520,
+     "active": 491520,
+     "flops": 983040
+    },
+    "decoder FFN": {
+     "stored": 294912,
+     "active": 294912,
+     "flops": 589824
+    },
+    "embedding": {
+     "stored": 139520,
+     "active": 0,
+     "flops": 0
+    },
+    "output head": {
+     "stored": 0,
+     "active": 139520,
+     "flops": 279040
+    }
+   },
+   "total": {
+    "stored": 5535872,
+    "active": 4487424,
+    "flops": 10058240.0
+   },
+   "engram_table": 1048448,
+   "embedding_and_head": 139520,
+   "inactive": 1048448,
+   "engram_share_of_inactive": 1.0,
+   "non_embedding_non_table": 4347904,
+   "codebook_buffers": 4096,
+   "reach": {
+    "R_L": 56,
+    "R_D_confined": 71,
+    "R_D_own_swa": 101,
+    "rho_confined": 0.0693359375,
+    "rho_own_swa": 0.0986328125
+   },
+   "memory_1M": null,
+   "memory_trainctx": {
+    "local_windows": 73728,
+    "encoder_global": 2097152,
+    "gdn2_state": 49152,
+    "concept_self_attention": 262144,
+    "decoder_concept_entries": 393216,
+    "total": 2875392
+   }
+  },
+  {
+   "tier": {
+    "name": "7B-A1.4B (first scale tier)",
+    "d": 1536,
+    "vocab": 65536,
+    "heads": 12,
+    "head_dim": 128,
+    "e1_blocks": 1,
+    "e2_layers_M": 3,
+    "e2_layers_F": 1,
+    "e2_loops": 2,
+    "e3_blocks": 1,
+    "n_c": 6,
+    "n_d": 16,
+    "k": 4,
+    "w_e": 64,
+    "w_d": 128,
+    "w_c": 16,
+    "t_train_min": 4096,
+    "n_branch": 2,
+    "ffn": "moe",
+    "ffn_hidden": 256,
+    "moe_experts": 56,
+    "moe_active": 6,
+    "moe_shared": 1,
+    "moe_latent": 0,
+    "moe_expert_hidden": 512,
+    "global_kind": "mla",
+    "mla_q_rank": 768,
+    "mla_kv_rank": 256,
+    "mla_rope": 64,
+    "global_nope": true,
+    "entry_dim": 256,
+    "indexer_dim": 128,
+    "concept_kv_groups": 8,
+    "pq_segments": 12,
+    "pq_words": 128,
+    "engram_slots": 19100000,
+    "engram_dim": 64,
+    "tied": false,
+    "mtp": true,
+    "notes": []
+   },
+   "rows": {
+    "E1 attention + residual ops": {
+     "stored": 56328192,
+     "active": 56328192,
+     "flops": 112656384
+    },
+    "E1 FFN": {
+     "stored": 538263552,
+     "active": 66404352,
+     "flops": 132808704
+    },
+    "E2 attention + residual ops (looped)": {
+     "stored": 93941760,
+     "active": 93941760,
+     "flops": 375767040
+    },
+    "E2 FFN (looped)": {
+     "stored": 538263552,
+     "active": 66404352,
+     "flops": 265617408
+    },
+    "E3 attention + residual ops": {
+     "stored": 63406080,
+     "active": 63406080,
+     "flops": 126812160
+    },
+    "E3 FFN": {
+     "stored": 538263552,
+     "active": 66404352,
+     "flops": 132808704
+    },
+    "encoder exit reads": {
+     "stored": 2365440,
+     "active": 2365440,
+     "flops": 4730880
+    },
+    "Engram projections": {
+     "stored": 7870464,
+     "active": 7870464,
+     "flops": 15740928
+    },
+    "Engram table": {
+     "stored": 1222400000,
+     "active": 0,
+     "flops": 0
+    },
+    "pooling": {
+     "stored": 16515072,
+     "active": 16515072,
+     "flops": 8257536.0
+    },
+    "concept module attention": {
+     "stored": 107347968,
+     "active": 107347968,
+     "flops": 53673984.0
+    },
+    "concept module FFN": {
+     "stored": 807395328,
+     "active": 99606528,
+     "flops": 49803264.0
+    },
+    "NCP head": {
+     "stored": 9437184,
+     "active": 9437184,
+     "flops": 4718592.0
+    },
+    "decoder attention": {
+     "stored": 324009984,
+     "active": 324009984,
+     "flops": 648019968
+    },
+    "decoder FFN": {
+     "stored": 2153054208,
+     "active": 265617408,
+     "flops": 531234816
+    },
+    "MTP module": {
+     "stored": 159535104,
+     "active": 41570304,
+     "flops": 83140608
+    },
+    "embedding": {
+     "stored": 100663296,
+     "active": 0,
+     "flops": 0
+    },
+    "output head": {
+     "stored": 100663296,
+     "active": 100663296,
+     "flops": 201326592
+    },
+    "decoder concept entries (per release)": {
+     "stored": 4718592,
+     "active": 4718592,
+     "flops": 2359296.0
+    }
+   },
+   "total": {
+    "stored": 6844442624,
+    "active": 1392611328,
+    "flops": 2749476864.0
+   },
+   "engram_table": 1222400000,
+   "embedding_and_head": 201326592,
+   "inactive": 5451831296,
+   "engram_share_of_inactive": 0.2242182367045864,
+   "non_embedding_non_table": 5420716032,
+   "codebook_buffers": 196608,
+   "reach": {
+    "R_L": 200,
+    "R_D_confined": 327,
+    "R_D_own_swa": 2232,
+    "rho_confined": 0.079833984375,
+    "rho_own_swa": 0.544921875
+   },
+   "memory_1M": {
+    "local_windows": 14942208,
+    "encoder_global": 2048000000,
+    "gdn2_state": 2359296,
+    "concept_self_attention": 768000000,
+    "decoder_concept_entries": 1536000000,
+    "total": 4369301504
+   },
+   "memory_trainctx": {
+    "local_windows": 14942208,
+    "encoder_global": 8388608,
+    "gdn2_state": 2359296,
+    "concept_self_attention": 3145728,
+    "decoder_concept_entries": 6291456,
+    "total": 35127296
+   }
+  },
+  {
+   "tier": {
+    "name": "V13-K3 (2.8T class)",
+    "d": 7168,
+    "vocab": 160000,
+    "heads": 96,
+    "head_dim": 128,
+    "e1_blocks": 1,
+    "e2_layers_M": 3,
+    "e2_layers_F": 1,
+    "e2_loops": 2,
+    "e3_blocks": 1,
+    "n_c": 16,
+    "n_d": 56,
+    "k": 4,
+    "w_e": 64,
+    "w_d": 128,
+    "w_c": 16,
+    "t_train_min": 4096,
+    "n_branch": 2,
+    "ffn": "moe",
+    "ffn_hidden": 256,
+    "moe_experts": 768,
+    "moe_active": 16,
+    "moe_shared": 2,
+    "moe_latent": 3584,
+    "moe_expert_hidden": 3072,
+    "global_kind": "mla",
+    "mla_q_rank": 1536,
+    "mla_kv_rank": 512,
+    "mla_rope": 64,
+    "global_nope": true,
+    "entry_dim": 512,
+    "indexer_dim": 128,
+    "concept_kv_groups": 8,
+    "pq_segments": 56,
+    "pq_words": 128,
+    "engram_slots": 4300000000,
+    "engram_dim": 128,
+    "tied": false,
+    "mtp": true,
+    "notes": [
+     "routed experts cut from K3's 896 to 768 so that Engram holds ~20% of the inactive budget (\u00a73.5)"
+    ]
+   },
+   "rows": {
+    "E1 attention + residual ops": {
+     "stored": 1811218432,
+     "active": 1811218432,
+     "flops": 3622436864
+    },
+    "E1 FFN": {
+     "stored": 102224625664,
+     "active": 2869952512,
+     "flops": 5739905024
+    },
+    "E2 attention + residual ops (looped)": {
+     "stored": 2962972672,
+     "active": 2962972672,
+     "flops": 11851890688
+    },
+    "E2 FFN (looped)": {
+     "stored": 102224625664,
+     "active": 2869952512,
+     "flops": 11479810048
+    },
+    "E3 attention + residual ops": {
+     "stored": 1965359104,
+     "active": 1965359104,
+     "flops": 3930718208
+    },
+    "E3 FFN": {
+     "stored": 102224625664,
+     "active": 2869952512,
+     "flops": 5739905024
+    },
+    "encoder exit reads": {
+     "stored": 51408896,
+     "active": 51408896,
+     "flops": 102817792
+    },
+    "Engram projections": {
+     "stored": 73428992,
+     "active": 73428992,
+     "flops": 146857984
+    },
+    "Engram table": {
+     "stored": 550400000000,
+     "active": 0,
+     "flops": 0
+    },
+    "pooling": {
+     "stored": 359661568,
+     "active": 359661568,
+     "flops": 179830784.0
+    },
+    "concept module attention": {
+     "stored": 7430209536,
+     "active": 7430209536,
+     "flops": 3715104768.0
+    },
+    "concept module FFN": {
+     "stored": 408898502656,
+     "active": 11479810048,
+     "flops": 5739905024.0
+    },
+    "NCP head": {
+     "stored": 205520896,
+     "active": 205520896,
+     "flops": 102760448.0
+    },
+    "decoder attention": {
+     "stored": 37434163200,
+     "active": 37434163200,
+     "flops": 74868326400
+    },
+    "decoder FFN": {
+     "stored": 1431144759296,
+     "active": 40179335168,
+     "flops": 80358670336
+    },
+    "MTP module": {
+     "stored": 26327384064,
+     "active": 1488715776,
+     "flops": 2977431552
+    },
+    "embedding": {
+     "stored": 1146880000,
+     "active": 0,
+     "flops": 0
+    },
+    "output head": {
+     "stored": 1146880000,
+     "active": 1146880000,
+     "flops": 2293760000
+    },
+    "decoder concept entries (per release)": {
+     "stored": 36700160,
+     "active": 36700160,
+     "flops": 18350080.0
+    }
+   },
+   "total": {
+    "stored": 2778068926464,
+    "active": 115235241984,
+    "flops": 212868481024.0
+   },
+   "engram_table": 550400000000,
+   "embedding_and_head": 2293760000,
+   "inactive": 2662833684480,
+   "engram_share_of_inactive": 0.20669709986317922,
+   "non_embedding_non_table": 2225375166464,
+   "codebook_buffers": 917504,
+   "reach": {
+    "R_L": 200,
+    "R_D_confined": 327,
+    "R_D_own_swa": 7312,
+    "rho_confined": 0.079833984375,
+    "rho_own_swa": 1.78515625
+   },
+   "memory_1M": {
+    "local_windows": 371195904,
+    "encoder_global": 4096000000,
+    "gdn2_state": 18874368,
+    "concept_self_attention": 4096000000,
+    "decoder_concept_entries": 2560000000,
+    "total": 11142070272
+   },
+   "memory_trainctx": {
+    "local_windows": 371195904,
+    "encoder_global": 16777216,
+    "gdn2_state": 18874368,
+    "concept_self_attention": 16777216,
+    "decoder_concept_entries": 10485760,
+    "total": 434110464
+   }
+  },
+  {
+   "tier": {
+    "name": "tiny-v2 shape (formula)",
+    "d": 128,
+    "vocab": 2048,
+    "heads": 4,
+    "head_dim": 32,
+    "e1_blocks": 2,
+    "e2_layers_M": 3,
+    "e2_layers_F": 1,
+    "e2_loops": 2,
+    "e3_blocks": 1,
+    "n_c": 4,
+    "n_d": 6,
+    "k": 4,
+    "w_e": 8,
+    "w_d": 16,
+    "w_c": 16,
+    "t_train_min": 1024,
+    "n_branch": 2,
+    "ffn": "dense",
+    "ffn_hidden": 256,
+    "moe_experts": 0,
+    "moe_active": 0,
+    "moe_shared": 0,
+    "moe_latent": 0,
+    "moe_expert_hidden": 0,
+    "global_kind": "full",
+    "mla_q_rank": 1536,
+    "mla_kv_rank": 512,
+    "mla_rope": 64,
+    "global_nope": true,
+    "entry_dim": 512,
+    "indexer_dim": 128,
+    "concept_kv_groups": 8,
+    "pq_segments": 4,
+    "pq_words": 32,
+    "engram_slots": 131056,
+    "engram_dim": 8,
+    "tied": true,
+    "mtp": false,
+    "notes": []
+   },
+   "rows": {
+    "E1 attention + residual ops": {
+     "stored": 851968,
+     "active": 851968,
+     "flops": 1703936
+    },
+    "E1 FFN": {
+     "stored": 786432,
+     "active": 786432,
+     "flops": 1572864
+    },
+    "E2 attention + residual ops (looped)": {
+     "stored": 676864,
+     "active": 676864,
+     "flops": 2707456
+    },
+    "E2 FFN (looped)": {
+     "stored": 393216,
+     "active": 393216,
+     "flops": 1572864
+    },
+    "E3 attention + residual ops": {
+     "stored": 475136,
+     "active": 475136,
+     "flops": 950272
+    },
+    "E3 FFN": {
+     "stored": 393216,
+     "active": 393216,
+     "flops": 786432
+    },
+    "encoder exit reads": {
+     "stored": 16896,
+     "active": 16896,
+     "flops": 33792
+    },
+    "Engram projections": {
+     "stored": 82432,
+     "active": 82432,
+     "flops": 164864
+    },
+    "Engram table": {
+     "stored": 1048448,
+     "active": 0,
+     "flops": 0
+    },
+    "pooling": {
+     "stored": 114688,
+     "active": 114688,
+     "flops": 57344.0
+    },
+    "concept module attention": {
+     "stored": 655360,
+     "active": 655360,
+     "flops": 327680.0
+    },
+    "concept module FFN": {
+     "stored": 393216,
+     "active": 393216,
+     "flops": 196608.0
+    },
+    "NCP head": {
+     "stored": 65536,
+     "active": 65536,
+     "flops": 32768.0
+    },
+    "decoder attention": {
+     "stored": 983040,
+     "active": 983040,
+     "flops": 1966080
+    },
+    "decoder FFN": {
+     "stored": 589824,
+     "active": 589824,
+     "flops": 1179648
+    },
+    "embedding": {
+     "stored": 262144,
+     "active": 0,
+     "flops": 0
+    },
+    "output head": {
+     "stored": 0,
+     "active": 262144,
+     "flops": 524288
+    }
+   },
+   "total": {
+    "stored": 7788416,
+    "active": 6739968,
+    "flops": 13776896.0
+   },
+   "engram_table": 1048448,
+   "embedding_and_head": 262144,
+   "inactive": 1048448,
+   "engram_share_of_inactive": 1.0,
+   "non_embedding_non_table": 6477824,
+   "codebook_buffers": 4096,
+   "reach": {
+    "R_L": 53,
+    "R_D_confined": 68,
+    "R_D_own_swa": 143,
+    "rho_confined": 0.06640625,
+    "rho_own_swa": 0.1396484375
+   },
+   "memory_1M": null,
+   "memory_trainctx": {
+    "local_windows": 86016,
+    "encoder_global": 2621440,
+    "gdn2_state": 49152,
+    "concept_self_attention": 524288,
+    "decoder_concept_entries": 786432,
+    "total": 4067328
+   }
+  }
+ ],
+ "k3_reference": {
+  "total": 2780000000000.0,
+  "active": 104200000000.0,
+  "layers": 93,
+  "d": 7168,
+  "experts": 896,
+  "active_experts": 16,
+  "shared": 2,
+  "latent": 3584,
+  "expert_hidden": 3072,
+  "heads": 96,
+  "vocab": 160000,
+  "attention": "69 KDA + 24 MLA",
+  "mtp_layers": 1
+ }
+}

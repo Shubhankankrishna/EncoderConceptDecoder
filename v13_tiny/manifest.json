@@ -1,0 +1,475 @@
+{
+ "dataset_version": "v13.0-tiny-24h",
+ "frozen": "2026-10-14 09:14:01 IST",
+ "code_hashes": {
+  "grid.py": "bd289fd024bbb303",
+  "tasks.py": "1610b10ae0fbf600",
+  "tok.py": "3f3f269d2bd4e585",
+  "data.py": "a5b5b665d9b7efaf",
+  "model.py": "9303b36b1d1435ca",
+  "train.py": "5288253abb8c0143",
+  "ncp.py": "c66263c12fa4fb4a"
+ },
+ "tokenizer": {
+  "hash": "b93b7f578929a40f",
+  "vocab": 2048,
+  "specials": 113,
+  "fitted_on": "120,000 TinyStories train stories + S0 renderings only"
+ },
+ "split_rule": "blake2b('v13s0|' + semantic_key) % 100: <80 train, <85 calib, <90 dev, else test (Dataset_v13 \u00a76.1)",
+ "families": {
+  "grid": 0.225,
+  "prog": 0.225,
+  "state": 0.225,
+  "plan": 0.225,
+  "text": 0.1
+ },
+ "curriculum": "\u00a77.3 by elapsed fraction: <10%: 70/30/0; <30%: 30/60/10; else 15/65/20 (prerequisite rungs 0-1, working 2-5, challenge 6-7)",
+ "tasks": {
+  "grid1": {
+   "family": "grid",
+   "rungs": 10,
+   "trained_rungs": 8,
+   "generation_eval": false,
+   "tags": [
+    "neither known",
+    "copy-heavy"
+   ]
+  },
+  "grid2": {
+   "family": "grid",
+   "rungs": 10,
+   "trained_rungs": 8,
+   "generation_eval": false,
+   "tags": [
+    "neither known",
+    "copy-heavy"
+   ]
+  },
+  "arith": {
+   "family": "prog",
+   "rungs": 10,
+   "trained_rungs": 8,
+   "generation_eval": false,
+   "tags": [
+    "neither known",
+    "compute"
+   ]
+  },
+  "list": {
+   "family": "prog",
+   "rungs": 10,
+   "trained_rungs": 8,
+   "generation_eval": false,
+   "tags": [
+    "attention",
+    "copy-heavy"
+   ]
+  },
+  "reg": {
+   "family": "prog",
+   "rungs": 10,
+   "trained_rungs": 8,
+   "generation_eval": false,
+   "tags": [
+    "recurrence",
+    "compute"
+   ]
+  },
+  "graph": {
+   "family": "prog",
+   "rungs": 10,
+   "trained_rungs": 8,
+   "generation_eval": true,
+   "tags": [
+    "neither known",
+    "mixed"
+   ]
+  },
+  "state": {
+   "family": "state",
+   "rungs": 10,
+   "trained_rungs": 8,
+   "generation_eval": false,
+   "tags": [
+    "attention (binding) and recurrence (long histories)",
+    "copy"
+   ]
+  },
+  "plan": {
+   "family": "plan",
+   "rungs": 10,
+   "trained_rungs": 8,
+   "generation_eval": true,
+   "tags": [
+    "neither known",
+    "compute"
+   ]
+  }
+ },
+ "ladders": {
+  "grid": [
+   "('1d', 6, 8)",
+   "('1d', 9, 12)",
+   "('2d', 3)",
+   "('2d', 4)",
+   "('2d', 5)",
+   "('2d', 6)",
+   "('2d', 7)",
+   "('2d', 8)",
+   "('2d', 9)",
+   "('2d', 10)"
+  ],
+  "arith_ops": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   8,
+   10,
+   12,
+   16
+  ],
+  "list_len": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   8,
+   10,
+   12,
+   14,
+   16
+  ],
+  "reg_exec": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   8,
+   10,
+   12,
+   14,
+   16
+  ],
+  "graph_nodes": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14,
+   16
+  ],
+  "state_events": [
+   2,
+   3,
+   4,
+   6,
+   8,
+   12,
+   16,
+   24,
+   32,
+   40
+  ],
+  "plan_len": [
+   [
+    1,
+    2
+   ],
+   [
+    3,
+    4
+   ],
+   [
+    5,
+    6
+   ],
+   [
+    7,
+    8
+   ],
+   [
+    9,
+    10
+   ],
+   [
+    11,
+    13
+   ],
+   [
+    14,
+    16
+   ],
+   [
+    17,
+    20
+   ],
+   [
+    21,
+    25
+   ],
+   [
+    26,
+    30
+   ]
+  ]
+ },
+ "grid": {
+  "singles_S0": [
+   [
+    "sel"
+   ],
+   [
+    "geo"
+   ],
+   [
+    "trans"
+   ],
+   [
+    "recol"
+   ]
+  ],
+  "pairs_S0": [
+   [
+    "sel",
+    "geo"
+   ],
+   [
+    "geo",
+    "trans"
+   ],
+   [
+    "geo",
+    "recol"
+   ]
+  ],
+  "pairs_S1": [
+   [
+    "sel",
+    "trans"
+   ]
+  ],
+  "pairs_dev": [
+   [
+    "sel",
+    "recol"
+   ]
+  ],
+  "pairs_test": [
+   [
+    "trans",
+    "recol"
+   ]
+  ],
+  "S2": [
+   [
+    "crop"
+   ]
+  ],
+  "S5": [
+   [
+    "geo",
+    "crop"
+   ],
+   [
+    "crop",
+    "recol"
+   ]
+  ],
+  "held_offsets": [
+   [
+    -2,
+    -2
+   ],
+   [
+    1,
+    -2
+   ],
+   [
+    -1,
+    2
+   ]
+  ],
+  "held_colour_pairs": [
+   [
+    2,
+    6
+   ],
+   [
+    3,
+    2
+   ],
+   [
+    3,
+    5
+   ],
+   [
+    4,
+    3
+   ],
+   [
+    4,
+    5
+   ],
+   [
+    4,
+    9
+   ],
+   [
+    5,
+    7
+   ],
+   [
+    8,
+    9
+   ],
+   [
+    9,
+    1
+   ]
+  ],
+  "identifiability": "every depth<=2 program of the declared grammar consistent with the 3 demos gives the same query output"
+ },
+ "lists": {
+  "singles": [
+   "min",
+   "max",
+   "sort",
+   "rsort",
+   "filter"
+  ],
+  "comps_S0": [
+   [
+    "filter",
+    "min"
+   ],
+   [
+    "filter",
+    "sort"
+   ]
+  ],
+  "comps_S1": [
+   [
+    "filter",
+    "max"
+   ]
+  ],
+  "comps_test": [
+   [
+    "filter",
+    "rsort"
+   ]
+  ]
+ },
+ "state": {
+  "names_S0": [
+   "Mira",
+   "Jo",
+   "Sam",
+   "Lily",
+   "Tom",
+   "Ben",
+   "Anna",
+   "Max",
+   "Sue",
+   "Tim",
+   "Kate",
+   "Leo",
+   "Nina",
+   "Ray",
+   "Zoe",
+   "Dan",
+   "Eva",
+   "Finn",
+   "Ivy",
+   "Jack",
+   "Lucy",
+   "Mia",
+   "Ned",
+   "Owen"
+  ],
+  "names_S4_reserved": [
+   "Quill",
+   "Vesna",
+   "Yorick",
+   "Wren",
+   "Xander",
+   "Ulla",
+   "Pavo",
+   "Odile"
+  ],
+  "queries_S0": [
+   "loc",
+   "owner",
+   "count"
+  ],
+  "S1": "link (where is the one who has X)"
+ },
+ "plan": {
+  "S0": "nav, order2 (A then B, B then A)",
+  "S1": "order3",
+  "S2": "keydoor",
+  "S5": "keydoor2",
+  "S4": "action tokens renamed with a legend"
+ },
+ "programs": {
+  "S0": "arith +,-; lists; registers (assign, add/sub, one if, bounded repeat); graphs reach/dist/path",
+  "S2": "arith *, / (exact)",
+  "S5": "arith mixed +,-,*,/",
+  "S3": "add-only (counterpart: subtract-only), list max (counterpart: min)"
+ },
+ "continual_phases": [
+  "S1 new combinations",
+  "S2 new primitives",
+  "S3 close interference",
+  "S4 representation shift",
+  "S5 composition after acquisition",
+  "S6 return"
+ ],
+ "formats": "prompt numbers MSD-first; every numeric answer LSD-first with one <neg> token; digits single tokens; answer-only track only",
+ "model": {
+  "params_total": 7744181,
+  "groups": {
+   "s0": 128,
+   "e_r": 256,
+   "src_norm": 384,
+   "beta": 3,
+   "emb": 262144,
+   "e1": 1636968,
+   "engram": 1124560,
+   "e2": 1016620,
+   "e2_exit": 1922,
+   "e3": 869668,
+   "exit_L": 8704,
+   "exit_G": 8704,
+   "pool_x": 33280,
+   "pool_L": 33280,
+   "pool_G": 33280,
+   "wp": 16384,
+   "cm": 1052064,
+   "dec": 1579656,
+   "final": 128,
+   "ncp": 66048
+  },
+  "d": 128,
+  "heads": 4,
+  "layout": "E1 2x[S,S,S,F] wE=8 + Engram; E2 [M,M,M,F] GDN-2 R=2; E3 [S3,S3,S3,F]; C 4 layers; D 6 layers wD=16",
+  "reach": {
+   "R_L_exact": 51,
+   "R_D_exact": 66,
+   "design_bound": [
+    53,
+    68
+   ]
+  }
+ }
+}

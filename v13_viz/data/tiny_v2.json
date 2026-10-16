@@ -1,0 +1,2654 @@
+{
+ "source": "v13_tiny/model.py, V13() parameters counted by PyTorch (numel)",
+ "total": 7744181,
+ "groups": {
+  "s0": 128,
+  "e_r": 256,
+  "src_norm": 384,
+  "beta": 3,
+  "emb": 262144,
+  "e1": 1636968,
+  "engram": 1124560,
+  "e2": 1016620,
+  "e2_exit": 1922,
+  "e3": 869668,
+  "exit_L": 8704,
+  "exit_G": 8704,
+  "pool_x": 33280,
+  "pool_L": 33280,
+  "pool_G": 33280,
+  "wp": 16384,
+  "cm": 1052064,
+  "dec": 1579656,
+  "final": 128,
+  "ncp": 66048
+ },
+ "modules": {
+  "emb": {
+   "total": 262144,
+   "own": 262144,
+   "children": {}
+  },
+  "e1": {
+   "total": 1636968,
+   "own": 0,
+   "children": {
+    "0": {
+     "total": 200270,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "gr1": {
+       "total": 9732,
+       "own": 256,
+       "children": {
+        "wd": {
+         "total": 4096,
+         "own": 4096
+        },
+        "wu": {
+         "total": 4352,
+         "own": 4352
+        },
+        "ww": {
+         "total": 1028,
+         "own": 1028
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 9732,
+       "own": 256,
+       "children": {
+        "wd": {
+         "total": 4096,
+         "own": 4096
+        },
+        "wu": {
+         "total": 4352,
+         "own": 4352
+        },
+        "ww": {
+         "total": 1028,
+         "own": 1028
+        }
+       }
+      },
+      "mix": {
+       "total": 514,
+       "own": 0,
+       "children": {
+        "w": {
+         "total": 514,
+         "own": 0
+        }
+       }
+      }
+     }
+    },
+    "1": {
+     "total": 200270,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "gr1": {
+       "total": 9732,
+       "own": 256,
+       "children": {
+        "wd": {
+         "total": 4096,
+         "own": 4096
+        },
+        "wu": {
+         "total": 4352,
+         "own": 4352
+        },
+        "ww": {
+         "total": 1028,
+         "own": 1028
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 9732,
+       "own": 256,
+       "children": {
+        "wd": {
+         "total": 4096,
+         "own": 4096
+        },
+        "wu": {
+         "total": 4352,
+         "own": 4352
+        },
+        "ww": {
+         "total": 1028,
+         "own": 1028
+        }
+       }
+      },
+      "mix": {
+       "total": 514,
+       "own": 0,
+       "children": {
+        "w": {
+         "total": 514,
+         "own": 0
+        }
+       }
+      }
+     }
+    },
+    "2": {
+     "total": 200270,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "gr1": {
+       "total": 9732,
+       "own": 256,
+       "children": {
+        "wd": {
+         "total": 4096,
+         "own": 4096
+        },
+        "wu": {
+         "total": 4352,
+         "own": 4352
+        },
+        "ww": {
+         "total": 1028,
+         "own": 1028
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 9732,
+       "own": 256,
+       "children": {
+        "wd": {
+         "total": 4096,
+         "own": 4096
+        },
+        "wu": {
+         "total": 4352,
+         "own": 4352
+        },
+        "ww": {
+         "total": 1028,
+         "own": 1028
+        }
+       }
+      },
+      "mix": {
+       "total": 514,
+       "own": 0,
+       "children": {
+        "w": {
+         "total": 514,
+         "own": 0
+        }
+       }
+      }
+     }
+    },
+    "3": {
+     "total": 217674,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wqkv": {
+         "total": 49152,
+         "own": 49152
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "gr1": {
+       "total": 18434,
+       "own": 512,
+       "children": {
+        "wd": {
+         "total": 8192,
+         "own": 8192
+        },
+        "wu": {
+         "total": 8704,
+         "own": 8704
+        },
+        "ww": {
+         "total": 1026,
+         "own": 1026
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 18434,
+       "own": 512,
+       "children": {
+        "wd": {
+         "total": 8192,
+         "own": 8192
+        },
+        "wu": {
+         "total": 8704,
+         "own": 8704
+        },
+        "ww": {
+         "total": 1026,
+         "own": 1026
+        }
+       }
+      },
+      "mix": {
+       "total": 514,
+       "own": 0,
+       "children": {
+        "w": {
+         "total": 514,
+         "own": 0
+        }
+       }
+      }
+     }
+    },
+    "4": {
+     "total": 200270,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "gr1": {
+       "total": 9732,
+       "own": 256,
+       "children": {
+        "wd": {
+         "total": 4096,
+         "own": 4096
+        },
+        "wu": {
+         "total": 4352,
+         "own": 4352
+        },
+        "ww": {
+         "total": 1028,
+         "own": 1028
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 9732,
+       "own": 256,
+       "children": {
+        "wd": {
+         "total": 4096,
+         "own": 4096
+        },
+        "wu": {
+         "total": 4352,
+         "own": 4352
+        },
+        "ww": {
+         "total": 1028,
+         "own": 1028
+        }
+       }
+      },
+      "mix": {
+       "total": 514,
+       "own": 0,
+       "children": {
+        "w": {
+         "total": 514,
+         "own": 0
+        }
+       }
+      }
+     }
+    },
+    "5": {
+     "total": 200270,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "gr1": {
+       "total": 9732,
+       "own": 256,
+       "children": {
+        "wd": {
+         "total": 4096,
+         "own": 4096
+        },
+        "wu": {
+         "total": 4352,
+         "own": 4352
+        },
+        "ww": {
+         "total": 1028,
+         "own": 1028
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 9732,
+       "own": 256,
+       "children": {
+        "wd": {
+         "total": 4096,
+         "own": 4096
+        },
+        "wu": {
+         "total": 4352,
+         "own": 4352
+        },
+        "ww": {
+         "total": 1028,
+         "own": 1028
+        }
+       }
+      },
+      "mix": {
+       "total": 514,
+       "own": 0,
+       "children": {
+        "w": {
+         "total": 514,
+         "own": 0
+        }
+       }
+      }
+     }
+    },
+    "6": {
+     "total": 200270,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "gr1": {
+       "total": 9732,
+       "own": 256,
+       "children": {
+        "wd": {
+         "total": 4096,
+         "own": 4096
+        },
+        "wu": {
+         "total": 4352,
+         "own": 4352
+        },
+        "ww": {
+         "total": 1028,
+         "own": 1028
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 9732,
+       "own": 256,
+       "children": {
+        "wd": {
+         "total": 4096,
+         "own": 4096
+        },
+        "wu": {
+         "total": 4352,
+         "own": 4352
+        },
+        "ww": {
+         "total": 1028,
+         "own": 1028
+        }
+       }
+      },
+      "mix": {
+       "total": 514,
+       "own": 0,
+       "children": {
+        "w": {
+         "total": 514,
+         "own": 0
+        }
+       }
+      }
+     }
+    },
+    "7": {
+     "total": 217674,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wqkv": {
+         "total": 49152,
+         "own": 49152
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "gr1": {
+       "total": 18434,
+       "own": 512,
+       "children": {
+        "wd": {
+         "total": 8192,
+         "own": 8192
+        },
+        "wu": {
+         "total": 8704,
+         "own": 8704
+        },
+        "ww": {
+         "total": 1026,
+         "own": 1026
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 18434,
+       "own": 512,
+       "children": {
+        "wd": {
+         "total": 8192,
+         "own": 8192
+        },
+        "wu": {
+         "total": 8704,
+         "own": 8704
+        },
+        "ww": {
+         "total": 1026,
+         "own": 1026
+        }
+       }
+      },
+      "mix": {
+       "total": 514,
+       "own": 0,
+       "children": {
+        "w": {
+         "total": 514,
+         "own": 0
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "engram": {
+   "total": 1124560,
+   "own": 3072,
+   "children": {
+    "table": {
+     "total": 1039568,
+     "own": 1039568,
+     "children": {}
+    },
+    "wv": {
+     "total": 16384,
+     "own": 16384,
+     "children": {}
+    },
+    "wk": {
+     "total": 65536,
+     "own": 65536,
+     "children": {}
+    }
+   }
+  },
+  "e2": {
+   "total": 1016620,
+   "own": 0,
+   "children": {
+    "0": {
+     "total": 263842,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 120736,
+       "own": 1536,
+       "children": {
+        "wqkv": {
+         "total": 49152,
+         "own": 49152
+        },
+        "wb": {
+         "total": 16512,
+         "own": 16512
+        },
+        "ww": {
+         "total": 16512,
+         "own": 16512
+        },
+        "wa1": {
+         "total": 2048,
+         "own": 2048
+        },
+        "wa2": {
+         "total": 2176,
+         "own": 2176
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "on": {
+         "total": 32,
+         "own": 32
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        }
+       }
+      },
+      "gr1": {
+       "total": 22401,
+       "own": 640,
+       "children": {
+        "wd": {
+         "total": 10240,
+         "own": 10240
+        },
+        "wu": {
+         "total": 10880,
+         "own": 10880
+        },
+        "ww": {
+         "total": 641,
+         "own": 641
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 22401,
+       "own": 640,
+       "children": {
+        "wd": {
+         "total": 10240,
+         "own": 10240
+        },
+        "wu": {
+         "total": 10880,
+         "own": 10880
+        },
+        "ww": {
+         "total": 641,
+         "own": 641
+        }
+       }
+      }
+     }
+    },
+    "1": {
+     "total": 263842,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 120736,
+       "own": 1536,
+       "children": {
+        "wqkv": {
+         "total": 49152,
+         "own": 49152
+        },
+        "wb": {
+         "total": 16512,
+         "own": 16512
+        },
+        "ww": {
+         "total": 16512,
+         "own": 16512
+        },
+        "wa1": {
+         "total": 2048,
+         "own": 2048
+        },
+        "wa2": {
+         "total": 2176,
+         "own": 2176
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "on": {
+         "total": 32,
+         "own": 32
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        }
+       }
+      },
+      "gr1": {
+       "total": 22401,
+       "own": 640,
+       "children": {
+        "wd": {
+         "total": 10240,
+         "own": 10240
+        },
+        "wu": {
+         "total": 10880,
+         "own": 10880
+        },
+        "ww": {
+         "total": 641,
+         "own": 641
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 22401,
+       "own": 640,
+       "children": {
+        "wd": {
+         "total": 10240,
+         "own": 10240
+        },
+        "wu": {
+         "total": 10880,
+         "own": 10880
+        },
+        "ww": {
+         "total": 641,
+         "own": 641
+        }
+       }
+      }
+     }
+    },
+    "2": {
+     "total": 263842,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 120736,
+       "own": 1536,
+       "children": {
+        "wqkv": {
+         "total": 49152,
+         "own": 49152
+        },
+        "wb": {
+         "total": 16512,
+         "own": 16512
+        },
+        "ww": {
+         "total": 16512,
+         "own": 16512
+        },
+        "wa1": {
+         "total": 2048,
+         "own": 2048
+        },
+        "wa2": {
+         "total": 2176,
+         "own": 2176
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "on": {
+         "total": 32,
+         "own": 32
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        }
+       }
+      },
+      "gr1": {
+       "total": 22401,
+       "own": 640,
+       "children": {
+        "wd": {
+         "total": 10240,
+         "own": 10240
+        },
+        "wu": {
+         "total": 10880,
+         "own": 10880
+        },
+        "ww": {
+         "total": 641,
+         "own": 641
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 22401,
+       "own": 640,
+       "children": {
+        "wd": {
+         "total": 10240,
+         "own": 10240
+        },
+        "wu": {
+         "total": 10880,
+         "own": 10880
+        },
+        "ww": {
+         "total": 641,
+         "own": 641
+        }
+       }
+      }
+     }
+    },
+    "3": {
+     "total": 225094,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wqkv": {
+         "total": 49152,
+         "own": 49152
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "gr1": {
+       "total": 22401,
+       "own": 640,
+       "children": {
+        "wd": {
+         "total": 10240,
+         "own": 10240
+        },
+        "wu": {
+         "total": 10880,
+         "own": 10880
+        },
+        "ww": {
+         "total": 641,
+         "own": 641
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 22401,
+       "own": 640,
+       "children": {
+        "wd": {
+         "total": 10240,
+         "own": 10240
+        },
+        "wu": {
+         "total": 10880,
+         "own": 10880
+        },
+        "ww": {
+         "total": 641,
+         "own": 641
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "e2_exit": {
+   "total": 1922,
+   "own": 640,
+   "children": {
+    "ww": {
+     "total": 1282,
+     "own": 1282,
+     "children": {}
+    }
+   }
+  },
+  "e3": {
+   "total": 869668,
+   "own": 0,
+   "children": {
+    "0": {
+     "total": 217417,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "gr1": {
+       "total": 18434,
+       "own": 512,
+       "children": {
+        "wd": {
+         "total": 8192,
+         "own": 8192
+        },
+        "wu": {
+         "total": 8704,
+         "own": 8704
+        },
+        "ww": {
+         "total": 1026,
+         "own": 1026
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 18434,
+       "own": 512,
+       "children": {
+        "wd": {
+         "total": 8192,
+         "own": 8192
+        },
+        "wu": {
+         "total": 8704,
+         "own": 8704
+        },
+        "ww": {
+         "total": 1026,
+         "own": 1026
+        }
+       }
+      },
+      "mix": {
+       "total": 257,
+       "own": 0,
+       "children": {
+        "w": {
+         "total": 257,
+         "own": 0
+        }
+       }
+      }
+     }
+    },
+    "1": {
+     "total": 217417,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "gr1": {
+       "total": 18434,
+       "own": 512,
+       "children": {
+        "wd": {
+         "total": 8192,
+         "own": 8192
+        },
+        "wu": {
+         "total": 8704,
+         "own": 8704
+        },
+        "ww": {
+         "total": 1026,
+         "own": 1026
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 18434,
+       "own": 512,
+       "children": {
+        "wd": {
+         "total": 8192,
+         "own": 8192
+        },
+        "wu": {
+         "total": 8704,
+         "own": 8704
+        },
+        "ww": {
+         "total": 1026,
+         "own": 1026
+        }
+       }
+      },
+      "mix": {
+       "total": 257,
+       "own": 0,
+       "children": {
+        "w": {
+         "total": 257,
+         "own": 0
+        }
+       }
+      }
+     }
+    },
+    "2": {
+     "total": 217417,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "gr1": {
+       "total": 18434,
+       "own": 512,
+       "children": {
+        "wd": {
+         "total": 8192,
+         "own": 8192
+        },
+        "wu": {
+         "total": 8704,
+         "own": 8704
+        },
+        "ww": {
+         "total": 1026,
+         "own": 1026
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 18434,
+       "own": 512,
+       "children": {
+        "wd": {
+         "total": 8192,
+         "own": 8192
+        },
+        "wu": {
+         "total": 8704,
+         "own": 8704
+        },
+        "ww": {
+         "total": 1026,
+         "own": 1026
+        }
+       }
+      },
+      "mix": {
+       "total": 257,
+       "own": 0,
+       "children": {
+        "w": {
+         "total": 257,
+         "own": 0
+        }
+       }
+      }
+     }
+    },
+    "3": {
+     "total": 217417,
+     "own": 0,
+     "children": {
+      "att": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wqkv": {
+         "total": 49152,
+         "own": 49152
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "gr1": {
+       "total": 18434,
+       "own": 512,
+       "children": {
+        "wd": {
+         "total": 8192,
+         "own": 8192
+        },
+        "wu": {
+         "total": 8704,
+         "own": 8704
+        },
+        "ww": {
+         "total": 1026,
+         "own": 1026
+        }
+       }
+      },
+      "ffn": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "gr2": {
+       "total": 18434,
+       "own": 512,
+       "children": {
+        "wd": {
+         "total": 8192,
+         "own": 8192
+        },
+        "wu": {
+         "total": 8704,
+         "own": 8704
+        },
+        "ww": {
+         "total": 1026,
+         "own": 1026
+        }
+       }
+      },
+      "mix": {
+       "total": 257,
+       "own": 0,
+       "children": {
+        "w": {
+         "total": 257,
+         "own": 0
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "exit_L": {
+   "total": 8704,
+   "own": 256,
+   "children": {
+    "wd": {
+     "total": 4096,
+     "own": 4096,
+     "children": {}
+    },
+    "wu": {
+     "total": 4352,
+     "own": 4352,
+     "children": {}
+    }
+   }
+  },
+  "exit_G": {
+   "total": 8704,
+   "own": 256,
+   "children": {
+    "wd": {
+     "total": 4096,
+     "own": 4096,
+     "children": {}
+    },
+    "wu": {
+     "total": 4352,
+     "own": 4352,
+     "children": {}
+    }
+   }
+  },
+  "pool_x": {
+   "total": 33280,
+   "own": 512,
+   "children": {
+    "wz": {
+     "total": 16384,
+     "own": 16384,
+     "children": {}
+    },
+    "wc": {
+     "total": 16384,
+     "own": 16384,
+     "children": {}
+    }
+   }
+  },
+  "pool_L": {
+   "total": 33280,
+   "own": 512,
+   "children": {
+    "wz": {
+     "total": 16384,
+     "own": 16384,
+     "children": {}
+    },
+    "wc": {
+     "total": 16384,
+     "own": 16384,
+     "children": {}
+    }
+   }
+  },
+  "pool_G": {
+   "total": 33280,
+   "own": 512,
+   "children": {
+    "wz": {
+     "total": 16384,
+     "own": 16384,
+     "children": {}
+    },
+    "wc": {
+     "total": 16384,
+     "own": 16384,
+     "children": {}
+    }
+   }
+  },
+  "wp": {
+   "total": 16384,
+   "own": 16384,
+   "children": {}
+  },
+  "cm": {
+   "total": 1052064,
+   "own": 0,
+   "children": {
+    "subs": {
+     "total": 1048992,
+     "own": 0,
+     "children": {
+      "0": {
+       "total": 81956,
+       "own": 0,
+       "children": {
+        "wqkv": {
+         "total": 49152,
+         "own": 49152
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 36,
+         "own": 4
+        }
+       }
+      },
+      "1": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "2": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "3": {
+       "total": 81956,
+       "own": 0,
+       "children": {
+        "wqkv": {
+         "total": 49152,
+         "own": 49152
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 36,
+         "own": 4
+        }
+       }
+      },
+      "4": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "5": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "6": {
+       "total": 81956,
+       "own": 0,
+       "children": {
+        "wqkv": {
+         "total": 49152,
+         "own": 49152
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 36,
+         "own": 4
+        }
+       }
+      },
+      "7": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "8": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "9": {
+       "total": 81956,
+       "own": 0,
+       "children": {
+        "wqkv": {
+         "total": 49152,
+         "own": 49152
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 36,
+         "own": 4
+        }
+       }
+      },
+      "10": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 68,
+         "own": 4
+        }
+       }
+      },
+      "11": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      }
+     }
+    },
+    "res": {
+     "total": 1408,
+     "own": 0,
+     "children": {
+      "0": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "1": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "2": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "3": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "4": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "5": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "6": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "7": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "8": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "9": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "10": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      }
+     }
+    },
+    "out": {
+     "total": 128,
+     "own": 128,
+     "children": {}
+    },
+    "pre": {
+     "total": 1536,
+     "own": 0,
+     "children": {
+      "0": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "1": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "2": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "3": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "4": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "5": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "6": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "7": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "8": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "9": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "10": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "11": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      }
+     }
+    }
+   }
+  },
+  "dec": {
+   "total": 1579656,
+   "own": 0,
+   "children": {
+    "subs": {
+     "total": 1575048,
+     "own": 0,
+     "children": {
+      "0": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "a": {
+         "total": 81988,
+         "own": 0
+        }
+       }
+      },
+      "1": {
+       "total": 82216,
+       "own": 260,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 36,
+         "own": 4
+        }
+       }
+      },
+      "2": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "3": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "a": {
+         "total": 81988,
+         "own": 0
+        }
+       }
+      },
+      "4": {
+       "total": 82216,
+       "own": 260,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 36,
+         "own": 4
+        }
+       }
+      },
+      "5": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "6": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "a": {
+         "total": 81988,
+         "own": 0
+        }
+       }
+      },
+      "7": {
+       "total": 82216,
+       "own": 260,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 36,
+         "own": 4
+        }
+       }
+      },
+      "8": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "9": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "a": {
+         "total": 81988,
+         "own": 0
+        }
+       }
+      },
+      "10": {
+       "total": 82216,
+       "own": 260,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 36,
+         "own": 4
+        }
+       }
+      },
+      "11": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "12": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "a": {
+         "total": 81988,
+         "own": 0
+        }
+       }
+      },
+      "13": {
+       "total": 82216,
+       "own": 260,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 36,
+         "own": 4
+        }
+       }
+      },
+      "14": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      },
+      "15": {
+       "total": 81988,
+       "own": 0,
+       "children": {
+        "a": {
+         "total": 81988,
+         "own": 0
+        }
+       }
+      },
+      "16": {
+       "total": 82216,
+       "own": 260,
+       "children": {
+        "wq": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wkv": {
+         "total": 32768,
+         "own": 32768
+        },
+        "wg": {
+         "total": 16384,
+         "own": 16384
+        },
+        "wo": {
+         "total": 16384,
+         "own": 16384
+        },
+        "qk": {
+         "total": 36,
+         "own": 4
+        }
+       }
+      },
+      "17": {
+       "total": 98304,
+       "own": 0,
+       "children": {
+        "w13": {
+         "total": 65536,
+         "own": 65536
+        },
+        "w2": {
+         "total": 32768,
+         "own": 32768
+        }
+       }
+      }
+     }
+    },
+    "res": {
+     "total": 2176,
+     "own": 0,
+     "children": {
+      "0": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "1": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "2": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "3": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "4": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "5": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "6": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "7": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "8": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "9": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "10": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "11": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "12": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "13": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "14": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "15": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "16": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      }
+     }
+    },
+    "out": {
+     "total": 128,
+     "own": 128,
+     "children": {}
+    },
+    "pre": {
+     "total": 2304,
+     "own": 0,
+     "children": {
+      "0": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "1": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "2": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "3": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "4": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "5": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "6": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "7": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "8": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "9": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "10": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "11": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "12": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "13": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "14": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "15": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "16": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      },
+      "17": {
+       "total": 128,
+       "own": 128,
+       "children": {}
+      }
+     }
+    }
+   }
+  },
+  "final": {
+   "total": 128,
+   "own": 128,
+   "children": {}
+  },
+  "ncp": {
+   "total": 66048,
+   "own": 0,
+   "children": {
+    "0": {
+     "total": 128,
+     "own": 128,
+     "children": {}
+    },
+    "1": {
+     "total": 33024,
+     "own": 33024,
+     "children": {}
+    },
+    "2": {
+     "total": 0,
+     "own": 0,
+     "children": {}
+    },
+    "3": {
+     "total": 32896,
+     "own": 32896,
+     "children": {}
+    }
+   }
+  },
+  "s0": {
+   "total": 128,
+   "own": 128
+  },
+  "e_r": {
+   "total": 256,
+   "own": 256
+  },
+  "src_norm": {
+   "total": 384,
+   "own": 384
+  },
+  "beta": {
+   "total": 3,
+   "own": 3
+  }
+ },
+ "kinds": {
+  "e1": [
+   "S",
+   "S",
+   "S",
+   "F",
+   "S",
+   "S",
+   "S",
+   "F"
+  ],
+  "e2": [
+   "M2",
+   "M2",
+   "M2",
+   "F2"
+  ],
+  "e3": [
+   "S3",
+   "S3",
+   "S3",
+   "F3"
+  ],
+  "cm": [
+   "sa",
+   "win",
+   "ffn",
+   "sa",
+   "win",
+   "ffn",
+   "sa",
+   "win",
+   "ffn",
+   "sa",
+   "win",
+   "ffn"
+  ],
+  "dec": [
+   "loc",
+   "read",
+   "ffn",
+   "loc",
+   "read",
+   "ffn",
+   "loc",
+   "read",
+   "ffn",
+   "loc",
+   "read",
+   "ffn",
+   "loc",
+   "read",
+   "ffn",
+   "loc",
+   "read",
+   "ffn"
+  ]
+ },
+ "cfg": {
+  "H": 4,
+  "R": 2,
+  "V": 2048,
+  "chunk": 16,
+  "d": 128,
+  "eng_dim": 8,
+  "eng_heads": 8,
+  "eng_orders": [
+   2,
+   3
+  ],
+  "ffn": 256,
+  "k": 4,
+  "n_c": 4,
+  "n_d": 6,
+  "n_e1_blocks": 2,
+  "pq_N": 32,
+  "pq_S": 4,
+  "rope_frac_S": 0.25,
+  "wC": 16,
+  "wD": 16,
+  "wE": 8,
+  "wE3": 16
+ },
+ "reach": {
+  "R_L": 51,
+  "R_D": 66,
+  "bound_R_L": 53,
+  "bound_R_D": 68,
+  "T_row": 1024,
+  "source": "DEVIATIONS.md item 16 (exact, tests_g0.py); bound from v13_NOTES.md \u00a73.8"
+ }
+}

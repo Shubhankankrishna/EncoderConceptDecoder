@@ -1,0 +1,75 @@
+
+=== tiny (M2, §12) ===
+  E1 attention + residual ops              stored   425.98K  active   425.98K  FLOPs/tok   851.97K
+  E1 FFN                                   stored   393.22K  active   393.22K  FLOPs/tok   786.43K
+  E2 attention + residual ops (looped)     stored   676.86K  active   676.86K  FLOPs/tok     2.71M
+  E2 FFN (looped)                          stored   393.22K  active   393.22K  FLOPs/tok     1.57M
+  E3 attention + residual ops              stored   475.14K  active   475.14K  FLOPs/tok   950.27K
+  E3 FFN                                   stored   393.22K  active   393.22K  FLOPs/tok   786.43K
+  encoder exit reads                       stored    16.90K  active    16.90K  FLOPs/tok    33.79K
+  Engram projections                       stored    82.43K  active    82.43K  FLOPs/tok   164.86K
+  Engram table                             stored     1.05M  active         0  FLOPs/tok         0
+  pooling                                  stored   114.69K  active   114.69K  FLOPs/tok    57.34K
+  concept module attention                 stored   327.68K  active   327.68K  FLOPs/tok   163.84K
+  concept module FFN                       stored   196.61K  active   196.61K  FLOPs/tok    98.30K
+  NCP head                                 stored    65.54K  active    65.54K  FLOPs/tok    32.77K
+  decoder attention                        stored   491.52K  active   491.52K  FLOPs/tok   983.04K
+  decoder FFN                              stored   294.91K  active   294.91K  FLOPs/tok   589.82K
+  embedding                                stored   139.52K  active         0  FLOPs/tok         0
+  output head                              stored         0  active   139.52K  FLOPs/tok   279.04K
+  TOTAL stored 5.54M  active 4.49M  FLOPs/token 10.06M
+  Engram table 1.05M  embedding+head 139.52K  non-embedding non-table 4.35M  codebook buffers 4.10K
+  inactive 1.05M  Engram share of inactive 1.000
+  reach {'R_L': 56, 'R_D_confined': 71, 'R_D_own_swa': 101, 'rho_confined': 0.069, 'rho_own_swa': 0.099}
+
+=== 7B-A1.4B (first scale tier) ===
+  E1 attention + residual ops              stored    56.33M  active    56.33M  FLOPs/tok   112.66M
+  E1 FFN                                   stored   538.26M  active    66.40M  FLOPs/tok   132.81M
+  E2 attention + residual ops (looped)     stored    93.94M  active    93.94M  FLOPs/tok   375.77M
+  E2 FFN (looped)                          stored   538.26M  active    66.40M  FLOPs/tok   265.62M
+  E3 attention + residual ops              stored    63.41M  active    63.41M  FLOPs/tok   126.81M
+  E3 FFN                                   stored   538.26M  active    66.40M  FLOPs/tok   132.81M
+  encoder exit reads                       stored     2.37M  active     2.37M  FLOPs/tok     4.73M
+  Engram projections                       stored     7.87M  active     7.87M  FLOPs/tok    15.74M
+  Engram table                             stored     1.22B  active         0  FLOPs/tok         0
+  pooling                                  stored    16.52M  active    16.52M  FLOPs/tok     8.26M
+  concept module attention                 stored   107.35M  active   107.35M  FLOPs/tok    53.67M
+  concept module FFN                       stored   807.40M  active    99.61M  FLOPs/tok    49.80M
+  NCP head                                 stored     9.44M  active     9.44M  FLOPs/tok     4.72M
+  decoder attention                        stored   324.01M  active   324.01M  FLOPs/tok   648.02M
+  decoder FFN                              stored     2.15B  active   265.62M  FLOPs/tok   531.23M
+  MTP module                               stored   159.54M  active    41.57M  FLOPs/tok    83.14M
+  embedding                                stored   100.66M  active         0  FLOPs/tok         0
+  output head                              stored   100.66M  active   100.66M  FLOPs/tok   201.33M
+  decoder concept entries (per release)    stored     4.72M  active     4.72M  FLOPs/tok     2.36M
+  TOTAL stored 6.84B  active 1.39B  FLOPs/token 2.75B
+  Engram table 1.22B  embedding+head 201.33M  non-embedding non-table 5.42B  codebook buffers 196.61K
+  inactive 5.45B  Engram share of inactive 0.224
+  reach {'R_L': 200, 'R_D_confined': 327, 'R_D_own_swa': 2232, 'rho_confined': 0.08, 'rho_own_swa': 0.545}
+  per-sequence cache at 1M tokens (bytes, bf16): {'local_windows': '14.94M', 'encoder_global': '2.05B', 'gdn2_state': '2.36M', 'concept_self_attention': '768.00M', 'decoder_concept_entries': '1.54B', 'total': '4.37B'}
+
+=== V13-K3 (2.8T class) ===
+  E1 attention + residual ops              stored     1.81B  active     1.81B  FLOPs/tok     3.62B
+  E1 FFN                                   stored   102.22B  active     2.87B  FLOPs/tok     5.74B
+  E2 attention + residual ops (looped)     stored     2.96B  active     2.96B  FLOPs/tok    11.85B
+  E2 FFN (looped)                          stored   102.22B  active     2.87B  FLOPs/tok    11.48B
+  E3 attention + residual ops              stored     1.97B  active     1.97B  FLOPs/tok     3.93B
+  E3 FFN                                   stored   102.22B  active     2.87B  FLOPs/tok     5.74B
+  encoder exit reads                       stored    51.41M  active    51.41M  FLOPs/tok   102.82M
+  Engram projections                       stored    73.43M  active    73.43M  FLOPs/tok   146.86M
+  Engram table                             stored   550.40B  active         0  FLOPs/tok         0
+  pooling                                  stored   359.66M  active   359.66M  FLOPs/tok   179.83M
+  concept module attention                 stored     7.43B  active     7.43B  FLOPs/tok     3.72B
+  concept module FFN                       stored   408.90B  active    11.48B  FLOPs/tok     5.74B
+  NCP head                                 stored   205.52M  active   205.52M  FLOPs/tok   102.76M
+  decoder attention                        stored    37.43B  active    37.43B  FLOPs/tok    74.87B
+  decoder FFN                              stored     1.43T  active    40.18B  FLOPs/tok    80.36B
+  MTP module                               stored    26.33B  active     1.49B  FLOPs/tok     2.98B
+  embedding                                stored     1.15B  active         0  FLOPs/tok         0
+  output head                              stored     1.15B  active     1.15B  FLOPs/tok     2.29B
+  decoder concept entries (per release)    stored    36.70M  active    36.70M  FLOPs/tok    18.35M
+  TOTAL stored 2.78T  active 115.24B  FLOPs/token 212.87B
+  Engram table 550.40B  embedding+head 2.29B  non-embedding non-table 2.23T  codebook buffers 917.50K
+  inactive 2.66T  Engram share of inactive 0.207
+  reach {'R_L': 200, 'R_D_confined': 327, 'R_D_own_swa': 7312, 'rho_confined': 0.08, 'rho_own_swa': 1.785}
+  per-sequence cache at 1M tokens (bytes, bf16): {'local_windows': '371.20M', 'encoder_global': '4.10B', 'gdn2_state': '18.87M', 'concept_self_attention': '4.10B', 'decoder_concept_entries': '2.56B', 'total': '11.14B'}

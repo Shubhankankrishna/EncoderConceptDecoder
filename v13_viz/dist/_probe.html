@@ -1,0 +1,13 @@
+<!doctype html><html><body><pre id="o">start</pre>
+<script type="module">
+const o = document.getElementById('o'), log = s => o.textContent += '\n' + s;
+const T = await import('https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.webgpu.js');
+const withTimeout = (p, ms) => Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error('timed out after ' + ms + ' ms')), ms))]);
+let r = new T.WebGPURenderer();
+try { await withTimeout(r.init(), 3000); log('webgpu init ok'); }
+catch (e) { log('webgpu: ' + e.message); r = new T.WebGPURenderer({ forceWebGL: true }); await withTimeout(r.init(), 5000); log('fallback init ok, webgl backend=' + !!r.backend.isWebGLBackend); }
+const scene = new T.Scene(); scene.background = new T.Color(0x334455);
+const cam = new T.PerspectiveCamera(50, 1, 0.1, 10); cam.position.z = 3;
+scene.add(new T.Mesh(new T.BoxGeometry(1, 1, 1), new T.MeshStandardMaterial({ color: 0xff8800 }))); scene.add(new T.HemisphereLight(0xffffff, 0x222222, 2));
+r.setSize(200, 200); document.body.appendChild(r.domElement); r.render(scene, cam); log('rendered a frame');
+</script></body></html>

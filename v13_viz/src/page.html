@@ -1,0 +1,182 @@
+<title>V13 Anatomy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one framed 3D stage filling the window; controls float top-left, the reading panel docks right
+   (a bottom sheet on phones), narration runs along the bottom during animations.
+   Colour: the design doc's own role convention (§14): blue L, orange G, amber workspace, green concepts,
+   violet decoder, red loss, grey no-gradient, yellow norms and gates; on a drafting-table neutral. */
+:root {
+  --bg: #e7ebef; --panel: #fbfcfd; --panel-2: #f1f4f7; --ink: #121a23; --muted: #566270; --line: #d3dae1; --focus: #1d4ed8;
+  --scene: #e3e8ed; --slab: #f7f9fb; --glow-fw: #ffffff;
+  --role-l: #1d4ed8; --role-g: #c2410c; --role-w: #b45309; --role-c: #15803d; --role-d: #6d28d9;
+  --role-loss: #b91c1c; --role-nograd: #6b7280; --role-norm: #a16207; --role-emb: #334155;
+  --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif; --f-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --shadow: 0 1px 2px rgb(15 23 42 / .06), 0 8px 24px rgb(15 23 42 / .08);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0b0f14; --panel: #121821; --panel-2: #18202b; --ink: #e5ebf1; --muted: #93a1af; --line: #263241; --focus: #7aa2ff;
+  --scene: #0d131a; --slab: #1e2834; --glow-fw: #ffffff;
+  --role-l: #5b8cff; --role-g: #fb8c4a; --role-w: #f5b041; --role-c: #3fcf7a; --role-d: #a88bff;
+  --role-loss: #ff5f5f; --role-nograd: #8b97a6; --role-norm: #e9c046; --role-emb: #b6c2d0;
+  --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 28px rgb(0 0 0 / .35); color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0b0f14; --panel: #121821; --panel-2: #18202b; --ink: #e5ebf1; --muted: #93a1af; --line: #263241; --focus: #7aa2ff;
+  --scene: #0d131a; --slab: #1e2834; --glow-fw: #ffffff;
+  --role-l: #5b8cff; --role-g: #fb8c4a; --role-w: #f5b041; --role-c: #3fcf7a; --role-d: #a88bff;
+  --role-loss: #ff5f5f; --role-nograd: #8b97a6; --role-norm: #e9c046; --role-emb: #b6c2d0;
+  --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 28px rgb(0 0 0 / .35); color-scheme: dark; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.5 var(--f-body); display: grid; grid-template-rows: auto 1fr;
+  padding-inline: 16px; padding-block: 10px 14px; box-sizing: border-box; gap: 10px; overflow: hidden; }
+header { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; min-width: 0; }
+h1 { font: 800 22px/1.1 var(--f-display); font-stretch: 118%; letter-spacing: .01em; margin: 0; }
+.sub { color: var(--muted); font-size: 13px; min-width: 0; }
+.sub b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.badge { font: 500 11px/1 var(--f-mono); letter-spacing: .04em; text-transform: uppercase; padding: 5px 7px; border-radius: 5px;
+  background: var(--panel-2); border: 1px solid var(--line); color: var(--muted); }
+.badge b { color: var(--ink); font-weight: 500; }
+header .right { margin-left: auto; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+main { position: relative; min-height: 0; border-radius: 12px; overflow: hidden; background: var(--scene); border: 1px solid var(--line); }
+#stage { position: absolute; inset: 0; }
+#stage canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+#stage canvas:active { cursor: grabbing; }
+#labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.lbl { position: absolute; left: 0; top: 0; white-space: nowrap; font: 500 11px/1.2 var(--f-mono); color: var(--muted); will-change: transform; }
+.lbl.stage { font: 700 12px/1.2 var(--f-display); font-stretch: 112%; color: var(--ink); letter-spacing: .02em; margin-top: -7px;
+  text-shadow: 0 0 3px var(--scene), 0 0 6px var(--scene); }
+.lbl.stage.left { translate: -100% 0; }
+.lbl.sub { margin-top: -7px; text-shadow: 0 0 3px var(--scene); }
+.lbl.junc, .pinref { font: 700 11px/18px var(--f-mono); color: #fff; background: var(--role-loss); border-radius: 50%; width: 18px; height: 18px;
+  text-align: center; display: inline-block; }
+.lbl.junc { margin: -9px 0 0 8px; box-shadow: var(--shadow); pointer-events: auto; cursor: help; }
+/* floating controls */
+.float { position: absolute; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
+#controls { left: 12px; top: 12px; width: 236px; padding: 12px; display: grid; gap: 10px; max-height: calc(100% - 24px); overflow: auto; }
+#controls h2 { font: 700 11px/1 var(--f-display); font-stretch: 112%; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 2px 0 0; }
+.row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+button, select { font: 500 13px/1 var(--f-body); color: var(--ink); background: var(--panel-2); border: 1px solid var(--line); border-radius: 7px; padding: 7px 9px; cursor: pointer; }
+button:hover { border-color: var(--muted); }
+button:focus-visible, select:focus-visible, input:focus-visible, canvas:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+button.primary { background: var(--ink); color: var(--panel); border-color: var(--ink); }
+button.loss { border-color: color-mix(in srgb, var(--role-loss) 55%, var(--line)); }
+button.loss::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--role-loss); margin-right: 6px; vertical-align: 0; }
+input[type=range] { width: 100%; accent-color: var(--ink); }
+label.inline { display: flex; gap: 8px; align-items: center; color: var(--muted); font-size: 12.5px; }
+.legend { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; font-size: 12px; color: var(--muted); }
+.legend span { display: flex; align-items: center; gap: 6px; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; flex: none; }
+.legend i.dash { height: 0; border-top: 2px dashed var(--role-nograd); border-radius: 0; }
+/* reading panel */
+#detail { right: 12px; top: 12px; bottom: 12px; width: min(380px, 40%); padding: 16px 18px; overflow: auto; }
+#detail h2 { font: 800 20px/1.15 var(--f-display); font-stretch: 112%; margin: 2px 0 8px; text-wrap: balance; }
+#detail h3 { font: 700 12px/1.2 var(--f-display); font-stretch: 112%; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 16px 0 6px; }
+#detail p { margin: 0 0 10px; max-width: 65ch; }
+.eyebrow { font: 500 11px/1 var(--f-mono) !important; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 !important; }
+.rw { font: 500 12.5px/1.4 var(--f-mono); color: var(--ink); background: var(--panel-2); border-left: 3px solid var(--role-l); padding: 6px 9px; border-radius: 0 6px 6px 0; }
+pre.formula { font: 12px/1.55 var(--f-mono); background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px; overflow-x: auto; margin: 0 0 12px; white-space: pre; }
+dl.facts { display: grid; grid-template-columns: 96px 1fr; gap: 6px 10px; margin: 12px 0 0; font-size: 13px; }
+dl.facts dt { color: var(--muted); }
+dl.facts dd { margin: 0; min-width: 0; }
+.src { font: 500 10.5px/1 var(--f-mono); color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 2px 4px; margin-left: 4px; white-space: nowrap; }
+.note { font-size: 13px; color: var(--muted); border-left: 2px solid var(--line); padding-left: 9px; }
+table.jt { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+table.jt th, table.jt td { text-align: left; padding: 5px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.jt th { font-weight: 600; }
+table.jt .num { text-align: right; font-variant-numeric: tabular-nums; }
+ul.bar { margin: 0; padding-left: 18px; font-size: 12.5px; }
+ul.bar code, .mono { font: 12px var(--f-mono); }
+.how { display: grid; gap: 6px; font-size: 13px; margin: 8px 0 12px; padding: 0; list-style: none; }
+.how li { padding-left: 14px; position: relative; } .how li::before { content: "·"; position: absolute; left: 3px; color: var(--muted); }
+a, .linkish { color: var(--focus); }
+button.linkish { background: none; border: 0; padding: 0; font: inherit; text-decoration: underline; text-underline-offset: 2px; }
+/* narration */
+#narr { left: 50%; bottom: 12px; translate: -50% 0; width: min(640px, calc(100% - 24px - 380px - 260px)); min-width: 280px; padding: 9px 12px 11px; }
+#narr-text { font-size: 13px; min-height: 1.5em; }
+#narr .track { height: 3px; background: var(--line); border-radius: 2px; margin-top: 7px; overflow: hidden; }
+#narr-bar { height: 100%; width: 0; background: var(--ink); }
+body[data-anim="bw"] #narr-bar { background: var(--role-loss); }
+#sheet-toggle { display: none; }
+#tip { position: fixed; z-index: 5; pointer-events: none; font: 500 12px/1.3 var(--f-body); background: var(--ink); color: var(--panel); padding: 4px 7px; border-radius: 5px; }
+#boot { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font: 500 13px var(--f-mono); }
+body.live #boot { display: none; }
+#err { position: absolute; left: 12px; right: 12px; top: 12px; z-index: 6; background: var(--panel); border: 1px solid var(--role-loss); color: var(--ink); border-radius: 8px; padding: 10px 12px; }
+@media (max-width: 760px) {
+  body { padding-block: 8px 10px; gap: 8px; }
+  h1 { font-size: 19px; } .sub { font-size: 12px; }
+  #controls { left: 8px; top: 8px; right: 8px; width: auto; padding: 7px; gap: 6px; }
+  #controls h2, .legend, #controls .hide-sm, #explode, #controls label.inline, #controls .row.minor { display: none; }
+  #controls button { padding: 6px 8px; font-size: 12.5px; }
+  #detail { left: 8px; right: 8px; top: auto; bottom: 8px; width: auto; max-height: 46%; padding: 12px 14px; display: none; }
+  body.sheet-open #detail { display: block; }
+  #sheet-toggle { display: block; position: absolute; right: 8px; bottom: 8px; z-index: 3; }
+  body.sheet-open #sheet-toggle { bottom: calc(46% + 14px); }
+  #narr { width: calc(100% - 16px); bottom: 52px; min-width: 0; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<header>
+  <h1>V13 Anatomy</h1>
+  <span class="sub">Encoder · Concept · Decoder — <b>V13-tiny-v2</b>, <b id="nparams">7,744,181</b> parameters, the model training now</span>
+  <div class="right">
+    <span class="badge" title="The graphics backend in use">Renderer <b id="backend">…</b></span>
+  </div>
+</header>
+<main>
+  <div id="stage"></div>
+  <div id="labels" aria-hidden="true"></div>
+  <div id="boot">Loading the 3D model…</div>
+  <section id="controls" class="float" aria-label="Controls">
+    <h2>View</h2>
+    <div class="row"><button id="btn-explode" class="primary" type="button">Explode</button><button id="btn-reset" type="button">Reset view</button></div>
+    <label class="hide-sm" for="explode">Spacing</label>
+    <input id="explode" type="range" min="0" max="100" value="0" aria-label="Explode the model apart">
+    <h2>Run a pass</h2>
+    <div class="row"><button id="btn-fw" type="button">Forward pass</button></div>
+    <div class="row">
+      <button id="btn-bw-ntp" class="loss" type="button">Backward from L_NTP</button>
+      <button id="btn-bw-ncp" class="loss" type="button">from L_NCP</button>
+      <button id="btn-bw-both" class="loss" type="button">both</button>
+    </div>
+    <div class="row minor">
+      <label class="inline" for="speed">Speed</label>
+      <select id="speed"><option value="slow">Slow</option><option value="normal" selected>Normal</option><option value="fast">Fast</option></select>
+      <button id="btn-stop" type="button">Clear</button>
+    </div>
+    <label class="inline" title="Caps resolution and frame rate, and renders only while something moves"><input id="eco" type="checkbox" checked> Eco rendering</label>
+    <h2>Key</h2>
+    <div class="legend">
+      <span><i style="background:var(--role-l)"></i>L, local</span><span><i style="background:var(--role-g)"></i>G, global</span>
+      <span><i style="background:var(--role-w)"></i>workspace W</span><span><i style="background:var(--role-c)"></i>concepts</span>
+      <span><i style="background:var(--role-d)"></i>decoder</span><span><i style="background:var(--role-loss)"></i>loss</span>
+      <span><i style="background:var(--role-norm)"></i>mix, gate, memory</span><span><i class="dash"></i>no gradient</span>
+    </div>
+  </section>
+  <aside id="detail" class="float" aria-live="polite"></aside>
+  <button id="sheet-toggle" class="float" type="button" aria-controls="detail">Details</button>
+  <div id="narr" class="float" hidden><div id="narr-text"></div><div class="track"><div id="narr-bar"></div></div></div>
+</main>
+<div id="tip" hidden></div>
+<template id="intro-tpl">
+  <p class="eyebrow">What you are looking at</p>
+  <h2>A model built so long-range facts must pass through concepts</h2>
+  <p>V13 carries two kinds of residual stream through a 16-layer encoder. <b style="color:var(--role-l)">L</b> sees at most 51 tokens back; <b style="color:var(--role-g)">G</b> sees the whole document. Every 4 tokens, G (with the embedding and L) is pooled into one concept. The decoder continues L, so anything further back than 66 tokens can reach its next-token logits only through the concept states.</p>
+  <ul class="how">
+    <li>Drag to rotate, scroll or pinch to zoom, right-drag or shift-drag to pan. Arrow keys rotate.</li>
+    <li>Click any block for what it does, what it reads and writes, and its exact parameter count.</li>
+    <li><b>Explode</b> pulls the stages and sublayers apart; the coloured band on each encoder slab marks the streams it writes.</li>
+    <li><b>Forward pass</b> lights the model in dependency order. <b>Backward</b> follows the gradient from a loss; it stops at stop-gradients (dashed grey) and leaves unreached parts dark.</li>
+  </ul>
+  <h3>Start with</h3>
+  <p><button class="linkish" type="button" data-goto="e1.0.att">an S layer</button> (reads L, writes L and G) ·
+     <button class="linkish" type="button" data-goto="e1.3.att">an F layer</button> (writes G only) ·
+     <button class="linkish" type="button" data-goto="e2.0.att">E2’s loop</button> ·
+     <button class="linkish" type="button" data-goto="ncp">the NCP head</button> ·
+     <button class="linkish" type="button" data-goto="d.0.read">a concept read</button></p>
+  <p class="note">Parameter counts are exact (PyTorch, v13_tiny/model.py). Learned values are a snapshot from the training log. The animations are derived from the model’s graph; their timing and glow are illustrative, not measured magnitudes.</p>
+</template>
+<!--DATA-->
+<!--SCRIPT-->

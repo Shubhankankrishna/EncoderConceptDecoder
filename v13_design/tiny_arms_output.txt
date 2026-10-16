@@ -1,0 +1,8 @@
+V13-tiny non-embedding non-table parameters: 4,347,904
+arm                      layers                             params  matmul FLOPs/tok  score FLOPs/tok      total      reach
+V13-confined (λ ramp)    E1 4, E2 4 x 2, E3 4, C 2, D 3  4,347,904        10,058,240        1,382,272 11,440,512         71
+V13-confined (λ = 0)     E1 4, E2 4 x 2, E3 4, C 2, D 3  4,347,904        10,058,240        1,382,272 11,440,512         71
+V13-own-SWA              E1 4, E2 4 x 2, E3 4, C 2, D 3  4,347,904        10,058,240        1,382,272 11,440,512        101
+TF-confined              3 S + 21 decoder                4,435,712         9,150,464          196,608  9,347,072         71
+TF-full                  24                              4,358,656         8,996,352        6,297,600 15,293,952  unbounded
+TF-SWA-360 (stage 2)     24                              4,358,656         8,996,352          196,608  9,192,960        360
