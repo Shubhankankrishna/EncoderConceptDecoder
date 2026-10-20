@@ -1,0 +1,1500 @@
+{
+  "checkpoint_sha": "e39ccd3ca465b92f381caaf299401ac13045e8d0a561402295649ddb5148ec46",
+  "step": 12000,
+  "split": "valid",
+  "count": 24,
+  "teacher_argmax_code_accuracy_by_level": [
+    0.6666666666666666,
+    0.9270833333333334,
+    0.8645833333333334,
+    0.9583333258827528,
+    0.8658854166666666,
+    0.9489583373069763,
+    0.9062499925494194,
+    0.958984375,
+    0.9254385953148206,
+    0.9171195775270462,
+    0.9340277835726738,
+    0.9606119791666666
+  ],
+  "path_exact_by_gold_prefix_levels": {
+    "0": 0.0,
+    "1": 0.0,
+    "3": 0.0,
+    "6": 0.5833333333333334,
+    "9": 0.8333333333333334,
+    "12": 0.875
+  },
+  "teacher_argmax_path_exact": 0.7916666666666666,
+  "cases": [
+    {
+      "index": 1024,
+      "reference": "start at node two. move to node five. move to node four. the goal is reached.",
+      "path": [
+        2,
+        5,
+        4
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node two. move to node five. move to node four. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup world cup world,,, cup world cup world. cup world world at world world cup,,,, cup world,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node two. move to node five. move to node four. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9625585079193115
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,, world cup world,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9126365184783936
+        },
+        "1": {
+          "text": "start at node three. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,, world cup world,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9126365184783936
+        },
+        "3": {
+          "text": "start at node four. move to node six. move to node six. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup world cup world,,, cup world cup world. cup world world at world world cup,,,, world cup world,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node four. move to node six. move to node six. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9344773888587952
+        },
+        "6": {
+          "text": "start at node two. move to node five. move to node four. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world cup,,,, world world,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node two. move to node five. move to node four. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.950078010559082
+        },
+        "9": {
+          "text": "start at node two. move to node five. move to node four. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup world cup world,,, cup, cup world. cup world world at world world cup,,,, cup world,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node two. move to node five. move to node four. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9765990376472473
+        },
+        "12": {
+          "text": "start at node two. move to node five. move to node four. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,, cup world,,,,,,,. world cup world world cup world cup world,,,, cup, and world. cup. cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node two. move to node five. move to node four. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1025,
+      "reference": "start at node nine. move to node zero. move to node eleven. move to node seven. the goal is reached.",
+      "path": [
+        9,
+        0,
+        11,
+        7
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node nine. move to node zero. move to node 17. move to node seven. the goal is reached..................................................,............... series series cup cup........ not...... an world cup cup cup..........",
+          "boundary_text": "start at node nine. move to node zero. move to node 17. move to node seven. the goal is reached..................................................,............... series series cup cup........ not...... an world cup cup cup....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9282371401786804
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node six. move to node zero. move to node three three, goal to. mil......,,, s,, cup world, cup world cup world,, ' cup world at world. cup world world at world world cup world, cup world world cup cup, broadband broadband......... cup...........,..................,,........",
+          "boundary_text": "start at node three. move to node three. move to node six. move to node zero. move to node three three, goal to. mil......",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.20280811190605164
+        },
+        "1": {
+          "text": "start at node three. move to node six. move to node six. move to node one. one is no no..,..........,.....,,,....,.,......,..,,u,. cup.....,.,....,,......,,,,u. \" i...,,,,,,,... must cup. the cup in..,....",
+          "boundary_text": "start at node three. move to node six. move to node six. move to node one. one is no no..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.7441497445106506
+        },
+        "3": {
+          "text": "start at node three. move to node six. move to node six. move to node three. the goal is reached....................,........,...........u......................., ',,u, not.....,,,.,uu................",
+          "boundary_text": "start at node three. move to node six. move to node six. move to node three. the goal is reached....................,........,...........u......................., ',,u, not.....,,,.,uu..........",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8096724152565002
+        },
+        "6": {
+          "text": "start at node eight. move to node zero. move to node four. move to node seven. the goal is reached....................,,,......,...........u.................................. must, not..........u.... broadband......",
+          "boundary_text": "start at node eight. move to node zero. move to node four. move to node seven. the goal is reached....................,,,......,...........u.................................. must, not..........u.... broadband......",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8783151507377625
+        },
+        "9": {
+          "text": "start at node nine. move to node zero. move to node 14. move to node seven. the goal is reached....................,,,......,...........u.............................. series...,u,..u,.....u.... broadband......",
+          "boundary_text": "start at node nine. move to node zero. move to node 14. move to node seven. the goal is reached....................,,,......,...........u.............................. series...",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.948517918586731
+        },
+        "12": {
+          "text": "start at node nine. move to node zero. move to node eleven. move to node seven. the goal is reached....................,........,...........u.................................... his,,.u, an....u.... broadband......",
+          "boundary_text": "start at node nine. move to node zero. move to node eleven. move to node seven. the goal is reached....................,........,...........u.................................... his,,.u, an....u.... broadband......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1026,
+      "reference": "start at node five. move to node one. move to node three. move to node four. move to node two. the goal is reached.",
+      "path": [
+        5,
+        1,
+        3,
+        4,
+        2
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node five. move to node one. move to node three. move to node four. move to node two. the goal is reached. \"............... be,.. be,, be,....,,, be be be.. be be. be,, be, be be be be,, be be, be be be be be be be be be be be be be be be be be be be be be be be,..., be not in,, in the.. world world",
+          "boundary_text": "start at node five. move to node one. move to node three. move to node four. move to node two. the goal is reached. \"",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9516380429267883
+        },
+        "0": {
+          "text": "start at node three. move to node zero. move to node six. move to node three. move to node.. mil,,,...,,,,,,,,,,,.,,,,.,,, be,,..,,,, be,,...,.,,,,,,,, be,,.,,, be.,, be,,,, be be,,.,,,,,,, be,..., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node zero. move to node six. move to node three. move to node..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8112324476242065
+        },
+        "1": {
+          "text": "start at node three. move to node zero. move to node six. move to node three. move to node.. mil,,,...,,,,,,,,,,,.,,,,.,,, be,,..,,,, be,,...,.,,,,,,,, be,,.,,, be.,, be,,,, be be,,.,,,,,,, be,..., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node zero. move to node six. move to node three. move to node..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8112324476242065
+        },
+        "3": {
+          "text": "start at node three. move to node one. move to node eight. move to node four. move to node three. the goal is reached. \"....................,.......,,, be,.......,,,,,,, be.,..,, be.., be,,,, be be,,.,..,,., be...., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node one. move to node eight. move to node four. move to node three. the goal is reached. \"",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9001560211181641
+        },
+        "6": {
+          "text": "start at node five. move to node one. move to node three. move to node four. move to node two. the goal is reached. \"....................,,......,,, be,.......,,,,,,, be.,..,, be.., be,,,, be be,,.,..,,. be be...., be. in,, in the.. world world",
+          "boundary_text": "start at node five. move to node one. move to node three. move to node four. move to node two. the goal is reached. \"",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9329172968864441
+        },
+        "9": {
+          "text": "start at node five. move to node one. move to node three. move to node four. move to node two. the goal is reached. \"....................,, be,....,,, be, be.. be be. be,, be, be be be be.,. be, be be. be be be be be be be be be be,. be be. be be be be be...., be not in,, in the.. world world",
+          "boundary_text": "start at node five. move to node one. move to node three. move to node four. move to node two. the goal is reached. \"",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9687987565994263
+        },
+        "12": {
+          "text": "start at node five. move to node one. move to node three. move to node four. move to node two. the goal is reached. \"............... be... be,, be,....,,, be, be.. be be. be,, be, be be be be., be be, be be be be be be be be be be be be be be be be be be be be be be be,..., be not in,, in the.. world world",
+          "boundary_text": "start at node five. move to node one. move to node three. move to node four. move to node two. the goal is reached. \"",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1027,
+      "reference": "start at node one. move to node seven. move to node five. the goal is reached.",
+      "path": [
+        1,
+        7,
+        5
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at one one. move to node seven. move to node five. the goal is reached.......,,,, world cup,,,,,,, cup,, cup cup, cup world cup world cup, ' cup ' cup world world cup world world at world world cup world cup, cup cup world cup,,,,,,. world cup world world cup world cup world, cup, cup cup world cup world cup cup world cup world cup world cup cup cup, broadband broadband, the. must must, an,,,.....",
+          "boundary_text": "start at one one. move to node seven. move to node five. the goal is reached.......",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9781591296195984
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,,, world,,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup, cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9282371401786804
+        },
+        "1": {
+          "text": "start at node three. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,,, world,,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup, cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9282371401786804
+        },
+        "3": {
+          "text": "start at node four. move to node eight. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup world cup world. cup world world at world world cup,,,, world world,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node four. move to node eight. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9438377618789673
+        },
+        "6": {
+          "text": "start at one one. move to node seven. move to node five. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup world cup world. cup world world at world world cup,,,, cup world,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at one one. move to node seven. move to node five. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.975039005279541
+        },
+        "9": {
+          "text": "start at one one. move to node seven. move to node five. the goal is reached.......,,,, world cup,,,,,,, cup,, cup cup, cup world cup world,, ' cup world cup world world cup world world at world world cup world cup, cup cup world cup,,,,,,. world cup world world cup world cup world, cup, cup cup world cup world world cup. cup world cup world cup cup cup, broadband broadband, the. must must, an,,,.....",
+          "boundary_text": "start at one one. move to node seven. move to node five. the goal is reached.......",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9921996593475342
+        },
+        "12": {
+          "text": "start at one one. move to node seven. move to node five. the goal is reached.......,,,, world cup,,,,,,, cup,, cup cup, cup world cup world,, ' cup ' cup world world cup world world at world world cup world cup, cup cup world cup,,,,,,. world cup world world cup world cup world, cup, cup cup world cup world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at one one. move to node seven. move to node five. the goal is reached.......",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1028,
+      "reference": "start at node seven. move to node two. move to node five. move to node zero. the goal is reached.",
+      "path": [
+        7,
+        2,
+        5,
+        0
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node seven. move to node two. move to node five. move to move zero. the goal is reached.............,,,,, cup world, cup world cup world,,, cup world at world. cup world world at world world cup world, cup world ' cup world cup world cup world cup world cup world cup world. cup world cup world,,, cup cup world and world world cup. cup world cup world cup cup cup, broadband broadband. the. march march. an., march......",
+          "boundary_text": "start at node seven. move to node two. move to node five. move to move zero. the goal is reached............",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9563182592391968
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node six. move. move to move the goal is the goal is...........,,,,. cup world, cup world cup world,, ' cup world cup world. cup world. at world world cup world, cup world ' cup world cup world cup cup, ' cup world cup world. cup world cup world,,, cup cup world cup world. cup. cup world cup world cup cup cup, broadband broadband. the... must.......... s.",
+          "boundary_text": "start at node three. move to node three. move to node six. move. move to move the goal is the goal is..........",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.7893915772438049
+        },
+        "1": {
+          "text": "start at node three. move to node three. move to node six. move. move to move the goal is the goal is...........,,,,. cup world, cup world cup world,, ' cup world cup world. cup world. at world world cup world, cup world ' cup world cup world cup cup, ' cup world cup world. cup world cup world,,, cup cup world cup world. cup. cup world cup world cup cup cup, broadband broadband. the... must.......... s.",
+          "boundary_text": "start at node three. move to node three. move to node six. move. move to move the goal is the goal is..........",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.7893915772438049
+        },
+        "3": {
+          "text": "start at node three. move to node two. move to node six. move to node zero. the goal is reached.............,,,,, cup world, cup world cup world,,, cup world at world. cup world world at world world cup world, cup world ' cup world cup world cup world cup world cup world cup world. cup world cup world,,, cup cup world and world world cup. cup world cup world cup cup cup, broadband broadband. the.. must. cup champion.......,",
+          "boundary_text": "start at node three. move to node two. move to node six. move to node zero. the goal is reached............",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8705148100852966
+        },
+        "6": {
+          "text": "start at node seven. move to node six. move to node five. move to node zero. the goal is reached....,........,,,,,, world, cup world cup world,,, cup world at world. cup world world at world world cup world, cup world ' cup, cup,,,,,. world cup world world cup world cup world,,, cup cup world and world world cup. cup world cup world cup cup cup, broadband broadband. the. must must. an,,,.....",
+          "boundary_text": "start at node seven. move to node six. move to node five. move to node zero. the goal is reached....,.......",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9344773888587952
+        },
+        "9": {
+          "text": "start at node seven. move to node two. move to node five. move to node zero. the goal is reached.............,,,,,, world, cup world cup world,,, cup world at world. cup world world at world world cup world, cup world ' cup world cup world cup world cup world cup world cup world. cup world cup world,,, cup cup world and world world cup. cup world cup world cup cup cup, broadband broadband, the. must must, an,,,.....,,",
+          "boundary_text": "start at node seven. move to node two. move to node five. move to node zero. the goal is reached............",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9765990376472473
+        },
+        "12": {
+          "text": "start at node seven. move to node two. move to node five. move to node zero. the goal is reached....,........,,,,,, world, cup world cup world,,, cup world at world. cup world world at world world cup world, cup ' ' cup world cup world cup., world cup world cup world world cup world cup world,,,, cup, and world world cup. cup world cup world cup cup cup, broadband broadband, the. must must, an,,,.....,,",
+          "boundary_text": "start at node seven. move to node two. move to node five. move to node zero. the goal is reached....,.......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1029,
+      "reference": "start at node one. move to node three. move to node four. move to node seven. move to node nine. the goal is reached.",
+      "path": [
+        1,
+        3,
+        4,
+        7,
+        9
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node one. move to node three. move to node four. move to node seven. move to node nine. the goal is reached. \"....................,, be,....,,, be,,..... be,,,,,,, be.,..,, be., be be, be,, be be be,.,,.,,. be be,..., be not in,, in the.. world the",
+          "boundary_text": "start at node one. move to node three. move to node four. move to node seven. move to node nine. the goal is reached. \"",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9531981348991394
+        },
+        "0": {
+          "text": "start at node three. move to node zero. move to node six. move to node three. move to node.. mil,,,...,,,,,,,,,,,.,,,,.,,, be,,..,,,, be,,...,.,,,,,,,, be,,.,,, be.,, be,,,, be be,,.,,,,,,, be,..., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node zero. move to node six. move to node three. move to node..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8127925395965576
+        },
+        "1": {
+          "text": "start at node three. move to node zero. move to node six. move to node three. move to node.. mil,,,...,,,,,,,,,,,.,,,,.,,, be,,..,,,, be,,...,.,,,,,,,, be,,.,,, be.,, be,,,, be be,,.,,,,,,, be,..., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node zero. move to node six. move to node three. move to node..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8127925395965576
+        },
+        "3": {
+          "text": "start at node three. move to node three. move to node six. move to node three. move to node three. the goal is reached. \"...............,....,, be.....,,, be,...... be,,,, be, be be.,. be,, be., be be be be,, be be be,.,..,,. be be,..., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node three. move to node six. move to node three. move to node three. the goal is reached. \"",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8970358967781067
+        },
+        "6": {
+          "text": "start at one one. move to node three. move to node four. move to node seven. move to node nine. the goal is reached. \"....................,, be.....,,, be,...... be,,,,,,, be.,..,, be.. be be be be,, be be be,.,...,. be be...., be not in,, in the.. world world",
+          "boundary_text": "start at one one. move to node three. move to node four. move to node seven. move to node nine. the goal is reached. \"",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9469578862190247
+        },
+        "9": {
+          "text": "start at one one. move to node three. move to node four. move to node seven. move to node nine. the goal is reached. \"....................,, be.....,,, be,.......,,,,,,, be.,..,, be.. be be, be,, be be be,.,...,. be be...., be not in,, in the.. world world",
+          "boundary_text": "start at one one. move to node three. move to node four. move to node seven. move to node nine. the goal is reached. \"",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9765990376472473
+        },
+        "12": {
+          "text": "start at one one. move to node three. move to node four. move to seven seven. move to node nine. the goal is reached. \"....................,, be.....,,, be,...... be,,,,,,, be.,..,, be.. be be, be,, be be be,.,,.,,. be be,..., be not in,, in the.. world cup",
+          "boundary_text": "start at one one. move to node three. move to node four. move to seven seven. move to node nine. the goal is reached. \"",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1030,
+      "reference": "start at node four. move to node one. move to node three. the goal is reached.",
+      "path": [
+        4,
+        1,
+        3
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node four. move to node one. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,, cup, cup world cup world,,, cup world cup world. cup world world at world world cup world,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,....,",
+          "boundary_text": "start at node four. move to node one. move to node three. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9781591296195984
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,, world cup world,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9095163941383362
+        },
+        "1": {
+          "text": "start at node three. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,, world cup world,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9095163941383362
+        },
+        "3": {
+          "text": "start at node four. move to node four. move to node four. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup world cup world,,, cup world cup world. cup world world at world world cup,,,, cup world,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node four. move to node four. move to node four. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9407176375389099
+        },
+        "6": {
+          "text": "start at node four. move to node one. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup world cup world,,, cup world cup world. cup world world at world world cup,,,, world cup world,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node four. move to node one. move to node three. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9453977942466736
+        },
+        "9": {
+          "text": "start at node four. move to node one. move to node three. the goal is reached..,....,,,, world cup,,,,,,, cup,,,,, cup world cup world,,, cup world cup world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,....,,",
+          "boundary_text": "start at node four. move to node one. move to node three. the goal is reached..,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9906396269798279
+        },
+        "12": {
+          "text": "start at node four. move to node one. move to node three. the goal is reached.......,,,, world cup,,,,,,, cup,,,,, cup world cup world,,, cup world cup world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, the world. cup. cup world cup world cup cup cup,, broadband, the. must must, an,,,....,,",
+          "boundary_text": "start at node four. move to node one. move to node three. the goal is reached.......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1031,
+      "reference": "start at node one. move to node three. move to node two. move to node seven. the goal is reached.",
+      "path": [
+        1,
+        3,
+        2,
+        7
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node one. move to node three. move to node two. move to node seven. the goal is reached.......... in..... not not..........,........,...,.............................,,..................,........",
+          "boundary_text": "start at node one. move to node three. move to node two. move to node seven. the goal is reached.......... in..... not not.",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9609984159469604
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node six. move to node zero. move to node three three, goal to. mil.......,, s,, cup world, cup world cup world,, ' cup world at world. cup world world at world world cup world, cup world world cup cup, broadband broadband. an.......,...........,..................,,........",
+          "boundary_text": "start at node three. move to node three. move to node six. move to node zero. move to node three three, goal to. mil......",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.45553821325302124
+        },
+        "1": {
+          "text": "start at node three. move to node three. move to node six. move to node zero. move to node three three, goal to. mil.......,, s,, cup world, cup world cup world,, ' cup world at world. cup world world at world world cup world, cup world world cup cup, broadband broadband. an.......,...........,..................,,........",
+          "boundary_text": "start at node three. move to node three. move to node six. move to node zero. move to node three three, goal to. mil......",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.45553821325302124
+        },
+        "3": {
+          "text": "start at node three. move to node two. move to node six. move to node six. the goal is reached....,.................................,...,.............................,....................,.......",
+          "boundary_text": "start at node three. move to node two. move to node six. move to node six. the goal is reached....,.................................,...,.............................,....................,......",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8642745614051819
+        },
+        "6": {
+          "text": "start at one one. move to node three. move to node two. move to node seven. the goal is reached.....,.... in................,.,........,...,.....,.......................,....................,.......",
+          "boundary_text": "start at one one. move to node three. move to node two. move to node seven. the goal is reached.....,.... in................,.,........,...,.....,.......................,....................,......",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9594383835792542
+        },
+        "9": {
+          "text": "start at one one. move to node three. move to node two. move to node seven. the goal is reached.....,.... in................,.,........,...,.....,.......................,...................,.,......",
+          "boundary_text": "start at one one. move to node three. move to node two. move to node seven. the goal is reached.....,.... in................,.,........,...,.....,.......................,...................,.,.....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9812792539596558
+        },
+        "12": {
+          "text": "start at one one. move to node three. move to node two. move to node seven. the goal is reached.....,.... in.................,........,...,.....,.......................,...................,........",
+          "boundary_text": "start at one one. move to node three. move to node two. move to node seven. the goal is reached.....,.... in........",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1032,
+      "reference": "start at node zero. move to node four. move to node five. move to node three. move to node seven. the goal is reached.",
+      "path": [
+        0,
+        4,
+        5,
+        3,
+        7
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node zero. move to node four. move to node five. move to node three. move to node seven. the goal is reached. \"....................,.......,,, be,.......,,,,,,, be.,..,, be... be. be,, be be,,.,...,. be be...., be. in,, in the.. world world",
+          "boundary_text": "start at node zero. move to node four. move to node five. move to node three. move to node seven. the goal is reached. \"",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9531981348991394
+        },
+        "0": {
+          "text": "start at node three. move to node zero. move to node six. move to node three. move to node.. mil,,,...,,,,,,,,,,,.,,,,.,,, be,,..,,,, be,,...,.,,,,,,,, be,,.,,, be.,, be,,,, be be,,.,,,,,,, be,..., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node zero. move to node six. move to node three. move to node..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8315132856369019
+        },
+        "1": {
+          "text": "start at node three. move to node zero. move to node six. move to node three. move to node.. mil,,,...,,,,,,,,,,,.,,,,.,,, be,,..,,,, be,,...,.,,,,,,,, be,,.,,, be.,, be,,,, be be,,.,,,,,,, be,..., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node zero. move to node six. move to node three. move to node..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8315132856369019
+        },
+        "3": {
+          "text": "start at node three. move to node three. move to node eight. move to node seven. move to node three. the goal is reached. \"....................,,......,,, be,...... be,,,,,,, be.,..,, be.., be be be,, be be,,.,..,,., be...., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node three. move to node eight. move to node seven. move to node three. the goal is reached. \"",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8970358967781067
+        },
+        "6": {
+          "text": "start at node zero. move to node four. move to node five. move to node three. move to node seven. the goal is reached. \"....................,.......,,, be,.......,,,,,,, be.,..,, be.. be be. be,, be be,,.,...,., be...., be. in,, in the.. world world",
+          "boundary_text": "start at node zero. move to node four. move to node five. move to node three. move to node seven. the goal is reached. \"",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9578782916069031
+        },
+        "9": {
+          "text": "start at node zero. move to node four. move to node five. move to node three. move to node seven. the goal is reached. \"....................,,......,,, be,.......,,,,,,, be.,..,, be.. be be. be,, be be,,.,...,., be...., be. in,, in the.. world world",
+          "boundary_text": "start at node zero. move to node four. move to node five. move to node three. move to node seven. the goal is reached. \"",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9656786322593689
+        },
+        "12": {
+          "text": "start at node zero. move to node four. move to node five. move to node three. move to node seven. the goal is reached. \"....................,.......,,, be,.......,,,,,,, be.,..,, be... be,,,, be be,,.,...,.,....., be. in,, in the.. world world",
+          "boundary_text": "start at node zero. move to node four. move to node five. move to node three. move to node seven. the goal is reached. \"",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1033,
+      "reference": "start at node six. move to node five. move to node zero. the goal is reached.",
+      "path": [
+        6,
+        5,
+        0
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node six. move to node five. move to node zero. the goal is reached........,,, world. cup,,,,,,, cup,, cup cup, cup world cup world,, ' cup world cup world world cup world world at world world cup,,,, world cup world cup,,,,,. world cup world world cup world cup world,,, cup cup, cup world cup cup world cup world cup world cup cup cup, broadband broadband, the.. must. an,,,.....",
+          "boundary_text": "start at node six. move to node five. move to node zero. the goal is reached........,,, world. cup,,,,,,, cup,, cup cup, cup world cup world,, ' cup world cup world world cup world world at world world cup,,,, world cup world cup,,,,,. world cup world world cup world cup world,,, cup cup, cup world cup cup world cup world cup world cup cup cup, broadband broadband, the.",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9781591296195984
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,,, world,,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup, cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9110764265060425
+        },
+        "1": {
+          "text": "start at node three. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,,, world,,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup, cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9110764265060425
+        },
+        "3": {
+          "text": "start at node three. move to node zero. move to node zero. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup world cup world. cup world world at world world,,,,,, world,,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node zero. move to node zero. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9313572645187378
+        },
+        "6": {
+          "text": "start at node six. move to node five. move to node zero. the goal is reached.......,,,, world cup,,,,,,, cup,,, cup, cup world cup world,, ' cup world cup world world cup world world at world world cup world,,, world cup world cup,,,,,. world cup world world cup world cup world, cup, cup cup world cup world cup cup world cup world cup world cup cup cup, broadband broadband, the. must must. an,,,.....",
+          "boundary_text": "start at node six. move to node five. move to node zero. the goal is reached.......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9625585079193115
+        },
+        "9": {
+          "text": "start at node six. move to node five. move to node zero. the goal is reached.......,,, cup. cup,,,,,,, cup,, cup cup, cup world cup world cup cup ' cup world cup world world cup world world at world world cup world,, cup world cup world cup,,,,,. world cup world world cup world cup world, cup, cup cup world cup world cup cup world cup world cup world cup cup cup, broadband broadband, the. must must. an,,,.....",
+          "boundary_text": "start at node six. move to node five. move to node zero. the goal is reached.......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9875195026397705
+        },
+        "12": {
+          "text": "start at node six. move to node five. move to node zero. the goal is reached........,,, cup. cup,,,,,,, cup,, cup cup, cup world cup world cup, ' cup world cup world world cup world world at world world cup world,, cup cup world cup,,,,,,. world cup world world cup world cup world, cup, cup cup world cup world cup cup world cup world cup world cup cup cup, broadband broadband, the.. must. an,,,.....",
+          "boundary_text": "start at node six. move to node five. move to node zero. the goal is reached........,,, cup. cup,,,,,,, cup,, cup cup, cup world cup world cup, ' cup world cup world world cup world world at world world cup world,, cup cup world cup,,,,,,. world cup world world cup world cup world, cup, cup cup world cup world cup cup world cup world cup world cup cup cup, broadband broadband, the.",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1034,
+      "reference": "start at node five. move to node three. move to node ten. move to node eight. the goal is reached.",
+      "path": [
+        5,
+        3,
+        10,
+        8
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node five. move to node three. move to node ten. move to node eight. the goal is reached.............,, broadband, broadband cup world, broadband world cup world,,, cup world cup world. cup world. at world world cup world. cup world world cup cup, broadband broadband broadband........ cup..............................,.........",
+          "boundary_text": "start at node five. move to node three. move to node ten. move to node eight. the goal is reached............",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9625585079193115
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node six. move to node zero. move to node three three - goal to. mil.....,,, s,, cup world ' cup world cup world ', ' cup ' cup world world cup world world at world world cup world cup ' ' ' cup world cup world cup cup, ' cup world cup world. cup world cup world,,, cup cup, at world world cup world cup world world,, in march.., the, cup, must, an march. at,,...",
+          "boundary_text": "start at node three. move to node three. move to node six. move to node zero. move to node three three - goal to. mil.",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.5351014137268066
+        },
+        "1": {
+          "text": "start at node three. move to node three. move to node six. move to node zero. move to node three three - goal to. mil.....,,, s,, cup world ' cup world cup world ', ' cup ' cup world world cup world world at world world cup world cup ' ' ' cup world cup world cup cup, ' cup world cup world. cup world cup world,,, cup cup, at world world cup world cup world world,, in march.., the, cup, must, an march. at,,...",
+          "boundary_text": "start at node three. move to node three. move to node six. move to node zero. move to node three three - goal to. mil.",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.5351014137268066
+        },
+        "3": {
+          "text": "start at node three. move to node three. move to node six. move to node six. the goal is reached.............,, broadband, broadband cup world, cup world cup world,,, cup world cup world. cup world world at world world cup world. cup world world cup cup, broadband broadband..................................................",
+          "boundary_text": "start at node three. move to node three. move to node six. move to node six. the goal is reached............",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9017160534858704
+        },
+        "6": {
+          "text": "start at node five. move to node three. move to node ten. move to node eight. the goal is reached....,........,, broadband, broadband, world, broadband world at world,,, cup world and world. cup world. at world world cup world. cup world world cup cup, broadband broadband.........,........................................",
+          "boundary_text": "start at node five. move to node three. move to node ten. move to node eight. the goal is reached....,.......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.950078010559082
+        },
+        "9": {
+          "text": "start at node five. move to node three. move to node ten. move to node eight. the goal is reached.............,, broadband, broadband, world, broadband world at world,,, cup world and world. cup world. at world world cup world. cup world world cup cup, broadband broadband........................................,.........",
+          "boundary_text": "start at node five. move to node three. move to node ten. move to node eight. the goal is reached............",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9812792539596558
+        },
+        "12": {
+          "text": "start at node five. move to node three. move to node ten. move to node eight. the goal is reached.............,, broadband, broadband, world, broadband world at world,,, cup world and world. cup world. at world world cup world. cup world world cup cup, broadband broadband......... cup..............................,.........",
+          "boundary_text": "start at node five. move to node three. move to node ten. move to node eight. the goal is reached............",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1035,
+      "reference": "start at node zero. move to node five. move to node seven. move to node four. move to node three. move to node two. the goal is reached.",
+      "path": [
+        0,
+        5,
+        7,
+        4,
+        3,
+        2
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node zero. move to node five. move to node seven. move to node four. move to node three. move to node two. the goal was reached.................... march march march. march.............., champion champion series series, not now., march, march........... march march, march march, march march 2009.. march 2009., on, march........",
+          "boundary_text": "start at node zero. move to node five. move to node seven. move to node four. move to node three. move to node two. the goal was reached.................... march march march. march............",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.7659906148910522
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node eight. move to a six. move to node.. mil,,,...,,,,,,,,,,,.,,,,.,,, be,,..,,,, be,,...,. be,,,,,,, be.,.,,, be.,,,,,,,,,,,,,,,,,,,,,...,, not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node three. move to node eight. move to a six. move to node..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.16848674416542053
+        },
+        "1": {
+          "text": "start at node three. move to node three. move to node two. move to node three. move to node three. three... the goal is goal... goal. the goal is reached,, goal,,......... series series..,.....,,. 2...., champion champion,.. march. 2009,,,.....................................",
+          "boundary_text": "start at node three. move to node three. move to node two. move to node three. move to node three.",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.32761311531066895
+        },
+        "3": {
+          "text": "start at node three. move to node three. move to node eight. move to node four. move to node four. four two. four. the goal is reached. the goal,. www.....u....... must march,. march, march........................,.,......,,........,...........,.......",
+          "boundary_text": "start at node three. move to node three. move to node eight. move to node four. move to node four. four two. four. the goal is reached. the goal,. www.....u....... must march,. march, march........................",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.382215291261673
+        },
+        "6": {
+          "text": "start at node zero. move to node five. move to node seven. move to node four. move to node three. move to node two. the goal is reached.......................... march...,..,,,,,,..,., rival.,..,..........................................",
+          "boundary_text": "start at node zero. move to node five. move to node seven. move to node four. move to node three. move to node two. the goal is reached.......................... march...,..,,,,,,..,., rival.,..,..........................................",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.6287051439285278
+        },
+        "9": {
+          "text": "start at node zero. move to node five. move to node seven. move to node four. move to node three. move to node two. the goal is reached...........................,,,,...,..,.. the.. series,, not now..,. '....................... in march.............",
+          "boundary_text": "start at node zero. move to node five. move to node seven. move to node four. move to node three. move to node two. the goal is reached...........................,,,,...,..,.. the.. series,, not now..,. '.....................",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.8517940640449524
+        },
+        "12": {
+          "text": "start at node zero. move to node five. move to node seven. move to node four. move to node three. move to node two. the goal is reached..........................,,,,......, rival.... series,,, now.,,........................... march.............",
+          "boundary_text": "start at node zero. move to node five. move to node seven. move to node four. move to node three. move to node two. the goal is reached........................",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1036,
+      "reference": "start at node zero. move to node two. move to node four. the goal is reached.",
+      "path": [
+        0,
+        2,
+        4
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node zero. move to node two. move to node four. the goal is reached.,,....,,, world.,,,,,,,, cup,,, cup, cup, cup world,,, cup world cup world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,, ' cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node zero. move to node two. move to node four. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9687987565994263
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,, world cup world,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9001560211181641
+        },
+        "1": {
+          "text": "start at node three. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,, world cup world,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9001560211181641
+        },
+        "3": {
+          "text": "start at node three. move to node two. move to node six. the goal is reached.,,....,,,, world cup,,,,,,, cup,,, cup, cup world cup world,, ' cup ' cup world. cup world world at world world cup world,,, world cup world cup,,,,,. world cup world world cup world cup world,,, ' cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node two. move to node six. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9095163941383362
+        },
+        "6": {
+          "text": "start at node zero. move to node two. move to node four. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, at world,,, cup world at world. cup world world at world world,,,,, cup world,,,,,,,. world cup world. cup world cup world,,, ' cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node zero. move to node two. move to node four. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9438377618789673
+        },
+        "9": {
+          "text": "start at node zero. move to node two. move to node four. the goal is reached.,,...,,,,, cup. cup,,,,,,, cup,,, cup, cup world cup world,,, cup world at world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node zero. move to node two. move to node four. the goal is reached.,,...,,,,, cup. cup,,,,,,, cup,,, cup, cup world cup world,,, cup world at world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the.",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9781591296195984
+        },
+        "12": {
+          "text": "start at node zero. move to node two. move to node four. the goal is reached.,,...,,,,, cup. cup,,,,,,, cup,, cup cup, cup world cup world,,, cup world at world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, and world. cup. cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node zero. move to node two. move to node four. the goal is reached.,,...,,,,, cup. cup,,,,,,, cup,, cup cup, cup world cup world,,, cup world at world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, and world. cup. cup world cup world cup cup cup,, broadband, the.",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1037,
+      "reference": "start at node six. move to node zero. move to node one. move to node five. the goal is reached.",
+      "path": [
+        6,
+        0,
+        1,
+        5
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node six. move to node zero. move to node one. move to node five. the goal is reached..............gy.gy.....,....,.,....................,..................u, not.....,u,..... an. cup cup cup champion.........",
+          "boundary_text": "start at node six. move to node zero. move to node one. move to node five. the goal is reached..............gy.gy.....,....,.,....................,..................u, not.....,u,..... an. cup cup cup champion...",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9547581672668457
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node six. move to node zero. move to node three three, goal to mil mil......,,, s,, cup world, cup world cup world,, ' cup world at world. cup world world at world world cup world, cup world world cup cup, broadband broadband......... cup...........,..................,,........",
+          "boundary_text": "start at node three. move to node three. move to node six. move to node zero. move to node three three, goal to mil mil......",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.205928236246109
+        },
+        "1": {
+          "text": "start at node three. move to node six. move to node six. move to node one. one one is,,.............,.....,,,....,.,......,..,,u,. cup.....,.,....,,......,,,,u, i,...,, his,,u,... must must be an olympic in..,....",
+          "boundary_text": "start at node three. move to node six. move to node six. move to node one. one one is,,.............,.....,,,....,.,......,..,,u,. cup.....,.,....,,......,,,,u, i,..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.7909516096115112
+        },
+        "3": {
+          "text": "start at node three. move to node one. move to node two. move to node three. the goal is reached... must................,.,......,...........u..........,............,,,,u,......,, his... an... must must. must.........",
+          "boundary_text": "start at node three. move to node one. move to node two. move to node three. the goal is reached... must................,.,......,...........u..........,............,,,,u,......,, his... an... must must. must...",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8673946857452393
+        },
+        "6": {
+          "text": "start at node three. move to node zero. move to node one. move to node five. the goal is reached....................,,,......,...........u..........,.................,......,,,.........u.. in. broadband......",
+          "boundary_text": "start at node three. move to node zero. move to node one. move to node five. the goal is reached....................,,,......,...........u..........,.................,......,,,.........u.. in. broadband......",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8845553994178772
+        },
+        "9": {
+          "text": "start at node six. move to node zero. move to node one. move to node five. the goal is reached....................,,,......,...........u..........,............, ',,u, not,,, cup.,u his.,uu an....u.... broadband......",
+          "boundary_text": "start at node six. move to node zero. move to node one. move to node five. the goal is reached....................,,,......,...........u..........,............, ',,u, not,,, cup.,u his.,uu an....u.... broadband......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.975039005279541
+        },
+        "12": {
+          "text": "start at node six. move to node zero. move to node one. move to node five. the goal is reached....................,,,......,...........u..........,....,......., ',, cup, not,,, cup., his his.,u, an...u.. in. broadband......",
+          "boundary_text": "start at node six. move to node zero. move to node one. move to node five. the goal is reached....................,,,......,...........u..........,....,......., ',, cup, not,,, cup., his his.,u, an...",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1038,
+      "reference": "start at node six. move to node three. move to node two. move to node one. move to node eight. the goal is reached.",
+      "path": [
+        6,
+        3,
+        2,
+        1,
+        8
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node three. move to node three. move to node two. move to node one. move to node eight. the goal is reached. \"....................,, be.....,,, be,...... be,,,, be, be be.,.,,, be., be be be be,, be be be,.,..,,. be be,..., be not in,, in the.. world the",
+          "boundary_text": "start at node three. move to node three. move to node two. move to node one. move to node eight. the goal is reached. \"",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9563182592391968
+        },
+        "0": {
+          "text": "start at node three. move to node zero. move to node six. move to node three. move to node.. mil,,,...,,,,,,,,,,,.,,,,.,,, be,,..,,,, be,,...,.,,,,,,,, be,,.,,, be.,, be,,,, be be,,.,,,,,,, be,..., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node zero. move to node six. move to node three. move to node..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8315132856369019
+        },
+        "1": {
+          "text": "start at node three. move to node zero. move to node six. move to node three. move to node.. mil,,,...,,,,,,,,,,,.,,,,.,,, be,,..,,,, be,,...,.,,,,,,,, be,,.,,, be.,, be,,,, be be,,.,,,,,,, be,..., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node zero. move to node six. move to node three. move to node..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8315132856369019
+        },
+        "3": {
+          "text": "start at node three. move to node three. move to node six. move to node three. move to node three. the goal is reached. \"....................,.......,,, be,.......,,,,,,, be.,..,, be.., be,,,, be be,,.,...,.,....., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node three. move to node six. move to node three. move to node three. the goal is reached. \"",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9095163941383362
+        },
+        "6": {
+          "text": "start at node three. move to node three. move to node two. move to node one. move to node eight. the goal is reached. \"....................,,......,,, be,.......,,,,,,, be.,..,, be.., be be be,, be be,,.,..,,., be...., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node three. move to node two. move to node one. move to node eight. the goal is reached. \"",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9453977942466736
+        },
+        "9": {
+          "text": "start at node six. move to node three. move to node two. move to node one. move to node eight. the goal is reached. \"....................,,......,,, be,.......,,,,,,, be.,..,, be.. be be be be,, be be,,.,...,. be be...., be not in,, in the.. world world",
+          "boundary_text": "start at node six. move to node three. move to node two. move to node one. move to node eight. the goal is reached. \"",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9672386646270752
+        },
+        "12": {
+          "text": "start at node six. move to node three. move to node two. move to node one. move to node eight. the goal is reached. \"....................,,......,,, be,.......,,,,,,, be.,..,, be.., be, be,, be be,,.,...,., be...., be not in,, in the.. world cup",
+          "boundary_text": "start at node six. move to node three. move to node two. move to node one. move to node eight. the goal is reached. \"",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1039,
+      "reference": "start at node seven. move to node nine. move to node ten. the goal is reached.",
+      "path": [
+        7,
+        9,
+        10
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node seven. move to node nine. move to node ten. the goal is reached.,,....,,, world.,,,,,,,, cup,,, cup, cup world cup world,,, cup, cup world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node seven. move to node nine. move to node ten. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9781591296195984
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,,, world,,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup, cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9157566428184509
+        },
+        "1": {
+          "text": "start at node three. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,,, world,,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup, cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9157566428184509
+        },
+        "3": {
+          "text": "start at node four. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup world cup world,,, cup world cup world. cup world world at world world,,,,, cup world,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node four. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9297971725463867
+        },
+        "6": {
+          "text": "start at node seven. move to node nine. move to node ten. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world cup,,,, world cup world,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node seven. move to node nine. move to node ten. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9672386646270752
+        },
+        "9": {
+          "text": "start at node seven. move to node nine. move to node ten. the goal is reached.,,....,,, cup.,,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup, cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node seven. move to node nine. move to node ten. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9843993782997131
+        },
+        "12": {
+          "text": "start at node seven. move to node nine. move to node ten. the goal is reached.,,....,,, cup.,,,,,,,, cup,,, cup, cup, cup world,,, cup, cup world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node seven. move to node nine. move to node ten. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1040,
+      "reference": "start at node zero. move to node seven. move to node six. move to node five. the goal is reached.",
+      "path": [
+        0,
+        7,
+        6,
+        5
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node zero. move to move seven. move to node six. move to node five. the goal is reached................gy.....,....,.,....................,............... world football cup cup...... not. not,.... an an world cup cup cup champion.........",
+          "boundary_text": "start at node zero. move to move seven. move to node six. move to node five. the goal is reached................gy.....,....,.,....................,............... world football cup cup...... not. not,.... an an world cup cup cup champion...",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9375975131988525
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node six. move to node zero. move to node three three, goal to. mil.......,, s,, cup world, cup world cup world,, ' cup world at world. cup world world at world world cup world, cup world world cup cup, broadband broadband. an.......,...........,..................,,........",
+          "boundary_text": "start at node three. move to node three. move to node six. move to node zero. move to node three three, goal to. mil......",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.1950078010559082
+        },
+        "1": {
+          "text": "start at node three. move to node six. move to node six. move to node one. one is no no..,..........,.....,,,....,.,......,..,,u,. cup.....,.,....,,......,,,,u. \" i...,,,,,,,... must cup. the cup in..,....",
+          "boundary_text": "start at node three. move to node six. move to node six. move to node one. one is no no..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.7425897121429443
+        },
+        "3": {
+          "text": "start at node three. move to node eight. move to node six. move to node three. the goal is reached... must................,,,......,...........u..........,............, ',,u, not.....,, his.,uu... must must not an an........",
+          "boundary_text": "start at node three. move to node eight. move to node six. move to node three. the goal is reached... must................,,,......,...........u..........,............, ',,u, not.....,, his.,uu... must must not an an..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8127925395965576
+        },
+        "6": {
+          "text": "start at node zero. move to node seven. move to node six. move to node five. the goal is reached....................,,,......,...........u...................................,,,... an....u.... broadband......",
+          "boundary_text": "start at node zero. move to node seven. move to node six. move to node five. the goal is reached....................,,,......,...........u...................................,,,...",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.898595929145813
+        },
+        "9": {
+          "text": "start at node zero. move to node seven. move to node six. move to node five. the goal is reached....................,,,......,...........u.............................. series....u,.,uu.....u.... broadband......",
+          "boundary_text": "start at node zero. move to node seven. move to node six. move to node five. the goal is reached....................,,,......,...........u.............................. series...",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9641185402870178
+        },
+        "12": {
+          "text": "start at node zero. move to node seven. move to node six. move to node five. the goal is reached....................,,,......,...........u..........,......................... his,,,u, an....u.... broadband......",
+          "boundary_text": "start at node zero. move to node seven. move to node six. move to node five. the goal is reached....................,,,......,...........u..........,......................... his,,,u, an....u.... broadband......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1041,
+      "reference": "start at node ten. move to node seven. move to node six. move to node two. move to node one. move to node four. the goal is reached.",
+      "path": [
+        10,
+        7,
+        6,
+        2,
+        1,
+        4
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node ten. move to node seven. move to node six. move to node two. move to node one. move to node four. the goal is reached..................... must.... march., march march march.,.... cup champion champion,.. not now. march march, 2009........... march march, march march, march march, on on march 2009.,, march march....... s",
+          "boundary_text": "start at node ten. move to node seven. move to node six. move to node two. move to node one. move to node four. the goal is reached..................... must..",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.7332293391227722
+        },
+        "0": {
+          "text": "start at node three. move to node zero. move to node six. move to node six. the goal is reached...,,.................................,...,...............................................,. at......",
+          "boundary_text": "start at node three. move to node zero. move to node six. move to node six. the goal is reached...,,.................................,...,.............................................",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.22776910662651062
+        },
+        "1": {
+          "text": "start at node three. move to node three. move to node three. move to move seven. the goal is reached..................uu................... on on...,,,...gyu.........,. be be in be,.............,..,.,....,.......",
+          "boundary_text": "start at node three. move to node three. move to node three. move to move seven. the goal is reached..................uu................... on on...,,,...gyu..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.3681747317314148
+        },
+        "3": {
+          "text": "start at node three. move to node three. move to node eight. move to node three. move to node one one move to node. one one. the goal is reached to the series...................,, 2009....,,,,, selling....,., on march..,... in 2009. broadband..........,...................",
+          "boundary_text": "start at node three. move to node three. move to node eight. move to node three. move to node one one move to node. one one.",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.39469578862190247
+        },
+        "6": {
+          "text": "start at node four. move to node seven. move to node six. move to node two. move to node one. move to node four. the goal is reached, including.. cup,..uu............... march march,.,..,,,,,,..,., rival,,..,., champion.,,,....... cup...... must march.................u",
+          "boundary_text": "start at node four. move to node seven. move to node six. move to node two. move to node one. move to node four. the goal is reached, including.. cup,..uu..............",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.614664614200592
+        },
+        "9": {
+          "text": "start at node ten. move to node seven. move to node six. move to node two. move to node one. move to node four. the goal is reached............. world............,,,,,,,,,, be rival.. s. series,, now now.,,. '.,.................... in an,...........",
+          "boundary_text": "start at node ten. move to node seven. move to node six. move to node two. move to node one. move to node four. the goal is reached............. world..........",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.8471139073371887
+        },
+        "12": {
+          "text": "start at node ten. move to node seven. move to node six. move to node two. move to node one. move to node four. the goal is reached..........................,,,,......, rival the... series,, now now.,,........................... march.............",
+          "boundary_text": "start at node ten. move to node seven. move to node six. move to node two. move to node one. move to node four. the goal is reached........................",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1042,
+      "reference": "start at node zero. move to node four. move to node one. the goal is reached.",
+      "path": [
+        0,
+        4,
+        1
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node zero. move to node four. move to node one. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup world cup world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node zero. move to node four. move to node one. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9781591296195984
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,,, cup world,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup, cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9204367995262146
+        },
+        "1": {
+          "text": "start at node three. move to node three. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,,, cup world,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup, cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node three. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9204367995262146
+        },
+        "3": {
+          "text": "start at node three. move to node one. move to node four. the goal is reached.,,....,,,, world cup,,,,,,, cup,, cup cup, cup world cup world,, ' cup world cup world world cup world world at world world cup world,, cup cup world cup,,,,,,. world cup world world cup world cup world, cup, cup cup world cup world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node one. move to node four. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9188767671585083
+        },
+        "6": {
+          "text": "start at node zero. move to node four. move to node one. the goal is reached.......,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup world at world. cup world world at world world cup,,,, world cup world cup,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node zero. move to node four. move to node one. the goal is reached.......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.975039005279541
+        },
+        "9": {
+          "text": "start at node zero. move to node four. move to node one. the goal is reached......,,,,,, world cup,,,,,,, cup,,, cup, cup world cup world,,, cup world cup world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node zero. move to node four. move to node one. the goal is reached......,,,,,, world cup,,,,,,, cup,,, cup, cup world cup world,,, cup world cup world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the.",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9937597513198853
+        },
+        "12": {
+          "text": "start at node zero. move to node four. move to node one. the goal is reached......,,,,,, world cup,,,,,,, cup,,, cup, cup world cup world,,, cup world cup world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, and world. cup. cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node zero. move to node four. move to node one. the goal is reached......,,,,,, world cup,,,,,,, cup,,, cup, cup world cup world,,, cup world cup world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, and world. cup. cup world cup world cup cup cup,, broadband, the.",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1043,
+      "reference": "start at node six. move to node zero. move to node three. move to node one. the goal is reached.",
+      "path": [
+        6,
+        0,
+        3,
+        1
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node six. move to node zero. move to node three. move to node one. the goal is reached................gy.................................,..................., not.......,..... an. cup cup cup champion.........",
+          "boundary_text": "start at node six. move to node zero. move to node three. move to node one. the goal is reached................gy.................................,..................., not.......,..... an. cup cup cup champion...",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9391575455665588
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node six. move to node zero. move to node three three, goal to. mil......,,, s,, cup world, cup world cup world,, ' cup world at world. cup world world at world world cup world, cup world world cup cup, broadband broadband......... cup...........,..................,,........",
+          "boundary_text": "start at node three. move to node three. move to node six. move to node zero. move to node three three, goal to. mil......",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.20436817407608032
+        },
+        "1": {
+          "text": "start at node three. move to node six. move to node six. move to node one. one is no no..,..........,.....,,,....,.,......,..,,u,. cup.....,.,....,,......,,,,u. \" i...,,,,,,,... must must not world cup in..,....",
+          "boundary_text": "start at node three. move to node six. move to node six. move to node one. one is no no..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.7925117015838623
+        },
+        "3": {
+          "text": "start at node three. move to node six. move to node six. move to node three. the goal is reached....................,........,...........u......................., ',,u, not.....,,,.,uu................",
+          "boundary_text": "start at node three. move to node six. move to node six. move to node three. the goal is reached....................,........,...........u......................., ',,u, not.....,,,.,uu..........",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8346334099769592
+        },
+        "6": {
+          "text": "start at node three. move to node zero. move to node three. move to node one. the goal is reached....................,,,......,...........u............................,......,,,... an....u.... broadband......",
+          "boundary_text": "start at node three. move to node zero. move to node three. move to node one. the goal is reached....................,,,......,...........u............................,......,,,...",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8970358967781067
+        },
+        "9": {
+          "text": "start at node six. move to node zero. move to node three. move to node one. the goal is reached....................,,,......,...........u..........,............, ',, cup, not,,, cup., his his.,uu.....u.... broadband......",
+          "boundary_text": "start at node six. move to node zero. move to node three. move to node one. the goal is reached....................,,,......,...........u..........,............, ',, cup, not,,, cup., his his.,uu.....u.... broadband......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9672386646270752
+        },
+        "12": {
+          "text": "start at node six. move to node zero. move to node three. move to node one. the goal is reached....................,,,......,...........u..........,............, ',, cup, not,,, cup., his his.,uu.....u.... broadband......",
+          "boundary_text": "start at node six. move to node zero. move to node three. move to node one. the goal is reached....................,,,......,...........u..........,............, ',, cup, not,,, cup., his his.,uu.....u.... broadband......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1044,
+      "reference": "start at node three. move to node five. move to node zero. move to node four. move to node one. the goal is reached.",
+      "path": [
+        3,
+        5,
+        0,
+        4,
+        1
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node three. move to node five. move to node zero zero move to node four. move to node one. the goal is reached. \"......................, be.....,,, be,......,,,,,,,,,.,.., be be.. be be be be be, be be be,.,,.,,,,,,..., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node five. move to node zero zero move to node four. move to node one. the goal is reached. \"......................, be.....,,, be,......,,,,,,,,,.,.., be be.. be be be be be, be be be,.,,.,,,,,,..., be not in,, in the.",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.950078010559082
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node eight. move to a six. move to node.. mil,,,...,,,,,,,,,,..,,,,.,,, be,,..,,,, be,,...,.,,,,,,,, be.,.,,, be.,,,,,,,,,,,,,,,,,,,,,...,, not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node three. move to node eight. move to a six. move to node..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8361934423446655
+        },
+        "1": {
+          "text": "start at node three. move to node three. move to node eight. move to a six. move to node.. mil,,,...,,,,,,,,,,..,,,,.,,, be,,..,,,, be,,...,.,,,,,,,, be.,.,,, be.,,,,,,,,,,,,,,,,,,,,,...,, not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node three. move to node eight. move to a six. move to node..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8361934423446655
+        },
+        "3": {
+          "text": "start at node three. move to node zero. move to node six. move to node three. move to node three. the goal is reached. \"....................,.......,,, be,.......,,,,,,, be.,..,, be.. be be, be,, be be,,.,...,., be...., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node zero. move to node six. move to node three. move to node three. the goal is reached. \"",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8814352750778198
+        },
+        "6": {
+          "text": "start at node three. move to node five. move to node zero. move to node four. move to node one. the goal is reached. \"...............,,..,,, be,,..,,,, be,......,,,,,,,, be,,.,,, be..,,,,,, be,,,,,,,,,,, be...., be not in,, in the.. world cup",
+          "boundary_text": "start at node three. move to node five. move to node zero. move to node four. move to node one. the goal is reached. \"",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9204367995262146
+        },
+        "9": {
+          "text": "start at node three. move to node five. move to node zero. move to node four. move to node one. the goal is reached. \"....,,,,,,,....,,,.,,, be,,...,,, be, be.. be be. be,,,, be be be be,,. be, be be be, be be be be be be be be be,. be be. be, be be be,..., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node five. move to node zero. move to node four. move to node one. the goal is reached. \"",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9734789133071899
+        },
+        "12": {
+          "text": "start at node three. move to node five. move to node zero. move to node four. move to node one. the goal is reached..........,............., be,....,,, be,... be.. be,,,, be be be be.,. be, be be.. be be be be be be be be be,. be be. be be. be be...., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node five. move to node zero. move to node four. move to node one. the goal is reached..........,............., be,....,,, be,... be.. be,,,, be be be be.,. be, be be.. be be be be be be be be be,. be be. be be. be be...., be not in,, in the.",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1045,
+      "reference": "start at node five. move to node one. move to node three. the goal is reached.",
+      "path": [
+        5,
+        1,
+        3
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node five. move to node one. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup world cup world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,, cup cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. the must must, an,,,....,",
+          "boundary_text": "start at node five. move to node one. move to node three. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9672386646270752
+        },
+        "0": {
+          "text": "start at node three. move to node two. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,,, cup world,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup, cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node two. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9079563021659851
+        },
+        "1": {
+          "text": "start at node three. move to node two. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,,, cup world,,,,,,. world cup world. cup world cup world,,,, cup, the world cup cup, cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node two. move to node three. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.9079563021659851
+        },
+        "3": {
+          "text": "start at node three. move to node two. move to node one. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup, cup world. cup world world at world world,,,,, world cup world,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup, cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node three. move to node two. move to node one. the goal is reached.,,....",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.898595929145813
+        },
+        "6": {
+          "text": "start at node five. move to node one. move to node three. the goal is reached.,,....,,,, world cup,,,,,,, cup,,,,, cup world cup world,,, cup world cup world. cup world world at world world cup,,,, cup world,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,.....",
+          "boundary_text": "start at node five. move to node one. move to node three. the goal is reached.,,....",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9360374212265015
+        },
+        "9": {
+          "text": "start at node five. move to node one. move to node three. the goal is reached.......,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup world cup world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, the world cup cup world cup world cup world cup cup cup,, broadband, the. must must, an,,,....,,",
+          "boundary_text": "start at node five. move to node one. move to node three. the goal is reached.......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9843993782997131
+        },
+        "12": {
+          "text": "start at node five. move to node one. move to node three. the goal is reached.......,,,, world cup,,,,,,, cup,,,,, cup, cup world,,, cup world cup world. cup world world at world world cup,,,,, cup,,,,,,,. world cup world world cup world cup world,,,, cup, the world. cup. cup world cup world cup cup cup,, broadband, the. must must, an,,,....,,",
+          "boundary_text": "start at node five. move to node one. move to node three. the goal is reached.......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1046,
+      "reference": "start at node three. move to node zero. move to node four. move to node six. the goal is reached.",
+      "path": [
+        3,
+        0,
+        4,
+        6
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node three. move to node zero. move to node four. move to node six. the goal is reached......................................................................, not.......,..... an. cup cup cup champion.........",
+          "boundary_text": "start at node three. move to node zero. move to node four. move to node six. the goal is reached......................................................................, not.......,..... an. cup cup cup champion...",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.950078010559082
+        },
+        "0": {
+          "text": "start at node three. move to node three. move to node six. move to node six. the goal is reached.............,, broadband, broadband cup world, cup world at world cup cup world cup broadband,..................,,.....................,............................",
+          "boundary_text": "start at node three. move to node three. move to node six. move to node six. the goal is reached............",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.255850225687027
+        },
+        "1": {
+          "text": "start at node three. move to node six. move to node six. move to node three. the goal is reached....................,........,...........u.........................u.........,.,..uu................",
+          "boundary_text": "start at node three. move to node six. move to node six. move to node three. the goal is reached....................,........,...........u.........................u.........,.,..uu..........",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8018720746040344
+        },
+        "3": {
+          "text": "start at node three. move to node six. move to node six. move to node three. the goal is reached....................,........,...........u.........................u.........,.,..uu................",
+          "boundary_text": "start at node three. move to node six. move to node six. move to node three. the goal is reached....................,........,...........u.........................u.........,.,..uu..........",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.8018720746040344
+        },
+        "6": {
+          "text": "start at node three. move to node zero. move to node four. move to node six. the goal is reached....................,........,...........u........................................u an....u.... broadband......",
+          "boundary_text": "start at node three. move to node zero. move to node four. move to node six. the goal is reached....................,........,...........u........................................u",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9219968914985657
+        },
+        "9": {
+          "text": "start at node three. move to node zero. move to node four. move to node six. the goal is reached....................,........,...........u......................., ',, cup, not,,, cup..u his.,uu.....u.... broadband......",
+          "boundary_text": "start at node three. move to node zero. move to node four. move to node six. the goal is reached....................,........,...........u......................., ',, cup, not,,, cup..u his.,uu.....u.... broadband......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.9765990376472473
+        },
+        "12": {
+          "text": "start at node three. move to node zero. move to node four. move to node six. the goal is reached....................,........,...........u......................., ',, cup, not,,, cup..u his.,uu.....u.... broadband......",
+          "boundary_text": "start at node three. move to node zero. move to node four. move to node six. the goal is reached....................,........,...........u......................., ',, cup, not,,, cup..u his.,uu.....u.... broadband......",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "index": 1047,
+      "reference": "start at node eight. move to node zero. move to node nine. move to node seven. move to node four. move to node six. the goal is reached.",
+      "path": [
+        8,
+        0,
+        9,
+        7,
+        4,
+        6
+      ],
+      "outputs": {
+        "teacher_argmax": {
+          "text": "start at node eight. move to node zero. move to node nine. move to node seven. move to node four. move to node six. the goal was reached.........u.......... march march march. march.............. s champion rival series.. not now., march, champion,...,...... march march, march march, march march march.. march 2009., on, not........",
+          "boundary_text": "start at node eight. move to node zero. move to node nine. move to node seven. move to node four. move to node six. the goal was reached.........u.......... march march march. march............",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.7332293391227722
+        },
+        "0": {
+          "text": "start at node three. move to node zero. move to node six. move to node three. move to node.. mil,,,...,,,,,,,,,,,.,,,,.,,, be,,..,,,, be,,...,.,,,,,,,, be,,.,,, be.,, be,,,, be be,,.,,,,,,, be,..., be not in,, in the.. world world",
+          "boundary_text": "start at node three. move to node zero. move to node six. move to node three. move to node..",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.1965678632259369
+        },
+        "1": {
+          "text": "start at node three. move to node three. move to node two. move to node three. move to node. three.. _ 23. the goal is goal.... the. goal is proud, reached.........u.............................. march,.......................................",
+          "boundary_text": "start at node three. move to node three. move to node two. move to node three. move to node. three.. _ 23. the goal is goal.... the. goal is proud, reached.........u.............................. march,.......................................",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.3416536748409271
+        },
+        "3": {
+          "text": "start at node three. move to node three. move to node two. move to node three. move to one move. move two and four. the goal is goal. the goal,............... must must,, march in march,..... must, not.....gy.. selling,...........,,,......,,.........,,,.......",
+          "boundary_text": "start at node three. move to node three. move to node two. move to node three. move to one move. move two and four. the goal is goal. the goal,............... must must,, march in march,...",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.36349454522132874
+        },
+        "6": {
+          "text": "start at node eight. move to node.. node to node nine. move to node seven. move to node move. move to node six. the goal is reached............................. on on....,,......, champion,, now..,., champion.... cup...... cup...... must march..................",
+          "boundary_text": "start at node eight. move to node.. node to node nine. move to node seven. move to node move. move to node six. the goal is reached............................. on on....,,......, champion,, now..,., champion.... cup...... cup...... must march..................",
+          "exact_path": false,
+          "bounded_exact_path": false,
+          "code_accuracy": 0.6006240248680115
+        },
+        "9": {
+          "text": "start at node eight. move to node zero. move to node nine. move to node seven. move to node four. move to node six. the goal is reached.......uu................ march,,,,..,,,., rival. s.. series., now...,. '.......................................",
+          "boundary_text": "start at node eight. move to node zero. move to node nine. move to node seven. move to node four. move to node six. the goal is reached.",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 0.8330733180046082
+        },
+        "12": {
+          "text": "start at node eight. move to node zero. move to node nine. move to node seven. move to node four. move to node six. the goal is reached..........................,,,,......, rival.... series,,, now.,,........................... march.............",
+          "boundary_text": "start at node eight. move to node zero. move to node nine. move to node seven. move to node four. move to node six. the goal is reached........................",
+          "exact_path": true,
+          "bounded_exact_path": true,
+          "code_accuracy": 1.0
+        }
+      }
+    }
+  ],
+  "seconds": 51.14909437508322,
+  "limitation": "Gold-prefix interventions are diagnosis only, not deployable inference or a new held-out score."
+}
