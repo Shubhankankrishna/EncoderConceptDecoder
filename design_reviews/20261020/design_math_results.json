@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "scope": "Design arithmetic only. No model trained, loaded, or changed.",
+  "streaming": {
+    "sequences": 12,
+    "steps_per_sequence": 80,
+    "max_absolute_error_against_explicit_softmax": 2.7755575615628914e-13,
+    "equal_score_limiting_gate_beta_0_55": 0.45,
+    "note": "FP64 algebra only; not a PyTorch/MPS or gradient check."
+  },
+  "information": {
+    "max_telescope_error": 2.220446049250313e-16,
+    "minimum_pointwise_conditional_log_ratio": -0.780158557549575,
+    "symmetric_pmi_eigenvalues": [
+      -0.44628710262841936,
+      1.3862943611198906
+    ]
+  },
+  "capacity": {
+    "new_codec_stride_two": {
+      "text_tokens": 32,
+      "slots": 16,
+      "groups": 2,
+      "K": 256,
+      "scalar_codes": 32,
+      "payload_bits": 256,
+      "payload_with_optional_six_bit_length": 262,
+      "raw_fixed_width_bits_4096_vocab": 384,
+      "nominal_payload_ratio": 1.5
+    },
+    "new_codec_stride_four": {
+      "slots": 8,
+      "scalar_codes": 16,
+      "payload_bits": 128,
+      "nominal_payload_ratio": 3.0
+    },
+    "ncm_native": {
+      "positions": 641,
+      "nominal_payload_bits": 8333,
+      "text_tokens": 128
+    },
+    "exact_uniform_eight_node_ids_24_choices_min_bits": 36.67970000576925,
+    "fp32_loop_state_bytes_B1_slots16_d384": 24640,
+    "fp32_adam_30m_params_grads_two_moments_bytes": 480000000
+  },
+  "parameters": {
+    "components": {
+      "shared_text_embedding_and_tied_output_4096x384": 1572864,
+      "context_encoder_four_self_blocks": 7077888,
+      "context_to_workspace_initial_attention": 589824,
+      "shared_reasoner_two_self_cross_blocks": 4718592,
+      "sixteen_workspace_queries": 6144,
+      "code_prior_two_self_cross_blocks": 2228224,
+      "workspace_to_prior_bridge": 98304,
+      "code_prior_input_embeddings_two_groups": 131072,
+      "code_prior_output_heads_two_groups_untied": 131072,
+      "text_decoder_five_self_cross_blocks": 11796480,
+      "codec_encoder_two_self_blocks": 884736,
+      "codec_text_embedding": 786432,
+      "stride_two_ordered_pair_projection": 73728,
+      "product_codebooks_two_groups_of_96": 49152,
+      "quantized_latent_to_text_decoder_bridge": 73728,
+      "loop_scorer_and_decay_parameter": 385
+    },
+    "major_weight_sum": 30218625,
+    "excluded": "Norm gains, positional/type embeddings, scalar temperatures, optional biases; also excludes offline teacher and training-only representation heads.",
+    "training_only_asymmetric_linear_heads": 73728,
+    "shared_reasoner_weight_applications_at_R6": 28311552
+  },
+  "compute_estimates": {
+    "convention": "2 FLOPs per multiply-accumulate; dense projections and attention only.",
+    "recurrent_stage_with_fixed_context_kv_flops": 1174929408,
+    "four_block_bidirectional_context_encoder_flops": 4026531840,
+    "reasoner_context_kv_cache_fp32_bytes": 1572864,
+    "excludes": "Initial attention, code prior, text decoder, norms, softmax, activations and overhead."
+  }
+}
