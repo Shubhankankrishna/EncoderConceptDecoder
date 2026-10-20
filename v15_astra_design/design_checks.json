@@ -1,0 +1,99 @@
+{
+  "scope": "Analytical checks only. No neural model, training, gradients through an implemented HRM, latency or quality tested.",
+  "tiny": {
+    "codec": {
+      "tied_token_embedding_and_output": 262144,
+      "encoder_and_decoder_blocks": 1441792,
+      "ema_codebook_scalars": 229376,
+      "residual_reconstruction_maps": 65536,
+      "shared_position_and_prefix_level_embeddings": 2560,
+      "two_depth_memory_map_sets": 11520
+    },
+    "concept": {
+      "context_input_projection": 32768,
+      "context_blocks": 2883584,
+      "coarse_reconstruction_projection": 32768,
+      "query_position_level_mode_embeddings": 6144,
+      "hrm_self_and_cross_attention": 2621440,
+      "hrm_expert_ffns": 1572864,
+      "expert_routers": 0,
+      "code_heads": 458752
+    },
+    "codec_total": 2012928,
+    "stage_1a_gradient_parameters": 1783552,
+    "stage_1b_trainable": 7608320,
+    "base_stored": 9621248,
+    "selected_expert_parameter_accounting": 9621248,
+    "two_dense_adapter_slots": 57858,
+    "with_two_slots": 9679106
+  },
+  "small": {
+    "codec": {
+      "tied_token_embedding_and_output": 262144,
+      "encoder_and_decoder_blocks": 1441792,
+      "ema_codebook_scalars": 229376,
+      "residual_reconstruction_maps": 65536,
+      "shared_position_and_prefix_level_embeddings": 2560,
+      "two_depth_memory_map_sets": 11520
+    },
+    "concept": {
+      "context_input_projection": 32768,
+      "context_blocks": 2883584,
+      "coarse_reconstruction_projection": 32768,
+      "query_position_level_mode_embeddings": 6144,
+      "hrm_self_and_cross_attention": 1310720,
+      "hrm_expert_ffns": 786432,
+      "expert_routers": 0,
+      "code_heads": 458752
+    },
+    "codec_total": 2012928,
+    "stage_1a_gradient_parameters": 1783552,
+    "stage_1b_trainable": 5511168,
+    "base_stored": 7524096,
+    "selected_expert_parameter_accounting": 7524096,
+    "two_dense_adapter_slots": 29186,
+    "with_two_slots": 7553282
+  },
+  "illustrative_10t": {
+    "codec": {
+      "tied_token_embedding_and_output": 524288000,
+      "encoder_and_decoder_blocks": 5905580032,
+      "ema_codebook_scalars": 201326592,
+      "residual_reconstruction_maps": 100663296,
+      "shared_position_and_prefix_level_embeddings": 286720,
+      "two_depth_memory_map_sets": 19931136
+    },
+    "concept": {
+      "context_input_projection": 33554432,
+      "context_blocks": 23622320128,
+      "coarse_reconstruction_projection": 33554432,
+      "query_position_level_mode_embeddings": 638976,
+      "hrm_self_and_cross_attention": 64424509440,
+      "hrm_expert_ffns": 9895604649984,
+      "expert_routers": 201326592,
+      "code_heads": 402653184
+    },
+    "codec_total": 6752075776,
+    "stage_1a_gradient_parameters": 6550749184,
+    "stage_1b_trainable": 9984323207168,
+    "base_stored": 9991075282944,
+    "selected_expert_parameter_accounting": 172780044288,
+    "two_dense_adapter_slots": null,
+    "with_two_slots": null
+  },
+  "fast_memory": {
+    "feature_dimension": 153,
+    "matrix_scalars": 39168,
+    "matrix_plus_momentum_fp32_bytes": 313344,
+    "fixed_key_projection_scalars": 4160
+  },
+  "checks": {
+    "normalized_hierarchy_mixture_and_posterior_conditioning": true,
+    "mixture_responsibility_gradient": true,
+    "rls_matches_decaying_ridge_scalar_case": true,
+    "quadratic_feature_kernel": true,
+    "discrete_code_score_function_gradient": true,
+    "both_prototypes_within_total_parameter_budget": true,
+    "codec_rate_216_bits_per_16_token_block": true
+  }
+}
