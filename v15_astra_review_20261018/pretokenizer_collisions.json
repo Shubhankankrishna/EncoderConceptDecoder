@@ -1,0 +1,64 @@
+{
+  "scope": "Pre-tokenizer only; deterministic NCM must receive identical input IDs for each collision. No codec inference needed.",
+  "collisions": [
+    {
+      "left": "Foo = 1",
+      "right": "foo = 1",
+      "same_ids": true,
+      "left_tokens": [
+        "[CLS]",
+        "foo",
+        "=",
+        "1",
+        "[SEP]"
+      ],
+      "right_tokens": [
+        "[CLS]",
+        "foo",
+        "=",
+        "1",
+        "[SEP]"
+      ]
+    },
+    {
+      "left": "A is different from a.",
+      "right": "a is different from A.",
+      "same_ids": true,
+      "left_tokens": [
+        "[CLS]",
+        "a",
+        "is",
+        "different",
+        "from",
+        "a",
+        ".",
+        "[SEP]"
+      ],
+      "right_tokens": [
+        "[CLS]",
+        "a",
+        "is",
+        "different",
+        "from",
+        "a",
+        ".",
+        "[SEP]"
+      ]
+    },
+    {
+      "left": "résumé",
+      "right": "resume",
+      "same_ids": true,
+      "left_tokens": [
+        "[CLS]",
+        "resume",
+        "[SEP]"
+      ],
+      "right_tokens": [
+        "[CLS]",
+        "resume",
+        "[SEP]"
+      ]
+    }
+  ]
+}

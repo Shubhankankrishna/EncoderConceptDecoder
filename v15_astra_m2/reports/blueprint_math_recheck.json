@@ -1,0 +1,40 @@
+{
+  "passed": 9,
+  "results": {
+    "test_categorical_mixture": {
+      "mixture_p_y0": 0.55,
+      "responsibility_first_mode": 0.8807970779778823,
+      "bound_gap": 1.0
+    },
+    "test_code_layout": "12 level offsets, 641 code positions, logit/cache bytes pass",
+    "test_gaussian_kl": {
+      "max_abs_drift_vs_torch": 4.440892098500626e-16,
+      "identical_KL": 0.0
+    },
+    "test_gmm_support_direction": {
+      "new_support_gate": 0.967273443634614,
+      "old_support_gate": 5.065666219637414e-14
+    },
+    "test_lora_zero_initialization": "zero-initialized LoRA B leaves base output unchanged under any gate",
+    "test_puct_root_accounting": {
+      "total_root_visits": 20,
+      "add1_visits": 19,
+      "mul2_visits": 1
+    },
+    "test_score_gradient_with_discrete_actions": {
+      "score_grad": 0.24026074574152914,
+      "finite_diff": 0.240260745743015,
+      "true_grad": 0.24026074574152914
+    },
+    "test_terminal_backup": {
+      "root_return": 1.0,
+      "terminal_reward_counted_once": true
+    },
+    "test_toy_hierarchy_likelihood": {
+      "summed_nll": 2.3025850929940455,
+      "per_code_nll": 0.7675283643313485,
+      "level_surrogate": 0.6314321610770638
+    }
+  },
+  "scope": "Original analytic checks only; hard-coded /mnt/data output bypassed without changing source"
+}

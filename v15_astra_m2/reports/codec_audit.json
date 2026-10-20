@@ -1,0 +1,465 @@
+{
+  "n": 2000,
+  "seed": 1518,
+  "purpose": "development-only codec acceptance; never final-test data",
+  "tinystories": {
+    "nonpad_correct": 28459,
+    "nonpad_total": 35613,
+    "payload_correct": 26459,
+    "payload_total": 33613,
+    "all_correct": 28459,
+    "exact_blocks": 97,
+    "number_fields_correct": 290,
+    "number_fields_total": 2000,
+    "nonpad_accuracy": 0.7991182994973746,
+    "payload_accuracy": 0.7871656799452593,
+    "all_token_accuracy": 0.11116796875,
+    "critical_field_accuracy": 0.145,
+    "failures": [
+      {
+        "original": "The number is 0. The goal is 0. The modulus is 127.",
+        "reconstructed": "The number is  5. The goal is 0. The modulus is 127."
+      },
+      {
+        "original": "The path goes from node 2 to node 38.",
+        "reconstructed": "The path goes from no no 2 to no playroom 3 5."
+      },
+      {
+        "original": "The stack contains 3, 4, and 5.",
+        "reconstructed": " had and ofs time, there was, and 5."
+      },
+      {
+        "original": "A child found 4 stones and gave 4 stones to a friend.",
+        "reconstructed": " had child found hiding time stones and gave 4 stones to a friend."
+      },
+      {
+        "original": "The number is 5. The goal is 85. The modulus is 127.",
+        "reconstructed": "The number is 5. The goal is 45. The modulus is 127."
+      },
+      {
+        "original": "The current value is -6. The next operation is add 7.",
+        "reconstructed": "re current value is -6. The next operation is add 4."
+      },
+      {
+        "original": "The path goes from node 7 to node 52.",
+        "reconstructed": " path path goes from no button  zero to node 52."
+      },
+      {
+        "original": "The stack contains 8, 9, and 0.",
+        "reconstructed": " had and ofs time  there 9, and ."
+      },
+      {
+        "original": "A child found 9 stones and gave 2 stones to a friend.",
+        "reconstructed": " other child found a time stones and gave weighed stones to a friend."
+      },
+      {
+        "original": "The number is 10. The goal is 43. The modulus is 127.",
+        "reconstructed": "The number is ten. The goal is 43. The modulus is 127."
+      },
+      {
+        "original": "The path goes from node 12 to node 66.",
+        "reconstructed": " path path goes from no2 12 to no no 46."
+      },
+      {
+        "original": "The stack contains 3, 4, and 5.",
+        "reconstructed": " had and ofs time, there was, and 5."
+      },
+      {
+        "original": "A child found 14 stones and gave 0 stones to a friend.",
+        "reconstructed": " had child found counting time stones and gave and little stones to a friend."
+      },
+      {
+        "original": "The number is 15. The goal is 1. The modulus is 127.",
+        "reconstructed": "The number is 15. The goal is 1. The modulus is 122."
+      },
+      {
+        "original": "The path goes from node 17 to node 80.",
+        "reconstructed": " path path goes from no5 12 to node 40."
+      },
+      {
+        "original": "The stack contains 8, 9, and 0.",
+        "reconstructed": " had and ofs time  there 9, and ."
+      },
+      {
+        "original": "A child found 19 stones and gave 5 stones to a friend.",
+        "reconstructed": " had childAt reading time stones and gave six stones to a friend."
+      },
+      {
+        "original": "The number is 20. The goal is 86. The modulus is 127.",
+        "reconstructed": "The number is 20. The goal is 46. The modulus is 127."
+      },
+      {
+        "original": "The stack contains 3, 4, and 5.",
+        "reconstructed": " had and ofs time, there was, and 5."
+      },
+      {
+        "original": "A child found 24 stones and gave 3 stones to a friend.",
+        "reconstructed": " had child found 2 time stones and gave 3 stones to a friend."
+      }
+    ],
+    "action_roundtrips": [
+      {
+        "expected": 0,
+        "text": "The answer is to add.",
+        "decoded": " had question is driving add add",
+        "parsed": null
+      },
+      {
+        "expected": 1,
+        "text": "The answer is to multiply.",
+        "decoded": " had\n is a m winkiply.",
+        "parsed": null
+      },
+      {
+        "expected": 2,
+        "text": "The answer is to subtract.",
+        "decoded": " answer answer is tottract.",
+        "parsed": null
+      },
+      {
+        "expected": 3,
+        "text": "The answer is to left.",
+        "decoded": " made question is driving left.",
+        "parsed": null
+      },
+      {
+        "expected": 4,
+        "text": "The answer is to right.",
+        "decoded": " had He is a right.",
+        "parsed": null
+      },
+      {
+        "expected": 5,
+        "text": "The answer is to up.",
+        "decoded": " made question is driving up up",
+        "parsed": null
+      },
+      {
+        "expected": 6,
+        "text": "The answer is to down.",
+        "decoded": " had He is driving down down",
+        "parsed": null
+      }
+    ],
+    "seconds": 309.5608898329083,
+    "blocks_per_second": 6.460764475381693,
+    "official_cpu_exact_parity": true,
+    "single_vs_batch_code_fraction_changed": 0.0,
+    "partial_nonpad": {
+      "1": 0.06498195230960846,
+      "3": 0.05776173248887062,
+      "6": 0.17689530551433563,
+      "9": 0.5162454843521118,
+      "12": 0.8231046795845032
+    },
+    "frozen_state_unchanged": true,
+    "manifest": {
+      "source_url": "https://github.com/HazyResearch/ncm",
+      "source_commit": "c70274273f489abc73832b2b98584a8483b6b203",
+      "weights_repo": "hazyresearch/ncm-checkpoints",
+      "weights_revision": "d342ce8aaea58830eef3b8ad473664673e41f692",
+      "files": {
+        "README.md": "839b503fff0bbc3ef789c51d53fd77a269ad8c302bc4ae68c4dff65e70930d8b",
+        "bpe_merges_8192.pickle": "0d4cab13f2e7b684b75eaa290a52e596ba87744ef13d943cf3a50a5a8e080ec1",
+        "bpe_vocab_8192.pickle": "fb176b4c68108e4b5ef61b9ff2af3731600124e3e160970a6bd78cd0a5d3ff6c",
+        "config.yaml": "4009baccad5a159bfc12cd48f3da17c22c4a281b86f71f2fc70b7c1bbb62004b",
+        "tokenizer.pt": "76e26003719db32dc3d542518951c286be07d6a5881f29ad5152d299764b0f81"
+      },
+      "levels": [
+        1,
+        8,
+        16,
+        24,
+        32,
+        40,
+        52,
+        64,
+        76,
+        92,
+        108,
+        128
+      ],
+      "offsets": [
+        0,
+        1,
+        9,
+        25,
+        49,
+        81,
+        121,
+        173,
+        237,
+        313,
+        405,
+        513,
+        641
+      ],
+      "vocab_sizes": [
+        4096,
+        4096,
+        4096,
+        4096,
+        4096,
+        4096,
+        4096,
+        4096,
+        4096,
+        4096,
+        4096,
+        4096
+      ],
+      "block_size": 128,
+      "pad_id": 1,
+      "eos_id": 0,
+      "dtype": "float32",
+      "frozen_parameters": 36434816,
+      "frozen_buffers": 18972673,
+      "decoder_mode": "greedy",
+      "mps_area": false,
+      "family": "tinystories",
+      "codec_id": "87c543fe4caa684204df0bd85ce83ced3f5886e0fe8ab2844c06b6686cd5db8e"
+    }
+  },
+  "lm1b": {
+    "nonpad_correct": 27285,
+    "nonpad_total": 29449,
+    "payload_correct": 25285,
+    "payload_total": 25449,
+    "all_correct": 27285,
+    "exact_blocks": 0,
+    "number_fields_correct": 1147,
+    "number_fields_total": 2000,
+    "nonpad_accuracy": 0.926517029440728,
+    "payload_accuracy": 0.9935557389288381,
+    "all_token_accuracy": 0.10658203125,
+    "critical_field_accuracy": 0.5735,
+    "failures": [
+      {
+        "original": "The current value is -1. The next operation is add 2.",
+        "reconstructed": "the current value is - 1. the next operation is add 2. 1"
+      },
+      {
+        "original": "The stack contains 3, 4, and 5.",
+        "reconstructed": "the stack contains 3, 4, and 5. 5"
+      },
+      {
+        "original": "The current value is -6. The next operation is add 7.",
+        "reconstructed": "the current value is - 6. the next operation is add 7. 5"
+      },
+      {
+        "original": "The current value is -11. The next operation is add 3.",
+        "reconstructed": "the current value is - 11. the next operation is add 3. 3"
+      },
+      {
+        "original": "The stack contains 3, 4, and 5.",
+        "reconstructed": "the stack contains 3, 4, and 5. 5"
+      },
+      {
+        "original": "The current value is -16. The next operation is add 8.",
+        "reconstructed": "the current value is - 16. the next operation is add 8. 8"
+      },
+      {
+        "original": "The current value is -21. The next operation is add 4.",
+        "reconstructed": "the current value is - 21. the next operation is add 4. 5"
+      },
+      {
+        "original": "The path goes from node 22 to node 13.",
+        "reconstructed": "the path goes from 22 22 to node 13.,"
+      },
+      {
+        "original": "The stack contains 3, 4, and 5.",
+        "reconstructed": "the stack contains 3, 4, and 5. 5"
+      },
+      {
+        "original": "The current value is -26. The next operation is add 9.",
+        "reconstructed": "the current value is - 26. the next operation is add 9. 5"
+      },
+      {
+        "original": "The current value is -31. The next operation is add 5.",
+        "reconstructed": "the current value is - 31. the next operation is add 5. 6"
+      },
+      {
+        "original": "The stack contains 3, 4, and 5.",
+        "reconstructed": "the stack contains 3, 4, and 5. 5"
+      },
+      {
+        "original": "The current value is -36. The next operation is add 1.",
+        "reconstructed": "the current value is - 36. the next operation is add 1. 5"
+      },
+      {
+        "original": "The number is 40. The goal is 45. The modulus is 127.",
+        "reconstructed": "the number is 40. the goal is 45. the modulus is 127. 34"
+      },
+      {
+        "original": "The current value is -41. The next operation is add 6.",
+        "reconstructed": "the current value is - 41. the next operation is add 6."
+      },
+      {
+        "original": "The stack contains 3, 4, and 5.",
+        "reconstructed": "the stack contains 3, 4, and 5. 5"
+      },
+      {
+        "original": "The number is 45. The goal is 3. The modulus is 127.",
+        "reconstructed": "the number is 45. the goal is 3. the modulus is 127. 34"
+      },
+      {
+        "original": "The current value is -46. The next operation is add 2.",
+        "reconstructed": "the current value is $ 46. the next operation is add 2. 1"
+      },
+      {
+        "original": "The path goes from node 47 to node 2.",
+        "reconstructed": "the path goes from node 47 to node 2. 1"
+      },
+      {
+        "original": "The current value is -51. The next operation is add 7.",
+        "reconstructed": "the current value is - 51. the next operation is add 7. 5"
+      }
+    ],
+    "action_roundtrips": [
+      {
+        "expected": 0,
+        "text": "The answer is to add.",
+        "decoded": "the answer is to add. net.,,, cup,..... world cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup.",
+        "parsed": 0
+      },
+      {
+        "expected": 1,
+        "text": "The answer is to multiply.",
+        "decoded": "the answer is to multiply.., his,, his. cup.. cup world cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup.",
+        "parsed": 1
+      },
+      {
+        "expected": 2,
+        "text": "The answer is to subtract.",
+        "decoded": "the answer is to subtract...., his... i ' cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup. sheu....",
+        "parsed": 2
+      },
+      {
+        "expected": 3,
+        "text": "The answer is to left.",
+        "decoded": "the answer is to left...,,,,,..,.. world cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup.",
+        "parsed": 3
+      },
+      {
+        "expected": 4,
+        "text": "The answer is to right.",
+        "decoded": "the answer is to right.,,,, cup..,.. world cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup.",
+        "parsed": 4
+      },
+      {
+        "expected": 5,
+        "text": "The answer is to up.",
+        "decoded": "the answer is to up..,......... the cup,, the cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup.",
+        "parsed": 5
+      },
+      {
+        "expected": 6,
+        "text": "The answer is to down.",
+        "decoded": "the answer is to down. \".,..... world cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup.",
+        "parsed": 6
+      }
+    ],
+    "seconds": 823.2653945410857,
+    "blocks_per_second": 2.4293502596630625,
+    "official_cpu_exact_parity": true,
+    "single_vs_batch_code_fraction_changed": 0.0,
+    "partial_nonpad": {
+      "1": 0.1181434616446495,
+      "3": 0.2236286848783493,
+      "6": 0.3670886158943176,
+      "9": 0.7721518874168396,
+      "12": 0.9324894547462463
+    },
+    "frozen_state_unchanged": true,
+    "manifest": {
+      "source_url": "https://github.com/HazyResearch/ncm",
+      "source_commit": "c70274273f489abc73832b2b98584a8483b6b203",
+      "weights_repo": "hazyresearch/ncm-checkpoints",
+      "weights_revision": "d342ce8aaea58830eef3b8ad473664673e41f692",
+      "files": {
+        "bert-tokenizer/.cache/huggingface/.gitignore": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1",
+        "bert-tokenizer/.cache/huggingface/download/config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bert-tokenizer/.cache/huggingface/download/config.json.metadata": "b833b52df22de754cebd9172af7bc06549739297804d1435a62fa5cef44c0777",
+        "bert-tokenizer/.cache/huggingface/download/tokenizer.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bert-tokenizer/.cache/huggingface/download/tokenizer.json.metadata": "fdea994e059c050c543a0be04b47cb28630b467b618c6b76037654b2f84dd18a",
+        "bert-tokenizer/.cache/huggingface/download/tokenizer_config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bert-tokenizer/.cache/huggingface/download/tokenizer_config.json.metadata": "39d737a045c942f43afb629b286035991f753778d78bcb3e5b3ae8d02678becb",
+        "bert-tokenizer/.cache/huggingface/download/vocab.txt.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bert-tokenizer/.cache/huggingface/download/vocab.txt.metadata": "ac0bbd63d64772496c366848b8d0dc17f99d38be63d929f27935a7a3ac2f5636",
+        "bert-tokenizer/config.json": "7160e1553ad2ca51d8c1cb066be533db31826e12d173824c1bb0cb1a4f187d20",
+        "bert-tokenizer/provenance.json": "a41cbde3ac73d553f65fe0d9c3de5cba2c0adbb5d571d84cc6e2652c6b8a1318",
+        "bert-tokenizer/tokenizer.json": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98",
+        "bert-tokenizer/tokenizer_config.json": "a025160ef0431f1a392f6f050c1310f4c5d9fb6f275932dbccba73c4d214bf10",
+        "bert-tokenizer/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+        "small/config.yaml": "4db04299a87f7eb1627de0abb2f0b257e50e5ea0138edda771ad287cdabd7edf",
+        "tokenizer.pt": "d88aa17b66d730f2cb1fb31c5dbe63888a10da47ed8bea29dcb1f89423c3059c"
+      },
+      "levels": [
+        1,
+        8,
+        16,
+        24,
+        32,
+        40,
+        52,
+        64,
+        76,
+        92,
+        108,
+        128
+      ],
+      "offsets": [
+        0,
+        1,
+        9,
+        25,
+        49,
+        81,
+        121,
+        173,
+        237,
+        313,
+        405,
+        513,
+        641
+      ],
+      "vocab_sizes": [
+        8192,
+        8192,
+        8192,
+        8192,
+        8192,
+        8192,
+        8192,
+        8192,
+        8192,
+        8192,
+        8192,
+        8192
+      ],
+      "block_size": 128,
+      "pad_id": 0,
+      "eos_id": 101,
+      "dtype": "float32",
+      "frozen_parameters": 111404672,
+      "frozen_buffers": 37945345,
+      "decoder_mode": "greedy",
+      "mps_area": false,
+      "family": "lm1b",
+      "codec_id": "179d56bc4f8a5609e436f5ff43263bd0f271aa7b344602c8c8530a372cff97a2"
+    }
+  },
+  "mps": {
+    "encode_32_seconds": 1.22422924998682,
+    "area_max_abs_error": 2.384185791015625e-07,
+    "code_fraction_changed_from_cpu": 0.0
+  },
+  "decision": {
+    "family": "lm1b",
+    "exact_symbolic_text_only_accepted": false,
+    "state_conditioned_track": true,
+    "action_codec_accepted": true,
+    "canonical_encoding_device": "cpu",
+    "explanation": "Explicit current-state input preserves exact simulator state; action ends at first canonical sentence. No target length used in generation."
+  }
+}

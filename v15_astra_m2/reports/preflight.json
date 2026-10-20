@@ -1,0 +1,273 @@
+{
+  "examples": 28,
+  "codec_action_roundtrip": true,
+  "codec_identity": {
+    "source_url": "https://github.com/HazyResearch/ncm",
+    "source_commit": "c70274273f489abc73832b2b98584a8483b6b203",
+    "weights_repo": "hazyresearch/ncm-checkpoints",
+    "weights_revision": "d342ce8aaea58830eef3b8ad473664673e41f692",
+    "files": {
+      "bert-tokenizer/config.json": "7160e1553ad2ca51d8c1cb066be533db31826e12d173824c1bb0cb1a4f187d20",
+      "bert-tokenizer/provenance.json": "a41cbde3ac73d553f65fe0d9c3de5cba2c0adbb5d571d84cc6e2652c6b8a1318",
+      "bert-tokenizer/tokenizer.json": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98",
+      "bert-tokenizer/tokenizer_config.json": "a025160ef0431f1a392f6f050c1310f4c5d9fb6f275932dbccba73c4d214bf10",
+      "bert-tokenizer/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+      "small/config.yaml": "4db04299a87f7eb1627de0abb2f0b257e50e5ea0138edda771ad287cdabd7edf",
+      "tokenizer.pt": "d88aa17b66d730f2cb1fb31c5dbe63888a10da47ed8bea29dcb1f89423c3059c"
+    },
+    "levels": [
+      1,
+      8,
+      16,
+      24,
+      32,
+      40,
+      52,
+      64,
+      76,
+      92,
+      108,
+      128
+    ],
+    "offsets": [
+      0,
+      1,
+      9,
+      25,
+      49,
+      81,
+      121,
+      173,
+      237,
+      313,
+      405,
+      513,
+      641
+    ],
+    "vocab_sizes": [
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192
+    ],
+    "block_size": 128,
+    "pad_id": 0,
+    "eos_id": 101,
+    "dtype": "float32",
+    "frozen_parameters": 111404672,
+    "frozen_buffers": 37945345,
+    "decoder_mode": "greedy",
+    "mps_area": false,
+    "family": "lm1b",
+    "codec_id": "eeff44768109822ef65a904e14c4af914b7652be76c09e422451ad6864d278ba"
+  },
+  "cpu_mps_loss_abs_error": 9.5367431640625e-07,
+  "cpu_mps_grad_max_errors": {
+    "fast.attn.q.weight": 1.6413537196058314e-12,
+    "slow.ffout.weight": 3.4924596548080444e-10,
+    "code.0.weight": 5.238689482212067e-10
+  },
+  "history": [
+    {
+      "step": 1,
+      "loss": 8.997088432312012,
+      "code_accuracy": 0.7152886390686035,
+      "action_accuracy": 0.0,
+      "seconds": 12.908918458968401
+    },
+    {
+      "step": 100,
+      "loss": 0.4988660514354706,
+      "code_accuracy": 0.8667261004447937,
+      "action_accuracy": 0.0,
+      "seconds": 84.29501558397897
+    },
+    {
+      "step": 200,
+      "loss": 0.24837371706962585,
+      "code_accuracy": 0.9137508273124695,
+      "action_accuracy": 0.0,
+      "seconds": 148.13958475005347
+    },
+    {
+      "step": 300,
+      "loss": 0.1966947466135025,
+      "code_accuracy": 0.9282371401786804,
+      "action_accuracy": 0.14285714285714285,
+      "seconds": 211.0298932499718
+    },
+    {
+      "step": 400,
+      "loss": 0.1549159437417984,
+      "code_accuracy": 0.9436149001121521,
+      "action_accuracy": 0.35714285714285715,
+      "seconds": 277.75670395896304
+    },
+    {
+      "step": 500,
+      "loss": 0.1282840371131897,
+      "code_accuracy": 0.9460664391517639,
+      "action_accuracy": 0.2857142857142857,
+      "seconds": 336.9814113340108
+    },
+    {
+      "step": 600,
+      "loss": 0.11568975448608398,
+      "code_accuracy": 0.9494094252586365,
+      "action_accuracy": 0.39285714285714285,
+      "seconds": 399.7325829169713
+    },
+    {
+      "step": 700,
+      "loss": 0.09817497432231903,
+      "code_accuracy": 0.9542567133903503,
+      "action_accuracy": 0.5357142857142857,
+      "seconds": 465.4406439589802
+    },
+    {
+      "step": 800,
+      "loss": 0.08136394619941711,
+      "code_accuracy": 0.9543124437332153,
+      "action_accuracy": 0.6428571428571429,
+      "seconds": 532.667744833976
+    },
+    {
+      "step": 900,
+      "loss": 0.06694437563419342,
+      "code_accuracy": 0.9659014940261841,
+      "action_accuracy": 0.6785714285714286,
+      "seconds": 601.728558416944
+    },
+    {
+      "step": 1000,
+      "loss": 0.03180890530347824,
+      "code_accuracy": 0.9832850694656372,
+      "action_accuracy": 0.9642857142857143,
+      "seconds": 673.0385883339914
+    }
+  ],
+  "codec_state_unchanged": true,
+  "overfit_pass": true,
+  "samples": [
+    {
+      "action": 0,
+      "decoded": "the answer is to add. net.,, cup,..,.. world cup cup ' cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup c"
+    },
+    {
+      "action": 0,
+      "decoded": "the answer is to add. net.,, cup,..,.. world cup cup ' cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup c"
+    },
+    {
+      "action": 0,
+      "decoded": "the answer is to add. net.,, cup,..,.. world cup cup ' cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup c"
+    },
+    {
+      "action": 0,
+      "decoded": "the answer is to add. net.,, cup,..,.. world cup cup ' cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup c"
+    },
+    {
+      "action": 1,
+      "decoded": "the answer is to multiply.., his,, his.,.. cup world cup cup, cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cu"
+    },
+    {
+      "action": 1,
+      "decoded": "the answer is to multiply.., his,, his.,.. cup world cup cup, cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cu"
+    },
+    {
+      "action": 1,
+      "decoded": "the answer is to multiply.., his,, his... cup world cup cup, cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup"
+    },
+    {
+      "action": 1,
+      "decoded": "the answer is to multiply.., his,, his.,.. cup world cup cup, cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cu"
+    },
+    {
+      "action": 2,
+      "decoded": "the answer is to subtract.. predecessor,,, his... ' cup cup cup cup cup cup cup cup cup cup cup cup cup genuinely genuinely cup cup the cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup "
+    },
+    {
+      "action": 2,
+      "decoded": "the answer is to subtract.. predecessor,,, his... ' cup cup cup cup cup cup cup cup cup cup cup cup cup genuinely genuinely cup cup the cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup "
+    },
+    {
+      "action": 2,
+      "decoded": "the answer is to subtract.. predecessor,,, his... ' cup cup cup cup cup cup cup cup cup cup cup cup cup genuinely genuinely cup cup the cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup "
+    },
+    {
+      "action": 2,
+      "decoded": "the answer is to subtract.. predecessor,,, his... ' cup cup cup cup cup cup cup cup cup cup cup cup cup genuinely genuinely cup cup the cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup "
+    },
+    {
+      "action": 3,
+      "decoded": "the answer is to left...., cup cup.,,. cup world cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup"
+    },
+    {
+      "action": 3,
+      "decoded": "the answer is to left. \". must, cup cup.,. world cup cup, cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cu"
+    },
+    {
+      "action": 3,
+      "decoded": "the answer is to left.... must, cup cup.,,. the world cup,, cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup "
+    },
+    {
+      "action": 3,
+      "decoded": "the answer is to down.... his cup cup.,. world cup cup, cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup "
+    },
+    {
+      "action": 4,
+      "decoded": "the answer is to right. broadband,,,, cup.... world cup cup, cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup"
+    },
+    {
+      "action": 4,
+      "decoded": "the answer is to right. broadband,,,, cup.... world cup cup, cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup"
+    },
+    {
+      "action": 4,
+      "decoded": "the answer is to right. broadband,,,, cup.... world cup cup, cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup"
+    },
+    {
+      "action": 4,
+      "decoded": "the answer is to right. \", march,, cup... world cup,, cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cu"
+    },
+    {
+      "action": 5,
+      "decoded": "the answer is to up..,,........ the,,, the cup the cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup c"
+    },
+    {
+      "action": 5,
+      "decoded": "the answer is to up..,,........ the the,, cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cu"
+    },
+    {
+      "action": 5,
+      "decoded": "the answer is to up..,,........ the,,, the cup the cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup c"
+    },
+    {
+      "action": 5,
+      "decoded": "the answer is to up..,,........ the,,, the cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup c"
+    },
+    {
+      "action": 6,
+      "decoded": "the answer is to down. \"., \" cup... world cup cup, cup cup cup the cup cup cup cup cup cup the cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup the cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup c"
+    },
+    {
+      "action": 6,
+      "decoded": "the answer is to down. \",,, cup cup.,. world cup cup, cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cu"
+    },
+    {
+      "action": 6,
+      "decoded": "the answer is to down. \".., \" cup cup.,. world cup,, cup cup cup the cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup the cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup"
+    },
+    {
+      "action": 6,
+      "decoded": "the answer is to down. \"..,, cup cup.,. world cup,, cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup the cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup cup "
+    }
+  ]
+}

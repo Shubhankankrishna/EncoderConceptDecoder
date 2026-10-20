@@ -1,0 +1,1186 @@
+{
+  "config": {
+    "width": 192,
+    "code_dim": 64,
+    "vocab": 8192,
+    "levels": [
+      1,
+      8,
+      16,
+      24,
+      32,
+      40,
+      52,
+      64,
+      76,
+      92,
+      108,
+      128
+    ],
+    "heads": 6,
+    "ff": 432,
+    "ctx_layers": 2,
+    "head_layers": 2,
+    "slots": 16,
+    "state_length": 88,
+    "fast_steps": 2,
+    "slow_steps": 2,
+    "state_conditioned": true,
+    "gaussian_hidden": 128,
+    "variance": "diagonal",
+    "sigma_initial": 0.1,
+    "sigma_min": 0.0001
+  },
+  "parameters": 10000333,
+  "arm": "gram",
+  "seed": 1518,
+  "trainable_parameters": {
+    "level": {
+      "shape": [
+        12,
+        192
+      ],
+      "numel": 2304,
+      "train_only": false
+    },
+    "position": {
+      "shape": [
+        128,
+        192
+      ],
+      "numel": 24576,
+      "train_only": false
+    },
+    "pool_query": {
+      "shape": [
+        12,
+        192
+      ],
+      "numel": 2304,
+      "train_only": false
+    },
+    "state_pos": {
+      "shape": [
+        88,
+        192
+      ],
+      "numel": 16896,
+      "train_only": false
+    },
+    "h_init": {
+      "shape": [
+        16,
+        192
+      ],
+      "numel": 3072,
+      "train_only": false
+    },
+    "l_init": {
+      "shape": [
+        16,
+        192
+      ],
+      "numel": 3072,
+      "train_only": false
+    },
+    "logit_scale": {
+      "shape": [
+        12
+      ],
+      "numel": 12,
+      "train_only": false
+    },
+    "logit_bias": {
+      "shape": [
+        12,
+        8192
+      ],
+      "numel": 98304,
+      "train_only": false
+    },
+    "code.0.weight": {
+      "shape": [
+        8192,
+        64
+      ],
+      "numel": 524288,
+      "train_only": false
+    },
+    "code.1.weight": {
+      "shape": [
+        8192,
+        64
+      ],
+      "numel": 524288,
+      "train_only": false
+    },
+    "code.2.weight": {
+      "shape": [
+        8192,
+        64
+      ],
+      "numel": 524288,
+      "train_only": false
+    },
+    "code.3.weight": {
+      "shape": [
+        8192,
+        64
+      ],
+      "numel": 524288,
+      "train_only": false
+    },
+    "code.4.weight": {
+      "shape": [
+        8192,
+        64
+      ],
+      "numel": 524288,
+      "train_only": false
+    },
+    "code.5.weight": {
+      "shape": [
+        8192,
+        64
+      ],
+      "numel": 524288,
+      "train_only": false
+    },
+    "code.6.weight": {
+      "shape": [
+        8192,
+        64
+      ],
+      "numel": 524288,
+      "train_only": false
+    },
+    "code.7.weight": {
+      "shape": [
+        8192,
+        64
+      ],
+      "numel": 524288,
+      "train_only": false
+    },
+    "code.8.weight": {
+      "shape": [
+        8192,
+        64
+      ],
+      "numel": 524288,
+      "train_only": false
+    },
+    "code.9.weight": {
+      "shape": [
+        8192,
+        64
+      ],
+      "numel": 524288,
+      "train_only": false
+    },
+    "code.10.weight": {
+      "shape": [
+        8192,
+        64
+      ],
+      "numel": 524288,
+      "train_only": false
+    },
+    "code.11.weight": {
+      "shape": [
+        8192,
+        64
+      ],
+      "numel": 524288,
+      "train_only": false
+    },
+    "code_in.weight": {
+      "shape": [
+        192,
+        64
+      ],
+      "numel": 12288,
+      "train_only": false
+    },
+    "code_out.weight": {
+      "shape": [
+        64,
+        192
+      ],
+      "numel": 12288,
+      "train_only": false
+    },
+    "pool_k.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "pool_v.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "state_embed.weight": {
+      "shape": [
+        128,
+        192
+      ],
+      "numel": 24576,
+      "train_only": false
+    },
+    "context.0.norm1.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "context.0.norm1.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "context.0.attn.q.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "context.0.attn.kv.weight": {
+      "shape": [
+        384,
+        192
+      ],
+      "numel": 73728,
+      "train_only": false
+    },
+    "context.0.attn.out.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "context.0.norm2.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "context.0.norm2.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "context.0.gate.weight": {
+      "shape": [
+        432,
+        192
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "context.0.value.weight": {
+      "shape": [
+        432,
+        192
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "context.0.ffout.weight": {
+      "shape": [
+        192,
+        432
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "context.1.norm1.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "context.1.norm1.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "context.1.attn.q.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "context.1.attn.kv.weight": {
+      "shape": [
+        384,
+        192
+      ],
+      "numel": 73728,
+      "train_only": false
+    },
+    "context.1.attn.out.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "context.1.norm2.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "context.1.norm2.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "context.1.gate.weight": {
+      "shape": [
+        432,
+        192
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "context.1.value.weight": {
+      "shape": [
+        432,
+        192
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "context.1.ffout.weight": {
+      "shape": [
+        192,
+        432
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "init_proj.weight": {
+      "shape": [
+        384,
+        192
+      ],
+      "numel": 73728,
+      "train_only": false
+    },
+    "fast.norm1.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "fast.norm1.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "fast.attn.q.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "fast.attn.kv.weight": {
+      "shape": [
+        384,
+        192
+      ],
+      "numel": 73728,
+      "train_only": false
+    },
+    "fast.attn.out.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "fast.norm2.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "fast.norm2.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "fast.gate.weight": {
+      "shape": [
+        432,
+        192
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "fast.value.weight": {
+      "shape": [
+        432,
+        192
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "fast.ffout.weight": {
+      "shape": [
+        192,
+        432
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "fast.cross.q.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "fast.cross.kv.weight": {
+      "shape": [
+        384,
+        192
+      ],
+      "numel": 73728,
+      "train_only": false
+    },
+    "fast.cross.out.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "fast.norm_cross.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "fast.norm_cross.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "fast.norm_mem.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "fast.norm_mem.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "slow.norm1.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "slow.norm1.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "slow.attn.q.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "slow.attn.kv.weight": {
+      "shape": [
+        384,
+        192
+      ],
+      "numel": 73728,
+      "train_only": false
+    },
+    "slow.attn.out.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "slow.norm2.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "slow.norm2.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "slow.gate.weight": {
+      "shape": [
+        432,
+        192
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "slow.value.weight": {
+      "shape": [
+        432,
+        192
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "slow.ffout.weight": {
+      "shape": [
+        192,
+        432
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "slow.cross.q.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "slow.cross.kv.weight": {
+      "shape": [
+        384,
+        192
+      ],
+      "numel": 73728,
+      "train_only": false
+    },
+    "slow.cross.out.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "slow.norm_cross.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "slow.norm_cross.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "slow.norm_mem.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "slow.norm_mem.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.0.norm1.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.0.norm1.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.0.attn.q.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "decoder.0.attn.kv.weight": {
+      "shape": [
+        384,
+        192
+      ],
+      "numel": 73728,
+      "train_only": false
+    },
+    "decoder.0.attn.out.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "decoder.0.norm2.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.0.norm2.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.0.gate.weight": {
+      "shape": [
+        432,
+        192
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "decoder.0.value.weight": {
+      "shape": [
+        432,
+        192
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "decoder.0.ffout.weight": {
+      "shape": [
+        192,
+        432
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "decoder.0.cross.q.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "decoder.0.cross.kv.weight": {
+      "shape": [
+        384,
+        192
+      ],
+      "numel": 73728,
+      "train_only": false
+    },
+    "decoder.0.cross.out.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "decoder.0.norm_cross.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.0.norm_cross.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.0.norm_mem.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.0.norm_mem.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.1.norm1.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.1.norm1.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.1.attn.q.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "decoder.1.attn.kv.weight": {
+      "shape": [
+        384,
+        192
+      ],
+      "numel": 73728,
+      "train_only": false
+    },
+    "decoder.1.attn.out.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "decoder.1.norm2.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.1.norm2.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.1.gate.weight": {
+      "shape": [
+        432,
+        192
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "decoder.1.value.weight": {
+      "shape": [
+        432,
+        192
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "decoder.1.ffout.weight": {
+      "shape": [
+        192,
+        432
+      ],
+      "numel": 82944,
+      "train_only": false
+    },
+    "decoder.1.cross.q.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "decoder.1.cross.kv.weight": {
+      "shape": [
+        384,
+        192
+      ],
+      "numel": 73728,
+      "train_only": false
+    },
+    "decoder.1.cross.out.weight": {
+      "shape": [
+        192,
+        192
+      ],
+      "numel": 36864,
+      "train_only": false
+    },
+    "decoder.1.norm_cross.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.1.norm_cross.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.1.norm_mem.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "decoder.1.norm_mem.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "final_norm.weight": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "final_norm.bias": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "train_only": false
+    },
+    "prior.norm.weight": {
+      "shape": [
+        384
+      ],
+      "numel": 384,
+      "train_only": false
+    },
+    "prior.norm.bias": {
+      "shape": [
+        384
+      ],
+      "numel": 384,
+      "train_only": false
+    },
+    "prior.gate.weight": {
+      "shape": [
+        128,
+        384
+      ],
+      "numel": 49152,
+      "train_only": false
+    },
+    "prior.value.weight": {
+      "shape": [
+        128,
+        384
+      ],
+      "numel": 49152,
+      "train_only": false
+    },
+    "prior.out.weight": {
+      "shape": [
+        384,
+        128
+      ],
+      "numel": 49152,
+      "train_only": false
+    },
+    "prior.out.bias": {
+      "shape": [
+        384
+      ],
+      "numel": 384,
+      "train_only": false
+    },
+    "posterior.norm.weight": {
+      "shape": [
+        576
+      ],
+      "numel": 576,
+      "train_only": true
+    },
+    "posterior.norm.bias": {
+      "shape": [
+        576
+      ],
+      "numel": 576,
+      "train_only": true
+    },
+    "posterior.gate.weight": {
+      "shape": [
+        128,
+        576
+      ],
+      "numel": 73728,
+      "train_only": true
+    },
+    "posterior.value.weight": {
+      "shape": [
+        128,
+        576
+      ],
+      "numel": 73728,
+      "train_only": true
+    },
+    "posterior.out.weight": {
+      "shape": [
+        384,
+        128
+      ],
+      "numel": 49152,
+      "train_only": true
+    },
+    "posterior.out.bias": {
+      "shape": [
+        384
+      ],
+      "numel": 384,
+      "train_only": true
+    },
+    "target_encoder.pos": {
+      "shape": [
+        128,
+        192
+      ],
+      "numel": 24576,
+      "train_only": true
+    },
+    "target_encoder.level": {
+      "shape": [
+        12,
+        192
+      ],
+      "numel": 2304,
+      "train_only": true
+    },
+    "target_encoder.proj.weight": {
+      "shape": [
+        192,
+        64
+      ],
+      "numel": 12288,
+      "train_only": true
+    },
+    "target_encoder.score.weight": {
+      "shape": [
+        1,
+        192
+      ],
+      "numel": 192,
+      "train_only": true
+    },
+    "target_encoder.score.bias": {
+      "shape": [
+        1
+      ],
+      "numel": 1,
+      "train_only": true
+    }
+  },
+  "deterministic_algorithms": false,
+  "cpu_threads": 2,
+  "data_manifest_sha": "1c72bb21e9e21fa7bd839bed923d05d279a9f65a9af217ea0a4a4dae68276240",
+  "codec": {
+    "source_url": "https://github.com/HazyResearch/ncm",
+    "source_commit": "c70274273f489abc73832b2b98584a8483b6b203",
+    "weights_repo": "hazyresearch/ncm-checkpoints",
+    "weights_revision": "d342ce8aaea58830eef3b8ad473664673e41f692",
+    "files": {
+      "bert-tokenizer/config.json": "7160e1553ad2ca51d8c1cb066be533db31826e12d173824c1bb0cb1a4f187d20",
+      "bert-tokenizer/provenance.json": "a41cbde3ac73d553f65fe0d9c3de5cba2c0adbb5d571d84cc6e2652c6b8a1318",
+      "bert-tokenizer/tokenizer.json": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98",
+      "bert-tokenizer/tokenizer_config.json": "a025160ef0431f1a392f6f050c1310f4c5d9fb6f275932dbccba73c4d214bf10",
+      "bert-tokenizer/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+      "small/config.yaml": "4db04299a87f7eb1627de0abb2f0b257e50e5ea0138edda771ad287cdabd7edf",
+      "tokenizer.pt": "d88aa17b66d730f2cb1fb31c5dbe63888a10da47ed8bea29dcb1f89423c3059c"
+    },
+    "levels": [
+      1,
+      8,
+      16,
+      24,
+      32,
+      40,
+      52,
+      64,
+      76,
+      92,
+      108,
+      128
+    ],
+    "offsets": [
+      0,
+      1,
+      9,
+      25,
+      49,
+      81,
+      121,
+      173,
+      237,
+      313,
+      405,
+      513,
+      641
+    ],
+    "vocab_sizes": [
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192
+    ],
+    "block_size": 128,
+    "pad_id": 0,
+    "eos_id": 101,
+    "dtype": "float32",
+    "frozen_parameters": 111404672,
+    "frozen_buffers": 37945345,
+    "decoder_mode": "greedy",
+    "mps_area": false,
+    "family": "lm1b",
+    "source_files": {
+      "models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "models/common.py": "41b7c2c653d7ba312d583caca878ea3708d83da1a770b0b39651dbfd19754b73",
+      "models/next_concept.py": "4a1c483ca3b3522adb5ee754db4917c96ce08a82e992679ad7ed79e8f8c8da9b",
+      "models/quant.py": "5fd16053a826a5a0af580715a79bb03dc3eea49669514969c1086c445e9c9e2b",
+      "models/vae.py": "7d393b56813342278def3b053e83ec4ff4e56a492e4ddf2a2441e1c9f78d4317",
+      "models/vqvae.py": "9873af280da08ca39360388f652f993f17ace761a751ffa812caa706f66f592b",
+      "tokenization/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tokenization/bpe_tokenizer.py": "5df2bf286b36cdc3c428aaf347c56a98c0abb3da65c8ff734582b1d59959ba2c",
+      "tokenization/hf_tokenizer.py": "76438d8e102a365cb30fd053e47ca138712649c893a06a92b0cc1448b5dcd49d",
+      "tokenization/sudoku_tokenizer.py": "a76c58f60d759ad3da045d3045a47588d1de16ca12c88472fa7f8262a236975f",
+      "tokenization/tokenizer.py": "e527d47e4ed8634c673d48a872a07c9cc8828d30988331de2d4bd3b7c21ddcb7",
+      "tokenization/vqvae_tokenizer.py": "8fd909578fd384da49ebf44d1589f414c43860a6a84cb85e2c6659a6b0ff37ee",
+      "utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utils/misc.py": "7e766c7ee036648f4959323ab671e6a7c5d3e873adb9ed60fbec83497728b452",
+      "utils/registry.py": "28ecdf5be072c55e18348e519b5bd079c58dee085561abfb3f4587e5eac7938a"
+    },
+    "codec_id": "4acfc25eae004caaad8d8e162dca3df0ce581eb7062aa626c2dfb275c2372afd"
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "weight_decay": 0.01,
+    "clip": 1.0
+  },
+  "batch": 8,
+  "accumulation": 2,
+  "precision": "float32",
+  "device": "mps",
+  "objective": "per_code",
+  "conditioning_corruption": 0.0,
+  "deadline": 1792357209.7366095,
+  "pytorch": "2.10.0",
+  "pid": 30319,
+  "source_files": {
+    "tests_gram.py": "2130c6dcfda02d18aaf3b4361f0537901cae4c2a9442713c6222c38254fb4f7a",
+    "tasks.py": "bd3f7359b41044dd0a1ca0622acb360a4ffda420a7206673656d73768b702522",
+    "audit_codec.py": "bf722ea1560936e54498ed9017f3b3b6c26607851c3055f2b1da4574d4da40e9",
+    "__init__.py": "ebff20a4a8f1dbf67f9f5aa2fe7ea3bac97ec99eec422f30ef77b3f34c179f49",
+    "verify_gram_mps.py": "dc807eb3d029423df724443e6fde12d263a454c3559ce15505532b10814ce15d",
+    "gram.py": "03aa18f8f0e512cf9ddcb638071e0142224475d62eb9a61663f651753b88a6c0",
+    "model.py": "2380c569b2104e649bcffe66de9507fa4fe9ac47da41c4e06619914f97843841",
+    "audit_data.py": "e1cdda51f7f7bcfe294f0c2c1b9d0bf275f055ad379c50db63419cbb4eb5d37e",
+    "preflight_gram.py": "e8fe0cb9663188a4c0a74269a6c14188db7447c8583c390b672b4e4327208fd0",
+    "train.py": "96cc5c06d13204a8d1fd5fb03bf29815b1d3def92ec5dad84025ea300a6cce49",
+    "evaluate.py": "d66c1c5c9a3f84e34a23ebd1101cfa790acad42c2e08b64f47636cf938ec1cdf",
+    "tests.py": "a32a104e37a33cc4c098788e60bf6ba746070f422c1a4834b85095d4ee489aff",
+    "codec.py": "17db37108305daed06a8f7f053aaed7d892e50dcf537f3472a038f8d366bf1de",
+    "audit_encoding_device.py": "4e2500766fe1aac63d33ad224bc94e2490cc5c0736b491a88c887f9cdb70cf7d",
+    "supervise.py": "0223a532641cb6d04dfc8ac4f288bd575efd729cbebd2a9da87631da7ed794c0",
+    "data.py": "db2983b03653b3b08f1145b8b811f54c4294b0713b235f1081ad79b0f8a86c8b",
+    "status.py": "d087c2eee55dc4416202717d69ab5af2f814bd3203290949903f4862ad08c769",
+    "preflight.py": "dc28beb34261fef17c415ee4accb6928ebd5d5921600ad3835901a2615c3daa9",
+    "plot_metrics.py": "209bc4d6e2433a7e06b98920d2a5b14f64ce94652dd6b5b4a0cb931a316c10cf"
+  },
+  "only_stage": 2,
+  "gradient_mode": "full_bptt",
+  "kl_beta": 1,
+  "posterior_train_only": true,
+  "claim": "Astra state-conditioned NCM action-policy pilot; not a full eight-stage validation"
+}
