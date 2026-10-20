@@ -1,13 +1,14 @@
 # EncoderConceptDecoder
 
-Research into language models that encode observed tokens into shorter concept sequences, compute over those concepts, and decode tokens. The workspace follows the original component designs through V1–V14 experiments and the V15 proposal, including unsuccessful and interrupted work.
+Research into language models that encode observed tokens into concept sequences, compute over those concepts, and decode tokens. The workspace follows the original component designs through V1–V14 and the V15 Astra designs, M2/V3 pilots, and pretrained-NCM V4 experiments, including unsuccessful and interrupted work.
 
 **Start with the [experiment chronology](EXPERIMENTS.md).** It links each stage's design, implementation, saved evidence, and interpretation limits. The [execution index](docs/RUNS.md) lists individual saved execution groups; the [JSON catalog](experiments/catalog.json) provides configurations, seeds where known, results, and artifact paths.
 
 ## Current research state
 
 - **V14:** completed base training, diagnostics, and continual pipeline. Use its [generated tables](v14_tiny/REPORT_TABLES.md) and [final evaluation](v14_tiny/runs/eval/base/results.json). Its original preregistration report still contains a stale “not yet run” header.
-- **V15:** a [proposed architecture](v15_Architecture.md), revised after V14 results. Analytical reviews exist; implementation and training have not been demonstrated.
+- **V15 Astra:** follow the [design-to-experiment guide](docs/ASTRA_PROGRESS.md). The M2 and V3 runs were stopped; the NCM V4 planner/renderer pilot and its renderer continuation completed. The selected continuation models both scored 0/72 exact rendered routes. Designs, analytical checks, implemented interfaces and trained outcomes are distinguished.
+- **Original V15 proposal:** the [earlier architecture](v15_Architecture.md) remains a preserved analytical proposal, revised after V14 results.
 - **Earlier versions:** preserve their own data assumptions, controls, budgets, failures, and reviews. Different versions are not directly comparable as a single leaderboard.
 
 ## Navigate the project
@@ -15,6 +16,7 @@ Research into language models that encode observed tokens into shorter concept s
 | Material | Guide |
 | --- | --- |
 | Chronological designs and experiments | [Experiment chronology](EXPERIMENTS.md) |
+| Astra designs, implementations, run status and outcomes | [Astra progress](docs/ASTRA_PROGRESS.md) |
 | Configurations, evaluations, engineering checks, and interrupted runs | [Execution index](docs/RUNS.md) |
 | What to install and where to run each version | [Reproducibility guide](docs/REPRODUCIBILITY.md) |
 | How to record the next experiment | [Working guide](docs/WORKFLOW.md) |
@@ -22,6 +24,7 @@ Research into language models that encode observed tokens into shorter concept s
 | Deep historical project review, dated 13 October | [Repository review](repo_review_2026-10-13/README.md) |
 | Third-party source and paper provenance | [Third-party notices](THIRD_PARTY_NOTICES.md) |
 | Clean-clone checks and import limitations | [Validation record](docs/VALIDATION.md) |
+| Latest publication groups and checks | [20 October publication](docs/PUBLICATION_2026-10-20.md) |
 | GitHub repository, authentication, and daily use | [GitHub guide](docs/GITHUB.md) |
 
 ## Repository checks

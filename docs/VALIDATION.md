@@ -31,3 +31,7 @@ The initial local phase deferred GitHub publication. GitHub CLI is now authentic
 Pattern scanning and syntax checks are bounded validation. They do not certify arbitrary private text, scientific correctness, runtime behavior, or reproducibility without the separately stored artifacts. No training was rerun.
 
 During GitHub setup, the V9 watchdog runtime outputs were also moved outside current Git tracking. Their earlier imported snapshots remain in the archival history; the running service and its files were not modified.
+
+## Subsequent Astra publication
+
+The [20 October publication record](PUBLICATION_2026-10-20.md) extends this original import audit with the Astra designs, implementations and outcomes. The historical counts above remain the counts of the 16 October snapshot.

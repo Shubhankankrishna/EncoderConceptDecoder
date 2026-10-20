@@ -22,7 +22,17 @@ Use Python 3.12 and run `python3 tools/catalog.py check` and `python3 tools/cata
 | V10–V10.2 | The V10-10M requirements file records PyTorch `>=2.10,<2.11`, NumPy `>=1.26`, tokenizers `>=0.20`, PyArrow `>=17`, requests `>=2.32`, and psutil `>=5.9`. Treat these as recorded constraints, not a verified universal lockfile. Read each version's README and data audit. |
 | V10.3–V12 | Their model/tests/train/evaluate modules, run manifests, paired comparisons, and source identities. Do not substitute current configuration for a saved historical run. |
 | V13–V14 | Version-specific base/post scripts, effective configurations, manifests, deviations, diagnostics, and final result JSON. Saved V14 configuration records PyTorch 2.10.0 and seed 1301. |
-| V15 | Analytical design/review checks only. No V15 training command or trained checkpoint is claimed. |
+| Original V15 / Astra designs | Analytical specifications and review checks. The later implementations differ from these proposals; see the Astra guide. |
+| Astra M2 / V3 | Their READMEs, recorded environment, codec/data manifests, run plans and source hashes. The local venv is omitted. The official frozen codec and upstream checkout must be restored separately. |
+| Astra NCM V4 / follow-up | Separate graph-planner and language-renderer stages; retain the official 128-token hierarchy and pinned generator/codec assets. Read the follow-up protocol before running; later-stage completion is not equivalent to faithful free generation. |
+
+## Restore the Astra external dependencies
+
+See [Astra progress](ASTRA_PROGRESS.md) for the actual run statuses. The local `v15_astra_m2/references/ncm` checkout is intentionally omitted. Restore [HazyResearch/ncm](https://github.com/HazyResearch/ncm) at commit `c70274273f489abc73832b2b98584a8483b6b203` to that path when reproducing these versions. The retained [NCM license](../third_party/ncm/LICENSE) applies to upstream code/configuration, separately from original project code.
+
+The recorded [codec manifest](../v15_astra_m2/artifacts/codec/manifest.json) pins `hazyresearch/ncm-checkpoints` at revision `d342ce8aaea58830eef3b8ad473664673e41f692`; it lists exact asset paths and identities. The [BERT tokenizer provenance](../v15_astra_m2/artifacts/codec/lm1b/bert-tokenizer/provenance.json) pins `google-bert/bert-base-uncased` at `86b5e0934494bd15c9632b12f734a8a67f723594`. Small tokenizer/configuration files are preserved; weight tensors and binary tokenizer caches remain local. Restore artifacts by their manifests rather than silently substituting a newer checkpoint.
+
+The recorded environment was an isolated venv using an Anaconda Python 3.12 / PyTorch 2.10 runtime plus OmegaConf 2.3.0 and Hydra 1.3.2. Consult [the environment record](../v15_astra_m2/reports/environment.txt) for the actual package list. This publication does not create or validate a new training environment.
 
 ## Machine and data limits
 

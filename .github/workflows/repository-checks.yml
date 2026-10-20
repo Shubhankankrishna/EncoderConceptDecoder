@@ -22,3 +22,5 @@ jobs:
         run: python tools/catalog.py check
       - name: Scan tracked text for credential patterns
         run: python tools/catalog.py scan
+      - name: Test catalog publication and status rules
+        run: python -m unittest tools.test_catalog

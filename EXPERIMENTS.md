@@ -1,6 +1,6 @@
 # Experiment chronology
 
-Inventory captured 2026-10-16T13:57:17.605508+00:00. These are present-day imports of preserved snapshots, not reconstructed historical Git commits.
+Inventory captured 2026-10-20T10:05:32.272770+00:00. These are present-day imports of preserved snapshots, not reconstructed historical Git commits.
 
 Read the saved configuration and evidence together. Versions use different datasets, budgets, tokenizers, and seeds; this is not a cross-version leaderboard.
 
@@ -31,6 +31,12 @@ Read the saved configuration and evidence together. Versions use different datas
 | V13-tiny-v2 | Calibrated task ladders, concept diagnostics, and continual-learning tests | Final base evaluation and continual-stage evidence recorded | 22 | [v13_tiny/REPORT_TABLES.md](v13_tiny/REPORT_TABLES.md) · [v13_tiny/DEVIATIONS.md](v13_tiny/DEVIATIONS.md) · [Dataset_v13.md](Dataset_v13.md) |
 | V14-tiny | EMA multi-horizon targets, throughput shrink, diagnostics, and continual learning | Base, diagnostic, and continual pipeline completed | 19 | [v14_tiny/REPORT_TABLES.md](v14_tiny/REPORT_TABLES.md) · [v14_tiny/DEVIATIONS.md](v14_tiny/DEVIATIONS.md) |
 | V15 proposal | Frozen hierarchical codec, predictive plans, and concept-depth memory | Proposed and analytically reviewed; not implemented or trained | 0 | [v15_Architecture.md](v15_Architecture.md) · [v15_design/review_from_scratch.md](v15_design/review_from_scratch.md) · [v15_design/evidence_manifest.json](v15_design/evidence_manifest.json) |
+| V15 XHRM-Atlas proposal | Explorative HRM and memory proposal with a detailed analytical review | Design and review only | 0 | [V15-XHRM-Atlas.md](V15-XHRM-Atlas.md) · [V15-XHRM-Atlas_Review.md](V15-XHRM-Atlas_Review.md) |
+| V15 Astra design | Frozen multiscale codec, explorative HRM and bounded wake/sleep interfaces | Analytical specification and first-principles review | 0 | [V15_Astra.md](V15_Astra.md) · [V15_Astra_Review.md](V15_Astra_Review.md) · [v15_astra_design/paper_reading_notes.md](v15_astra_design/paper_reading_notes.md) |
+| V15 Astra engineering blueprints | Preserve successive tokenizer, multi-strategy, action, search and recurrent engineering specifications | Specifications, mathematical checks and design reviews | 0 | [docs/ASTRA_PROGRESS.md](docs/ASTRA_PROGRESS.md) · [V15_Astra_Full_Training_Blueprint_Reviewed/V15_Astra_Engineer_Review.md](V15_Astra_Full_Training_Blueprint_Reviewed/V15_Astra_Engineer_Review.md) · [V15_Astra_RePR_InfiLoop_Architecture.md](V15_Astra_RePR_InfiLoop_Architecture.md) |
+| V15 Astra M2 pilot | Official frozen NCM codec with small GRAM-first training and an HRM comparison plan | GRAM stopped at step 75,878; planned full HRM comparison cancelled | 4 | [v15_astra_m2/README.md](v15_astra_m2/README.md) · [v15_astra_m2/ARCHITECTURE_REVIEW.md](v15_astra_m2/ARCHITECTURE_REVIEW.md) · [v15_astra_review_20261018/FIRST_PRINCIPLES_REVIEW.md](v15_astra_review_20261018/FIRST_PRINCIPLES_REVIEW.md) |
+| V15 Astra V3 experiments | Reviewed raw-text GRAM infrastructure, native-32 10M/30M pilots and telemetry | Raw-128 and native-32 runs stopped; bounded slices and diagnostics retained | 8 | [v15_astra_v3/README.md](v15_astra_v3/README.md) · [v15_astra_v3/ARCHITECTURE_SPEC.md](v15_astra_v3/ARCHITECTURE_SPEC.md) · [v15_astra_v3/IMPLEMENTATION_STATUS.md](v15_astra_v3/IMPLEMENTATION_STATUS.md) · [docs/ASTRA_PROGRESS.md](docs/ASTRA_PROGRESS.md) |
+| V15 Astra NCM V4 and renderer follow-up | Pretrained NCM rendering with controlled recurrent graph planning and residual-consistent continuation | Original pilot and prefix follow-up completed; language-fidelity gate failed | 17 | [v15_astra_ncm_v4/README.md](v15_astra_ncm_v4/README.md) · [v15_astra_ncm_v4/REVIEWED_SPEC.md](v15_astra_ncm_v4/REVIEWED_SPEC.md) · [v15_astra_ncm_v4/followup/README.md](v15_astra_ncm_v4/followup/README.md) · [docs/ASTRA_PROGRESS.md](docs/ASTRA_PROGRESS.md) |
 
 ## Interpretation notes
 
@@ -57,6 +63,12 @@ Read the saved configuration and evidence together. Versions use different datas
 - **V13-tiny-v2:** The preregistration report can retain stale status text. Final checkpoint counts differ from the last periodic log. Single-seed evidence; inspect continual stages separately.
 - **V14-tiny:** REPORT.md still says pre-registered/not yet run. Final evaluation is step 12,977; table header uses the last periodic log. Changes jointly affect targets and model size. Single seed.
 - **V15 proposal:** The 16 October revision uses completed V14 results and is explicitly post-results. Analytical checks are not model training or evidence of outperforming V14.
+- **V15 XHRM-Atlas proposal:** Preserved proposal, not implementation or performance evidence; the review identifies unresolved probability, gradient and cost issues.
+- **V15 Astra design:** Seven analytical checks and parameter ledgers are not model validation. Later implementations use different pretrained assets and budgets; the design score is not a benchmark score.
+- **V15 Astra engineering blueprints:** Both differently named multi-strategy drafts are preserved byte-for-byte. Proposed later stages are not marked trained merely because their interfaces or mathematics exist.
+- **V15 Astra M2 pilot:** One-seed pilot. Startup report is a historical launch snapshot; final status files supersede its running/pending language. The official frozen codec adds about 111.4M parameters beyond the 10M trainable budget. Upstream checkout and weights remain local.
+- **V15 Astra V3 experiments:** Launch documents retain historical schedules. A slice_complete status establishes a slice only, not completion of the overall experiment. Later action/search/continual interfaces do not establish an end-to-end trained system. Live telemetry databases remain local.
+- **V15 Astra NCM V4 and renderer follow-up:** Two-seed synthetic planner study, one-seed renderer continuation. On the untouched 72-row renderer panel, parent, selected control and selected on-policy models all have zero exact routes. Code-loss improvements are not text fidelity. Update-matched runs have different elapsed compute; pretrained frozen parameters are additional.
 
 ## Preserved reports with stale status text
 

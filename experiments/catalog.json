@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "captured_at": "2026-10-16T13:57:17.605508+00:00",
+  "captured_at": "2026-10-20T10:05:32.272770+00:00",
   "status_policy": "Evidence-based folder inventory; never infer completed training from a proposal or report header alone.",
   "excluded_cache_directories": [
     ".cache",
@@ -13,7 +13,7 @@
     "venv",
     "*compiler_cache*"
   ],
-  "files_indexed": 6347,
+  "files_indexed": 7507,
   "families": [
     {
       "id": "encoder",
@@ -637,6 +637,174 @@
       "published_files": 12,
       "local_artifacts": 0,
       "provenance_files": []
+    },
+    {
+      "id": "v15-xhrm",
+      "name": "V15 XHRM-Atlas proposal",
+      "paths": [
+        "V15-XHRM-Atlas.md",
+        "V15-XHRM-Atlas_Review.md"
+      ],
+      "purpose": "Explorative HRM and memory proposal with a detailed analytical review",
+      "status": "Design and review only",
+      "reading": [
+        "V15-XHRM-Atlas.md",
+        "V15-XHRM-Atlas_Review.md"
+      ],
+      "status_evidence": [],
+      "limitations": "Preserved proposal, not implementation or performance evidence; the review identifies unresolved probability, gradient and cost issues.",
+      "runs_indexed": 0,
+      "published_files": 2,
+      "local_artifacts": 0,
+      "provenance_files": []
+    },
+    {
+      "id": "v15-astra",
+      "name": "V15 Astra design",
+      "paths": [
+        "V15_Astra.md",
+        "V15_Astra_Review.md",
+        "v15_astra_design",
+        "V15-Papers"
+      ],
+      "purpose": "Frozen multiscale codec, explorative HRM and bounded wake/sleep interfaces",
+      "status": "Analytical specification and first-principles review",
+      "reading": [
+        "V15_Astra.md",
+        "V15_Astra_Review.md",
+        "v15_astra_design/paper_reading_notes.md"
+      ],
+      "status_evidence": [
+        "v15_astra_design/design_checks.json"
+      ],
+      "limitations": "Seven analytical checks and parameter ledgers are not model validation. Later implementations use different pretrained assets and budgets; the design score is not a benchmark score.",
+      "runs_indexed": 0,
+      "published_files": 7,
+      "local_artifacts": 9,
+      "provenance_files": [
+        "v15_astra_design/source_manifest.json"
+      ]
+    },
+    {
+      "id": "v15-astra-blueprints",
+      "name": "V15 Astra engineering blueprints",
+      "paths": [
+        "Discrete_LatentTokenizer.md",
+        "V15_Astra_Full_Training_Blueprint_Reviewed",
+        "V15_Astra_LM1B_NCM_LoRA_Recurrent_GRAM_Z_Action_MCTS_Engineering_Spec.md",
+        "V15_Astra_MultiStrategy_Dataset_GRAM_ActionEncoder_Z_Spec.md",
+        "V15_Astra_MultiStrategy_Dataset_GRAM_ActionEncoder_Z_Spec (1).md",
+        "V15_Astra_RePR_InfiLoop_Architecture.md",
+        "design_reviews"
+      ],
+      "purpose": "Preserve successive tokenizer, multi-strategy, action, search and recurrent engineering specifications",
+      "status": "Specifications, mathematical checks and design reviews",
+      "reading": [
+        "docs/ASTRA_PROGRESS.md",
+        "V15_Astra_Full_Training_Blueprint_Reviewed/V15_Astra_Engineer_Review.md",
+        "V15_Astra_RePR_InfiLoop_Architecture.md"
+      ],
+      "status_evidence": [
+        "design_reviews/20261020/design_math_results.json"
+      ],
+      "limitations": "Both differently named multi-strategy drafts are preserved byte-for-byte. Proposed later stages are not marked trained merely because their interfaces or mathematics exist.",
+      "runs_indexed": 0,
+      "published_files": 13,
+      "local_artifacts": 1,
+      "provenance_files": []
+    },
+    {
+      "id": "v15-astra-m2",
+      "name": "V15 Astra M2 pilot",
+      "paths": [
+        "v15_astra_m2",
+        "v15_astra_review_20261018"
+      ],
+      "purpose": "Official frozen NCM codec with small GRAM-first training and an HRM comparison plan",
+      "status": "GRAM stopped at step 75,878; planned full HRM comparison cancelled",
+      "reading": [
+        "v15_astra_m2/README.md",
+        "v15_astra_m2/ARCHITECTURE_REVIEW.md",
+        "v15_astra_review_20261018/FIRST_PRINCIPLES_REVIEW.md"
+      ],
+      "status_evidence": [
+        "v15_astra_m2/runs/20261018_48h/gram/status.json",
+        "v15_astra_m2/runs/20261018_48h/status.json"
+      ],
+      "limitations": "One-seed pilot. Startup report is a historical launch snapshot; final status files supersede its running/pending language. The official frozen codec adds about 111.4M parameters beyond the 10M trainable budget. Upstream checkout and weights remain local.",
+      "runs_indexed": 4,
+      "published_files": 142,
+      "local_artifacts": 60,
+      "provenance_files": [
+        "v15_astra_m2/artifacts/codec/manifest.json",
+        "v15_astra_m2/artifacts/data/manifest.json",
+        "v15_astra_m2/artifacts/data/source_manifest.json",
+        "v15_astra_m2/runs/20261018_48h/gram/manifest.json",
+        "v15_astra_m2/runs/20261018_48h/smoke_gram/manifest.json",
+        "v15_astra_m2/runs/20261018_48h/smoke_hrm/manifest.json"
+      ]
+    },
+    {
+      "id": "v15-astra-v3",
+      "name": "V15 Astra V3 experiments",
+      "paths": [
+        "v15_astra_v3"
+      ],
+      "purpose": "Reviewed raw-text GRAM infrastructure, native-32 10M/30M pilots and telemetry",
+      "status": "Raw-128 and native-32 runs stopped; bounded slices and diagnostics retained",
+      "reading": [
+        "v15_astra_v3/README.md",
+        "v15_astra_v3/ARCHITECTURE_SPEC.md",
+        "v15_astra_v3/IMPLEMENTATION_STATUS.md",
+        "docs/ASTRA_PROGRESS.md"
+      ],
+      "status_evidence": [
+        "v15_astra_v3/runs/20261018_24h_raw_gram/status.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/status.json"
+      ],
+      "limitations": "Launch documents retain historical schedules. A slice_complete status establishes a slice only, not completion of the overall experiment. Later action/search/continual interfaces do not establish an end-to-end trained system. Live telemetry databases remain local.",
+      "runs_indexed": 8,
+      "published_files": 290,
+      "local_artifacts": 63,
+      "provenance_files": [
+        "v15_astra_v3/artifacts/hard_grid_v3/manifest.json",
+        "v15_astra_v3/artifacts/paired_routes_v3/manifest.json",
+        "v15_astra_v3/artifacts/raw_fineweb_20261018/manifest.json",
+        "v15_astra_v3/artifacts/raw_native32_20261019/manifest.json",
+        "v15_astra_v3/reports/launch_smoke_20261018/manifest.json",
+        "v15_astra_v3/reports/shortblock_20261019/cli_resume/1792353767413194000/gram/manifest.json",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/manifest.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/manifest.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/manifest.json"
+      ]
+    },
+    {
+      "id": "v15-astra-ncm-v4",
+      "name": "V15 Astra NCM V4 and renderer follow-up",
+      "paths": [
+        "v15_astra_ncm_v4"
+      ],
+      "purpose": "Pretrained NCM rendering with controlled recurrent graph planning and residual-consistent continuation",
+      "status": "Original pilot and prefix follow-up completed; language-fidelity gate failed",
+      "reading": [
+        "v15_astra_ncm_v4/README.md",
+        "v15_astra_ncm_v4/REVIEWED_SPEC.md",
+        "v15_astra_ncm_v4/followup/README.md",
+        "docs/ASTRA_PROGRESS.md"
+      ],
+      "status_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/status.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/final_results.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/status.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/final_results.json"
+      ],
+      "limitations": "Two-seed synthetic planner study, one-seed renderer continuation. On the untouched 72-row renderer panel, parent, selected control and selected on-policy models all have zero exact routes. Code-loss improvements are not text fidelity. Update-matched runs have different elapsed compute; pretrained frozen parameters are additional.",
+      "runs_indexed": 17,
+      "published_files": 489,
+      "local_artifacts": 51,
+      "provenance_files": [
+        "v15_astra_ncm_v4/data/ncm_cache/manifest.json"
+      ]
     }
   ],
   "runs": [
@@ -6421,6 +6589,2573 @@
       "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
     },
     {
+      "id": "v15_astra_m2/runs/20261018_48h",
+      "family": "v15-astra-m2",
+      "status": "interrupted",
+      "status_reason": "A saved stop/failure/pause status or aborted run name is present.",
+      "seed": 1518,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_m2/runs/20261018_48h/plan.json"
+      ],
+      "results": [
+        "v15_astra_m2/runs/20261018_48h/smoke_evaluation.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_m2/runs/20261018_48h/status.json"
+      ],
+      "logs": [
+        "v15_astra_m2/runs/20261018_48h/data.log",
+        "v15_astra_m2/runs/20261018_48h/gram.log",
+        "v15_astra_m2/runs/20261018_48h/smoke.log",
+        "v15_astra_m2/runs/20261018_48h/supervisor.log"
+      ],
+      "checkpoint_paths": [],
+      "evidence_count": 12,
+      "published_evidence": [
+        "v15_astra_m2/runs/20261018_48h/plan.json",
+        "v15_astra_m2/runs/20261018_48h/smoke_evaluation.json"
+      ],
+      "metrics": [],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_m2/runs/20261018_48h/gram",
+      "family": "v15-astra-m2",
+      "status": "interrupted",
+      "status_reason": "A saved stop/failure/pause status or aborted run name is present.",
+      "seed": 1518,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_m2/runs/20261018_48h/gram/manifest.json"
+      ],
+      "results": [
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0002380.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0005157.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0007934.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0010670.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0013407.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0016124.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0018842.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0021541.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0024239.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0026917.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0029549.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0032155.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0034752.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0037498.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0040212.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0042882.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0045585.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0048225.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0050984.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0053651.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0056228.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0058839.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0061495.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0064118.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0066620.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0069215.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0071807.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0074348.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_m2/runs/20261018_48h/gram/status.json"
+      ],
+      "logs": [
+        "v15_astra_m2/runs/20261018_48h/gram/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_m2/runs/20261018_48h/gram/best_nll.pt",
+        "v15_astra_m2/runs/20261018_48h/gram/best_nll_inference.pt",
+        "v15_astra_m2/runs/20261018_48h/gram/best_policy.pt",
+        "v15_astra_m2/runs/20261018_48h/gram/best_policy_inference.pt",
+        "v15_astra_m2/runs/20261018_48h/gram/latest.pt",
+        "v15_astra_m2/runs/20261018_48h/gram/latest_inference.pt"
+      ],
+      "evidence_count": 37,
+      "published_evidence": [
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0002380.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0005157.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0007934.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0010670.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0013407.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0016124.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0018842.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0021541.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0024239.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0026917.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0029549.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0032155.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0034752.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0037498.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0040212.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0042882.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0045585.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0048225.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0050984.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0053651.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0056228.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0058839.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0061495.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0064118.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0066620.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0069215.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0071807.json",
+        "v15_astra_m2/runs/20261018_48h/gram/eval_0074348.json",
+        "v15_astra_m2/runs/20261018_48h/gram/manifest.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_m2/runs/20261018_48h/gram/eval_0002380.json",
+          "readings": {
+            "step": 2380
+          }
+        },
+        {
+          "source": "v15_astra_m2/runs/20261018_48h/gram/eval_0005157.json",
+          "readings": {
+            "step": 5157
+          }
+        },
+        {
+          "source": "v15_astra_m2/runs/20261018_48h/gram/eval_0007934.json",
+          "readings": {
+            "step": 7934
+          }
+        },
+        {
+          "source": "v15_astra_m2/runs/20261018_48h/gram/eval_0010670.json",
+          "readings": {
+            "step": 10670
+          }
+        },
+        {
+          "source": "v15_astra_m2/runs/20261018_48h/gram/eval_0013407.json",
+          "readings": {
+            "step": 13407
+          }
+        },
+        {
+          "source": "v15_astra_m2/runs/20261018_48h/gram/eval_0016124.json",
+          "readings": {
+            "step": 16124
+          }
+        },
+        {
+          "source": "v15_astra_m2/runs/20261018_48h/gram/eval_0018842.json",
+          "readings": {
+            "step": 18842
+          }
+        },
+        {
+          "source": "v15_astra_m2/runs/20261018_48h/gram/eval_0021541.json",
+          "readings": {
+            "step": 21541
+          }
+        },
+        {
+          "source": "v15_astra_m2/runs/20261018_48h/gram/eval_0024239.json",
+          "readings": {
+            "step": 24239
+          }
+        },
+        {
+          "source": "v15_astra_m2/runs/20261018_48h/gram/eval_0026917.json",
+          "readings": {
+            "step": 26917
+          }
+        },
+        {
+          "source": "v15_astra_m2/runs/20261018_48h/gram/eval_0029549.json",
+          "readings": {
+            "step": 29549
+          }
+        },
+        {
+          "source": "v15_astra_m2/runs/20261018_48h/gram/eval_0032155.json",
+          "readings": {
+            "step": 32155
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_m2/runs/20261018_48h/smoke_gram",
+      "family": "v15-astra-m2",
+      "status": "smoke-or-engineering",
+      "status_reason": "Path identifies a smoke, pilot, validation, benchmark, or plumbing execution; not a final scientific experiment.",
+      "seed": 1518,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_m2/runs/20261018_48h/smoke_gram/manifest.json"
+      ],
+      "results": [],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_m2/runs/20261018_48h/smoke_gram/status.json"
+      ],
+      "logs": [
+        "v15_astra_m2/runs/20261018_48h/smoke_gram/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_m2/runs/20261018_48h/smoke_gram/latest.pt",
+        "v15_astra_m2/runs/20261018_48h/smoke_gram/latest_inference.pt"
+      ],
+      "evidence_count": 5,
+      "published_evidence": [
+        "v15_astra_m2/runs/20261018_48h/smoke_gram/manifest.json"
+      ],
+      "metrics": [],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_m2/runs/20261018_48h/smoke_hrm",
+      "family": "v15-astra-m2",
+      "status": "smoke-or-engineering",
+      "status_reason": "Path identifies a smoke, pilot, validation, benchmark, or plumbing execution; not a final scientific experiment.",
+      "seed": 1518,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_m2/runs/20261018_48h/smoke_hrm/manifest.json"
+      ],
+      "results": [],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_m2/runs/20261018_48h/smoke_hrm/status.json"
+      ],
+      "logs": [
+        "v15_astra_m2/runs/20261018_48h/smoke_hrm/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_m2/runs/20261018_48h/smoke_hrm/latest.pt"
+      ],
+      "evidence_count": 4,
+      "published_evidence": [
+        "v15_astra_m2/runs/20261018_48h/smoke_hrm/manifest.json"
+      ],
+      "metrics": [],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": null,
+      "seed_source": null,
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/final_results.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/final_results.partial.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/finalize.log",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42.log",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43.log",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42.log",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43.log",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42.log",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43.log",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer.log",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42.log",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43.log",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/supervisor.log",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42.log",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43.log",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42.log",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43.log"
+      ],
+      "checkpoint_paths": [],
+      "evidence_count": 22,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/final_results.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/final_results.partial.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/final_results.json",
+          "readings": {
+            "completed": 1792407501.882022
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 42,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/latest.pt"
+      ],
+      "evidence_count": 16,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed42/latest_eval.json",
+          "readings": {
+            "step": 4000
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 43,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/latest.pt"
+      ],
+      "evidence_count": 16,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r0_seed43/latest_eval.json",
+          "readings": {
+            "step": 4000
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 42,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/latest.pt"
+      ],
+      "evidence_count": 16,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed42/latest_eval.json",
+          "readings": {
+            "step": 4000
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 43,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/latest.pt"
+      ],
+      "evidence_count": 16,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r1_seed43/latest_eval.json",
+          "readings": {
+            "step": 4000
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 42,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/latest.pt"
+      ],
+      "evidence_count": 16,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed42/latest_eval.json",
+          "readings": {
+            "step": 4000
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 43,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/latest.pt"
+      ],
+      "evidence_count": 16,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/r2_seed43/latest_eval.json",
+          "readings": {
+            "step": 4000
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 44,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0004500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0005000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0005500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0006000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0006500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0007000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0007500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0008000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0008500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0009000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0009500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0010000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0010500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0011000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0011500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0012000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/latest.pt"
+      ],
+      "evidence_count": 33,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0004500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0005000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0005500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0006000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0006500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0007000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0007500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0008000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0008500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0009000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0009500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0010000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0010500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0011000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0011500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0012000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0004500.json",
+          "readings": {
+            "step": 4500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0005000.json",
+          "readings": {
+            "step": 5000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/renderer/eval_0005500.json",
+          "readings": {
+            "step": 5500
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 42,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/latest.pt"
+      ],
+      "evidence_count": 16,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed42/latest_eval.json",
+          "readings": {
+            "step": 4000
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 43,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/latest.pt"
+      ],
+      "evidence_count": 16,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/strategy2_seed43/latest_eval.json",
+          "readings": {
+            "step": 4000
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 42,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/latest.pt"
+      ],
+      "evidence_count": 16,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed42/latest_eval.json",
+          "readings": {
+            "step": 4000
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 43,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/latest.pt"
+      ],
+      "evidence_count": 16,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied2_seed43/latest_eval.json",
+          "readings": {
+            "step": 4000
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 42,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/latest.pt"
+      ],
+      "evidence_count": 16,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed42/latest_eval.json",
+          "readings": {
+            "step": 4000
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 43,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/latest.pt"
+      ],
+      "evidence_count": 16,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_lm1b_grounded/untied_compute2_seed43/latest_eval.json",
+          "readings": {
+            "step": 4000
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 119,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/final_results.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/final_results.partial.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control.log",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy.log",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/supervisor.log"
+      ],
+      "checkpoint_paths": [],
+      "evidence_count": 8,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/final_results.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/final_results.partial.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/plan.json"
+      ],
+      "metrics": [],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 119,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/latest.pt"
+      ],
+      "evidence_count": 16,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/control/latest_eval.json",
+          "readings": {
+            "step": 4000
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy",
+      "family": "v15-astra-ncm-v4",
+      "status": "completed",
+      "status_reason": "An explicit saved completion marker/status is present.",
+      "seed": 119,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/plan.json"
+      ],
+      "results": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/latest_eval.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/status.json"
+      ],
+      "logs": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/best.pt",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/latest.pt"
+      ],
+      "evidence_count": 16,
+      "published_evidence": [
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0000000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0000500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0001000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0001500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0002000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0002500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0003000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0003500.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0004000.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/latest_eval.json",
+        "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/plan.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0000000.json",
+          "readings": {
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0000500.json",
+          "readings": {
+            "step": 500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0001000.json",
+          "readings": {
+            "step": 1000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0001500.json",
+          "readings": {
+            "step": 1500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0002000.json",
+          "readings": {
+            "step": 2000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0002500.json",
+          "readings": {
+            "step": 2500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0003000.json",
+          "readings": {
+            "step": 3000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0003500.json",
+          "readings": {
+            "step": 3500
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/eval_0004000.json",
+          "readings": {
+            "step": 4000
+          }
+        },
+        {
+          "source": "v15_astra_ncm_v4/runs/20261019_renderer_prefix_followup/on_policy/latest_eval.json",
+          "readings": {
+            "step": 4000
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_v3/runs/20261018_24h_raw_gram",
+      "family": "v15-astra-v3",
+      "status": "interrupted",
+      "status_reason": "A saved stop/failure/pause status or aborted run name is present.",
+      "seed": 151803,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_v3/runs/20261018_24h_raw_gram/plan.json"
+      ],
+      "results": [],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_v3/runs/20261018_24h_raw_gram/status.json"
+      ],
+      "logs": [
+        "v15_astra_v3/runs/20261018_24h_raw_gram/supervisor.log",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/training.log"
+      ],
+      "checkpoint_paths": [],
+      "evidence_count": 10,
+      "published_evidence": [
+        "v15_astra_v3/runs/20261018_24h_raw_gram/plan.json"
+      ],
+      "metrics": [],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_v3/runs/20261018_24h_raw_gram/gram",
+      "family": "v15-astra-v3",
+      "status": "interrupted",
+      "status_reason": "A saved stop/failure/pause status or aborted run name is present.",
+      "seed": 151803,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/manifest.json"
+      ],
+      "results": [
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00000001.json",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00003468.json",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00006683.json",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00009998.json",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00013305.json",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00016746.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/status.json"
+      ],
+      "logs": [
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/best_nll.pt",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/best_nll_inference.pt",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/latest.pt",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/latest_inference.pt"
+      ],
+      "evidence_count": 14,
+      "published_evidence": [
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00000001.json",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00003468.json",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00006683.json",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00009998.json",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00013305.json",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00016746.json",
+        "v15_astra_v3/runs/20261018_24h_raw_gram/gram/manifest.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00000001.json",
+          "readings": {
+            "seed": 151803,
+            "step": 1
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00003468.json",
+          "readings": {
+            "seed": 151803,
+            "step": 3468
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00006683.json",
+          "readings": {
+            "seed": 151803,
+            "step": 6683
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00009998.json",
+          "readings": {
+            "seed": 151803,
+            "step": 9998
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00013305.json",
+          "readings": {
+            "seed": 151803,
+            "step": 13305
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261018_24h_raw_gram/gram/eval_00016746.json",
+          "readings": {
+            "seed": 151803,
+            "step": 16746
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_v3/runs/20261019_native32_10m_30m",
+      "family": "v15-astra-v3",
+      "status": "interrupted",
+      "status_reason": "A saved stop/failure/pause status or aborted run name is present.",
+      "seed": null,
+      "seed_source": null,
+      "configurations": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/plan.json"
+      ],
+      "results": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/diagnostic_pause.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/status.json"
+      ],
+      "logs": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/codec_acceptance.log",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/encoding.log",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/preflight.log",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/supervisor.log"
+      ],
+      "checkpoint_paths": [],
+      "evidence_count": 12,
+      "published_evidence": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/diagnostic_pause.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/plan.json"
+      ],
+      "metrics": [],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_v3/runs/20261019_native32_10m_30m/10m",
+      "family": "v15-astra-v3",
+      "status": "interrupted",
+      "status_reason": "A saved stop/failure/pause status or aborted run name is present.",
+      "seed": null,
+      "seed_source": null,
+      "configurations": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/plan.json"
+      ],
+      "results": [],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/status.json"
+      ],
+      "logs": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/training.log"
+      ],
+      "checkpoint_paths": [],
+      "evidence_count": 5,
+      "published_evidence": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/plan.json"
+      ],
+      "metrics": [],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram",
+      "family": "v15-astra-v3",
+      "status": "interrupted",
+      "status_reason": "A saved stop/failure/pause status or aborted run name is present.",
+      "seed": 151803,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/manifest.json"
+      ],
+      "results": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00000000.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00002321.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00003843.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00007411.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00010879.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00014716.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00018468.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00022006.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00025799.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00029456.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00032891.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00036259.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00039786.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/last_evaluation.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/status.json"
+      ],
+      "logs": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/best_nll.pt",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/best_nll_inference.pt",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/equal_step_00001000_inference.pt",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/equal_step_00005000_inference.pt",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/equal_step_00010000_inference.pt",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/equal_step_00025000_inference.pt",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/latest.pt",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/latest_inference.pt"
+      ],
+      "evidence_count": 26,
+      "published_evidence": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00000000.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00002321.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00003843.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00007411.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00010879.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00014716.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00018468.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00022006.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00025799.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00029456.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00032891.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00036259.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00039786.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/last_evaluation.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/manifest.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00000000.json",
+          "readings": {
+            "seed": 151803,
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00002321.json",
+          "readings": {
+            "seed": 151803,
+            "step": 2321
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00003843.json",
+          "readings": {
+            "seed": 151803,
+            "step": 3843
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00007411.json",
+          "readings": {
+            "seed": 151803,
+            "step": 7411
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00010879.json",
+          "readings": {
+            "seed": 151803,
+            "step": 10879
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00014716.json",
+          "readings": {
+            "seed": 151803,
+            "step": 14716
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00018468.json",
+          "readings": {
+            "seed": 151803,
+            "step": 18468
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00022006.json",
+          "readings": {
+            "seed": 151803,
+            "step": 22006
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00025799.json",
+          "readings": {
+            "seed": 151803,
+            "step": 25799
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00029456.json",
+          "readings": {
+            "seed": 151803,
+            "step": 29456
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00032891.json",
+          "readings": {
+            "seed": 151803,
+            "step": 32891
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/10m/gram/eval_00036259.json",
+          "readings": {
+            "seed": 151803,
+            "step": 36259
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_v3/runs/20261019_native32_10m_30m/30m",
+      "family": "v15-astra-v3",
+      "status": "interrupted",
+      "status_reason": "A saved stop/failure/pause status or aborted run name is present.",
+      "seed": null,
+      "seed_source": null,
+      "configurations": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/plan.json"
+      ],
+      "results": [],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/status.json"
+      ],
+      "logs": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/training.log"
+      ],
+      "checkpoint_paths": [],
+      "evidence_count": 5,
+      "published_evidence": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/plan.json"
+      ],
+      "metrics": [],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram",
+      "family": "v15-astra-v3",
+      "status": "partial-slice-completed",
+      "status_reason": "A bounded training slice finished; the full experiment is not established as completed.",
+      "seed": 151803,
+      "seed_source": "configuration",
+      "configurations": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/manifest.json"
+      ],
+      "results": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00000000.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00002706.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00002732.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00005110.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00007006.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00009542.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00012008.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00014418.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00016776.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00019083.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00021259.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00023461.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00025820.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/last_evaluation.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/status.json"
+      ],
+      "logs": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/metrics.jsonl"
+      ],
+      "checkpoint_paths": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/best_nll.pt",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/best_nll_inference.pt",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/equal_step_00001000_inference.pt",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/equal_step_00005000_inference.pt",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/equal_step_00010000_inference.pt",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/equal_step_00025000_inference.pt",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/latest.pt",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/latest_inference.pt"
+      ],
+      "evidence_count": 26,
+      "published_evidence": [
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00000000.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00002706.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00002732.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00005110.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00007006.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00009542.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00012008.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00014418.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00016776.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00019083.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00021259.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00023461.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00025820.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/last_evaluation.json",
+        "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/manifest.json"
+      ],
+      "metrics": [
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00000000.json",
+          "readings": {
+            "seed": 151803,
+            "step": 0
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00002706.json",
+          "readings": {
+            "seed": 151803,
+            "step": 2706
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00002732.json",
+          "readings": {
+            "seed": 151803,
+            "step": 2732
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00005110.json",
+          "readings": {
+            "seed": 151803,
+            "step": 5110
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00007006.json",
+          "readings": {
+            "seed": 151803,
+            "step": 7006
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00009542.json",
+          "readings": {
+            "seed": 151803,
+            "step": 9542
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00012008.json",
+          "readings": {
+            "seed": 151803,
+            "step": 12008
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00014418.json",
+          "readings": {
+            "seed": 151803,
+            "step": 14418
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00016776.json",
+          "readings": {
+            "seed": 151803,
+            "step": 16776
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00019083.json",
+          "readings": {
+            "seed": 151803,
+            "step": 19083
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00021259.json",
+          "readings": {
+            "seed": 151803,
+            "step": 21259
+          }
+        },
+        {
+          "source": "v15_astra_v3/runs/20261019_native32_10m_30m/30m/gram/eval_00023461.json",
+          "readings": {
+            "seed": 151803,
+            "step": 23461
+          }
+        }
+      ],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
+      "id": "v15_astra_v3/telemetry/tests",
+      "family": "v15-astra-v3",
+      "status": "smoke-or-engineering",
+      "status_reason": "Path identifies a smoke, pilot, validation, benchmark, or plumbing execution; not a final scientific experiment.",
+      "seed": null,
+      "seed_source": null,
+      "configurations": [],
+      "results": [
+        "v15_astra_v3/telemetry/tests/browser_results.json"
+      ],
+      "completion_markers": [],
+      "status_sources": [],
+      "logs": [
+        "v15_astra_v3/telemetry/tests/backend_results.log",
+        "v15_astra_v3/telemetry/tests/frontend_results.log"
+      ],
+      "checkpoint_paths": [],
+      "evidence_count": 4,
+      "published_evidence": [
+        "v15_astra_v3/telemetry/tests/browser_results.json"
+      ],
+      "metrics": [],
+      "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
+    },
+    {
       "id": "run_v2_19M/runs",
       "family": "v2",
       "status": "execution-recorded",
@@ -10477,7 +13212,9 @@
       "status_reason": "A saved stop/failure/pause status or aborted run name is present.",
       "seed": null,
       "seed_source": null,
-      "configurations": [],
+      "configurations": [
+        "v7_tiny/runs/plan.json"
+      ],
       "results": [],
       "completion_markers": [],
       "status_sources": [
@@ -10491,7 +13228,9 @@
       ],
       "checkpoint_paths": [],
       "evidence_count": 13,
-      "published_evidence": [],
+      "published_evidence": [
+        "v7_tiny/runs/plan.json"
+      ],
       "metrics": [],
       "limitations": "Folder-level inventory; nested stages and copied historical sources are not independent replications. Null metadata means unknown, not zero."
     },
@@ -12287,7 +15026,9 @@
       "status_reason": "Path identifies a smoke, pilot, validation, benchmark, or plumbing execution; not a final scientific experiment.",
       "seed": null,
       "seed_source": null,
-      "configurations": [],
+      "configurations": [
+        "v7_tiny/tests/pipeline/plan.json"
+      ],
       "results": [
         "v7_tiny/tests/pipeline/PRIMARY_RESULT.json"
       ],
@@ -12301,7 +15042,8 @@
       "checkpoint_paths": [],
       "evidence_count": 8,
       "published_evidence": [
-        "v7_tiny/tests/pipeline/PRIMARY_RESULT.json"
+        "v7_tiny/tests/pipeline/PRIMARY_RESULT.json",
+        "v7_tiny/tests/pipeline/plan.json"
       ],
       "metrics": [
         {
@@ -12851,7 +15593,9 @@
       "status_reason": "Path identifies a smoke, pilot, validation, benchmark, or plumbing execution; not a final scientific experiment.",
       "seed": null,
       "seed_source": null,
-      "configurations": [],
+      "configurations": [
+        "v7_tiny/tests/pipeline_calibration_import_check/plan.json"
+      ],
       "results": [
         "v7_tiny/tests/pipeline_calibration_import_check/PRIMARY_RESULT.json"
       ],
@@ -12865,7 +15609,8 @@
       "checkpoint_paths": [],
       "evidence_count": 6,
       "published_evidence": [
-        "v7_tiny/tests/pipeline_calibration_import_check/PRIMARY_RESULT.json"
+        "v7_tiny/tests/pipeline_calibration_import_check/PRIMARY_RESULT.json",
+        "v7_tiny/tests/pipeline_calibration_import_check/plan.json"
       ],
       "metrics": [
         {
@@ -13150,7 +15895,9 @@
       "status_reason": "Path identifies a smoke, pilot, validation, benchmark, or plumbing execution; not a final scientific experiment.",
       "seed": null,
       "seed_source": null,
-      "configurations": [],
+      "configurations": [
+        "v7_tiny/tests/pipeline_completed_initial/plan.json"
+      ],
       "results": [
         "v7_tiny/tests/pipeline_completed_initial/PRIMARY_RESULT.json"
       ],
@@ -13164,7 +15911,8 @@
       "checkpoint_paths": [],
       "evidence_count": 8,
       "published_evidence": [
-        "v7_tiny/tests/pipeline_completed_initial/PRIMARY_RESULT.json"
+        "v7_tiny/tests/pipeline_completed_initial/PRIMARY_RESULT.json",
+        "v7_tiny/tests/pipeline_completed_initial/plan.json"
       ],
       "metrics": [
         {
@@ -13643,7 +16391,9 @@
       "status_reason": "Path identifies a smoke, pilot, validation, benchmark, or plumbing execution; not a final scientific experiment.",
       "seed": null,
       "seed_source": null,
-      "configurations": [],
+      "configurations": [
+        "v7_tiny/tests/pipeline_completed_with_guards/plan.json"
+      ],
       "results": [
         "v7_tiny/tests/pipeline_completed_with_guards/PRIMARY_RESULT.json"
       ],
@@ -13657,7 +16407,8 @@
       "checkpoint_paths": [],
       "evidence_count": 8,
       "published_evidence": [
-        "v7_tiny/tests/pipeline_completed_with_guards/PRIMARY_RESULT.json"
+        "v7_tiny/tests/pipeline_completed_with_guards/PRIMARY_RESULT.json",
+        "v7_tiny/tests/pipeline_completed_with_guards/plan.json"
       ],
       "metrics": [
         {
@@ -14141,7 +16892,9 @@
       "status_reason": "Path identifies a smoke, pilot, validation, benchmark, or plumbing execution; not a final scientific experiment.",
       "seed": null,
       "seed_source": null,
-      "configurations": [],
+      "configurations": [
+        "v7_tiny/tests/pipeline_guard_check/plan.json"
+      ],
       "results": [
         "v7_tiny/tests/pipeline_guard_check/PRIMARY_RESULT.json"
       ],
@@ -14155,7 +16908,8 @@
       "checkpoint_paths": [],
       "evidence_count": 6,
       "published_evidence": [
-        "v7_tiny/tests/pipeline_guard_check/PRIMARY_RESULT.json"
+        "v7_tiny/tests/pipeline_guard_check/PRIMARY_RESULT.json",
+        "v7_tiny/tests/pipeline_guard_check/plan.json"
       ],
       "metrics": [
         {
