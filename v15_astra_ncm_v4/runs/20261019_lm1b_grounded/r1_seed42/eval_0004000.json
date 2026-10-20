@@ -1,0 +1,4445 @@
+{
+  "step": 4000,
+  "timestamp": 1792399718.805205,
+  "strategies": {
+    "0": {
+      "graph_count": 64,
+      "state_count": 585,
+      "strategy": 0,
+      "oracle_action_mass": 0.9952121036210969,
+      "policy_ce": 0.0832227462826883,
+      "optimal_top1": 0.9957173447537473,
+      "discounted_value_mse": 0.0027466054715248,
+      "q_mse": 0.00239915806451437,
+      "successor_copy_accuracy": 0.9952244508118434,
+      "rollouts": {
+        "random": {
+          "success_rate": 0.25,
+          "success_wilson95": [
+            0.16014791974174092,
+            0.36816509174383727
+          ],
+          "mean_return": 0.2119730129394531,
+          "seconds": 0.0005342117510735989,
+          "model_calls": 0,
+          "environment_steps": 193,
+          "successful_mean_stretch": 1.2395833333333333,
+          "episodes": [
+            {
+              "graph_id": "valid_00000",
+              "path": [
+                2,
+                5,
+                3,
+                7,
+                8,
+                3
+              ],
+              "success": false,
+              "cost": 5,
+              "optimal_cost": 2,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 5,
+              "seconds": 1.9124941900372505e-05
+            },
+            {
+              "graph_id": "valid_00001",
+              "path": [
+                9,
+                0,
+                9
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 1.233397051692009e-05
+            },
+            {
+              "graph_id": "valid_00002",
+              "path": [
+                5,
+                1,
+                3,
+                4,
+                2
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 0,
+              "environment_steps": 4,
+              "seconds": 1.1208001524209976e-05
+            },
+            {
+              "graph_id": "valid_00003",
+              "path": [
+                1,
+                3,
+                0,
+                1
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 2,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 8.958159014582634e-06
+            },
+            {
+              "graph_id": "valid_00004",
+              "path": [
+                7,
+                4,
+                5,
+                0
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 8.37491825222969e-06
+            },
+            {
+              "graph_id": "valid_00005",
+              "path": [
+                1,
+                3,
+                1
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 4,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 9.95909795165062e-06
+            },
+            {
+              "graph_id": "valid_00006",
+              "path": [
+                4,
+                2,
+                4
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 6.4158812165260315e-06
+            },
+            {
+              "graph_id": "valid_00007",
+              "path": [
+                1,
+                5,
+                9,
+                4,
+                7
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 3,
+              "stretch": 1.3333333333333333,
+              "return": 0.8145062499999999,
+              "model_calls": 0,
+              "environment_steps": 4,
+              "seconds": 1.1082971468567848e-05
+            },
+            {
+              "graph_id": "valid_00008",
+              "path": [
+                0,
+                9,
+                1,
+                0
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 4,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 8.624978363513947e-06
+            },
+            {
+              "graph_id": "valid_00009",
+              "path": [
+                6,
+                7,
+                4,
+                1,
+                5,
+                3,
+                5
+              ],
+              "success": false,
+              "cost": 6,
+              "optimal_cost": 2,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 6,
+              "seconds": 1.0667135939002037e-05
+            },
+            {
+              "graph_id": "valid_00010",
+              "path": [
+                5,
+                3,
+                0,
+                6,
+                1,
+                9,
+                8
+              ],
+              "success": true,
+              "cost": 6,
+              "optimal_cost": 3,
+              "stretch": 2.0,
+              "return": 0.7350918906249998,
+              "model_calls": 0,
+              "environment_steps": 6,
+              "seconds": 1.3625016435980797e-05
+            },
+            {
+              "graph_id": "valid_00011",
+              "path": [
+                0,
+                1,
+                5,
+                7,
+                1
+              ],
+              "success": false,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 4,
+              "seconds": 1.0124873369932175e-05
+            },
+            {
+              "graph_id": "valid_00012",
+              "path": [
+                0,
+                2,
+                4
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 4.624947905540466e-06
+            },
+            {
+              "graph_id": "valid_00013",
+              "path": [
+                6,
+                0,
+                1,
+                5
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 1.0292045772075653e-05
+            },
+            {
+              "graph_id": "valid_00014",
+              "path": [
+                6,
+                3,
+                5,
+                7,
+                2,
+                10,
+                7
+              ],
+              "success": false,
+              "cost": 6,
+              "optimal_cost": 4,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 6,
+              "seconds": 1.8999911844730377e-05
+            },
+            {
+              "graph_id": "valid_00015",
+              "path": [
+                7,
+                4,
+                7
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 9.124865755438805e-06
+            },
+            {
+              "graph_id": "valid_00016",
+              "path": [
+                0,
+                2,
+                7,
+                3,
+                4,
+                1,
+                2
+              ],
+              "success": false,
+              "cost": 6,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 6,
+              "seconds": 1.3082986697554588e-05
+            },
+            {
+              "graph_id": "valid_00017",
+              "path": [
+                10,
+                7,
+                9,
+                7
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 5,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 1.0750023648142815e-05
+            },
+            {
+              "graph_id": "valid_00018",
+              "path": [
+                0,
+                4,
+                1
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 4.875008016824722e-06
+            },
+            {
+              "graph_id": "valid_00019",
+              "path": [
+                6,
+                0,
+                3,
+                1
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 6.1248429119586945e-06
+            },
+            {
+              "graph_id": "valid_00020",
+              "path": [
+                3,
+                5,
+                0,
+                6
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 4,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 5.709007382392883e-06
+            },
+            {
+              "graph_id": "valid_00021",
+              "path": [
+                5,
+                1,
+                8,
+                3
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 2,
+              "stretch": 1.5,
+              "return": 0.8573749999999999,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 6.707850843667984e-06
+            },
+            {
+              "graph_id": "valid_00022",
+              "path": [
+                3,
+                5
+              ],
+              "success": false,
+              "cost": 1,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 1,
+              "seconds": 7.166992872953415e-06
+            },
+            {
+              "graph_id": "valid_00023",
+              "path": [
+                8,
+                0,
+                8
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 5,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 6.292015314102173e-06
+            },
+            {
+              "graph_id": "valid_00024",
+              "path": [
+                1,
+                3,
+                0
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 3.6670826375484467e-06
+            },
+            {
+              "graph_id": "valid_00025",
+              "path": [
+                2,
+                5,
+                7,
+                4,
+                6,
+                3,
+                0,
+                4
+              ],
+              "success": false,
+              "cost": 7,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 7,
+              "seconds": 1.4042016118764877e-05
+            },
+            {
+              "graph_id": "valid_00026",
+              "path": [
+                6,
+                0,
+                1,
+                9,
+                8,
+                7,
+                9
+              ],
+              "success": false,
+              "cost": 6,
+              "optimal_cost": 4,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 6,
+              "seconds": 1.1792173609137535e-05
+            },
+            {
+              "graph_id": "valid_00027",
+              "path": [
+                4,
+                6
+              ],
+              "success": false,
+              "cost": 1,
+              "optimal_cost": 2,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 1,
+              "seconds": 4.292000085115433e-06
+            },
+            {
+              "graph_id": "valid_00028",
+              "path": [
+                6,
+                1,
+                3,
+                1
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 7.709022611379623e-06
+            },
+            {
+              "graph_id": "valid_00029",
+              "path": [
+                6,
+                5,
+                2,
+                5
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 4,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 7.00005330145359e-06
+            },
+            {
+              "graph_id": "valid_00030",
+              "path": [
+                9,
+                5,
+                9
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 9.417068213224411e-06
+            },
+            {
+              "graph_id": "valid_00031",
+              "path": [
+                7,
+                4,
+                0
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 5.666865035891533e-06
+            },
+            {
+              "graph_id": "valid_00032",
+              "path": [
+                9,
+                1,
+                2,
+                1
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 4,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 8.792150765657425e-06
+            },
+            {
+              "graph_id": "valid_00033",
+              "path": [
+                2,
+                3,
+                2
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 5.624955520033836e-06
+            },
+            {
+              "graph_id": "valid_00034",
+              "path": [
+                2,
+                9,
+                3,
+                9
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 8.95792618393898e-06
+            },
+            {
+              "graph_id": "valid_00035",
+              "path": [
+                3,
+                0,
+                7,
+                4
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 4,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 9.042210876941681e-06
+            },
+            {
+              "graph_id": "valid_00036",
+              "path": [
+                2,
+                9,
+                1,
+                8,
+                4,
+                10
+              ],
+              "success": true,
+              "cost": 5,
+              "optimal_cost": 2,
+              "stretch": 2.5,
+              "return": 0.7737809374999998,
+              "model_calls": 0,
+              "environment_steps": 5,
+              "seconds": 1.1333031579852104e-05
+            },
+            {
+              "graph_id": "valid_00037",
+              "path": [
+                0,
+                5
+              ],
+              "success": false,
+              "cost": 1,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 1,
+              "seconds": 8.00006091594696e-06
+            },
+            {
+              "graph_id": "valid_00038",
+              "path": [
+                6,
+                0,
+                5
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 4,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 5.292007699608803e-06
+            },
+            {
+              "graph_id": "valid_00039",
+              "path": [
+                1,
+                0,
+                5
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 4.209112375974655e-06
+            },
+            {
+              "graph_id": "valid_00040",
+              "path": [
+                9,
+                2,
+                0,
+                8
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 7.832888513803482e-06
+            },
+            {
+              "graph_id": "valid_00041",
+              "path": [
+                7,
+                8,
+                6,
+                0,
+                7
+              ],
+              "success": false,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 4,
+              "seconds": 7.207971066236496e-06
+            },
+            {
+              "graph_id": "valid_00042",
+              "path": [
+                2,
+                1,
+                8
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 5.083158612251282e-06
+            },
+            {
+              "graph_id": "valid_00043",
+              "path": [
+                4,
+                3,
+                2,
+                3
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 6.542075425386429e-06
+            },
+            {
+              "graph_id": "valid_00044",
+              "path": [
+                9,
+                0,
+                3,
+                0
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 4,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 1.0707881301641464e-05
+            },
+            {
+              "graph_id": "valid_00045",
+              "path": [
+                0,
+                1,
+                0
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 5.834037438035011e-06
+            },
+            {
+              "graph_id": "valid_00046",
+              "path": [
+                6,
+                4
+              ],
+              "success": false,
+              "cost": 1,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 1,
+              "seconds": 5.37489540874958e-06
+            },
+            {
+              "graph_id": "valid_00047",
+              "path": [
+                4,
+                8,
+                2,
+                3,
+                5
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 0,
+              "environment_steps": 4,
+              "seconds": 7.207971066236496e-06
+            },
+            {
+              "graph_id": "valid_00048",
+              "path": [
+                6,
+                5,
+                1
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 4.666158929467201e-06
+            },
+            {
+              "graph_id": "valid_00049",
+              "path": [
+                8,
+                0,
+                8
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 7.4158888310194016e-06
+            },
+            {
+              "graph_id": "valid_00050",
+              "path": [
+                3,
+                6,
+                9,
+                0,
+                8,
+                5,
+                2,
+                0
+              ],
+              "success": false,
+              "cost": 7,
+              "optimal_cost": 6,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 7,
+              "seconds": 1.5792204067111015e-05
+            },
+            {
+              "graph_id": "valid_00051",
+              "path": [
+                6,
+                3
+              ],
+              "success": false,
+              "cost": 1,
+              "optimal_cost": 2,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 1,
+              "seconds": 4.00003045797348e-06
+            },
+            {
+              "graph_id": "valid_00052",
+              "path": [
+                6,
+                2,
+                0,
+                6
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 8.125090971589088e-06
+            },
+            {
+              "graph_id": "valid_00053",
+              "path": [
+                7,
+                6,
+                2,
+                7
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 4,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 9.124865755438805e-06
+            },
+            {
+              "graph_id": "valid_00054",
+              "path": [
+                6,
+                2,
+                6
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 8.250121027231216e-06
+            },
+            {
+              "graph_id": "valid_00055",
+              "path": [
+                2,
+                4,
+                2
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 1.116609200835228e-05
+            },
+            {
+              "graph_id": "valid_00056",
+              "path": [
+                8,
+                5,
+                1,
+                8
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 5,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 7.542083039879799e-06
+            },
+            {
+              "graph_id": "valid_00057",
+              "path": [
+                2,
+                0,
+                5
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 5.00003807246685e-06
+            },
+            {
+              "graph_id": "valid_00058",
+              "path": [
+                8,
+                5,
+                8
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 8.167000487446785e-06
+            },
+            {
+              "graph_id": "valid_00059",
+              "path": [
+                0,
+                7,
+                1,
+                7
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 4,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 6.291083991527557e-06
+            },
+            {
+              "graph_id": "valid_00060",
+              "path": [
+                1,
+                3,
+                1
+              ],
+              "success": false,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 2,
+              "seconds": 3.7499703466892242e-06
+            },
+            {
+              "graph_id": "valid_00061",
+              "path": [
+                1,
+                5,
+                4,
+                1
+              ],
+              "success": false,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": null,
+              "return": 0.0,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 6.709014996886253e-06
+            },
+            {
+              "graph_id": "valid_00062",
+              "path": [
+                4,
+                6,
+                1,
+                3,
+                5
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 0,
+              "environment_steps": 4,
+              "seconds": 8.458038792014122e-06
+            },
+            {
+              "graph_id": "valid_00063",
+              "path": [
+                4,
+                3,
+                0,
+                2
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 2,
+              "stretch": 1.5,
+              "return": 0.8573749999999999,
+              "model_calls": 0,
+              "environment_steps": 3,
+              "seconds": 4.875008016824722e-06
+            }
+          ]
+        },
+        "greedy": {
+          "success_rate": 1.0,
+          "success_wilson95": [
+            0.9433739770288436,
+            1.0
+          ],
+          "mean_return": 0.8550962712280272,
+          "seconds": 1.1325424637179822,
+          "model_calls": 197,
+          "environment_steps": 197,
+          "successful_mean_stretch": 1.0026041666666667,
+          "episodes": [
+            {
+              "graph_id": "valid_00000",
+              "path": [
+                2,
+                5,
+                4
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.013972333166748285
+            },
+            {
+              "graph_id": "valid_00001",
+              "path": [
+                9,
+                0,
+                11,
+                7
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.018950958037748933
+            },
+            {
+              "graph_id": "valid_00002",
+              "path": [
+                5,
+                1,
+                3,
+                4,
+                2
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.027646624948829412
+            },
+            {
+              "graph_id": "valid_00003",
+              "path": [
+                1,
+                7,
+                5
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.014245500089600682
+            },
+            {
+              "graph_id": "valid_00004",
+              "path": [
+                7,
+                4,
+                5,
+                0
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.015725708100944757
+            },
+            {
+              "graph_id": "valid_00005",
+              "path": [
+                1,
+                3,
+                4,
+                7,
+                9
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.024348000064492226
+            },
+            {
+              "graph_id": "valid_00006",
+              "path": [
+                4,
+                1,
+                3
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.013743084156885743
+            },
+            {
+              "graph_id": "valid_00007",
+              "path": [
+                1,
+                5,
+                6,
+                7
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.015861584106460214
+            },
+            {
+              "graph_id": "valid_00008",
+              "path": [
+                0,
+                9,
+                5,
+                3,
+                7
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.021118832984939218
+            },
+            {
+              "graph_id": "valid_00009",
+              "path": [
+                6,
+                7,
+                0
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.010504125151783228
+            },
+            {
+              "graph_id": "valid_00010",
+              "path": [
+                5,
+                3,
+                10,
+                8
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.016228999942541122
+            },
+            {
+              "graph_id": "valid_00011",
+              "path": [
+                0,
+                5,
+                7,
+                9,
+                2
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.021350499941036105
+            },
+            {
+              "graph_id": "valid_00012",
+              "path": [
+                0,
+                2,
+                4
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.014717333018779755
+            },
+            {
+              "graph_id": "valid_00013",
+              "path": [
+                6,
+                0,
+                1,
+                5
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.016081874957308173
+            },
+            {
+              "graph_id": "valid_00014",
+              "path": [
+                6,
+                3,
+                2,
+                1,
+                8
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.021392958937212825
+            },
+            {
+              "graph_id": "valid_00015",
+              "path": [
+                7,
+                9,
+                10
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.010588041041046381
+            },
+            {
+              "graph_id": "valid_00016",
+              "path": [
+                0,
+                7,
+                6,
+                5
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.016083499882370234
+            },
+            {
+              "graph_id": "valid_00017",
+              "path": [
+                10,
+                7,
+                6,
+                11,
+                1,
+                4
+              ],
+              "success": true,
+              "cost": 5,
+              "optimal_cost": 5,
+              "stretch": 1.0,
+              "return": 0.7737809374999998,
+              "model_calls": 5,
+              "environment_steps": 5,
+              "seconds": 0.02696037502028048
+            },
+            {
+              "graph_id": "valid_00018",
+              "path": [
+                0,
+                4,
+                1
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.014633709099143744
+            },
+            {
+              "graph_id": "valid_00019",
+              "path": [
+                6,
+                0,
+                3,
+                1
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.016082458198070526
+            },
+            {
+              "graph_id": "valid_00020",
+              "path": [
+                3,
+                5,
+                0,
+                4,
+                1
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.020222374936565757
+            },
+            {
+              "graph_id": "valid_00021",
+              "path": [
+                5,
+                1,
+                3
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.013402167009189725
+            },
+            {
+              "graph_id": "valid_00022",
+              "path": [
+                3,
+                0,
+                4,
+                6
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.015482458053156734
+            },
+            {
+              "graph_id": "valid_00023",
+              "path": [
+                8,
+                0,
+                9,
+                7,
+                4,
+                6
+              ],
+              "success": true,
+              "cost": 5,
+              "optimal_cost": 5,
+              "stretch": 1.0,
+              "return": 0.7737809374999998,
+              "model_calls": 5,
+              "environment_steps": 5,
+              "seconds": 0.02597387507557869
+            },
+            {
+              "graph_id": "valid_00024",
+              "path": [
+                1,
+                3,
+                0
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.010538249975070357
+            },
+            {
+              "graph_id": "valid_00025",
+              "path": [
+                2,
+                5,
+                3,
+                1
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.016025375109165907
+            },
+            {
+              "graph_id": "valid_00026",
+              "path": [
+                6,
+                0,
+                1,
+                9,
+                4
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.021088042063638568
+            },
+            {
+              "graph_id": "valid_00027",
+              "path": [
+                4,
+                2,
+                5
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.010150083107873797
+            },
+            {
+              "graph_id": "valid_00028",
+              "path": [
+                6,
+                8,
+                5,
+                2
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.016061290865764022
+            },
+            {
+              "graph_id": "valid_00029",
+              "path": [
+                6,
+                5,
+                2,
+                1,
+                0
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.02115362510085106
+            },
+            {
+              "graph_id": "valid_00030",
+              "path": [
+                9,
+                7,
+                1
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.010502458084374666
+            },
+            {
+              "graph_id": "valid_00031",
+              "path": [
+                7,
+                4,
+                6,
+                2
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.015838291961699724
+            },
+            {
+              "graph_id": "valid_00032",
+              "path": [
+                9,
+                2,
+                0,
+                3,
+                4
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.02108679199591279
+            },
+            {
+              "graph_id": "valid_00033",
+              "path": [
+                2,
+                5,
+                4
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.010465124854817986
+            },
+            {
+              "graph_id": "valid_00034",
+              "path": [
+                2,
+                9,
+                0,
+                8
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.01601104182191193
+            },
+            {
+              "graph_id": "valid_00035",
+              "path": [
+                3,
+                0,
+                1,
+                5,
+                6
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.020908792037516832
+            },
+            {
+              "graph_id": "valid_00036",
+              "path": [
+                2,
+                4,
+                10
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.010568499797955155
+            },
+            {
+              "graph_id": "valid_00037",
+              "path": [
+                0,
+                1,
+                3,
+                9
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.01583550008945167
+            },
+            {
+              "graph_id": "valid_00038",
+              "path": [
+                6,
+                0,
+                3,
+                1,
+                4
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.02089716703630984
+            },
+            {
+              "graph_id": "valid_00039",
+              "path": [
+                1,
+                6,
+                2
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.010371749987825751
+            },
+            {
+              "graph_id": "valid_00040",
+              "path": [
+                9,
+                3,
+                6,
+                1
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.01613150001503527
+            },
+            {
+              "graph_id": "valid_00041",
+              "path": [
+                7,
+                8,
+                6,
+                0,
+                3
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.021266250172629952
+            },
+            {
+              "graph_id": "valid_00042",
+              "path": [
+                2,
+                1,
+                8
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.01044433400966227
+            },
+            {
+              "graph_id": "valid_00043",
+              "path": [
+                4,
+                3,
+                0,
+                6
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.015349250053986907
+            },
+            {
+              "graph_id": "valid_00044",
+              "path": [
+                9,
+                0,
+                2,
+                10,
+                5
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.025910416850820184
+            },
+            {
+              "graph_id": "valid_00045",
+              "path": [
+                0,
+                6,
+                5
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.011263333959504962
+            },
+            {
+              "graph_id": "valid_00046",
+              "path": [
+                6,
+                2,
+                5,
+                0
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.017255124868825078
+            },
+            {
+              "graph_id": "valid_00047",
+              "path": [
+                4,
+                8,
+                2,
+                3,
+                5
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.023228999925777316
+            },
+            {
+              "graph_id": "valid_00048",
+              "path": [
+                6,
+                5,
+                1
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.010887332959100604
+            },
+            {
+              "graph_id": "valid_00049",
+              "path": [
+                8,
+                1,
+                9,
+                3
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.021724958904087543
+            },
+            {
+              "graph_id": "valid_00050",
+              "path": [
+                3,
+                4,
+                6,
+                9,
+                0,
+                8,
+                2,
+                7
+              ],
+              "success": true,
+              "cost": 7,
+              "optimal_cost": 6,
+              "stretch": 1.1666666666666667,
+              "return": 0.6983372960937497,
+              "model_calls": 7,
+              "environment_steps": 7,
+              "seconds": 0.03848662506788969
+            },
+            {
+              "graph_id": "valid_00051",
+              "path": [
+                6,
+                5,
+                0
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.01688812510110438
+            },
+            {
+              "graph_id": "valid_00052",
+              "path": [
+                6,
+                2,
+                3,
+                5
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.01862712507136166
+            },
+            {
+              "graph_id": "valid_00053",
+              "path": [
+                7,
+                3,
+                8,
+                0,
+                5
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.02461649989709258
+            },
+            {
+              "graph_id": "valid_00054",
+              "path": [
+                6,
+                2,
+                4
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.01273683412000537
+            },
+            {
+              "graph_id": "valid_00055",
+              "path": [
+                2,
+                4,
+                11,
+                6
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.018972374964505434
+            },
+            {
+              "graph_id": "valid_00056",
+              "path": [
+                8,
+                5,
+                1,
+                7,
+                4,
+                2
+              ],
+              "success": true,
+              "cost": 5,
+              "optimal_cost": 5,
+              "stretch": 1.0,
+              "return": 0.7737809374999998,
+              "model_calls": 5,
+              "environment_steps": 5,
+              "seconds": 0.030704916920512915
+            },
+            {
+              "graph_id": "valid_00057",
+              "path": [
+                2,
+                0,
+                6
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.012490042019635439
+            },
+            {
+              "graph_id": "valid_00058",
+              "path": [
+                8,
+                6,
+                3,
+                0
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.022353667067363858
+            },
+            {
+              "graph_id": "valid_00059",
+              "path": [
+                0,
+                7,
+                1,
+                5,
+                2
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.02231708401814103
+            },
+            {
+              "graph_id": "valid_00060",
+              "path": [
+                1,
+                3,
+                0
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.01093983300961554
+            },
+            {
+              "graph_id": "valid_00061",
+              "path": [
+                1,
+                5,
+                4,
+                0
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 3,
+              "environment_steps": 3,
+              "seconds": 0.022045916877686977
+            },
+            {
+              "graph_id": "valid_00062",
+              "path": [
+                4,
+                6,
+                1,
+                3,
+                5
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 4,
+              "environment_steps": 4,
+              "seconds": 0.02119312505237758
+            },
+            {
+              "graph_id": "valid_00063",
+              "path": [
+                4,
+                3,
+                2
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 2,
+              "environment_steps": 2,
+              "seconds": 0.013889333000406623
+            }
+          ]
+        },
+        "mcts8": {
+          "success_rate": 1.0,
+          "success_wilson95": [
+            0.9433739770288436,
+            1.0
+          ],
+          "mean_return": 0.8550962712280272,
+          "seconds": 2.5238970844075084,
+          "model_calls": 471,
+          "environment_steps": 700,
+          "successful_mean_stretch": 1.0026041666666667,
+          "episodes": [
+            {
+              "graph_id": "valid_00000",
+              "path": [
+                2,
+                5,
+                4
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015669332817196846
+            },
+            {
+              "graph_id": "valid_00001",
+              "path": [
+                9,
+                0,
+                11,
+                7
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 8,
+              "environment_steps": 12,
+              "seconds": 0.04215437499806285
+            },
+            {
+              "graph_id": "valid_00002",
+              "path": [
+                5,
+                1,
+                3,
+                4,
+                2
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.05193375004455447
+            },
+            {
+              "graph_id": "valid_00003",
+              "path": [
+                1,
+                7,
+                5
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.01534562511369586
+            },
+            {
+              "graph_id": "valid_00004",
+              "path": [
+                7,
+                4,
+                5,
+                0
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 7,
+              "environment_steps": 12,
+              "seconds": 0.036952333990484476
+            },
+            {
+              "graph_id": "valid_00005",
+              "path": [
+                1,
+                3,
+                4,
+                7,
+                9
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.05379604105837643
+            },
+            {
+              "graph_id": "valid_00006",
+              "path": [
+                4,
+                2,
+                3
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 4,
+              "environment_steps": 7,
+              "seconds": 0.021255125058814883
+            },
+            {
+              "graph_id": "valid_00007",
+              "path": [
+                1,
+                5,
+                4,
+                7
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 10,
+              "environment_steps": 15,
+              "seconds": 0.053152791922912
+            },
+            {
+              "graph_id": "valid_00008",
+              "path": [
+                0,
+                9,
+                5,
+                3,
+                7
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 11,
+              "environment_steps": 17,
+              "seconds": 0.05815891711972654
+            },
+            {
+              "graph_id": "valid_00009",
+              "path": [
+                6,
+                5,
+                0
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 4,
+              "environment_steps": 7,
+              "seconds": 0.021256291074678302
+            },
+            {
+              "graph_id": "valid_00010",
+              "path": [
+                5,
+                3,
+                10,
+                8
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.031948708929121494
+            },
+            {
+              "graph_id": "valid_00011",
+              "path": [
+                0,
+                5,
+                7,
+                9,
+                2
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.0523871670011431
+            },
+            {
+              "graph_id": "valid_00012",
+              "path": [
+                0,
+                2,
+                4
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.01597395888529718
+            },
+            {
+              "graph_id": "valid_00013",
+              "path": [
+                6,
+                0,
+                1,
+                5
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03215779201127589
+            },
+            {
+              "graph_id": "valid_00014",
+              "path": [
+                6,
+                3,
+                5,
+                9,
+                8
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 14,
+              "environment_steps": 20,
+              "seconds": 0.07604587497189641
+            },
+            {
+              "graph_id": "valid_00015",
+              "path": [
+                7,
+                9,
+                10
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.016352250007912517
+            },
+            {
+              "graph_id": "valid_00016",
+              "path": [
+                0,
+                7,
+                6,
+                5
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03240904211997986
+            },
+            {
+              "graph_id": "valid_00017",
+              "path": [
+                10,
+                7,
+                6,
+                2,
+                1,
+                4
+              ],
+              "success": true,
+              "cost": 5,
+              "optimal_cost": 5,
+              "stretch": 1.0,
+              "return": 0.7737809374999998,
+              "model_calls": 20,
+              "environment_steps": 30,
+              "seconds": 0.10627145902253687
+            },
+            {
+              "graph_id": "valid_00018",
+              "path": [
+                0,
+                4,
+                1
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.020524000050500035
+            },
+            {
+              "graph_id": "valid_00019",
+              "path": [
+                6,
+                0,
+                3,
+                1
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03138758288696408
+            },
+            {
+              "graph_id": "valid_00020",
+              "path": [
+                3,
+                5,
+                0,
+                4,
+                1
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.05219433316960931
+            },
+            {
+              "graph_id": "valid_00021",
+              "path": [
+                5,
+                1,
+                3
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.01990187494084239
+            },
+            {
+              "graph_id": "valid_00022",
+              "path": [
+                3,
+                0,
+                4,
+                6
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.031000958057120442
+            },
+            {
+              "graph_id": "valid_00023",
+              "path": [
+                8,
+                0,
+                9,
+                7,
+                4,
+                6
+              ],
+              "success": true,
+              "cost": 5,
+              "optimal_cost": 5,
+              "stretch": 1.0,
+              "return": 0.7737809374999998,
+              "model_calls": 15,
+              "environment_steps": 20,
+              "seconds": 0.07899899990297854
+            },
+            {
+              "graph_id": "valid_00024",
+              "path": [
+                1,
+                3,
+                0
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015702208038419485
+            },
+            {
+              "graph_id": "valid_00025",
+              "path": [
+                2,
+                5,
+                3,
+                1
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 7,
+              "environment_steps": 12,
+              "seconds": 0.036519624991342425
+            },
+            {
+              "graph_id": "valid_00026",
+              "path": [
+                6,
+                0,
+                1,
+                9,
+                4
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.053066834108904004
+            },
+            {
+              "graph_id": "valid_00027",
+              "path": [
+                4,
+                2,
+                5
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015225416980683804
+            },
+            {
+              "graph_id": "valid_00028",
+              "path": [
+                6,
+                8,
+                5,
+                2
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03180237486958504
+            },
+            {
+              "graph_id": "valid_00029",
+              "path": [
+                6,
+                5,
+                2,
+                1,
+                0
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 13,
+              "environment_steps": 20,
+              "seconds": 0.06828549993224442
+            },
+            {
+              "graph_id": "valid_00030",
+              "path": [
+                9,
+                7,
+                1
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.016063999850302935
+            },
+            {
+              "graph_id": "valid_00031",
+              "path": [
+                7,
+                4,
+                6,
+                2
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.031653457786887884
+            },
+            {
+              "graph_id": "valid_00032",
+              "path": [
+                9,
+                2,
+                0,
+                3,
+                4
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.05285466695204377
+            },
+            {
+              "graph_id": "valid_00033",
+              "path": [
+                2,
+                5,
+                4
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015832666074857116
+            },
+            {
+              "graph_id": "valid_00034",
+              "path": [
+                2,
+                9,
+                0,
+                8
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03192774998024106
+            },
+            {
+              "graph_id": "valid_00035",
+              "path": [
+                3,
+                0,
+                1,
+                5,
+                6
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.05246862513013184
+            },
+            {
+              "graph_id": "valid_00036",
+              "path": [
+                2,
+                4,
+                10
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015895958989858627
+            },
+            {
+              "graph_id": "valid_00037",
+              "path": [
+                0,
+                1,
+                3,
+                9
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 8,
+              "environment_steps": 12,
+              "seconds": 0.04242316703312099
+            },
+            {
+              "graph_id": "valid_00038",
+              "path": [
+                6,
+                0,
+                3,
+                1,
+                4
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.05242120800539851
+            },
+            {
+              "graph_id": "valid_00039",
+              "path": [
+                1,
+                6,
+                2
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015913416864350438
+            },
+            {
+              "graph_id": "valid_00040",
+              "path": [
+                9,
+                3,
+                6,
+                1
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03161104186438024
+            },
+            {
+              "graph_id": "valid_00041",
+              "path": [
+                7,
+                8,
+                6,
+                0,
+                3
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 11,
+              "environment_steps": 18,
+              "seconds": 0.057343958877027035
+            },
+            {
+              "graph_id": "valid_00042",
+              "path": [
+                2,
+                1,
+                8
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015691957902163267
+            },
+            {
+              "graph_id": "valid_00043",
+              "path": [
+                4,
+                3,
+                0,
+                6
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03185704187490046
+            },
+            {
+              "graph_id": "valid_00044",
+              "path": [
+                9,
+                0,
+                2,
+                10,
+                5
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.057340540923178196
+            },
+            {
+              "graph_id": "valid_00045",
+              "path": [
+                0,
+                6,
+                5
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.016363291069865227
+            },
+            {
+              "graph_id": "valid_00046",
+              "path": [
+                6,
+                2,
+                5,
+                0
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 8,
+              "environment_steps": 12,
+              "seconds": 0.042686957865953445
+            },
+            {
+              "graph_id": "valid_00047",
+              "path": [
+                4,
+                8,
+                2,
+                3,
+                5
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.05203799996525049
+            },
+            {
+              "graph_id": "valid_00048",
+              "path": [
+                6,
+                5,
+                1
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015727583086118102
+            },
+            {
+              "graph_id": "valid_00049",
+              "path": [
+                8,
+                1,
+                9,
+                3
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03610691707581282
+            },
+            {
+              "graph_id": "valid_00050",
+              "path": [
+                3,
+                4,
+                6,
+                9,
+                0,
+                8,
+                2,
+                7
+              ],
+              "success": true,
+              "cost": 7,
+              "optimal_cost": 6,
+              "stretch": 1.1666666666666667,
+              "return": 0.6983372960937497,
+              "model_calls": 31,
+              "environment_steps": 41,
+              "seconds": 0.1653475419152528
+            },
+            {
+              "graph_id": "valid_00051",
+              "path": [
+                6,
+                5,
+                0
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.020210750168189406
+            },
+            {
+              "graph_id": "valid_00052",
+              "path": [
+                6,
+                2,
+                3,
+                5
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03168004099279642
+            },
+            {
+              "graph_id": "valid_00053",
+              "path": [
+                7,
+                3,
+                8,
+                0,
+                5
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 15,
+              "environment_steps": 22,
+              "seconds": 0.07969537493772805
+            },
+            {
+              "graph_id": "valid_00054",
+              "path": [
+                6,
+                2,
+                4
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.01598620810545981
+            },
+            {
+              "graph_id": "valid_00055",
+              "path": [
+                2,
+                4,
+                11,
+                6
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03193329204805195
+            },
+            {
+              "graph_id": "valid_00056",
+              "path": [
+                8,
+                5,
+                1,
+                7,
+                4,
+                2
+              ],
+              "success": true,
+              "cost": 5,
+              "optimal_cost": 5,
+              "stretch": 1.0,
+              "return": 0.7737809374999998,
+              "model_calls": 15,
+              "environment_steps": 20,
+              "seconds": 0.07904666592366993
+            },
+            {
+              "graph_id": "valid_00057",
+              "path": [
+                2,
+                0,
+                6
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015924750128760934
+            },
+            {
+              "graph_id": "valid_00058",
+              "path": [
+                8,
+                6,
+                3,
+                0
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03625366697087884
+            },
+            {
+              "graph_id": "valid_00059",
+              "path": [
+                0,
+                7,
+                1,
+                5,
+                2
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.052382374880835414
+            },
+            {
+              "graph_id": "valid_00060",
+              "path": [
+                1,
+                3,
+                0
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015989874955266714
+            },
+            {
+              "graph_id": "valid_00061",
+              "path": [
+                1,
+                5,
+                4,
+                0
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.036187333054840565
+            },
+            {
+              "graph_id": "valid_00062",
+              "path": [
+                4,
+                6,
+                1,
+                3,
+                5
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.05217583407647908
+            },
+            {
+              "graph_id": "valid_00063",
+              "path": [
+                4,
+                3,
+                2
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.019030625000596046
+            }
+          ]
+        },
+        "mcts16": {
+          "success_rate": 1.0,
+          "success_wilson95": [
+            0.9433739770288436,
+            1.0
+          ],
+          "mean_return": 0.8550962712280272,
+          "seconds": 2.6119763765018433,
+          "model_calls": 475,
+          "environment_steps": 739,
+          "successful_mean_stretch": 1.0026041666666667,
+          "episodes": [
+            {
+              "graph_id": "valid_00000",
+              "path": [
+                2,
+                5,
+                4
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.01592687494121492
+            },
+            {
+              "graph_id": "valid_00001",
+              "path": [
+                9,
+                0,
+                11,
+                7
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 8,
+              "environment_steps": 12,
+              "seconds": 0.04238191689364612
+            },
+            {
+              "graph_id": "valid_00002",
+              "path": [
+                5,
+                1,
+                3,
+                4,
+                2
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.052384624956175685
+            },
+            {
+              "graph_id": "valid_00003",
+              "path": [
+                1,
+                7,
+                5
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015988334082067013
+            },
+            {
+              "graph_id": "valid_00004",
+              "path": [
+                7,
+                2,
+                8,
+                0
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 9,
+              "environment_steps": 16,
+              "seconds": 0.047696541994810104
+            },
+            {
+              "graph_id": "valid_00005",
+              "path": [
+                1,
+                3,
+                4,
+                7,
+                9
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.054129709023982286
+            },
+            {
+              "graph_id": "valid_00006",
+              "path": [
+                4,
+                2,
+                3
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 4,
+              "environment_steps": 7,
+              "seconds": 0.02093791705556214
+            },
+            {
+              "graph_id": "valid_00007",
+              "path": [
+                1,
+                5,
+                4,
+                7
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 10,
+              "environment_steps": 18,
+              "seconds": 0.053416583919897676
+            },
+            {
+              "graph_id": "valid_00008",
+              "path": [
+                0,
+                9,
+                5,
+                3,
+                7
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 11,
+              "environment_steps": 18,
+              "seconds": 0.05829404201358557
+            },
+            {
+              "graph_id": "valid_00009",
+              "path": [
+                6,
+                7,
+                0
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 4,
+              "environment_steps": 7,
+              "seconds": 0.020990333054214716
+            },
+            {
+              "graph_id": "valid_00010",
+              "path": [
+                5,
+                3,
+                10,
+                8
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03235141700133681
+            },
+            {
+              "graph_id": "valid_00011",
+              "path": [
+                0,
+                5,
+                7,
+                9,
+                2
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.05240712477825582
+            },
+            {
+              "graph_id": "valid_00012",
+              "path": [
+                0,
+                2,
+                4
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015650499844923615
+            },
+            {
+              "graph_id": "valid_00013",
+              "path": [
+                6,
+                0,
+                1,
+                5
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03238845802843571
+            },
+            {
+              "graph_id": "valid_00014",
+              "path": [
+                6,
+                3,
+                5,
+                9,
+                8
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 14,
+              "environment_steps": 20,
+              "seconds": 0.07517895800992846
+            },
+            {
+              "graph_id": "valid_00015",
+              "path": [
+                7,
+                9,
+                10
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.016058000037446618
+            },
+            {
+              "graph_id": "valid_00016",
+              "path": [
+                0,
+                7,
+                6,
+                5
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03223049989901483
+            },
+            {
+              "graph_id": "valid_00017",
+              "path": [
+                10,
+                7,
+                6,
+                2,
+                1,
+                4
+              ],
+              "success": true,
+              "cost": 5,
+              "optimal_cost": 5,
+              "stretch": 1.0,
+              "return": 0.7737809374999998,
+              "model_calls": 20,
+              "environment_steps": 37,
+              "seconds": 0.10691241710446775
+            },
+            {
+              "graph_id": "valid_00018",
+              "path": [
+                0,
+                4,
+                1
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.02058237511664629
+            },
+            {
+              "graph_id": "valid_00019",
+              "path": [
+                6,
+                0,
+                3,
+                1
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.0312562920153141
+            },
+            {
+              "graph_id": "valid_00020",
+              "path": [
+                3,
+                5,
+                0,
+                4,
+                1
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.05242591700516641
+            },
+            {
+              "graph_id": "valid_00021",
+              "path": [
+                5,
+                1,
+                3
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.020150083117187023
+            },
+            {
+              "graph_id": "valid_00022",
+              "path": [
+                3,
+                0,
+                4,
+                6
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03158508311025798
+            },
+            {
+              "graph_id": "valid_00023",
+              "path": [
+                8,
+                0,
+                9,
+                7,
+                4,
+                6
+              ],
+              "success": true,
+              "cost": 5,
+              "optimal_cost": 5,
+              "stretch": 1.0,
+              "return": 0.7737809374999998,
+              "model_calls": 15,
+              "environment_steps": 20,
+              "seconds": 0.07970579201355577
+            },
+            {
+              "graph_id": "valid_00024",
+              "path": [
+                1,
+                3,
+                0
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015773917082697153
+            },
+            {
+              "graph_id": "valid_00025",
+              "path": [
+                2,
+                6,
+                3,
+                1
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 8,
+              "environment_steps": 15,
+              "seconds": 0.042858083033934236
+            },
+            {
+              "graph_id": "valid_00026",
+              "path": [
+                6,
+                0,
+                1,
+                9,
+                4
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.05382912512868643
+            },
+            {
+              "graph_id": "valid_00027",
+              "path": [
+                4,
+                2,
+                5
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015704833902418613
+            },
+            {
+              "graph_id": "valid_00028",
+              "path": [
+                6,
+                8,
+                5,
+                2
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03208233299665153
+            },
+            {
+              "graph_id": "valid_00029",
+              "path": [
+                6,
+                5,
+                2,
+                1,
+                0
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 13,
+              "environment_steps": 20,
+              "seconds": 0.06825079210102558
+            },
+            {
+              "graph_id": "valid_00030",
+              "path": [
+                9,
+                7,
+                1
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.016191416885703802
+            },
+            {
+              "graph_id": "valid_00031",
+              "path": [
+                7,
+                4,
+                6,
+                2
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03617949993349612
+            },
+            {
+              "graph_id": "valid_00032",
+              "path": [
+                9,
+                2,
+                0,
+                3,
+                4
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 11,
+              "environment_steps": 18,
+              "seconds": 0.062037291936576366
+            },
+            {
+              "graph_id": "valid_00033",
+              "path": [
+                2,
+                5,
+                4
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.01790274982340634
+            },
+            {
+              "graph_id": "valid_00034",
+              "path": [
+                2,
+                9,
+                0,
+                8
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03467729198746383
+            },
+            {
+              "graph_id": "valid_00035",
+              "path": [
+                3,
+                0,
+                1,
+                5,
+                6
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.06150924996472895
+            },
+            {
+              "graph_id": "valid_00036",
+              "path": [
+                2,
+                4,
+                10
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.019019416999071836
+            },
+            {
+              "graph_id": "valid_00037",
+              "path": [
+                0,
+                1,
+                3,
+                9
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 8,
+              "environment_steps": 12,
+              "seconds": 0.04779708292335272
+            },
+            {
+              "graph_id": "valid_00038",
+              "path": [
+                6,
+                0,
+                3,
+                1,
+                4
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.05560149997472763
+            },
+            {
+              "graph_id": "valid_00039",
+              "path": [
+                1,
+                6,
+                2
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.016299624927341938
+            },
+            {
+              "graph_id": "valid_00040",
+              "path": [
+                9,
+                3,
+                6,
+                1
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03322499990463257
+            },
+            {
+              "graph_id": "valid_00041",
+              "path": [
+                7,
+                8,
+                6,
+                0,
+                3
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 11,
+              "environment_steps": 18,
+              "seconds": 0.06129233306273818
+            },
+            {
+              "graph_id": "valid_00042",
+              "path": [
+                2,
+                1,
+                8
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.01650945795699954
+            },
+            {
+              "graph_id": "valid_00043",
+              "path": [
+                4,
+                3,
+                0,
+                6
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03338045789860189
+            },
+            {
+              "graph_id": "valid_00044",
+              "path": [
+                9,
+                0,
+                2,
+                10,
+                5
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.060321833938360214
+            },
+            {
+              "graph_id": "valid_00045",
+              "path": [
+                0,
+                6,
+                5
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.018306832993403077
+            },
+            {
+              "graph_id": "valid_00046",
+              "path": [
+                6,
+                2,
+                5,
+                0
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 8,
+              "environment_steps": 12,
+              "seconds": 0.04462133301422
+            },
+            {
+              "graph_id": "valid_00047",
+              "path": [
+                4,
+                8,
+                2,
+                3,
+                5
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.058927834033966064
+            },
+            {
+              "graph_id": "valid_00048",
+              "path": [
+                6,
+                5,
+                1
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.01725662499666214
+            },
+            {
+              "graph_id": "valid_00049",
+              "path": [
+                8,
+                1,
+                9,
+                3
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03917254111729562
+            },
+            {
+              "graph_id": "valid_00050",
+              "path": [
+                3,
+                4,
+                6,
+                9,
+                0,
+                8,
+                2,
+                7
+              ],
+              "success": true,
+              "cost": 7,
+              "optimal_cost": 6,
+              "stretch": 1.1666666666666667,
+              "return": 0.6983372960937497,
+              "model_calls": 31,
+              "environment_steps": 54,
+              "seconds": 0.16441199998371303
+            },
+            {
+              "graph_id": "valid_00051",
+              "path": [
+                6,
+                5,
+                0
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.02044266602024436
+            },
+            {
+              "graph_id": "valid_00052",
+              "path": [
+                6,
+                2,
+                3,
+                5
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03138966695405543
+            },
+            {
+              "graph_id": "valid_00053",
+              "path": [
+                7,
+                3,
+                8,
+                0,
+                5
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 15,
+              "environment_steps": 26,
+              "seconds": 0.07842566608451307
+            },
+            {
+              "graph_id": "valid_00054",
+              "path": [
+                6,
+                2,
+                4
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.016225333092734218
+            },
+            {
+              "graph_id": "valid_00055",
+              "path": [
+                2,
+                4,
+                11,
+                6
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.032089542131870985
+            },
+            {
+              "graph_id": "valid_00056",
+              "path": [
+                8,
+                5,
+                1,
+                7,
+                4,
+                2
+              ],
+              "success": true,
+              "cost": 5,
+              "optimal_cost": 5,
+              "stretch": 1.0,
+              "return": 0.7737809374999998,
+              "model_calls": 15,
+              "environment_steps": 20,
+              "seconds": 0.07852312503382564
+            },
+            {
+              "graph_id": "valid_00057",
+              "path": [
+                2,
+                0,
+                6
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.01594270789064467
+            },
+            {
+              "graph_id": "valid_00058",
+              "path": [
+                8,
+                6,
+                3,
+                0
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03655162500217557
+            },
+            {
+              "graph_id": "valid_00059",
+              "path": [
+                0,
+                7,
+                1,
+                5,
+                2
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.053759041940793395
+            },
+            {
+              "graph_id": "valid_00060",
+              "path": [
+                1,
+                3,
+                0
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.015728959115222096
+            },
+            {
+              "graph_id": "valid_00061",
+              "path": [
+                1,
+                5,
+                4,
+                0
+              ],
+              "success": true,
+              "cost": 3,
+              "optimal_cost": 3,
+              "stretch": 1.0,
+              "return": 0.8573749999999999,
+              "model_calls": 6,
+              "environment_steps": 9,
+              "seconds": 0.03626479092054069
+            },
+            {
+              "graph_id": "valid_00062",
+              "path": [
+                4,
+                6,
+                1,
+                3,
+                5
+              ],
+              "success": true,
+              "cost": 4,
+              "optimal_cost": 4,
+              "stretch": 1.0,
+              "return": 0.8145062499999999,
+              "model_calls": 10,
+              "environment_steps": 14,
+              "seconds": 0.0523300408385694
+            },
+            {
+              "graph_id": "valid_00063",
+              "path": [
+                4,
+                3,
+                2
+              ],
+              "success": true,
+              "cost": 2,
+              "optimal_cost": 2,
+              "stretch": 1.0,
+              "return": 0.9025,
+              "model_calls": 3,
+              "environment_steps": 5,
+              "seconds": 0.020132957957684994
+            }
+          ]
+        }
+      },
+      "oracle": "Exact Dijkstra reaches every selected start; not a neural result"
+    }
+  },
+  "selection_greedy_success": 1.0
+}

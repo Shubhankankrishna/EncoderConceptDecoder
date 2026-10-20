@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v15_astra_ncm_v4/adapt.py", line 204, in <module>
+    with heavy_job():main(args)
+                     ^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v15_astra_ncm_v4/adapt.py", line 104, in main
+    net,codec,inference=load_ncm('mps')
+                        ^^^^^^^^^^^^^^^
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v15_astra_ncm_v4/ncm.py", line 139, in load_ncm
+    from v15_astra_v3.codec import FrozenNCMCodec
+  File "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v15_astra_v3/codec.py", line 15, in <module>
+    from omegaconf import OmegaConf
+ModuleNotFoundError: No module named 'omegaconf'

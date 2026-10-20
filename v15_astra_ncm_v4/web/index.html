@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Astra · grounded pilot</title><link rel="stylesheet" href="/style.css"></head><body><main>
+<header><p class="eyebrow">ASTRA / EXPERIMENT 04</p><h1>Grounded decisions.<br>Measured progress.</h1><p class="intro">Pretrained LM1B NCM · recurrent graph learner · rank-4 LoRA</p></header>
+<section class="notice">This pilot tests graph planning and verified-plan rendering. Completed steps and lower loss do not establish coherent language or general reasoning.</section>
+<div id="connection" role="status">Connecting…</div><section id="summary" class="cards"></section>
+<section><h2>Renderer recovery experiment</h2><p id="followup-status">Loading continuation status…</p><div id="followup" class="cards"></div><p id="diagnosis"></p><div id="followup-samples"></div></section>
+<section><h2>Completed pilot · held-out results</h2><p>Greedy success on 200 test graphs and 200 larger graphs, using checkpoints selected on validation. This measures graph planning; the original end-to-end text probe matched 0 of 8 routes.</p><div class="tablewrap"><table><thead><tr><th>Model</th><th>Selected step</th><th>Test success</th><th>Larger graph success</th></tr></thead><tbody id="final-results"></tbody></table></div></section>
+<h2>Training stages</h2><p>Controls share data, batch size and update budgets. Evaluation always shows its saved checkpoint step.</p>
+<div class="tablewrap"><table><thead><tr><th>Stage</th><th>Status</th><th>Updates</th><th>Evaluated step</th><th>Greedy success</th><th>Random success</th><th>Value MSE / code NLL</th></tr></thead><tbody id="stages"></tbody></table></div>
+<section><h2>Research gates</h2><div id="gates" class="cards"></div></section>
+<section><h2>Original renderer samples</h2><p>These are saved outputs from the completed pilot. Exact graph paths are authoritative. Generated text is an evaluated prediction.</p><div id="samples">Renderer training has not produced an evaluation yet.</div></section>
+<footer>Local, read-only telemetry · refreshes every 5 seconds · original runs and checkpoints are preserved</footer>
+</main><script src="/app.js"></script></body></html>
