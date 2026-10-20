@@ -1,0 +1,73 @@
+test_exact_elbo_units (v15_astra_v3.tests.test_gram_regression.TestGRAM.test_exact_elbo_units) ... ok
+test_full_and_truncated_gradient_lifecycles (v15_astra_v3.tests.test_gram_regression.TestGRAM.test_full_and_truncated_gradient_lifecycles) ... ok
+test_gaussian_finite_difference (v15_astra_v3.tests.test_gram_regression.TestGRAM.test_gaussian_finite_difference) ... ok
+test_gaussian_kl_matches_distribution_and_gradients (v15_astra_v3.tests.test_gram_regression.TestGRAM.test_gaussian_kl_matches_distribution_and_gradients) ... /Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v15_astra_v3/tests/test_gram_regression.py:29: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  self.assertGreaterEqual(float(actual.min()),0.)
+ok
+test_parameter_budget_includes_posterior (v15_astra_v3.tests.test_gram_regression.TestGRAM.test_parameter_budget_includes_posterior) ... ok
+test_physical_posterior_removal_and_rng_reproduction (v15_astra_v3.tests.test_gram_regression.TestGRAM.test_physical_posterior_removal_and_rng_reproduction) ... ok
+test_posterior_target_dependency_and_prior_separation (v15_astra_v3.tests.test_gram_regression.TestGRAM.test_posterior_target_dependency_and_prior_separation) ... ok
+test_prior_mc_likelihood_sums_before_logmeanexp (v15_astra_v3.tests.test_gram_regression.TestGRAM.test_prior_mc_likelihood_sums_before_logmeanexp) ... ok
+test_prior_network_conditioning_uses_same_posterior_path (v15_astra_v3.tests.test_gram_regression.TestGRAM.test_prior_network_conditioning_uses_same_posterior_path) ... ok
+test_slot_isotropic_ablation_and_sigma_floor (v15_astra_v3.tests.test_gram_regression.TestGRAM.test_slot_isotropic_ablation_and_sigma_floor) ... ok
+test_actor_critic_firewall_strategy_persistence_and_gradients (v15_astra_v3.tests.test_integration.IntegrationTests.test_actor_critic_firewall_strategy_persistence_and_gradients) ... ok
+test_adapter_checkpoint_restores_open_candidate_and_rollback (v15_astra_v3.tests.test_integration.IntegrationTests.test_adapter_checkpoint_restores_open_candidate_and_rollback) ... ok
+test_all_heavy_entrypoints_stop_before_read_or_write (v15_astra_v3.tests.test_integration.IntegrationTests.test_all_heavy_entrypoints_stop_before_read_or_write) ... ok
+test_auditor_rejects_wrong_observations_and_labels (v15_astra_v3.tests.test_integration.IntegrationTests.test_auditor_rejects_wrong_observations_and_labels) ... ok
+test_candidate_critic_both_outcomes_policy_and_horizon (v15_astra_v3.tests.test_integration.IntegrationTests.test_candidate_critic_both_outcomes_policy_and_horizon) ... ok
+test_crash_resume_matches_continuous_training_exactly (v15_astra_v3.tests.test_integration.IntegrationTests.test_crash_resume_matches_continuous_training_exactly) ... {"step": 1, "loss": 1.8809802532196045, "lr": 2.9999999999999997e-06, "grad_norm": 3.168133497238159, "elapsed_seconds": 0.006350375013425946, "update_seconds": 0.005867916974239051, "examples_seen": 2, "timestamp": 1792342749.333914, "available_ram": 4909547520, "mps_driver_bytes": 0, "blocks_per_second": 340.83645163697275}
+{"step": 2, "loss": 3.118303060531616, "lr": 5.253122292025696e-06, "grad_norm": 4.543785095214844, "elapsed_seconds": 0.016643958049826324, "update_seconds": 0.0016080830246210098, "examples_seen": 4, "timestamp": 1792342749.344207, "available_ram": 4907220992, "mps_driver_bytes": 0, "blocks_per_second": 1243.7168786551656}
+{"step": 3, "loss": 1.8852145671844482, "lr": 5.174999999999999e-06, "grad_norm": 3.1765313148498535, "elapsed_seconds": 0.022681624977849424, "update_seconds": 0.0013686250895261765, "examples_seen": 6, "timestamp": 1792342749.350244, "available_ram": 4907220992, "mps_driver_bytes": 0, "blocks_per_second": 1461.3205729645128}
+{"step": 1, "loss": 1.8809802532196045, "lr": 2.9999999999999997e-06, "grad_norm": 3.168133497238159, "elapsed_seconds": 0.0021180000621825457, "update_seconds": 0.0018398331012576818, "examples_seen": 2, "timestamp": 1792342749.3785222, "available_ram": 4907220992, "mps_driver_bytes": 0, "blocks_per_second": 1087.055123985339}
+{"step": 2, "loss": 3.118303060531616, "lr": 5.253122292025696e-06, "grad_norm": 4.543785095214844, "elapsed_seconds": 0.008643333101645112, "update_seconds": 0.0014428750146180391, "examples_seen": 4, "timestamp": 1792342749.385047, "available_ram": 4907220992, "mps_driver_bytes": 0, "blocks_per_second": 1386.1214448497774}
+{"step": 3, "loss": 1.8852145671844482, "lr": 5.174999999999999e-06, "grad_norm": 3.1765313148498535, "elapsed_seconds": 0.010516583104617894, "update_seconds": 0.0017045410349965096, "examples_seen": 6, "timestamp": 1792342749.402117, "available_ram": 4907220992, "mps_driver_bytes": 0, "blocks_per_second": 1173.3363755622906}
+ok
+test_episode_mode_pays_one_router_kl (v15_astra_v3.tests.test_integration.IntegrationTests.test_episode_mode_pays_one_router_kl) ... ok
+test_raw_cache_loader_and_free_generation_lane (v15_astra_v3.tests.test_integration.IntegrationTests.test_raw_cache_loader_and_free_generation_lane) ... ok
+test_raw_documents_causal_dedup_and_label_firewall (v15_astra_v3.tests.test_integration.IntegrationTests.test_raw_documents_causal_dedup_and_label_firewall) ... ok
+test_raw_gram_backward_and_prior_target_independence (v15_astra_v3.tests.test_integration.IntegrationTests.test_raw_gram_backward_and_prior_target_independence) ... ok
+test_verified_routes_are_more_than_commuting_moves (v15_astra_v3.tests.test_integration.IntegrationTests.test_verified_routes_are_more_than_commuting_moves) ... ok
+test_explicit_absolute_deadline_and_schedule_are_separate (v15_astra_v3.tests.test_launch.LaunchTests.test_explicit_absolute_deadline_and_schedule_are_separate) ... ok
+test_raw_preparation_signal_resume_and_identity (v15_astra_v3.tests.test_launch.LaunchTests.test_raw_preparation_signal_resume_and_identity) ... {"identity": {"source_sha": "a342fdf2302ee521db2c0914bbe45886223813c6d0aeed0992dc143d7c85cc44", "codec_id": "unit_only", "history": 2, "batch": 2, "max_blocks": 20000, "audit_blocks": 6, "unique_blocks": 6, "raw_ids_sha": "1be83f14a1fae871abd542fa4fa83a416332c86b48d6d94dd5c57d35f226f91b"}, "encoded_blocks": 2, "total_blocks": 6, "exact": 2, "token_correct": 144, "token_total": 144, "audited": 2, "prefix_sha": "bbda38b2b7b90dbe472ba97f72c1863980cdc23e15bcd531e38255749ce43b71", "blocks_per_second": 1074.065386197592, "timestamp": 1792342749.6077409}
+{"identity": {"source_sha": "a342fdf2302ee521db2c0914bbe45886223813c6d0aeed0992dc143d7c85cc44", "codec_id": "unit_only", "history": 2, "batch": 2, "max_blocks": 20000, "audit_blocks": 6, "unique_blocks": 6, "raw_ids_sha": "1be83f14a1fae871abd542fa4fa83a416332c86b48d6d94dd5c57d35f226f91b"}, "encoded_blocks": 6, "total_blocks": 6, "exact": 6, "token_correct": 432, "token_total": 432, "audited": 6, "prefix_sha": "3677ec39e4ec0955df835273257c0b55f35802088dbc646e31dc6af88da14c41", "blocks_per_second": 4000.0, "timestamp": 1792342749.697521}
+ok
+test_shared_raw_blocks_do_not_cross_evaluation_windows (v15_astra_v3.tests.test_launch.LaunchTests.test_shared_raw_blocks_do_not_cross_evaluation_windows) ... ok
+test_area_pool_equivalence (v15_astra_v3.tests.test_model_regression.TestArchitecture.test_area_pool_equivalence) ... ok
+test_current_and_future_labels_are_invisible (v15_astra_v3.tests.test_model_regression.TestArchitecture.test_current_and_future_labels_are_invisible) ... ok
+test_exact_save_resume_optimizer_update (v15_astra_v3.tests.test_model_regression.TestArchitecture.test_exact_save_resume_optimizer_update) ... ok
+test_generation_has_no_target_argument_and_is_deterministic (v15_astra_v3.tests.test_model_regression.TestArchitecture.test_generation_has_no_target_argument_and_is_deterministic) ... ok
+test_parallel_and_levelwise_heads_agree (v15_astra_v3.tests.test_model_regression.TestArchitecture.test_parallel_and_levelwise_heads_agree) ... ok
+test_previous_labels_affect_predictions (v15_astra_v3.tests.test_model_regression.TestArchitecture.test_previous_labels_affect_predictions) ... ok
+test_probabilities_and_nll_units (v15_astra_v3.tests.test_model_regression.TestArchitecture.test_probabilities_and_nll_units) ... ok
+test_production_parameter_budget (v15_astra_v3.tests.test_model_regression.TestArchitecture.test_production_parameter_budget) ... ok
+test_recurrent_gradients_reach_first_transition (v15_astra_v3.tests.test_model_regression.TestArchitecture.test_recurrent_gradients_reach_first_transition) ... ok
+test_task_verifier_and_action_boundary (v15_astra_v3.tests.test_model_regression.TestArchitecture.test_task_verifier_and_action_boundary) ... ok
+test_fixed_adapter_capacity_promote_and_rollback (v15_astra_v3.tests.test_revision.FutureContractTests.test_fixed_adapter_capacity_promote_and_rollback) ... ok
+test_horizon_value_policy_identity_and_zero_horizon (v15_astra_v3.tests.test_revision.FutureContractTests.test_horizon_value_policy_identity_and_zero_horizon) ... ok
+test_lora_initial_identity_and_bounded_verified_memory (v15_astra_v3.tests.test_revision.FutureContractTests.test_lora_initial_identity_and_bounded_verified_memory) ... ok
+test_heavy_jobs_refuse_active_training (v15_astra_v3.tests.test_revision.IsolationTests.test_heavy_jobs_refuse_active_training) ... ok
+test_output_guard_rejects_protected_paths_and_symlink (v15_astra_v3.tests.test_revision.IsolationTests.test_output_guard_rejects_protected_paths_and_symlink) ... ok
+test_cluster_estimand_uses_same_point_and_interval (v15_astra_v3.tests.test_revision.MeasurementTests.test_cluster_estimand_uses_same_point_and_interval) ... ok
+test_required_length_not_evaluation_horizon (v15_astra_v3.tests.test_revision.MeasurementTests.test_required_length_not_evaluation_horizon) ... ok
+test_variable_code_accuracy_is_separate (v15_astra_v3.tests.test_revision.MeasurementTests.test_variable_code_accuracy_is_separate) ... ok
+test_action_control_has_no_codec_and_legality_is_explicit (v15_astra_v3.tests.test_revision.ModelControlTests.test_action_control_has_no_codec_and_legality_is_explicit) ... ok
+test_cached_generation_matches_reference (v15_astra_v3.tests.test_revision.ModelControlTests.test_cached_generation_matches_reference) ... ok
+test_cached_logits_and_one_summary_per_previous_level (v15_astra_v3.tests.test_revision.ModelControlTests.test_cached_logits_and_one_summary_per_previous_level) ... ok
+test_code_only_invariance_to_state_and_multiblock_order (v15_astra_v3.tests.test_revision.ModelControlTests.test_code_only_invariance_to_state_and_multiblock_order) ... ok
+test_raw_and_hybrid_context (v15_astra_v3.tests.test_revision.ModelControlTests.test_raw_and_hybrid_context) ... ok
+test_state_only_invariance_to_code_input (v15_astra_v3.tests.test_revision.ModelControlTests.test_state_only_invariance_to_code_input) ... ok
+test_true_nonrecurrent_control_and_common_initialization (v15_astra_v3.tests.test_revision.ModelControlTests.test_true_nonrecurrent_control_and_common_initialization) ... ok
+test_distillation_prefix_measure_and_teacher_stop_gradient (v15_astra_v3.tests.test_revision.NumericalTests.test_distillation_prefix_measure_and_teacher_stop_gradient) ... ok
+test_joint_mode_bound_and_router_gradients (v15_astra_v3.tests.test_revision.NumericalTests.test_joint_mode_bound_and_router_gradients) ... ok
+test_loo_reward_gradient_by_exact_enumeration (v15_astra_v3.tests.test_revision.NumericalTests.test_loo_reward_gradient_by_exact_enumeration) ... ok
+test_nearly_equal_fp32_kl_and_gradient (v15_astra_v3.tests.test_revision.NumericalTests.test_nearly_equal_fp32_kl_and_gradient) ... ok
+test_terminal_elbo_multiple_phases (v15_astra_v3.tests.test_revision.NumericalTests.test_terminal_elbo_multiple_phases) ... ok
+test_complete_state_roundtrip_and_wall_difference (v15_astra_v3.tests.test_revision.RepresentationTests.test_complete_state_roundtrip_and_wall_difference) ... ok
+test_hard_benchmark_quota_split_and_solver (v15_astra_v3.tests.test_revision.RepresentationTests.test_hard_benchmark_quota_split_and_solver) ... ok
+test_observed_block_overflow_and_information_gates (v15_astra_v3.tests.test_revision.RepresentationTests.test_observed_block_overflow_and_information_gates) ... ok
+
+----------------------------------------------------------------------
+Ran 57 tests in 1.898s
+
+OK

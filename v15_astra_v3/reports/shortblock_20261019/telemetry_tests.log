@@ -1,0 +1,40 @@
+test_collector_error_is_reported_then_recovers (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_collector_error_is_reported_then_recovers) ... ok
+test_dead_and_stale_process_states_and_terminal_precedence (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_dead_and_stale_process_states_and_terminal_precedence) ... ok
+test_final_test_is_displayed_without_changing_validation_selection (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_final_test_is_displayed_without_changing_validation_selection) ... ok
+test_historical_evaluation_events_use_saved_time_not_ingestion_time (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_historical_evaluation_events_use_saved_time_not_ingestion_time) ... ok
+test_import_does_not_load_torch (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_import_does_not_load_torch) ... ok
+test_incremental_partial_line_and_restart_cursor (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_incremental_partial_line_and_restart_cursor) ... ok
+test_initial_step_zero_is_not_labeled_final (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_initial_step_zero_is_not_labeled_final) ... ok
+test_input_files_never_change (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_input_files_never_change) ... ok
+test_long_poll_interval_does_not_false_alarm (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_long_poll_interval_does_not_false_alarm) ... ok
+test_malformed_and_nonfinite_rows_are_json_safe (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_malformed_and_nonfinite_rows_are_json_safe) ... ok
+test_metric_downsampling_includes_first_and_latest (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_metric_downsampling_includes_first_and_latest) ... ok
+test_native32_diagnostics_survive_evaluation_ingestion (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_native32_diagnostics_survive_evaluation_ingestion) ... ok
+test_nested_arm_reads_preparation_from_the_project_tree (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_nested_arm_reads_preparation_from_the_project_tree) ... ok
+test_no_data_and_malformed_optional_files (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_no_data_and_malformed_optional_files) ... ok
+test_repetition_ignores_punctuation_and_case (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_repetition_ignores_punctuation_and_case) ... ok
+test_resource_and_missing_checkpoint_alerts (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_resource_and_missing_checkpoint_alerts) ... ok
+test_rotation_and_truncation_deduplicate (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_rotation_and_truncation_deduplicate) ... ok
+test_storage_cannot_be_in_run_or_reused_for_another_run (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_storage_cannot_be_in_run_or_reused_for_another_run) ... ok
+test_validation_improvement_repetition_and_kl_alerts (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_validation_improvement_repetition_and_kl_alerts) ... ok
+test_waiting_model_turn_is_not_reported_as_a_dead_trainer (v15_astra_v3.telemetry.tests.test_engine.EngineTests.test_waiting_model_turn_is_not_reported_as_a_dead_trainer) ... ok
+test_arm_selector_routes_and_rejects_unknown_arms (v15_astra_v3.telemetry.tests.test_engine.HTTPTests.test_arm_selector_routes_and_rejects_unknown_arms) ... 127.0.0.1 - - [19/Oct/2026 01:35:41] "GET /api/snapshot?arm=missing HTTP/1.1" 400 -
+127.0.0.1 - - [19/Oct/2026 01:35:41] "GET /api/snapshot?arm=10m&arm=30m HTTP/1.1" 400 -
+ok
+test_http_contract_exports_and_static_assets (v15_astra_v3.telemetry.tests.test_engine.HTTPTests.test_http_contract_exports_and_static_assets) ... ok
+test_rejects_mutation_invalid_queries_and_path_traversal (v15_astra_v3.telemetry.tests.test_engine.HTTPTests.test_rejects_mutation_invalid_queries_and_path_traversal) ... 127.0.0.1 - - [19/Oct/2026 01:35:42] "POST /api/snapshot HTTP/1.1" 405 -
+127.0.0.1 - - [19/Oct/2026 01:35:42] "GET /api/history?limit=1 HTTP/1.1" 400 -
+127.0.0.1 - - [19/Oct/2026 01:35:42] "GET /api/history?limit=x HTTP/1.1" 400 -
+127.0.0.1 - - [19/Oct/2026 01:35:42] "GET /api/history?limit=2&limit=3 HTTP/1.1" 400 -
+127.0.0.1 - - [19/Oct/2026 01:35:42] "GET /api/samples HTTP/1.1" 400 -
+127.0.0.1 - - [19/Oct/2026 01:35:42] "GET /api/samples?evaluation=eval_00001000.json&offset=-1 HTTP/1.1" 400 -
+127.0.0.1 - - [19/Oct/2026 01:35:42] "GET /%2e%2e/engine.py HTTP/1.1" 404 -
+127.0.0.1 - - [19/Oct/2026 01:35:42] "GET /runtime/telemetry.sqlite3 HTTP/1.1" 404 -
+127.0.0.1 - - [19/Oct/2026 01:35:42] "GET /api/samples?evaluation=../../plan.json HTTP/1.1" 404 -
+127.0.0.1 - - [19/Oct/2026 01:35:42] "GET /api/snapshot HTTP/1.1" 403 -
+ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 1.738s
+
+OK

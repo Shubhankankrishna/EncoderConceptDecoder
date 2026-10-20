@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "One raw document per JSONL line; no inferred action labels",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["doc_id", "family", "duplicate_cluster", "license", "source", "text", "case_sensitive"],
+  "properties": {
+    "doc_id": {"type": "string", "minLength": 1},
+    "family": {"type": "string", "minLength": 1},
+    "duplicate_cluster": {"type": "string", "minLength": 1},
+    "license": {"type": "string", "minLength": 1},
+    "source": {"type": "string", "minLength": 1},
+    "text": {"type": "string", "minLength": 1},
+    "case_sensitive": {"const": false}
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "word_count_is_not_subword_count": {
+    "10": {
+      "sample_chunks": 13673,
+      "median_subword_ids": 12,
+      "p90_subword_ids": 16,
+      "p95_subword_ids": 17,
+      "fraction_over_32_ids": 0.0027791998829810576
+    },
+    "20": {
+      "sample_chunks": 6786,
+      "median_subword_ids": 24.0,
+      "p90_subword_ids": 30,
+      "p95_subword_ids": 33,
+      "fraction_over_32_ids": 0.05142941349837902
+    }
+  },
+  "training_data_only": true,
+  "codec_checkpoint_length": 128,
+  "codec_hierarchy_codes": 641,
+  "context_budget_ids": 256,
+  "short_content_padded_to_existing_codec": [
+    {
+      "content_subword_budget": 16,
+      "context_blocks_for_256_ids": 16,
+      "windows_before_shared_block_filters": 102754,
+      "window_ratio_to_128": 7.333285755067085,
+      "frozen_codec_positions": 128,
+      "frozen_codec_codes_per_block": 641,
+      "full_chunk_padding_fraction": 0.875
+    },
+    {
+      "content_subword_budget": 32,
+      "context_blocks_for_256_ids": 8,
+      "windows_before_shared_block_filters": 52025,
+      "window_ratio_to_128": 3.712888952326577,
+      "frozen_codec_positions": 128,
+      "frozen_codec_codes_per_block": 641,
+      "full_chunk_padding_fraction": 0.75
+    },
+    {
+      "content_subword_budget": 64,
+      "context_blocks_for_256_ids": 4,
+      "windows_before_shared_block_filters": 26657,
+      "window_ratio_to_128": 1.9024407650585213,
+      "frozen_codec_positions": 128,
+      "frozen_codec_codes_per_block": 641,
+      "full_chunk_padding_fraction": 0.5
+    },
+    {
+      "content_subword_budget": 128,
+      "context_blocks_for_256_ids": 2,
+      "windows_before_shared_block_filters": 14012,
+      "window_ratio_to_128": 1.0,
+      "frozen_codec_positions": 128,
+      "frozen_codec_codes_per_block": 641,
+      "full_chunk_padding_fraction": 0.0
+    }
+  ],
+  "model_30m": {
+    "unique_trainable_weights": 30042637,
+    "distinct_recurrent_weights": 7495680,
+    "fast_block_weights": 3747840,
+    "slow_block_weights": 3747840,
+    "fast_calls": 4,
+    "slow_calls": 2,
+    "recurrent_weight_occurrences_over_unroll": 22487040,
+    "weight_occurrences_are_not_unique_parameters_or_FLOPs": true
+  }
+}

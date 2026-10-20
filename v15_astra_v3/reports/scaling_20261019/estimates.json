@@ -1,0 +1,397 @@
+{
+  "created_ist": "2026-10-19T00:45:09.988903+05:30",
+  "method": "Exact module parameter arithmetic; unprofiled dense matrix FLOP proxy; current logged throughput calibration",
+  "baseline_step_seconds": 0.5165232709841803,
+  "baseline_observed_step": 14750,
+  "baseline_logged_window": 60,
+  "batch": 4,
+  "accumulation": 2,
+  "device": "MPS",
+  "dtype": "FP32",
+  "planning_training_update_budget_seconds": 81510.0,
+  "timing_uncertainty_factors": [
+    0.65,
+    1.6
+  ],
+  "timing_range_kind": "Subjective planning envelope; not a statistical confidence interval",
+  "data": {
+    "train_documents": 2618,
+    "train_document_token_ids": 2294881,
+    "training_windows": 13974,
+    "unique_target_blocks": 13974,
+    "unique_target_nonpad_token_positions": 1624621
+  },
+  "models": [
+    {
+      "name": "10M current",
+      "config": {
+        "width": 192,
+        "code_dim": 64,
+        "vocab": 8192,
+        "levels": [
+          1,
+          8,
+          16,
+          24,
+          32,
+          40,
+          52,
+          64,
+          76,
+          92,
+          108,
+          128
+        ],
+        "heads": 6,
+        "ff": 432,
+        "ctx_layers": 2,
+        "head_layers": 2,
+        "slots": 16,
+        "state_length": 88,
+        "fast_steps": 2,
+        "slow_steps": 2,
+        "context_source": "codes",
+        "context_pooling": "pooled",
+        "gaussian_hidden": 128,
+        "variance": "diagonal",
+        "sigma_initial": 0.1,
+        "sigma_min": 0.0001
+      },
+      "parameters": {
+        "total": 10000333,
+        "deployment": 9762828,
+        "groups": {
+          "code_tables": 6291456,
+          "code_projections": 24576,
+          "level_position_pool_queries": 29184,
+          "pool_projections": 73728,
+          "typed_state": 41472,
+          "context": 794112,
+          "initial_states": 79872,
+          "recurrent": 1090560,
+          "decoder": 1090560,
+          "final_norm": 384,
+          "logit_scale_bias": 98316,
+          "prior": 148608,
+          "posterior": 198144,
+          "target_encoder": 39361
+        }
+      },
+      "forward_proxy": {
+        "total": 3130055168,
+        "groups": {
+          "context_embedding_pooling": 221529600,
+          "context_blocks": 38928384,
+          "init_projection": 147456,
+          "recurrent_blocks": 129761280,
+          "gaussian_heads": 22020096,
+          "target_encoder": 16245504,
+          "target_level_summaries": 110764800,
+          "decoder_blocks": 1902767616,
+          "output_projection": 15753216,
+          "output_logits": 672137216
+        },
+        "context_vectors": 24
+      },
+      "fp32_adam_state_bytes": 160005328,
+      "checkpoint_verification_copy_bytes_approx": 120003996,
+      "flop_ratio_to_10m": 1.0,
+      "estimated_step_seconds": 0.5165232709841803,
+      "planning_step_seconds_range": [
+        0.3357401261397172,
+        0.8264372335746885
+      ],
+      "central_updates_in_24h": 157805,
+      "planning_updates_in_24h_range": [
+        98628,
+        242777
+      ],
+      "central_target_block_examples": 1262440,
+      "central_target_window_revisits": 90.34211395529496,
+      "central_nonpad_target_token_exposures": 146771695.51616526,
+      "total_weights_with_frozen_codec": 121405005,
+      "hybrid_forward_proxy_ratio": 1.352883155316961
+    },
+    {
+      "name": "20M proposal",
+      "config": {
+        "width": 384,
+        "code_dim": 64,
+        "vocab": 8192,
+        "levels": [
+          1,
+          8,
+          16,
+          24,
+          32,
+          40,
+          52,
+          64,
+          76,
+          92,
+          108,
+          128
+        ],
+        "heads": 6,
+        "ff": 832,
+        "ctx_layers": 2,
+        "head_layers": 2,
+        "slots": 16,
+        "state_length": 88,
+        "fast_steps": 2,
+        "slow_steps": 2,
+        "context_source": "codes",
+        "context_pooling": "pooled",
+        "gaussian_hidden": 192,
+        "variance": "diagonal",
+        "sigma_initial": 0.1,
+        "sigma_min": 0.0001
+      },
+      "parameters": {
+        "total": 19963789,
+        "deployment": 19292172,
+        "groups": {
+          "code_tables": 6291456,
+          "code_projections": 49152,
+          "level_position_pool_queries": 58368,
+          "pool_projections": 294912,
+          "typed_state": 82944,
+          "context": 3099648,
+          "initial_states": 307200,
+          "recurrent": 4282368,
+          "decoder": 4282368,
+          "final_norm": 768,
+          "logit_scale_bias": 98316,
+          "prior": 444672,
+          "posterior": 592896,
+          "target_encoder": 78721
+        }
+      },
+      "forward_proxy": {
+        "total": 8840532992,
+        "groups": {
+          "context_embedding_pooling": 821136384,
+          "context_blocks": 150405120,
+          "init_projection": 589824,
+          "recurrent_blocks": 503709696,
+          "gaussian_heads": 66060288,
+          "target_encoder": 32491008,
+          "target_level_summaries": 410568192,
+          "decoder_blocks": 6151928832,
+          "output_projection": 31506432,
+          "output_logits": 672137216
+        },
+        "context_vectors": 24
+      },
+      "fp32_adam_state_bytes": 319420624,
+      "checkpoint_verification_copy_bytes_approx": 239565468,
+      "flop_ratio_to_10m": 2.8244016534854888,
+      "estimated_step_seconds": 1.458869180631452,
+      "planning_step_seconds_range": [
+        0.9482649674104439,
+        2.3341906890103234
+      ],
+      "central_updates_in_24h": 55872,
+      "planning_updates_in_24h_range": [
+        34920,
+        85956
+      ],
+      "central_target_block_examples": 446976,
+      "central_target_window_revisits": 31.986284190071597,
+      "central_nonpad_target_token_exposures": 51965589.00715831,
+      "total_weights_with_frozen_codec": 131368461,
+      "hybrid_forward_proxy_ratio": 3.9703611204848896
+    },
+    {
+      "name": "30M proposal",
+      "config": {
+        "width": 512,
+        "code_dim": 64,
+        "vocab": 8192,
+        "levels": [
+          1,
+          8,
+          16,
+          24,
+          32,
+          40,
+          52,
+          64,
+          76,
+          92,
+          108,
+          128
+        ],
+        "heads": 8,
+        "ff": 1072,
+        "ctx_layers": 2,
+        "head_layers": 2,
+        "slots": 16,
+        "state_length": 88,
+        "fast_steps": 2,
+        "slow_steps": 2,
+        "context_source": "codes",
+        "context_pooling": "pooled",
+        "gaussian_hidden": 256,
+        "variance": "diagonal",
+        "sigma_initial": 0.1,
+        "sigma_min": 0.0001
+      },
+      "parameters": {
+        "total": 30042637,
+        "deployment": 28885004,
+        "groups": {
+          "code_tables": 6291456,
+          "code_projections": 65536,
+          "level_position_pool_queries": 77824,
+          "pool_projections": 524288,
+          "typed_state": 110592,
+          "context": 5394432,
+          "initial_states": 540672,
+          "recurrent": 7495680,
+          "decoder": 7495680,
+          "final_norm": 1024,
+          "logit_scale_bias": 98316,
+          "prior": 789504,
+          "posterior": 1052672,
+          "target_encoder": 104961
+        }
+      },
+      "forward_proxy": {
+        "total": 14347464704,
+        "groups": {
+          "context_embedding_pooling": 1430917120,
+          "context_blocks": 261095424,
+          "init_projection": 1048576,
+          "recurrent_blocks": 880803840,
+          "gaussian_heads": 117440512,
+          "target_encoder": 43321344,
+          "target_level_summaries": 715458560,
+          "decoder_blocks": 10183233536,
+          "output_projection": 42008576,
+          "output_logits": 672137216
+        },
+        "context_vectors": 24
+      },
+      "fp32_adam_state_bytes": 480682192,
+      "checkpoint_verification_copy_bytes_approx": 360511644,
+      "flop_ratio_to_10m": 4.583773746444075,
+      "estimated_step_seconds": 2.3676258089647044,
+      "planning_step_seconds_range": [
+        1.538956775827058,
+        3.7882012943435273
+      ],
+      "central_updates_in_24h": 34426,
+      "planning_updates_in_24h_range": [
+        21516,
+        52964
+      ],
+      "central_target_block_examples": 275415,
+      "central_target_window_revisits": 19.709112829877146,
+      "central_nonpad_target_token_exposures": 32019838.59478784,
+      "total_weights_with_frozen_codec": 141447309,
+      "hybrid_forward_proxy_ratio": 6.4896024120172955
+    },
+    {
+      "name": "50M proposal",
+      "config": {
+        "width": 640,
+        "code_dim": 64,
+        "vocab": 8192,
+        "levels": [
+          1,
+          8,
+          16,
+          24,
+          32,
+          40,
+          52,
+          64,
+          76,
+          92,
+          108,
+          128
+        ],
+        "heads": 10,
+        "ff": 1936,
+        "ctx_layers": 2,
+        "head_layers": 2,
+        "slots": 16,
+        "state_length": 88,
+        "fast_steps": 2,
+        "slow_steps": 2,
+        "context_source": "codes",
+        "context_pooling": "pooled",
+        "gaussian_hidden": 320,
+        "variance": "diagonal",
+        "sigma_initial": 0.1,
+        "sigma_min": 0.0001
+      },
+      "parameters": {
+        "total": 50087053,
+        "deployment": 48312332,
+        "groups": {
+          "code_tables": 6291456,
+          "code_projections": 81920,
+          "level_position_pool_queries": 97280,
+          "pool_projections": 819200,
+          "typed_state": 138240,
+          "context": 10716160,
+          "initial_states": 839680,
+          "recurrent": 13998080,
+          "decoder": 13998080,
+          "final_norm": 1280,
+          "logit_scale_bias": 98316,
+          "prior": 1232640,
+          "posterior": 1643520,
+          "target_encoder": 131201
+        }
+      },
+      "forward_proxy": {
+        "total": 24663387136,
+        "groups": {
+          "context_embedding_pooling": 2208732160,
+          "context_blocks": 517079040,
+          "init_projection": 1638400,
+          "recurrent_blocks": 1592524800,
+          "gaussian_heads": 183500800,
+          "target_encoder": 54151680,
+          "target_level_summaries": 1104366080,
+          "decoder_blocks": 18276746240,
+          "output_projection": 52510720,
+          "output_logits": 672137216
+        },
+        "context_vectors": 24
+      },
+      "fp32_adam_state_bytes": 801392848,
+      "checkpoint_verification_copy_bytes_approx": 601044636,
+      "flop_ratio_to_10m": 7.879537520023673,
+      "estimated_step_seconds": 4.0699644936852035,
+      "planning_step_seconds_range": [
+        2.6454769208953826,
+        6.511943189896326
+      ],
+      "central_updates_in_24h": 20027,
+      "planning_updates_in_24h_range": [
+        12517,
+        30811
+      ],
+      "central_target_block_examples": 160217,
+      "central_target_window_revisits": 11.465408182360369,
+      "central_nonpad_target_token_exposures": 18626942.906634483,
+      "total_weights_with_frozen_codec": 161491725,
+      "hybrid_forward_proxy_ratio": 11.126129549420133
+    }
+  ],
+  "source_hashes_unchanged": true,
+  "exclusions": [
+    "No larger model allocated or benchmarked",
+    "No accuracy or quality prediction",
+    "FLOP proxy omits nonlinearities, normalization, sampling and most elementwise work",
+    "Dense attention mask computation assumed; kernel-specific sparse/fused behavior is unprofiled",
+    "Forward FLOP ratios are used as a proxy for update cost; GPU utilization and sustained thermals can change ratios",
+    "No peak RAM prediction: activation, allocator, checkpoint, codec and OS overhead require measurement",
+    "Constant code_dim=64 leaves the output projection rank unchanged",
+    "Unique raw pre-tokenizer IDs and correlated hierarchical code positions are different data measures"
+  ]
+}

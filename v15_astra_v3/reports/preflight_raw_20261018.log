@@ -1,0 +1,31 @@
+/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v15_astra_v3/preflight.py:39: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  durations.append(time.perf_counter()-tic);losses.append(float(loss))
+{
+  "passed": true,
+  "device": "mps",
+  "dtype": "float32",
+  "microbatch": 4,
+  "accumulation_for_main": 2,
+  "cpu_loss": 9.014673233032227,
+  "mps_loss": 9.014673233032227,
+  "cpu_mps_absolute_error": 0.0,
+  "initial_fixed_batch_loss": 9.014395713806152,
+  "final_fixed_batch_loss": 8.117315292358398,
+  "updates": 24,
+  "median_microbatch_update_seconds": 0.27697410399559885,
+  "estimated_accumulated_step_seconds": 0.5539482079911977,
+  "mps_stochastic_resume_max_abs_error": 0.0,
+  "posterior_removed_inference_equal": true,
+  "driver_bytes_including_test_models": 1651212288,
+  "dataset_sha": "5dd9ebd6621d02b194f7030aba8fcb64b80cdc245354aa64b4d939af2039d1b5",
+  "ledger": {
+    "trainable": 10000333,
+    "training_only": 237505,
+    "deployment": 9762828,
+    "code_tables": 6291456,
+    "frozen_codec_included": false,
+    "requires_codec": true
+  },
+  "note": "Throughput is a short benchmark; sustained fanless performance may differ. This fixture does not initialize the main model."
+}

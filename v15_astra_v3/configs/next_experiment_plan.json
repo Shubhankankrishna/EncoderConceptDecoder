@@ -1,0 +1,114 @@
+{
+  "version": "v3-raw-gram-24h-authorized-20261018",
+  "automatic_execution": true,
+  "protected_original_run": "v15_astra_m2/runs/20261018_48h",
+  "minimum_claim_seeds": [
+    151803,
+    151804,
+    151805
+  ],
+  "default_resources": {
+    "device": "mps",
+    "dtype": "float32",
+    "microbatch": 4,
+    "accumulation": 2,
+    "cpu_threads": 1
+  },
+  "stages": [
+    {
+      "id": "P0",
+      "ready": true,
+      "requires": [
+        "completed cache identity and reconstruction audit"
+      ],
+      "implementation": "raw.py",
+      "status": "complete",
+      "corpus": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v15_astra_v3/artifacts/fineweb_p0_20261018/documents.jsonl",
+      "cache": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v15_astra_v3/artifacts/raw_fineweb_20261018",
+      "dataset_sha": "5dd9ebd6621d02b194f7030aba8fcb64b80cdc245354aa64b4d939af2039d1b5"
+    },
+    {
+      "id": "P1",
+      "ready": true,
+      "requires": [
+        "P0 cache and actual block budget"
+      ],
+      "arms": [
+        "code_gram"
+      ],
+      "promotion": "prior-only free generation and held-out raw likelihood against matched controls",
+      "status": "running",
+      "requested_hours": 24,
+      "started_ist": "2026-10-18T22:31:01.399632+05:30",
+      "deadline_ist": "2026-10-19T22:31:01.399632+05:30",
+      "run": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v15_astra_v3/runs/20261018_24h_raw_gram",
+      "active_limits": {
+        "hours": 24,
+        "absolute_deadline": 1792429261.399632,
+        "final_evaluation_reserve_seconds": 600
+      },
+      "prior_smoke_limits": {
+        "steps": 1000,
+        "seconds": 1800
+      }
+    },
+    {
+      "id": "S0",
+      "ready": false,
+      "fixture_complete": true,
+      "requires": [
+        "substantially larger multi-plan training population",
+        "per-split route-class and length quotas",
+        "codec action/observation audit",
+        "family-level symmetry grouping"
+      ]
+    },
+    {
+      "id": "S1_S2",
+      "ready": false,
+      "arms": [
+        "state_action",
+        "code_nonrecurrent",
+        "code_hrm",
+        "code_gram",
+        "code_hrm_parameter_matched"
+      ],
+      "requires": [
+        "S0",
+        "separate scratch and compatible P1 transfer registrations"
+      ],
+      "promotion": "held-out episode success or useful distinct solutions at matched measured total cost"
+    },
+    {
+      "id": "S3",
+      "ready": false,
+      "requires": [
+        "frozen reliable actor",
+        "positive and negative continuation outcomes",
+        "horizon/policy calibration"
+      ],
+      "implementation": "grounding.CandidateCritic primitives"
+    },
+    {
+      "id": "S4",
+      "ready": false,
+      "requires": [
+        "sufficient independently verified multi-route tasks",
+        "explicit episode posterior/router trainer",
+        "paired fixed-noise interventions and equal-cost sampling control"
+      ],
+      "implementation": "strategy lifecycle and episode-bound reduction only"
+    },
+    {
+      "id": "S5_S7",
+      "ready": false,
+      "requires": [
+        "prior stages demonstrate useful gains"
+      ],
+      "implementation": "correct objective/value/capacity primitives; no automatic search or continual-learning cascade"
+    }
+  ],
+  "execution_scope": "User-authorized P0 preparation followed by P1 GRAM only; later stages are not scheduled",
+  "active_run": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v15_astra_v3/runs/20261018_24h_raw_gram",
+  "prior_run_cancelled": true
+}

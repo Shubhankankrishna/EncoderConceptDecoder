@@ -1,0 +1,33 @@
+{
+  "width": 512,
+  "code_dim": 64,
+  "vocab": 8192,
+  "levels": [
+    1,
+    2,
+    4,
+    6,
+    8,
+    10,
+    13,
+    16,
+    19,
+    23,
+    27,
+    32
+  ],
+  "heads": 8,
+  "ff": 1072,
+  "ctx_layers": 2,
+  "head_layers": 2,
+  "slots": 16,
+  "state_length": 88,
+  "fast_steps": 2,
+  "slow_steps": 2,
+  "context_source": "codes",
+  "context_pooling": "hybrid",
+  "gaussian_hidden": 256,
+  "variance": "diagonal",
+  "sigma_initial": 0.1,
+  "sigma_min": 0.0001
+}

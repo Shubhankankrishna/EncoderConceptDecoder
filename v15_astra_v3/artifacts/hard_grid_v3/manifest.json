@@ -1,0 +1,38 @@
+{
+  "version": "astra-hard-grid-v3",
+  "observation_schema": "astra-observed-state-v3",
+  "seed": 151803,
+  "source_sha": "cb521b92dabab8115bf680cd34f53aa893f504f2c71dc7758895615ea3f92a66",
+  "episodes_sha": "5056255714bb0870957cd3d52960e81f662a2a4b2e8f4a522c5415c151b976d0",
+  "episodes": 72,
+  "maps_attempted": 422,
+  "counts": {
+    "train": {
+      "5-9": 8,
+      "10-19": 8,
+      "20+": 8
+    },
+    "valid": {
+      "5-9": 8,
+      "10-19": 8,
+      "20+": 8
+    },
+    "test": {
+      "5-9": 8,
+      "10-19": 8,
+      "20+": 8
+    }
+  },
+  "split_rule": "original topology hash before trace construction; all legacy groups excluded",
+  "excluded_legacy_manifest_sha": "d19d8882581df0863b7b7d30ff48d6fe62beedcfcc2ee527fe7bafec646975ad",
+  "context": "complete current state including every wall; no future state or labels",
+  "codec_encoded": false,
+  "code_only_accepted": false,
+  "required_observed_blocks": 4,
+  "training_launched": false,
+  "minimum_length_is_not_complexity": true,
+  "recipes": {
+    "serpentine_corridor": 13,
+    "random_walls": 59
+  }
+}

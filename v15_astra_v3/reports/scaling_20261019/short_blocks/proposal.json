@@ -1,0 +1,51 @@
+{
+  "status": "design proposal; not executable until a codec route is chosen and audited",
+  "gram_parameter_budget": 30000000,
+  "current_codec_candidate_config": "../candidate_configs/30m.json",
+  "preferred_prediction_subword_budget": 32,
+  "comparison_prediction_subword_budgets": [
+    16,
+    32,
+    64,
+    128
+  ],
+  "observed_context_subword_budget": 256,
+  "tokenization": "pinned BERT uncased pre-tokenizer; words and subwords are distinct units",
+  "recurrence": {
+    "fast_steps": 2,
+    "slow_steps": 2,
+    "phases": 1
+  },
+  "routes": [
+    {
+      "name": "existing_frozen_codec_short_content",
+      "codec_block_positions": 128,
+      "codes_per_target": 641,
+      "expected_per_example_decoder_compute_saving": false,
+      "role": "short-text curriculum/fidelity diagnostic; not a compute optimization"
+    },
+    {
+      "name": "native_short_block_ncm",
+      "codec_block_positions": 32,
+      "codec_checkpoint_available": false,
+      "hierarchy": "not selected; requires trained/adapted compatible codec and reconstruction audit",
+      "codes_per_target": null,
+      "role": "candidate for true short-block generation; quality and speed unmeasured"
+    }
+  ],
+  "scores": {
+    "shorter_target_preserve_context": 8,
+    "thirty_million_capacity_pilot": 7,
+    "short_padding_as_compute_optimization": 2,
+    "scale": "Subjective research judgment out of ten, not a probability of success"
+  },
+  "required_checks": [
+    "reconstruction on short texts, including boundary tokens and non-PAD content",
+    "matched-context comparison of 32/64/128 target sizes",
+    "context relevance, grammatical coherence, repetition and boundary continuity",
+    "end-to-end decoded text tokens per second and total data processed",
+    "exact resume, finite MPS gradients and peak working set",
+    "same codec for directly compared code likelihood; text quality across changed codecs"
+  ],
+  "execution": "No current-run replacement or future training launch scheduled"
+}

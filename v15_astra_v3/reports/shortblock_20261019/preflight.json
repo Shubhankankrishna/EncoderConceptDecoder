@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "arms": {
+    "30m": {
+      "passed": true,
+      "ledger": {
+        "trainable": 29944333,
+        "training_only": 1108481,
+        "deployment": 28835852,
+        "code_tables": 6291456,
+        "frozen_codec_included": false,
+        "requires_codec": true
+      },
+      "cpu_mps_loss_error": 9.5367431640625e-07,
+      "initial_fixed_batch_loss": 9.009212017059326,
+      "final_fixed_batch_loss": 8.17048692703247,
+      "median_accumulated_update_seconds": 0.6394733539782465,
+      "exact_resume_max_abs_error": 0.0,
+      "posterior_removed_inference_equal": true,
+      "driver_bytes": 1732755456,
+      "available_ram_bytes": 5125619712,
+      "evaluation_smoke_passed": true,
+      "context_memory_vectors": 352
+    },
+    "10m": {
+      "passed": true,
+      "ledger": {
+        "trainable": 9963469,
+        "training_only": 219073,
+        "deployment": 9744396,
+        "code_tables": 6291456,
+        "frozen_codec_included": false,
+        "requires_codec": true
+      },
+      "cpu_mps_loss_error": 0.0,
+      "initial_fixed_batch_loss": 9.010992527008057,
+      "final_fixed_batch_loss": 8.53546953201294,
+      "median_accumulated_update_seconds": 0.43420470849378034,
+      "exact_resume_max_abs_error": 0.0,
+      "posterior_removed_inference_equal": true,
+      "driver_bytes": 1738735616,
+      "available_ram_bytes": 4908449792,
+      "evaluation_smoke_passed": true,
+      "context_memory_vectors": 352
+    }
+  },
+  "dataset_sha": "fbb5b1b6ef5a9cb7d712f9a3d82c4d3debc53f5d81b8d2a806a5008a63e8cc03",
+  "codec_id": "50eeb9a512f0edb57f665212b79c923908d66d41cb2d56746d897f97fede655f",
+  "microbatch": 4,
+  "accumulation": 2,
+  "target_ids": 32,
+  "context_ids": 256,
+  "context_pooling": "hybrid; finest positions plus level summaries",
+  "actual_trainer_slice_resume": {
+    "passed": true,
+    "first_step": 0,
+    "resumed_step": 10,
+    "numpy_sequence_verified": true
+  },
+  "note": "Fresh models in the main experiment; preflight weights never initialize training"
+}

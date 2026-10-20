@@ -1,0 +1,36 @@
+{
+  "source_dataset": "HuggingFaceFW/fineweb-edu",
+  "source_url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu",
+  "upstream_license": "ODC-By database; preserve source webpage attribution",
+  "source_path": "/Users/shubhankankrishna/Desktop/EncoderConceptDecoder/v7_tiny/data/fineweb_edu.jsonl.gz",
+  "source_sha": "39b26d4184c42b497a11c89e58b3ff59dc30e340d4981614a50339b82e407dab",
+  "documents": 3275,
+  "hostnames": 3118,
+  "unique_blocks": 23955,
+  "windows": 17449,
+  "document_splits": {
+    "test": 328,
+    "train": 2618,
+    "valid": 329
+  },
+  "window_splits": {
+    "test": 1712,
+    "train": 14012,
+    "valid": 1725
+  },
+  "seed": 151803,
+  "block_budget": 24000,
+  "curated_sha": "dfcc47eb43c7bd5db20e64cd8f99a07e600cce34a72a33af665deb9d9f324eaf",
+  "pretokenizer_sha": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98",
+  "excluded": {
+    "length_outside_384_2048": 9046,
+    "not_prior_train": 3000,
+    "prior_heldout_hostname": 3886,
+    "code_or_markup": 12
+  },
+  "prior_holdout_hosts_excluded": 2712,
+  "selection": "seeded hash order, only previous train identities, complete 384\u20132048-ID prose, max 12 docs per hostname",
+  "near_duplicate_method": "casefolded word normalization; bottom-64 five-word shingle hashes, 16x4 LSH bands, sketch Jaccard >=0.8 rejection; not semantic dedup",
+  "case_scope": "uncased prose prediction; no exact-case, code, mathematical-variable or accent fidelity claim",
+  "reuse_disclosure": "Previously cached public data used by earlier local experiments; new v3 model and document-family split, not an independent external benchmark"
+}
